@@ -25,10 +25,21 @@ PY
 
 export PYTHONDONTWRITEBYTECODE=1
 
-python3 -m podcast_radar --config config.toml run --since "$SINCE"
-
-if [ -n "${AI_RADAR_DEPLOY_PROJECT:-}" ]; then
+deploy_site() {
+  if [ -z "${AI_RADAR_DEPLOY_PROJECT:-}" ]; then
+    return
+  fi
+  npm run verify:site
   npx -y wrangler pages deploy public \
     --project-name "$AI_RADAR_DEPLOY_PROJECT" \
     --branch "${AI_RADAR_DEPLOY_BRANCH:-main}"
-fi
+}
+
+python3 -m podcast_radar --config config.toml ingest --since "$SINCE"
+python3 -m podcast_radar --config config.toml judge --since "$SINCE"
+python3 -m podcast_radar --config config.toml build-site
+deploy_site
+
+python3 -m podcast_radar --config config.toml process --since "$SINCE"
+python3 -m podcast_radar --config config.toml build-site
+deploy_site

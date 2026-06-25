@@ -9,7 +9,7 @@ from typing import Any, Iterable
 from .config import Config, FeedConfig
 
 
-PUBLIC_STATUSES = ("published",)
+PUBLIC_STATUSES = ("relevant", "transcribed", "published", "transcription_failed", "summary_failed")
 
 
 def connect(config: Config) -> sqlite3.Connection:
@@ -321,6 +321,16 @@ def mark_failed(conn: sqlite3.Connection, episode_id: int, reason: str) -> None:
     )
 
 
+def mark_processing_failed(conn: sqlite3.Connection, episode_id: int, *, stage: str, reason: str) -> None:
+    if stage not in {"transcription", "summary"}:
+        raise ValueError(f"unsupported processing failure stage: {stage}")
+    status = "transcription_failed" if stage == "transcription" else "summary_failed"
+    conn.execute(
+        "UPDATE episodes SET status = ?, skip_reason = ?, updated_at = ? WHERE id = ?",
+        (status, reason, now_iso(), episode_id),
+    )
+
+
 def episodes_for_status(
     conn: sqlite3.Connection,
     statuses: Iterable[str],
@@ -349,16 +359,17 @@ def episodes_for_status(
 
 
 def public_episodes(conn: sqlite3.Connection, *, limit: int | None = None) -> list[sqlite3.Row]:
+    placeholders = ",".join("?" for _ in PUBLIC_STATUSES)
     sql = """
         SELECT episodes.*, feeds.name AS feed_name, feeds.url AS feed_url,
                feeds.image_url AS feed_image_url, feeds.homepage_url AS feed_homepage_url,
                feeds.hosts_json AS feed_hosts_json
         FROM episodes
         JOIN feeds ON feeds.id = episodes.feed_id
-        WHERE episodes.status = 'published'
+        WHERE episodes.status IN ({placeholders})
         ORDER BY COALESCE(episodes.published_at, episodes.summarized_at, episodes.created_at) DESC
-    """
-    params: list[Any] = []
+    """.format(placeholders=placeholders)
+    params: list[Any] = list(PUBLIC_STATUSES)
     if limit is not None:
         sql += " LIMIT ?"
         params.append(limit)

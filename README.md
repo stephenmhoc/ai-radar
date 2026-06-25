@@ -153,10 +153,14 @@ public/CNAME
 The included `wrangler.toml` is ready for Cloudflare Pages direct upload:
 
 ```bash
+python3 -m podcast_radar --config config.toml build-site
+npm run verify:site
 wrangler pages deploy public --project-name ai-radar
 ```
 
 Point DNS for `llm-podcasts.merimerimeri.com` at the Pages project, or change `[site].base_url` and `[site].cname` in `config.toml`.
+
+`npm run verify:site` starts a local static server, opens the generated site in Playwright Chromium at desktop and mobile viewport sizes, checks the lab filter and episode action links, and writes screenshots to `var/site-checks/`. The daily and backfill scripts run this browser check before each Cloudflare Pages deploy.
 
 ## Daily LaunchAgent
 
@@ -171,7 +175,7 @@ python3 -m podcast_radar --config config.toml launchd-install \
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.merimeri.ai-radar.plist
 ```
 
-The scheduled runner is `scripts/daily.sh`. It calculates `now - AI_RADAR_LOOKBACK_HOURS`, runs `podcast_radar run --since <cutoff>`, rebuilds the static site, and deploys `public/` to Cloudflare Pages.
+The scheduled runner is `scripts/daily.sh`. It calculates `now - AI_RADAR_LOOKBACK_HOURS`, ingests and judges new episodes, rebuilds the static site immediately, and deploys `public/` to Cloudflare Pages before transcription starts. It then transcribes and summarizes included episodes, rebuilds the site again, and deploys the richer pages.
 
 The generated LaunchAgent has `RunAtLoad = true`, so after the machine restarts and the user session is loaded, it runs once immediately in addition to the daily 8:30 AM schedule. The 36-hour lookback is intentional: it gives the service overlap after restarts, sleep, delayed feed publication, or a missed daily run, while the database uniqueness constraint prevents duplicate episodes.
 
@@ -180,8 +184,14 @@ Daily processing flow:
 1. `launchd` starts `scripts/daily.sh`.
 2. `scripts/daily.sh` loads ignored local secrets from `var/secrets.env`.
 3. The script computes the rolling cutoff from `AI_RADAR_LOOKBACK_HOURS`.
-4. `podcast_radar run --since <cutoff>` fetches active feeds, upserts episodes, asks the LLM to judge new items, transcribes relevant items locally, summarizes them, and rebuilds the static site.
-5. The script deploys `public/` to Cloudflare Pages with Wrangler.
+4. `ingest --since <cutoff>` fetches active feeds and upserts episodes. Duplicate feed items are updated by `(feed_id, guid)`.
+5. `judge --since <cutoff>` asks the LLM to decide which new episodes qualify.
+6. `build-site` renders all included episodes, even if transcription has not finished yet.
+7. Wrangler deploys that first-pass site so the episode appears on the website immediately.
+8. `process --since <cutoff>` transcribes qualifying episodes locally and summarizes them.
+9. `build-site` and Wrangler run again so completed transcripts and summaries replace the pending state.
+
+Relevant episodes are public on the website as soon as the LLM includes them. Their detail pages show metadata, guest/lab information, and pending notices until transcription and summarization complete. If transcription or summarization fails, the episode stays on the site with a failure notice instead of disappearing. RSS items are stricter: an episode only enters `feed.xml` after both transcript and summary are available.
 
 Local secrets can be stored outside Git in `var/secrets.env`, for example:
 
@@ -201,4 +211,5 @@ var/logs/launchd.err.log
 ```bash
 python3 -m compileall podcast_radar
 python3 -m unittest discover -s tests
+npm run verify:site
 ```

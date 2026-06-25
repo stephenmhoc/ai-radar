@@ -29,8 +29,8 @@ keep_audio = false
 [site]
 title = "AI Radar"
 description = "Podcast episodes featuring technical leaders and executives from major AI labs."
-base_url = "https://llm-podcasts.merimerimeri.com"
-cname = "llm-podcasts.merimerimeri.com"
+base_url = "https://ai-radar-6xq.pages.dev"
+cname = ""
 max_items = 100
 rss_title = "AI Radar"
 rss_description = "New podcast episodes featuring major AI lab guests."

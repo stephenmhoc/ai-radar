@@ -11,9 +11,11 @@ def run(config: Config, conn, *, limit: int | None = None, published_since: str 
         {f"ingest_{key}": value for key, value in feeds.ingest(config, conn, published_since=since).items()}
     )
     judged = judge_pending(config, conn, limit=limit, published_since=since)
+    pending_rendered = site.build_site(config, conn)
     processed = process_relevant(config, conn, limit=limit, published_since=since)
     rendered = site.build_site(config, conn)
     stats["judged"] = judged
+    stats["rendered_pending"] = pending_rendered["episodes"]
     stats["processed"] = processed
     stats["rendered"] = rendered["episodes"]
     return stats
@@ -52,21 +54,37 @@ def process_relevant(
     for episode in storage.episodes_for_status(conn, ("relevant",), limit=limit, published_since=since):
         try:
             transcriber.transcribe_episode(config, conn, episode)
-            refreshed = storage.episode_by_id(conn, int(episode["id"]))
+        except Exception as exc:  # noqa: BLE001 - preserve per-episode progress
+            storage.mark_processing_failed(
+                conn,
+                int(episode["id"]),
+                stage="transcription",
+                reason=f"transcription failed: {exc}",
+            )
+            conn.commit()
+            continue
+        refreshed = storage.episode_by_id(conn, int(episode["id"]))
+        try:
             llm.summarize_episode(config, conn, refreshed)
             count += 1
-        except llm.LLMError:
-            raise
-        except Exception as exc:  # noqa: BLE001 - preserve per-episode progress
-            storage.mark_failed(conn, int(episode["id"]), f"process failed: {exc}")
+        except Exception as exc:  # noqa: BLE001 - keep included episode public
+            storage.mark_processing_failed(
+                conn,
+                int(episode["id"]),
+                stage="summary",
+                reason=f"summary failed: {exc}",
+            )
             conn.commit()
     for episode in storage.episodes_for_status(conn, ("transcribed",), limit=limit, published_since=since):
         try:
             llm.summarize_episode(config, conn, episode)
             count += 1
-        except llm.LLMError:
-            raise
-        except Exception as exc:  # noqa: BLE001
-            storage.mark_failed(conn, int(episode["id"]), f"summary failed: {exc}")
+        except Exception as exc:  # noqa: BLE001 - keep transcript public
+            storage.mark_processing_failed(
+                conn,
+                int(episode["id"]),
+                stage="summary",
+                reason=f"summary failed: {exc}",
+            )
             conn.commit()
     return count

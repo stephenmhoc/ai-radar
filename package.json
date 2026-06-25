@@ -1,0 +1,11 @@
+{
+  "name": "ai-radar",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify:site": "node scripts/verify-site.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0"
+  }
+}

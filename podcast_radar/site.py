@@ -36,9 +36,10 @@ def build_site(config: Config, conn) -> dict[str, int]:
             encoding="utf-8",
         )
 
+    rss = render_rss(config, episodes, slugs)
     (public_dir / "index.html").write_text(render_index(config, episodes, slugs), encoding="utf-8")
-    (public_dir / "feed.xml").write_text(render_rss(config, episodes, slugs), encoding="utf-8")
-    return {"episodes": len(episodes)}
+    (public_dir / "feed.xml").write_text(rss["xml"], encoding="utf-8")
+    return {"episodes": len(episodes), "rss_items": rss["items"]}
 
 
 def episode_slug(episode) -> str:
@@ -48,6 +49,7 @@ def episode_slug(episode) -> str:
 
 def render_index(config: Config, episodes, slugs: dict[int, str]) -> str:
     cards = "\n".join(render_card(config, episode, slugs[int(episode["id"])]) for episode in episodes)
+    filters = render_filters(episodes)
     if not cards:
         cards = """
         <section class="empty">
@@ -67,6 +69,7 @@ def render_index(config: Config, episodes, slugs: dict[int, str]) -> str:
           </div>
           <a class="rss-link" href="feed.xml">RSS feed</a>
         </header>
+        {filters}
         <main class="episode-list">
           {cards}
         </main>
@@ -80,24 +83,29 @@ def render_card(config: Config, episode, slug: str) -> str:
     guests = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
     labs = _people(episode["labs_json"])
     date = _date_label(episode["published_at"])
-    episode_url = episode_url_for(config, slug)
+    episode_path = episode_path_for(slug)
     image = f'<img src="{escape(image_url)}" alt="" loading="lazy">' if image_url else '<div class="art-fallback"></div>'
     lab_tags = "".join(f"<span>{escape(lab)}</span>" for lab in labs)
+    summary = _summary_teaser(episode)
+    status = _card_status(episode)
+    status_html = f"<span>{escape(status)}</span>" if status else ""
+    lab_tokens = " ".join(_lab_token(lab) for lab in labs)
     return f"""
-    <article class="episode-card">
-      <a class="art" href="{escape(episode_url)}">{image}</a>
+    <article class="episode-card" data-labs="{escape(lab_tokens)}">
+      <a class="art" href="{escape(episode_path)}">{image}</a>
       <div class="episode-body">
         <div class="meta-row">
           <span>{escape(episode['feed_name'])}</span>
           <span>{escape(date)}</span>
+          {status_html}
         </div>
-        <h2><a href="{escape(episode_url)}">{escape(episode['summary_title'] or episode['title'])}</a></h2>
+        <h2><a href="{escape(episode_path)}">{escape(episode['summary_title'] or episode['title'])}</a></h2>
         <p class="people"><strong>Hosts:</strong> {escape(comma_join(hosts) or 'Unknown')}</p>
         <p class="people"><strong>Guests:</strong> {escape(comma_join(guests) or 'Unknown')}</p>
-        <p class="summary">{escape(episode['summary_text'] or '').splitlines()[0] if episode['summary_text'] else ''}</p>
+        <p class="summary">{escape(summary)}</p>
         <div class="tags">{lab_tags}</div>
         <div class="actions">
-          <a href="{escape(episode_url)}">View transcript</a>
+          <a href="{escape(episode_path)}">Episode details</a>
           {source_link(episode)}
         </div>
       </div>
@@ -114,9 +122,11 @@ def render_episode_page(config: Config, episode, slug: str) -> str:
     image = f'<img src="{escape(image_url)}" alt="" loading="lazy">' if image_url else '<div class="art-fallback"></div>'
     points = "".join(f"<li>{escape(point)}</li>" for point in key_points)
     topic_tags = "".join(f"<span>{escape(topic)}</span>" for topic in topics)
-    transcript = paragraphs_to_html(episode["transcript_text"] or "")
-    summary = episode["summary_html"] or paragraphs_to_html(episode["summary_text"] or "")
+    transcript = _transcript_html(episode)
+    summary = _summary_html(episode)
     title = episode["summary_title"] or episode["title"]
+    status = _detail_status(episode)
+    status_html = f'<p class="status-pill">{escape(status)}</p>' if status else ""
     return page(
         config,
         title=title,
@@ -128,10 +138,11 @@ def render_episode_page(config: Config, episode, slug: str) -> str:
             <div>
               <p class="eyebrow">{escape(episode['feed_name'])} · {escape(_date_label(episode['published_at']))}</p>
               <h1>{escape(title)}</h1>
+              {status_html}
               <p class="people"><strong>Hosts:</strong> {escape(comma_join(hosts) or 'Unknown')}</p>
               <p class="people"><strong>Guests:</strong> {escape(comma_join(guests) or 'Unknown')}</p>
               <div class="tags">{topic_tags}</div>
-              <div class="actions">{source_link(episode)}</div>
+              <div class="actions"><a href="#transcript">Jump to transcript</a>{source_link(episode)}</div>
             </div>
           </section>
           <section class="content-block">
@@ -139,7 +150,7 @@ def render_episode_page(config: Config, episode, slug: str) -> str:
             {summary}
             <ul>{points}</ul>
           </section>
-          <section class="content-block transcript">
+          <section class="content-block transcript" id="transcript">
             <h2>Transcript</h2>
             {transcript}
           </section>
@@ -148,15 +159,16 @@ def render_episode_page(config: Config, episode, slug: str) -> str:
     )
 
 
-def render_rss(config: Config, episodes, slugs: dict[int, str]) -> str:
+def render_rss(config: Config, episodes, slugs: dict[int, str]) -> dict[str, int | str]:
     now = email.utils.format_datetime(dt.datetime.now(dt.timezone.utc), usegmt=True)
     items = []
     for episode in episodes:
+        if not _rss_ready(episode):
+            continue
         slug = slugs[int(episode["id"])]
         link = episode_url_for(config, slug)
         pub_date = _rss_date(episode["published_at"])
-        description = episode["summary_html"] or paragraphs_to_html(episode["summary_text"] or "")
-        source = source_link(episode)
+        description = _rss_description(episode)
         items.append(
             f"""
             <item>
@@ -164,11 +176,11 @@ def render_rss(config: Config, episodes, slugs: dict[int, str]) -> str:
               <link>{escape(link)}</link>
               <guid isPermaLink="true">{escape(link)}</guid>
               <pubDate>{escape(pub_date)}</pubDate>
-              <description><![CDATA[{description}<p>{source}</p>]]></description>
+              <description><![CDATA[{description}]]></description>
             </item>
             """
         )
-    return f"""<?xml version="1.0" encoding="UTF-8"?>
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
     <title>{escape(config.site.rss_title)}</title>
@@ -179,6 +191,7 @@ def render_rss(config: Config, episodes, slugs: dict[int, str]) -> str:
   </channel>
 </rss>
 """
+    return {"xml": xml, "items": len(items)}
 
 
 def page(config: Config, *, title: str, body: str) -> str:
@@ -197,6 +210,9 @@ def page(config: Config, *, title: str, body: str) -> str:
   <div class="shell">
     {body}
   </div>
+  <script>
+{FILTER_SCRIPT}
+  </script>
 </body>
 </html>
 """
@@ -210,16 +226,147 @@ FAVICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 """
 
 
+FILTER_SCRIPT = """(() => {
+    const buttons = Array.from(document.querySelectorAll("[data-filter]"));
+    const cards = Array.from(document.querySelectorAll(".episode-card"));
+    if (!buttons.length || !cards.length) return;
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter || "all";
+        buttons.forEach((item) => {
+          const active = item === button;
+          item.classList.toggle("active", active);
+          item.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+        cards.forEach((card) => {
+          const labs = (card.dataset.labs || "").split(" ");
+          card.hidden = filter !== "all" && !labs.includes(filter);
+        });
+      });
+    });
+  })();"""
+
+
 def episode_url_for(config: Config, slug: str) -> str:
-    if config.site.base_url:
-        return urljoin(config.site.base_url.rstrip("/") + "/", f"episodes/{slug}/")
-    return f"episodes/{slug}/"
+    return urljoin(config.site.base_url.rstrip("/") + "/", episode_path_for(slug).lstrip("/"))
 
 
-def source_link(episode) -> str:
+def episode_path_for(slug: str) -> str:
+    return f"/episodes/{slug}/"
+
+
+def source_link(episode, *, icon: bool = True) -> str:
     if not episode["episode_url"]:
         return ""
-    return f'<a href="{escape(episode["episode_url"])}">Original episode</a>'
+    icon_html = '<span class="external-icon" aria-hidden="true">↗</span>' if icon else ""
+    return f'<a class="external-link" href="{escape(episode["episode_url"])}" target="_blank" rel="noopener noreferrer">Original episode{icon_html}</a>'
+
+
+def render_filters(episodes) -> str:
+    counts: dict[str, int] = {}
+    for episode in episodes:
+        for lab in _people(episode["labs_json"]):
+            counts[lab] = counts.get(lab, 0) + 1
+    buttons = [
+        f'<button type="button" class="filter-button active" data-filter="all" aria-pressed="true">All <span>{len(episodes)}</span></button>'
+    ]
+    for lab, count in sorted(counts.items(), key=lambda item: (-item[1], item[0].lower())):
+        buttons.append(
+            f'<button type="button" class="filter-button" data-filter="{escape(_lab_token(lab))}" aria-pressed="false">{escape(lab)} <span>{count}</span></button>'
+        )
+    return f"""
+    <section class="filters" aria-label="Company filters">
+      <div class="filter-label">Company</div>
+      <div class="filter-buttons">{''.join(buttons)}</div>
+    </section>
+    """
+
+
+def _rss_ready(episode) -> bool:
+    return bool(
+        episode["transcript_text"]
+        and (episode["summary_text"] or episode["summary_html"])
+        and episode["status"] == "published"
+    )
+
+
+def _rss_description(episode) -> str:
+    hosts = _people(episode["hosts_json"]) or _people(episode["feed_hosts_json"])
+    guests = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
+    labs = _people(episode["labs_json"])
+    summary = episode["summary_html"] or paragraphs_to_html(episode["summary_text"] or "")
+    source = source_link(episode, icon=False)
+    source_paragraph = f"<p>{source}</p>" if source else ""
+    return f"""
+<p><strong>Podcast:</strong> {escape(episode['feed_name'])}</p>
+<p><strong>Episode:</strong> {escape(episode['title'])}</p>
+<p><strong>Hosts:</strong> {escape(comma_join(hosts) or 'Unknown')}</p>
+<p><strong>Guests:</strong> {escape(comma_join(guests) or 'Unknown')}</p>
+<p><strong>Where they work:</strong> {escape(comma_join(labs) or 'Unknown')}</p>
+<h3>Summary</h3>
+{summary}
+{source_paragraph}
+"""
+
+
+def _summary_teaser(episode) -> str:
+    if episode["summary_text"]:
+        return str(episode["summary_text"]).splitlines()[0]
+    description = str(episode["description"] or "").strip()
+    if description:
+        return "Summary pending. " + description[:260].strip()
+    return "Summary pending."
+
+
+def _summary_html(episode) -> str:
+    if episode["summary_html"] or episode["summary_text"]:
+        return episode["summary_html"] or paragraphs_to_html(episode["summary_text"] or "")
+    description = str(episode["description"] or "").strip()
+    if description:
+        return f'<p class="notice">Summary pending. Metadata is shown until local transcription and summarization finish.</p>{paragraphs_to_html(description)}'
+    return '<p class="notice">Summary pending. Local transcription and summarization have not finished yet.</p>'
+
+
+def _transcript_html(episode) -> str:
+    if episode["transcript_text"]:
+        return paragraphs_to_html(episode["transcript_text"] or "")
+    status = str(episode["status"])
+    reason = str(episode["skip_reason"] or "").strip()
+    if status == "transcription_failed":
+        detail = f" {escape(reason)}" if reason else ""
+        return f'<p class="notice error">Transcript unavailable because local transcription failed.{detail}</p>'
+    if status == "summary_failed":
+        return '<p class="notice">Transcript is available, but summarization failed.</p>'
+    return '<p class="notice">Transcript pending. This episode has been included and local transcription is still running or queued.</p>'
+
+
+def _card_status(episode) -> str:
+    status = str(episode["status"])
+    if status == "relevant":
+        return "Pending transcript"
+    if status == "transcribed":
+        return "Pending summary"
+    if status == "transcription_failed":
+        return "Transcription failed"
+    if status == "summary_failed":
+        return "Summary failed"
+    return ""
+
+
+def _detail_status(episode) -> str:
+    status = str(episode["status"])
+    labels = {
+        "relevant": "Transcript pending",
+        "transcribed": "Summary pending",
+        "transcription_failed": "Transcription failed",
+        "summary_failed": "Summary failed",
+    }
+    return labels.get(status, "")
+
+
+def _lab_token(lab: str) -> str:
+    return slugify(lab)
 
 
 def _people(value: str | None) -> list[str]:
@@ -278,12 +425,12 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 }
 
 .hero {
-  min-height: 260px;
+  min-height: 230px;
   display: flex;
   justify-content: space-between;
   gap: 24px;
   align-items: flex-end;
-  padding: 42px 0 30px;
+  padding: 38px 0 26px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -313,9 +460,12 @@ h1 {
 
 .rss-link,
 .actions a,
-.top-nav a {
+.top-nav a,
+.filter-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  gap: 6px;
   min-height: 38px;
   padding: 8px 12px;
   border: 1px solid var(--line);
@@ -326,17 +476,57 @@ h1 {
   font-size: 0.92rem;
 }
 
+.filters {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 18px 0 8px;
+}
+
+.filter-label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-button {
+  cursor: pointer;
+  color: var(--muted);
+  font: inherit;
+  min-height: 34px;
+  padding: 6px 10px;
+}
+
+.filter-button span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.filter-button.active {
+  color: var(--ink);
+  border-color: #8ebbb4;
+  background: #eef8f5;
+}
+
 .episode-list {
   display: grid;
-  gap: 16px;
-  padding: 28px 0;
+  gap: 10px;
+  padding: 18px 0;
 }
 
 .episode-card {
   display: grid;
-  grid-template-columns: 148px 1fr;
-  gap: 18px;
-  padding: 16px;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 14px;
+  padding: 12px;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -368,15 +558,21 @@ h1 {
 .meta-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 6px 10px;
   color: var(--muted);
   font-size: 0.86rem;
 }
 
+.meta-row span:not(:last-child)::after {
+  content: "·";
+  color: #9aa6b2;
+  margin-left: 10px;
+}
+
 .episode-card h2 {
-  margin: 6px 0 10px;
-  font-size: 1.35rem;
-  line-height: 1.18;
+  margin: 4px 0 8px;
+  font-size: 1.13rem;
+  line-height: 1.2;
   letter-spacing: 0;
 }
 
@@ -387,15 +583,47 @@ h1 {
 
 .people,
 .summary {
-  margin: 4px 0;
+  margin: 3px 0;
   color: var(--muted);
+}
+
+.people {
+  font-size: 0.94rem;
+}
+
+.summary {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.status-pill,
+.notice {
+  color: var(--muted);
+  background: #eef4f8;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.status-pill {
+  display: inline-block;
+  margin: 14px 0 8px;
+  font-size: 0.9rem;
+}
+
+.notice.error {
+  color: #8a2f24;
+  background: #fff1ee;
+  border-color: #f0c4bc;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin: 12px 0;
+  margin: 9px 0;
 }
 
 .tags span {
@@ -410,8 +638,18 @@ h1 {
 .actions,
 .top-nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 8px;
+}
+
+.actions a {
+  min-height: 36px;
+  white-space: nowrap;
+}
+
+.external-icon {
+  line-height: 1;
+  font-size: 0.95em;
 }
 
 .top-nav {
@@ -456,9 +694,24 @@ h1 {
   .shell { width: min(100% - 24px, 1120px); padding-top: 18px; }
   .hero { min-height: 220px; display: block; }
   .rss-link { margin-top: 18px; }
-  .episode-card { grid-template-columns: 88px 1fr; gap: 12px; padding: 12px; }
+  .filters { grid-template-columns: 1fr; gap: 8px; padding-top: 16px; }
+  .filter-buttons {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .filter-buttons::-webkit-scrollbar { display: none; }
+  .filter-button { flex: 0 0 auto; }
+  .episode-card { grid-template-columns: 1fr; gap: 10px; padding: 12px; }
+  .art {
+    aspect-ratio: 16 / 5;
+    max-height: 96px;
+  }
   .episode-card h2 { font-size: 1.08rem; }
   .summary { display: none; }
+  .actions { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .actions a { min-width: 0; padding: 8px 9px; }
   .detail-hero { grid-template-columns: 1fr; }
   .detail-art { max-width: 180px; }
 }
