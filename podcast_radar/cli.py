@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import http.server
 import os
+import pathlib
 import shutil
 import socketserver
 import sys
@@ -122,9 +123,7 @@ def doctor(config: Config) -> int:
             warnings.append(f"{config.llm.api_key_env} is not set; judging/summarization will fail")
     if config.llm.provider == "ollama" and not config.llm.base_url:
         errors.append("llm.base_url is required for ollama")
-    if config.transcription.provider == "command":
-        if shutil.which(config.transcription.command) is None:
-            warnings.append(f"transcription command not found: {config.transcription.command}")
+    warnings.extend(transcription_preflight_warnings(config))
     config.app.state_dir.mkdir(parents=True, exist_ok=True)
     with storage.connect(config) as conn:
         counts = storage.status_counts(conn)
@@ -146,6 +145,38 @@ def llm_preflight_error(config: Config) -> str | None:
     if config.llm.provider == "openai_compatible" and config.llm.api_key_env:
         if not os.environ.get(config.llm.api_key_env):
             return f"{config.llm.api_key_env} is not set"
+    return None
+
+
+def transcription_preflight_warnings(config: Config) -> list[str]:
+    if config.transcription.provider != "command":
+        return []
+
+    warnings: list[str] = []
+    if shutil.which(config.transcription.command) is None:
+        warnings.append(f"transcription command not found: {config.transcription.command}")
+
+    model_path = _configured_model_path(config.transcription.args)
+    if model_path is None:
+        return warnings
+    if "{" in model_path or "}" in model_path:
+        return warnings
+
+    path = pathlib.Path(model_path).expanduser()
+    if not path.is_absolute():
+        path = config.root / path
+    if not path.exists():
+        warnings.append(f"transcription model not found: {path}")
+    return warnings
+
+
+def _configured_model_path(args: tuple[str, ...]) -> str | None:
+    for index, arg in enumerate(args):
+        if arg in {"-m", "--model"} and index + 1 < len(args):
+            return args[index + 1]
+        for prefix in ("-m=", "--model="):
+            if arg.startswith(prefix):
+                return arg[len(prefix) :]
     return None
 
 

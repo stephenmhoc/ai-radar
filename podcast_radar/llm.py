@@ -67,7 +67,7 @@ def judge_episode(config: Config, conn, episode) -> dict[str, Any]:
     prompt = build_judge_prompt(config, episode)
     client = LLMClient(config)
     response = client.chat_json(system=JUDGE_SYSTEM, user=prompt["user"])
-    result = _normalize_judge(response)
+    result = _normalize_judge(response, config)
     storage.add_decision(
         conn,
         int(episode["id"]),
@@ -99,6 +99,25 @@ def summarize_episode(config: Config, conn, episode) -> dict[str, Any]:
     return result
 
 
+def verify_transcript_episode(config: Config, conn, episode) -> dict[str, Any]:
+    prompt = build_transcript_judge_prompt(config, episode)
+    client = LLMClient(config)
+    response = client.chat_json(system=JUDGE_SYSTEM, user=prompt["user"])
+    result = _normalize_judge(response, config)
+    storage.add_decision(
+        conn,
+        int(episode["id"]),
+        stage="transcript_judge",
+        model=config.llm.model,
+        prompt=prompt,
+        response=result,
+    )
+    include_status = "published" if str(episode["status"]) == "published" else "transcribed"
+    storage.set_judgement(conn, int(episode["id"]), result, include_status=include_status)
+    conn.commit()
+    return result
+
+
 def build_judge_prompt(config: Config, episode) -> dict[str, str]:
     roster_lines: list[str] = []
     for lab in config.labs:
@@ -106,19 +125,25 @@ def build_judge_prompt(config: Config, episode) -> dict[str, str]:
         people = ", ".join(lab.people)
         roster_lines.append(f"- {lab.name} (aliases: {aliases}): {people}")
     user = f"""
-Decide whether this podcast episode should be processed for the AI lab podcast radar.
+Decide whether this podcast episode is worth transcribing as a candidate for the AI lab podcast radar.
 
-Include the episode only if it likely features a guest who is a current or recent technical member,
-founder, executive, senior research leader, engineering leader, product leader, or AI infrastructure
-leader from one of the target organizations. Do not include episodes that only discuss these companies
-without a qualifying guest. Do not include journalists, investors, analysts, or commentators unless they
-also hold a qualifying role at a target lab.
+This is a metadata-only prefilter. It does not publish the episode. Include only if it likely features a guest
+who is a current or recent technical member, founder, executive, senior research leader, engineering
+leader, product leader, or AI infrastructure leader at one of the target organizations below.
 
 Target organizations and seed roster examples:
 {chr(10).join(roster_lines)}
 
-You may include qualifying people who are not in the seed roster if the episode metadata clearly names
-their affiliation with a target organization. Be conservative when the guest is ambiguous.
+Rules:
+- "labs" must contain only target organizations where the qualifying guest currently works or recently worked.
+- "matched_people" must contain only people who appear to be actual guests, interviewees, cohosts, or named speakers in this episode.
+- Do not add labs merely because they are discussed, invested, partnered, collaborated, competed, mentioned, or employ someone who is not the guest.
+- Do not include episodes that only discuss target labs without a qualifying guest from those target labs.
+- Do not include journalists, investors, analysts, commentators, customers, or partners unless they also hold a qualifying role at a target lab.
+- If an apparent guest works at a non-target company such as Intel, Microsoft, GitHub, TSMC, Cognition, OpenInspect, SpaceX, a16z, or a startup, return include=false unless the metadata verifies a current or recent target-lab role for that guest.
+- You may include qualifying people who are not in the seed roster if metadata or strong world knowledge verify their target-lab affiliation.
+- Be conservative when the guest or affiliation is ambiguous.
+- If no qualifying target-lab guest is found, return include=false, labs=[], and matched_people=[].
 
 Podcast: {episode['feed_name']}
 Title: {episode['title']}
@@ -131,10 +156,61 @@ Metadata:
 Return strict JSON with:
 include: boolean
 confidence: number from 0 to 1
-labs: array of target organization names
-matched_people: array of qualifying people found in the metadata
+labs: array of target organization names where qualifying guests work or recently worked
+matched_people: array of qualifying guest people only
 guest_names: array of all apparent guests
 reason: concise string
+"""
+    return {"user": user.strip()}
+
+
+def build_transcript_judge_prompt(config: Config, episode) -> dict[str, str]:
+    roster_lines: list[str] = []
+    for lab in config.labs:
+        aliases = ", ".join(lab.aliases)
+        people = ", ".join(lab.people)
+        roster_lines.append(f"- {lab.name} (aliases: {aliases}): {people}")
+    transcript = truncate(episode["transcript_text"] or "", config.llm.max_transcript_chars)
+    user = f"""
+Make the final publication decision for this AI lab podcast radar episode using the transcript.
+
+The site labels are guest affiliations, not topics. Include the episode only if the transcript,
+metadata, or your strong world knowledge verifies that an actual guest is a current or recent
+technical member, founder, executive, senior research leader, engineering leader, product leader,
+or AI infrastructure leader at one of the target organizations below.
+
+Target organizations and seed roster examples:
+{chr(10).join(roster_lines)}
+
+Rules:
+- "labs" must contain only target organizations where qualifying guests work or recently worked.
+- "matched_people" must contain only qualifying guests, not hosts or people merely mentioned.
+- A target-lab person who is only discussed, quoted, referenced in news, or mentioned by another guest does not qualify.
+- Do not add labs because they are discussed, invested in, partnered with, collaborated with, competed with, or mentioned.
+- Do not include an episode whose main guest works at a non-target company such as Intel, Microsoft, GitHub, TSMC, Cognition, OpenInspect, SpaceX, a16z, or a startup unless that guest also has a current or recent target-lab role.
+- Transcript introductions often state who the guest is. Prefer that over topic mentions later in the episode.
+- If the transcript shows that the candidate was a false positive, return include=false, labs=[], and matched_people=[].
+
+Podcast: {episode['feed_name']}
+Title: {episode['title']}
+Published: {episode['published_at'] or 'unknown'}
+Episode URL: {episode['episode_url'] or 'unknown'}
+Candidate guests from metadata: {episode['guests_json']}
+Candidate labs from metadata: {episode['labs_json']}
+
+Metadata:
+{truncate(strip_html(episode['description'] or ''), config.llm.max_metadata_chars)}
+
+Transcript:
+{transcript}
+
+Return strict JSON with:
+include: boolean
+confidence: number from 0 to 1
+labs: array of target organization names where qualifying guests work or recently worked
+matched_people: array of qualifying guest people only
+guest_names: array of all apparent guests
+reason: concise string explaining the guest affiliation evidence
 """
     return {"user": user.strip()}
 
@@ -147,8 +223,8 @@ Summarize this podcast episode for someone tracking what major AI labs are sayin
 Podcast: {episode['feed_name']}
 Title: {episode['title']}
 Episode URL: {episode['episode_url'] or 'unknown'}
-Candidate guests from judging: {episode['guests_json']}
-Candidate labs from judging: {episode['labs_json']}
+Verified guests from transcript judging: {episode['guests_json']}
+Verified labs from transcript judging: {episode['labs_json']}
 
 Transcript:
 {transcript}
@@ -160,7 +236,6 @@ key_points: array of 4-8 concrete bullets
 topics: array of short topic tags
 hosts: array of host names if identifiable
 guests: array of guest names if identifiable
-labs: array of target labs discussed by the relevant guest
 """
     return {"user": user.strip()}
 
@@ -199,14 +274,23 @@ def _raw_request_json(url: str, payload: dict[str, Any], headers: dict[str, str]
         raise LLMError(f"LLM request failed: {exc}") from exc
 
 
-def _normalize_judge(response: dict[str, Any]) -> dict[str, Any]:
+def _normalize_judge(response: dict[str, Any], config: Config) -> dict[str, Any]:
+    labs = _canonical_labs(config, response.get("labs"))
+    guests = _list(response.get("guest_names"))
+    matched_people = _matched_guest_people(response.get("matched_people"), guests)
+    include = bool(response.get("include")) and bool(labs) and bool(matched_people)
+    reason = str(response.get("reason", "")).strip()
+    if bool(response.get("include")) and not labs:
+        reason = (reason + " " if reason else "") + "No configured target-lab guest affiliation was verified."
+    elif bool(response.get("include")) and not matched_people:
+        reason = (reason + " " if reason else "") + "No qualifying target-lab guest was named."
     return {
-        "include": bool(response.get("include")),
+        "include": include,
         "confidence": float(response.get("confidence", 0.0) or 0.0),
-        "labs": _list(response.get("labs")),
-        "matched_people": _list(response.get("matched_people")),
-        "guest_names": _list(response.get("guest_names")),
-        "reason": str(response.get("reason", "")).strip(),
+        "labs": labs if include else [],
+        "matched_people": matched_people if include else [],
+        "guest_names": guests,
+        "reason": reason,
     }
 
 
@@ -221,7 +305,6 @@ def _normalize_summary(response: dict[str, Any]) -> dict[str, Any]:
         "topics": _list(response.get("topics")),
         "hosts": _list(response.get("hosts")),
         "guests": _list(response.get("guests")),
-        "labs": _list(response.get("labs")),
     }
 
 
@@ -233,6 +316,35 @@ def _list(value: Any) -> list[str]:
     if isinstance(value, list):
         return [str(item).strip() for item in value if str(item).strip()]
     return [str(value).strip()]
+
+
+def _canonical_labs(config: Config, value: Any) -> list[str]:
+    aliases: dict[str, str] = {}
+    for lab in config.labs:
+        aliases[lab.name.casefold()] = lab.name
+        for alias in lab.aliases:
+            aliases[alias.casefold()] = lab.name
+
+    canonical: list[str] = []
+    seen: set[str] = set()
+    for item in _list(value):
+        lab = aliases.get(item.casefold())
+        if lab and lab not in seen:
+            canonical.append(lab)
+            seen.add(lab)
+    return canonical
+
+
+def _matched_guest_people(matched_people: Any, guest_names: list[str]) -> list[str]:
+    matched = _list(matched_people)
+    if not guest_names:
+        return matched
+    guest_keys = {_name_key(guest) for guest in guest_names}
+    return [person for person in matched if _name_key(person) in guest_keys]
+
+
+def _name_key(value: str) -> str:
+    return " ".join(value.casefold().replace(".", " ").split())
 
 
 JUDGE_SYSTEM = """You are a conservative podcast filter. Return only valid JSON."""

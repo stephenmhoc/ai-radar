@@ -11,11 +11,9 @@ def run(config: Config, conn, *, limit: int | None = None, published_since: str 
         {f"ingest_{key}": value for key, value in feeds.ingest(config, conn, published_since=since).items()}
     )
     judged = judge_pending(config, conn, limit=limit, published_since=since)
-    pending_rendered = site.build_site(config, conn)
     processed = process_relevant(config, conn, limit=limit, published_since=since)
     rendered = site.build_site(config, conn)
     stats["judged"] = judged
-    stats["rendered_pending"] = pending_rendered["episodes"]
     stats["processed"] = processed
     stats["rendered"] = rendered["episodes"]
     return stats
@@ -65,9 +63,13 @@ def process_relevant(
             continue
         refreshed = storage.episode_by_id(conn, int(episode["id"]))
         try:
+            verification = llm.verify_transcript_episode(config, conn, refreshed)
+            if not verification["include"]:
+                continue
+            refreshed = storage.episode_by_id(conn, int(episode["id"]))
             llm.summarize_episode(config, conn, refreshed)
             count += 1
-        except Exception as exc:  # noqa: BLE001 - keep included episode public
+        except Exception as exc:  # noqa: BLE001 - preserve per-episode progress
             storage.mark_processing_failed(
                 conn,
                 int(episode["id"]),
@@ -77,9 +79,13 @@ def process_relevant(
             conn.commit()
     for episode in storage.episodes_for_status(conn, ("transcribed",), limit=limit, published_since=since):
         try:
-            llm.summarize_episode(config, conn, episode)
+            verification = llm.verify_transcript_episode(config, conn, episode)
+            if not verification["include"]:
+                continue
+            refreshed = storage.episode_by_id(conn, int(episode["id"]))
+            llm.summarize_episode(config, conn, refreshed)
             count += 1
-        except Exception as exc:  # noqa: BLE001 - keep transcript public
+        except Exception as exc:  # noqa: BLE001 - preserve per-episode progress
             storage.mark_processing_failed(
                 conn,
                 int(episode["id"]),

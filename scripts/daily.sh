@@ -37,9 +37,6 @@ deploy_site() {
 
 python3 -m podcast_radar --config config.toml ingest --since "$SINCE"
 python3 -m podcast_radar --config config.toml judge --since "$SINCE"
-python3 -m podcast_radar --config config.toml build-site
-deploy_site
-
 python3 -m podcast_radar --config config.toml process --since "$SINCE"
 python3 -m podcast_radar --config config.toml build-site
 deploy_site

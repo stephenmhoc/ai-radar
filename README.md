@@ -33,12 +33,20 @@ Set your LLM key if using the default OpenRouter-compatible config:
 export OPENROUTER_API_KEY="..."
 ```
 
-Install or point the config at a local transcription command. The default assumes `whisper-cli` from whisper.cpp:
+Install the local transcription backend. The current local config uses `whisper-cli` from whisper.cpp with the tiny English GGML model:
+
+```bash
+brew install whisper-cpp
+mkdir -p ~/.cache/whisper.cpp
+curl -L -f --max-time 120 \
+  -o ~/.cache/whisper.cpp/ggml-tiny.en.bin \
+  'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-tiny.en.bin?download=true'
+```
 
 ```toml
 [transcription]
 command = "whisper-cli"
-args = ["-m", "models/ggml-large-v3-turbo.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}"]
+args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-tiny.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1"]
 output_path = "{output_stem}.txt"
 ```
 
@@ -84,10 +92,10 @@ The main episode statuses are:
 
 - `new`: feed metadata has been stored but not judged.
 - `skipped`: LLM decided the episode is not relevant.
-- `relevant`: LLM decided the episode should be transcribed.
-- `transcribed`: local transcript exists and is stored in SQLite.
-- `published`: summary and transcript page have been rendered.
-- `failed`: an episode-specific step failed; the reason is stored in `skip_reason`.
+- `relevant`: metadata-only LLM prefilter decided the episode should be transcribed; this is an internal candidate and is not public.
+- `transcribed`: local transcript exists and transcript-based verification passed; this is still not public until summarization succeeds.
+- `published`: transcript-based verification passed and summary plus transcript page have been rendered.
+- `transcription_failed` / `summary_failed` / `failed`: an episode-specific step failed; the reason is stored in `skip_reason`, and the episode is not public.
 
 ## LLM Configuration
 
@@ -111,21 +119,23 @@ model = "llama3.1"
 api_key_env = ""
 ```
 
-The judge prompt uses the configured lab roster as seed examples, not a hard allowlist. It is allowed to include other current or recent qualifying people when the feed metadata clearly states their lab affiliation.
+The judge prompts use the configured lab roster as seed examples for people, not a hard allowlist of people. Lab labels themselves are restricted to the configured target labs. Metadata judging is only a prefilter; after local transcription, a second transcript-based judge decides whether the episode is actually publishable and confirms that labels represent where the guest works, not what companies were discussed.
 
 ## Local Transcription
 
 Transcription is deliberately a command wrapper so the service can use whichever local backend is best on the Mac.
 
-For whisper.cpp:
+For the local Apple Silicon whisper.cpp setup:
 
 ```toml
 [transcription]
 provider = "command"
 command = "whisper-cli"
-args = ["-m", "models/ggml-large-v3-turbo.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}"]
+args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-tiny.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1"]
 output_path = "{output_stem}.txt"
 ```
+
+The `-l en`, `-bs 1`, and `-bo 1` flags favor speed for English podcasts. On an Apple M4 Mac mini, this setup transcribed an 11m34s episode in about 7 seconds versus about 99 seconds with Homebrew OpenAI Whisper using `--model tiny`.
 
 For a custom wrapper script:
 
@@ -175,7 +185,7 @@ python3 -m podcast_radar --config config.toml launchd-install \
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.merimeri.ai-radar.plist
 ```
 
-The scheduled runner is `scripts/daily.sh`. It calculates `now - AI_RADAR_LOOKBACK_HOURS`, ingests and judges new episodes, rebuilds the static site immediately, and deploys `public/` to Cloudflare Pages before transcription starts. It then transcribes and summarizes included episodes, rebuilds the site again, and deploys the richer pages.
+The scheduled runner is `scripts/daily.sh`. It calculates `now - AI_RADAR_LOOKBACK_HOURS`, ingests new episodes, and uses metadata-only judging as an internal prefilter for transcription. It does not publish those candidates. It then transcribes candidates locally, asks the LLM to make a second publication decision using the transcript, summarizes verified episodes, rebuilds the site, and deploys `public/` to Cloudflare Pages.
 
 The generated LaunchAgent has `RunAtLoad = true`, so after the machine restarts and the user session is loaded, it runs once immediately in addition to the daily 8:30 AM schedule. The 36-hour lookback is intentional: it gives the service overlap after restarts, sleep, delayed feed publication, or a missed daily run, while the database uniqueness constraint prevents duplicate episodes.
 
@@ -185,13 +195,14 @@ Daily processing flow:
 2. `scripts/daily.sh` loads ignored local secrets from `var/secrets.env`.
 3. The script computes the rolling cutoff from `AI_RADAR_LOOKBACK_HOURS`.
 4. `ingest --since <cutoff>` fetches active feeds and upserts episodes. Duplicate feed items are updated by `(feed_id, guid)`.
-5. `judge --since <cutoff>` asks the LLM to decide which new episodes qualify.
-6. `build-site` renders all included episodes, even if transcription has not finished yet.
-7. Wrangler deploys that first-pass site so the episode appears on the website immediately.
-8. `process --since <cutoff>` transcribes qualifying episodes locally and summarizes them.
-9. `build-site` and Wrangler run again so completed transcripts and summaries replace the pending state.
+5. `judge --since <cutoff>` asks the LLM to decide which new episodes are worth transcribing. This is only a candidate prefilter.
+6. `process --since <cutoff>` transcribes candidate episodes locally.
+7. After transcription, the LLM runs a transcript-based verification pass. The transcript is treated as the source of truth for who the guest is and where they work.
+8. If transcript verification says the guest is not a current or recent technical/executive member of a configured target lab, the episode is marked skipped and never appears on the site.
+9. If transcript verification passes, the episode is summarized.
+10. `build-site` and Wrangler deploy only published episodes with both transcript and summary available.
 
-Relevant episodes are public on the website as soon as the LLM includes them. Their detail pages show metadata, guest/lab information, and pending notices until transcription and summarization complete. If transcription or summarization fails, the episode stays on the site with a failure notice instead of disappearing. RSS items are stricter: an episode only enters `feed.xml` after both transcript and summary are available.
+Episodes are public on the website and RSS feed only after transcript-based verification and summarization. Metadata-only candidates, transcription failures, summary failures, and transcript false positives stay out of the static site.
 
 Local secrets can be stored outside Git in `var/secrets.env`, for example:
 

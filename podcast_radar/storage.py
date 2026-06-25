@@ -9,7 +9,7 @@ from typing import Any, Iterable
 from .config import Config, FeedConfig
 
 
-PUBLIC_STATUSES = ("relevant", "transcribed", "published", "transcription_failed", "summary_failed")
+PUBLIC_STATUSES = ("published",)
 
 
 def connect(config: Config) -> sqlite3.Connection:
@@ -233,9 +233,15 @@ def add_decision(
     )
 
 
-def set_judgement(conn: sqlite3.Connection, episode_id: int, result: dict[str, Any]) -> None:
+def set_judgement(
+    conn: sqlite3.Connection,
+    episode_id: int,
+    result: dict[str, Any],
+    *,
+    include_status: str = "relevant",
+) -> None:
     include = bool(result.get("include"))
-    status = "relevant" if include else "skipped"
+    status = include_status if include else "skipped"
     conn.execute(
         """
         UPDATE episodes
@@ -289,7 +295,6 @@ def set_summary(conn: sqlite3.Connection, episode_id: int, result: dict[str, Any
             topics_json = ?,
             hosts_json = CASE WHEN ? != '[]' THEN ? ELSE hosts_json END,
             guests_json = CASE WHEN ? != '[]' THEN ? ELSE guests_json END,
-            labs_json = CASE WHEN ? != '[]' THEN ? ELSE labs_json END,
             summarized_at = ?,
             status = 'published',
             updated_at = ?
@@ -305,8 +310,6 @@ def set_summary(conn: sqlite3.Connection, episode_id: int, result: dict[str, Any
             dumps(_as_list(result.get("hosts"))),
             dumps(_as_list(result.get("guests"))),
             dumps(_as_list(result.get("guests"))),
-            dumps(_as_list(result.get("labs"))),
-            dumps(_as_list(result.get("labs"))),
             now_iso(),
             now_iso(),
             episode_id,

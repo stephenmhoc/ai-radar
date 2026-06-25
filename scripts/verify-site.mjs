@@ -56,7 +56,15 @@ async function checkViewport(browserInstance, viewport) {
   await page.goto(`http://${host}:${port}/`, { waitUntil: "networkidle" });
 
   await expectCount(page, ".episode-card", 1, "episode cards");
+  await expectCount(page, ".briefing", 1, "briefing sections");
+  await expectCount(page, ".spotlight", 1, "spotlight lead cards");
+  await expectCount(page, ".metric-grid div", 4, "coverage metrics");
+  await expectCount(page, ".meter-row", 1, "lab meter rows");
   await expectCount(page, ".filter-button", 2, "filter buttons");
+  await expectCount(page, "[data-search-input]", 1, "search controls");
+  await expectCount(page, "[data-topic-filter]", 1, "topic filters");
+  await expectCount(page, "[data-feed-filter]", 1, "podcast filters");
+  await expectCount(page, ".signal", 1, "episode relevance signals");
   await expectCount(page, ".external-icon", 1, "external link icons");
   await expectCount(page, ".actions", 1, "action rows");
 
@@ -65,6 +73,7 @@ async function checkViewport(browserInstance, viewport) {
   }
 
   const firstCard = page.locator(".episode-card").first();
+  const firstDetailHref = await firstCard.getByRole("link", { name: "Episode details" }).getAttribute("href");
   const buttonsBox = await firstCard.locator(".actions").boundingBox();
   const detailBox = await firstCard.getByRole("link", { name: "Episode details" }).boundingBox();
   if (!buttonsBox || !detailBox) throw new Error("missing episode action button layout");
@@ -83,15 +92,26 @@ async function checkViewport(browserInstance, viewport) {
 
   if (viewport.name === "mobile") {
     const style = await firstCard.evaluate((element) => getComputedStyle(element).gridTemplateColumns);
-    if (style.trim().includes(" ")) {
-      throw new Error(`mobile card should use one content column, got: ${style}`);
+    const columns = style.trim().split(/\s+/);
+    if (columns.length !== 2) {
+      throw new Error(`mobile card should use a compact two-column row, got: ${style}`);
     }
     const artBox = await firstCard.locator(".art").boundingBox();
     if (!artBox) throw new Error("missing mobile episode art");
-    if (artBox.width > 100 || Math.abs(artBox.width - artBox.height) > 2) {
+    if (artBox.width > 70 || Math.abs(artBox.width - artBox.height) > 2) {
       throw new Error(`mobile art should stay in a constrained square box, got: ${artBox.width}x${artBox.height}`);
     }
   }
+
+  const searchInput = page.locator("[data-search-input]");
+  await searchInput.fill("__no_matching_episode__");
+  if (await page.locator(".episode-card:visible").count()) {
+    throw new Error("search did not hide non-matching cards");
+  }
+  if (!(await page.getByText("No matching episodes").count())) {
+    throw new Error("empty search state did not render");
+  }
+  await searchInput.fill("");
 
   const openAiFilter = page.locator('[data-filter="openai"]');
   if (await openAiFilter.count()) {
@@ -105,6 +125,13 @@ async function checkViewport(browserInstance, viewport) {
   }
 
   await page.screenshot({ path: join(outDir, `${viewport.name}.png`), fullPage: true });
+  if (!firstDetailHref) throw new Error("missing first episode detail href");
+  await page.goto(new URL(firstDetailHref, `http://${host}:${port}/`).toString(), { waitUntil: "networkidle" });
+  await expectCount(page, ".brief-grid", 1, "episode brief grids");
+  await expectCount(page, ".brief-signal", 1, "why it matters sections");
+  await expectCount(page, ".brief-facts dd", 4, "episode fact values");
+  await expectCount(page, ".transcript-sentence", 1, "transcript sentences");
+  await page.screenshot({ path: join(outDir, `${viewport.name}-detail.png`), fullPage: true });
   await page.close();
 }
 

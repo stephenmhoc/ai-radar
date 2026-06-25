@@ -5,6 +5,20 @@ import re
 import unicodedata
 from html.parser import HTMLParser
 
+_ABBREVIATIONS = {
+    "a.i",
+    "dr",
+    "e.g",
+    "i.e",
+    "mr",
+    "mrs",
+    "ms",
+    "prof",
+    "u.k",
+    "u.s",
+    "vs",
+}
+
 
 class _HTMLTextParser(HTMLParser):
     def __init__(self) -> None:
@@ -73,6 +87,54 @@ def paragraphs_to_html(value: str) -> str:
     return "\n".join(rendered)
 
 
+def transcript_to_html(value: str) -> str:
+    return "\n".join(f'<p class="transcript-sentence">{escape(sentence)}</p>' for sentence in split_sentences(value))
+
+
+def split_sentences(value: str) -> list[str]:
+    text = re.sub(r"\s+", " ", clean_text(value)).strip()
+    if not text:
+        return []
+
+    sentences: list[str] = []
+    start = 0
+    index = 0
+    while index < len(text):
+        if text[index] not in ".!?":
+            index += 1
+            continue
+
+        end = index + 1
+        while end < len(text) and text[end] in ".!?":
+            end += 1
+        while end < len(text) and text[end] in "\"')]}’”":
+            end += 1
+
+        next_index = end
+        while next_index < len(text) and text[next_index].isspace():
+            next_index += 1
+
+        if next_index == len(text) or next_index > end:
+            sentence = text[start:end].strip()
+            if not _ends_with_abbreviation(sentence) or next_index == len(text):
+                sentences.append(sentence)
+                start = next_index
+                index = next_index
+                continue
+
+        index = end
+
+    tail = text[start:].strip()
+    if tail:
+        sentences.append(tail)
+    return sentences
+
+
+def _ends_with_abbreviation(value: str) -> bool:
+    normalized = value.lower().rstrip("\"')]}’”")
+    match = re.search(r"(?:^|\s)([a-z](?:[a-z.]*)?)\.$", normalized)
+    return bool(match and match.group(1) in _ABBREVIATIONS)
+
+
 def comma_join(values: list[str]) -> str:
     return ", ".join(value for value in values if value)
-

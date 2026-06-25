@@ -2,7 +2,15 @@ import pathlib
 import tempfile
 import unittest
 
-from podcast_radar.config import AppConfig, Config, FeedConfig, LLMConfig, LabConfig, SiteConfig, TranscriptionConfig
+from podcast_radar.config import (
+    AppConfig,
+    Config,
+    FeedConfig,
+    LLMConfig,
+    LabConfig,
+    SiteConfig,
+    TranscriptionConfig,
+)
 from podcast_radar import site, storage
 
 
@@ -57,7 +65,12 @@ class SiteGenerationTests(unittest.TestCase):
                         "reason": "OpenAI executive guest",
                     },
                 )
-                storage.set_transcript(conn, episode_id, "Transcript text", root / "transcript.txt")
+                storage.set_transcript(
+                    conn,
+                    episode_id,
+                    "Dr. Sam introduced the model\nacross wrapped transcript lines. It changed the eval terms. We talked next.",
+                    root / "transcript.txt",
+                )
                 storage.set_summary(
                     conn,
                     episode_id,
@@ -83,6 +96,10 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn("Sam Altman", index)
             self.assertIn("data-filter=\"openai\"", index)
             self.assertIn("data-labs=\"openai\"", index)
+            self.assertIn("data-search-input", index)
+            self.assertIn("data-topic-filter", index)
+            self.assertIn("data-feed-filter", index)
+            self.assertIn('<p class="signal">Point one</p>', index)
             self.assertNotIn("Summary and transcript ready", index)
             rss = (root / "public" / "feed.xml").read_text()
             self.assertIn("https://radar.example.com/episodes/", rss)
@@ -91,8 +108,18 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn("<strong>Guests:</strong> Sam Altman", rss)
             self.assertIn("<strong>Where they work:</strong> OpenAI", rss)
             self.assertIn("<h3>Summary</h3>", rss)
+            page = next((root / "public" / "episodes").glob("*/index.html")).read_text()
+            self.assertIn("Why it matters", page)
+            self.assertIn("Episode facts", page)
+            self.assertIn("Point one", page)
+            self.assertIn(
+                '<p class="transcript-sentence">Dr. Sam introduced the model across wrapped transcript lines.</p>',
+                page,
+            )
+            self.assertIn('<p class="transcript-sentence">It changed the eval terms.</p>', page)
+            self.assertIn('<p class="transcript-sentence">We talked next.</p>', page)
 
-    def test_relevant_episode_is_public_before_transcription(self) -> None:
+    def test_relevant_episode_is_not_public_before_transcription(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = pathlib.Path(tmp)
             config = Config(
@@ -144,14 +171,11 @@ class SiteGenerationTests(unittest.TestCase):
                 )
                 result = site.build_site(config, conn)
 
-            self.assertEqual(result["episodes"], 1)
+            self.assertEqual(result["episodes"], 0)
             self.assertEqual(result["rss_items"], 0)
             index = (root / "public" / "index.html").read_text()
-            self.assertIn("Episode details", index)
-            self.assertIn("Pending transcript", index)
-            page = next((root / "public" / "episodes").glob("*/index.html")).read_text()
-            self.assertIn("Summary pending", page)
-            self.assertIn("Transcript pending", page)
+            self.assertIn("No relevant episodes yet", index)
+            self.assertFalse(any((root / "public" / "episodes").glob("*/index.html")))
             rss = (root / "public" / "feed.xml").read_text()
             self.assertNotIn("<item>", rss)
             self.assertNotIn("Fiona Fung on engineering", rss)
