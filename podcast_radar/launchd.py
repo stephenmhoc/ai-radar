@@ -1,9 +1,7 @@
 from __future__ import annotations
 
-import os
 import pathlib
 import plistlib
-import sys
 
 from .config import Config
 
@@ -11,26 +9,35 @@ from .config import Config
 LABEL = "com.merimeri.ai-radar"
 
 
-def install(config: Config, *, hour: int, minute: int) -> pathlib.Path:
+def install(
+    config: Config,
+    *,
+    hour: int,
+    minute: int,
+    lookback_hours: int,
+    deploy_project: str,
+    deploy_branch: str,
+) -> pathlib.Path:
     log_dir = config.app.state_dir / "logs"
     log_dir.mkdir(parents=True, exist_ok=True)
+    runner = config.root / "scripts" / "daily.sh"
     plist = {
         "Label": LABEL,
         "ProgramArguments": [
-            sys.executable,
-            "-m",
-            "podcast_radar",
-            "--config",
-            str(config.root / "config.toml"),
-            "run",
+            "/bin/zsh",
+            str(runner),
         ],
         "WorkingDirectory": str(config.root),
-        "RunAtLoad": False,
+        "RunAtLoad": True,
         "StartCalendarInterval": {"Hour": hour, "Minute": minute},
         "StandardOutPath": str(log_dir / "launchd.out.log"),
         "StandardErrorPath": str(log_dir / "launchd.err.log"),
         "EnvironmentVariables": {
-            "PATH": os.environ.get("PATH", "/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin"),
+            "PATH": "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "AI_RADAR_LOOKBACK_HOURS": str(lookback_hours),
+            "AI_RADAR_DEPLOY_PROJECT": deploy_project,
+            "AI_RADAR_DEPLOY_BRANCH": deploy_branch,
         },
     }
     target = pathlib.Path.home() / "Library" / "LaunchAgents" / f"{LABEL}.plist"

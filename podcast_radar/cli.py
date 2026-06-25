@@ -48,15 +48,25 @@ def main(argv: list[str] | None = None) -> int:
     launchd_parser = subparsers.add_parser("launchd-install", help="Install a daily macOS LaunchAgent.")
     launchd_parser.add_argument("--hour", type=int, default=8)
     launchd_parser.add_argument("--minute", type=int, default=30)
+    launchd_parser.add_argument("--lookback-hours", type=int, default=36)
+    launchd_parser.add_argument("--deploy-project", default="ai-radar")
+    launchd_parser.add_argument("--deploy-branch", default="main")
 
     args = parser.parse_args(argv)
     config = load_config(args.config)
     if args.command == "doctor":
         return doctor(config)
     if args.command == "launchd-install":
-        path = launchd.install(config, hour=args.hour, minute=args.minute)
+        path = launchd.install(
+            config,
+            hour=args.hour,
+            minute=args.minute,
+            lookback_hours=args.lookback_hours,
+            deploy_project=args.deploy_project,
+            deploy_branch=args.deploy_branch,
+        )
         print(f"wrote={path}")
-        print(f"load with: launchctl load {path}")
+        print(f"load with: launchctl bootstrap gui/$(id -u) {path}")
         return 0
     if args.command in {"judge", "process", "run"}:
         llm_error = llm_preflight_error(config)

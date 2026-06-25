@@ -160,11 +160,33 @@ Point DNS for `llm-podcasts.merimerimeri.com` at the Pages project, or change `[
 
 ## Daily LaunchAgent
 
-After the LLM provider and transcription command are configured, install a daily macOS LaunchAgent:
+After the LLM provider and transcription command are configured, install a daily macOS LaunchAgent. It runs a rolling lookback, so reruns overlap safely; duplicate feed items are upserted by `(feed_id, guid)` rather than inserted twice.
 
 ```bash
-python3 -m podcast_radar --config config.toml launchd-install --hour 8 --minute 30
-launchctl load ~/Library/LaunchAgents/com.merimeri.ai-radar.plist
+python3 -m podcast_radar --config config.toml launchd-install \
+  --hour 8 \
+  --minute 30 \
+  --lookback-hours 36 \
+  --deploy-project ai-radar
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.merimeri.ai-radar.plist
+```
+
+The scheduled runner is `scripts/daily.sh`. It calculates `now - AI_RADAR_LOOKBACK_HOURS`, runs `podcast_radar run --since <cutoff>`, rebuilds the static site, and deploys `public/` to Cloudflare Pages.
+
+The generated LaunchAgent has `RunAtLoad = true`, so after the machine restarts and the user session is loaded, it runs once immediately in addition to the daily 8:30 AM schedule. The 36-hour lookback is intentional: it gives the service overlap after restarts, sleep, delayed feed publication, or a missed daily run, while the database uniqueness constraint prevents duplicate episodes.
+
+Daily processing flow:
+
+1. `launchd` starts `scripts/daily.sh`.
+2. `scripts/daily.sh` loads ignored local secrets from `var/secrets.env`.
+3. The script computes the rolling cutoff from `AI_RADAR_LOOKBACK_HOURS`.
+4. `podcast_radar run --since <cutoff>` fetches active feeds, upserts episodes, asks the LLM to judge new items, transcribes relevant items locally, summarizes them, and rebuilds the static site.
+5. The script deploys `public/` to Cloudflare Pages with Wrangler.
+
+Local secrets can be stored outside Git in `var/secrets.env`, for example:
+
+```bash
+OPENROUTER_API_KEY=...
 ```
 
 Logs go to:
