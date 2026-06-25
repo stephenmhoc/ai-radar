@@ -1,0 +1,6 @@
+var/
+public/
+.venv/
+.pycache/
+__pycache__/
+.pytest_cache/

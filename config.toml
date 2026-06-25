@@ -1,0 +1,205 @@
+[app]
+timezone = "America/New_York"
+database_path = "var/radar.sqlite3"
+public_dir = "public"
+state_dir = "var"
+lookback_days = 14
+user_agent = "ai-radar/0.1"
+
+[llm]
+provider = "openai_compatible"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+model = "openai/gpt-4.1-mini"
+temperature = 0.1
+max_metadata_chars = 12000
+max_transcript_chars = 130000
+
+[transcription]
+provider = "command"
+command = "whisper-cli"
+args = ["-m", "models/ggml-large-v3-turbo.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}"]
+output_path = "{output_stem}.txt"
+audio_dir = "var/audio"
+transcript_dir = "var/transcripts"
+max_audio_mb = 750
+keep_audio = false
+
+[site]
+title = "AI Radar"
+description = "Podcast episodes featuring technical leaders and executives from major AI labs."
+base_url = "https://llm-podcasts.merimerimeri.com"
+cname = "llm-podcasts.merimerimeri.com"
+max_items = 100
+rss_title = "AI Radar"
+rss_description = "New podcast episodes featuring major AI lab guests."
+
+[[feeds]]
+name = "Dwarkesh Podcast"
+url = "https://api.substack.com/feed/podcast/69345.rss"
+hosts = ["Dwarkesh Patel"]
+
+[[feeds]]
+name = "Latent Space"
+url = "https://api.substack.com/feed/podcast/1084089.rss"
+hosts = ["Alessio Fanelli", "Swyx"]
+
+[[feeds]]
+name = "Lex Fridman Podcast"
+url = "https://lexfridman.com/feed/podcast/"
+hosts = ["Lex Fridman"]
+
+[[feeds]]
+name = "The Cognitive Revolution"
+url = "https://feeds.megaphone.fm/RINTP3108857801"
+hosts = ["Nathan Labenz"]
+
+[[feeds]]
+name = "No Priors"
+url = "https://feeds.megaphone.fm/nopriors"
+hosts = ["Sarah Guo", "Elad Gil"]
+
+[[feeds]]
+name = "Hard Fork"
+url = "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/column/hard-fork/rss.xml"
+hosts = ["Kevin Roose", "Casey Newton"]
+
+[[feeds]]
+name = "OpenAI Podcast"
+url = "https://feeds.acast.com/public/shows/68470ba8d911dedd6501609c"
+hosts = []
+
+[[feeds]]
+name = "Google DeepMind: The Podcast"
+url = "https://feeds.simplecast.com/JT6pbPkg"
+hosts = []
+
+[[feeds]]
+name = "NVIDIA AI Podcast"
+url = "https://feeds.megaphone.fm/nvidiaaipodcast"
+hosts = []
+
+[[feeds]]
+name = "Training Data"
+url = "https://feeds.megaphone.fm/trainingdata"
+hosts = []
+
+[[feeds]]
+name = "AI + a16z"
+url = "https://feeds.simplecast.com/Hb_IuXOo"
+hosts = []
+
+[[feeds]]
+name = "The a16z Show"
+url = "https://feeds.simplecast.com/JGE3yC0V"
+hosts = []
+
+[[feeds]]
+name = "Acquired"
+url = "https://www.acquired.fm/episodes/rss.xml"
+hosts = ["Ben Gilbert", "David Rosenthal"]
+
+[[feeds]]
+name = "Invest Like the Best"
+url = "https://feeds.megaphone.fm/CLS2859450455"
+hosts = ["Patrick O'Shaughnessy"]
+
+[[feeds]]
+name = "Lenny's Podcast"
+url = "https://api.substack.com/feed/podcast/10845.rss"
+hosts = ["Lenny Rachitsky"]
+
+[[feeds]]
+name = "Practical AI"
+url = "https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm"
+hosts = ["Chris Benson", "Daniel Whitenack"]
+
+[[feeds]]
+name = "Eye on AI"
+url = "https://rss.libsyn.com/shows/195446/destinations/1383449.xml"
+hosts = ["Craig S. Smith"]
+
+[[labs]]
+name = "OpenAI"
+aliases = ["OpenAI"]
+people = [
+  "Sam Altman",
+  "Greg Brockman",
+  "Brad Lightcap",
+  "Andrej Karpathy",
+  "Ilya Sutskever",
+  "Wojciech Zaremba",
+  "Mark Chen",
+  "Jakub Pachocki",
+  "Kevin Weil",
+  "Bob McGrew",
+]
+
+[[labs]]
+name = "Anthropic"
+aliases = ["Anthropic"]
+people = [
+  "Dario Amodei",
+  "Amanda Askell",
+  "Chris Olah",
+  "Boris Cherny",
+  "Fiona Fung",
+  "Mike Krieger",
+  "Jack Clark",
+]
+
+[[labs]]
+name = "Google DeepMind"
+aliases = ["Google", "Google DeepMind", "DeepMind"]
+people = [
+  "Demis Hassabis",
+  "Shane Legg",
+  "Jeff Dean",
+  "Noam Shazeer",
+  "Oriol Vinyals",
+  "Pushmeet Kohli",
+  "Thore Graepel",
+  "Koray Kavukcuoglu",
+  "Murray Shanahan",
+  "Raia Hadsell",
+  "Logan Kilpatrick",
+  "Tulsee Doshi",
+  "Nicholas Carlini",
+  "Sergey Brin",
+]
+
+[[labs]]
+name = "Meta"
+aliases = ["Meta", "Meta AI", "FAIR", "Meta Superintelligence Labs"]
+people = [
+  "Mark Zuckerberg",
+  "Alexandr Wang",
+  "Nat Friedman",
+  "Daniel Gross",
+  "Aparna Ramani",
+  "Yann LeCun",
+  "Joelle Pineau",
+  "Soumith Chintala",
+  "Jason Weston",
+]
+
+[[labs]]
+name = "xAI"
+aliases = ["xAI", "X.ai", "Grok"]
+people = [
+  "Elon Musk",
+  "Christian Szegedy",
+  "Dan Hendrycks",
+]
+
+[[labs]]
+name = "NVIDIA"
+aliases = ["NVIDIA", "Nvidia"]
+people = [
+  "Jensen Huang",
+  "Jim Fan",
+  "Bryan Catanzaro",
+  "Bill Dally",
+  "Ian Buck",
+  "Anima Anandkumar",
+]

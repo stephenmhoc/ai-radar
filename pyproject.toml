@@ -1,0 +1,15 @@
+[project]
+name = "ai-radar"
+version = "0.1.0"
+description = "Monitor AI podcasts for LLM lab guests, transcribe locally, summarize, and publish RSS plus a static site."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+ai-radar = "podcast_radar.cli:main"
+podcast-radar = "podcast_radar.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

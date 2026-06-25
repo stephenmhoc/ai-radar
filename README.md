@@ -1,0 +1,172 @@
+# AI Radar
+
+Local service that watches podcast RSS feeds for episodes featuring technical members or executives from major AI labs, transcribes matching episodes with a local model, summarizes them with an LLM, and publishes a static site plus RSS feed.
+
+The public site is generated into `public/` and is designed to be deployed to a subdomain such as:
+
+```text
+https://llm-podcasts.merimerimeri.com
+```
+
+## What It Does
+
+- Fetches configured podcast feeds.
+- Stores episode metadata in SQLite.
+- Asks an LLM to judge whether each new episode has a qualifying guest from OpenAI, Anthropic, Google DeepMind, Meta, xAI, or NVIDIA.
+- Skips non-matching episodes without downloading audio.
+- Downloads and transcribes matching episodes with a local command such as `whisper-cli` or an MLX Whisper wrapper.
+- Summarizes the transcript with the configured LLM.
+- Stores transcripts in SQLite and renders transcript pages in the static site.
+- Renders `public/index.html`, `public/feed.xml`, and per-episode pages.
+
+## Quick Start
+
+From this directory:
+
+```bash
+python3 -m podcast_radar --config config.toml doctor
+```
+
+Set your LLM key if using the default OpenRouter-compatible config:
+
+```bash
+export OPENROUTER_API_KEY="..."
+```
+
+Install or point the config at a local transcription command. The default assumes `whisper-cli` from whisper.cpp:
+
+```toml
+[transcription]
+command = "whisper-cli"
+args = ["-m", "models/ggml-large-v3-turbo.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}"]
+output_path = "{output_stem}.txt"
+```
+
+Run the pipeline:
+
+```bash
+python3 -m podcast_radar --config config.toml run
+```
+
+Serve the generated site locally:
+
+```bash
+python3 -m podcast_radar --config config.toml serve-site --port 8088
+```
+
+Open:
+
+```text
+http://127.0.0.1:8088/
+```
+
+## Pipeline Commands
+
+```bash
+python3 -m podcast_radar --config config.toml ingest
+python3 -m podcast_radar --config config.toml judge --limit 10
+python3 -m podcast_radar --config config.toml process --limit 3
+python3 -m podcast_radar --config config.toml build-site
+python3 -m podcast_radar --config config.toml list
+```
+
+The main episode statuses are:
+
+- `new`: feed metadata has been stored but not judged.
+- `skipped`: LLM decided the episode is not relevant.
+- `relevant`: LLM decided the episode should be transcribed.
+- `transcribed`: local transcript exists and is stored in SQLite.
+- `published`: summary and transcript page have been rendered.
+- `failed`: an episode-specific step failed; the reason is stored in `skip_reason`.
+
+## LLM Configuration
+
+The default provider is OpenAI-compatible and points at OpenRouter:
+
+```toml
+[llm]
+provider = "openai_compatible"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+model = "openai/gpt-4.1-mini"
+```
+
+For a local Ollama-compatible path:
+
+```toml
+[llm]
+provider = "ollama"
+base_url = "http://127.0.0.1:11434"
+model = "llama3.1"
+api_key_env = ""
+```
+
+The judge prompt uses the configured lab roster as seed examples, not a hard allowlist. It is allowed to include other current or recent qualifying people when the feed metadata clearly states their lab affiliation.
+
+## Local Transcription
+
+Transcription is deliberately a command wrapper so the service can use whichever local backend is best on the Mac.
+
+For whisper.cpp:
+
+```toml
+[transcription]
+provider = "command"
+command = "whisper-cli"
+args = ["-m", "models/ggml-large-v3-turbo.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}"]
+output_path = "{output_stem}.txt"
+```
+
+For a custom wrapper script:
+
+```toml
+[transcription]
+provider = "command"
+command = "scripts/transcribe-local"
+args = ["{audio_path}", "{output_stem}.txt"]
+output_path = "{output_stem}.txt"
+```
+
+The command must write the transcript to `output_path`. Audio is deleted after a successful transcript unless `keep_audio = true`.
+
+## Public Site
+
+The generated site is static. The config writes:
+
+```text
+public/index.html
+public/feed.xml
+public/episodes/<episode>/index.html
+public/CNAME
+```
+
+The included `wrangler.toml` is ready for Cloudflare Pages direct upload:
+
+```bash
+wrangler pages deploy public --project-name ai-radar
+```
+
+Point DNS for `llm-podcasts.merimerimeri.com` at the Pages project, or change `[site].base_url` and `[site].cname` in `config.toml`.
+
+## Daily LaunchAgent
+
+After the LLM provider and transcription command are configured, install a daily macOS LaunchAgent:
+
+```bash
+python3 -m podcast_radar --config config.toml launchd-install --hour 8 --minute 30
+launchctl load ~/Library/LaunchAgents/com.merimeri.ai-radar.plist
+```
+
+Logs go to:
+
+```text
+var/logs/launchd.out.log
+var/logs/launchd.err.log
+```
+
+## Development Checks
+
+```bash
+python3 -m compileall podcast_radar
+python3 -m unittest discover -s tests
+```
