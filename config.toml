@@ -3,6 +3,7 @@ timezone = "America/New_York"
 database_path = "var/radar.sqlite3"
 public_dir = "public"
 state_dir = "var"
+processed_after = "2026-01-01"
 lookback_days = 14
 user_agent = "ai-radar/0.1"
 
@@ -17,8 +18,8 @@ max_transcript_chars = 130000
 
 [transcription]
 provider = "command"
-command = "whisper-cli"
-args = ["-m", "models/ggml-large-v3-turbo.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}"]
+command = "whisper"
+args = ["{audio_path}", "--model", "tiny", "--output_dir", "{output_dir}", "--output_format", "txt", "--verbose", "False"]
 output_path = "{output_stem}.txt"
 audio_dir = "var/audio"
 transcript_dir = "var/transcripts"

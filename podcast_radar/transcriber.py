@@ -40,7 +40,8 @@ def transcribe_episode(config: Config, conn, episode) -> pathlib.Path:
     )
 
     if not output_path.exists():
-        download_audio(config, audio_url, audio_path)
+        if not audio_path.exists():
+            download_audio(config, audio_url, audio_path)
         context = {
             "audio_path": str(audio_path),
             "output_stem": str(output_stem),
@@ -84,4 +85,3 @@ def _audio_suffix(url: str) -> str:
     if suffix and len(suffix) <= 8:
         return suffix
     return ".mp3"
-

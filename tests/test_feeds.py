@@ -1,6 +1,8 @@
 import unittest
 
-from podcast_radar.feeds import parse_feed
+import datetime as dt
+
+from podcast_radar.feeds import _episode_is_since, parse_feed
 
 
 RSS = b"""<?xml version="1.0"?>
@@ -39,7 +41,14 @@ class FeedParsingTests(unittest.TestCase):
         self.assertEqual(episode["hosts"], ["Host One"])
         self.assertEqual(episode["published_at"], "2024-06-18T10:00:00+00:00")
 
+    def test_episode_since_filter(self) -> None:
+        cutoff = dt.datetime(2026, 1, 1, tzinfo=dt.timezone.utc)
+
+        self.assertTrue(_episode_is_since({"published_at": "2026-01-01T00:00:00+00:00"}, cutoff))
+        self.assertTrue(_episode_is_since({"published_at": "2026-06-01T12:00:00+00:00"}, cutoff))
+        self.assertFalse(_episode_is_since({"published_at": "2025-12-31T23:59:59+00:00"}, cutoff))
+        self.assertTrue(_episode_is_since({"published_at": None}, cutoff))
+
 
 if __name__ == "__main__":
     unittest.main()
-

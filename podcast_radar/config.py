@@ -18,6 +18,7 @@ class AppConfig:
     database_path: pathlib.Path = pathlib.Path("var/radar.sqlite3")
     public_dir: pathlib.Path = pathlib.Path("public")
     state_dir: pathlib.Path = pathlib.Path("var")
+    processed_after: str | None = None
     lookback_days: int = 14
     user_agent: str = "ai-radar/0.1"
 

@@ -48,6 +48,15 @@ Run the pipeline:
 python3 -m podcast_radar --config config.toml run
 ```
 
+Backfill from a fixed date:
+
+```bash
+python3 -m podcast_radar --config config.toml ingest --since 2026-01-01
+python3 -m podcast_radar --config config.toml judge --since 2026-01-01
+python3 -m podcast_radar --config config.toml process --since 2026-01-01
+python3 -m podcast_radar --config config.toml build-site
+```
+
 Serve the generated site locally:
 
 ```bash
@@ -64,6 +73,7 @@ http://127.0.0.1:8088/
 
 ```bash
 python3 -m podcast_radar --config config.toml ingest
+python3 -m podcast_radar --config config.toml ingest --since 2026-01-01
 python3 -m podcast_radar --config config.toml judge --limit 10
 python3 -m podcast_radar --config config.toml process --limit 3
 python3 -m podcast_radar --config config.toml build-site
