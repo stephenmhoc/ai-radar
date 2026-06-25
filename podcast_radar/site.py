@@ -717,13 +717,14 @@ h1 {
   .filter-button { flex: 0 0 auto; }
   .episode-list { gap: 8px; }
   .episode-card {
-    grid-template-columns: 64px minmax(0, 1fr);
+    grid-template-columns: 1fr;
     gap: 10px;
     padding: 10px;
   }
   .art {
-    width: 64px;
-    height: 64px;
+    width: 84px;
+    height: 84px;
+    justify-self: start;
   }
   .episode-card h2 { font-size: 1rem; }
   .people { font-size: 0.86rem; }

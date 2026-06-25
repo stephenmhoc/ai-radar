@@ -83,13 +83,13 @@ async function checkViewport(browserInstance, viewport) {
 
   if (viewport.name === "mobile") {
     const style = await firstCard.evaluate((element) => getComputedStyle(element).gridTemplateColumns);
-    if (!style.trim().includes(" ")) {
-      throw new Error(`mobile card should keep compact thumbnail/content columns, got: ${style}`);
+    if (style.trim().includes(" ")) {
+      throw new Error(`mobile card should use one content column, got: ${style}`);
     }
     const artBox = await firstCard.locator(".art").boundingBox();
     if (!artBox) throw new Error("missing mobile episode art");
-    if (artBox.width > 90 || Math.abs(artBox.width - artBox.height) > 2) {
-      throw new Error(`mobile art should be a compact square thumbnail, got: ${artBox.width}x${artBox.height}`);
+    if (artBox.width > 100 || Math.abs(artBox.width - artBox.height) > 2) {
+      throw new Error(`mobile art should stay in a constrained square box, got: ${artBox.width}x${artBox.height}`);
     }
   }
 
