@@ -83,17 +83,24 @@ async function checkViewport(browserInstance, viewport) {
 
   if (viewport.name === "mobile") {
     const style = await firstCard.evaluate((element) => getComputedStyle(element).gridTemplateColumns);
-    if (style.trim().includes(" ")) {
-      throw new Error(`mobile card should use one column, got: ${style}`);
+    if (!style.trim().includes(" ")) {
+      throw new Error(`mobile card should keep compact thumbnail/content columns, got: ${style}`);
+    }
+    const artBox = await firstCard.locator(".art").boundingBox();
+    if (!artBox) throw new Error("missing mobile episode art");
+    if (artBox.width > 90 || Math.abs(artBox.width - artBox.height) > 2) {
+      throw new Error(`mobile art should be a compact square thumbnail, got: ${artBox.width}x${artBox.height}`);
     }
   }
 
   const openAiFilter = page.locator('[data-filter="openai"]');
   if (await openAiFilter.count()) {
+    const allCards = await page.locator(".episode-card:visible").count();
     await openAiFilter.click();
-    const visibleCards = await page.locator(".episode-card:not([hidden])").count();
-    const mismatched = await page.locator('.episode-card:not([hidden]):not([data-labs~="openai"])').count();
+    const visibleCards = await page.locator(".episode-card:visible").count();
+    const mismatched = await page.locator('.episode-card:visible:not([data-labs~="openai"])').count();
     if (visibleCards < 1) throw new Error("OpenAI filter hid every card");
+    if (visibleCards >= allCards) throw new Error("OpenAI filter did not reduce the visible card count");
     if (mismatched !== 0) throw new Error("OpenAI filter left non-OpenAI cards visible");
   }
 
