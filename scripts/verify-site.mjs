@@ -64,24 +64,23 @@ async function checkViewport(browserInstance, viewport) {
   await expectCount(page, "[data-search-input]", 1, "search controls");
   await expectCount(page, "[data-topic-filter]", 1, "topic filters");
   await expectCount(page, "[data-feed-filter]", 1, "podcast filters");
-  await expectCount(page, ".signal", 1, "episode relevance signals");
+  await expectCount(page, ".source-line", 1, "episode source lines");
   await expectCount(page, ".external-icon", 1, "external link icons");
-  await expectCount(page, ".actions", 1, "action rows");
 
   if (await page.getByText("Summary and transcript ready").count()) {
     throw new Error("index still shows removed ready-status copy");
   }
-
-  const firstCard = page.locator(".episode-card").first();
-  const firstDetailHref = await firstCard.getByRole("link", { name: "Episode details" }).getAttribute("href");
-  const buttonsBox = await firstCard.locator(".actions").boundingBox();
-  const detailBox = await firstCard.getByRole("link", { name: "Episode details" }).boundingBox();
-  if (!buttonsBox || !detailBox) throw new Error("missing episode action button layout");
-  if (detailBox.y < buttonsBox.y - 1 || detailBox.y > buttonsBox.y + buttonsBox.height + 1) {
-    throw new Error("episode details button is outside the action row");
+  if (await page.getByText("Verified brief").count()) {
+    throw new Error("index still shows verified-brief card status copy");
   }
 
-  const originalLink = firstCard.getByRole("link", { name: /Original episode/ }).first();
+  const firstCard = page.locator(".episode-card").first();
+  const firstDetailHref = await firstCard.locator("h2 a").getAttribute("href");
+  if (await firstCard.locator(".tag-row, .summary, .signal, .actions").count()) {
+    throw new Error("episode cards should not show tags, summaries, signals, or action rows");
+  }
+
+  const originalLink = firstCard.locator(".source-line .external-link");
   if (await originalLink.count()) {
     const target = await originalLink.getAttribute("target");
     const rel = await originalLink.getAttribute("rel");

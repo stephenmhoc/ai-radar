@@ -88,16 +88,11 @@ def render_card(config: Config, episode, slug: str) -> str:
     guests = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
     labs = _people(episode["labs_json"])
     topics = _people(episode["topics_json"])
-    date = _date_label(episode["published_at"])
     episode_path = episode_path_for(slug)
     image = f'<img src="{escape(image_url)}" alt="" loading="lazy">' if image_url else '<div class="art-fallback"></div>'
-    lab_tags = "".join(f"<span>{escape(lab)}</span>" for lab in labs)
     display_topics = _display_topics(topics, labs)
-    topic_tags = "".join(f"<span>{escape(topic)}</span>" for topic in display_topics[:5])
     summary = _summary_teaser(episode)
-    signal = _why_it_matters(episode)
-    status = _card_status(episode)
-    status_html = f"<span>{escape(status)}</span>" if status else "<span>Verified brief</span>"
+    topline = _topline(episode, guests=guests)
     lab_tokens = " ".join(_lab_token(lab) for lab in labs)
     topic_tokens = " ".join(_lab_token(topic) for topic in display_topics)
     search_text = " ".join(
@@ -113,31 +108,13 @@ def render_card(config: Config, episode, slug: str) -> str:
         )
     ).lower()
     published_sort = episode["published_at"] or ""
-    duration = _duration_label(episode["duration"])
-    duration_html = f"<span>{escape(duration)}</span>" if duration else ""
     feed_token = _lab_token(str(episode["feed_name"]))
     return f"""
     <article class="episode-card" data-labs="{escape(lab_tokens)}" data-topics="{escape(topic_tokens)}" data-feed="{escape(feed_token)}" data-search="{escape(search_text)}" data-date="{escape(published_sort)}">
       <a class="art" href="{escape(episode_path)}">{image}</a>
       <div class="episode-body">
-        <div class="meta-row">
-          <span>{escape(episode['feed_name'])}</span>
-          <span>{escape(date)}</span>
-          {duration_html}
-          {status_html}
-        </div>
-        <h2><a href="{escape(episode_path)}">{escape(episode['summary_title'] or episode['title'])}</a></h2>
-        <p class="people"><strong>{escape(comma_join(guests) or 'Unknown guest')}</strong>{_affiliation_label(labs)}<span>Hosted by {escape(comma_join(hosts) or 'Unknown')}</span></p>
-        <p class="signal">{escape(signal)}</p>
-        <p class="summary">{escape(summary)}</p>
-        <div class="tag-row">
-          <div class="tags">{lab_tags}</div>
-          <div class="topic-tags">{topic_tags}</div>
-        </div>
-        <div class="actions">
-          <a href="{escape(episode_path)}">Episode details</a>
-          {source_link(episode)}
-        </div>
+        <h2><a href="{escape(episode_path)}">{escape(topline)}</a></h2>
+        <p class="source-line"><span>{escape(episode['feed_name'])}</span><span>{escape(episode['title'])}</span></p>
       </div>
     </article>
     """
@@ -348,11 +325,11 @@ def episode_path_for(slug: str) -> str:
     return f"/episodes/{slug}/"
 
 
-def source_link(episode, *, icon: bool = True) -> str:
+def source_link(episode, *, icon: bool = True, label: str = "Original episode") -> str:
     if not episode["episode_url"]:
         return ""
     icon_html = '<span class="external-icon" aria-hidden="true">↗</span>' if icon else ""
-    return f'<a class="external-link" href="{escape(episode["episode_url"])}" target="_blank" rel="noopener noreferrer">Original episode{icon_html}</a>'
+    return f'<a class="external-link" href="{escape(episode["episode_url"])}" target="_blank" rel="noopener noreferrer">{escape(label)}{icon_html}</a>'
 
 
 def render_briefing(config: Config, episodes, slugs: dict[int, str]) -> str:
@@ -577,6 +554,25 @@ def _why_it_matters(episode) -> str:
     if description:
         return _first_sentence(description)
     return "This episode was verified as relevant to major AI lab activity."
+
+
+def _topline(episode, *, guests: list[str]) -> str:
+    guest_label = comma_join(guests) or "The guest"
+    signal = _why_it_matters(episode)
+    for guest in guests:
+        if signal.casefold().startswith(guest.casefold()):
+            return _compact_sentence(signal, max_chars=92)
+    return _compact_sentence(f"{guest_label}: {signal}", max_chars=92)
+
+
+def _compact_sentence(value: str, *, max_chars: int) -> str:
+    normalized = " ".join(value.split())
+    if len(normalized) <= max_chars:
+        return normalized
+    cutoff = normalized.rfind(" ", 0, max_chars - 1)
+    if cutoff < max_chars * 0.62:
+        cutoff = max_chars - 1
+    return normalized[:cutoff].rstrip(" ,;:.-") + "..."
 
 
 def _first_sentence(value: str) -> str:
@@ -1096,20 +1092,22 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 
 .episode-list {
   display: grid;
-  gap: 7px;
-  padding: 14px 0;
+  gap: 0;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
 }
 
 .episode-card {
   position: relative;
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
-  gap: 11px;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 10px;
   align-items: start;
-  padding: 10px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  padding: 8px 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
 }
 
 .episode-card::before {
@@ -1123,8 +1121,8 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 }
 
 .episode-card:hover {
-  border-color: var(--line-strong);
-  box-shadow: 0 10px 28px rgba(31, 41, 51, 0.07);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: none;
 }
 
 .episode-card:hover::before {
@@ -1140,7 +1138,7 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   aspect-ratio: 1;
   width: 100%;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 4px;
   background: #e6edf2;
 }
 
@@ -1177,14 +1175,36 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 }
 
 .episode-card h2 {
-  margin: 3px 0 5px;
-  font-size: 1.06rem;
-  line-height: 1.2;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.22;
   letter-spacing: 0;
 }
 
 .episode-card h2 a {
   color: var(--ink);
+  text-decoration: none;
+}
+
+.source-line {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 0.83rem;
+  line-height: 1.3;
+}
+
+.source-line span:not(:last-child)::after {
+  content: "·";
+  color: #9aa6b2;
+  margin-left: 8px;
+}
+
+.source-line a {
+  color: var(--link);
   text-decoration: none;
 }
 
@@ -1470,18 +1490,19 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   }
   .filter-buttons::-webkit-scrollbar { display: none; }
   .filter-button { flex: 0 0 auto; }
-  .episode-list { gap: 8px; }
+  .episode-list { gap: 0; }
   .episode-card {
-    grid-template-columns: 54px minmax(0, 1fr);
-    gap: 9px;
-    padding: 9px;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 8px;
+    padding: 8px 0;
   }
   .art {
-    width: 54px;
-    height: 54px;
+    width: 40px;
+    height: 40px;
     justify-self: start;
   }
-  .episode-card h2 { font-size: 1rem; }
+  .episode-card h2 { font-size: 0.95rem; }
+  .source-line { font-size: 0.78rem; }
   .people { font-size: 0.86rem; }
   .signal { font-size: 0.88rem; }
   .summary {
