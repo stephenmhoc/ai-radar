@@ -50,7 +50,7 @@ def episode_slug(episode) -> str:
 def render_index(config: Config, episodes, slugs: dict[int, str]) -> str:
     cards = "\n".join(render_card(config, episode, slugs[int(episode["id"])]) for episode in episodes)
     controls = render_controls(config, episodes)
-    briefing = render_briefing(config, episodes, slugs)
+    search_panel = render_search_panel(episodes)
     if not cards:
         cards = """
         <section class="empty">
@@ -68,12 +68,8 @@ def render_index(config: Config, episodes, slugs: dict[int, str]) -> str:
             <h1>{escape(config.site.title)}</h1>
             <p class="lede">{escape(config.site.description)}</p>
           </div>
-          <div class="site-actions">
-            <span>{len(episodes)} episodes</span>
-            <a class="rss-link" href="feed.xml">RSS feed</a>
-          </div>
+          {search_panel}
         </header>
-        {briefing}
         {controls}
         <main class="episode-list" aria-live="polite">
           {cards}
@@ -244,30 +240,30 @@ FILTER_SCRIPT = """(() => {
     const cards = Array.from(document.querySelectorAll(".episode-card"));
     const list = document.querySelector(".episode-list");
     const searchInput = document.querySelector("[data-search-input]");
-    const topicFilter = document.querySelector("[data-topic-filter]");
-    const feedFilter = document.querySelector("[data-feed-filter]");
-    const sortSelect = document.querySelector("[data-sort]");
+    const resultCount = document.querySelector("[data-result-count]");
     if (!buttons.length || !cards.length) return;
 
     let activeLab = "all";
 
     const apply = () => {
-      const query = (searchInput?.value || "").trim().toLowerCase();
-      const topic = topicFilter?.value || "all";
-      const feed = feedFilter?.value || "all";
+      const queryTokens = (searchInput?.value || "")
+        .trim()
+        .toLowerCase()
+        .split(/\\s+/)
+        .filter(Boolean);
       let visible = 0;
 
       cards.forEach((card) => {
         const labs = (card.dataset.labs || "").split(" ");
-        const topics = (card.dataset.topics || "").split(" ");
         const matchesLab = activeLab === "all" || labs.includes(activeLab);
-        const matchesTopic = topic === "all" || topics.includes(topic);
-        const matchesFeed = feed === "all" || card.dataset.feed === feed;
-        const matchesSearch = !query || (card.dataset.search || "").includes(query);
-        const show = matchesLab && matchesTopic && matchesFeed && matchesSearch;
+        const haystack = card.dataset.search || "";
+        const matchesSearch = !queryTokens.length || queryTokens.every((token) => haystack.includes(token));
+        const show = matchesLab && matchesSearch;
         card.hidden = !show;
         if (show) visible += 1;
       });
+
+      if (resultCount) resultCount.textContent = String(visible);
 
       let empty = document.querySelector("[data-filter-empty]");
       if (!visible) {
@@ -283,21 +279,6 @@ FILTER_SCRIPT = """(() => {
       }
     };
 
-    const sortCards = () => {
-      if (!list) return;
-      const mode = sortSelect?.value || "newest";
-      const sorted = [...cards].sort((a, b) => {
-        if (mode === "title") {
-          return (a.querySelector("h2")?.textContent || "").localeCompare(b.querySelector("h2")?.textContent || "");
-        }
-        const dateA = a.dataset.date || "";
-        const dateB = b.dataset.date || "";
-        return mode === "oldest" ? dateA.localeCompare(dateB) : dateB.localeCompare(dateA);
-      });
-      sorted.forEach((card) => list.append(card));
-      apply();
-    };
-
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         activeLab = button.dataset.filter || "all";
@@ -311,9 +292,6 @@ FILTER_SCRIPT = """(() => {
     });
 
     searchInput?.addEventListener("input", apply);
-    topicFilter?.addEventListener("change", apply);
-    feedFilter?.addEventListener("change", apply);
-    sortSelect?.addEventListener("change", sortCards);
   })();"""
 
 
@@ -417,18 +395,32 @@ def render_signal_item(episode, slug: str) -> str:
     """
 
 
+def render_search_panel(episodes) -> str:
+    lab_count = len({lab for episode in episodes for lab in _people(episode["labs_json"])})
+    feed_count = len({str(episode["feed_name"]) for episode in episodes})
+    latest = _date_label(episodes[0]["published_at"]) if episodes else "No episodes"
+    return f"""
+    <div class="search-panel">
+      <label class="command-search">
+        <span>Search radar</span>
+        <input type="search" placeholder="Guest, lab, claim, topic, podcast..." data-search-input>
+      </label>
+      <div class="search-meta">
+        <span><strong data-result-count>{len(episodes)}</strong> visible</span>
+        <span>{lab_count} labs</span>
+        <span>{feed_count} podcasts</span>
+        <span>latest {escape(latest)}</span>
+        <a class="rss-link" href="feed.xml">RSS</a>
+      </div>
+    </div>
+    """
+
+
 def render_controls(config: Config, episodes) -> str:
     lab_counts: dict[str, int] = {}
-    topic_counts: dict[str, int] = {}
-    feed_counts: dict[str, int] = {}
     for episode in episodes:
-        labs = _people(episode["labs_json"])
         for lab in _people(episode["labs_json"]):
             lab_counts[lab] = lab_counts.get(lab, 0) + 1
-        for topic in _display_topics(_people(episode["topics_json"]), labs):
-            topic_counts[topic] = topic_counts.get(topic, 0) + 1
-        feed_name = str(episode["feed_name"])
-        feed_counts[feed_name] = feed_counts.get(feed_name, 0) + 1
 
     buttons = [
         f'<button type="button" class="filter-button active" data-filter="all" aria-pressed="true">All <span>{len(episodes)}</span></button>'
@@ -438,39 +430,9 @@ def render_controls(config: Config, episodes) -> str:
             f'<button type="button" class="filter-button" data-filter="{escape(_lab_token(lab))}" aria-pressed="false">{escape(lab)} <span>{count}</span></button>'
         )
 
-    topic_options = ['<option value="all">All topics</option>']
-    for topic, count in sorted(topic_counts.items(), key=lambda item: (-item[1], item[0].lower()))[:18]:
-        topic_options.append(f'<option value="{escape(_lab_token(topic))}">{escape(topic)} ({count})</option>')
-
-    feed_options = ['<option value="all">All podcasts</option>']
-    for feed, count in sorted(feed_counts.items(), key=lambda item: (-item[1], item[0].lower())):
-        feed_options.append(f'<option value="{escape(_lab_token(feed))}">{escape(feed)} ({count})</option>')
-
     return f"""
-    <section class="controls" aria-label="Episode controls">
-      <label class="search-box">
-        <span>Search</span>
-        <input type="search" placeholder="Guest, lab, topic, podcast..." data-search-input>
-      </label>
-      <label>
-        <span>Topic</span>
-        <select data-topic-filter>{''.join(topic_options)}</select>
-      </label>
-      <label>
-        <span>Podcast</span>
-        <select data-feed-filter>{''.join(feed_options)}</select>
-      </label>
-      <label>
-        <span>Sort</span>
-        <select data-sort>
-          <option value="newest">Newest first</option>
-          <option value="oldest">Oldest first</option>
-          <option value="title">Title A-Z</option>
-        </select>
-      </label>
-    </section>
     <section class="filters" aria-label="Company filters">
-      <div class="filter-label">Lab</div>
+      <div class="filter-label">Quick lab pivots</div>
       <div class="filter-buttons">{''.join(buttons)}</div>
     </section>
     """
@@ -725,7 +687,8 @@ STYLE_CSS = """
 body {
   margin: 0;
   background:
-    linear-gradient(180deg, #f7faf9 0, var(--paper) 360px);
+    radial-gradient(circle at 12% -8%, rgba(15, 118, 110, 0.10), transparent 30rem),
+    linear-gradient(180deg, #f7faf9 0, var(--paper) 420px);
   color: var(--ink);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.55;
@@ -736,16 +699,15 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 .shell {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 28px 0 56px;
+  padding: 24px 0 56px;
 }
 
 .masthead {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
+  gap: 28px;
   align-items: end;
-  padding: 18px 0 16px;
-  border-bottom: 1px solid var(--line);
+  padding: 14px 0 18px;
 }
 
 .eyebrow {
@@ -762,8 +724,8 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   max-width: 760px;
   margin: 0;
   color: var(--ink-strong);
-  font-size: clamp(2.25rem, 5vw, 4.6rem);
-  line-height: 1;
+  font-size: clamp(2.15rem, 4vw, 3.25rem);
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
@@ -772,16 +734,17 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 }
 
 .lede {
-  max-width: 680px;
-  margin: 12px 0 0;
+  max-width: 580px;
+  margin: 10px 0 0;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 0.98rem;
 }
 
 .rss-link,
 .actions a,
 .top-nav a,
 .filter-button,
+.command-search input,
 .controls input,
 .controls select {
   display: inline-flex;
@@ -813,6 +776,65 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   color: var(--muted);
   font-size: 0.86rem;
   white-space: nowrap;
+}
+
+.search-panel {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(185, 199, 211, 0.78);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 16px 42px rgba(31, 41, 51, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.command-search {
+  display: grid;
+  gap: 6px;
+}
+
+.command-search span {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.command-search input {
+  width: 100%;
+  min-height: 44px;
+  justify-content: start;
+  padding: 10px 13px;
+  border-color: #c8d5df;
+  font: inherit;
+  font-size: 0.98rem;
+}
+
+.command-search input:focus {
+  outline: 3px solid rgba(15, 118, 110, 0.16);
+  border-color: #6fa59e;
+}
+
+.search-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  align-items: center;
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.search-meta strong {
+  color: var(--ink-strong);
+}
+
+.search-meta .rss-link {
+  min-height: 28px;
+  margin-left: auto;
+  padding: 4px 8px;
+  font-size: 0.78rem;
 }
 
 .briefing {
@@ -1052,31 +1074,44 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 
 .filters {
   display: grid;
-  grid-template-columns: 92px 1fr;
-  gap: 14px;
-  align-items: start;
-  padding: 11px 0 6px;
+  grid-template-columns: 122px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-top: 6px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .filter-label {
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.72rem;
   font-weight: 700;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
 .filter-buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-wrap: nowrap;
+  gap: 7px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+
+.filter-buttons::-webkit-scrollbar {
+  display: none;
 }
 
 .filter-button {
+  flex: 0 0 auto;
   cursor: pointer;
   color: var(--muted);
   font: inherit;
   min-height: 34px;
-  padding: 6px 10px;
+  padding: 6px 11px;
+  border-radius: 999px;
 }
 
 .filter-button span {
@@ -1092,37 +1127,37 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 
 .episode-list {
   display: grid;
-  gap: 0;
-  padding: 10px 0;
-  border-top: 1px solid var(--line);
+  gap: 8px;
+  padding: 13px 0 0;
 }
 
 .episode-card {
   position: relative;
   display: grid;
-  grid-template-columns: 46px minmax(0, 1fr);
-  gap: 10px;
-  align-items: start;
-  padding: 8px 0;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid var(--line);
-  border-radius: 0;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 9px 12px 9px 9px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(217, 225, 232, 0.92);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(31, 41, 51, 0.04);
 }
 
 .episode-card::before {
   position: absolute;
-  inset: -1px auto -1px -1px;
+  inset: 8px auto 8px -1px;
   width: 3px;
-  border-radius: 8px 0 0 8px;
+  border-radius: 999px;
   background: linear-gradient(180deg, var(--accent), var(--accent-3));
   content: "";
-  opacity: 0;
+  opacity: 0.28;
 }
 
 .episode-card:hover {
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: none;
+  border-color: rgba(142, 187, 180, 0.9);
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(31, 41, 51, 0.08);
 }
 
 .episode-card:hover::before {
@@ -1138,7 +1173,7 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   aspect-ratio: 1;
   width: 100%;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 6px;
   background: #e6edf2;
 }
 
@@ -1176,14 +1211,18 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 
 .episode-card h2 {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.22;
+  font-size: 1.01rem;
+  line-height: 1.18;
   letter-spacing: 0;
 }
 
 .episode-card h2 a {
-  color: var(--ink);
+  color: var(--ink-strong);
   text-decoration: none;
+}
+
+.episode-card h2 a:hover {
+  color: var(--link);
 }
 
 .source-line {
@@ -1193,14 +1232,20 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   white-space: nowrap;
   margin: 3px 0 0;
   color: var(--muted);
-  font-size: 0.83rem;
+  font-size: 0.82rem;
   line-height: 1.3;
+}
+
+.source-line span:first-child {
+  color: #586472;
+  font-weight: 650;
 }
 
 .source-line span:not(:last-child)::after {
   content: "·";
   color: #9aa6b2;
   margin-left: 8px;
+  margin-right: 8px;
 }
 
 .source-line a {
@@ -1450,10 +1495,26 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 
 @media (max-width: 720px) {
   .shell { width: min(100% - 24px, 1120px); padding-top: 18px; }
-  .masthead { display: block; padding-top: 8px; }
-  .masthead h1 { font-size: 2.15rem; }
+  .masthead {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-top: 8px;
+  }
+  .masthead h1 { font-size: 2.05rem; }
+  .lede { font-size: 0.94rem; }
   .site-actions { margin-top: 14px; }
   .rss-link { margin-top: 18px; }
+  .search-panel { padding: 10px; }
+  .command-search input { min-height: 42px; }
+  .search-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 10px;
+  }
+  .search-meta .rss-link {
+    justify-self: start;
+    margin: 0;
+  }
   .briefing { grid-template-columns: 1fr; padding-top: 14px; }
   .spotlight {
     grid-template-columns: 86px minmax(0, 1fr);
@@ -1481,7 +1542,12 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   .meter-row { grid-template-columns: 88px minmax(0, 1fr) 22px; }
   .controls { grid-template-columns: 1fr 1fr; gap: 8px; top: 0; }
   .controls .search-box { grid-column: 1 / -1; }
-  .filters { grid-template-columns: 1fr; gap: 8px; padding-top: 16px; }
+  .filters {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 2px;
+    padding: 10px 0;
+  }
   .filter-buttons {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -1490,15 +1556,15 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   }
   .filter-buttons::-webkit-scrollbar { display: none; }
   .filter-button { flex: 0 0 auto; }
-  .episode-list { gap: 0; }
+  .episode-list { gap: 7px; padding-top: 10px; }
   .episode-card {
-    grid-template-columns: 40px minmax(0, 1fr);
-    gap: 8px;
-    padding: 8px 0;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 9px;
+    padding: 8px 9px 8px 8px;
   }
   .art {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     justify-self: start;
   }
   .episode-card h2 { font-size: 0.95rem; }

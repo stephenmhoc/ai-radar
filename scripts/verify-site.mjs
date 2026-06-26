@@ -56,16 +56,15 @@ async function checkViewport(browserInstance, viewport) {
   await page.goto(`http://${host}:${port}/`, { waitUntil: "networkidle" });
 
   await expectCount(page, ".episode-card", 1, "episode cards");
-  await expectCount(page, ".briefing", 1, "briefing sections");
-  await expectCount(page, ".spotlight", 1, "spotlight lead cards");
-  await expectCount(page, ".metric-grid div", 4, "coverage metrics");
-  await expectCount(page, ".meter-row", 1, "lab meter rows");
+  await expectCount(page, ".search-panel", 1, "header search panels");
+  await expectCount(page, "[data-result-count]", 1, "visible result counters");
   await expectCount(page, ".filter-button", 2, "filter buttons");
   await expectCount(page, "[data-search-input]", 1, "search controls");
-  await expectCount(page, "[data-topic-filter]", 1, "topic filters");
-  await expectCount(page, "[data-feed-filter]", 1, "podcast filters");
   await expectCount(page, ".source-line", 1, "episode source lines");
-  await expectCount(page, ".external-icon", 1, "external link icons");
+
+  if (await page.locator(".briefing, .spotlight, .metric-grid, [data-topic-filter], [data-feed-filter], [data-sort]").count()) {
+    throw new Error("index should not show the old briefing banner or dropdown filter stack");
+  }
 
   if (await page.getByText("Summary and transcript ready").count()) {
     throw new Error("index still shows removed ready-status copy");
@@ -78,6 +77,10 @@ async function checkViewport(browserInstance, viewport) {
   const firstDetailHref = await firstCard.locator("h2 a").getAttribute("href");
   if (await firstCard.locator(".tag-row, .summary, .signal, .actions").count()) {
     throw new Error("episode cards should not show tags, summaries, signals, or action rows");
+  }
+  const cardBox = await firstCard.boundingBox();
+  if (!cardBox || cardBox.height < 58) {
+    throw new Error("episode cards should retain enough visual surface to scan as distinct rows");
   }
 
   const originalLink = firstCard.locator(".source-line .external-link");
