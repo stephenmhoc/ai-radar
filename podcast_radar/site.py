@@ -1215,6 +1215,16 @@ STYLE_CSS = """
 
 * { box-sizing: border-box; }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 body {
   margin: 0;
   background:
@@ -1226,6 +1236,34 @@ body {
 }
 
 a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
+
+:focus-visible {
+  outline: 3px solid #0b5cad;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  z-index: 100;
+  transform: translateY(-160%);
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--ink-strong);
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 120ms ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+main:focus {
+  outline: none;
+}
 
 .shell {
   width: min(1180px, calc(100% - 32px));
@@ -1350,9 +1388,9 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   font-size: 0.98rem;
 }
 
-.command-search input:focus {
-  outline: 3px solid rgba(15, 118, 110, 0.16);
-  border-color: #6fa59e;
+.command-search input:focus-visible {
+  outline-color: #0b5cad;
+  border-color: #0b5cad;
 }
 
 .search-meta {
@@ -1794,13 +1832,15 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   opacity: 0.28;
 }
 
-.episode-card:hover {
+.episode-card:hover,
+.episode-card:focus-visible {
   border-color: rgba(142, 187, 180, 0.9);
   background: #ffffff;
   box-shadow: 0 16px 36px rgba(31, 41, 51, 0.10);
 }
 
-.episode-card:hover::before {
+.episode-card:hover::before,
+.episode-card:focus-visible::before {
   opacity: 1;
 }
 
