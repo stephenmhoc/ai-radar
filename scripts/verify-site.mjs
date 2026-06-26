@@ -56,7 +56,7 @@ async function checkViewport(browserInstance, viewport) {
   const page = await browserInstance.newPage({ viewport });
   await page.goto(`http://${host}:${port}/`, { waitUntil: "networkidle" });
   await runAxe(page, `${viewport.name} homepage`);
-  await assertSocialPreview(page, `${viewport.name} homepage`, /\/assets\/social\/ai-radar\.(png|svg)$/);
+  await assertSocialPreview(page, `${viewport.name} homepage`, /\/assets\/social\/ai-radar-[a-f0-9]{10}\.(png|svg)$/);
 
   await expectCount(page, ".episode-card", 1, "episode cards");
   await expectCount(page, ".skip-link", 1, "skip links");
