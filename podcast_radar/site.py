@@ -579,18 +579,20 @@ def write_social_images(config: Config, public_dir: Path, episodes, slugs: dict[
     social_dir.mkdir(parents=True, exist_ok=True)
     image_urls: dict[int | str, str] = {}
 
-    home_slug = "ai-radar"
+    home_svg_text = render_home_social_card(config, episodes)
+    home_slug = f"ai-radar-{_asset_digest(home_svg_text)}"
     home_svg = social_dir / f"{home_slug}.svg"
     home_png = social_dir / f"{home_slug}.png"
-    home_svg.write_text(render_home_social_card(config, episodes), encoding="utf-8")
+    home_svg.write_text(home_svg_text, encoding="utf-8")
     image_urls["home"] = _social_image_url(config, home_slug, _convert_social_card(home_svg, home_png))
 
     for episode in episodes:
         slug = slugs[int(episode["id"])]
-        asset_slug = f"episode-{slug}"
+        episode_svg_text = render_episode_social_card(config, episode)
+        asset_slug = f"episode-{slug}-{_asset_digest(episode_svg_text)}"
         svg_path = social_dir / f"{asset_slug}.svg"
         png_path = social_dir / f"{asset_slug}.png"
-        svg_path.write_text(render_episode_social_card(config, episode), encoding="utf-8")
+        svg_path.write_text(episode_svg_text, encoding="utf-8")
         image_urls[int(episode["id"])] = _social_image_url(
             config,
             asset_slug,
@@ -598,6 +600,10 @@ def write_social_images(config: Config, public_dir: Path, episodes, slugs: dict[
         )
 
     return image_urls
+
+
+def _asset_digest(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()[:10]
 
 
 def render_home_social_card(config: Config, episodes) -> str:
