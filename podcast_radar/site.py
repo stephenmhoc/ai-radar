@@ -344,6 +344,10 @@ def page(
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="shell">
     {body}
+    <footer class="site-footer">
+      <p>Made with ♥ by <a href="https://merimerimeri.com/">MeriMeriMeri Software</a></p>
+      <p>Copyright 2026</p>
+    </footer>
   </div>
   <script>
 {FILTER_SCRIPT}
@@ -373,8 +377,6 @@ FILTER_SCRIPT = """(() => {
     const copyButtons = Array.from(document.querySelectorAll("[data-copy-url]"));
     const list = document.querySelector(".episode-list");
     const searchInput = document.querySelector("[data-search-input]");
-    const resultCount = document.querySelector("[data-result-count]");
-    const resultLabel = document.querySelector("[data-result-label]");
     const pagination = document.querySelector("[data-pagination]");
     const pageButtons = document.querySelector("[data-page-buttons]");
     const pageStatus = document.querySelector("[data-page-status]");
@@ -481,8 +483,6 @@ FILTER_SCRIPT = """(() => {
         card.hidden = !pageCards.has(card);
       });
 
-      if (resultCount) resultCount.textContent = String(visible);
-      if (resultLabel) resultLabel.textContent = visible === 1 ? "visible episode" : "visible episodes";
       renderPagination(visible);
 
       let empty = document.querySelector("[data-filter-empty]");
@@ -602,14 +602,11 @@ def write_social_images(config: Config, public_dir: Path, episodes, slugs: dict[
 
 def render_home_social_card(config: Config, episodes) -> str:
     latest = _date_label(episodes[0]["published_at"]) if episodes else "No episodes yet"
-    lab_count = len({lab for episode in episodes for lab in _people(episode["labs_json"])})
-    feed_count = len({str(episode["feed_name"]) for episode in episodes})
-    subtitle = f"{len(episodes)} verified episodes · {lab_count} labs · {feed_count} podcasts"
     return render_social_card_svg(
         eyebrow="AI lab podcast intelligence",
         title=config.site.title,
         subtitle=config.site.description,
-        footer=f"{subtitle} · Latest {latest}",
+        footer=f"Updated {latest}",
         accent="#0f766e",
     )
 
@@ -620,7 +617,7 @@ def render_episode_social_card(config: Config, episode) -> str:
     title = str(episode["summary_title"] or episode["title"])
     lab_label = comma_join(labs) or "AI lab"
     guest_label = comma_join(guests) or "Verified guest"
-    eyebrow = f"{config.site.title} · {str(episode['feed_name'])} · {_date_label(episode['published_at'])}"
+    eyebrow = f"{str(episode['feed_name'])} · {_date_label(episode['published_at'])}"
     footer = f"{guest_label} · {lab_label} · Transcript-verified summary"
     return render_social_card_svg(
         eyebrow=eyebrow,
@@ -636,11 +633,11 @@ def render_social_card_svg(*, eyebrow: str, title: str, subtitle: str, footer: s
     subtitle_lines = _wrap_social_text(subtitle, max_chars=62, max_lines=2)
     title_count = len(title_lines)
     if title_count >= 3:
-        title_y, title_size, title_line_height, subtitle_y = 214, 60, 66, 438
+        title_y, title_size, title_line_height, subtitle_y = 184, 60, 66, 408
     elif title_count == 2:
-        title_y, title_size, title_line_height, subtitle_y = 222, 68, 76, 432
+        title_y, title_size, title_line_height, subtitle_y = 196, 68, 76, 388
     else:
-        title_y, title_size, title_line_height, subtitle_y = 236, 74, 82, 456
+        title_y, title_size, title_line_height, subtitle_y = 210, 74, 82, 326
     title_svg = _svg_text_lines(title_lines, x=80, y=title_y, font_size=title_size, line_height=title_line_height, weight=800)
     subtitle_svg = _svg_text_lines(subtitle_lines, x=84, y=subtitle_y, font_size=30, line_height=40, fill="#d7e7e5")
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{SOCIAL_IMAGE_WIDTH}" height="{SOCIAL_IMAGE_HEIGHT}" viewBox="0 0 {SOCIAL_IMAGE_WIDTH} {SOCIAL_IMAGE_HEIGHT}">
@@ -662,9 +659,7 @@ def render_social_card_svg(*, eyebrow: str, title: str, subtitle: str, footer: s
   <circle cx="935" cy="180" r="188" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="2"/>
   <circle cx="935" cy="180" r="96" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
   <path d="M935 180 L1140 42" stroke="#ffffff" stroke-opacity="0.2" stroke-width="5" stroke-linecap="round"/>
-  <rect x="72" y="70" width="148" height="48" rx="24" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.20"/>
-  <text x="96" y="102" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="800" fill="#ffffff">AI Radar</text>
-  <text x="80" y="152" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="750" fill="#9ee7dc" letter-spacing="0">{escape(eyebrow)}</text>
+  <text x="80" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="750" fill="#9ee7dc" letter-spacing="0">{escape(eyebrow)}</text>
   {title_svg}
   {subtitle_svg}
   <rect x="80" y="540" width="1040" height="1" fill="#ffffff" fill-opacity="0.18"/>
@@ -725,7 +720,11 @@ def _add_ellipsis(value: str, max_chars: int) -> str:
     suffix = "..."
     if len(value) + len(suffix) <= max_chars:
         return value + suffix
-    return value[: max_chars - len(suffix)].rstrip(" ,;:.-") + suffix
+    limit = max_chars - len(suffix)
+    cutoff = value.rfind(" ", 0, limit)
+    if cutoff < max_chars * 0.62:
+        cutoff = limit
+    return value[:cutoff].rstrip(" ,;:.-") + suffix
 
 
 def _compact_social_text(value: str, max_chars: int) -> str:
@@ -1079,22 +1078,12 @@ def render_signal_item(episode, slug: str) -> str:
 
 
 def render_search_panel(episodes) -> str:
-    lab_count = len({lab for episode in episodes for lab in _people(episode["labs_json"])})
-    feed_count = len({str(episode["feed_name"]) for episode in episodes})
-    latest = _date_label(episodes[0]["published_at"]) if episodes else "No episodes"
-    result_label = "visible episode" if len(episodes) == 1 else "visible episodes"
     return f"""
     <div class="search-panel">
       <label class="command-search">
         <span>Search radar</span>
         <input type="search" placeholder="Guest, lab, claim, topic, podcast" data-search-input aria-controls="episode-list">
       </label>
-      <div class="search-meta">
-        <span role="status" aria-live="polite"><strong data-result-count>{len(episodes)}</strong> <span data-result-label>{result_label}</span></span>
-        <span>{lab_count} labs</span>
-        <span>{feed_count} podcasts</span>
-        <span>latest {escape(latest)}</span>
-      </div>
     </div>
     """
 
@@ -1113,7 +1102,7 @@ def render_side_rail(config: Config, episodes, slugs: dict[int, str]) -> str:
         <span class="visually-hidden" data-copy-status role="status" aria-live="polite"></span>
       </section>
       <section class="rail-card newest-card">
-        <div class="rail-heading"><span>Newest episodes</span><span>{len(episodes)} total</span></div>
+        <div class="rail-heading"><span>Newest episodes</span></div>
         <div class="rail-list">{latest}</div>
       </section>
     </aside>
@@ -1513,6 +1502,27 @@ main:focus {
   padding: 24px 0 56px;
 }
 
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 42px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  font-weight: 700;
+}
+
 .masthead {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
@@ -1633,27 +1643,6 @@ main:focus {
 .command-search input:focus-visible {
   outline-color: #0b5cad;
   border-color: #0b5cad;
-}
-
-.search-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 12px;
-  align-items: center;
-  margin-top: 9px;
-  color: var(--muted);
-  font-size: 0.78rem;
-}
-
-.search-meta strong {
-  color: var(--ink-strong);
-}
-
-.search-meta .rss-link {
-  min-height: 28px;
-  margin-left: auto;
-  padding: 4px 8px;
-  font-size: 0.78rem;
 }
 
 .rss-text-link {
@@ -2602,13 +2591,6 @@ main:focus {
     min-height: 38px;
     padding: 7px 10px;
     font-size: 0.9rem;
-  }
-  .search-meta {
-    display: block;
-    margin-top: 6px;
-  }
-  .search-meta span:not(:first-child) {
-    display: none;
   }
   .briefing { grid-template-columns: 1fr; padding-top: 14px; }
   .spotlight {

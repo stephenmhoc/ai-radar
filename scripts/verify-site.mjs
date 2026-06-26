@@ -61,7 +61,6 @@ async function checkViewport(browserInstance, viewport) {
   await expectCount(page, ".episode-card", 1, "episode cards");
   await expectCount(page, ".skip-link", 1, "skip links");
   await expectCount(page, ".search-panel", 1, "header search panels");
-  await expectCount(page, "[data-result-count]", 1, "visible result counters");
   await expectCount(page, ".rss-card .follow-link", 1, "follow-along RSS links");
   await expectCount(page, ".rss-card [data-copy-url]", 1, "RSS feed copy buttons");
   await expectCount(page, ".content-grid", 1, "content grids");
@@ -73,6 +72,9 @@ async function checkViewport(browserInstance, viewport) {
   await expectCount(page, ".source-line .source-main", 1, "episode source titles");
   await expectCount(page, ".source-line .source-details", 1, "episode date and runtime metadata");
   await expectCount(page, ".rail-item .rail-source", 1, "newest episode metadata");
+  if (await page.locator(".search-meta, [data-result-count], [data-result-label]").count()) {
+    throw new Error("homepage should not show search result metadata under the search field");
+  }
   await page.keyboard.press("Tab");
   const activeSkipHref = await page.evaluate(() => document.activeElement?.getAttribute("href"));
   if (activeSkipHref !== "#main-content") {
