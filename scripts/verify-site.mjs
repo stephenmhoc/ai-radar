@@ -61,6 +61,7 @@ async function checkViewport(browserInstance, viewport) {
   await expectCount(page, ".rss-card .follow-link", 1, "follow-along RSS links");
   await expectCount(page, ".content-grid", 1, "content grids");
   await expectCount(page, ".side-rail", 1, "side rails");
+  await expectCount(page, "[data-pagination]", 1, "pagination controls");
   await expectCount(page, ".filter-button", 2, "filter buttons");
   await expectCount(page, "[data-search-input]", 1, "search controls");
   await expectCount(page, ".source-line", 1, "episode source lines");
@@ -85,9 +86,25 @@ async function checkViewport(browserInstance, viewport) {
   if (await firstCard.locator(".tag-row, .summary, .signal, .actions").count()) {
     throw new Error("episode cards should not show tags, summaries, signals, or action rows");
   }
-  const cardBox = await firstCard.boundingBox();
+  const visibleInitialCards = await page.locator(".episode-card:visible").count();
+  const cardBox = await page.locator(".episode-card:visible").first().boundingBox();
   if (!cardBox || cardBox.height < 90) {
     throw new Error("episode cards should retain enough visual surface to scan as distinct rows");
+  }
+  if (visibleInitialCards > 24) {
+    throw new Error(`pagination should limit the initial visible card count, found ${visibleInitialCards}`);
+  }
+  if (await page.locator("[data-pagination]:visible").count()) {
+    const nextButton = page.locator("[data-page-next]");
+    const firstPageHref = firstDetailHref;
+    await nextButton.click();
+    const secondPageFirstHref = await page.locator(".episode-card:visible").first().getAttribute("href");
+    if (!secondPageFirstHref || secondPageFirstHref === firstPageHref) {
+      throw new Error("pagination did not advance the visible episode page");
+    }
+    if (!(await page.getByText(/Showing /).count())) {
+      throw new Error("pagination status did not render");
+    }
   }
 
   if (viewport.name === "desktop") {
@@ -113,12 +130,14 @@ async function checkViewport(browserInstance, viewport) {
   }
 
   if (viewport.name === "mobile") {
-    const style = await firstCard.evaluate((element) => getComputedStyle(element).gridTemplateColumns);
-    const columns = style.trim().split(/\s+/);
-    if (columns.length !== 2) {
+    const visibleCard = page.locator(".episode-card:visible").first();
+    const style = await visibleCard.evaluate((element) => getComputedStyle(element).gridTemplateColumns);
+    const columnWidths = style.trim().match(/\d+(\.\d+)?px/g) || [];
+    const firstColumn = Number.parseFloat(columnWidths[0] || "0");
+    if (columnWidths.length !== 2 || firstColumn < 40 || firstColumn > 70) {
       throw new Error(`mobile card should use a compact two-column row, got: ${style}`);
     }
-    const artBox = await firstCard.locator(".art").boundingBox();
+    const artBox = await visibleCard.locator(".art").boundingBox();
     if (!artBox) throw new Error("missing mobile episode art");
     if (artBox.width > 70 || Math.abs(artBox.width - artBox.height) > 2) {
       throw new Error(`mobile art should stay in a constrained square box, got: ${artBox.width}x${artBox.height}`);

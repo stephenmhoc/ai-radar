@@ -101,6 +101,8 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn("data-labs=\"openai\"", index)
             self.assertIn("data-search-input", index)
             self.assertIn("data-result-count", index)
+            self.assertIn("data-pagination", index)
+            self.assertIn("data-page-next", index)
             self.assertIn("Use our RSS feed to stay up to date", index)
             self.assertIn('class="follow-link"', index)
             self.assertIn('class="content-grid"', index)

@@ -75,8 +75,16 @@ def render_index(config: Config, episodes, slugs: dict[int, str]) -> str:
         </header>
         {controls}
         <div class="content-grid">
-          <main class="episode-list" aria-live="polite">
-            {cards}
+          <main aria-live="polite">
+            <div class="episode-list">
+              {cards}
+            </div>
+            <nav class="pagination" data-pagination aria-label="Episode pages" hidden>
+              <button type="button" data-page-prev>Previous</button>
+              <div class="page-buttons" data-page-buttons></div>
+              <button type="button" data-page-next>Next</button>
+              <p data-page-status></p>
+            </nav>
           </main>
           {render_side_rail(episodes, slugs)}
         </div>
@@ -249,34 +257,91 @@ FAVICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 
 
 FILTER_SCRIPT = """(() => {
+    const PAGE_SIZE = 24;
     const buttons = Array.from(document.querySelectorAll("[data-filter]"));
     const cards = Array.from(document.querySelectorAll(".episode-card"));
     const list = document.querySelector(".episode-list");
     const searchInput = document.querySelector("[data-search-input]");
     const resultCount = document.querySelector("[data-result-count]");
+    const pagination = document.querySelector("[data-pagination]");
+    const pageButtons = document.querySelector("[data-page-buttons]");
+    const pageStatus = document.querySelector("[data-page-status]");
+    const previousPage = document.querySelector("[data-page-prev]");
+    const nextPage = document.querySelector("[data-page-next]");
     if (!buttons.length || !cards.length) return;
 
     let activeLab = "all";
+    let activePage = 1;
 
-    const apply = () => {
+    const matchingCards = () => {
       const queryTokens = (searchInput?.value || "")
         .trim()
         .toLowerCase()
         .split(/\\s+/)
         .filter(Boolean);
-      let visible = 0;
 
-      cards.forEach((card) => {
+      return cards.filter((card) => {
         const labs = (card.dataset.labs || "").split(" ");
         const matchesLab = activeLab === "all" || labs.includes(activeLab);
         const haystack = card.dataset.search || "";
         const matchesSearch = !queryTokens.length || queryTokens.every((token) => haystack.includes(token));
-        const show = matchesLab && matchesSearch;
-        card.hidden = !show;
-        if (show) visible += 1;
+        return matchesLab && matchesSearch;
+      });
+    };
+
+    const renderPagination = (total) => {
+      const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE));
+      activePage = Math.min(Math.max(activePage, 1), pageCount);
+
+      if (!pagination || !pageButtons || !pageStatus || !previousPage || !nextPage) return;
+      pagination.hidden = total <= PAGE_SIZE;
+      pageButtons.innerHTML = "";
+
+      const pages = Array.from({ length: pageCount }, (_, index) => index + 1)
+        .filter((page) => page === 1 || page === pageCount || Math.abs(page - activePage) <= 1);
+      let lastPage = 0;
+      pages.forEach((page) => {
+        if (page - lastPage > 1) {
+          const gap = document.createElement("span");
+          gap.textContent = "More";
+          gap.className = "page-gap";
+          pageButtons.append(gap);
+        }
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = String(page);
+        button.dataset.pageNumber = String(page);
+        button.setAttribute("aria-current", page === activePage ? "page" : "false");
+        button.addEventListener("click", () => {
+          activePage = page;
+          apply();
+          list?.scrollIntoView({ block: "start" });
+        });
+        pageButtons.append(button);
+        lastPage = page;
+      });
+
+      previousPage.disabled = activePage <= 1;
+      nextPage.disabled = activePage >= pageCount;
+      const start = total ? (activePage - 1) * PAGE_SIZE + 1 : 0;
+      const end = Math.min(activePage * PAGE_SIZE, total);
+      pageStatus.textContent = total > PAGE_SIZE ? `Showing ${start}-${end} of ${total}` : "";
+    };
+
+    const apply = () => {
+      const matches = matchingCards();
+      const visible = matches.length;
+      const pageCount = Math.max(1, Math.ceil(visible / PAGE_SIZE));
+      activePage = Math.min(activePage, pageCount);
+      const pageStart = (activePage - 1) * PAGE_SIZE;
+      const pageCards = new Set(matches.slice(pageStart, pageStart + PAGE_SIZE));
+
+      cards.forEach((card) => {
+        card.hidden = !pageCards.has(card);
       });
 
       if (resultCount) resultCount.textContent = String(visible);
+      renderPagination(visible);
 
       let empty = document.querySelector("[data-filter-empty]");
       if (!visible) {
@@ -295,6 +360,7 @@ FILTER_SCRIPT = """(() => {
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         activeLab = button.dataset.filter || "all";
+        activePage = 1;
         buttons.forEach((item) => {
           const active = item === button;
           item.classList.toggle("active", active);
@@ -304,7 +370,24 @@ FILTER_SCRIPT = """(() => {
       });
     });
 
-    searchInput?.addEventListener("input", apply);
+    previousPage?.addEventListener("click", () => {
+      activePage -= 1;
+      apply();
+      list?.scrollIntoView({ block: "start" });
+    });
+
+    nextPage?.addEventListener("click", () => {
+      activePage += 1;
+      apply();
+      list?.scrollIntoView({ block: "start" });
+    });
+
+    searchInput?.addEventListener("input", () => {
+      activePage = 1;
+      apply();
+    });
+
+    apply();
   })();"""
 
 
@@ -1200,6 +1283,74 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   padding: 0;
 }
 
+.pagination {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid rgba(202, 214, 224, 0.98);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 10px 28px rgba(31, 41, 51, 0.035);
+}
+
+.pagination[hidden] {
+  display: none !important;
+}
+
+.pagination button {
+  min-height: 34px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.86rem;
+}
+
+.pagination button:hover:not(:disabled) {
+  border-color: var(--line-strong);
+  background: #f6faf9;
+}
+
+.pagination button:disabled {
+  cursor: default;
+  opacity: 0.48;
+}
+
+.page-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.page-buttons button[aria-current="page"] {
+  border-color: #8ebbb4;
+  background: #eef8f5;
+  color: var(--ink-strong);
+  font-weight: 760;
+}
+
+.page-gap {
+  align-self: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.pagination p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
 .episode-card {
   position: relative;
   display: grid;
@@ -1732,6 +1883,27 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
     order: 2;
   }
   .episode-list { gap: 8px; padding-top: 0; }
+  .pagination {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 9px;
+  }
+  .page-buttons {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  .pagination [data-page-prev] {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .pagination [data-page-next] {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .pagination p {
+    grid-row: 3;
+  }
   .episode-card {
     grid-template-columns: 60px minmax(0, 1fr);
     gap: 11px;
