@@ -81,15 +81,16 @@ def render_index(config: Config, episodes, slugs: dict[int, str]) -> str:
         </header>
         {controls}
         <div class="content-grid">
-          <main aria-live="polite">
+          <main id="main-content" tabindex="-1" aria-labelledby="episode-list-title">
+            <h2 class="visually-hidden" id="episode-list-title">Published episodes</h2>
             <div class="episode-list">
               {cards}
             </div>
             <nav class="pagination" data-pagination aria-label="Episode pages" hidden>
-              <button type="button" data-page-prev>Previous</button>
+              <button type="button" data-page-prev aria-label="Previous page">Previous</button>
               <div class="page-buttons" data-page-buttons></div>
-              <button type="button" data-page-next>Next</button>
-              <p data-page-status></p>
+              <button type="button" data-page-next aria-label="Next page">Next</button>
+              <p data-page-status role="status" aria-live="polite"></p>
             </nav>
           </main>
           {render_side_rail(config, episodes, slugs)}
@@ -174,7 +175,7 @@ def render_episode_page(config: Config, episode, slug: str) -> str:
         json_ld=episode_structured_data(config, episode, slug, description=description),
         body=f"""
         <nav class="top-nav" aria-label="Episode navigation"><a href="../../index.html">Back to episodes</a></nav>
-        <main class="detail">
+        <main class="detail" id="main-content" tabindex="-1">
           <section class="detail-hero">
             <div class="detail-art">{image}</div>
             <div>
@@ -316,6 +317,7 @@ def page(
   {json_ld_html}
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="shell">
     {body}
   </div>
@@ -372,11 +374,11 @@ FILTER_SCRIPT = """(() => {
             document.execCommand("copy");
             textarea.remove();
           }
-          button.textContent = "Copied";
-          window.setTimeout(() => { button.textContent = originalLabel; }, 1600);
+          announceCopy(button, "Copied");
+          window.setTimeout(() => { resetCopy(button, originalLabel); }, 1600);
         } catch {
-          button.textContent = "Copy failed";
-          window.setTimeout(() => { button.textContent = originalLabel; }, 1800);
+          announceCopy(button, "Copy failed");
+          window.setTimeout(() => { resetCopy(button, originalLabel); }, 1800);
         }
       });
     });
@@ -415,14 +417,16 @@ FILTER_SCRIPT = """(() => {
       pages.forEach((page) => {
         if (page - lastPage > 1) {
           const gap = document.createElement("span");
-          gap.textContent = "More";
+          gap.textContent = "More pages";
           gap.className = "page-gap";
+          gap.setAttribute("aria-hidden", "true");
           pageButtons.append(gap);
         }
         const button = document.createElement("button");
         button.type = "button";
         button.textContent = String(page);
         button.dataset.pageNumber = String(page);
+        button.setAttribute("aria-label", `Page ${page}`);
         button.setAttribute("aria-current", page === activePage ? "page" : "false");
         button.addEventListener("click", () => {
           activePage = page;
@@ -437,7 +441,7 @@ FILTER_SCRIPT = """(() => {
       nextPage.disabled = activePage >= pageCount;
       const start = total ? (activePage - 1) * PAGE_SIZE + 1 : 0;
       const end = Math.min(activePage * PAGE_SIZE, total);
-      pageStatus.textContent = total > PAGE_SIZE ? `Showing ${start}-${end} of ${total}` : "";
+      pageStatus.textContent = total > PAGE_SIZE ? `Showing ${start}-${end} of ${total} episodes` : "";
     };
 
     const apply = () => {
@@ -500,6 +504,23 @@ FILTER_SCRIPT = """(() => {
     });
 
     apply();
+
+    function announceCopy(button, message) {
+      button.textContent = message;
+      const status = copyStatusFor(button);
+      if (status) status.textContent = message;
+    }
+
+    function resetCopy(button, label) {
+      button.textContent = label;
+      const status = copyStatusFor(button);
+      if (status) status.textContent = "";
+    }
+
+    function copyStatusFor(button) {
+      return button.parentElement?.querySelector("[data-copy-status]")
+        || button.closest(".rss-card, .podcast-tools")?.querySelector("[data-copy-status]");
+    }
   })();"""
 
 
