@@ -40,6 +40,40 @@ class SiteGenerationTests(unittest.TestCase):
         self.assertEqual(site._compact_sentence(value, max_chars=72), value)
         self.assertEqual(site._first_sentence(value), value)
 
+    def test_topline_uses_short_summary_instead_of_long_key_point(self) -> None:
+        episode = {
+            "short_summary_text": "Benchmarks miss test-time compute.",
+            "key_points_json": storage.dumps(
+                [
+                    "Traditional single-number benchmark scores are misleading because they do not account "
+                    "for test-time compute; this longer key point belongs on the detail page."
+                ]
+            ),
+            "summary_text": "",
+            "summary_html": "",
+            "summary_title": "Noam Brown on benchmarks",
+            "title": "Why traditional benchmarks fail modern AI models",
+        }
+
+        self.assertEqual(site._topline(episode, guests=["Noam Brown"]), "Noam Brown: Benchmarks miss test-time compute.")
+
+    def test_short_summary_fallback_does_not_show_oversized_fragment(self) -> None:
+        long_unpunctuated_point = (
+            "Traditional single-number benchmark scores are misleading because they do not account for "
+            "test-time compute and this unpunctuated thought should not be rendered as a giant card headline"
+        )
+        episode = {
+            "short_summary_text": "",
+            "key_points_json": storage.dumps([long_unpunctuated_point]),
+            "summary_text": "",
+            "summary_html": "",
+            "summary_title": "Noam Brown on benchmarks",
+            "title": "Why traditional benchmarks fail modern AI models",
+        }
+
+        self.assertEqual(site._topline(episode, guests=["Noam Brown"]), "Noam Brown on benchmarks")
+        self.assertNotIn("unpunctuated thought", site._topline(episode, guests=["Noam Brown"]))
+
     def test_build_site_and_rss_from_published_episode(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = pathlib.Path(tmp)
@@ -101,8 +135,9 @@ class SiteGenerationTests(unittest.TestCase):
                     episode_id,
                     {
                         "title": "Sam Altman on models",
-                        "summary": "Summary text",
-                        "summary_html": "<p>Summary text</p>",
+                        "summary": "Sam's summary text",
+                        "short_summary": "Sam explains practical model tradeoffs.",
+                        "summary_html": "<p>Sam's summary text</p>",
                         "key_points": ["Point one"],
                         "topics": ["models"],
                         "hosts": ["Host One"],
@@ -117,8 +152,8 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertTrue((root / "public" / "index.html").exists())
             self.assertTrue((root / "public" / "feed.xml").exists())
             self.assertTrue((root / "public" / "sitemap.xml").exists())
-            self.assertTrue(any((root / "public" / "assets" / "social").glob("ai-radar-*.png")))
-            self.assertTrue(any((root / "public" / "assets" / "social").glob("episode-*.png")))
+            self.assertTrue(any((root / "public" / "assets" / "social").glob("ai-radar-*.*")))
+            self.assertTrue(any((root / "public" / "assets" / "social").glob("episode-*.*")))
             self.assertTrue(any((root / "public" / "assets").glob("style-*.css")))
             home_card_svg = next((root / "public" / "assets" / "social").glob("ai-radar-*.svg")).read_text()
             self.assertIn("Updated 2024-06-18", home_card_svg)
@@ -176,7 +211,7 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn("rss-text-link", index)
             self.assertNotIn('class="briefing"', index)
             self.assertNotIn("briefings", index.lower())
-            self.assertIn("Sam Altman: Point one", index)
+            self.assertIn("Sam Altman: Sam explains practical model tradeoffs.", index)
             self.assertIn('<p class="source-line">', index)
             self.assertIn('<span class="source-main"><strong>Example</strong><span class="source-title"> · Sam Altman on models</span></span>', index)
             self.assertIn('<span class="source-details">2024-06-18 · 1h 00m</span>', index)
@@ -193,9 +228,13 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn("https://radar.example.com/episodes/", rss)
             self.assertIn("<title>Sam Altman on models</title>", rss)
             rss_description = rss_root.findtext("./channel/item/description") or ""
-            self.assertIn("Summary text", rss_description)
-            self.assertIn("Original podcast: https://example.com/episode-1", rss_description)
-            self.assertIn("AI Radar page: https://radar.example.com/episodes/", rss_description)
+            self.assertIn("Sam explains practical model tradeoffs.", rss_description)
+            self.assertNotIn("Sam's summary text", rss_description)
+            self.assertNotIn("Original podcast", rss_description)
+            self.assertNotIn("https://example.com/episode-1", rss_description)
+            self.assertIn("<br><br><br>", rss_description)
+            self.assertIn('<a href="https://radar.example.com/episodes/', rss_description)
+            self.assertIn(">AI Radar page</a>", rss_description)
             self.assertIn("<pubDate>Tue, 18 Jun 2024 10:00:00 GMT</pubDate>", rss)
             self.assertNotIn("<![CDATA[", rss)
             self.assertNotIn("<strong>Podcast:</strong>", rss)

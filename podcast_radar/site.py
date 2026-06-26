@@ -3,6 +3,7 @@ from __future__ import annotations
 import datetime as dt
 import email.utils
 import hashlib
+import html
 import json
 import shutil
 import subprocess
@@ -12,6 +13,10 @@ from urllib.parse import urljoin
 from .config import Config
 from . import storage
 from .text import comma_join, escape, paragraphs_to_html, slugify, strip_html, transcript_to_html
+
+
+SHORT_SUMMARY_MAX_CHARS = 120
+TOPLINE_MAX_CHARS = 100
 
 
 def build_site(config: Config, conn) -> dict[str, int]:
@@ -885,6 +890,9 @@ def _meta_description(value: str, *, max_chars: int = 160) -> str:
 
 
 def _episode_meta_description(episode) -> str:
+    short = _short_summary(episode)
+    if short:
+        return short
     summary = str(episode["summary_text"] or "").strip()
     if not summary:
         summary = strip_html(str(episode["summary_html"] or ""))
@@ -1193,16 +1201,9 @@ def _episode_count_label(count: int) -> str:
 
 
 def _rss_description(episode, *, site_link: str) -> str:
-    summary = str(episode["summary_text"] or "").strip()
-    if not summary:
-        summary = strip_html(str(episode["summary_html"] or ""))
-    description = _first_sentence(summary)
-    footer = []
-    original = source_url(episode)
-    if original:
-        footer.append(f"Original podcast: {original}")
-    footer.append(f"AI Radar page: {site_link}")
-    return "\n\n".join(part for part in (description, "\n".join(footer)) if part)
+    description = _short_summary(episode)
+    link = f'<a href="{escape(site_link)}">AI Radar page</a>'
+    return "<br><br><br>".join(part for part in (html.escape(description, quote=False), link) if part)
 
 
 def _summary_teaser(episode) -> str:
@@ -1215,6 +1216,9 @@ def _summary_teaser(episode) -> str:
 
 
 def _why_it_matters(episode) -> str:
+    short = _short_summary(episode, include_title=False)
+    if short:
+        return short
     key_points = _people(episode["key_points_json"])
     if key_points:
         return key_points[0]
@@ -1232,11 +1236,61 @@ def _why_it_matters(episode) -> str:
 
 def _topline(episode, *, guests: list[str]) -> str:
     guest_label = comma_join(guests) or "The guest"
-    signal = _why_it_matters(episode)
+    signal = _short_summary(episode) or _why_it_matters(episode)
     for guest in guests:
         if signal.casefold().startswith(guest.casefold()):
-            return _compact_sentence(signal, max_chars=92)
-    return _compact_sentence(f"{guest_label}: {signal}", max_chars=92)
+            return signal
+    candidate = f"{guest_label}: {signal}"
+    if len(candidate) <= TOPLINE_MAX_CHARS:
+        return candidate
+    return signal
+
+
+def _short_summary(episode, *, include_title: bool = True) -> str:
+    summary = str(episode["summary_text"] or "").strip()
+    if not summary:
+        summary = strip_html(str(episode["summary_html"] or ""))
+    candidates = [
+        _episode_field(episode, "short_summary_text"),
+    ]
+    if include_title:
+        candidates.extend(
+            [
+                _episode_field(episode, "summary_title"),
+                _episode_field(episode, "title"),
+            ]
+        )
+    candidates.extend(
+        [
+            *_people(episode["key_points_json"]),
+            _first_sentence(summary),
+        ]
+    )
+    for candidate in candidates:
+        short = _short_complete_text(str(candidate or ""))
+        if short:
+            return short
+    return ""
+
+
+def _short_complete_text(value: str, *, target_chars: int = 80, max_chars: int = SHORT_SUMMARY_MAX_CHARS) -> str:
+    normalized = " ".join(value.split())
+    if not normalized:
+        return ""
+    if len(normalized) <= target_chars:
+        return normalized
+    end = _complete_thought_before(normalized, max_chars=max_chars)
+    if end is None:
+        return normalized if len(normalized) <= max_chars else ""
+    return _display_sentence(normalized[:end])
+
+
+def _complete_thought_before(value: str, *, max_chars: int) -> int | None:
+    earliest = max(1, int(max_chars * 0.34))
+    for index, char in enumerate(value[: max_chars + 1]):
+        if char in ".!?;" and index >= earliest:
+            return index + 1
+    return None
 
 
 def _compact_sentence(value: str, *, max_chars: int) -> str:

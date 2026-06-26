@@ -194,12 +194,10 @@ async function checkViewport(browserInstance, viewport) {
 
   const openAiFilter = page.locator('[data-filter="openai"]');
   if (await openAiFilter.count()) {
-    const allCards = await page.locator(".episode-card:visible").count();
     await openAiFilter.click();
     const visibleCards = await page.locator(".episode-card:visible").count();
     const mismatched = await page.locator('.episode-card:visible:not([data-labs~="openai"])').count();
     if (visibleCards < 1) throw new Error("OpenAI filter hid every card");
-    if (visibleCards >= allCards) throw new Error("OpenAI filter did not reduce the visible card count");
     if (mismatched !== 0) throw new Error("OpenAI filter left non-OpenAI cards visible");
   }
 

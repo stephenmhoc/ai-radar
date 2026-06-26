@@ -63,6 +63,7 @@ def migrate(conn: sqlite3.Connection) -> None:
           transcribed_at TEXT,
           summary_title TEXT,
           summary_text TEXT,
+          short_summary_text TEXT,
           summary_html TEXT,
           key_points_json TEXT NOT NULL DEFAULT '[]',
           topics_json TEXT NOT NULL DEFAULT '[]',
@@ -86,6 +87,7 @@ def migrate(conn: sqlite3.Connection) -> None:
         );
         """
     )
+    _ensure_column(conn, "episodes", "short_summary_text", "TEXT")
     conn.commit()
 
 
@@ -290,6 +292,7 @@ def set_summary(conn: sqlite3.Connection, episode_id: int, result: dict[str, Any
         UPDATE episodes
         SET summary_title = ?,
             summary_text = ?,
+            short_summary_text = ?,
             summary_html = ?,
             key_points_json = ?,
             topics_json = ?,
@@ -303,6 +306,7 @@ def set_summary(conn: sqlite3.Connection, episode_id: int, result: dict[str, Any
         (
             result.get("title"),
             result.get("summary"),
+            result.get("short_summary"),
             result.get("summary_html"),
             dumps(_as_list(result.get("key_points"))),
             dumps(_as_list(result.get("topics"))),
@@ -315,6 +319,12 @@ def set_summary(conn: sqlite3.Connection, episode_id: int, result: dict[str, Any
             episode_id,
         ),
     )
+
+
+def _ensure_column(conn: sqlite3.Connection, table: str, column: str, definition: str) -> None:
+    columns = {str(row["name"] if isinstance(row, sqlite3.Row) else row[1]) for row in conn.execute(f"PRAGMA table_info({table})")}
+    if column not in columns:
+        conn.execute(f"ALTER TABLE {table} ADD COLUMN {column} {definition}")
 
 
 def mark_failed(conn: sqlite3.Connection, episode_id: int, reason: str) -> None:

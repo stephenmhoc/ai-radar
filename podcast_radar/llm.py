@@ -232,6 +232,7 @@ Transcript:
 Return strict JSON with:
 title: short display title
 summary: 2-4 concise paragraphs
+short_summary: one complete sentence, roughly 80 characters and no more than 120 characters, for compact cards and feeds
 key_points: array of 4-8 concrete bullets
 topics: array of short topic tags
 hosts: array of host names if identifiable
@@ -297,15 +298,63 @@ def _normalize_judge(response: dict[str, Any], config: Config) -> dict[str, Any]
 def _normalize_summary(response: dict[str, Any]) -> dict[str, Any]:
     summary = str(response.get("summary", "")).strip()
     key_points = _list(response.get("key_points"))
+    title = str(response.get("title", "")).strip()
+    short_summary = _normalize_short_summary(
+        response.get("short_summary"),
+        summary=summary,
+        key_points=key_points,
+        title=title,
+    )
     return {
-        "title": str(response.get("title", "")).strip(),
+        "title": title,
         "summary": summary,
+        "short_summary": short_summary,
         "summary_html": paragraphs_to_html(summary),
         "key_points": key_points,
         "topics": _list(response.get("topics")),
         "hosts": _list(response.get("hosts")),
         "guests": _list(response.get("guests")),
     }
+
+
+def _normalize_short_summary(value: Any, *, summary: str, key_points: list[str], title: str) -> str:
+    candidates = [
+        str(value or "").strip(),
+        *(point.strip() for point in key_points),
+        _first_complete_sentence(summary),
+        title,
+    ]
+    for candidate in candidates:
+        short = _short_complete_text(candidate)
+        if short:
+            return short
+    return ""
+
+
+def _first_complete_sentence(value: str) -> str:
+    normalized = " ".join(value.split())
+    for index, char in enumerate(normalized):
+        if char in ".!?" and index >= 36:
+            return normalized[: index + 1]
+    return normalized
+
+
+def _short_complete_text(value: str, *, target_chars: int = 80, max_chars: int = 120) -> str:
+    normalized = " ".join(value.split())
+    if not normalized:
+        return ""
+    if len(normalized) <= target_chars:
+        return normalized
+    earliest = 40
+    for index, char in enumerate(normalized[: max_chars + 1]):
+        if char in ".!?;" and index >= earliest:
+            text = normalized[: index + 1].rstrip()
+            if text.endswith(";"):
+                text = text[:-1].rstrip(" ,;:") + "."
+            return text
+    if len(normalized) <= max_chars:
+        return normalized
+    return ""
 
 
 def _list(value: Any) -> list[str]:
