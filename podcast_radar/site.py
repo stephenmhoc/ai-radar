@@ -3,6 +3,7 @@ from __future__ import annotations
 import datetime as dt
 import email.utils
 import hashlib
+import json
 import shutil
 from pathlib import Path
 from urllib.parse import urljoin
@@ -24,7 +25,6 @@ def build_site(config: Config, conn) -> dict[str, int]:
     (public_dir / "assets" / style_name).write_text(STYLE_CSS, encoding="utf-8")
     (public_dir / "assets" / "style.css").write_text(STYLE_CSS, encoding="utf-8")
     (public_dir / "assets" / "favicon.svg").write_text(FAVICON_SVG, encoding="utf-8")
-    (public_dir / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")
     if config.site.cname:
         (public_dir / "CNAME").write_text(config.site.cname + "\n", encoding="utf-8")
 
@@ -40,6 +40,8 @@ def build_site(config: Config, conn) -> dict[str, int]:
         )
 
     rss = render_rss(config, episodes, slugs)
+    (public_dir / "robots.txt").write_text(render_robots(config), encoding="utf-8")
+    (public_dir / "sitemap.xml").write_text(render_sitemap(config, episodes, slugs), encoding="utf-8")
     (public_dir / "index.html").write_text(render_index(config, episodes, slugs), encoding="utf-8")
     (public_dir / "feed.xml").write_text(rss["xml"], encoding="utf-8")
     return {"episodes": len(episodes), "rss_items": rss["items"]}
@@ -64,6 +66,10 @@ def render_index(config: Config, episodes, slugs: dict[int, str]) -> str:
     return page(
         config,
         title=config.site.title,
+        description=config.site.description,
+        canonical_url=site_root_url(config),
+        image_url=_site_image_url(episodes),
+        json_ld=home_structured_data(config, episodes, slugs),
         body=f"""
         <header class="masthead">
           <div>
@@ -86,7 +92,7 @@ def render_index(config: Config, episodes, slugs: dict[int, str]) -> str:
               <p data-page-status></p>
             </nav>
           </main>
-          {render_side_rail(episodes, slugs)}
+          {render_side_rail(config, episodes, slugs)}
         </div>
         """,
     )
@@ -154,9 +160,18 @@ def render_episode_page(config: Config, episode, slug: str) -> str:
     status_html = f'<p class="status-pill">{escape(status)}</p>' if status else ""
     why = _why_it_matters(episode)
     digest = render_episode_digest(episode, hosts=hosts, guests=guests, labs=labs, key_points=key_points, why=why)
+    podcast_tools = render_podcast_tools(episode)
+    episode_url = episode_url_for(config, slug)
+    description = _episode_meta_description(episode)
     return page(
         config,
         title=title,
+        description=description,
+        canonical_url=episode_url,
+        image_url=_episode_image_url(episode),
+        page_type="article",
+        published_time=_episode_field(episode, "published_at"),
+        json_ld=episode_structured_data(config, episode, slug, description=description),
         body=f"""
         <nav class="top-nav" aria-label="Episode navigation"><a href="../../index.html">Back to episodes</a></nav>
         <main class="detail">
@@ -172,6 +187,7 @@ def render_episode_page(config: Config, episode, slug: str) -> str:
               <div class="actions"><a href="#summary">Read summary</a><a href="#transcript">Jump to transcript</a>{source_link(episode)}</div>
             </div>
           </section>
+          {podcast_tools}
           {digest}
           <section class="content-block summary-block" id="summary">
             <p class="eyebrow">Episode summary</p>
@@ -198,7 +214,7 @@ def render_rss(config: Config, episodes, slugs: dict[int, str]) -> dict[str, int
         slug = slugs[int(episode["id"])]
         link = episode_url_for(config, slug)
         pub_date = _rss_date(episode["published_at"])
-        description = _rss_description(episode)
+        description = _rss_description(episode, site_link=link)
         items.append(
             f"""
             <item>
@@ -214,7 +230,7 @@ def render_rss(config: Config, episodes, slugs: dict[int, str]) -> dict[str, int
 <rss version="2.0">
   <channel>
     <title>{escape(config.site.rss_title)}</title>
-    <link>{escape(config.site.base_url.rstrip('/') + '/')}</link>
+    <link>{escape(site_root_url(config))}</link>
     <description>{escape(config.site.rss_description)}</description>
     <lastBuildDate>{escape(now)}</lastBuildDate>
     {''.join(items)}
@@ -224,18 +240,80 @@ def render_rss(config: Config, episodes, slugs: dict[int, str]) -> dict[str, int
     return {"xml": xml, "items": len(items)}
 
 
-def page(config: Config, *, title: str, body: str) -> str:
+def render_robots(config: Config) -> str:
+    return f"""User-agent: *
+Allow: /
+Sitemap: {sitemap_url_for(config)}
+"""
+
+
+def render_sitemap(config: Config, episodes, slugs: dict[int, str]) -> str:
+    latest = _sitemap_date(max((_episode_sort_date(episode) for episode in episodes), default=""))
+    entries = [
+        _sitemap_entry(site_root_url(config), lastmod=latest, priority="1.0"),
+    ]
+    for episode in episodes:
+        slug = slugs[int(episode["id"])]
+        entries.append(
+            _sitemap_entry(
+                episode_url_for(config, slug),
+                lastmod=_sitemap_date(_episode_sort_date(episode)),
+                priority="0.8",
+            )
+        )
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{''.join(entries)}</urlset>
+"""
+
+
+def page(
+    config: Config,
+    *,
+    title: str,
+    body: str,
+    description: str | None = None,
+    canonical_url: str | None = None,
+    image_url: str | None = None,
+    page_type: str = "website",
+    published_time: str | None = None,
+    json_ld=None,
+) -> str:
     style_name = style_asset_name()
+    document_title = _document_title(config, title)
+    meta_description = _meta_description(description or config.site.description)
+    canonical = canonical_url or site_root_url(config)
+    rss_url = feed_url_for(config)
+    image_meta = ""
+    if image_url:
+        image_meta = f"""
+  <meta property="og:image" content="{escape(image_url)}">
+  <meta name="twitter:image" content="{escape(image_url)}">"""
+    published_meta = ""
+    if published_time:
+        published_meta = f"""
+  <meta property="article:published_time" content="{escape(published_time)}">"""
+    json_ld_html = render_json_ld(json_ld)
     return f"""<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{escape(title)}</title>
-  <meta name="description" content="{escape(config.site.description)}">
-  <link rel="alternate" type="application/rss+xml" title="{escape(config.site.rss_title)}" href="/feed.xml">
+  <title>{escape(document_title)}</title>
+  <meta name="description" content="{escape(meta_description)}">
+  <link rel="canonical" href="{escape(canonical)}">
+  <meta property="og:site_name" content="{escape(config.site.title)}">
+  <meta property="og:type" content="{escape(page_type)}">
+  <meta property="og:title" content="{escape(document_title)}">
+  <meta property="og:description" content="{escape(meta_description)}">
+  <meta property="og:url" content="{escape(canonical)}">{image_meta}{published_meta}
+  <meta name="twitter:card" content="{escape('summary_large_image' if image_url else 'summary')}">
+  <meta name="twitter:title" content="{escape(document_title)}">
+  <meta name="twitter:description" content="{escape(meta_description)}">
+  <link rel="alternate" type="application/rss+xml" title="{escape(config.site.rss_title)}" href="{escape(rss_url)}">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/{style_name}">
+  {json_ld_html}
 </head>
 <body>
   <div class="shell">
@@ -266,6 +344,7 @@ FILTER_SCRIPT = """(() => {
     const PAGE_SIZE = 24;
     const buttons = Array.from(document.querySelectorAll("[data-filter]"));
     const cards = Array.from(document.querySelectorAll(".episode-card"));
+    const copyButtons = Array.from(document.querySelectorAll("[data-copy-url]"));
     const list = document.querySelector(".episode-list");
     const searchInput = document.querySelector("[data-search-input]");
     const resultCount = document.querySelector("[data-result-count]");
@@ -274,6 +353,33 @@ FILTER_SCRIPT = """(() => {
     const pageStatus = document.querySelector("[data-page-status]");
     const previousPage = document.querySelector("[data-page-prev]");
     const nextPage = document.querySelector("[data-page-next]");
+    copyButtons.forEach((button) => {
+      const originalLabel = button.textContent || "Copy";
+      button.addEventListener("click", async () => {
+        const value = button.dataset.copyUrl || "";
+        if (!value) return;
+        try {
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const textarea = document.createElement("textarea");
+            textarea.value = value;
+            textarea.setAttribute("readonly", "");
+            textarea.style.position = "fixed";
+            textarea.style.top = "-1000px";
+            document.body.append(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            textarea.remove();
+          }
+          button.textContent = "Copied";
+          window.setTimeout(() => { button.textContent = originalLabel; }, 1600);
+        } catch {
+          button.textContent = "Copy failed";
+          window.setTimeout(() => { button.textContent = originalLabel; }, 1800);
+        }
+      });
+    });
     if (!buttons.length || !cards.length) return;
 
     let activeLab = "all";
@@ -398,18 +504,234 @@ FILTER_SCRIPT = """(() => {
 
 
 def episode_url_for(config: Config, slug: str) -> str:
-    return urljoin(config.site.base_url.rstrip("/") + "/", episode_path_for(slug).lstrip("/"))
+    return urljoin(site_root_url(config), episode_path_for(slug).lstrip("/"))
+
+
+def feed_url_for(config: Config) -> str:
+    return urljoin(site_root_url(config), "feed.xml")
+
+
+def sitemap_url_for(config: Config) -> str:
+    return urljoin(site_root_url(config), "sitemap.xml")
+
+
+def site_root_url(config: Config) -> str:
+    return config.site.base_url.rstrip("/") + "/"
 
 
 def episode_path_for(slug: str) -> str:
     return f"/episodes/{slug}/"
 
 
-def source_link(episode, *, icon: bool = True, label: str = "Go to episode") -> str:
-    if not episode["episode_url"]:
+def home_structured_data(config: Config, episodes, slugs: dict[int, str]) -> list[dict[str, object]]:
+    root_url = site_root_url(config)
+    parts = []
+    for episode in episodes[:12]:
+        slug = slugs[int(episode["id"])]
+        parts.append(
+            {
+                "@type": "PodcastEpisode",
+                "name": str(episode["summary_title"] or episode["title"]),
+                "url": episode_url_for(config, slug),
+                "datePublished": _episode_field(episode, "published_at"),
+            }
+        )
+    return [
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": config.site.title,
+            "url": root_url,
+            "description": config.site.description,
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": config.site.title,
+            "url": root_url,
+            "description": config.site.description,
+            "hasPart": parts,
+        },
+    ]
+
+
+def episode_structured_data(config: Config, episode, slug: str, *, description: str) -> dict[str, object]:
+    image_url = _episode_image_url(episode)
+    data: dict[str, object] = {
+        "@context": "https://schema.org",
+        "@type": "PodcastEpisode",
+        "name": str(episode["summary_title"] or episode["title"]),
+        "description": description,
+        "url": episode_url_for(config, slug),
+        "datePublished": _episode_field(episode, "published_at"),
+        "isPartOf": {
+            "@type": "PodcastSeries",
+            "name": str(episode["feed_name"]),
+            "url": podcast_feed_url(episode) or _first_episode_field(episode, "feed_homepage_url"),
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": config.site.title,
+            "url": site_root_url(config),
+        },
+    }
+    duration = _iso_duration(_episode_field(episode, "duration"))
+    if duration:
+        data["duration"] = duration
+    if image_url:
+        data["image"] = image_url
+    audio_url = _episode_field(episode, "audio_url")
+    if audio_url:
+        data["associatedMedia"] = {
+            "@type": "AudioObject",
+            "contentUrl": audio_url,
+            "encodingFormat": _episode_field(episode, "audio_type"),
+        }
+    people = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
+    if people:
+        data["guest"] = [{"@type": "Person", "name": person} for person in people]
+    topics = _display_topics(_people(episode["topics_json"]), _people(episode["labs_json"]))
+    if topics:
+        data["about"] = topics
+    return data
+
+
+def render_json_ld(value) -> str:
+    if not value:
         return ""
+    encoded = json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+    encoded = encoded.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
+    return f'<script type="application/ld+json">{encoded}</script>'
+
+
+def _document_title(config: Config, title: str) -> str:
+    title = title.strip() or config.site.title
+    if title == config.site.title:
+        return title
+    return f"{title} | {config.site.title}"
+
+
+def _meta_description(value: str, *, max_chars: int = 160) -> str:
+    normalized = " ".join(strip_html(value).split())
+    if len(normalized) <= max_chars:
+        return normalized
+    cutoff = normalized.rfind(" ", 0, max_chars - 1)
+    if cutoff < max_chars * 0.62:
+        cutoff = max_chars - 1
+    return normalized[:cutoff].rstrip(" ,;:.-") + "..."
+
+
+def _episode_meta_description(episode) -> str:
+    summary = str(episode["summary_text"] or "").strip()
+    if not summary:
+        summary = strip_html(str(episode["summary_html"] or ""))
+    if summary:
+        return _first_sentence(summary)
+    return _why_it_matters(episode)
+
+
+def _episode_image_url(episode) -> str:
+    return _first_episode_field(episode, "image_url", "feed_image_url")
+
+
+def _site_image_url(episodes) -> str:
+    for episode in episodes:
+        image_url = _episode_image_url(episode)
+        if image_url:
+            return image_url
+    return ""
+
+
+def _episode_sort_date(episode) -> str:
+    return _first_episode_field(episode, "published_at", "summarized_at", "updated_at", "created_at")
+
+
+def _sitemap_date(value: str) -> str:
+    if not value:
+        return ""
+    try:
+        parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return value[:10]
+    return parsed.date().isoformat()
+
+
+def _sitemap_entry(url: str, *, lastmod: str, priority: str) -> str:
+    lastmod_html = f"<lastmod>{escape(lastmod)}</lastmod>" if lastmod else ""
+    return f"""  <url>
+    <loc>{escape(url)}</loc>
+    {lastmod_html}
+    <priority>{escape(priority)}</priority>
+  </url>
+"""
+
+
+def _iso_duration(value: str | None) -> str:
+    if not value:
+        return ""
+    text = str(value).strip()
+    seconds = 0
+    if text.isdigit():
+        seconds = int(text)
+    else:
+        parts = text.split(":")
+        if len(parts) == 3 and all(part.isdigit() for part in parts):
+            hours, minutes, sec = (int(part) for part in parts)
+            seconds = hours * 3600 + minutes * 60 + sec
+        elif len(parts) == 2 and all(part.isdigit() for part in parts):
+            minutes, sec = (int(part) for part in parts)
+            seconds = minutes * 60 + sec
+    if seconds <= 0:
+        return ""
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    sec = seconds % 60
+    value = "PT"
+    if hours:
+        value += f"{hours}H"
+    if minutes:
+        value += f"{minutes}M"
+    if sec or value == "PT":
+        value += f"{sec}S"
+    return value
+
+
+def source_link(episode, *, icon: bool = True, label: str | None = None) -> str:
+    url = source_url(episode)
+    if not url:
+        return ""
+    if label is None:
+        label = "Go to episode" if _episode_field(episode, "episode_url") else "Original podcast"
     icon_html = '<span class="external-icon" aria-hidden="true">↗</span>' if icon else ""
-    return f'<a class="external-link" href="{escape(episode["episode_url"])}" target="_blank" rel="noopener noreferrer">{escape(label)}{icon_html}</a>'
+    return f'<a class="external-link" href="{escape(url)}" target="_blank" rel="noopener noreferrer">{escape(label)}{icon_html}</a>'
+
+
+def source_url(episode) -> str:
+    return _first_episode_field(episode, "episode_url", "feed_homepage_url", "feed_url")
+
+
+def podcast_feed_url(episode) -> str:
+    return _first_episode_field(episode, "feed_url", "audio_url", "episode_url", "feed_homepage_url")
+
+
+def render_podcast_tools(episode) -> str:
+    feed_url = podcast_feed_url(episode)
+    if not feed_url:
+        return ""
+    episode_id = _episode_field(episode, "id", "episode")
+    control_id = f"podcast-feed-{escape(episode_id)}"
+    return f"""
+    <section class="podcast-tools" aria-label="Podcast links">
+      <label class="feed-copy-control" for="{control_id}">
+        <span>Podcast feed URL</span>
+        <div class="copy-row">
+          <input id="{control_id}" type="url" readonly value="{escape(feed_url)}" onfocus="this.select()" aria-label="Podcast feed URL">
+          <button type="button" data-copy-url="{escape(feed_url)}">Copy feed URL</button>
+          <a href="{escape(feed_url)}" target="_blank" rel="noopener noreferrer">Open feed</a>
+        </div>
+      </label>
+    </section>
+    """
 
 
 def render_briefing(config: Config, episodes, slugs: dict[int, str]) -> str:
@@ -517,15 +839,17 @@ def render_search_panel(episodes) -> str:
     """
 
 
-def render_side_rail(episodes, slugs: dict[int, str]) -> str:
+def render_side_rail(config: Config, episodes, slugs: dict[int, str]) -> str:
     if not episodes:
         return ""
     latest = "".join(render_rail_item(episode, slugs[int(episode["id"])]) for episode in episodes[:5])
+    feed_url = feed_url_for(config)
     return f"""
     <aside class="side-rail" aria-label="Radar sidebar">
       <section class="rail-card rss-card">
         <p class="eyebrow">Follow along</p>
-        <a class="follow-link" href="feed.xml">Use our RSS feed to stay up to date <span aria-hidden="true">↗</span></a>
+        <a class="follow-link" href="{escape(feed_url)}">Use our RSS feed to stay up to date <span aria-hidden="true">↗</span></a>
+        <button type="button" class="rss-copy-button" data-copy-url="{escape(feed_url)}">Copy feed URL</button>
       </section>
       <section class="rail-card newest-card">
         <div class="rail-heading"><span>Newest episodes</span><span>{len(episodes)} total</span></div>
@@ -608,11 +932,17 @@ def _rss_ready(episode) -> bool:
     )
 
 
-def _rss_description(episode) -> str:
+def _rss_description(episode, *, site_link: str) -> str:
     summary = str(episode["summary_text"] or "").strip()
     if not summary:
         summary = strip_html(str(episode["summary_html"] or ""))
-    return _first_sentence(summary)
+    description = _first_sentence(summary)
+    footer = []
+    original = source_url(episode)
+    if original:
+        footer.append(f"Original podcast: {original}")
+    footer.append(f"AI Radar page: {site_link}")
+    return "\n\n".join(part for part in (description, "\n".join(footer)) if part)
 
 
 def _summary_teaser(episode) -> str:
@@ -653,10 +983,10 @@ def _compact_sentence(value: str, *, max_chars: int) -> str:
     normalized = " ".join(value.split())
     if len(normalized) <= max_chars:
         return normalized
-    cutoff = normalized.rfind(" ", 0, max_chars - 1)
-    if cutoff < max_chars * 0.62:
-        cutoff = max_chars - 1
-    return normalized[:cutoff].rstrip(" ,;:.-")
+    end = _complete_thought_end(normalized, min_chars=max_chars)
+    if end is not None:
+        return _display_sentence(normalized[:end])
+    return normalized
 
 
 def _first_sentence(value: str) -> str:
@@ -666,7 +996,22 @@ def _first_sentence(value: str) -> str:
     for index, char in enumerate(normalized):
         if char in ".!?" and index >= 36:
             return normalized[: index + 1]
-    return normalized[:220].strip()
+    return normalized
+
+
+def _complete_thought_end(value: str, *, min_chars: int) -> int | None:
+    earliest = max(1, int(min_chars * 0.62))
+    for index, char in enumerate(value):
+        if char in ".!?;" and index >= earliest:
+            return index + 1
+    return None
+
+
+def _display_sentence(value: str) -> str:
+    value = value.rstrip()
+    if value.endswith(";"):
+        return value[:-1].rstrip(" ,;:") + "."
+    return value
 
 
 def _affiliation_label(labs: list[str]) -> str:
@@ -727,6 +1072,22 @@ def _lab_token(lab: str) -> str:
 
 def _people(value: str | None) -> list[str]:
     return storage.loads(value, default=[])
+
+
+def _episode_field(episode, key: str, default: str = ""):
+    try:
+        value = episode[key]
+    except (KeyError, IndexError, TypeError):
+        return default
+    return value or default
+
+
+def _first_episode_field(episode, *keys: str) -> str:
+    for key in keys:
+        value = str(_episode_field(episode, key, "")).strip()
+        if value:
+            return value
+    return ""
 
 
 def _display_topics(topics: list[str], labs: list[str]) -> list[str]:
@@ -890,6 +1251,9 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 .rss-link,
 .rss-text-link,
 .actions a,
+.copy-row a,
+.copy-row button,
+.rss-copy-button,
 .top-nav a,
 .filter-button,
 .command-search input,
@@ -912,6 +1276,9 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 .rss-link:hover,
 .rss-text-link:hover,
 .actions a:hover,
+.copy-row a:hover,
+.copy-row button:hover,
+.rss-copy-button:hover,
 .top-nav a:hover,
 .filter-button:hover {
   border-color: var(--line-strong);
@@ -1563,6 +1930,13 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   color: var(--link);
 }
 
+.rss-copy-button {
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  font: inherit;
+}
+
 .rail-heading {
   display: flex;
   justify-content: space-between;
@@ -1755,6 +2129,53 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 
 .detail-art {
   box-shadow: 0 14px 34px rgba(31, 41, 51, 0.14);
+}
+
+.podcast-tools {
+  display: block;
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.feed-copy-control {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.feed-copy-control > span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.copy-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.copy-row input {
+  width: 100%;
+  min-width: 0;
+  min-height: 38px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfd;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.86rem;
+}
+
+.copy-row button {
+  cursor: pointer;
+  font: inherit;
 }
 
 .brief-grid {
@@ -1990,6 +2411,10 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   }
   .actions a { flex: 1 1 calc(50% - 6px); min-width: 0; padding: 7px 8px; font-size: 0.83rem; }
   .detail-hero .actions a { justify-content: center; }
+  .podcast-tools { padding: 14px; }
+  .copy-row { grid-template-columns: 1fr; }
+  .copy-row a,
+  .copy-row button { width: 100%; }
   .top-nav { margin-bottom: 12px; }
   .detail-hero { grid-template-columns: 1fr; gap: 16px; padding: 14px; }
   .detail-art { max-width: 180px; }

@@ -4,6 +4,13 @@ set -euo pipefail
 SCRIPT_DIR=${0:A:h}
 cd "$SCRIPT_DIR/.."
 mkdir -p var/logs
+LOCK_DIR="var/run/daily.lock"
+mkdir -p var/run
+if ! mkdir "$LOCK_DIR" 2>/dev/null; then
+  echo "ai-radar run already in progress; skipping"
+  exit 0
+fi
+trap 'rmdir "$LOCK_DIR"' EXIT
 
 if [ -f var/secrets.env ]; then
   set -a
@@ -11,13 +18,13 @@ if [ -f var/secrets.env ]; then
   set +a
 fi
 
-LOOKBACK_HOURS=${AI_RADAR_LOOKBACK_HOURS:-36}
+LOOKBACK_HOURS=${AI_RADAR_LOOKBACK_HOURS:-2}
 SINCE=$(
   python3 - <<'PY'
 import datetime as dt
 import os
 
-hours = int(os.environ.get("AI_RADAR_LOOKBACK_HOURS", "36"))
+hours = int(os.environ.get("AI_RADAR_LOOKBACK_HOURS", "2"))
 cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=hours)
 print(cutoff.replace(microsecond=0).isoformat())
 PY

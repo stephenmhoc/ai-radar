@@ -28,7 +28,7 @@ class LLMConfig:
     provider: str = "openai_compatible"
     base_url: str = "https://openrouter.ai/api/v1"
     api_key_env: str = "OPENROUTER_API_KEY"
-    model: str = "openai/gpt-4.1-mini"
+    model: str = "minimax/minimax-m3"
     temperature: float = 0.1
     max_metadata_chars: int = 12000
     max_transcript_chars: int = 130000

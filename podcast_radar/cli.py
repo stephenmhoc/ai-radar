@@ -46,10 +46,11 @@ def main(argv: list[str] | None = None) -> int:
     serve_parser.add_argument("--host", default="127.0.0.1")
     serve_parser.add_argument("--port", type=int, default=8088)
 
-    launchd_parser = subparsers.add_parser("launchd-install", help="Install a daily macOS LaunchAgent.")
+    launchd_parser = subparsers.add_parser("launchd-install", help="Install a macOS LaunchAgent.")
     launchd_parser.add_argument("--hour", type=int, default=8)
     launchd_parser.add_argument("--minute", type=int, default=30)
-    launchd_parser.add_argument("--lookback-hours", type=int, default=36)
+    launchd_parser.add_argument("--interval-minutes", type=int, default=None)
+    launchd_parser.add_argument("--lookback-hours", type=int, default=2)
     launchd_parser.add_argument("--deploy-project", default="ai-radar")
     launchd_parser.add_argument("--deploy-branch", default="main")
 
@@ -58,6 +59,12 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "doctor":
         return doctor(config)
     if args.command == "launchd-install":
+        if args.interval_minutes is not None and args.interval_minutes <= 0:
+            print("error: --interval-minutes must be greater than 0", file=sys.stderr)
+            return 2
+        if args.lookback_hours <= 0:
+            print("error: --lookback-hours must be greater than 0", file=sys.stderr)
+            return 2
         path = launchd.install(
             config,
             hour=args.hour,
@@ -65,6 +72,7 @@ def main(argv: list[str] | None = None) -> int:
             lookback_hours=args.lookback_hours,
             deploy_project=args.deploy_project,
             deploy_branch=args.deploy_branch,
+            interval_minutes=args.interval_minutes,
         )
         print(f"wrote={path}")
         print(f"load with: launchctl bootstrap gui/$(id -u) {path}")

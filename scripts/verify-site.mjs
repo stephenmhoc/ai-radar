@@ -59,6 +59,7 @@ async function checkViewport(browserInstance, viewport) {
   await expectCount(page, ".search-panel", 1, "header search panels");
   await expectCount(page, "[data-result-count]", 1, "visible result counters");
   await expectCount(page, ".rss-card .follow-link", 1, "follow-along RSS links");
+  await expectCount(page, ".rss-card [data-copy-url]", 1, "RSS feed copy buttons");
   await expectCount(page, ".content-grid", 1, "content grids");
   await expectCount(page, ".side-rail", 1, "side rails");
   await expectCount(page, "[data-pagination]", 1, "pagination controls");
@@ -199,12 +200,12 @@ async function checkViewport(browserInstance, viewport) {
   if (await page.getByRole("link", { name: /Summary|Transcript|RSS feed|All episodes/ }).count()) {
     throw new Error("detail page should not show the old multi-button nav");
   }
-  if (await page.getByText("Original episode").count()) {
-    throw new Error("detail page should use go-to-episode language");
+  if (!(await page.getByRole("link", { name: /Go to episode|Open original episode|Original podcast/ }).count())) {
+    throw new Error("detail page should link out to the original podcast or episode");
   }
-  if (!(await page.getByRole("link", { name: /Go to episode/ }).count())) {
-    throw new Error("detail page should link out with go-to-episode language");
-  }
+  await expectCount(page, ".podcast-tools", 1, "podcast link tools");
+  await expectCount(page, ".podcast-tools [data-copy-url]", 1, "podcast feed copy buttons");
+  await expectCount(page, ".podcast-tools input[readonly]", 1, "copyable podcast feed URLs");
   await expectCount(page, ".brief-grid", 1, "episode brief grids");
   await expectCount(page, ".brief-signal", 1, "why it matters sections");
   await expectCount(page, ".brief-facts dd", 4, "episode fact values");

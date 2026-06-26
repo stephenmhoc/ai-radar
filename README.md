@@ -5,7 +5,7 @@ Local service that watches podcast RSS feeds for episodes featuring technical me
 The public site is generated into `public/` and is designed to be deployed to a subdomain such as:
 
 ```text
-https://llm-podcasts.merimerimeri.com
+https://ai-radar.merimerimeri.com
 ```
 
 ## What It Does
@@ -33,20 +33,20 @@ Set your LLM key if using the default OpenRouter-compatible config:
 export OPENROUTER_API_KEY="..."
 ```
 
-Install the local transcription backend. The current local config uses `whisper-cli` from whisper.cpp with the tiny English GGML model:
+Install the local transcription backend. The current local config uses `whisper-cli` from whisper.cpp with the small English GGML model:
 
 ```bash
 brew install whisper-cpp
 mkdir -p ~/.cache/whisper.cpp
 curl -L -f --max-time 120 \
-  -o ~/.cache/whisper.cpp/ggml-tiny.en.bin \
-  'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-tiny.en.bin?download=true'
+  -o ~/.cache/whisper.cpp/ggml-small.en.bin \
+  'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.en.bin?download=true'
 ```
 
 ```toml
 [transcription]
 command = "whisper-cli"
-args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-tiny.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1"]
+args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-small.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1", "-np", "--prompt", "AI podcast transcript. Common terms: OpenAI, Anthropic, Google DeepMind, DeepMind, Meta AI, xAI, NVIDIA, ChatGPT, Claude, Gemini, GPT-4, GPT-5, GPT-5.1, o3, Sora, Codex, MCP, model behavior, post-training, reinforcement learning, reasoning models, steerability, inference, agents. Episode metadata: {feed_name}. {episode_title}. Hosts: {episode_hosts}. Description: {episode_description}"]
 output_path = "{output_stem}.txt"
 ```
 
@@ -106,7 +106,7 @@ The default provider is OpenAI-compatible and points at OpenRouter:
 provider = "openai_compatible"
 base_url = "https://openrouter.ai/api/v1"
 api_key_env = "OPENROUTER_API_KEY"
-model = "openai/gpt-4.1-mini"
+model = "minimax/minimax-m3"
 ```
 
 For a local Ollama-compatible path:
@@ -131,11 +131,11 @@ For the local Apple Silicon whisper.cpp setup:
 [transcription]
 provider = "command"
 command = "whisper-cli"
-args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-tiny.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1"]
+args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-small.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1", "-np", "--prompt", "AI podcast transcript. Common terms: OpenAI, Anthropic, Google DeepMind, DeepMind, Meta AI, xAI, NVIDIA, ChatGPT, Claude, Gemini, GPT-4, GPT-5, GPT-5.1, o3, Sora, Codex, MCP, model behavior, post-training, reinforcement learning, reasoning models, steerability, inference, agents. Episode metadata: {feed_name}. {episode_title}. Hosts: {episode_hosts}. Description: {episode_description}"]
 output_path = "{output_stem}.txt"
 ```
 
-The `-l en`, `-bs 1`, and `-bo 1` flags favor speed for English podcasts. On an Apple M4 Mac mini, this setup transcribed an 11m34s episode in about 7 seconds versus about 99 seconds with Homebrew OpenAI Whisper using `--model tiny`.
+The `-l en`, `-bs 1`, and `-bo 1` flags favor speed for English podcasts, while `-np` keeps launchd logs quiet. The `--prompt` glossary nudges Whisper toward common AI lab names, show names, technical terms, and per-episode metadata such as `{episode_title}` and `{episode_description}`. On an Apple M4 Mac mini, this setup transcribed a 26.3 MB OpenAI Podcast episode in about 60 seconds with much cleaner key names than `tiny.en`.
 
 For a custom wrapper script:
 
@@ -148,6 +148,14 @@ output_path = "{output_stem}.txt"
 ```
 
 The command must write the transcript to `output_path`. Audio is deleted after a successful transcript unless `keep_audio = true`.
+
+To transcribe backlog candidates without running transcript verification, summarization, site build, or deploy:
+
+```bash
+scripts/transcribe-backlog.py --config config.toml --year 2025
+```
+
+The backlog script only selects `relevant` episodes that still have an empty transcript, so it can be stopped and rerun without duplicating completed transcripts. Use `--dry-run` to preview candidates, `--limit N` for a smaller batch, and `--retry-failed` to include episodes currently marked `transcription_failed`.
 
 ## Public Site
 
@@ -168,28 +176,27 @@ npm run verify:site
 wrangler pages deploy public --project-name ai-radar
 ```
 
-Point DNS for `llm-podcasts.merimerimeri.com` at the Pages project, or change `[site].base_url` and `[site].cname` in `config.toml`.
+Point DNS for `ai-radar.merimerimeri.com` at the Pages project, or change `[site].base_url` and `[site].cname` in `config.toml`.
 
 `npm run verify:site` starts a local static server, opens the generated site in Playwright Chromium at desktop and mobile viewport sizes, checks the lab filter and episode action links, and writes screenshots to `var/site-checks/`. The daily and backfill scripts run this browser check before each Cloudflare Pages deploy.
 
-## Daily LaunchAgent
+## Hourly LaunchAgent
 
-After the LLM provider and transcription command are configured, install a daily macOS LaunchAgent. It runs a rolling lookback, so reruns overlap safely; duplicate feed items are upserted by `(feed_id, guid)` rather than inserted twice.
+After the LLM provider and transcription command are configured, install an hourly macOS LaunchAgent. It runs a rolling 2-hour lookback, so reruns overlap safely; duplicate feed items are upserted by `(feed_id, guid)` rather than inserted twice.
 
 ```bash
 python3 -m podcast_radar --config config.toml launchd-install \
-  --hour 8 \
-  --minute 30 \
-  --lookback-hours 36 \
+  --interval-minutes 60 \
+  --lookback-hours 2 \
   --deploy-project ai-radar
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.merimeri.ai-radar.plist
 ```
 
 The scheduled runner is `scripts/daily.sh`. It calculates `now - AI_RADAR_LOOKBACK_HOURS`, ingests new episodes, and uses metadata-only judging as an internal prefilter for transcription. It does not publish those candidates. It then transcribes candidates locally, asks the LLM to make a second publication decision using the transcript, summarizes verified episodes, rebuilds the site, and deploys `public/` to Cloudflare Pages.
 
-The generated LaunchAgent has `RunAtLoad = true`, so after the machine restarts and the user session is loaded, it runs once immediately in addition to the daily 8:30 AM schedule. The 36-hour lookback is intentional: it gives the service overlap after restarts, sleep, delayed feed publication, or a missed daily run, while the database uniqueness constraint prevents duplicate episodes.
+The generated LaunchAgent has `RunAtLoad = true`, so after the machine restarts and the user session is loaded, it runs once immediately in addition to the hourly schedule. The 2-hour lookback is intentional: it gives the service overlap after restarts, sleep, delayed feed publication, or a missed hourly run, while the database uniqueness constraint prevents duplicate episodes. The runner also takes a local lock, so an hourly launch exits cleanly if the previous run is still processing.
 
-Daily processing flow:
+Hourly processing flow:
 
 1. `launchd` starts `scripts/daily.sh`.
 2. `scripts/daily.sh` loads ignored local secrets from `var/secrets.env`.

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import pathlib
 import shutil
 import subprocess
@@ -8,14 +9,14 @@ import urllib.request
 
 from .config import Config
 from . import storage
-from .text import clean_text, slugify
+from .text import clean_text, slugify, strip_html
 
 
 class TranscriptionError(RuntimeError):
     pass
 
 
-def transcribe_episode(config: Config, conn, episode) -> pathlib.Path:
+def transcribe_episode(config: Config, conn, episode, *, command_output: bool = True) -> pathlib.Path:
     if config.transcription.provider != "command":
         raise TranscriptionError(f"unsupported transcription.provider: {config.transcription.provider}")
     audio_url = episode["audio_url"]
@@ -47,9 +48,10 @@ def transcribe_episode(config: Config, conn, episode) -> pathlib.Path:
             "output_stem": str(output_stem),
             "output_dir": str(config.transcription.transcript_dir),
             "episode_id": str(episode["id"]),
+            **_episode_prompt_context(episode),
         }
         args = [arg.format(**context) for arg in config.transcription.args]
-        subprocess.run([executable, *args], check=True)
+        _run_transcription_command([executable, *args], command_output=command_output)
     transcript = clean_text(output_path.read_text(encoding="utf-8"))
     if not transcript:
         raise TranscriptionError(f"transcription command produced an empty file: {output_path}")
@@ -58,6 +60,23 @@ def transcribe_episode(config: Config, conn, episode) -> pathlib.Path:
     if not config.transcription.keep_audio and audio_path.exists():
         audio_path.unlink()
     return output_path
+
+
+def _run_transcription_command(command: list[str], *, command_output: bool) -> None:
+    if command_output:
+        subprocess.run(command, check=True)
+        return
+
+    result = subprocess.run(command, check=False, capture_output=True, text=True)
+    if result.returncode == 0:
+        return
+    stderr = (result.stderr or "").strip()
+    stdout = (result.stdout or "").strip()
+    detail = stderr or stdout
+    if detail:
+        detail = detail[-2000:]
+        raise TranscriptionError(f"transcription command failed with exit {result.returncode}: {detail}")
+    raise TranscriptionError(f"transcription command failed with exit {result.returncode}")
 
 
 def download_audio(config: Config, audio_url: str, output_path: pathlib.Path) -> None:
@@ -85,3 +104,35 @@ def _audio_suffix(url: str) -> str:
     if suffix and len(suffix) <= 8:
         return suffix
     return ".mp3"
+
+
+def _episode_prompt_context(episode) -> dict[str, str]:
+    hosts = _json_list(_episode_value(episode, "hosts_json"))
+    description = strip_html(str(_episode_value(episode, "description") or ""))
+    if len(description) > 700:
+        description = description[:700].rsplit(" ", 1)[0]
+    return {
+        "feed_name": str(_episode_value(episode, "feed_name") or ""),
+        "episode_title": str(_episode_value(episode, "title") or ""),
+        "episode_hosts": ", ".join(hosts),
+        "episode_description": description,
+    }
+
+
+def _episode_value(episode, key: str):
+    try:
+        return episode[key]
+    except (KeyError, IndexError):
+        return None
+
+
+def _json_list(value) -> list[str]:
+    if not value:
+        return []
+    try:
+        items = json.loads(str(value))
+    except json.JSONDecodeError:
+        return []
+    if not isinstance(items, list):
+        return []
+    return [str(item) for item in items if str(item).strip()]
