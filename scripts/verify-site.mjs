@@ -65,6 +65,15 @@ async function checkViewport(browserInstance, viewport) {
   await expectCount(page, ".filter-button", 2, "filter buttons");
   await expectCount(page, "[data-search-input]", 1, "search controls");
   await expectCount(page, ".source-line", 1, "episode source lines");
+  await expectCount(page, ".source-line .source-main", 1, "episode source titles");
+  await expectCount(page, ".source-line .source-details", 1, "episode date and runtime metadata");
+  await expectCount(page, ".rail-item .rail-source", 1, "newest episode metadata");
+  if (await page.locator('[data-filter="google"]').count()) {
+    throw new Error("Google and Google DeepMind filters should be consolidated");
+  }
+  if (!(await page.locator('[data-filter="google-deepmind"]').count())) {
+    throw new Error("missing consolidated Google DeepMind filter");
+  }
 
   if (await page.locator(".briefing, .spotlight, .metric-grid, [data-topic-filter], [data-feed-filter], [data-sort]").count()) {
     throw new Error("index should not show the old briefing banner or dropdown filter stack");

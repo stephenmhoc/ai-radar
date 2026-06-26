@@ -116,6 +116,9 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn("briefings", index.lower())
             self.assertIn("Sam Altman: Point one", index)
             self.assertIn('<p class="source-line">', index)
+            self.assertIn('<span class="source-main"><strong>Example</strong> · Sam Altman on models</span>', index)
+            self.assertIn('<span class="source-details">2024-06-18 · 1h 00m</span>', index)
+            self.assertIn("Example · Sam Altman on models · 1h 00m", index)
             self.assertNotIn("Episode details", index)
             self.assertNotIn("Verified brief", index)
             self.assertNotIn('<p class="summary">', index)
@@ -198,6 +201,19 @@ class SiteGenerationTests(unittest.TestCase):
             rss = (root / "public" / "feed.xml").read_text()
             self.assertNotIn("<item>", rss)
             self.assertNotIn("Fiona Fung on engineering", rss)
+
+    def test_google_filter_is_consolidated_with_google_deepmind(self) -> None:
+        controls = site.render_controls(
+            None,
+            [
+                {"labs_json": storage.dumps(["Google"])},
+                {"labs_json": storage.dumps(["Google DeepMind", "Google"])},
+            ],
+        )
+
+        self.assertIn('data-filter="google-deepmind"', controls)
+        self.assertIn("Google DeepMind <span>2</span>", controls)
+        self.assertNotIn('data-filter="google"', controls)
 
 
 if __name__ == "__main__":

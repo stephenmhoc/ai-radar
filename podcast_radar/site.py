@@ -104,8 +104,14 @@ def render_card(config: Config, episode, slug: str) -> str:
     summary = _summary_teaser(episode)
     topline = _topline(episode, guests=guests)
     source_title = _compact_sentence(str(episode["title"]), max_chars=92)
-    lab_tokens = " ".join(_lab_token(lab) for lab in labs)
+    lab_tokens = " ".join(_filter_lab_tokens(labs))
     topic_tokens = " ".join(_lab_token(topic) for topic in display_topics)
+    source_meta = _source_meta_spans(
+        episode["feed_name"],
+        source_title,
+        _date_label(episode["published_at"]),
+        _duration_label(episode["duration"]),
+    )
     search_text = " ".join(
         str(value or "")
         for value in (
@@ -125,7 +131,7 @@ def render_card(config: Config, episode, slug: str) -> str:
       <span class="art">{image}</span>
       <div class="episode-body">
         <h2>{escape(topline)}</h2>
-        <p class="source-line"><span>{escape(episode['feed_name'])}</span><span>{escape(source_title)}</span></p>
+        <p class="source-line">{source_meta}</p>
       </div>
     </a>
     """
@@ -531,10 +537,15 @@ def render_side_rail(episodes, slugs: dict[int, str]) -> str:
 
 def render_rail_item(episode, slug: str) -> str:
     guests = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
+    source_title = _compact_sentence(str(episode["title"]), max_chars=68)
+    runtime = _duration_label(episode["duration"])
+    meta_parts = [str(episode["feed_name"]), source_title]
+    if runtime:
+        meta_parts.append(runtime)
     return f"""
     <a class="rail-item" href="{escape(episode_path_for(slug))}">
       <strong>{escape(_compact_sentence(_topline(episode, guests=guests), max_chars=74))}</strong>
-      <span>{escape(episode["feed_name"])}</span>
+      <span class="rail-source">{escape(' · '.join(meta_parts))}</span>
     </a>
     """
 
@@ -542,7 +553,7 @@ def render_rail_item(episode, slug: str) -> str:
 def render_controls(config: Config, episodes) -> str:
     lab_counts: dict[str, int] = {}
     for episode in episodes:
-        for lab in _people(episode["labs_json"]):
+        for lab in {_filter_lab_label(lab) for lab in _people(episode["labs_json"])}:
             lab_counts[lab] = lab_counts.get(lab, 0) + 1
 
     buttons = [
@@ -741,6 +752,30 @@ def _display_topics(topics: list[str], labs: list[str]) -> list[str]:
         display.append(topic)
         seen.add(token)
     return display
+
+
+def _source_meta_spans(podcast: str | None, title: str | None, date_label: str | None, runtime: str | None) -> str:
+    details = " · ".join(value for value in (date_label, runtime) if value)
+    details_html = f'<span class="source-details">{escape(details)}</span>' if details else ""
+    return f'<span class="source-main"><strong>{escape(podcast or "")}</strong> · {escape(title or "")}</span>{details_html}'
+
+
+def _filter_lab_label(lab: str) -> str:
+    token = _lab_token(lab)
+    if token in {"google", "deepmind", "google-deepmind"}:
+        return "Google DeepMind"
+    return lab
+
+
+def _filter_lab_tokens(labs: list[str]) -> list[str]:
+    tokens: list[str] = []
+    seen: set[str] = set()
+    for lab in labs:
+        token = _lab_token(_filter_lab_label(lab))
+        if token and token not in seen:
+            tokens.append(token)
+            seen.add(token)
+    return tokens
 
 
 def _date_label(value: str | None) -> str:
@@ -1448,24 +1483,36 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 }
 
 .source-line {
-  display: block;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 8px;
   overflow: hidden;
-  max-height: 2.7em;
   margin: 5px 0 0;
   color: var(--muted);
   font-size: 0.84rem;
   line-height: 1.35;
 }
 
-.source-line span:first-child {
+.source-main {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.source-main strong {
   color: #586472;
   font-weight: 650;
 }
 
-.source-line span:not(:last-child)::after {
+.source-details {
+  flex: 0 0 auto;
+}
+
+.source-details::before {
   content: "·";
   color: #9aa6b2;
-  margin-left: 8px;
   margin-right: 8px;
 }
 
