@@ -2,6 +2,7 @@ import { createServer } from "node:http";
 import { mkdir, readFile } from "node:fs/promises";
 import { extname, join, normalize, resolve, sep } from "node:path";
 import { chromium } from "@playwright/test";
+import axe from "axe-core";
 
 const root = resolve(process.cwd(), "public");
 const outDir = resolve(process.cwd(), "var", "site-checks");
@@ -54,6 +55,7 @@ try {
 async function checkViewport(browserInstance, viewport) {
   const page = await browserInstance.newPage({ viewport });
   await page.goto(`http://${host}:${port}/`, { waitUntil: "networkidle" });
+  await runAxe(page, `${viewport.name} homepage`);
 
   await expectCount(page, ".episode-card", 1, "episode cards");
   await expectCount(page, ".search-panel", 1, "header search panels");
@@ -190,6 +192,7 @@ async function checkViewport(browserInstance, viewport) {
   await page.screenshot({ path: join(outDir, `${viewport.name}.png`), fullPage: true });
   if (!firstDetailHref) throw new Error("missing first episode detail href");
   await page.goto(new URL(firstDetailHref, `http://${host}:${port}/`).toString(), { waitUntil: "networkidle" });
+  await runAxe(page, `${viewport.name} detail page`);
   const detailNavLinks = await page.locator(".top-nav a").count();
   if (detailNavLinks !== 1) {
     throw new Error(`detail page should have exactly one nav link, found ${detailNavLinks}`);
@@ -219,4 +222,22 @@ async function expectCount(page, selector, minimum, label) {
   if (count < minimum) {
     throw new Error(`expected at least ${minimum} ${label}, found ${count}`);
   }
+}
+
+async function runAxe(page, label) {
+  await page.addScriptTag({ content: axe.source });
+  const results = await page.evaluate(async () => await window.axe.run(document));
+  const violations = results.violations.filter((violation) => violation.impact !== "minor");
+  if (!violations.length) return;
+
+  const details = violations
+    .map((violation) => {
+      const targets = violation.nodes
+        .slice(0, 4)
+        .map((node) => node.target.join(" "))
+        .join("; ");
+      return `${violation.id} (${violation.impact}): ${violation.help} [${targets}]`;
+    })
+    .join("\n");
+  throw new Error(`accessibility violations on ${label}:\n${details}`);
 }
