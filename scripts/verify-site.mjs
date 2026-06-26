@@ -127,6 +127,12 @@ async function checkViewport(browserInstance, viewport) {
     if (!listBox || listBox.width > 760) {
       throw new Error(`episode stream should avoid over-wide rows, got width: ${listBox?.width}`);
     }
+    if (!(await page.locator(".source-title:visible").count())) {
+      throw new Error("desktop cards should keep episode names in source metadata");
+    }
+    if (!(await page.locator(".newest-card:visible").count())) {
+      throw new Error("desktop should show newest episodes");
+    }
   }
 
   const originalLink = firstCard.locator(".source-line .external-link");
@@ -150,6 +156,12 @@ async function checkViewport(browserInstance, viewport) {
     if (!artBox) throw new Error("missing mobile episode art");
     if (artBox.width > 70 || Math.abs(artBox.width - artBox.height) > 2) {
       throw new Error(`mobile art should stay in a constrained square box, got: ${artBox.width}x${artBox.height}`);
+    }
+    if (await page.locator(".source-title:visible").count()) {
+      throw new Error("mobile cards should hide episode names in source metadata");
+    }
+    if (await page.locator(".newest-card:visible").count()) {
+      throw new Error("mobile should hide newest episodes");
     }
   }
 

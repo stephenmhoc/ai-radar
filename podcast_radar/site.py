@@ -527,7 +527,7 @@ def render_side_rail(episodes, slugs: dict[int, str]) -> str:
         <p class="eyebrow">Follow along</p>
         <a class="follow-link" href="feed.xml">Use our RSS feed to stay up to date <span aria-hidden="true">↗</span></a>
       </section>
-      <section class="rail-card">
+      <section class="rail-card newest-card">
         <div class="rail-heading"><span>Newest episodes</span><span>{len(episodes)} total</span></div>
         <div class="rail-list">{latest}</div>
       </section>
@@ -757,7 +757,8 @@ def _display_topics(topics: list[str], labs: list[str]) -> list[str]:
 def _source_meta_spans(podcast: str | None, title: str | None, date_label: str | None, runtime: str | None) -> str:
     details = " · ".join(value for value in (date_label, runtime) if value)
     details_html = f'<span class="source-details">{escape(details)}</span>' if details else ""
-    return f'<span class="source-main"><strong>{escape(podcast or "")}</strong> · {escape(title or "")}</span>{details_html}'
+    title_html = f'<span class="source-title"> · {escape(title)}</span>' if title else ""
+    return f'<span class="source-main"><strong>{escape(podcast or "")}</strong>{title_html}</span>{details_html}'
 
 
 def _filter_lab_label(lab: str) -> str:
@@ -1982,6 +1983,10 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   .source-line {
     max-height: 1.35em;
     font-size: 0.78rem;
+  }
+  .source-title,
+  .newest-card {
+    display: none;
   }
   .people { font-size: 0.86rem; }
   .signal { font-size: 0.88rem; }
