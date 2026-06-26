@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import datetime as dt
 import email.utils
+import hashlib
 import shutil
 from pathlib import Path
 from urllib.parse import urljoin
@@ -19,6 +20,8 @@ def build_site(config: Config, conn) -> dict[str, int]:
     (public_dir / "assets").mkdir(parents=True, exist_ok=True)
     (public_dir / "episodes").mkdir(parents=True, exist_ok=True)
 
+    style_name = style_asset_name()
+    (public_dir / "assets" / style_name).write_text(STYLE_CSS, encoding="utf-8")
     (public_dir / "assets" / "style.css").write_text(STYLE_CSS, encoding="utf-8")
     (public_dir / "assets" / "favicon.svg").write_text(FAVICON_SVG, encoding="utf-8")
     (public_dir / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")
@@ -208,6 +211,7 @@ def render_rss(config: Config, episodes, slugs: dict[int, str]) -> dict[str, int
 
 
 def page(config: Config, *, title: str, body: str) -> str:
+    style_name = style_asset_name()
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -217,7 +221,7 @@ def page(config: Config, *, title: str, body: str) -> str:
   <meta name="description" content="{escape(config.site.description)}">
   <link rel="alternate" type="application/rss+xml" title="{escape(config.site.rss_title)}" href="/feed.xml">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/{style_name}">
 </head>
 <body>
   <div class="shell">
@@ -229,6 +233,11 @@ def page(config: Config, *, title: str, body: str) -> str:
 </body>
 </html>
 """
+
+
+def style_asset_name() -> str:
+    digest = hashlib.sha256(STYLE_CSS.encode("utf-8")).hexdigest()[:10]
+    return f"style-{digest}.css"
 
 
 FAVICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
