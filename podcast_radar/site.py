@@ -9,7 +9,7 @@ from urllib.parse import urljoin
 
 from .config import Config
 from . import storage
-from .text import comma_join, escape, paragraphs_to_html, slugify, transcript_to_html
+from .text import comma_join, escape, paragraphs_to_html, slugify, strip_html, transcript_to_html
 
 
 def build_site(config: Config, conn) -> dict[str, int]:
@@ -206,7 +206,7 @@ def render_rss(config: Config, episodes, slugs: dict[int, str]) -> dict[str, int
               <link>{escape(link)}</link>
               <guid isPermaLink="true">{escape(link)}</guid>
               <pubDate>{escape(pub_date)}</pubDate>
-              <description><![CDATA[{description}]]></description>
+              <description>{escape(description)}</description>
             </item>
             """
         )
@@ -609,22 +609,10 @@ def _rss_ready(episode) -> bool:
 
 
 def _rss_description(episode) -> str:
-    hosts = _people(episode["hosts_json"]) or _people(episode["feed_hosts_json"])
-    guests = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
-    labs = _people(episode["labs_json"])
-    summary = episode["summary_html"] or paragraphs_to_html(episode["summary_text"] or "")
-    source = source_link(episode, icon=False)
-    source_paragraph = f"<p>{source}</p>" if source else ""
-    return f"""
-<p><strong>Podcast:</strong> {escape(episode['feed_name'])}</p>
-<p><strong>Episode:</strong> {escape(episode['title'])}</p>
-<p><strong>Hosts:</strong> {escape(comma_join(hosts) or 'Unknown')}</p>
-<p><strong>Guests:</strong> {escape(comma_join(guests) or 'Unknown')}</p>
-<p><strong>Where they work:</strong> {escape(comma_join(labs) or 'Unknown')}</p>
-<h3>Summary</h3>
-{summary}
-{source_paragraph}
-"""
+    summary = str(episode["summary_text"] or "").strip()
+    if not summary:
+        summary = strip_html(str(episode["summary_html"] or ""))
+    return _first_sentence(summary)
 
 
 def _summary_teaser(episode) -> str:

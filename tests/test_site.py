@@ -1,6 +1,7 @@
 import pathlib
 import tempfile
 import unittest
+import xml.etree.ElementTree as ET
 
 from podcast_radar.config import (
     AppConfig,
@@ -125,12 +126,18 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn('<p class="summary">', index)
             self.assertNotIn("Summary and transcript ready", index)
             rss = (root / "public" / "feed.xml").read_text()
+            ET.fromstring(rss)
             self.assertIn("https://radar.example.com/episodes/", rss)
-            self.assertIn("<strong>Podcast:</strong> Example", rss)
-            self.assertIn("<strong>Episode:</strong> Sam Altman on models", rss)
-            self.assertIn("<strong>Guests:</strong> Sam Altman", rss)
-            self.assertIn("<strong>Where they work:</strong> OpenAI", rss)
-            self.assertIn("<h3>Summary</h3>", rss)
+            self.assertIn("<title>Sam Altman on models</title>", rss)
+            self.assertIn("<description>Summary text</description>", rss)
+            self.assertIn("<pubDate>Tue, 18 Jun 2024 10:00:00 GMT</pubDate>", rss)
+            self.assertNotIn("<![CDATA[", rss)
+            self.assertNotIn("<strong>Podcast:</strong>", rss)
+            self.assertNotIn("<strong>Episode:</strong>", rss)
+            self.assertNotIn("<strong>Guests:</strong>", rss)
+            self.assertNotIn("<strong>Where they work:</strong>", rss)
+            self.assertNotIn("<h3>Summary</h3>", rss)
+            self.assertNotIn("Go to episode", rss)
             page = next((root / "public" / "episodes").glob("*/index.html")).read_text()
             self.assertIn("Why it matters", page)
             self.assertIn("Episode facts", page)
