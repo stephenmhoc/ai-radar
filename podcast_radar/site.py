@@ -92,6 +92,7 @@ def render_card(config: Config, episode, slug: str) -> str:
     display_topics = _display_topics(topics, labs)
     summary = _summary_teaser(episode)
     topline = _topline(episode, guests=guests)
+    source_title = _compact_sentence(str(episode["title"]), max_chars=92)
     lab_tokens = " ".join(_lab_token(lab) for lab in labs)
     topic_tokens = " ".join(_lab_token(topic) for topic in display_topics)
     search_text = " ".join(
@@ -109,13 +110,13 @@ def render_card(config: Config, episode, slug: str) -> str:
     published_sort = episode["published_at"] or ""
     feed_token = _lab_token(str(episode["feed_name"]))
     return f"""
-    <article class="episode-card" data-labs="{escape(lab_tokens)}" data-topics="{escape(topic_tokens)}" data-feed="{escape(feed_token)}" data-search="{escape(search_text)}" data-date="{escape(published_sort)}">
-      <a class="art" href="{escape(episode_path)}">{image}</a>
+    <a class="episode-card" href="{escape(episode_path)}" data-labs="{escape(lab_tokens)}" data-topics="{escape(topic_tokens)}" data-feed="{escape(feed_token)}" data-search="{escape(search_text)}" data-date="{escape(published_sort)}">
+      <span class="art">{image}</span>
       <div class="episode-body">
-        <h2><a href="{escape(episode_path)}">{escape(topline)}</a></h2>
-        <p class="source-line"><span>{escape(episode['feed_name'])}</span><span>{escape(episode['title'])}</span></p>
+        <h2>{escape(topline)}</h2>
+        <p class="source-line"><span>{escape(episode['feed_name'])}</span><span>{escape(source_title)}</span></p>
       </div>
-    </article>
+    </a>
     """
 
 
@@ -156,7 +157,7 @@ def render_episode_page(config: Config, episode, slug: str) -> str:
           </section>
           {digest}
           <section class="content-block summary-block" id="summary">
-            <p class="eyebrow">Briefing memo</p>
+            <p class="eyebrow">Episode summary</p>
             <h2>Summary</h2>
             {summary}
             <ul>{points}</ul>
@@ -331,7 +332,7 @@ def render_briefing(config: Config, episodes, slugs: dict[int, str]) -> str:
     updated = _date_label(lead["published_at"])
     queue = "".join(render_signal_item(episode, slugs[int(episode["id"])]) for episode in episodes[1:4])
     return f"""
-    <section class="briefing" aria-label="Latest AI lab briefing">
+    <section class="briefing" aria-label="Latest AI lab episode">
       <article class="spotlight">
         <a class="spotlight-art" href="{escape(lead_path)}">{image}</a>
         <div class="spotlight-copy">
@@ -340,12 +341,12 @@ def render_briefing(config: Config, episodes, slugs: dict[int, str]) -> str:
           <p class="spotlight-meta">{escape(comma_join(guests) or 'Unknown guest')} · {escape(comma_join(labs) or 'Unknown lab')} · {escape(lead['feed_name'])}</p>
           <p class="spotlight-signal">{escape(_why_it_matters(lead))}</p>
           <div class="topic-tags">{lead_topic_tags}</div>
-          <div class="actions"><a href="{escape(lead_path)}">Open briefing</a>{source_link(lead)}</div>
+          <div class="actions"><a href="{escape(lead_path)}">Open episode</a>{source_link(lead)}</div>
         </div>
       </article>
       <aside class="radar-panel">
         <div class="metric-grid" aria-label="Coverage summary">
-          <div><strong>{len(episodes)}</strong><span>Briefings</span></div>
+          <div><strong>{len(episodes)}</strong><span>Episodes</span></div>
           <div><strong>{lab_count}</strong><span>Labs</span></div>
           <div><strong>{feed_count}</strong><span>Podcasts</span></div>
           <div><strong>{topic_count}</strong><span>Topics</span></div>
@@ -406,14 +407,13 @@ def render_search_panel(episodes) -> str:
     <div class="search-panel">
       <label class="command-search">
         <span>Search radar</span>
-        <input type="search" placeholder="Guest, lab, claim, topic, podcast..." data-search-input>
+        <input type="search" placeholder="Guest, lab, claim, topic, podcast" data-search-input>
       </label>
       <div class="search-meta">
         <span><strong data-result-count>{len(episodes)}</strong> visible</span>
         <span>{lab_count} labs</span>
         <span>{feed_count} podcasts</span>
         <span>latest {escape(latest)}</span>
-        <a class="rss-text-link" href="feed.xml">Use our RSS feed to stay up to date</a>
       </div>
     </div>
     """
@@ -427,10 +427,10 @@ def render_side_rail(episodes, slugs: dict[int, str]) -> str:
     <aside class="side-rail" aria-label="Radar sidebar">
       <section class="rail-card rss-card">
         <p class="eyebrow">Follow along</p>
-        <a href="feed.xml">Use our RSS feed to stay up to date</a>
+        <a class="follow-link" href="feed.xml">Use our RSS feed to stay up to date <span aria-hidden="true">↗</span></a>
       </section>
       <section class="rail-card">
-        <div class="rail-heading"><span>Newest briefings</span><span>{len(episodes)} total</span></div>
+        <div class="rail-heading"><span>Newest episodes</span><span>{len(episodes)} total</span></div>
         <div class="rail-list">{latest}</div>
       </section>
     </aside>
@@ -565,7 +565,7 @@ def _compact_sentence(value: str, *, max_chars: int) -> str:
     cutoff = normalized.rfind(" ", 0, max_chars - 1)
     if cutoff < max_chars * 0.62:
         cutoff = max_chars - 1
-    return normalized[:cutoff].rstrip(" ,;:.-") + "..."
+    return normalized[:cutoff].rstrip(" ,;:.-")
 
 
 def _first_sentence(value: str) -> str:
@@ -1179,8 +1179,8 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 
 .content-grid {
   display: grid;
-  grid-template-columns: minmax(0, 790px) minmax(260px, 1fr);
-  gap: 22px;
+  grid-template-columns: minmax(0, 710px) minmax(280px, 1fr);
+  gap: 38px;
   align-items: start;
   padding-top: 14px;
 }
@@ -1194,17 +1194,20 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 .episode-card {
   position: relative;
   display: grid;
-  grid-template-columns: 74px minmax(0, 1fr);
-  gap: 14px;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 16px;
   align-items: center;
-  min-height: 96px;
-  padding: 12px 14px 12px 12px;
+  min-height: 118px;
+  padding: 15px 16px 15px 14px;
   background:
     linear-gradient(90deg, rgba(15, 118, 110, 0.035), transparent 26%),
     rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(202, 214, 224, 0.98);
   border-radius: 8px;
   box-shadow: 0 1px 2px rgba(31, 41, 51, 0.05), 0 10px 28px rgba(31, 41, 51, 0.025);
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .episode-card::before {
@@ -1274,29 +1277,24 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 
 .episode-card h2 {
   margin: 0;
-  font-size: 1.03rem;
-  line-height: 1.22;
+  font-size: 1.07rem;
+  line-height: 1.25;
   letter-spacing: 0;
-}
-
-.episode-card h2 a {
   color: var(--ink-strong);
-  text-decoration: none;
 }
 
-.episode-card h2 a:hover {
+.episode-card:hover h2 {
   color: var(--link);
 }
 
 .source-line {
-  display: -webkit-box;
+  display: block;
   overflow: hidden;
+  max-height: 2.7em;
   margin: 5px 0 0;
   color: var(--muted);
   font-size: 0.84rem;
   line-height: 1.35;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
 }
 
 .source-line span:first-child {
@@ -1349,6 +1347,20 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   font-weight: 760;
   line-height: 1.25;
   text-decoration: none;
+}
+
+.rss-card .follow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.rss-card .follow-link span {
+  font-size: 0.9em;
+  line-height: 1;
 }
 
 .rss-card a:hover {
@@ -1647,16 +1659,18 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   .site-actions { margin-top: 14px; }
   .rss-link { margin-top: 18px; }
   .search-panel { padding: 10px; }
-  .command-search input { min-height: 42px; }
-  .search-meta {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px 10px;
+  .command-search { gap: 4px; }
+  .command-search input {
+    min-height: 38px;
+    padding: 7px 10px;
+    font-size: 0.9rem;
   }
-  .search-meta .rss-text-link {
-    justify-self: start;
-    grid-column: 1 / -1;
-    margin: 0;
+  .search-meta {
+    display: block;
+    margin-top: 6px;
+  }
+  .search-meta span:not(:first-child) {
+    display: none;
   }
   .briefing { grid-template-columns: 1fr; padding-top: 14px; }
   .spotlight {
@@ -1710,18 +1724,21 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   }
   .episode-list { gap: 8px; padding-top: 0; }
   .episode-card {
-    grid-template-columns: 54px minmax(0, 1fr);
-    gap: 10px;
-    min-height: 82px;
-    padding: 9px 10px 9px 9px;
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 11px;
+    min-height: 92px;
+    padding: 10px 11px 10px 10px;
   }
   .art {
-    width: 54px;
-    height: 54px;
+    width: 60px;
+    height: 60px;
     justify-self: start;
   }
   .episode-card h2 { font-size: 0.95rem; }
-  .source-line { font-size: 0.78rem; -webkit-line-clamp: 1; }
+  .source-line {
+    max-height: 1.35em;
+    font-size: 0.78rem;
+  }
   .people { font-size: 0.86rem; }
   .signal { font-size: 0.88rem; }
   .summary {

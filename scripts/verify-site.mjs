@@ -58,7 +58,7 @@ async function checkViewport(browserInstance, viewport) {
   await expectCount(page, ".episode-card", 1, "episode cards");
   await expectCount(page, ".search-panel", 1, "header search panels");
   await expectCount(page, "[data-result-count]", 1, "visible result counters");
-  await expectCount(page, ".rss-text-link", 1, "RSS text links");
+  await expectCount(page, ".rss-card .follow-link", 1, "follow-along RSS links");
   await expectCount(page, ".content-grid", 1, "content grids");
   await expectCount(page, ".side-rail", 1, "side rails");
   await expectCount(page, ".filter-button", 2, "filter buttons");
@@ -75,14 +75,18 @@ async function checkViewport(browserInstance, viewport) {
   if (await page.getByText("Verified brief").count()) {
     throw new Error("index still shows verified-brief card status copy");
   }
+  if (await page.getByText("briefings").count() || await page.getByText("Briefings").count()) {
+    throw new Error("index should not use briefing language");
+  }
 
   const firstCard = page.locator(".episode-card").first();
-  const firstDetailHref = await firstCard.locator("h2 a").getAttribute("href");
+  const firstDetailHref = await firstCard.getAttribute("href");
+  if (!firstDetailHref) throw new Error("episode cards should be whole-card links");
   if (await firstCard.locator(".tag-row, .summary, .signal, .actions").count()) {
     throw new Error("episode cards should not show tags, summaries, signals, or action rows");
   }
   const cardBox = await firstCard.boundingBox();
-  if (!cardBox || cardBox.height < 78) {
+  if (!cardBox || cardBox.height < 90) {
     throw new Error("episode cards should retain enough visual surface to scan as distinct rows");
   }
 
@@ -94,7 +98,7 @@ async function checkViewport(browserInstance, viewport) {
       throw new Error(`desktop homepage should split the episode stream and side rail, got: ${gridStyle}`);
     }
     const listBox = await page.locator(".episode-list").boundingBox();
-    if (!listBox || listBox.width > 860) {
+    if (!listBox || listBox.width > 760) {
       throw new Error(`episode stream should avoid over-wide rows, got width: ${listBox?.width}`);
     }
   }
