@@ -58,6 +58,9 @@ async function checkViewport(browserInstance, viewport) {
   await expectCount(page, ".episode-card", 1, "episode cards");
   await expectCount(page, ".search-panel", 1, "header search panels");
   await expectCount(page, "[data-result-count]", 1, "visible result counters");
+  await expectCount(page, ".rss-text-link", 1, "RSS text links");
+  await expectCount(page, ".content-grid", 1, "content grids");
+  await expectCount(page, ".side-rail", 1, "side rails");
   await expectCount(page, ".filter-button", 2, "filter buttons");
   await expectCount(page, "[data-search-input]", 1, "search controls");
   await expectCount(page, ".source-line", 1, "episode source lines");
@@ -79,8 +82,21 @@ async function checkViewport(browserInstance, viewport) {
     throw new Error("episode cards should not show tags, summaries, signals, or action rows");
   }
   const cardBox = await firstCard.boundingBox();
-  if (!cardBox || cardBox.height < 58) {
+  if (!cardBox || cardBox.height < 78) {
     throw new Error("episode cards should retain enough visual surface to scan as distinct rows");
+  }
+
+  if (viewport.name === "desktop") {
+    const grid = page.locator(".content-grid");
+    const gridStyle = await grid.evaluate((element) => getComputedStyle(element).gridTemplateColumns);
+    const columns = gridStyle.trim().split(/\s+/);
+    if (columns.length !== 2) {
+      throw new Error(`desktop homepage should split the episode stream and side rail, got: ${gridStyle}`);
+    }
+    const listBox = await page.locator(".episode-list").boundingBox();
+    if (!listBox || listBox.width > 860) {
+      throw new Error(`episode stream should avoid over-wide rows, got width: ${listBox?.width}`);
+    }
   }
 
   const originalLink = firstCard.locator(".source-line .external-link");

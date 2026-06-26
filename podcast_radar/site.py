@@ -71,9 +71,12 @@ def render_index(config: Config, episodes, slugs: dict[int, str]) -> str:
           {search_panel}
         </header>
         {controls}
-        <main class="episode-list" aria-live="polite">
-          {cards}
-        </main>
+        <div class="content-grid">
+          <main class="episode-list" aria-live="polite">
+            {cards}
+          </main>
+          {render_side_rail(episodes, slugs)}
+        </div>
         """,
     )
 
@@ -410,9 +413,37 @@ def render_search_panel(episodes) -> str:
         <span>{lab_count} labs</span>
         <span>{feed_count} podcasts</span>
         <span>latest {escape(latest)}</span>
-        <a class="rss-link" href="feed.xml">RSS</a>
+        <a class="rss-text-link" href="feed.xml">Use our RSS feed to stay up to date</a>
       </div>
     </div>
+    """
+
+
+def render_side_rail(episodes, slugs: dict[int, str]) -> str:
+    if not episodes:
+        return ""
+    latest = "".join(render_rail_item(episode, slugs[int(episode["id"])]) for episode in episodes[:5])
+    return f"""
+    <aside class="side-rail" aria-label="Radar sidebar">
+      <section class="rail-card rss-card">
+        <p class="eyebrow">Follow along</p>
+        <a href="feed.xml">Use our RSS feed to stay up to date</a>
+      </section>
+      <section class="rail-card">
+        <div class="rail-heading"><span>Newest briefings</span><span>{len(episodes)} total</span></div>
+        <div class="rail-list">{latest}</div>
+      </section>
+    </aside>
+    """
+
+
+def render_rail_item(episode, slug: str) -> str:
+    guests = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
+    return f"""
+    <a class="rail-item" href="{escape(episode_path_for(slug))}">
+      <strong>{escape(_compact_sentence(_topline(episode, guests=guests), max_chars=74))}</strong>
+      <span>{escape(episode["feed_name"])}</span>
+    </a>
     """
 
 
@@ -741,6 +772,7 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 }
 
 .rss-link,
+.rss-text-link,
 .actions a,
 .top-nav a,
 .filter-button,
@@ -762,6 +794,7 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 }
 
 .rss-link:hover,
+.rss-text-link:hover,
 .actions a:hover,
 .top-nav a:hover,
 .filter-button:hover {
@@ -835,6 +868,25 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   margin-left: auto;
   padding: 4px 8px;
   font-size: 0.78rem;
+}
+
+.rss-text-link {
+  min-height: 0;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--link);
+  font-size: 0.78rem;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.rss-text-link:hover {
+  background: transparent;
+  color: #084987;
 }
 
 .briefing {
@@ -1125,23 +1177,34 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   background: #eef8f5;
 }
 
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 790px) minmax(260px, 1fr);
+  gap: 22px;
+  align-items: start;
+  padding-top: 14px;
+}
+
 .episode-list {
   display: grid;
-  gap: 8px;
-  padding: 13px 0 0;
+  gap: 10px;
+  padding: 0;
 }
 
 .episode-card {
   position: relative;
   display: grid;
-  grid-template-columns: 54px minmax(0, 1fr);
-  gap: 12px;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 14px;
   align-items: center;
-  padding: 9px 12px 9px 9px;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(217, 225, 232, 0.92);
+  min-height: 96px;
+  padding: 12px 14px 12px 12px;
+  background:
+    linear-gradient(90deg, rgba(15, 118, 110, 0.035), transparent 26%),
+    rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(202, 214, 224, 0.98);
   border-radius: 8px;
-  box-shadow: 0 1px 2px rgba(31, 41, 51, 0.04);
+  box-shadow: 0 1px 2px rgba(31, 41, 51, 0.05), 0 10px 28px rgba(31, 41, 51, 0.025);
 }
 
 .episode-card::before {
@@ -1157,7 +1220,7 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 .episode-card:hover {
   border-color: rgba(142, 187, 180, 0.9);
   background: #ffffff;
-  box-shadow: 0 12px 30px rgba(31, 41, 51, 0.08);
+  box-shadow: 0 16px 36px rgba(31, 41, 51, 0.10);
 }
 
 .episode-card:hover::before {
@@ -1211,8 +1274,8 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 
 .episode-card h2 {
   margin: 0;
-  font-size: 1.01rem;
-  line-height: 1.18;
+  font-size: 1.03rem;
+  line-height: 1.22;
   letter-spacing: 0;
 }
 
@@ -1226,14 +1289,14 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 }
 
 .source-line {
-  display: block;
+  display: -webkit-box;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin: 3px 0 0;
+  margin: 5px 0 0;
   color: var(--muted);
-  font-size: 0.82rem;
-  line-height: 1.3;
+  font-size: 0.84rem;
+  line-height: 1.35;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .source-line span:first-child {
@@ -1251,6 +1314,85 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 .source-line a {
   color: var(--link);
   text-decoration: none;
+}
+
+.side-rail {
+  position: sticky;
+  top: 16px;
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.rail-card {
+  border: 1px solid rgba(202, 214, 224, 0.98);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 10px 28px rgba(31, 41, 51, 0.04);
+}
+
+.rss-card {
+  padding: 14px;
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.09), transparent 58%),
+    rgba(255, 255, 255, 0.92);
+}
+
+.rss-card .eyebrow {
+  margin-bottom: 7px;
+  font-size: 0.68rem;
+}
+
+.rss-card a {
+  color: var(--ink-strong);
+  font-size: 0.98rem;
+  font-weight: 760;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.rss-card a:hover {
+  color: var(--link);
+}
+
+.rail-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px 10px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.rail-list {
+  display: grid;
+}
+
+.rail-item {
+  display: grid;
+  gap: 4px;
+  padding: 11px 14px;
+  border-top: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+}
+
+.rail-item strong {
+  color: var(--ink-strong);
+  font-size: 0.88rem;
+  line-height: 1.25;
+}
+
+.rail-item span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.rail-item:hover {
+  background: #f7fbfa;
 }
 
 .people,
@@ -1511,8 +1653,9 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
     grid-template-columns: 1fr 1fr;
     gap: 5px 10px;
   }
-  .search-meta .rss-link {
+  .search-meta .rss-text-link {
     justify-self: start;
+    grid-column: 1 / -1;
     margin: 0;
   }
   .briefing { grid-template-columns: 1fr; padding-top: 14px; }
@@ -1556,19 +1699,29 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   }
   .filter-buttons::-webkit-scrollbar { display: none; }
   .filter-button { flex: 0 0 auto; }
-  .episode-list { gap: 7px; padding-top: 10px; }
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-top: 10px;
+  }
+  .side-rail {
+    position: static;
+    order: 2;
+  }
+  .episode-list { gap: 8px; padding-top: 0; }
   .episode-card {
-    grid-template-columns: 42px minmax(0, 1fr);
-    gap: 9px;
-    padding: 8px 9px 8px 8px;
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 10px;
+    min-height: 82px;
+    padding: 9px 10px 9px 9px;
   }
   .art {
-    width: 42px;
-    height: 42px;
+    width: 54px;
+    height: 54px;
     justify-self: start;
   }
   .episode-card h2 { font-size: 0.95rem; }
-  .source-line { font-size: 0.78rem; }
+  .source-line { font-size: 0.78rem; -webkit-line-clamp: 1; }
   .people { font-size: 0.86rem; }
   .signal { font-size: 0.88rem; }
   .summary {
