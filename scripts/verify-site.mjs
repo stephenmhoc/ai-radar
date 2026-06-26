@@ -168,6 +168,22 @@ async function checkViewport(browserInstance, viewport) {
   await page.screenshot({ path: join(outDir, `${viewport.name}.png`), fullPage: true });
   if (!firstDetailHref) throw new Error("missing first episode detail href");
   await page.goto(new URL(firstDetailHref, `http://${host}:${port}/`).toString(), { waitUntil: "networkidle" });
+  const detailNavLinks = await page.locator(".top-nav a").count();
+  if (detailNavLinks !== 1) {
+    throw new Error(`detail page should have exactly one nav link, found ${detailNavLinks}`);
+  }
+  if (!(await page.getByRole("link", { name: "Back to episodes" }).count())) {
+    throw new Error("detail page should keep navigation to a single back link");
+  }
+  if (await page.getByRole("link", { name: /Summary|Transcript|RSS feed|All episodes/ }).count()) {
+    throw new Error("detail page should not show the old multi-button nav");
+  }
+  if (await page.getByText("Original episode").count()) {
+    throw new Error("detail page should use go-to-episode language");
+  }
+  if (!(await page.getByRole("link", { name: /Go to episode/ }).count())) {
+    throw new Error("detail page should link out with go-to-episode language");
+  }
   await expectCount(page, ".brief-grid", 1, "episode brief grids");
   await expectCount(page, ".brief-signal", 1, "why it matters sections");
   await expectCount(page, ".brief-facts dd", 4, "episode fact values");

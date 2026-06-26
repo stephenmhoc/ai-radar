@@ -152,7 +152,7 @@ def render_episode_page(config: Config, episode, slug: str) -> str:
         config,
         title=title,
         body=f"""
-        <nav class="top-nav"><a href="../../index.html">All episodes</a><a href="#summary">Summary</a><a href="#transcript">Transcript</a><a href="../../feed.xml">RSS feed</a></nav>
+        <nav class="top-nav" aria-label="Episode navigation"><a href="../../index.html">Back to episodes</a></nav>
         <main class="detail">
           <section class="detail-hero">
             <div class="detail-art">{image}</div>
@@ -399,7 +399,7 @@ def episode_path_for(slug: str) -> str:
     return f"/episodes/{slug}/"
 
 
-def source_link(episode, *, icon: bool = True, label: str = "Original episode") -> str:
+def source_link(episode, *, icon: bool = True, label: str = "Go to episode") -> str:
     if not episode["episode_url"]:
         return ""
     icon_html = '<span class="external-icon" aria-hidden="true">↗</span>' if icon else ""
@@ -1658,7 +1658,7 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 .top-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
 .actions a {
@@ -1674,14 +1674,22 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
 }
 
 .top-nav {
-  position: sticky;
-  top: 0;
-  z-index: 6;
-  justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--line);
-  background: rgba(251, 252, 253, 0.94);
-  backdrop-filter: blur(12px);
+  justify-content: flex-start;
+  padding: 4px 0 0;
+  margin-bottom: 16px;
+}
+
+.top-nav a {
+  min-height: 34px;
+  padding: 7px 11px;
+  color: var(--muted);
+  background: transparent;
+}
+
+.top-nav a::before {
+  content: "←";
+  font-size: 1.05em;
+  line-height: 1;
 }
 
 .detail {
@@ -1693,12 +1701,20 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   grid-template-columns: 240px 1fr;
   gap: 30px;
   align-items: start;
-  margin-top: 22px;
+  margin-top: 0;
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: linear-gradient(135deg, #ffffff 0%, #ffffff 62%, var(--panel-warm) 100%);
   box-shadow: 0 18px 50px rgba(31, 41, 51, 0.08);
+}
+
+.detail-hero .tags {
+  margin: 14px 0 18px;
+}
+
+.detail-hero .actions {
+  padding-top: 2px;
 }
 
 .detail-art {
@@ -1929,13 +1945,12 @@ a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset
   .tags { gap: 5px; margin: 7px 0; }
   .tags span { font-size: 0.78rem; padding: 2px 7px; }
   .actions {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 6px;
   }
-  .actions a { min-width: 0; padding: 7px 8px; font-size: 0.83rem; }
-  .top-nav { overflow-x: auto; justify-content: start; scrollbar-width: none; }
-  .top-nav::-webkit-scrollbar { display: none; }
-  .top-nav a { flex: 0 0 auto; }
+  .actions a { flex: 1 1 calc(50% - 6px); min-width: 0; padding: 7px 8px; font-size: 0.83rem; }
+  .detail-hero .actions a { justify-content: center; }
+  .top-nav { margin-bottom: 12px; }
   .detail-hero { grid-template-columns: 1fr; gap: 16px; padding: 14px; }
   .detail-art { max-width: 180px; }
   .brief-grid { grid-template-columns: 1fr; gap: 18px; }
