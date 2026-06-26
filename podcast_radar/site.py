@@ -5,6 +5,7 @@ import email.utils
 import hashlib
 import json
 import shutil
+import subprocess
 from pathlib import Path
 from urllib.parse import urljoin
 
@@ -19,6 +20,7 @@ def build_site(config: Config, conn) -> dict[str, int]:
     if public_dir.exists():
         shutil.rmtree(public_dir)
     (public_dir / "assets").mkdir(parents=True, exist_ok=True)
+    (public_dir / "assets" / "social").mkdir(parents=True, exist_ok=True)
     (public_dir / "episodes").mkdir(parents=True, exist_ok=True)
 
     style_name = style_asset_name()
@@ -28,21 +30,24 @@ def build_site(config: Config, conn) -> dict[str, int]:
     if config.site.cname:
         (public_dir / "CNAME").write_text(config.site.cname + "\n", encoding="utf-8")
 
-    slugs: dict[int, str] = {}
+    slugs = {int(episode["id"]): episode_slug(episode) for episode in episodes}
+    social_images = write_social_images(config, public_dir, episodes, slugs)
     for episode in episodes:
-        slug = episode_slug(episode)
-        slugs[int(episode["id"])] = slug
+        slug = slugs[int(episode["id"])]
         episode_dir = public_dir / "episodes" / slug
         episode_dir.mkdir(parents=True, exist_ok=True)
         (episode_dir / "index.html").write_text(
-            render_episode_page(config, episode, slug),
+            render_episode_page(config, episode, slug, social_image_url=social_images[int(episode["id"])]),
             encoding="utf-8",
         )
 
     rss = render_rss(config, episodes, slugs)
     (public_dir / "robots.txt").write_text(render_robots(config), encoding="utf-8")
     (public_dir / "sitemap.xml").write_text(render_sitemap(config, episodes, slugs), encoding="utf-8")
-    (public_dir / "index.html").write_text(render_index(config, episodes, slugs), encoding="utf-8")
+    (public_dir / "index.html").write_text(
+        render_index(config, episodes, slugs, social_image_url=social_images["home"]),
+        encoding="utf-8",
+    )
     (public_dir / "feed.xml").write_text(rss["xml"], encoding="utf-8")
     return {"episodes": len(episodes), "rss_items": rss["items"]}
 
@@ -52,7 +57,7 @@ def episode_slug(episode) -> str:
     return f"{episode['id']}-{slugify(title)}"
 
 
-def render_index(config: Config, episodes, slugs: dict[int, str]) -> str:
+def render_index(config: Config, episodes, slugs: dict[int, str], *, social_image_url: str | None = None) -> str:
     cards = "\n".join(render_card(config, episode, slugs[int(episode["id"])]) for episode in episodes)
     controls = render_controls(config, episodes)
     search_panel = render_search_panel(episodes)
@@ -68,7 +73,8 @@ def render_index(config: Config, episodes, slugs: dict[int, str]) -> str:
         title=config.site.title,
         description=config.site.description,
         canonical_url=site_root_url(config),
-        image_url=_site_image_url(episodes),
+        image_url=social_image_url or _site_image_url(episodes),
+        image_alt=f"{config.site.title} social preview card",
         json_ld=home_structured_data(config, episodes, slugs),
         body=f"""
         <header class="masthead">
@@ -144,7 +150,7 @@ def render_card(config: Config, episode, slug: str) -> str:
     """
 
 
-def render_episode_page(config: Config, episode, slug: str) -> str:
+def render_episode_page(config: Config, episode, slug: str, *, social_image_url: str | None = None) -> str:
     image_url = episode["image_url"] or episode["feed_image_url"] or ""
     hosts = _people(episode["hosts_json"]) or _people(episode["feed_hosts_json"])
     guests = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
@@ -169,10 +175,17 @@ def render_episode_page(config: Config, episode, slug: str) -> str:
         title=title,
         description=description,
         canonical_url=episode_url,
-        image_url=_episode_image_url(episode),
+        image_url=social_image_url or _episode_image_url(episode),
+        image_alt=f"{config.site.title} preview for {title}",
         page_type="article",
         published_time=_episode_field(episode, "published_at"),
-        json_ld=episode_structured_data(config, episode, slug, description=description),
+        json_ld=episode_structured_data(
+            config,
+            episode,
+            slug,
+            description=description,
+            image_url=social_image_url or _episode_image_url(episode),
+        ),
         body=f"""
         <nav class="top-nav" aria-label="Episode navigation"><a href="../../index.html">Back to episodes</a></nav>
         <main class="detail" id="main-content" tabindex="-1">
@@ -276,6 +289,7 @@ def page(
     description: str | None = None,
     canonical_url: str | None = None,
     image_url: str | None = None,
+    image_alt: str | None = None,
     page_type: str = "website",
     published_time: str | None = None,
     json_ld=None,
@@ -287,9 +301,19 @@ def page(
     rss_url = feed_url_for(config)
     image_meta = ""
     if image_url:
+        image_type = "image/png" if image_url.endswith(".png") else "image/svg+xml" if image_url.endswith(".svg") else ""
+        image_type_meta = f'\n  <meta property="og:image:type" content="{escape(image_type)}">' if image_type else ""
+        image_alt_meta = ""
+        if image_alt:
+            image_alt_meta = f"""
+  <meta property="og:image:alt" content="{escape(image_alt)}">
+  <meta name="twitter:image:alt" content="{escape(image_alt)}">"""
         image_meta = f"""
   <meta property="og:image" content="{escape(image_url)}">
-  <meta name="twitter:image" content="{escape(image_url)}">"""
+  <meta property="og:image:secure_url" content="{escape(image_url)}">{image_type_meta}
+  <meta property="og:image:width" content="{SOCIAL_IMAGE_WIDTH}">
+  <meta property="og:image:height" content="{SOCIAL_IMAGE_HEIGHT}">
+  <meta name="twitter:image" content="{escape(image_url)}">{image_alt_meta}"""
     published_meta = ""
     if published_time:
         published_meta = f"""
@@ -350,6 +374,7 @@ FILTER_SCRIPT = """(() => {
     const list = document.querySelector(".episode-list");
     const searchInput = document.querySelector("[data-search-input]");
     const resultCount = document.querySelector("[data-result-count]");
+    const resultLabel = document.querySelector("[data-result-label]");
     const pagination = document.querySelector("[data-pagination]");
     const pageButtons = document.querySelector("[data-page-buttons]");
     const pageStatus = document.querySelector("[data-page-status]");
@@ -457,6 +482,7 @@ FILTER_SCRIPT = """(() => {
       });
 
       if (resultCount) resultCount.textContent = String(visible);
+      if (resultLabel) resultLabel.textContent = visible === 1 ? "visible episode" : "visible episodes";
       renderPagination(visible);
 
       let empty = document.querySelector("[data-filter-empty]");
@@ -544,6 +570,210 @@ def episode_path_for(slug: str) -> str:
     return f"/episodes/{slug}/"
 
 
+SOCIAL_IMAGE_WIDTH = 1200
+SOCIAL_IMAGE_HEIGHT = 630
+
+
+def write_social_images(config: Config, public_dir: Path, episodes, slugs: dict[int, str]) -> dict[int | str, str]:
+    social_dir = public_dir / "assets" / "social"
+    social_dir.mkdir(parents=True, exist_ok=True)
+    image_urls: dict[int | str, str] = {}
+
+    home_slug = "ai-radar"
+    home_svg = social_dir / f"{home_slug}.svg"
+    home_png = social_dir / f"{home_slug}.png"
+    home_svg.write_text(render_home_social_card(config, episodes), encoding="utf-8")
+    image_urls["home"] = _social_image_url(config, home_slug, _convert_social_card(home_svg, home_png))
+
+    for episode in episodes:
+        slug = slugs[int(episode["id"])]
+        asset_slug = f"episode-{slug}"
+        svg_path = social_dir / f"{asset_slug}.svg"
+        png_path = social_dir / f"{asset_slug}.png"
+        svg_path.write_text(render_episode_social_card(config, episode), encoding="utf-8")
+        image_urls[int(episode["id"])] = _social_image_url(
+            config,
+            asset_slug,
+            _convert_social_card(svg_path, png_path),
+        )
+
+    return image_urls
+
+
+def render_home_social_card(config: Config, episodes) -> str:
+    latest = _date_label(episodes[0]["published_at"]) if episodes else "No episodes yet"
+    lab_count = len({lab for episode in episodes for lab in _people(episode["labs_json"])})
+    feed_count = len({str(episode["feed_name"]) for episode in episodes})
+    subtitle = f"{len(episodes)} verified episodes · {lab_count} labs · {feed_count} podcasts"
+    return render_social_card_svg(
+        eyebrow="AI lab podcast intelligence",
+        title=config.site.title,
+        subtitle=config.site.description,
+        footer=f"{subtitle} · Latest {latest}",
+        accent="#0f766e",
+    )
+
+
+def render_episode_social_card(config: Config, episode) -> str:
+    labs = _people(episode["labs_json"])
+    guests = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
+    title = str(episode["summary_title"] or episode["title"])
+    lab_label = comma_join(labs) or "AI lab"
+    guest_label = comma_join(guests) or "Verified guest"
+    eyebrow = f"{config.site.title} · {str(episode['feed_name'])} · {_date_label(episode['published_at'])}"
+    footer = f"{guest_label} · {lab_label} · Transcript-verified summary"
+    return render_social_card_svg(
+        eyebrow=eyebrow,
+        title=title,
+        subtitle=_episode_meta_description(episode),
+        footer=footer,
+        accent=_social_accent(labs),
+    )
+
+
+def render_social_card_svg(*, eyebrow: str, title: str, subtitle: str, footer: str, accent: str) -> str:
+    title_lines = _wrap_social_text(title, max_chars=34, max_lines=3)
+    subtitle_lines = _wrap_social_text(subtitle, max_chars=62, max_lines=2)
+    title_count = len(title_lines)
+    if title_count >= 3:
+        title_y, title_size, title_line_height, subtitle_y = 214, 60, 66, 438
+    elif title_count == 2:
+        title_y, title_size, title_line_height, subtitle_y = 222, 68, 76, 432
+    else:
+        title_y, title_size, title_line_height, subtitle_y = 236, 74, 82, 456
+    title_svg = _svg_text_lines(title_lines, x=80, y=title_y, font_size=title_size, line_height=title_line_height, weight=800)
+    subtitle_svg = _svg_text_lines(subtitle_lines, x=84, y=subtitle_y, font_size=30, line_height=40, fill="#d7e7e5")
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{SOCIAL_IMAGE_WIDTH}" height="{SOCIAL_IMAGE_HEIGHT}" viewBox="0 0 {SOCIAL_IMAGE_WIDTH} {SOCIAL_IMAGE_HEIGHT}">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#12202b"/>
+      <stop offset="0.58" stop-color="#173341"/>
+      <stop offset="1" stop-color="{escape(accent)}"/>
+    </linearGradient>
+    <radialGradient id="radar" cx="80%" cy="24%" r="66%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.24"/>
+      <stop offset="0.36" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#radar)"/>
+  <circle cx="935" cy="180" r="276" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>
+  <circle cx="935" cy="180" r="188" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="2"/>
+  <circle cx="935" cy="180" r="96" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M935 180 L1140 42" stroke="#ffffff" stroke-opacity="0.2" stroke-width="5" stroke-linecap="round"/>
+  <rect x="72" y="70" width="148" height="48" rx="24" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.20"/>
+  <text x="96" y="102" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="800" fill="#ffffff">AI Radar</text>
+  <text x="80" y="152" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="750" fill="#9ee7dc" letter-spacing="0">{escape(eyebrow)}</text>
+  {title_svg}
+  {subtitle_svg}
+  <rect x="80" y="540" width="1040" height="1" fill="#ffffff" fill-opacity="0.18"/>
+  <text x="80" y="584" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="25" font-weight="700" fill="#f8fafc">{escape(_compact_social_text(footer, 94))}</text>
+  <g transform="translate(1008 474)" opacity="0.86">
+    <rect x="0" y="42" width="12" height="42" rx="6" fill="#ffffff"/>
+    <rect x="25" y="18" width="12" height="66" rx="6" fill="#ffffff"/>
+    <rect x="50" y="0" width="12" height="84" rx="6" fill="#ffffff"/>
+    <rect x="75" y="30" width="12" height="54" rx="6" fill="#ffffff"/>
+  </g>
+</svg>
+"""
+
+
+def _svg_text_lines(
+    lines: list[str],
+    *,
+    x: int,
+    y: int,
+    font_size: int,
+    line_height: int,
+    weight: int = 650,
+    fill: str = "#ffffff",
+) -> str:
+    return "\n  ".join(
+        f'<text x="{x}" y="{y + index * line_height}" font-family="-apple-system, BlinkMacSystemFont, \'Segoe UI\', sans-serif" font-size="{font_size}" font-weight="{weight}" fill="{fill}" letter-spacing="0">{escape(line)}</text>'
+        for index, line in enumerate(lines)
+    )
+
+
+def _wrap_social_text(value: str, *, max_chars: int, max_lines: int) -> list[str]:
+    original = " ".join(strip_html(value).split())
+    words = original.split()
+    if not words:
+        return []
+    lines: list[str] = []
+    current = ""
+    for word in words:
+        candidate = f"{current} {word}".strip()
+        if len(candidate) <= max_chars or not current:
+            current = candidate
+            continue
+        lines.append(current)
+        current = word
+        if len(lines) == max_lines:
+            break
+    if len(lines) < max_lines and current:
+        lines.append(current)
+    if len(lines) > max_lines:
+        lines = lines[:max_lines]
+    if len(lines) == max_lines and len(original) > len(" ".join(lines)):
+        lines[-1] = _add_ellipsis(lines[-1], max_chars)
+    return lines
+
+
+def _add_ellipsis(value: str, max_chars: int) -> str:
+    value = value.rstrip(" ,;:.-")
+    suffix = "..."
+    if len(value) + len(suffix) <= max_chars:
+        return value + suffix
+    return value[: max_chars - len(suffix)].rstrip(" ,;:.-") + suffix
+
+
+def _compact_social_text(value: str, max_chars: int) -> str:
+    normalized = " ".join(strip_html(value).split())
+    if len(normalized) <= max_chars:
+        return normalized
+    cutoff = normalized.rfind(" ", 0, max_chars - 1)
+    if cutoff < max_chars * 0.62:
+        cutoff = max_chars - 1
+    return normalized[:cutoff].rstrip(" ,;:.-") + "..."
+
+
+def _social_accent(labs: list[str]) -> str:
+    palette = {
+        "anthropic": "#8b5e34",
+        "google-deepmind": "#2f5f9f",
+        "google": "#2f5f9f",
+        "meta": "#315f91",
+        "nvidia": "#4d7c0f",
+        "openai": "#0f766e",
+        "xai": "#46515f",
+    }
+    for lab in labs:
+        token = _lab_token(_filter_lab_label(lab))
+        if token in palette:
+            return palette[token]
+    return "#0f766e"
+
+
+def _convert_social_card(svg_path: Path, png_path: Path) -> str:
+    if not shutil.which("sips"):
+        return "svg"
+    try:
+        subprocess.run(
+            ["sips", "-s", "format", "png", str(svg_path), "--out", str(png_path)],
+            check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+    except (OSError, subprocess.CalledProcessError):
+        return "svg"
+    return "png" if png_path.exists() else "svg"
+
+
+def _social_image_url(config: Config, asset_slug: str, extension: str) -> str:
+    return urljoin(site_root_url(config), f"assets/social/{asset_slug}.{extension}")
+
+
 def home_structured_data(config: Config, episodes, slugs: dict[int, str]) -> list[dict[str, object]]:
     root_url = site_root_url(config)
     parts = []
@@ -576,8 +806,15 @@ def home_structured_data(config: Config, episodes, slugs: dict[int, str]) -> lis
     ]
 
 
-def episode_structured_data(config: Config, episode, slug: str, *, description: str) -> dict[str, object]:
-    image_url = _episode_image_url(episode)
+def episode_structured_data(
+    config: Config,
+    episode,
+    slug: str,
+    *,
+    description: str,
+    image_url: str | None = None,
+) -> dict[str, object]:
+    image_url = image_url or _episode_image_url(episode)
     data: dict[str, object] = {
         "@context": "https://schema.org",
         "@type": "PodcastEpisode",
@@ -845,6 +1082,7 @@ def render_search_panel(episodes) -> str:
     lab_count = len({lab for episode in episodes for lab in _people(episode["labs_json"])})
     feed_count = len({str(episode["feed_name"]) for episode in episodes})
     latest = _date_label(episodes[0]["published_at"]) if episodes else "No episodes"
+    result_label = "visible episode" if len(episodes) == 1 else "visible episodes"
     return f"""
     <div class="search-panel">
       <label class="command-search">
@@ -852,7 +1090,7 @@ def render_search_panel(episodes) -> str:
         <input type="search" placeholder="Guest, lab, claim, topic, podcast" data-search-input aria-controls="episode-list">
       </label>
       <div class="search-meta">
-        <span role="status" aria-live="polite"><strong data-result-count>{len(episodes)}</strong> visible episodes</span>
+        <span role="status" aria-live="polite"><strong data-result-count>{len(episodes)}</strong> <span data-result-label>{result_label}</span></span>
         <span>{lab_count} labs</span>
         <span>{feed_count} podcasts</span>
         <span>latest {escape(latest)}</span>
@@ -904,11 +1142,11 @@ def render_controls(config: Config, episodes) -> str:
             lab_counts[lab] = lab_counts.get(lab, 0) + 1
 
     buttons = [
-        f'<button type="button" class="filter-button active" data-filter="all" aria-pressed="true" aria-label="Show all episodes, {len(episodes)} episodes">All <span>{len(episodes)}</span></button>'
+        f'<button type="button" class="filter-button active" data-filter="all" aria-pressed="true" aria-label="Show all episodes, {_episode_count_label(len(episodes))}">All <span>{len(episodes)}</span></button>'
     ]
     for lab, count in sorted(lab_counts.items(), key=lambda item: (-item[1], item[0].lower())):
         buttons.append(
-            f'<button type="button" class="filter-button" data-filter="{escape(_lab_token(lab))}" aria-pressed="false" aria-label="Show {escape(lab)} episodes, {count} episodes">{escape(lab)} <span>{count}</span></button>'
+            f'<button type="button" class="filter-button" data-filter="{escape(_lab_token(lab))}" aria-pressed="false" aria-label="Show {escape(lab)} episodes, {_episode_count_label(count)}">{escape(lab)} <span>{count}</span></button>'
         )
 
     return f"""
@@ -953,6 +1191,10 @@ def _rss_ready(episode) -> bool:
         and (episode["summary_text"] or episode["summary_html"])
         and episode["status"] == "published"
     )
+
+
+def _episode_count_label(count: int) -> str:
+    return f"{count} episode" if count == 1 else f"{count} episodes"
 
 
 def _rss_description(episode, *, site_link: str) -> str:

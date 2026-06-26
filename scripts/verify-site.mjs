@@ -56,8 +56,10 @@ async function checkViewport(browserInstance, viewport) {
   const page = await browserInstance.newPage({ viewport });
   await page.goto(`http://${host}:${port}/`, { waitUntil: "networkidle" });
   await runAxe(page, `${viewport.name} homepage`);
+  await assertSocialPreview(page, `${viewport.name} homepage`, /\/assets\/social\/ai-radar\.(png|svg)$/);
 
   await expectCount(page, ".episode-card", 1, "episode cards");
+  await expectCount(page, ".skip-link", 1, "skip links");
   await expectCount(page, ".search-panel", 1, "header search panels");
   await expectCount(page, "[data-result-count]", 1, "visible result counters");
   await expectCount(page, ".rss-card .follow-link", 1, "follow-along RSS links");
@@ -71,6 +73,11 @@ async function checkViewport(browserInstance, viewport) {
   await expectCount(page, ".source-line .source-main", 1, "episode source titles");
   await expectCount(page, ".source-line .source-details", 1, "episode date and runtime metadata");
   await expectCount(page, ".rail-item .rail-source", 1, "newest episode metadata");
+  await page.keyboard.press("Tab");
+  const activeSkipHref = await page.evaluate(() => document.activeElement?.getAttribute("href"));
+  if (activeSkipHref !== "#main-content") {
+    throw new Error("first keyboard tab stop should be the skip link");
+  }
   if (await page.locator('[data-filter="google"]').count()) {
     throw new Error("Google and Google DeepMind filters should be consolidated");
   }
@@ -193,6 +200,7 @@ async function checkViewport(browserInstance, viewport) {
   if (!firstDetailHref) throw new Error("missing first episode detail href");
   await page.goto(new URL(firstDetailHref, `http://${host}:${port}/`).toString(), { waitUntil: "networkidle" });
   await runAxe(page, `${viewport.name} detail page`);
+  await assertSocialPreview(page, `${viewport.name} detail page`, /\/assets\/social\/episode-.+\.(png|svg)$/);
   const detailNavLinks = await page.locator(".top-nav a").count();
   if (detailNavLinks !== 1) {
     throw new Error(`detail page should have exactly one nav link, found ${detailNavLinks}`);
@@ -240,4 +248,35 @@ async function runAxe(page, label) {
     })
     .join("\n");
   throw new Error(`accessibility violations on ${label}:\n${details}`);
+}
+
+async function assertSocialPreview(page, label, imagePattern) {
+  const image = await metaContent(page, 'meta[property="og:image"]');
+  const secureImage = await metaContent(page, 'meta[property="og:image:secure_url"]');
+  const width = await metaContent(page, 'meta[property="og:image:width"]');
+  const height = await metaContent(page, 'meta[property="og:image:height"]');
+  const imageAlt = await metaContent(page, 'meta[property="og:image:alt"]');
+  const twitterImage = await metaContent(page, 'meta[name="twitter:image"]');
+  const twitterAlt = await metaContent(page, 'meta[name="twitter:image:alt"]');
+
+  if (!imagePattern.test(image)) {
+    throw new Error(`${label} has unexpected preview image: ${image}`);
+  }
+  if (secureImage !== image || twitterImage !== image) {
+    throw new Error(`${label} preview image URLs should match across OG and Twitter metadata`);
+  }
+  if (width !== "1200" || height !== "630") {
+    throw new Error(`${label} preview image should declare 1200x630 dimensions`);
+  }
+  if (!imageAlt || twitterAlt !== imageAlt) {
+    throw new Error(`${label} preview image should include matching alt text`);
+  }
+}
+
+async function metaContent(page, selector) {
+  const value = await page.locator(selector).first().getAttribute("content");
+  if (!value) {
+    throw new Error(`missing metadata: ${selector}`);
+  }
+  return value;
 }
