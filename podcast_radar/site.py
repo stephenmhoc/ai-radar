@@ -83,7 +83,7 @@ def render_index(config: Config, episodes, slugs: dict[int, str]) -> str:
         <div class="content-grid">
           <main id="main-content" tabindex="-1" aria-labelledby="episode-list-title">
             <h2 class="visually-hidden" id="episode-list-title">Published episodes</h2>
-            <div class="episode-list">
+            <div class="episode-list" id="episode-list">
               {cards}
             </div>
             <nav class="pagination" data-pagination aria-label="Episode pages" hidden>
@@ -747,8 +747,9 @@ def render_podcast_tools(episode) -> str:
         <span>Podcast feed URL</span>
         <div class="copy-row">
           <input id="{control_id}" type="url" readonly value="{escape(feed_url)}" onfocus="this.select()" aria-label="Podcast feed URL">
-          <button type="button" data-copy-url="{escape(feed_url)}">Copy feed URL</button>
+          <button type="button" data-copy-url="{escape(feed_url)}" aria-label="Copy podcast feed URL">Copy feed URL</button>
           <a href="{escape(feed_url)}" target="_blank" rel="noopener noreferrer">Open feed</a>
+          <span class="visually-hidden" data-copy-status role="status" aria-live="polite"></span>
         </div>
       </label>
     </section>
@@ -848,10 +849,10 @@ def render_search_panel(episodes) -> str:
     <div class="search-panel">
       <label class="command-search">
         <span>Search radar</span>
-        <input type="search" placeholder="Guest, lab, claim, topic, podcast" data-search-input>
+        <input type="search" placeholder="Guest, lab, claim, topic, podcast" data-search-input aria-controls="episode-list">
       </label>
       <div class="search-meta">
-        <span><strong data-result-count>{len(episodes)}</strong> visible</span>
+        <span role="status" aria-live="polite"><strong data-result-count>{len(episodes)}</strong> visible episodes</span>
         <span>{lab_count} labs</span>
         <span>{feed_count} podcasts</span>
         <span>latest {escape(latest)}</span>
@@ -870,7 +871,8 @@ def render_side_rail(config: Config, episodes, slugs: dict[int, str]) -> str:
       <section class="rail-card rss-card">
         <p class="eyebrow">Follow along</p>
         <a class="follow-link" href="{escape(feed_url)}">Use our RSS feed to stay up to date <span aria-hidden="true">↗</span></a>
-        <button type="button" class="rss-copy-button" data-copy-url="{escape(feed_url)}">Copy feed URL</button>
+        <button type="button" class="rss-copy-button" data-copy-url="{escape(feed_url)}" aria-label="Copy AI Radar RSS feed URL">Copy feed URL</button>
+        <span class="visually-hidden" data-copy-status role="status" aria-live="polite"></span>
       </section>
       <section class="rail-card newest-card">
         <div class="rail-heading"><span>Newest episodes</span><span>{len(episodes)} total</span></div>
@@ -902,17 +904,17 @@ def render_controls(config: Config, episodes) -> str:
             lab_counts[lab] = lab_counts.get(lab, 0) + 1
 
     buttons = [
-        f'<button type="button" class="filter-button active" data-filter="all" aria-pressed="true">All <span>{len(episodes)}</span></button>'
+        f'<button type="button" class="filter-button active" data-filter="all" aria-pressed="true" aria-label="Show all episodes, {len(episodes)} episodes">All <span>{len(episodes)}</span></button>'
     ]
     for lab, count in sorted(lab_counts.items(), key=lambda item: (-item[1], item[0].lower())):
         buttons.append(
-            f'<button type="button" class="filter-button" data-filter="{escape(_lab_token(lab))}" aria-pressed="false">{escape(lab)} <span>{count}</span></button>'
+            f'<button type="button" class="filter-button" data-filter="{escape(_lab_token(lab))}" aria-pressed="false" aria-label="Show {escape(lab)} episodes, {count} episodes">{escape(lab)} <span>{count}</span></button>'
         )
 
     return f"""
-    <section class="filters" aria-label="Company filters">
-      <div class="filter-label">Quick lab pivots</div>
-      <div class="filter-buttons">{''.join(buttons)}</div>
+    <section class="filters" aria-labelledby="lab-filter-label">
+      <div class="filter-label" id="lab-filter-label">Quick lab pivots</div>
+      <div class="filter-buttons" role="group" aria-labelledby="lab-filter-label">{''.join(buttons)}</div>
     </section>
     """
 
