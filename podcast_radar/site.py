@@ -6,7 +6,9 @@ import hashlib
 import html
 import json
 import shutil
+import struct
 import subprocess
+import zlib
 from pathlib import Path
 from urllib.parse import urljoin
 
@@ -28,6 +30,7 @@ def build_site(config: Config, conn) -> dict[str, int]:
     (public_dir / "assets" / "social").mkdir(parents=True, exist_ok=True)
     (public_dir / "episodes").mkdir(parents=True, exist_ok=True)
 
+    logo_image_url = write_logo_image(config, public_dir)
     style_name = style_asset_name()
     (public_dir / "assets" / style_name).write_text(STYLE_CSS, encoding="utf-8")
     (public_dir / "assets" / "style.css").write_text(STYLE_CSS, encoding="utf-8")
@@ -46,7 +49,7 @@ def build_site(config: Config, conn) -> dict[str, int]:
             encoding="utf-8",
         )
 
-    rss = render_rss(config, episodes, slugs)
+    rss = render_rss(config, episodes, slugs, logo_image_url=logo_image_url)
     (public_dir / "robots.txt").write_text(render_robots(config), encoding="utf-8")
     (public_dir / "sitemap.xml").write_text(render_sitemap(config, episodes, slugs), encoding="utf-8")
     (public_dir / "index.html").write_text(
@@ -224,9 +227,10 @@ def render_episode_page(config: Config, episode, slug: str, *, social_image_url:
     )
 
 
-def render_rss(config: Config, episodes, slugs: dict[int, str]) -> dict[str, int | str]:
+def render_rss(config: Config, episodes, slugs: dict[int, str], *, logo_image_url: str) -> dict[str, int | str]:
     now = email.utils.format_datetime(dt.datetime.now(dt.timezone.utc), usegmt=True)
     items = []
+    item_image = rss_item_image(logo_image_url)
     for episode in episodes:
         if not _rss_ready(episode):
             continue
@@ -242,15 +246,18 @@ def render_rss(config: Config, episodes, slugs: dict[int, str]) -> dict[str, int
               <guid isPermaLink="true">{escape(link)}</guid>
               <pubDate>{escape(pub_date)}</pubDate>
               <description>{escape(description)}</description>
+              {item_image}
             </item>
             """
         )
+    feed_image = rss_channel_image(config, logo_image_url)
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>{escape(config.site.rss_title)}</title>
     <link>{escape(site_root_url(config))}</link>
     <description>{escape(config.site.rss_description)}</description>
+    {feed_image}
     <lastBuildDate>{escape(now)}</lastBuildDate>
     {''.join(items)}
   </channel>
@@ -367,12 +374,76 @@ def style_asset_name() -> str:
     return f"style-{digest}.css"
 
 
-FAVICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+LOGO_IMAGE_SIZE = 512
+
+
+def write_logo_image(config: Config, public_dir: Path) -> str:
+    svg_path = public_dir / "assets" / "logo.svg"
+    png_path = public_dir / "assets" / "logo.png"
+    svg_path.write_text(LOGO_SVG, encoding="utf-8")
+    _write_logo_png(png_path)
+    return urljoin(site_root_url(config), "assets/logo.png")
+
+
+def _write_logo_png(path: Path) -> None:
+    size = LOGO_IMAGE_SIZE
+    scale = size / 64
+    background = (15, 118, 110, 255)
+    white = (251, 252, 253, 255)
+    cream = (242, 231, 215, 255)
+    transparent = (0, 0, 0, 0)
+
+    rows = bytearray()
+    for y in range(size):
+        rows.append(0)
+        sy = (y + 0.5) / scale
+        for x in range(size):
+            sx = (x + 0.5) / scale
+            color = transparent
+            if _inside_rounded_rect(sx, sy, 0, 0, 64, 64, 12):
+                color = background
+            if (sx - 22) ** 2 + (sy - 32) ** 2 <= 8**2:
+                color = white
+            if (
+                _inside_rounded_rect(sx, sy, 33, 18, 39, 46, 3)
+                or _inside_rounded_rect(sx, sy, 43, 24, 49, 40, 3)
+                or _inside_rounded_rect(sx, sy, 51, 29, 57, 35, 3)
+            ):
+                color = cream
+            rows.extend(color)
+
+    def chunk(kind: bytes, data: bytes) -> bytes:
+        checksum = zlib.crc32(kind + data) & 0xFFFFFFFF
+        return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", checksum)
+
+    png = b"".join(
+        (
+            b"\x89PNG\r\n\x1a\n",
+            chunk(b"IHDR", struct.pack(">IIBBBBB", size, size, 8, 6, 0, 0, 0)),
+            chunk(b"IDAT", zlib.compress(bytes(rows), level=9)),
+            chunk(b"IEND", b""),
+        )
+    )
+    path.write_bytes(png)
+
+
+def _inside_rounded_rect(x: float, y: float, left: float, top: float, right: float, bottom: float, radius: float) -> bool:
+    if x < left or x > right or y < top or y > bottom:
+        return False
+    cx = min(max(x, left + radius), right - radius)
+    cy = min(max(y, top + radius), bottom - radius)
+    return (x - cx) ** 2 + (y - cy) ** 2 <= radius**2
+
+
+LOGO_SVG = """<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="12" fill="#0f766e"/>
   <circle cx="22" cy="32" r="8" fill="#fbfcfd"/>
   <path d="M36 18v28M46 24v16M54 29v6" stroke="#f2e7d7" stroke-width="6" stroke-linecap="round"/>
 </svg>
 """
+
+
+FAVICON_SVG = LOGO_SVG
 
 
 FILTER_SCRIPT = """(() => {
@@ -1193,6 +1264,25 @@ def _rss_ready(episode) -> bool:
         episode["transcript_text"]
         and (episode["summary_text"] or episode["summary_html"])
         and episode["status"] == "published"
+    )
+
+
+def rss_channel_image(config: Config, logo_image_url: str) -> str:
+    root_url = site_root_url(config)
+    return f"""<image>
+      <url>{escape(logo_image_url)}</url>
+      <title>{escape(config.site.rss_title)}</title>
+      <link>{escape(root_url)}</link>
+      <width>144</width>
+      <height>144</height>
+    </image>
+    <itunes:image href="{escape(logo_image_url)}"/>"""
+
+
+def rss_item_image(logo_image_url: str) -> str:
+    return (
+        f'<media:thumbnail url="{escape(logo_image_url)}" width="{LOGO_IMAGE_SIZE}" height="{LOGO_IMAGE_SIZE}"/>\n'
+        f'              <itunes:image href="{escape(logo_image_url)}"/>'
     )
 
 

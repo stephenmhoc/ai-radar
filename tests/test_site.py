@@ -152,6 +152,8 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertTrue((root / "public" / "index.html").exists())
             self.assertTrue((root / "public" / "feed.xml").exists())
             self.assertTrue((root / "public" / "sitemap.xml").exists())
+            self.assertTrue((root / "public" / "assets" / "logo.svg").exists())
+            self.assertTrue((root / "public" / "assets" / "logo.png").exists())
             self.assertTrue(any((root / "public" / "assets" / "social").glob("ai-radar-*.*")))
             self.assertTrue(any((root / "public" / "assets" / "social").glob("episode-*.*")))
             self.assertTrue(any((root / "public" / "assets").glob("style-*.css")))
@@ -225,8 +227,28 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn("Summary and transcript ready", index)
             rss = (root / "public" / "feed.xml").read_text()
             rss_root = ET.fromstring(rss)
+            namespaces = {
+                "itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd",
+                "media": "http://search.yahoo.com/mrss/",
+            }
             self.assertIn("https://radar.example.com/episodes/", rss)
             self.assertIn("<title>Sam Altman on models</title>", rss)
+            channel_image_url = rss_root.findtext("./channel/image/url") or ""
+            self.assertEqual(channel_image_url, "https://radar.example.com/assets/logo.png")
+            self.assertEqual(rss_root.findtext("./channel/image/width"), "144")
+            self.assertEqual(rss_root.findtext("./channel/image/height"), "144")
+            channel_itunes_image = rss_root.find("./channel/itunes:image", namespaces)
+            self.assertIsNotNone(channel_itunes_image)
+            self.assertEqual(channel_itunes_image.attrib.get("href"), channel_image_url)
+            item_thumbnail = rss_root.find("./channel/item/media:thumbnail", namespaces)
+            self.assertIsNotNone(item_thumbnail)
+            self.assertEqual(item_thumbnail.attrib.get("url"), channel_image_url)
+            self.assertEqual(item_thumbnail.attrib.get("width"), "512")
+            self.assertEqual(item_thumbnail.attrib.get("height"), "512")
+            item_itunes_image = rss_root.find("./channel/item/itunes:image", namespaces)
+            self.assertIsNotNone(item_itunes_image)
+            self.assertEqual(item_itunes_image.attrib.get("href"), channel_image_url)
+            self.assertNotIn("/assets/social/", channel_image_url)
             rss_description = rss_root.findtext("./channel/item/description") or ""
             self.assertIn("Sam explains practical model tradeoffs.", rss_description)
             self.assertNotIn("Sam's summary text", rss_description)
