@@ -348,7 +348,10 @@ def page(
   <meta name="twitter:title" content="{escape(document_title)}">
   <meta name="twitter:description" content="{escape(meta_description)}">
   <link rel="alternate" type="application/rss+xml" title="{escape(config.site.rss_title)}" href="{escape(rss_url)}">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/logo.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/{style_name}">
   {json_ld_html}
 </head>
@@ -382,6 +385,10 @@ def write_logo_image(config: Config, public_dir: Path) -> str:
     png_path = public_dir / "assets" / "logo.png"
     svg_path.write_text(LOGO_SVG, encoding="utf-8")
     _write_logo_png(png_path)
+    png_bytes = png_path.read_bytes()
+    (public_dir / "favicon.ico").write_bytes(_ico_from_png(png_bytes))
+    (public_dir / "favicon.png").write_bytes(png_bytes)
+    (public_dir / "apple-touch-icon.png").write_bytes(png_bytes)
     return urljoin(site_root_url(config), "assets/logo.png")
 
 
@@ -433,6 +440,12 @@ def _inside_rounded_rect(x: float, y: float, left: float, top: float, right: flo
     cx = min(max(x, left + radius), right - radius)
     cy = min(max(y, top + radius), bottom - radius)
     return (x - cx) ** 2 + (y - cy) ** 2 <= radius**2
+
+
+def _ico_from_png(png_bytes: bytes) -> bytes:
+    header = struct.pack("<HHH", 0, 1, 1)
+    directory = struct.pack("<BBBBHHII", 0, 0, 0, 0, 1, 32, len(png_bytes), len(header) + 16)
+    return header + directory + png_bytes
 
 
 LOGO_SVG = """<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64">
