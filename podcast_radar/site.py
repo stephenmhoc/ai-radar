@@ -230,7 +230,6 @@ def render_episode_page(config: Config, episode, slug: str, *, social_image_url:
 def render_rss(config: Config, episodes, slugs: dict[int, str], *, logo_image_url: str) -> dict[str, int | str]:
     now = email.utils.format_datetime(dt.datetime.now(dt.timezone.utc), usegmt=True)
     items = []
-    item_image = rss_item_image(logo_image_url)
     for episode in episodes:
         if not _rss_ready(episode):
             continue
@@ -246,13 +245,12 @@ def render_rss(config: Config, episodes, slugs: dict[int, str], *, logo_image_ur
               <guid isPermaLink="true">{escape(link)}</guid>
               <pubDate>{escape(pub_date)}</pubDate>
               <description>{escape(description)}</description>
-              {item_image}
             </item>
             """
         )
     feed_image = rss_channel_image(config, logo_image_url)
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>{escape(config.site.rss_title)}</title>
     <link>{escape(site_root_url(config))}</link>
@@ -1292,21 +1290,23 @@ def rss_channel_image(config: Config, logo_image_url: str) -> str:
     <itunes:image href="{escape(logo_image_url)}"/>"""
 
 
-def rss_item_image(logo_image_url: str) -> str:
-    return (
-        f'<media:thumbnail url="{escape(logo_image_url)}" width="{LOGO_IMAGE_SIZE}" height="{LOGO_IMAGE_SIZE}"/>\n'
-        f'              <itunes:image href="{escape(logo_image_url)}"/>'
-    )
-
-
 def _episode_count_label(count: int) -> str:
     return f"{count} episode" if count == 1 else f"{count} episodes"
 
 
 def _rss_description(episode, *, site_link: str) -> str:
     description = _short_summary(episode)
+    guests = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
+    details = (
+        "<h3>Podcast details</h3>"
+        f"<strong>Podcast:</strong> {html.escape(str(episode['feed_name']), quote=False)}<br>"
+        f"<strong>Title:</strong> {html.escape(str(episode['title']), quote=False)}<br>"
+        f"<strong>Guests:</strong> {html.escape(comma_join(guests) or 'Unknown', quote=False)}<br>"
+        f"<strong>Release date:</strong> {html.escape(_rss_release_date_label(episode['published_at']), quote=False)}<br>"
+        f"<strong>Duration:</strong> {html.escape(_duration_label(episode['duration']) or 'Unknown', quote=False)}"
+    )
     link = f'<a href="{escape(site_link)}">AI Radar page</a>'
-    return "<br><br><br>".join(part for part in (html.escape(description, quote=False), link) if part)
+    return "<br><br>".join(part for part in (html.escape(description, quote=False), details, link) if part)
 
 
 def _summary_teaser(episode) -> str:
@@ -1553,6 +1553,16 @@ def _date_label(value: str | None) -> str:
     except ValueError:
         return value[:16]
     return parsed.date().isoformat()
+
+
+def _rss_release_date_label(value: str | None) -> str:
+    if not value:
+        return "Unknown"
+    try:
+        parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return value[:16]
+    return f"{parsed.strftime('%B')} {parsed.day}, {parsed.year}"
 
 
 def _duration_label(value: str | None) -> str:
