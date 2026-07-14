@@ -27,14 +27,20 @@ def main(argv: list[str] | None = None) -> int:
     judge_parser = subparsers.add_parser("judge", help="Ask the LLM to classify new episodes.")
     judge_parser.add_argument("--limit", type=int, default=None)
     judge_parser.add_argument("--since", default=None, help="Only judge episodes published on or after this date.")
+    judge_parser.add_argument("--feed", action="append", default=[], help="Only judge episodes from this feed name. Repeatable.")
+    judge_parser.add_argument("--match", default=None, help="Only judge episodes whose title or description contains this text.")
 
     process_parser = subparsers.add_parser("process", help="Transcribe and summarize relevant episodes.")
     process_parser.add_argument("--limit", type=int, default=None)
     process_parser.add_argument("--since", default=None, help="Only process episodes published on or after this date.")
+    process_parser.add_argument("--feed", action="append", default=[], help="Only process episodes from this feed name. Repeatable.")
+    process_parser.add_argument("--match", default=None, help="Only process episodes whose title or description contains this text.")
 
     run_parser = subparsers.add_parser("run", help="Run ingest, judge, process, and site build.")
     run_parser.add_argument("--limit", type=int, default=None)
     run_parser.add_argument("--since", default=None, help="Only run on episodes published on or after this date.")
+    run_parser.add_argument("--feed", action="append", default=[], help="Only judge/process episodes from this feed name. Repeatable.")
+    run_parser.add_argument("--match", default=None, help="Only judge/process episodes whose title or description contains this text.")
 
     subparsers.add_parser("build-site", help="Render public static site and RSS feed.")
 
@@ -89,21 +95,34 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "judge":
             try:
-                print(f"judged={pipeline.judge_pending(config, conn, limit=args.limit, published_since=args.since)}")
+                print(
+                    f"judged={pipeline.judge_pending(config, conn, limit=args.limit, published_since=args.since, feed_names=tuple(args.feed), search_text=args.match)}"
+                )
             except llm.LLMError as exc:
                 print(f"error: {exc}", file=sys.stderr)
                 return 1
             return 0
         if args.command == "process":
             try:
-                print(f"processed={pipeline.process_relevant(config, conn, limit=args.limit, published_since=args.since)}")
+                print(
+                    f"processed={pipeline.process_relevant(config, conn, limit=args.limit, published_since=args.since, feed_names=tuple(args.feed), search_text=args.match)}"
+                )
             except llm.LLMError as exc:
                 print(f"error: {exc}", file=sys.stderr)
                 return 1
             return 0
         if args.command == "run":
             try:
-                _print_stats(pipeline.run(config, conn, limit=args.limit, published_since=args.since))
+                _print_stats(
+                    pipeline.run(
+                        config,
+                        conn,
+                        limit=args.limit,
+                        published_since=args.since,
+                        feed_names=tuple(args.feed),
+                        search_text=args.match,
+                    )
+                )
             except llm.LLMError as exc:
                 print(f"error: {exc}", file=sys.stderr)
                 return 1

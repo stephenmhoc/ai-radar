@@ -31,7 +31,7 @@ title = "AI Radar"
 description = "Podcast episodes featuring technical leaders and executives from major AI labs."
 base_url = "https://ai-radar.merimerimeri.com"
 cname = "ai-radar.merimerimeri.com"
-max_items = 100
+max_items = 250
 rss_title = "AI Radar"
 rss_description = "New podcast episodes featuring major AI lab guests."
 
@@ -120,6 +120,16 @@ name = "Eye on AI"
 url = "https://rss.libsyn.com/shows/195446/destinations/1383449.xml"
 hosts = ["Craig S. Smith"]
 
+[[feeds]]
+name = "AI & I"
+url = "https://feeds.transistor.fm/how-do-you-use-chatgpt"
+hosts = ["Dan Shipper"]
+
+[[feeds]]
+name = "BG2Pod with Brad Gerstner and Bill Gurley"
+url = "https://anchor.fm/s/f06c2370/podcast/rss"
+hosts = ["Brad Gerstner", "Bill Gurley"]
+
 [[labs]]
 name = "OpenAI"
 aliases = ["OpenAI"]
@@ -203,4 +213,11 @@ people = [
   "Bill Dally",
   "Ian Buck",
   "Anima Anandkumar",
+]
+
+[[labs]]
+name = "Atreides Management"
+aliases = ["Atreides", "Atreides Management"]
+people = [
+  "Gavin Baker",
 ]

@@ -65,6 +65,20 @@ python3 -m podcast_radar --config config.toml process --since 2026-01-01
 python3 -m podcast_radar --config config.toml build-site
 ```
 
+Scope judging and processing to one or more exact feed names:
+
+```bash
+python3 -m podcast_radar --config config.toml judge --since 2025-01-01 --feed "AI & I"
+python3 -m podcast_radar --config config.toml process --since 2025-01-01 --feed "AI & I"
+```
+
+Scope by title/description text for targeted backfills:
+
+```bash
+python3 -m podcast_radar --config config.toml judge --since 2025-01-01 --match "Gavin Baker"
+python3 -m podcast_radar --config config.toml process --since 2025-01-01 --match "Gavin Baker"
+```
+
 Serve the generated site locally:
 
 ```bash

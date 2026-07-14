@@ -59,6 +59,23 @@ class LLMTests(unittest.TestCase):
         self.assertEqual(result["matched_people"], [])
         self.assertIn("No qualifying target-lab guest was named", result["reason"])
 
+    def test_judge_allows_explicit_roster_investor(self) -> None:
+        result = _normalize_judge(
+            {
+                "include": True,
+                "confidence": 0.9,
+                "labs": ["Atreides"],
+                "matched_people": ["Gavin Baker"],
+                "guest_names": ["Gavin Baker"],
+                "reason": "Gavin Baker is the episode guest.",
+            },
+            _config(),
+        )
+
+        self.assertTrue(result["include"])
+        self.assertEqual(result["labs"], ["Atreides Management"])
+        self.assertEqual(result["matched_people"], ["Gavin Baker"])
+
     def test_summary_prompt_requests_long_and_short_summaries(self) -> None:
         prompt = build_summary_prompt(
             _config(),
@@ -104,6 +121,7 @@ def _config() -> Config:
             LabConfig(name="OpenAI", aliases=("OpenAI",), people=("Sam Altman",)),
             LabConfig(name="Google DeepMind", aliases=("Google", "Google DeepMind", "DeepMind"), people=("Jeff Dean",)),
             LabConfig(name="NVIDIA", aliases=("NVIDIA", "Nvidia"), people=("Jensen Huang",)),
+            LabConfig(name="Atreides Management", aliases=("Atreides",), people=("Gavin Baker",)),
         ),
     )
 

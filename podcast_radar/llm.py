@@ -129,7 +129,8 @@ Decide whether this podcast episode is worth transcribing as a candidate for the
 
 This is a metadata-only prefilter. It does not publish the episode. Include only if it likely features a guest
 who is a current or recent technical member, founder, executive, senior research leader, engineering
-leader, product leader, or AI infrastructure leader at one of the target organizations below.
+leader, product leader, AI infrastructure leader, or explicitly listed roster person at one of the
+target organizations below.
 
 Target organizations and seed roster examples:
 {chr(10).join(roster_lines)}
@@ -139,7 +140,7 @@ Rules:
 - "matched_people" must contain only people who appear to be actual guests, interviewees, cohosts, or named speakers in this episode.
 - Do not add labs merely because they are discussed, invested, partnered, collaborated, competed, mentioned, or employ someone who is not the guest.
 - Do not include episodes that only discuss target labs without a qualifying guest from those target labs.
-- Do not include journalists, investors, analysts, commentators, customers, or partners unless they also hold a qualifying role at a target lab.
+- Do not include journalists, investors, analysts, commentators, customers, or partners unless they are explicitly listed in the target roster below.
 - If an apparent guest works at a non-target company such as Intel, Microsoft, GitHub, TSMC, Cognition, OpenInspect, SpaceX, a16z, or a startup, return include=false unless the metadata verifies a current or recent target-lab role for that guest.
 - You may include qualifying people who are not in the seed roster if metadata or strong world knowledge verify their target-lab affiliation.
 - Be conservative when the guest or affiliation is ambiguous.
@@ -177,7 +178,7 @@ Make the final publication decision for this AI lab podcast radar episode using 
 The site labels are guest affiliations, not topics. Include the episode only if the transcript,
 metadata, or your strong world knowledge verifies that an actual guest is a current or recent
 technical member, founder, executive, senior research leader, engineering leader, product leader,
-or AI infrastructure leader at one of the target organizations below.
+AI infrastructure leader, or explicitly listed roster person at one of the target organizations below.
 
 Target organizations and seed roster examples:
 {chr(10).join(roster_lines)}
@@ -187,7 +188,7 @@ Rules:
 - "matched_people" must contain only qualifying guests, not hosts or people merely mentioned.
 - A target-lab person who is only discussed, quoted, referenced in news, or mentioned by another guest does not qualify.
 - Do not add labs because they are discussed, invested in, partnered with, collaborated with, competed with, or mentioned.
-- Do not include an episode whose main guest works at a non-target company such as Intel, Microsoft, GitHub, TSMC, Cognition, OpenInspect, SpaceX, a16z, or a startup unless that guest also has a current or recent target-lab role.
+- Do not include an episode whose main guest works at a non-target company such as Intel, Microsoft, GitHub, TSMC, Cognition, OpenInspect, SpaceX, a16z, or a startup unless that guest is explicitly listed in the target roster below.
 - Transcript introductions often state who the guest is. Prefer that over topic mentions later in the episode.
 - If the transcript shows that the candidate was a false positive, return include=false, labs=[], and matched_people=[].
 

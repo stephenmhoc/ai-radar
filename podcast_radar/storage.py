@@ -350,6 +350,8 @@ def episodes_for_status(
     *,
     limit: int | None = None,
     published_since: str | None = None,
+    feed_names: Iterable[str] | None = None,
+    search_text: str | None = None,
 ) -> list[sqlite3.Row]:
     values = tuple(statuses)
     placeholders = ",".join("?" for _ in values)
@@ -364,6 +366,15 @@ def episodes_for_status(
     if published_since:
         sql += " AND (episodes.published_at IS NULL OR episodes.published_at >= ?)"
         params.append(published_since)
+    names = tuple(feed_names or ())
+    if names:
+        name_placeholders = ",".join("?" for _ in names)
+        sql += f" AND feeds.name IN ({name_placeholders})"
+        params.extend(names)
+    if search_text:
+        pattern = f"%{search_text}%"
+        sql += " AND (episodes.title LIKE ? OR episodes.description LIKE ?)"
+        params.extend([pattern, pattern])
     sql += " ORDER BY COALESCE(episodes.published_at, episodes.created_at) DESC"
     if limit is not None:
         sql += " LIMIT ?"
