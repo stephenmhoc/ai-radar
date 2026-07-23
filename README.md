@@ -12,7 +12,7 @@ https://ai-radar.merimerimeri.com
 
 - Fetches configured podcast feeds.
 - Stores episode metadata in SQLite.
-- Asks an LLM to judge whether each new episode has a qualifying guest from OpenAI, Anthropic, Google DeepMind, Meta, xAI, or NVIDIA.
+- Asks an LLM to judge whether each new episode has a qualifying guest from a configured target organization. The current targets include OpenAI, Anthropic, Google DeepMind, Meta, xAI, NVIDIA, Replit, Hugging Face, CoreWeave, Applied Intuition, and Atreides Management.
 - Skips non-matching episodes without downloading audio.
 - Downloads and transcribes matching episodes with a local command such as `whisper-cli` or an MLX Whisper wrapper.
 - Summarizes the transcript with the configured LLM.
@@ -46,7 +46,7 @@ curl -L -f --max-time 120 \
 ```toml
 [transcription]
 command = "whisper-cli"
-args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-small.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1", "-np", "--prompt", "AI podcast transcript. Common terms: OpenAI, Anthropic, Google DeepMind, DeepMind, Meta AI, xAI, NVIDIA, ChatGPT, Claude, Gemini, GPT-4, GPT-5, GPT-5.1, o3, Sora, Codex, MCP, model behavior, post-training, reinforcement learning, reasoning models, steerability, inference, agents. Episode metadata: {feed_name}. {episode_title}. Hosts: {episode_hosts}. Description: {episode_description}"]
+args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-small.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1", "-np", "--prompt", "AI podcast transcript. Common terms: OpenAI, Anthropic, Google DeepMind, DeepMind, Meta AI, xAI, NVIDIA, Replit, Hugging Face, CoreWeave, Applied Intuition, ChatGPT, Claude, Gemini, GPT-4, GPT-5, GPT-5.1, o3, Sora, Codex, MCP, model behavior, post-training, reinforcement learning, reasoning models, steerability, inference, agents. Episode metadata: {feed_name}. {episode_title}. Hosts: {episode_hosts}. Description: {episode_description}"]
 output_path = "{output_stem}.txt"
 ```
 
@@ -145,11 +145,11 @@ For the local Apple Silicon whisper.cpp setup:
 [transcription]
 provider = "command"
 command = "whisper-cli"
-args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-small.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1", "-np", "--prompt", "AI podcast transcript. Common terms: OpenAI, Anthropic, Google DeepMind, DeepMind, Meta AI, xAI, NVIDIA, ChatGPT, Claude, Gemini, GPT-4, GPT-5, GPT-5.1, o3, Sora, Codex, MCP, model behavior, post-training, reinforcement learning, reasoning models, steerability, inference, agents. Episode metadata: {feed_name}. {episode_title}. Hosts: {episode_hosts}. Description: {episode_description}"]
+args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-small.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1", "-np", "--prompt", "AI podcast transcript. Common terms: OpenAI, Anthropic, Google DeepMind, DeepMind, Meta AI, xAI, NVIDIA, Replit, Hugging Face, CoreWeave, Applied Intuition, ChatGPT, Claude, Gemini, GPT-4, GPT-5, GPT-5.1, o3, Sora, Codex, MCP, model behavior, post-training, reinforcement learning, reasoning models, steerability, inference, agents. Episode metadata: {feed_name}. {episode_title}. Hosts: {episode_hosts}. Description: {episode_description}"]
 output_path = "{output_stem}.txt"
 ```
 
-The `-l en`, `-bs 1`, and `-bo 1` flags favor speed for English podcasts, while `-np` keeps launchd logs quiet. The `--prompt` glossary nudges Whisper toward common AI lab names, show names, technical terms, and per-episode metadata such as `{episode_title}` and `{episode_description}`. On an Apple M4 Mac mini, this setup transcribed a 26.3 MB OpenAI Podcast episode in about 60 seconds with much cleaner key names than `tiny.en`.
+The `-l en`, `-bs 1`, and `-bo 1` flags favor speed for English podcasts, while `-np` keeps launchd logs quiet. The `--prompt` glossary nudges Whisper toward common AI lab names, show names, technical terms, and per-episode metadata such as `{episode_title}` and `{episode_description}`. The description fragment is capped so the generated prompt stays below Whisper's initial-context ceiling. On an Apple M4 Mac mini, this setup transcribed a 26.3 MB OpenAI Podcast episode in about 60 seconds with much cleaner key names than `tiny.en`.
 
 For a custom wrapper script:
 
@@ -209,6 +209,10 @@ launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.merimeri.ai-radar.pl
 The scheduled runner is `scripts/daily.sh`. It calculates `now - AI_RADAR_LOOKBACK_HOURS`, ingests new episodes, and uses metadata-only judging as an internal prefilter for transcription. It does not publish those candidates. It then transcribes candidates locally, asks the LLM to make a second publication decision using the transcript, summarizes verified episodes, rebuilds the site, and deploys `public/` to Cloudflare Pages.
 
 The generated LaunchAgent has `RunAtLoad = true`, so after the machine restarts and the user session is loaded, it runs once immediately in addition to the hourly schedule. The 2-hour lookback is intentional: it gives the service overlap after restarts, sleep, delayed feed publication, or a missed hourly run, while the database uniqueness constraint prevents duplicate episodes. The runner also takes a local lock, so an hourly launch exits cleanly if the previous run is still processing.
+
+The daily lock records both a timestamp and owner PID in `var/run/daily.lock/`. If the owner process no longer exists, the next run removes the orphaned lock immediately. Older lock formats without a PID are removed after 24 hours; set `AI_RADAR_LOCK_MAX_AGE_HOURS` to override that fallback window. Failed pipeline or deploy commands are run in a child shell so the parent always removes its lock before returning the failure to `launchd`.
+
+The runner also adds the user's standard `mise` shim directories to the deployment PATH. This lets the LaunchAgent find `node`, `npm`, and `npx` even though it does not load an interactive shell profile.
 
 Hourly processing flow:
 

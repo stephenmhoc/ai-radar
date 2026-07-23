@@ -19,7 +19,7 @@ max_transcript_chars = 130000
 [transcription]
 provider = "command"
 command = "whisper-cli"
-args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-small.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1", "-np", "--prompt", "AI podcast transcript. Common terms: OpenAI, Anthropic, Google DeepMind, DeepMind, Meta AI, xAI, NVIDIA, ChatGPT, Claude, Gemini, GPT-4, GPT-5, GPT-5.1, o3, Sora, Codex, MCP, model behavior, post-training, reinforcement learning, reasoning models, steerability, inference, agents. Episode metadata: {feed_name}. {episode_title}. Hosts: {episode_hosts}. Description: {episode_description}"]
+args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-small.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1", "-np", "--prompt", "AI podcast transcript. Common terms: OpenAI, Anthropic, Google DeepMind, DeepMind, Meta AI, xAI, NVIDIA, Replit, Hugging Face, CoreWeave, Applied Intuition, ChatGPT, Claude, Gemini, GPT-4, GPT-5, GPT-5.1, o3, Sora, Codex, MCP, model behavior, post-training, reinforcement learning, reasoning models, steerability, inference, agents. Episode metadata: {feed_name}. {episode_title}. Hosts: {episode_hosts}. Description: {episode_description}"]
 output_path = "{output_stem}.txt"
 audio_dir = "var/audio"
 transcript_dir = "var/transcripts"
@@ -213,6 +213,36 @@ people = [
   "Bill Dally",
   "Ian Buck",
   "Anima Anandkumar",
+]
+
+[[labs]]
+name = "Replit"
+aliases = ["Replit"]
+people = [
+  "Amjad Masad",
+]
+
+[[labs]]
+name = "Hugging Face"
+aliases = ["Hugging Face", "HuggingFace", "huggingface"]
+people = [
+  "Clément Delangue",
+]
+
+[[labs]]
+name = "CoreWeave"
+aliases = ["CoreWeave", "Core Weave"]
+people = [
+  "Corey Sanders",
+  "Michael Intrator",
+]
+
+[[labs]]
+name = "Applied Intuition"
+aliases = ["Applied Intuition", "AppliedIntuition"]
+people = [
+  "Qasar Younis",
+  "Peter Ludwig",
 ]
 
 [[labs]]

@@ -16,6 +16,9 @@ class TranscriptionError(RuntimeError):
     pass
 
 
+MAX_PROMPT_DESCRIPTION_CHARS = 240
+
+
 def transcribe_episode(config: Config, conn, episode, *, command_output: bool = True) -> pathlib.Path:
     if config.transcription.provider != "command":
         raise TranscriptionError(f"unsupported transcription.provider: {config.transcription.provider}")
@@ -109,8 +112,9 @@ def _audio_suffix(url: str) -> str:
 def _episode_prompt_context(episode) -> dict[str, str]:
     hosts = _json_list(_episode_value(episode, "hosts_json"))
     description = strip_html(str(_episode_value(episode, "description") or ""))
-    if len(description) > 700:
-        description = description[:700].rsplit(" ", 1)[0]
+    if len(description) > MAX_PROMPT_DESCRIPTION_CHARS:
+        clipped = description[:MAX_PROMPT_DESCRIPTION_CHARS].rsplit(" ", 1)[0]
+        description = clipped or description[:MAX_PROMPT_DESCRIPTION_CHARS]
     return {
         "feed_name": str(_episode_value(episode, "feed_name") or ""),
         "episode_title": str(_episode_value(episode, "title") or ""),

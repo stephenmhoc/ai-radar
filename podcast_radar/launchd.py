@@ -19,6 +19,19 @@ def install(
     deploy_branch: str,
     interval_minutes: int | None = None,
 ) -> pathlib.Path:
+    home = pathlib.Path.home()
+    runtime_path = ":".join(
+        (
+            "/opt/homebrew/bin",
+            "/usr/local/bin",
+            "/usr/bin",
+            "/bin",
+            "/usr/sbin",
+            "/sbin",
+            str(home / ".local" / "share" / "mise" / "shims"),
+            str(home / ".local" / "bin"),
+        )
+    )
     log_dir = config.app.state_dir / "logs"
     log_dir.mkdir(parents=True, exist_ok=True)
     runner = config.root / "scripts" / "daily.sh"
@@ -33,7 +46,7 @@ def install(
         "StandardOutPath": str(log_dir / "launchd.out.log"),
         "StandardErrorPath": str(log_dir / "launchd.err.log"),
         "EnvironmentVariables": {
-            "PATH": "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+            "PATH": runtime_path,
             "PYTHONDONTWRITEBYTECODE": "1",
             "AI_RADAR_LOOKBACK_HOURS": str(lookback_hours),
             "AI_RADAR_DEPLOY_PROJECT": deploy_project,
@@ -44,7 +57,7 @@ def install(
         plist["StartInterval"] = interval_minutes * 60
     else:
         plist["StartCalendarInterval"] = {"Hour": hour, "Minute": minute}
-    target = pathlib.Path.home() / "Library" / "LaunchAgents" / f"{LABEL}.plist"
+    target = home / "Library" / "LaunchAgents" / f"{LABEL}.plist"
     target.parent.mkdir(parents=True, exist_ok=True)
     with target.open("wb") as fh:
         plistlib.dump(plist, fh, sort_keys=False)
