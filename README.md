@@ -33,20 +33,20 @@ Set your LLM key if using the default OpenRouter-compatible config:
 export OPENROUTER_API_KEY="..."
 ```
 
-Install the local transcription backend. The current local config uses `whisper-cli` from whisper.cpp with the small English GGML model:
+Install the local transcription backend. The current local config uses `whisper-cli` from whisper.cpp with the quantized large-v3 Turbo GGML model:
 
 ```bash
 brew install whisper-cpp
 mkdir -p ~/.cache/whisper.cpp
 curl -L -f --max-time 120 \
-  -o ~/.cache/whisper.cpp/ggml-small.en.bin \
-  'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.en.bin?download=true'
+  -o ~/.cache/whisper.cpp/ggml-large-v3-turbo-q5_0.bin \
+  'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo-q5_0.bin?download=true'
 ```
 
 ```toml
 [transcription]
 command = "whisper-cli"
-args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-small.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1", "-np", "--prompt", "AI podcast transcript. Common terms: OpenAI, Anthropic, Google DeepMind, DeepMind, Meta AI, xAI, NVIDIA, Replit, Hugging Face, CoreWeave, Applied Intuition, ChatGPT, Claude, Gemini, GPT-4, GPT-5, GPT-5.1, o3, Sora, Codex, MCP, model behavior, post-training, reinforcement learning, reasoning models, steerability, inference, agents. Episode metadata: {feed_name}. {episode_title}. Hosts: {episode_hosts}. Description: {episode_description}"]
+args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-large-v3-turbo-q5_0.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1", "-np", "--prompt", "AI podcast transcript. Common terms: OpenAI, Anthropic, Google DeepMind, DeepMind, Meta AI, xAI, NVIDIA, Replit, Hugging Face, CoreWeave, Applied Intuition, ChatGPT, Claude, Gemini, GPT-4, GPT-5, GPT-5.1, o3, Sora, Codex, MCP, model behavior, post-training, reinforcement learning, reasoning models, steerability, inference, agents. Episode metadata: {feed_name}. {episode_title}. Hosts: {episode_hosts}. Description: {episode_description}"]
 output_path = "{output_stem}.txt"
 ```
 
@@ -145,11 +145,11 @@ For the local Apple Silicon whisper.cpp setup:
 [transcription]
 provider = "command"
 command = "whisper-cli"
-args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-small.en.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1", "-np", "--prompt", "AI podcast transcript. Common terms: OpenAI, Anthropic, Google DeepMind, DeepMind, Meta AI, xAI, NVIDIA, Replit, Hugging Face, CoreWeave, Applied Intuition, ChatGPT, Claude, Gemini, GPT-4, GPT-5, GPT-5.1, o3, Sora, Codex, MCP, model behavior, post-training, reinforcement learning, reasoning models, steerability, inference, agents. Episode metadata: {feed_name}. {episode_title}. Hosts: {episode_hosts}. Description: {episode_description}"]
+args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-large-v3-turbo-q5_0.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1", "-np", "--prompt", "AI podcast transcript. Common terms: OpenAI, Anthropic, Google DeepMind, DeepMind, Meta AI, xAI, NVIDIA, Replit, Hugging Face, CoreWeave, Applied Intuition, ChatGPT, Claude, Gemini, GPT-4, GPT-5, GPT-5.1, o3, Sora, Codex, MCP, model behavior, post-training, reinforcement learning, reasoning models, steerability, inference, agents. Episode metadata: {feed_name}. {episode_title}. Hosts: {episode_hosts}. Description: {episode_description}"]
 output_path = "{output_stem}.txt"
 ```
 
-The `-l en`, `-bs 1`, and `-bo 1` flags favor speed for English podcasts, while `-np` keeps launchd logs quiet. The `--prompt` glossary nudges Whisper toward common AI lab names, show names, technical terms, and per-episode metadata such as `{episode_title}` and `{episode_description}`. The description fragment is capped so the generated prompt stays below Whisper's initial-context ceiling. On an Apple M4 Mac mini, this setup transcribed a 26.3 MB OpenAI Podcast episode in about 60 seconds with much cleaner key names than `tiny.en`.
+The `-l en`, `-bs 1`, and `-bo 1` flags favor speed for English podcasts, while `-np` keeps launchd logs quiet. The `--prompt` glossary nudges Whisper toward common AI lab names, show names, technical terms, and per-episode metadata such as `{episode_title}` and `{episode_description}`. The description fragment is capped so the generated prompt stays below Whisper's initial-context ceiling. On an Apple M4 Mac mini with Metal, this model transcribed a 25-minute OpenAI Podcast episode in about 94 seconds and a technical 10-minute sample in about 61 seconds. It was about 44% slower than `small.en` across those samples, while improving important names and technical terms.
 
 For a custom wrapper script:
 
