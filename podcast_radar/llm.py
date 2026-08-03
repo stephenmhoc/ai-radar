@@ -124,11 +124,13 @@ def build_judge_prompt(config: Config, episode) -> dict[str, str]:
         aliases = ", ".join(lab.aliases)
         people = ", ".join(lab.people)
         roster_lines.append(f"- {lab.name} (aliases: {aliases}): {people}")
+    medium = _item_value(episode, "medium") or "podcast"
+    authors = _item_value(episode, "authors_json") or "[]"
     user = f"""
-Decide whether this podcast episode is worth transcribing as a candidate for the AI lab podcast radar.
+Decide whether this {medium} item is worth preparing as a candidate for AI Radar.
 
-This is a metadata-only prefilter. It does not publish the episode. Include only if it likely features a guest
-who is a current or recent technical member, founder, executive, senior research leader, engineering
+This is a metadata-only prefilter. It does not publish the item. Include only if it likely features or was
+substantially authored by a person who is a current or recent technical member, founder, executive, senior research leader, engineering
 leader, product leader, AI infrastructure leader, or explicitly listed roster person at one of the
 target organizations below.
 
@@ -137,19 +139,22 @@ Target organizations and seed roster examples:
 
 Rules:
 - "labs" must contain only target organizations where the qualifying guest currently works or recently worked.
-- "matched_people" must contain only people who appear to be actual guests, interviewees, cohosts, or named speakers in this episode.
+- "matched_people" must contain only people who appear to be actual guests, interviewees, named speakers, or verified authors of this item.
 - Do not add labs merely because they are discussed, invested, partnered, collaborated, competed, mentioned, or employ someone who is not the guest.
-- Do not include episodes that only discuss target labs without a qualifying guest from those target labs.
+- For podcasts and YouTube channels, do not include items that only discuss target labs without a qualifying guest or central speaker.
+- For a watched person's own blog or X account, authorship may establish the person, but routine, promotional, or insubstantial posts do not qualify.
 - Do not include journalists, investors, analysts, commentators, customers, or partners unless they are explicitly listed in the target roster below.
 - If an apparent guest works at a non-target company such as Intel, Microsoft, GitHub, TSMC, Cognition, OpenInspect, SpaceX, a16z, or a startup, return include=false unless the metadata verifies a current or recent target-lab role for that guest.
 - You may include qualifying people who are not in the seed roster if metadata or strong world knowledge verify their target-lab affiliation.
 - Be conservative when the guest or affiliation is ambiguous.
 - If no qualifying target-lab guest is found, return include=false, labs=[], and matched_people=[].
 
-Podcast: {episode['feed_name']}
+Medium: {medium}
+Source: {episode['feed_name']}
 Title: {episode['title']}
 Published: {episode['published_at'] or 'unknown'}
-Episode URL: {episode['episode_url'] or 'unknown'}
+Original URL: {episode['episode_url'] or 'unknown'}
+Known authors or hosts: {authors}
 
 Metadata:
 {truncate(strip_html(episode['description'] or ''), config.llm.max_metadata_chars)}
@@ -172,11 +177,13 @@ def build_transcript_judge_prompt(config: Config, episode) -> dict[str, str]:
         people = ", ".join(lab.people)
         roster_lines.append(f"- {lab.name} (aliases: {aliases}): {people}")
     transcript = truncate(episode["transcript_text"] or "", config.llm.max_transcript_chars)
+    medium = _item_value(episode, "medium") or "podcast"
+    authors = _item_value(episode, "authors_json") or "[]"
     user = f"""
-Make the final publication decision for this AI lab podcast radar episode using the transcript.
+Make the final publication decision for this AI Radar {medium} item using its normalized full text.
 
-The site labels are guest affiliations, not topics. Include the episode only if the transcript,
-metadata, or your strong world knowledge verifies that an actual guest is a current or recent
+The site labels are people affiliations, not topics. Include the item only if its full text,
+metadata, or your strong world knowledge verifies that an actual guest, central speaker, or author is a current or recent
 technical member, founder, executive, senior research leader, engineering leader, product leader,
 AI infrastructure leader, or explicitly listed roster person at one of the target organizations below.
 
@@ -185,24 +192,27 @@ Target organizations and seed roster examples:
 
 Rules:
 - "labs" must contain only target organizations where qualifying guests work or recently worked.
-- "matched_people" must contain only qualifying guests, not hosts or people merely mentioned.
+- "matched_people" must contain only qualifying guests, central speakers, or verified authors, not people merely mentioned.
 - A target-lab person who is only discussed, quoted, referenced in news, or mentioned by another guest does not qualify.
 - Do not add labs because they are discussed, invested in, partnered with, collaborated with, competed with, or mentioned.
 - Do not include an episode whose main guest works at a non-target company such as Intel, Microsoft, GitHub, TSMC, Cognition, OpenInspect, SpaceX, a16z, or a startup unless that guest is explicitly listed in the target roster below.
-- Transcript introductions often state who the guest is. Prefer that over topic mentions later in the episode.
-- If the transcript shows that the candidate was a false positive, return include=false, labs=[], and matched_people=[].
+- Podcast and video introductions often state who the guest is. Prefer that over topic mentions later.
+- A substantial blog post or X thread on a watched person's verified source may qualify through authorship; routine reactions, promotions, and short updates do not.
+- If the full text shows that the candidate was a false positive, return include=false, labs=[], and matched_people=[].
 
-Podcast: {episode['feed_name']}
+Medium: {medium}
+Source: {episode['feed_name']}
 Title: {episode['title']}
 Published: {episode['published_at'] or 'unknown'}
-Episode URL: {episode['episode_url'] or 'unknown'}
+Original URL: {episode['episode_url'] or 'unknown'}
+Known authors or hosts: {authors}
 Candidate guests from metadata: {episode['guests_json']}
 Candidate labs from metadata: {episode['labs_json']}
 
 Metadata:
 {truncate(strip_html(episode['description'] or ''), config.llm.max_metadata_chars)}
 
-Transcript:
+Normalized full text:
 {transcript}
 
 Return strict JSON with:
@@ -218,16 +228,18 @@ reason: concise string explaining the guest affiliation evidence
 
 def build_summary_prompt(config: Config, episode) -> dict[str, str]:
     transcript = truncate(episode["transcript_text"] or "", config.llm.max_transcript_chars)
+    medium = _item_value(episode, "medium") or "podcast"
     user = f"""
-Summarize this podcast episode for someone tracking what major AI labs are saying in public.
+Summarize this {medium} item for someone tracking what major AI labs and their leaders are saying in public.
 
-Podcast: {episode['feed_name']}
+Medium: {medium}
+Source: {episode['feed_name']}
 Title: {episode['title']}
-Episode URL: {episode['episode_url'] or 'unknown'}
-Verified guests from transcript judging: {episode['guests_json']}
-Verified labs from transcript judging: {episode['labs_json']}
+Original URL: {episode['episode_url'] or 'unknown'}
+Verified people: {_item_value(episode, 'matched_people_json') or _item_value(episode, 'guests_json') or '[]'}
+Verified affiliations: {_item_value(episode, 'labs_json') or '[]'}
 
-Transcript:
+Normalized full text:
 {transcript}
 
 Return strict JSON with:
@@ -397,6 +409,13 @@ def _name_key(value: str) -> str:
     return " ".join(value.casefold().replace(".", " ").split())
 
 
-JUDGE_SYSTEM = """You are a conservative podcast filter. Return only valid JSON."""
+def _item_value(item, key: str):
+    try:
+        return item[key]
+    except (KeyError, IndexError):
+        return None
 
-SUMMARY_SYSTEM = """You summarize technical AI podcast transcripts. Return only valid JSON."""
+
+JUDGE_SYSTEM = """You are a conservative multimodal AI Radar filter. Return only valid JSON."""
+
+SUMMARY_SYSTEM = """You summarize normalized technical AI source material. Return only valid JSON."""

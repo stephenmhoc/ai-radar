@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from .config import Config
-from . import feeds, llm, site, storage, transcriber
+from . import collectors, llm, site, storage, transcriber
 
 
 def run(
@@ -16,7 +16,7 @@ def run(
     stats: dict[str, int] = {}
     since = published_since or config.app.processed_after
     stats.update(
-        {f"ingest_{key}": value for key, value in feeds.ingest(config, conn, published_since=since).items()}
+        {f"ingest_{key}": value for key, value in collectors.collect(config, conn, published_since=since).items()}
     )
     judged = judge_pending(
         config,
@@ -37,7 +37,7 @@ def run(
     rendered = site.build_site(config, conn)
     stats["judged"] = judged
     stats["processed"] = processed
-    stats["rendered"] = rendered["episodes"]
+    stats["rendered"] = rendered.get("items", rendered["episodes"])
     return stats
 
 
@@ -91,7 +91,11 @@ def process_relevant(
         search_text=search_text,
     ):
         try:
-            transcriber.transcribe_episode(config, conn, episode)
+            if episode.get("content_text"):
+                storage.set_content(conn, int(episode["id"]), str(episode["content_text"]))
+                conn.commit()
+            else:
+                transcriber.transcribe_episode(config, conn, episode)
         except Exception as exc:  # noqa: BLE001 - preserve per-episode progress
             storage.mark_processing_failed(
                 conn,

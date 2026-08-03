@@ -1,6 +1,6 @@
 # AI Radar
 
-Local service that watches podcast RSS feeds for episodes featuring technical members or executives from major AI labs, transcribes matching episodes with a local model, summarizes them with an LLM, and publishes a static site plus RSS feed.
+Local service that watches podcasts, YouTube channels, blogs, and X accounts for substantial public material from technical members and executives at major AI labs. Every source is normalized into the same classifier, summarizer, static site, and RSS pipeline.
 
 The public site is generated into `public/` and is designed to be deployed to a subdomain such as:
 
@@ -10,14 +10,57 @@ https://ai-radar.merimerimeri.com
 
 ## What It Does
 
-- Fetches configured podcast feeds.
-- Stores episode metadata in SQLite.
-- Asks an LLM to judge whether each new episode has a qualifying guest from a configured target organization. The current targets include OpenAI, Anthropic, Google DeepMind, Meta, xAI, NVIDIA, Replit, Hugging Face, CoreWeave, Applied Intuition, and Atreides Management.
-- Skips non-matching episodes without downloading audio.
-- Downloads and transcribes matching episodes with a local command such as `whisper-cli` or an MLX Whisper wrapper.
-- Summarizes the transcript with the configured LLM.
-- Stores transcripts in SQLite and renders transcript pages in the static site.
-- Renders `public/index.html`, `public/feed.xml`, and per-episode pages.
+- Collects configured podcast RSS feeds, YouTube channels, blog feeds, and X timelines.
+- Stores one canonical Radar item plus every place it appeared. A podcast and YouTube cross-post therefore publish once while linking to both.
+- Asks one LLM classifier whether each item has a qualifying guest, speaker, or verified author from a configured target organization. The current targets include OpenAI, Anthropic, Google DeepMind, Meta, xAI, NVIDIA, Microsoft, Replit, Hugging Face, CoreWeave, Applied Intuition, and Atreides Management.
+- Skips non-matching items before expensive content preparation where possible.
+- Locally transcribes qualifying podcast and YouTube appearances; blog articles and substantial X threads already arrive as normalized text.
+- Runs the same final full-text classifier and summarizer for every medium.
+- Renders one mixed stream and RSS feed with visible medium labels and all known source links.
+
+## Sources and deduplication
+
+Legacy `[[feeds]]` entries remain supported as podcast sources. New media use `[[sources]]`:
+
+```toml
+[[sources]]
+kind = "blog"
+name = "Sam Altman"
+url = "https://blog.samaltman.com/"
+feed_url = "https://blog.samaltman.com/posts.atom"
+people = ["Sam Altman"]
+
+[[sources]]
+kind = "blog"
+name = "Example feedless author site"
+url = "https://example.com/"
+people = ["Example Person"]
+
+[[sources]]
+kind = "youtube"
+name = "Example YouTube channel"
+url = "https://www.youtube.com/channel/CHANNEL_ID"
+external_id = "CHANNEL_ID"
+feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=CHANNEL_ID"
+people = []
+
+[[sources]]
+kind = "x"
+name = "Example person"
+url = "https://x.com/example"
+external_id = "NUMERIC_X_USER_ID"
+people = ["Example Person"]
+api_key_env = "X_BEARER_TOKEN"
+```
+
+Blogs normally use RSS or Atom through `feed_url`. A feedless author site can omit it; the collector follows same-site `/essay/`, `/post/`, and `/blog/` links and extracts their article text and publication dates. YouTube collection works from the public channel Atom feed when `feed_url` is configured. Setting `YOUTUBE_API_KEY` switches it to the official Data API for richer metadata such as exact duration. Transcribing selected YouTube videos additionally requires `yt-dlp`; the resulting audio still uses the configured local Whisper command. X collection uses `X_BEARER_TOKEN`, excludes reposts, reconstructs same-author threads, and applies a deterministic substantiality floor before the shared classifier.
+
+Cross-medium appearances are merged automatically only with strong evidence: identical normalized full text, an explicit cross-link, or a highly similar title, publication window, and duration. Borderline matches enter a review queue:
+
+```bash
+python3 -m podcast_radar --config config.toml duplicates
+python3 -m podcast_radar --config config.toml merge-items 123 456
+```
 
 ## Quick Start
 
@@ -102,14 +145,15 @@ python3 -m podcast_radar --config config.toml build-site
 python3 -m podcast_radar --config config.toml list
 ```
 
-The main episode statuses are:
+The main Radar item statuses are:
 
-- `new`: feed metadata has been stored but not judged.
-- `skipped`: LLM decided the episode is not relevant.
-- `relevant`: metadata-only LLM prefilter decided the episode should be transcribed; this is an internal candidate and is not public.
-- `transcribed`: local transcript exists and transcript-based verification passed; this is still not public until summarization succeeds.
-- `published`: transcript-based verification passed and summary plus transcript page have been rendered.
-- `transcription_failed` / `summary_failed` / `failed`: an episode-specific step failed; the reason is stored in `skip_reason`, and the episode is not public.
+- `new`: source metadata has been stored but not judged.
+- `skipped`: the LLM decided the item is not relevant or substantial.
+- `relevant`: the metadata-only prefilter selected the item for full-text preparation; it is not public.
+- `transcribed`: normalized full text exists and full-text verification passed; it is still not public until summarization succeeds. The legacy status name is retained for migration compatibility.
+- `published`: full-text verification passed and the shared summary/detail page has been rendered.
+- `merged`: the item was a duplicate and its appearances now belong to another canonical item.
+- `transcription_failed` / `summary_failed` / `failed`: an item-specific step failed; the reason is stored in `skip_reason`, and the item is not public.
 
 ## LLM Configuration
 
@@ -133,7 +177,7 @@ model = "llama3.1"
 api_key_env = ""
 ```
 
-The judge prompts use the configured lab roster as seed examples for people, not a hard allowlist of people. Lab labels themselves are restricted to the configured target labs. Metadata judging is only a prefilter; after local transcription, a second transcript-based judge decides whether the episode is actually publishable and confirms that labels represent where the guest works, not what companies were discussed.
+The judge prompts use the configured lab roster as seed examples for people, not a hard allowlist. Lab labels remain restricted to configured targets and represent where the qualifying person works, not what organizations were discussed. Metadata judging is only a prefilter; a second decision over normalized full text determines whether the item is publishable. Podcasts and broad video channels require a qualifying guest or central speaker. A watched person's blog or X account can qualify through verified authorship, but routine and promotional posts remain excluded.
 
 ## Local Transcription
 
@@ -206,9 +250,9 @@ python3 -m podcast_radar --config config.toml launchd-install \
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.merimeri.ai-radar.plist
 ```
 
-The scheduled runner is `scripts/daily.sh`. It calculates `now - AI_RADAR_LOOKBACK_HOURS`, ingests new episodes, and uses metadata-only judging as an internal prefilter for transcription. It does not publish those candidates. It then transcribes candidates locally, asks the LLM to make a second publication decision using the transcript, summarizes verified episodes, rebuilds the site, and deploys `public/` to Cloudflare Pages.
+The scheduled runner is `scripts/daily.sh`. It calculates `now - AI_RADAR_LOOKBACK_HOURS`, ingests every active source, and sends the normalized items through the shared classifier. Podcast and YouTube candidates are transcribed locally before final verification; blog posts and substantial X threads already supply their source text. It then summarizes verified items, rebuilds the site, and deploys `public/` to Cloudflare Pages.
 
-The generated LaunchAgent has `RunAtLoad = true`, so after the machine restarts and the user session is loaded, it runs once immediately in addition to the hourly schedule. The 2-hour lookback is intentional: it gives the service overlap after restarts, sleep, delayed feed publication, or a missed hourly run, while the database uniqueness constraint prevents duplicate episodes. The runner also takes a local lock, so an hourly launch exits cleanly if the previous run is still processing.
+The generated LaunchAgent has `RunAtLoad = true`, so after the machine restarts and the user session is loaded, it runs once immediately in addition to the hourly schedule. The 2-hour lookback is intentional: it gives the service overlap after restarts, sleep, delayed publication, or a missed hourly run, while source identities and canonical-item deduplication prevent repeat entries. The runner also takes a local lock, so an hourly launch exits cleanly if the previous run is still processing.
 
 The daily lock records both a timestamp and owner PID in `var/run/daily.lock/`. If the owner process no longer exists, the next run removes the orphaned lock immediately. Older lock formats without a PID are removed after 24 hours; set `AI_RADAR_LOCK_MAX_AGE_HOURS` to override that fallback window. Failed pipeline or deploy commands are run in a child shell so the parent always removes its lock before returning the failure to `launchd`.
 
@@ -219,15 +263,15 @@ Hourly processing flow:
 1. `launchd` starts `scripts/daily.sh`.
 2. `scripts/daily.sh` loads ignored local secrets from `var/secrets.env`.
 3. The script computes the rolling cutoff from `AI_RADAR_LOOKBACK_HOURS`.
-4. `ingest --since <cutoff>` fetches active feeds and upserts episodes. Duplicate feed items are updated by `(feed_id, guid)`.
-5. `judge --since <cutoff>` asks the LLM to decide which new episodes are worth transcribing. This is only a candidate prefilter.
-6. `process --since <cutoff>` transcribes candidate episodes locally.
-7. After transcription, the LLM runs a transcript-based verification pass. The transcript is treated as the source of truth for who the guest is and where they work.
-8. If transcript verification says the guest is not a current or recent technical/executive member of a configured target lab, the episode is marked skipped and never appears on the site.
-9. If transcript verification passes, the episode is summarized.
-10. `build-site` and Wrangler deploy only published episodes with both transcript and summary available.
+4. `ingest --since <cutoff>` fetches every active source and upserts source appearances. Strong cross-medium matches attach to one canonical Radar item; ambiguous matches enter the duplicate review queue.
+5. `judge --since <cutoff>` asks the LLM whether each new item is substantial and relevant. For audio and video, this is only a candidate prefilter.
+6. `process --since <cutoff>` obtains canonical text: local transcription for podcast and YouTube appearances, or the collected article/thread text for blogs and X.
+7. The LLM runs the same full-text verification pass for every medium. The canonical text is the source of truth for authors, speakers, affiliations, and substance.
+8. Items that fail verification are marked skipped and never appear publicly.
+9. Items that pass are summarized once, regardless of how many sources carried the material.
+10. `build-site` and Wrangler deploy only published items with verified source text and summaries. Their detail pages link to every known appearance.
 
-Episodes are public on the website and RSS feed only after transcript-based verification and summarization. Metadata-only candidates, transcription failures, summary failures, and transcript false positives stay out of the static site.
+Radar items are public on the website and RSS feed only after full-text verification and summarization. Metadata-only candidates, transcription failures, summary failures, and false positives stay out of the static site.
 
 Local secrets can be stored outside Git in `var/secrets.env`, for example:
 

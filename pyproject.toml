@@ -1,7 +1,7 @@
 [project]
 name = "ai-radar"
 version = "0.1.0"
-description = "Monitor AI podcasts for LLM lab guests, transcribe locally, summarize, and publish RSS plus a static site."
+description = "Monitor podcasts, YouTube, blogs, and X for substantial AI lab material, then classify, summarize, and publish one deduplicated feed."
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = []

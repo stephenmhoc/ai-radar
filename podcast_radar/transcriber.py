@@ -24,7 +24,7 @@ def transcribe_episode(config: Config, conn, episode, *, command_output: bool = 
         raise TranscriptionError(f"unsupported transcription.provider: {config.transcription.provider}")
     audio_url = episode["audio_url"]
     if not audio_url:
-        raise TranscriptionError("episode has no audio enclosure")
+        raise TranscriptionError("item has no transcribable media")
     executable = shutil.which(config.transcription.command)
     if executable is None:
         raise TranscriptionError(f"transcription command not found: {config.transcription.command}")
@@ -32,7 +32,10 @@ def transcribe_episode(config: Config, conn, episode, *, command_output: bool = 
     config.transcription.audio_dir.mkdir(parents=True, exist_ok=True)
     config.transcription.transcript_dir.mkdir(parents=True, exist_ok=True)
     stem = f"{episode['id']}-{slugify(episode['title'])[:80]}"
-    audio_path = config.transcription.audio_dir / f"{stem}{_audio_suffix(audio_url)}"
+    is_youtube = str(_episode_value(episode, "medium") or "") == "youtube" or str(
+        _episode_value(episode, "audio_type") or ""
+    ) == "video/youtube"
+    audio_path = config.transcription.audio_dir / f"{stem}{'.wav' if is_youtube else _audio_suffix(audio_url)}"
     output_stem = config.transcription.transcript_dir / stem
     output_path = pathlib.Path(
         config.transcription.output_path.format(
@@ -45,7 +48,10 @@ def transcribe_episode(config: Config, conn, episode, *, command_output: bool = 
 
     if not output_path.exists():
         if not audio_path.exists():
-            download_audio(config, audio_url, audio_path)
+            if is_youtube:
+                download_youtube_audio(audio_url, audio_path, command_output=command_output)
+            else:
+                download_audio(config, audio_url, audio_path)
         context = {
             "audio_path": str(audio_path),
             "output_stem": str(output_stem),
@@ -58,7 +64,7 @@ def transcribe_episode(config: Config, conn, episode, *, command_output: bool = 
     transcript = clean_text(output_path.read_text(encoding="utf-8"))
     if not transcript:
         raise TranscriptionError(f"transcription command produced an empty file: {output_path}")
-    storage.set_transcript(conn, int(episode["id"]), transcript, output_path)
+    storage.set_content(conn, int(episode["id"]), transcript, output_path)
     conn.commit()
     if not config.transcription.keep_audio and audio_path.exists():
         audio_path.unlink()
@@ -101,6 +107,27 @@ def download_audio(config: Config, audio_url: str, output_path: pathlib.Path) ->
                 fh.write(chunk)
 
 
+def download_youtube_audio(url: str, output_path: pathlib.Path, *, command_output: bool) -> None:
+    executable = shutil.which("yt-dlp")
+    if executable is None:
+        raise TranscriptionError("yt-dlp is required to transcribe YouTube appearances")
+    command = [
+        executable,
+        "--no-playlist",
+        "--extract-audio",
+        "--audio-format",
+        "wav",
+        "--postprocessor-args",
+        "ffmpeg:-ar 16000 -ac 1",
+        "--output",
+        str(output_path),
+        url,
+    ]
+    _run_transcription_command(command, command_output=command_output)
+    if not output_path.exists():
+        raise TranscriptionError(f"yt-dlp did not create expected audio file: {output_path}")
+
+
 def _audio_suffix(url: str) -> str:
     path = urllib.parse.urlparse(url).path
     suffix = pathlib.Path(path).suffix
@@ -120,6 +147,10 @@ def _episode_prompt_context(episode) -> dict[str, str]:
         "episode_title": str(_episode_value(episode, "title") or ""),
         "episode_hosts": ", ".join(hosts),
         "episode_description": description,
+        "source_name": str(_episode_value(episode, "feed_name") or ""),
+        "item_title": str(_episode_value(episode, "title") or ""),
+        "item_authors": ", ".join(hosts),
+        "item_description": description,
     }
 
 

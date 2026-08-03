@@ -57,12 +57,12 @@ class TranscriptionConfig:
 @dataclasses.dataclass(frozen=True)
 class SiteConfig:
     title: str = "AI Radar"
-    description: str = "Podcast episodes featuring technical leaders and executives from major AI labs."
+    description: str = "Substantial podcasts, videos, articles, and threads from major AI lab leaders."
     base_url: str = "https://llm-podcasts.merimerimeri.com"
     cname: str = "llm-podcasts.merimerimeri.com"
     max_items: int = 100
     rss_title: str = "AI Radar"
-    rss_description: str = "New podcast episodes featuring major AI lab guests."
+    rss_description: str = "Substantial public appearances and writing from major AI lab leaders."
 
 
 @dataclasses.dataclass(frozen=True)
@@ -71,6 +71,19 @@ class FeedConfig:
     url: str
     hosts: tuple[str, ...] = ()
     active: bool = True
+
+
+@dataclasses.dataclass(frozen=True)
+class SourceConfig:
+    kind: str
+    name: str
+    url: str
+    external_id: str = ""
+    feed_url: str = ""
+    people: tuple[str, ...] = ()
+    hosts: tuple[str, ...] = ()
+    active: bool = True
+    api_key_env: str = ""
 
 
 @dataclasses.dataclass(frozen=True)
@@ -89,10 +102,27 @@ class Config:
     site: SiteConfig
     feeds: tuple[FeedConfig, ...]
     labs: tuple[LabConfig, ...]
+    sources: tuple[SourceConfig, ...] = ()
 
     @property
     def active_feeds(self) -> tuple[FeedConfig, ...]:
         return tuple(feed for feed in self.feeds if feed.active)
+
+    @property
+    def active_sources(self) -> tuple[SourceConfig, ...]:
+        podcast_sources = tuple(
+            SourceConfig(
+                kind="podcast",
+                name=feed.name,
+                url=feed.url,
+                feed_url=feed.url,
+                hosts=feed.hosts,
+                active=feed.active,
+            )
+            for feed in self.feeds
+            if feed.active
+        )
+        return podcast_sources + tuple(source for source in self.sources if source.active)
 
     @property
     def watched_people(self) -> list[str]:
@@ -114,6 +144,7 @@ def load_config(path: str | pathlib.Path) -> Config:
         site=_dataclass_from_dict(SiteConfig, raw.get("site", {})),
         feeds=tuple(_feed(item) for item in raw.get("feeds", [])),
         labs=tuple(_lab(item) for item in raw.get("labs", [])),
+        sources=tuple(_source(item) for item in raw.get("sources", [])),
     )
 
 
@@ -143,6 +174,23 @@ def _feed(raw: dict[str, Any]) -> FeedConfig:
         url=str(raw["url"]),
         hosts=tuple(str(value) for value in raw.get("hosts", [])),
         active=bool(raw.get("active", True)),
+    )
+
+
+def _source(raw: dict[str, Any]) -> SourceConfig:
+    kind = str(raw["kind"]).strip().lower()
+    if kind not in {"podcast", "youtube", "blog", "x"}:
+        raise ValueError(f"unsupported source kind: {kind}")
+    return SourceConfig(
+        kind=kind,
+        name=str(raw["name"]),
+        url=str(raw["url"]),
+        external_id=str(raw.get("external_id", "")),
+        feed_url=str(raw.get("feed_url", "")),
+        people=tuple(str(value) for value in raw.get("people", [])),
+        hosts=tuple(str(value) for value in raw.get("hosts", [])),
+        active=bool(raw.get("active", True)),
+        api_key_env=str(raw.get("api_key_env", "")),
     )
 
 

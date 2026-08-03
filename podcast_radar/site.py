@@ -57,7 +57,7 @@ def build_site(config: Config, conn) -> dict[str, int]:
         encoding="utf-8",
     )
     (public_dir / "feed.xml").write_text(rss["xml"], encoding="utf-8")
-    return {"episodes": len(episodes), "rss_items": rss["items"]}
+    return {"items": len(episodes), "episodes": len(episodes), "rss_items": rss["items"]}
 
 
 def episode_slug(episode) -> str:
@@ -72,8 +72,8 @@ def render_index(config: Config, episodes, slugs: dict[int, str], *, social_imag
     if not cards:
         cards = """
         <section class="empty">
-          <h2>No relevant episodes yet</h2>
-          <p>The radar has not published any fully verified episodes yet.</p>
+          <h2>No relevant items yet</h2>
+          <p>The radar has not published any fully verified items yet.</p>
         </section>
         """
     return page(
@@ -87,7 +87,7 @@ def render_index(config: Config, episodes, slugs: dict[int, str], *, social_imag
         body=f"""
         <header class="masthead">
           <div>
-            <p class="eyebrow">AI lab podcast intelligence</p>
+            <p class="eyebrow">Multimodal AI lab intelligence</p>
             <h1>{escape(config.site.title)}</h1>
             <p class="lede">{escape(config.site.description)}</p>
           </div>
@@ -96,11 +96,11 @@ def render_index(config: Config, episodes, slugs: dict[int, str], *, social_imag
         {controls}
         <div class="content-grid">
           <main id="main-content" tabindex="-1" aria-labelledby="episode-list-title">
-            <h2 class="visually-hidden" id="episode-list-title">Published episodes</h2>
+            <h2 class="visually-hidden" id="episode-list-title">Published Radar items</h2>
             <div class="episode-list" id="episode-list">
               {cards}
             </div>
-            <nav class="pagination" data-pagination aria-label="Episode pages" hidden>
+            <nav class="pagination" data-pagination aria-label="Radar item pages" hidden>
               <button type="button" data-page-prev aria-label="Previous page">Previous</button>
               <div class="page-buttons" data-page-buttons></div>
               <button type="button" data-page-next aria-label="Next page">Next</button>
@@ -147,10 +147,14 @@ def render_card(config: Config, episode, slug: str) -> str:
     ).lower()
     published_sort = episode["published_at"] or ""
     feed_token = _lab_token(str(episode["feed_name"]))
+    media_kinds = _media_kinds(episode)
+    media_tokens = " ".join(media_kinds)
+    media_badges = render_media_badges(episode)
     return f"""
-    <a class="episode-card" href="{escape(episode_path)}" data-labs="{escape(lab_tokens)}" data-topics="{escape(topic_tokens)}" data-feed="{escape(feed_token)}" data-search="{escape(search_text)}" data-date="{escape(published_sort)}">
+    <a class="episode-card" href="{escape(episode_path)}" data-labs="{escape(lab_tokens)}" data-media="{escape(media_tokens)}" data-topics="{escape(topic_tokens)}" data-feed="{escape(feed_token)}" data-search="{escape(search_text)}" data-date="{escape(published_sort)}">
       <span class="art">{image}</span>
       <div class="episode-body">
+        {media_badges}
         <h2>{escape(topline)}</h2>
         <p class="source-line">{source_meta}</p>
       </div>
@@ -165,6 +169,8 @@ def render_episode_page(config: Config, episode, slug: str, *, social_image_url:
     key_points = _people(episode["key_points_json"])
     topics = _people(episode["topics_json"])
     labs = _people(episode["labs_json"])
+    authors = _people(_episode_field(episode, "authors_json", "[]"))
+    authored_item = all(kind in {"blog", "x"} for kind in _media_kinds(episode))
     image = f'<img src="{escape(image_url)}" alt="" loading="lazy">' if image_url else '<div class="art-fallback"></div>'
     points = "".join(f"<li>{escape(point)}</li>" for point in key_points)
     topic_tags = "".join(f"<span>{escape(topic)}</span>" for topic in _display_topics(topics, labs))
@@ -174,8 +180,25 @@ def render_episode_page(config: Config, episode, slug: str, *, social_image_url:
     status = _detail_status(episode)
     status_html = f'<p class="status-pill">{escape(status)}</p>' if status else ""
     why = _why_it_matters(episode)
-    digest = render_episode_digest(episode, hosts=hosts, guests=guests, labs=labs, key_points=key_points, why=why)
+    digest = render_episode_digest(
+        episode,
+        hosts=hosts,
+        guests=guests,
+        authors=authors,
+        labs=labs,
+        key_points=key_points,
+        why=why,
+    )
     podcast_tools = render_podcast_tools(episode)
+    media_badges = render_media_badges(episode)
+    source_actions = render_source_links(episode)
+    if authored_item:
+        people_html = f'<p class="people"><strong>Authors:</strong> {escape(comma_join(authors) or comma_join(guests) or "Unknown")}</p>'
+    else:
+        people_html = (
+            f'<p class="people"><strong>Hosts:</strong> {escape(comma_join(hosts) or "Unknown")}</p>'
+            f'<p class="people"><strong>Guests:</strong> {escape(comma_join(guests) or "Unknown")}</p>'
+        )
     episode_url = episode_url_for(config, slug)
     description = _episode_meta_description(episode)
     return page(
@@ -195,31 +218,31 @@ def render_episode_page(config: Config, episode, slug: str, *, social_image_url:
             image_url=social_image_url or _episode_image_url(episode),
         ),
         body=f"""
-        <nav class="top-nav" aria-label="Episode navigation"><a href="../../index.html">Back to episodes</a></nav>
+        <nav class="top-nav" aria-label="Radar navigation"><a href="../../index.html">Back to AI Radar</a></nav>
         <main class="detail" id="main-content" tabindex="-1">
           <section class="detail-hero">
             <div class="detail-art">{image}</div>
             <div>
               <p class="eyebrow">{escape(episode['feed_name'])} · {escape(_date_label(episode['published_at']))}</p>
+              {media_badges}
               <h1>{escape(title)}</h1>
               {status_html}
-              <p class="people"><strong>Hosts:</strong> {escape(comma_join(hosts) or 'Unknown')}</p>
-              <p class="people"><strong>Guests:</strong> {escape(comma_join(guests) or 'Unknown')}</p>
+              {people_html}
               <div class="tags">{topic_tags}</div>
-              <div class="actions"><a href="#summary">Read summary</a><a href="#transcript">Jump to transcript</a>{source_link(episode)}</div>
+              <div class="actions"><a href="#summary">Read summary</a><a href="#transcript">Jump to source material</a>{source_actions}</div>
             </div>
           </section>
           {podcast_tools}
           {digest}
           <section class="content-block summary-block" id="summary">
-            <p class="eyebrow">Episode summary</p>
+            <p class="eyebrow">Radar summary</p>
             <h2>Summary</h2>
             {summary}
             <ul>{points}</ul>
           </section>
           <section class="content-block transcript" id="transcript">
             <p class="eyebrow">Source material</p>
-            <h2>Transcript</h2>
+            <h2>Full source text</h2>
             {transcript}
           </section>
         </main>
@@ -244,6 +267,7 @@ def render_rss(config: Config, episodes, slugs: dict[int, str], *, logo_image_ur
               <link>{escape(link)}</link>
               <guid isPermaLink="true">{escape(link)}</guid>
               <pubDate>{escape(pub_date)}</pubDate>
+              {''.join(f'<category>{escape(_medium_label(kind))}</category>' for kind in _media_kinds(episode))}
               <description>{escape(description)}</description>
             </item>
             """
@@ -555,7 +579,7 @@ FILTER_SCRIPT = """(() => {
       nextPage.disabled = activePage >= pageCount;
       const start = total ? (activePage - 1) * PAGE_SIZE + 1 : 0;
       const end = Math.min(activePage * PAGE_SIZE, total);
-      pageStatus.textContent = total > PAGE_SIZE ? `Showing ${start}-${end} of ${total} episodes` : "";
+      pageStatus.textContent = total > PAGE_SIZE ? `Showing ${start}-${end} of ${total} items` : "";
     };
 
     const apply = () => {
@@ -578,7 +602,7 @@ FILTER_SCRIPT = """(() => {
           empty = document.createElement("section");
           empty.className = "empty";
           empty.dataset.filterEmpty = "true";
-          empty.innerHTML = "<h2>No matching episodes</h2><p>Adjust the filters or search terms.</p>";
+          empty.innerHTML = "<h2>No matching items</h2><p>Adjust the filters or search terms.</p>";
           list?.append(empty);
         }
       } else {
@@ -696,7 +720,7 @@ def _asset_digest(value: str) -> str:
 def render_home_social_card(config: Config, episodes) -> str:
     latest = _date_label(episodes[0]["published_at"]) if episodes else "No episodes yet"
     return render_social_card_svg(
-        eyebrow="AI lab podcast intelligence",
+        eyebrow="Multimodal AI lab intelligence",
         title=config.site.title,
         subtitle=config.site.description,
         footer=f"Updated {latest}",
@@ -873,7 +897,7 @@ def home_structured_data(config: Config, episodes, slugs: dict[int, str]) -> lis
         slug = slugs[int(episode["id"])]
         parts.append(
             {
-                "@type": "PodcastEpisode",
+                "@type": _structured_type(episode),
                 "name": str(episode["summary_title"] or episode["title"]),
                 "url": episode_url_for(config, slug),
                 "datePublished": _episode_field(episode, "published_at"),
@@ -907,24 +931,26 @@ def episode_structured_data(
     image_url: str | None = None,
 ) -> dict[str, object]:
     image_url = image_url or _episode_image_url(episode)
+    structured_type = _structured_type(episode)
     data: dict[str, object] = {
         "@context": "https://schema.org",
-        "@type": "PodcastEpisode",
+        "@type": structured_type,
         "name": str(episode["summary_title"] or episode["title"]),
         "description": description,
         "url": episode_url_for(config, slug),
         "datePublished": _episode_field(episode, "published_at"),
-        "isPartOf": {
-            "@type": "PodcastSeries",
-            "name": str(episode["feed_name"]),
-            "url": podcast_feed_url(episode) or _first_episode_field(episode, "feed_homepage_url"),
-        },
         "publisher": {
             "@type": "Organization",
             "name": config.site.title,
             "url": site_root_url(config),
         },
     }
+    if structured_type == "PodcastEpisode":
+        data["isPartOf"] = {
+            "@type": "PodcastSeries",
+            "name": str(episode["feed_name"]),
+            "url": podcast_feed_url(episode) or _first_episode_field(episode, "feed_homepage_url"),
+        }
     duration = _iso_duration(_episode_field(episode, "duration"))
     if duration:
         data["duration"] = duration
@@ -932,18 +958,35 @@ def episode_structured_data(
         data["image"] = image_url
     audio_url = _episode_field(episode, "audio_url")
     if audio_url:
+        media_type = "VideoObject" if "youtube" in _media_kinds(episode) and "podcast" not in _media_kinds(episode) else "AudioObject"
         data["associatedMedia"] = {
-            "@type": "AudioObject",
+            "@type": media_type,
             "contentUrl": audio_url,
             "encodingFormat": _episode_field(episode, "audio_type"),
         }
     people = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
     if people:
         data["guest"] = [{"@type": "Person", "name": person} for person in people]
+    authors = _people(_episode_field(episode, "authors_json", "[]"))
+    if authors and structured_type in {"Article", "SocialMediaPosting"}:
+        data["author"] = [{"@type": "Person", "name": person} for person in authors]
     topics = _display_topics(_people(episode["topics_json"]), _people(episode["labs_json"]))
     if topics:
         data["about"] = topics
     return data
+
+
+def _structured_type(episode) -> str:
+    media = _media_kinds(episode)
+    if "podcast" in media:
+        return "PodcastEpisode"
+    if "youtube" in media:
+        return "VideoObject"
+    if "blog" in media:
+        return "Article"
+    if "x" in media:
+        return "SocialMediaPosting"
+    return "Article"
 
 
 def render_json_ld(value) -> str:
@@ -1059,15 +1102,52 @@ def source_link(episode, *, icon: bool = True, label: str | None = None) -> str:
     return f'<a class="external-link" href="{escape(url)}" target="_blank" rel="noopener noreferrer">{escape(label)}{icon_html}</a>'
 
 
+def render_source_links(episode) -> str:
+    appearances = _appearances(episode)
+    if not appearances:
+        return source_link(episode)
+    links: list[str] = []
+    seen: set[str] = set()
+    labels = {
+        "podcast": "Listen to podcast",
+        "youtube": "Watch on YouTube",
+        "blog": "Read article",
+        "x": "View thread",
+    }
+    for appearance in appearances:
+        url = str(
+            appearance.get("url")
+            or appearance.get("homepage_url")
+            or appearance.get("source_url")
+            or appearance.get("media_url")
+            or ""
+        )
+        if not url or url in seen:
+            continue
+        seen.add(url)
+        medium = str(appearance.get("medium") or "podcast")
+        label = labels.get(medium, "Open source")
+        links.append(
+            f'<a class="external-link source-{escape(medium)}" href="{escape(url)}" target="_blank" rel="noopener noreferrer">{escape(label)}<span class="external-icon" aria-hidden="true">↗</span></a>'
+        )
+    return "".join(links) or source_link(episode)
+
+
 def source_url(episode) -> str:
     return _first_episode_field(episode, "episode_url", "feed_homepage_url", "feed_url")
 
 
 def podcast_feed_url(episode) -> str:
+    for appearance in _appearances(episode):
+        if appearance.get("medium") == "podcast":
+            return str(appearance.get("feed_url") or appearance.get("source_url") or appearance.get("media_url") or "")
     return _first_episode_field(episode, "feed_url", "audio_url", "episode_url", "feed_homepage_url")
 
 
 def render_podcast_tools(episode) -> str:
+    appearances = _appearances(episode)
+    if appearances and not any(appearance.get("medium") == "podcast" for appearance in appearances):
+        return ""
     feed_url = podcast_feed_url(episode)
     if not feed_url:
         return ""
@@ -1178,7 +1258,7 @@ def render_search_panel(episodes) -> str:
     <div class="search-panel">
       <label class="command-search">
         <span>Search radar</span>
-        <input type="search" placeholder="Guest, lab, claim, topic, podcast" data-search-input aria-controls="episode-list">
+        <input type="search" placeholder="Person, lab, claim, topic, source" data-search-input aria-controls="episode-list">
       </label>
     </div>
     """
@@ -1198,7 +1278,7 @@ def render_side_rail(config: Config, episodes, slugs: dict[int, str]) -> str:
         <span class="visually-hidden" data-copy-status role="status" aria-live="polite"></span>
       </section>
       <section class="rail-card newest-card">
-        <div class="rail-heading"><span>Newest episodes</span></div>
+        <div class="rail-heading"><span>Newest items</span></div>
         <div class="rail-list">{latest}</div>
       </section>
     </aside>
@@ -1227,11 +1307,11 @@ def render_controls(config: Config, episodes) -> str:
             lab_counts[lab] = lab_counts.get(lab, 0) + 1
 
     buttons = [
-        f'<button type="button" class="filter-button active" data-filter="all" aria-pressed="true" aria-label="Show all episodes, {_episode_count_label(len(episodes))}">All <span>{len(episodes)}</span></button>'
+        f'<button type="button" class="filter-button active" data-filter="all" aria-pressed="true" aria-label="Show all items, {_episode_count_label(len(episodes))}">All <span>{len(episodes)}</span></button>'
     ]
     for lab, count in sorted(lab_counts.items(), key=lambda item: (-item[1], item[0].lower())):
         buttons.append(
-            f'<button type="button" class="filter-button" data-filter="{escape(_lab_token(lab))}" aria-pressed="false" aria-label="Show {escape(lab)} episodes, {_episode_count_label(count)}">{escape(lab)} <span>{count}</span></button>'
+            f'<button type="button" class="filter-button" data-filter="{escape(_lab_token(lab))}" aria-pressed="false" aria-label="Show {escape(lab)} items, {_episode_count_label(count)}">{escape(lab)} <span>{count}</span></button>'
         )
 
     return f"""
@@ -1242,20 +1322,34 @@ def render_controls(config: Config, episodes) -> str:
     """
 
 
-def render_episode_digest(episode, *, hosts: list[str], guests: list[str], labs: list[str], key_points: list[str], why: str) -> str:
+def render_episode_digest(
+    episode,
+    *,
+    hosts: list[str],
+    guests: list[str],
+    authors: list[str],
+    labs: list[str],
+    key_points: list[str],
+    why: str,
+) -> str:
+    media = _media_kinds(episode)
+    podcast_only = media == ["podcast"]
+    authored_item = all(kind in {"blog", "x"} for kind in media)
     fact_rows = [
-        ("Podcast", str(episode["feed_name"])),
+        (("Podcast" if podcast_only else "Source"), str(episode["feed_name"])),
+        ("Medium", ", ".join(_medium_label(kind) for kind in media)),
         ("Published", _date_label(episode["published_at"])),
         ("Duration", _duration_label(episode["duration"]) or "Unknown"),
-        ("Guests", comma_join(guests) or "Unknown"),
+        (("Authors" if authored_item else "Guests"), comma_join(authors if authored_item else guests) or "Unknown"),
         ("Labs", comma_join(labs) or "Unknown"),
-        ("Hosts", comma_join(hosts) or "Unknown"),
     ]
+    if not authored_item:
+        fact_rows.append(("Hosts", comma_join(hosts) or "Unknown"))
     facts = "".join(f"<div><dt>{escape(label)}</dt><dd>{escape(value)}</dd></div>" for label, value in fact_rows)
     top_points = "".join(f"<li>{escape(point)}</li>" for point in key_points[:4])
     points_html = f"<ul>{top_points}</ul>" if top_points else '<p class="notice">Key points will appear after summarization.</p>'
     return f"""
-    <section class="brief-grid" aria-label="Episode brief">
+    <section class="brief-grid" aria-label="Radar item brief">
       <div class="brief-main">
         <p class="eyebrow">Why it matters</p>
         <p class="brief-signal">{escape(why)}</p>
@@ -1263,7 +1357,7 @@ def render_episode_digest(episode, *, hosts: list[str], guests: list[str], labs:
         {points_html}
       </div>
       <aside class="brief-facts">
-        <h2>Episode facts</h2>
+        <h2>Item facts</h2>
         <dl>{facts}</dl>
       </aside>
     </section>
@@ -1291,17 +1385,23 @@ def rss_channel_image(config: Config, logo_image_url: str) -> str:
 
 
 def _episode_count_label(count: int) -> str:
-    return f"{count} episode" if count == 1 else f"{count} episodes"
+    return f"{count} item" if count == 1 else f"{count} items"
 
 
 def _rss_description(episode, *, site_link: str) -> str:
     description = _short_summary(episode)
     guests = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
+    media = _media_kinds(episode)
+    podcast_only = media == ["podcast"]
+    authored_item = all(kind in {"blog", "x"} for kind in media)
+    people = _people(_episode_field(episode, "authors_json", "[]")) if authored_item else guests
     details = (
-        "<h3>Podcast details</h3>"
-        f"<strong>Podcast:</strong> {html.escape(str(episode['feed_name']), quote=False)}<br>"
+        ("<h3>Podcast details</h3>" if podcast_only else "<h3>Source details</h3>")
+        +
+        f"<strong>Medium:</strong> {html.escape(', '.join(_medium_label(kind) for kind in media), quote=False)}<br>"
+        f"<strong>{'Podcast' if podcast_only else 'Primary source'}:</strong> {html.escape(str(episode['feed_name']), quote=False)}<br>"
         f"<strong>Title:</strong> {html.escape(str(episode['title']), quote=False)}<br>"
-        f"<strong>Guests:</strong> {html.escape(comma_join(guests) or 'Unknown', quote=False)}<br>"
+        f"<strong>{'Authors' if authored_item else 'Guests'}:</strong> {html.escape(comma_join(people) or 'Unknown', quote=False)}<br>"
         f"<strong>Release date:</strong> {html.escape(_rss_release_date_label(episode['published_at']), quote=False)}<br>"
         f"<strong>Duration:</strong> {html.escape(_duration_label(episode['duration']) or 'Unknown', quote=False)}"
     )
@@ -1485,6 +1585,50 @@ def _detail_status(episode) -> str:
 
 def _lab_token(lab: str) -> str:
     return slugify(lab)
+
+
+def _appearances(episode) -> list[dict[str, object]]:
+    raw = _episode_field(episode, "appearances_json", "")
+    if not raw:
+        return []
+    try:
+        values = json.loads(str(raw))
+    except json.JSONDecodeError:
+        return []
+    if not isinstance(values, list):
+        return []
+    return [value for value in values if isinstance(value, dict)]
+
+
+def _media_kinds(episode) -> list[str]:
+    raw = _episode_field(episode, "media_kinds_json", "")
+    values: list[str] = []
+    if raw:
+        try:
+            parsed = json.loads(str(raw))
+            if isinstance(parsed, list):
+                values = [str(value) for value in parsed]
+        except json.JSONDecodeError:
+            values = []
+    if not values:
+        values = [str(_episode_field(episode, "medium", "podcast"))]
+    ordered: list[str] = []
+    for kind in ("podcast", "youtube", "blog", "x"):
+        if kind in values and kind not in ordered:
+            ordered.append(kind)
+    return ordered or ["podcast"]
+
+
+def _medium_label(kind: str) -> str:
+    return {"podcast": "Podcast", "youtube": "YouTube", "blog": "Blog", "x": "X"}.get(kind, kind.title())
+
+
+def render_media_badges(episode) -> str:
+    badges = "".join(
+        f'<span class="media-badge media-{escape(kind)}">{escape(_medium_label(kind))}</span>'
+        for kind in _media_kinds(episode)
+    )
+    return f'<span class="media-badges" aria-label="Media: {escape(", ".join(_medium_label(kind) for kind in _media_kinds(episode)))}">{badges}</span>'
 
 
 def _people(value: str | None) -> list[str]:
@@ -2264,6 +2408,32 @@ main:focus {
 .episode-body {
   min-width: 0;
 }
+
+.media-badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 0 5px;
+}
+
+.media-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  padding: 2px 7px;
+  border: 1px solid #b9cbd1;
+  border-radius: 999px;
+  background: #f5f8fa;
+  color: #425466;
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.media-youtube { border-color: #e2aaaa; background: #fff4f4; color: #9b2525; }
+.media-blog { border-color: #b9c6e6; background: #f3f6ff; color: #36528c; }
+.media-x { border-color: #b9bdc4; background: #f4f5f6; color: #30343a; }
 
 .art img,
 .detail-art img {

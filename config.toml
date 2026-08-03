@@ -28,12 +28,12 @@ keep_audio = false
 
 [site]
 title = "AI Radar"
-description = "Podcast episodes featuring technical leaders and executives from major AI labs."
+description = "Substantial podcasts, videos, articles, and threads from major AI lab leaders."
 base_url = "https://ai-radar.merimerimeri.com"
 cname = "ai-radar.merimerimeri.com"
 max_items = 250
 rss_title = "AI Radar"
-rss_description = "New podcast episodes featuring major AI lab guests."
+rss_description = "Substantial public appearances and writing from major AI lab leaders."
 
 [[feeds]]
 name = "Dwarkesh Podcast"
@@ -129,6 +129,83 @@ hosts = ["Dan Shipper"]
 name = "BG2Pod with Brad Gerstner and Bill Gurley"
 url = "https://anchor.fm/s/f06c2370/podcast/rss"
 hosts = ["Brad Gerstner", "Bill Gurley"]
+
+[[sources]]
+kind = "blog"
+name = "Sam Altman"
+url = "https://blog.samaltman.com/"
+feed_url = "https://blog.samaltman.com/posts.atom"
+people = ["Sam Altman"]
+
+[[sources]]
+kind = "blog"
+name = "Dario Amodei"
+url = "https://darioamodei.com/"
+people = ["Dario Amodei"]
+
+[[sources]]
+kind = "blog"
+name = "Satya Nadella"
+url = "https://blogs.microsoft.com/blog/author/satyanadella/"
+feed_url = "https://blogs.microsoft.com/blog/author/satyanadella/feed/"
+people = ["Satya Nadella"]
+
+[[sources]]
+kind = "youtube"
+name = "Y Combinator"
+url = "https://www.youtube.com/@ycombinator"
+external_id = "UCcefcZRL2oaA_uBNeo5UOWg"
+feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCcefcZRL2oaA_uBNeo5UOWg"
+
+[[sources]]
+kind = "youtube"
+name = "Sequoia Capital"
+url = "https://www.youtube.com/@sequoiacapital"
+external_id = "UCWrF0oN6unbXrWsTN7RctTw"
+feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCWrF0oN6unbXrWsTN7RctTw"
+
+[[sources]]
+kind = "youtube"
+name = "Bloomberg Originals"
+url = "https://www.youtube.com/@business"
+external_id = "UCUMZ7gohGI9HcU9VNsr2FJQ"
+feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCUMZ7gohGI9HcU9VNsr2FJQ"
+
+[[sources]]
+kind = "youtube"
+name = "Joanna Stern"
+url = "https://www.youtube.com/@JoannaStern"
+external_id = "UCi0_2sEpmT6FKn5-y6_W3cA"
+feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCi0_2sEpmT6FKn5-y6_W3cA"
+people = ["Joanna Stern"]
+
+[[sources]]
+kind = "youtube"
+name = "OpenAI"
+url = "https://www.youtube.com/@OpenAI"
+external_id = "UCXZCJLdBC09xxGZ6gcdrc6A"
+feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A"
+
+[[sources]]
+kind = "youtube"
+name = "Anthropic"
+url = "https://www.youtube.com/@anthropic-ai"
+external_id = "UCrDwWp7EBBv4NwvScIpBDOA"
+feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA"
+
+[[sources]]
+kind = "youtube"
+name = "Google DeepMind"
+url = "https://www.youtube.com/@GoogleDeepMind"
+external_id = "UCP7jMXSY2xbc3KCAE0MHQ-A"
+feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A"
+
+[[sources]]
+kind = "youtube"
+name = "a16z"
+url = "https://www.youtube.com/@a16z"
+external_id = "UC9cn0TuPq4dnbTY-CBsm8XA"
+feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC9cn0TuPq4dnbTY-CBsm8XA"
 
 [[labs]]
 name = "OpenAI"
@@ -250,4 +327,11 @@ name = "Atreides Management"
 aliases = ["Atreides", "Atreides Management"]
 people = [
   "Gavin Baker",
+]
+
+[[labs]]
+name = "Microsoft"
+aliases = ["Microsoft", "Microsoft AI"]
+people = [
+  "Satya Nadella",
 ]

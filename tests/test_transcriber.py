@@ -1,6 +1,13 @@
+import pathlib
+import tempfile
 import unittest
+from unittest import mock
 
-from podcast_radar.transcriber import MAX_PROMPT_DESCRIPTION_CHARS, _episode_prompt_context
+from podcast_radar.transcriber import (
+    MAX_PROMPT_DESCRIPTION_CHARS,
+    _episode_prompt_context,
+    download_youtube_audio,
+)
 
 
 class TranscriberTests(unittest.TestCase):
@@ -32,6 +39,22 @@ class TranscriberTests(unittest.TestCase):
         description = context["episode_description"]
         self.assertLessEqual(len(description), MAX_PROMPT_DESCRIPTION_CHARS)
         self.assertFalse(description.endswith(" "))
+
+    def test_youtube_audio_is_normalized_for_whisper(self) -> None:
+        output = pathlib.Path(tempfile.gettempdir()) / "ai-radar-youtube-audio-test.wav"
+        output.touch()
+        try:
+            with mock.patch("podcast_radar.transcriber.shutil.which", return_value="/opt/homebrew/bin/yt-dlp"), mock.patch(
+                "podcast_radar.transcriber._run_transcription_command"
+            ) as run:
+                download_youtube_audio("https://youtube.com/watch?v=example", output, command_output=False)
+
+            command = run.call_args.args[0]
+            self.assertIn("wav", command)
+            self.assertIn("ffmpeg:-ar 16000 -ac 1", command)
+            self.assertEqual(command[-2:], [str(output), "https://youtube.com/watch?v=example"])
+        finally:
+            output.unlink(missing_ok=True)
 
 
 if __name__ == "__main__":

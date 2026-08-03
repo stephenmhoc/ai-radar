@@ -10,7 +10,7 @@ import sys
 from functools import partial
 
 from .config import Config, load_config
-from . import feeds, launchd, llm, pipeline, site, storage
+from . import collectors, launchd, llm, pipeline, site, storage
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -20,17 +20,17 @@ def main(argv: list[str] | None = None) -> int:
 
     subparsers.add_parser("doctor", help="Check config, local tools, and storage.")
 
-    ingest_parser = subparsers.add_parser("ingest", help="Fetch podcast feeds into SQLite.")
+    ingest_parser = subparsers.add_parser("ingest", help="Collect configured podcast, YouTube, blog, and X sources.")
     ingest_parser.add_argument("--limit-per-feed", type=int, default=None)
     ingest_parser.add_argument("--since", default=None, help="Only ingest episodes published on or after this date.")
 
-    judge_parser = subparsers.add_parser("judge", help="Ask the LLM to classify new episodes.")
+    judge_parser = subparsers.add_parser("judge", help="Ask the LLM to classify new radar items.")
     judge_parser.add_argument("--limit", type=int, default=None)
     judge_parser.add_argument("--since", default=None, help="Only judge episodes published on or after this date.")
     judge_parser.add_argument("--feed", action="append", default=[], help="Only judge episodes from this feed name. Repeatable.")
     judge_parser.add_argument("--match", default=None, help="Only judge episodes whose title or description contains this text.")
 
-    process_parser = subparsers.add_parser("process", help="Transcribe and summarize relevant episodes.")
+    process_parser = subparsers.add_parser("process", help="Prepare content and summarize relevant radar items.")
     process_parser.add_argument("--limit", type=int, default=None)
     process_parser.add_argument("--since", default=None, help="Only process episodes published on or after this date.")
     process_parser.add_argument("--feed", action="append", default=[], help="Only process episodes from this feed name. Repeatable.")
@@ -44,9 +44,14 @@ def main(argv: list[str] | None = None) -> int:
 
     subparsers.add_parser("build-site", help="Render public static site and RSS feed.")
 
-    list_parser = subparsers.add_parser("list", help="List episode status counts.")
+    list_parser = subparsers.add_parser("list", help="List radar item status counts.")
     list_parser.add_argument("--status", default=None)
     list_parser.add_argument("--limit", type=int, default=20)
+
+    subparsers.add_parser("duplicates", help="List ambiguous cross-medium duplicate candidates.")
+    merge_parser = subparsers.add_parser("merge-items", help="Merge two confirmed duplicate radar items.")
+    merge_parser.add_argument("first_item_id", type=int)
+    merge_parser.add_argument("second_item_id", type=int)
 
     serve_parser = subparsers.add_parser("serve-site", help="Serve the generated static site locally.")
     serve_parser.add_argument("--host", default="127.0.0.1")
@@ -90,7 +95,7 @@ def main(argv: list[str] | None = None) -> int:
             return 2
     with storage.connect(config) as conn:
         if args.command == "ingest":
-            stats = feeds.ingest(config, conn, limit_per_feed=args.limit_per_feed, published_since=args.since)
+            stats = collectors.collect(config, conn, limit_per_source=args.limit_per_feed, published_since=args.since)
             _print_stats(stats)
             return 0
         if args.command == "judge":
@@ -132,6 +137,26 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "list":
             return list_status(conn, args.status, args.limit)
+        if args.command == "duplicates":
+            candidates = storage.pending_dedupe_candidates(conn)
+            for candidate in candidates:
+                first = storage.item_by_id(conn, int(candidate["item_id"]))
+                second = storage.item_by_id(conn, int(candidate["candidate_item_id"]))
+                print(
+                    f"{candidate['id']}\t{candidate['score']:.2f}\t{first['id']}:{first['title']}\t{second['id']}:{second['title']}\t{candidate['reason']}"
+                )
+            print(f"pending_duplicates={len(candidates)}")
+            return 0
+        if args.command == "merge-items":
+            canonical = storage.merge_items(
+                conn,
+                args.first_item_id,
+                args.second_item_id,
+                reason="confirmed from CLI",
+            )
+            conn.commit()
+            print(f"canonical_item_id={canonical}")
+            return 0
     if args.command == "serve-site":
         return serve_site(config, args.host, args.port)
     parser.error(f"unknown command: {args.command}")
@@ -141,8 +166,8 @@ def main(argv: list[str] | None = None) -> int:
 def doctor(config: Config) -> int:
     errors: list[str] = []
     warnings: list[str] = []
-    if not config.feeds:
-        errors.append("no feeds configured")
+    if not config.active_sources:
+        errors.append("no sources configured")
     if not config.labs:
         errors.append("no labs configured")
     if config.llm.provider == "openai_compatible" and config.llm.api_key_env:
@@ -152,12 +177,26 @@ def doctor(config: Config) -> int:
         errors.append("llm.base_url is required for ollama")
     warnings.extend(transcription_preflight_warnings(config))
     config.app.state_dir.mkdir(parents=True, exist_ok=True)
+    youtube_active = any(source.kind == "youtube" for source in config.sources if source.active)
+    if youtube_active and shutil.which("yt-dlp") is None:
+        warnings.append("yt-dlp is not installed; YouTube candidates cannot be transcribed")
+    for source in config.sources:
+        if not source.active or source.kind not in {"youtube", "x"}:
+            continue
+        env_name = source.api_key_env or ("YOUTUBE_API_KEY" if source.kind == "youtube" else "X_BEARER_TOKEN")
+        if not os.environ.get(env_name):
+            if source.kind == "youtube" and source.feed_url:
+                continue
+            warnings.append(f"{env_name} is not set; {source.name} collection will be skipped")
     with storage.connect(config) as conn:
         counts = storage.status_counts(conn)
+        source_counts = storage.source_counts(conn)
     print(f"config_root={config.root}")
     print(f"database={config.app.database_path}")
     print(f"public_dir={config.app.public_dir}")
     print(f"active_feeds={len(config.active_feeds)}")
+    print(f"active_sources={len(config.active_sources)}")
+    print(f"source_kind_counts={source_counts}")
     print(f"watched_labs={len(config.labs)}")
     print(f"seed_people={len(config.watched_people)}")
     print(f"episode_status_counts={counts}")

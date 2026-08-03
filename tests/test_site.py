@@ -210,7 +210,7 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn('<link rel="icon" href="/assets/logo.png" type="image/png" sizes="512x512">', index)
             self.assertIn('<link rel="apple-touch-icon" href="/apple-touch-icon.png">', index)
             self.assertIn('data-copy-status role="status" aria-live="polite"', index)
-            self.assertIn('aria-label="Show OpenAI episodes, 1 episode"', index)
+            self.assertIn('aria-label="Show OpenAI items, 1 item"', index)
             self.assertIn('class="content-grid"', index)
             self.assertIn('class="side-rail"', index)
             self.assertIn('<a class="episode-card"', index)
@@ -226,7 +226,7 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn('<span class="source-details">2024-06-18 · 1h 00m</span>', index)
             self.assertIn("Example · Sam Altman on models · 1h 00m", index)
             self.assertIn('class="rail-card newest-card"', index)
-            self.assertIn("<span>Newest episodes</span>", index)
+            self.assertIn("<span>Newest items</span>", index)
             self.assertNotIn("1 total", index)
             self.assertNotIn("Episode details", index)
             self.assertNotIn("Verified brief", index)
@@ -294,7 +294,7 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn("Made with ♥ by", page)
             self.assertIn("Copyright 2026", page)
             self.assertIn('<main class="detail" id="main-content" tabindex="-1">', page)
-            self.assertIn("Episode facts", page)
+            self.assertIn("Item facts", page)
             self.assertIn("Point one", page)
             self.assertIn(
                 '<p class="transcript-sentence">Dr. Sam introduced the model across wrapped transcript lines.</p>',
@@ -329,6 +329,39 @@ class SiteGenerationTests(unittest.TestCase):
         self.assertIn('value="https://podcast.example.com/feed.xml"', tools)
         self.assertIn('data-copy-url="https://podcast.example.com/feed.xml"', tools)
         self.assertNotIn("Original podcast", tools)
+
+    def test_multimodal_item_renders_all_media_and_source_links(self) -> None:
+        appearances = [
+            {
+                "medium": "podcast",
+                "url": "https://example.com/listen",
+                "feed_url": "https://example.com/feed.xml",
+                "source_url": "https://example.com/feed.xml",
+            },
+            {
+                "medium": "youtube",
+                "url": "https://youtube.com/watch?v=one",
+                "source_url": "https://youtube.com/channel/example",
+            },
+        ]
+        episode = {
+            "id": 42,
+            "medium": "podcast",
+            "media_kinds_json": storage.dumps(["podcast", "youtube"]),
+            "appearances_json": storage.dumps(appearances),
+            "feed_url": "https://example.com/feed.xml",
+        }
+
+        badges = site.render_media_badges(episode)
+        links = site.render_source_links(episode)
+        tools = site.render_podcast_tools(episode)
+
+        self.assertIn(">Podcast</span>", badges)
+        self.assertIn(">YouTube</span>", badges)
+        self.assertIn("Listen to podcast", links)
+        self.assertIn("Watch on YouTube", links)
+        self.assertEqual(links.count("external-link"), 2)
+        self.assertIn("https://example.com/feed.xml", tools)
 
     def test_relevant_episode_is_not_public_before_transcription(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -385,7 +418,7 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertEqual(result["episodes"], 0)
             self.assertEqual(result["rss_items"], 0)
             index = (root / "public" / "index.html").read_text()
-            self.assertIn("No relevant episodes yet", index)
+            self.assertIn("No relevant items yet", index)
             self.assertFalse(any((root / "public" / "episodes").glob("*/index.html")))
             rss = (root / "public" / "feed.xml").read_text()
             self.assertNotIn("<item>", rss)

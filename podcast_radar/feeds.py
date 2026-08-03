@@ -115,6 +115,7 @@ def _parse_rss_item(item: ET.Element, feed_image_url: str | None, hosts: tuple[s
         "published_at": published_at,
         "duration": _text(item, "duration"),
         "hosts": list(hosts),
+        "authors": _authors(item),
         "raw": {
             "guid": guid,
             "title": title,
@@ -134,7 +135,7 @@ def _parse_atom(root: ET.Element, fallback_name: str, hosts: tuple[str, ...]) ->
         entry_title = clean_text(_text(entry, "title"))
         if not entry_title:
             continue
-        description_html = _text(entry, "summary") or _text(entry, "content")
+        description_html = _text(entry, "summary") or _text(entry, "description") or _text(entry, "content")
         episode_url = _atom_link(entry, rel="alternate") or _atom_link(entry, rel=None)
         audio_url = _atom_link(entry, rel="enclosure")
         guid = _text(entry, "id") or episode_url or _stable_guid(entry_title, _text(entry, "published"))
@@ -150,6 +151,7 @@ def _parse_atom(root: ET.Element, fallback_name: str, hosts: tuple[str, ...]) ->
                 "published_at": _parse_date(_text(entry, "published") or _text(entry, "updated")),
                 "duration": _text(entry, "duration"),
                 "hosts": list(hosts),
+                "authors": _authors(entry),
                 "raw": {
                     "guid": guid,
                     "title": entry_title,
@@ -230,6 +232,17 @@ def _atom_link(element: ET.Element, rel: str | None) -> str | None:
         if rel is None or child_rel == rel:
             return child.attrib.get("href")
     return None
+
+
+def _authors(element: ET.Element) -> list[str]:
+    authors: list[str] = []
+    for descendant in element.iter():
+        if _local(descendant.tag) not in {"author", "creator"}:
+            continue
+        value = _text(descendant, "name") or (clean_text(descendant.text) if descendant.text else "")
+        if value and value not in authors:
+            authors.append(value)
+    return authors
 
 
 def _parse_date(value: str | None) -> str | None:

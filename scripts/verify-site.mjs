@@ -68,6 +68,7 @@ async function checkViewport(browserInstance, viewport) {
   await expectCount(page, ".site-footer", 1, "site footers");
   await expectCount(page, "[data-pagination]", 1, "pagination controls");
   await expectCount(page, ".filter-button", 2, "filter buttons");
+  await expectCount(page, ".media-badge", 1, "visible medium badges");
   await expectCount(page, "[data-search-input]", 1, "search controls");
   await expectCount(page, ".source-line", 1, "episode source lines");
   await expectCount(page, ".source-line .source-main", 1, "episode source titles");
@@ -87,6 +88,9 @@ async function checkViewport(browserInstance, viewport) {
   }
   if (await page.locator('[data-filter="google"]').count()) {
     throw new Error("Google and Google DeepMind filters should be consolidated");
+  }
+  if (await page.locator('[data-medium-filter], .media-filters').count()) {
+    throw new Error("homepage should not show medium quick filters");
   }
   if (!(await page.locator('[data-filter="google-deepmind"]').count())) {
     throw new Error("missing consolidated Google DeepMind filter");
@@ -109,6 +113,9 @@ async function checkViewport(browserInstance, viewport) {
   const firstCard = page.locator(".episode-card").first();
   const firstDetailHref = await firstCard.getAttribute("href");
   if (!firstDetailHref) throw new Error("episode cards should be whole-card links");
+  if (!(await firstCard.getAttribute("data-media"))) {
+    throw new Error("episode cards should expose their medium for filtering");
+  }
   if (await firstCard.locator(".tag-row, .summary, .signal, .actions").count()) {
     throw new Error("episode cards should not show tags, summaries, signals, or action rows");
   }
@@ -187,7 +194,7 @@ async function checkViewport(browserInstance, viewport) {
   if (await page.locator(".episode-card:visible").count()) {
     throw new Error("search did not hide non-matching cards");
   }
-  if (!(await page.getByText("No matching episodes").count())) {
+    if (!(await page.getByText("No matching items").count())) {
     throw new Error("empty search state did not render");
   }
   await searchInput.fill("");
@@ -210,24 +217,44 @@ async function checkViewport(browserInstance, viewport) {
   if (detailNavLinks !== 1) {
     throw new Error(`detail page should have exactly one nav link, found ${detailNavLinks}`);
   }
-  if (!(await page.getByRole("link", { name: "Back to episodes" }).count())) {
+  if (!(await page.getByRole("link", { name: "Back to AI Radar" }).count())) {
     throw new Error("detail page should keep navigation to a single back link");
   }
   if (await page.getByRole("link", { name: /Summary|Transcript|RSS feed|All episodes/ }).count()) {
     throw new Error("detail page should not show the old multi-button nav");
   }
-  if (!(await page.getByRole("link", { name: /Go to episode|Open original episode|Original podcast/ }).count())) {
-    throw new Error("detail page should link out to the original podcast or episode");
+  if (!(await page.getByRole("link", { name: /Go to episode|Open original episode|Original podcast|Listen to podcast|Watch on YouTube|Read article|View thread/ }).count())) {
+    throw new Error("detail page should link out to at least one original source");
   }
-  await expectCount(page, ".podcast-tools", 1, "podcast link tools");
-  await expectCount(page, ".podcast-tools [data-copy-url]", 1, "podcast feed copy buttons");
-  await expectCount(page, ".podcast-tools input[readonly]", 1, "copyable podcast feed URLs");
+  const isPodcastDetail = (await page.locator(".detail .media-podcast").count()) > 0;
+  const isYouTubeDetail = (await page.locator(".detail .media-youtube").count()) > 0;
+  if (isPodcastDetail) {
+    await expectPodcastTools(page);
+  } else if (await page.locator(".podcast-tools").count()) {
+    throw new Error("non-podcast detail pages should not expose podcast feed tools");
+  }
+  if (isYouTubeDetail && !(await page.getByRole("link", { name: "Watch on YouTube" }).count())) {
+    throw new Error("YouTube detail pages should link to the original video");
+  }
   await expectCount(page, ".brief-grid", 1, "episode brief grids");
   await expectCount(page, ".brief-signal", 1, "why it matters sections");
   await expectCount(page, ".brief-facts dd", 4, "episode fact values");
   await expectCount(page, ".transcript-sentence", 1, "transcript sentences");
   await page.screenshot({ path: join(outDir, `${viewport.name}-detail.png`), fullPage: true });
+  if (!isPodcastDetail) {
+    await page.goto(`http://${host}:${port}/`, { waitUntil: "networkidle" });
+    const podcastHref = await page.locator('.episode-card[data-media~="podcast"]').first().getAttribute("href");
+    if (!podcastHref) throw new Error("mixed feed should retain at least one podcast detail page");
+    await page.goto(new URL(podcastHref, `http://${host}:${port}/`).toString(), { waitUntil: "networkidle" });
+    await expectPodcastTools(page);
+  }
   await page.close();
+}
+
+async function expectPodcastTools(page) {
+  await expectCount(page, ".podcast-tools", 1, "podcast link tools");
+  await expectCount(page, ".podcast-tools [data-copy-url]", 1, "podcast feed copy buttons");
+  await expectCount(page, ".podcast-tools input[readonly]", 1, "copyable podcast feed URLs");
 }
 
 async function expectCount(page, selector, minimum, label) {

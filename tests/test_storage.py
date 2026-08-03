@@ -1,7 +1,7 @@
 import sqlite3
 import unittest
 
-from podcast_radar.config import FeedConfig
+from podcast_radar.config import FeedConfig, SourceConfig
 from podcast_radar import storage
 
 
@@ -71,6 +71,210 @@ class StorageMigrationTests(unittest.TestCase):
         matched = storage.episodes_for_status(conn, ("new",), search_text="Alpha")
 
         self.assertEqual([episode["title"] for episode in matched], ["Alpha episode"])
+
+    def test_cross_posted_podcast_and_youtube_share_one_item(self) -> None:
+        conn = sqlite3.connect(":memory:")
+        conn.row_factory = sqlite3.Row
+        storage.migrate(conn)
+        podcast_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="podcast", name="Example Podcast", url="https://example.com/feed.xml"),
+        )
+        youtube_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="youtube", name="Example Channel", url="https://youtube.com/channel/example"),
+        )
+        podcast_item_id, _ = storage.upsert_appearance(
+            conn,
+            podcast_id,
+            {
+                "external_id": "pod-1",
+                "title": "Sam Altman on the future of reasoning models",
+                "url": "https://example.com/pod-1",
+                "media_url": "https://example.com/pod-1.mp3",
+                "media_type": "audio/mpeg",
+                "published_at": "2026-08-01T12:00:00+00:00",
+                "duration": "01:02:00",
+            },
+        )
+        youtube_item_id, inserted = storage.upsert_appearance(
+            conn,
+            youtube_id,
+            {
+                "external_id": "video-1",
+                "title": "Sam Altman on the future of reasoning models (Full Video)",
+                "url": "https://youtube.com/watch?v=video-1",
+                "media_url": "https://youtube.com/watch?v=video-1",
+                "media_type": "video/youtube",
+                "published_at": "2026-08-02T12:00:00+00:00",
+                "duration": "01:01:30",
+            },
+        )
+
+        self.assertTrue(inserted)
+        self.assertEqual(youtube_item_id, podcast_item_id)
+        item = storage.item_by_id(conn, podcast_item_id)
+        self.assertEqual(storage.loads(item["media_kinds_json"]), ["podcast", "youtube"])
+        self.assertEqual(len(storage.loads(item["appearances_json"])), 2)
+        self.assertEqual(conn.execute("SELECT COUNT(*) FROM radar_items").fetchone()[0], 1)
+
+    def test_identical_full_text_deduplicates_blog_and_x(self) -> None:
+        conn = sqlite3.connect(":memory:")
+        conn.row_factory = sqlite3.Row
+        storage.migrate(conn)
+        blog_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="blog", name="Leader blog", url="https://example.com/blog"),
+        )
+        x_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="x", name="Leader on X", url="https://x.com/leader"),
+        )
+        content = "A substantial explanation of model behavior and evaluation. " * 20
+        first_id, _ = storage.upsert_appearance(
+            conn,
+            blog_id,
+            {
+                "external_id": "article-1",
+                "title": "How we evaluate reasoning systems",
+                "url": "https://example.com/blog/evals",
+                "published_at": "2026-08-01T12:00:00+00:00",
+                "content_text": content,
+            },
+        )
+        second_id, _ = storage.upsert_appearance(
+            conn,
+            x_id,
+            {
+                "external_id": "thread-1",
+                "title": "A thread about our evaluation approach",
+                "url": "https://x.com/leader/status/1",
+                "published_at": "2026-08-01T13:00:00+00:00",
+                "content_text": content,
+            },
+        )
+
+        self.assertEqual(second_id, first_id)
+        self.assertEqual(len(storage.appearances_for_item(conn, first_id)), 2)
+
+    def test_same_title_without_runtime_requires_duplicate_review(self) -> None:
+        conn = sqlite3.connect(":memory:")
+        conn.row_factory = sqlite3.Row
+        storage.migrate(conn)
+        podcast_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="podcast", name="Example Podcast", url="https://example.com/feed.xml"),
+        )
+        youtube_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="youtube", name="Example Channel", url="https://youtube.com/channel/example"),
+        )
+        first_id, _ = storage.upsert_appearance(
+            conn,
+            podcast_id,
+            {
+                "external_id": "pod-1",
+                "title": "A conversation about AI agents",
+                "url": "https://example.com/pod-1",
+                "published_at": "2026-08-01T12:00:00+00:00",
+            },
+        )
+        second_id, _ = storage.upsert_appearance(
+            conn,
+            youtube_id,
+            {
+                "external_id": "video-1",
+                "title": "A conversation about AI agents",
+                "url": "https://youtube.com/watch?v=video-1",
+                "published_at": "2026-08-01T15:00:00+00:00",
+            },
+        )
+
+        self.assertNotEqual(second_id, first_id)
+        candidates = storage.pending_dedupe_candidates(conn)
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(
+            candidates[0]["reason"],
+            "same normalized title and publication window; duration unavailable",
+        )
+
+    def test_same_substantial_description_auto_merges_without_runtime(self) -> None:
+        conn = sqlite3.connect(":memory:")
+        conn.row_factory = sqlite3.Row
+        storage.migrate(conn)
+        podcast_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="podcast", name="Example Podcast", url="https://example.com/feed.xml"),
+        )
+        youtube_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="youtube", name="Example Channel", url="https://youtube.com/channel/example"),
+        )
+        description = "A specific account of the researchers, architecture, evidence, and conclusions. " * 8
+        first_id, _ = storage.upsert_appearance(
+            conn,
+            podcast_id,
+            {
+                "external_id": "pod-1",
+                "title": "Building an automated AI research lab",
+                "description": description,
+                "url": "https://example.com/pod-1",
+                "published_at": "2026-08-01T12:00:00+00:00",
+            },
+        )
+        second_id, _ = storage.upsert_appearance(
+            conn,
+            youtube_id,
+            {
+                "external_id": "video-1",
+                "title": "Building an Automated AI Research Lab (Full Video)",
+                "description": description,
+                "url": "https://youtube.com/watch?v=video-1",
+                "published_at": "2026-08-01T15:00:00+00:00",
+            },
+        )
+
+        self.assertEqual(second_id, first_id)
+        self.assertEqual(len(storage.appearances_for_item(conn, first_id)), 2)
+        self.assertEqual(storage.pending_dedupe_candidates(conn), [])
+
+    def test_manual_merge_preserves_prepared_content_on_canonical_item(self) -> None:
+        conn = sqlite3.connect(":memory:")
+        conn.row_factory = sqlite3.Row
+        storage.migrate(conn)
+        podcast_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="podcast", name="Example Podcast", url="https://example.com/feed.xml"),
+        )
+        youtube_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="youtube", name="Example Channel", url="https://youtube.com/channel/example"),
+        )
+        appearance = {
+            "title": "A conversation about model evaluation",
+            "published_at": "2026-08-01T12:00:00+00:00",
+        }
+        first_id, _ = storage.upsert_appearance(
+            conn,
+            podcast_id,
+            {**appearance, "external_id": "pod-1", "url": "https://example.com/pod-1"},
+        )
+        second_id, _ = storage.upsert_appearance(
+            conn,
+            youtube_id,
+            {**appearance, "external_id": "video-1", "url": "https://youtube.com/watch?v=video-1"},
+        )
+        content = "Substantial prepared source text. " * 30
+        storage.set_content(conn, second_id, content)
+
+        canonical = storage.merge_items(conn, first_id, second_id, reason="confirmed test duplicate")
+        item = storage.item_by_id(conn, canonical)
+
+        self.assertEqual(canonical, first_id)
+        self.assertEqual(item["status"], "transcribed")
+        self.assertEqual(item["content_text"], " ".join(content.split()))
+        self.assertEqual(len(storage.appearances_for_item(conn, canonical)), 2)
+        self.assertEqual(storage.pending_dedupe_candidates(conn), [])
 
 
 if __name__ == "__main__":
