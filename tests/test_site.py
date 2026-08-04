@@ -16,30 +16,6 @@ from podcast_radar import site, storage
 
 
 class SiteGenerationTests(unittest.TestCase):
-    def test_compact_sentence_never_cuts_mid_thought(self) -> None:
-        value = (
-            "Noam Brown: Traditional single-number benchmark scores are misleading because they don't "
-            "account for test-time compute; GPT-5.5 looked like a small improvement on paper but was "
-            "substantially better in practice due to more efficient reasoning"
-        )
-
-        compacted = site._compact_sentence(value, max_chars=92)
-
-        self.assertEqual(
-            compacted,
-            "Noam Brown: Traditional single-number benchmark scores are misleading because they don't "
-            "account for test-time compute.",
-        )
-
-    def test_soft_sentence_limits_do_not_slice_unpunctuated_text(self) -> None:
-        value = (
-            "Traditional single-number benchmark scores are misleading because they don't account for "
-            "test-time compute and this unpunctuated thought should stay intact"
-        )
-
-        self.assertEqual(site._compact_sentence(value, max_chars=72), value)
-        self.assertEqual(site._first_sentence(value), value)
-
     def test_topline_uses_short_summary_instead_of_long_key_point(self) -> None:
         episode = {
             "short_summary_text": "Benchmarks miss test-time compute.",

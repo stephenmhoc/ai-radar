@@ -145,3 +145,69 @@ def _ends_with_abbreviation(value: str) -> bool:
 
 def comma_join(values: list[str]) -> str:
     return ", ".join(value for value in values if value)
+
+
+SHORT_SUMMARY_MAX_CHARS = 120
+
+
+def first_sentence(value: str) -> str:
+    """The first sentence, ignoring terminators too early to end a real one."""
+    normalized = " ".join(value.split())
+    if not normalized:
+        return ""
+    for index, char in enumerate(normalized):
+        if char in ".!?" and index >= 36:
+            return normalized[: index + 1]
+    return normalized
+
+
+def short_complete_text(value: str, *, target_chars: int = 80, max_chars: int = SHORT_SUMMARY_MAX_CHARS) -> str:
+    """Trim to a complete thought that fits, or return "" if none does.
+
+    Cards, feeds, and meta descriptions all need a short line that still reads
+    as a finished sentence. Returning "" rather than a hard slice lets callers
+    fall through to the next candidate instead of publishing a fragment.
+    """
+    normalized = " ".join(value.split())
+    if not normalized:
+        return ""
+    if len(normalized) <= target_chars:
+        return normalized
+    end = complete_thought_before(normalized, max_chars=max_chars)
+    if end is None:
+        return normalized if len(normalized) <= max_chars else ""
+    return display_sentence(normalized[:end])
+
+
+def complete_thought_before(value: str, *, max_chars: int) -> int | None:
+    earliest = max(1, int(max_chars * 0.34))
+    for index, char in enumerate(value[: max_chars + 1]):
+        if char in ".!?;" and index >= earliest:
+            return index + 1
+    return None
+
+
+def complete_thought_end(value: str, *, min_chars: int) -> int | None:
+    earliest = max(1, int(min_chars * 0.62))
+    for index, char in enumerate(value):
+        if char in ".!?;" and index >= earliest:
+            return index + 1
+    return None
+
+
+def compact_sentence(value: str, *, max_chars: int) -> str:
+    """Shorten to the first complete thought past max_chars, else leave it alone."""
+    normalized = " ".join(value.split())
+    if len(normalized) <= max_chars:
+        return normalized
+    end = complete_thought_end(normalized, min_chars=max_chars)
+    if end is not None:
+        return display_sentence(normalized[:end])
+    return normalized
+
+
+def display_sentence(value: str) -> str:
+    value = value.rstrip()
+    if value.endswith(";"):
+        return value[:-1].rstrip(" ,;:") + "."
+    return value

@@ -10,7 +10,7 @@ from typing import Any
 
 from .config import Config, LLMConfig
 from . import storage
-from .text import paragraphs_to_html, strip_html, truncate
+from .text import first_sentence, paragraphs_to_html, short_complete_text, strip_html, truncate
 
 
 class LLMError(RuntimeError):
@@ -422,39 +422,13 @@ def _normalize_short_summary(value: Any, *, summary: str, key_points: list[str],
     candidates = [
         str(value or "").strip(),
         *(point.strip() for point in key_points),
-        _first_complete_sentence(summary),
+        first_sentence(summary),
         title,
     ]
     for candidate in candidates:
-        short = _short_complete_text(candidate)
+        short = short_complete_text(candidate)
         if short:
             return short
-    return ""
-
-
-def _first_complete_sentence(value: str) -> str:
-    normalized = " ".join(value.split())
-    for index, char in enumerate(normalized):
-        if char in ".!?" and index >= 36:
-            return normalized[: index + 1]
-    return normalized
-
-
-def _short_complete_text(value: str, *, target_chars: int = 80, max_chars: int = 120) -> str:
-    normalized = " ".join(value.split())
-    if not normalized:
-        return ""
-    if len(normalized) <= target_chars:
-        return normalized
-    earliest = 40
-    for index, char in enumerate(normalized[: max_chars + 1]):
-        if char in ".!?;" and index >= earliest:
-            text = normalized[: index + 1].rstrip()
-            if text.endswith(";"):
-                text = text[:-1].rstrip(" ,;:") + "."
-            return text
-    if len(normalized) <= max_chars:
-        return normalized
     return ""
 
 

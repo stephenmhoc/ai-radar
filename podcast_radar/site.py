@@ -14,10 +14,19 @@ from urllib.parse import urljoin
 
 from .config import Config
 from . import storage
-from .text import comma_join, escape, paragraphs_to_html, slugify, strip_html, transcript_to_html
+from .text import (
+    comma_join,
+    compact_sentence,
+    escape,
+    first_sentence,
+    paragraphs_to_html,
+    short_complete_text,
+    slugify,
+    strip_html,
+    transcript_to_html,
+)
 
 
-SHORT_SUMMARY_MAX_CHARS = 120
 TOPLINE_MAX_CHARS = 100
 
 
@@ -79,7 +88,7 @@ def episode_slug(episode) -> str:
 def render_index(config: Config, episodes, slugs: dict[int, str], *, social_image_url: str | None = None) -> str:
     cards = "\n".join(render_card(config, episode, slugs[int(episode["id"])]) for episode in episodes)
     controls = render_controls(config, episodes)
-    search_panel = render_search_panel(episodes)
+    search_panel = render_search_panel()
     if not cards:
         cards = """
         <section class="empty">
@@ -135,7 +144,7 @@ def render_card(config: Config, episode, slug: str) -> str:
     display_topics = _display_topics(topics, labs)
     summary = _summary_teaser(episode)
     topline = _topline(episode, guests=guests)
-    source_title = _compact_sentence(str(episode["title"]), max_chars=92)
+    source_title = compact_sentence(str(episode["title"]), max_chars=92)
     lab_tokens = " ".join(_filter_lab_tokens(labs))
     topic_tokens = " ".join(_lab_token(topic) for topic in display_topics)
     source_meta = _source_meta_spans(
@@ -1105,7 +1114,7 @@ def _episode_meta_description(episode) -> str:
     if not summary:
         summary = strip_html(str(episode["summary_html"] or ""))
     if summary:
-        return _first_sentence(summary)
+        return first_sentence(summary)
     return _why_it_matters(episode)
 
 
@@ -1251,93 +1260,8 @@ def render_podcast_tools(episode) -> str:
     """
 
 
-def render_briefing(config: Config, episodes, slugs: dict[int, str]) -> str:
-    if not episodes:
-        return ""
-    lead = episodes[0]
-    lead_slug = slugs[int(lead["id"])]
-    lead_path = episode_path_for(lead_slug)
-    image_url = lead["image_url"] or lead["feed_image_url"] or ""
-    image = f'<img src="{escape(image_url)}" alt="" loading="lazy">' if image_url else '<div class="art-fallback"></div>'
-    guests = _people(lead["guests_json"]) or _people(lead["matched_people_json"])
-    labs = _people(lead["labs_json"])
-    lead_topics = _display_topics(_people(lead["topics_json"]), labs)
-    lead_topic_tags = "".join(f"<span>{escape(topic)}</span>" for topic in lead_topics[:4])
-    lab_count = len({lab for episode in episodes for lab in _people(episode["labs_json"])})
-    feed_count = len({str(episode["feed_name"]) for episode in episodes})
-    topic_count = len({_lab_token(topic) for episode in episodes for topic in _display_topics(_people(episode["topics_json"]), _people(episode["labs_json"]))})
-    updated = _date_label(lead["published_at"])
-    queue = "".join(render_signal_item(episode, slugs[int(episode["id"])]) for episode in episodes[1:4])
-    return f"""
-    <section class="briefing" aria-label="Latest AI lab episode">
-      <article class="spotlight">
-        <a class="spotlight-art" href="{escape(lead_path)}">{image}</a>
-        <div class="spotlight-copy">
-          <p class="eyebrow">Latest verified signal</p>
-          <h2><a href="{escape(lead_path)}">{escape(lead['summary_title'] or lead['title'])}</a></h2>
-          <p class="spotlight-meta">{escape(comma_join(guests) or 'Unknown guest')} · {escape(comma_join(labs) or 'Unknown lab')} · {escape(lead['feed_name'])}</p>
-          <p class="spotlight-signal">{escape(_why_it_matters(lead))}</p>
-          <div class="topic-tags">{lead_topic_tags}</div>
-          <div class="actions"><a href="{escape(lead_path)}">Open episode</a>{source_link(lead)}</div>
-        </div>
-      </article>
-      <aside class="radar-panel">
-        <div class="metric-grid" aria-label="Coverage summary">
-          <div><strong>{len(episodes)}</strong><span>Episodes</span></div>
-          <div><strong>{lab_count}</strong><span>Labs</span></div>
-          <div><strong>{feed_count}</strong><span>Podcasts</span></div>
-          <div><strong>{topic_count}</strong><span>Topics</span></div>
-        </div>
-        <div class="lab-meter">
-          <div class="panel-heading"><span>Coverage</span><span>Latest {escape(updated)}</span></div>
-          {render_lab_meter(episodes)}
-        </div>
-        <div class="signal-queue">
-          <div class="panel-heading"><span>Next signals</span><span>Newest first</span></div>
-          {queue}
-        </div>
-      </aside>
-    </section>
-    """
-
-
-def render_lab_meter(episodes) -> str:
-    counts: dict[str, int] = {}
-    for episode in episodes:
-        for lab in _people(episode["labs_json"]):
-            counts[lab] = counts.get(lab, 0) + 1
-    if not counts:
-        return ""
-    max_count = max(counts.values())
-    rows = []
-    for lab, count in sorted(counts.items(), key=lambda item: (-item[1], item[0].lower()))[:6]:
-        width = max(8, round((count / max_count) * 100))
-        rows.append(
-            f"""
-            <div class="meter-row">
-              <span>{escape(lab)}</span>
-              <div><i style="width: {width}%"></i></div>
-              <b>{count}</b>
-            </div>
-            """
-        )
-    return "".join(rows)
-
-
-def render_signal_item(episode, slug: str) -> str:
-    labs = _people(episode["labs_json"])
-    guests = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
-    return f"""
-    <a class="signal-item" href="{escape(episode_path_for(slug))}">
-      <span>{escape(_date_label(episode["published_at"]))}</span>
-      <strong>{escape(episode["summary_title"] or episode["title"])}</strong>
-      <em>{escape(comma_join(guests) or "Unknown guest")} · {escape(comma_join(labs) or "Unknown lab")}</em>
-    </a>
-    """
-
-
-def render_search_panel(episodes) -> str:
-    return f"""
+def render_search_panel() -> str:
+    return """
     <div class="search-panel">
       <label class="command-search">
         <span>Search radar</span>
@@ -1370,14 +1294,14 @@ def render_side_rail(config: Config, episodes, slugs: dict[int, str]) -> str:
 
 def render_rail_item(episode, slug: str) -> str:
     guests = _people(episode["guests_json"]) or _people(episode["matched_people_json"])
-    source_title = _compact_sentence(str(episode["title"]), max_chars=68)
+    source_title = compact_sentence(str(episode["title"]), max_chars=68)
     runtime = _duration_label(episode["duration"])
     meta_parts = [str(episode["feed_name"]), source_title]
     if runtime:
         meta_parts.append(runtime)
     return f"""
     <a class="rail-item" href="{escape(episode_path_for(slug))}">
-      <strong>{escape(_compact_sentence(_topline(episode, guests=guests), max_chars=74))}</strong>
+      <strong>{escape(compact_sentence(_topline(episode, guests=guests), max_chars=74))}</strong>
       <span class="rail-source">{escape(' · '.join(meta_parts))}</span>
     </a>
     """
@@ -1510,13 +1434,13 @@ def _why_it_matters(episode) -> str:
         return key_points[0]
     summary = str(episode["summary_text"] or "").strip()
     if summary:
-        return _first_sentence(summary)
+        return first_sentence(summary)
     reason = str(episode["skip_reason"] or "").strip()
     if reason:
         return reason
     description = str(episode["description"] or "").strip()
     if description:
-        return _first_sentence(description)
+        return first_sentence(description)
     return "This episode was verified as relevant to major AI lab activity."
 
 
@@ -1549,75 +1473,14 @@ def _short_summary(episode, *, include_title: bool = True) -> str:
     candidates.extend(
         [
             *_people(episode["key_points_json"]),
-            _first_sentence(summary),
+            first_sentence(summary),
         ]
     )
     for candidate in candidates:
-        short = _short_complete_text(str(candidate or ""))
+        short = short_complete_text(str(candidate or ""))
         if short:
             return short
     return ""
-
-
-def _short_complete_text(value: str, *, target_chars: int = 80, max_chars: int = SHORT_SUMMARY_MAX_CHARS) -> str:
-    normalized = " ".join(value.split())
-    if not normalized:
-        return ""
-    if len(normalized) <= target_chars:
-        return normalized
-    end = _complete_thought_before(normalized, max_chars=max_chars)
-    if end is None:
-        return normalized if len(normalized) <= max_chars else ""
-    return _display_sentence(normalized[:end])
-
-
-def _complete_thought_before(value: str, *, max_chars: int) -> int | None:
-    earliest = max(1, int(max_chars * 0.34))
-    for index, char in enumerate(value[: max_chars + 1]):
-        if char in ".!?;" and index >= earliest:
-            return index + 1
-    return None
-
-
-def _compact_sentence(value: str, *, max_chars: int) -> str:
-    normalized = " ".join(value.split())
-    if len(normalized) <= max_chars:
-        return normalized
-    end = _complete_thought_end(normalized, min_chars=max_chars)
-    if end is not None:
-        return _display_sentence(normalized[:end])
-    return normalized
-
-
-def _first_sentence(value: str) -> str:
-    normalized = " ".join(value.split())
-    if not normalized:
-        return ""
-    for index, char in enumerate(normalized):
-        if char in ".!?" and index >= 36:
-            return normalized[: index + 1]
-    return normalized
-
-
-def _complete_thought_end(value: str, *, min_chars: int) -> int | None:
-    earliest = max(1, int(min_chars * 0.62))
-    for index, char in enumerate(value):
-        if char in ".!?;" and index >= earliest:
-            return index + 1
-    return None
-
-
-def _display_sentence(value: str) -> str:
-    value = value.rstrip()
-    if value.endswith(";"):
-        return value[:-1].rstrip(" ,;:") + "."
-    return value
-
-
-def _affiliation_label(labs: list[str]) -> str:
-    if not labs:
-        return ""
-    return f' <span>{escape(comma_join(labs))}</span>'
 
 
 def _summary_html(episode) -> str:
@@ -1640,19 +1503,6 @@ def _transcript_html(episode) -> str:
     if status == "summary_failed":
         return '<p class="notice">Transcript is available, but summarization failed.</p>'
     return '<p class="notice">Transcript pending. This episode has been included and local transcription is still running or queued.</p>'
-
-
-def _card_status(episode) -> str:
-    status = str(episode["status"])
-    if status == "relevant":
-        return "Pending transcript"
-    if status == "transcribed":
-        return "Pending summary"
-    if status == "transcription_failed":
-        return "Transcription failed"
-    if status == "summary_failed":
-        return "Summary failed"
-    return ""
 
 
 def _detail_status(episode) -> str:
@@ -2074,15 +1924,6 @@ main:focus {
   background: #f6faf9;
 }
 
-.site-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--muted);
-  font-size: 0.86rem;
-  white-space: nowrap;
-}
-
 .search-panel {
   min-width: 0;
   padding: 12px;
@@ -2121,258 +1962,12 @@ main:focus {
   border-color: #0b5cad;
 }
 
-.rss-text-link {
-  min-height: 0;
-  margin-left: auto;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  color: var(--link);
-  font-size: 0.78rem;
-  font-weight: 650;
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
-}
-
-.rss-text-link:hover {
-  background: transparent;
-  color: #084987;
-}
-
-.briefing {
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(340px, 0.95fr);
-  gap: 14px;
-  align-items: stretch;
-  padding: 18px 0 14px;
-}
-
-.spotlight {
-  display: grid;
-  grid-template-columns: minmax(180px, 0.52fr) minmax(0, 1fr);
-  gap: 18px;
-  min-height: 310px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: linear-gradient(135deg, #ffffff 0%, #ffffff 58%, #f7fbfa 100%);
-  box-shadow: 0 18px 50px rgba(31, 41, 51, 0.08);
-}
-
-.spotlight-art {
-  min-height: 100%;
-  background: #e6edf2;
-}
-
 .spotlight-art img,
 .spotlight-art .art-fallback {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.spotlight-copy {
-  min-width: 0;
-  padding: 24px 22px 20px 0;
-  align-self: center;
-}
-
-.spotlight h2 {
-  max-width: 680px;
-  margin: 0 0 10px;
-  color: var(--ink-strong);
-  font-size: clamp(1.55rem, 3vw, 2.45rem);
-  line-height: 1.04;
-  letter-spacing: 0;
-}
-
-.spotlight h2 a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.spotlight-meta {
-  margin: 0 0 12px;
-  color: var(--muted);
-  font-size: 0.94rem;
-}
-
-.spotlight-signal {
-  margin: 0 0 14px;
-  color: var(--ink);
-  font-size: 1.05rem;
-  line-height: 1.45;
-}
-
-.radar-panel {
-  display: grid;
-  grid-template-rows: auto auto 1fr;
-  gap: 10px;
-  min-width: 0;
-}
-
-.metric-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
-
-.metric-grid div,
-.lab-meter,
-.signal-queue {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.82);
-}
-
-.metric-grid div {
-  padding: 11px 10px;
-}
-
-.metric-grid strong {
-  display: block;
-  color: var(--ink-strong);
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.metric-grid span {
-  color: var(--muted);
-  font-size: 0.74rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.lab-meter,
-.signal-queue {
-  padding: 12px;
-}
-
-.panel-heading {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 10px;
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.meter-row {
-  display: grid;
-  grid-template-columns: 96px minmax(0, 1fr) 24px;
-  gap: 8px;
-  align-items: center;
-  margin: 8px 0;
-  font-size: 0.84rem;
-}
-
-.meter-row span {
-  overflow: hidden;
-  color: var(--ink);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.meter-row div {
-  height: 8px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: #edf2f5;
-}
-
-.meter-row i {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, var(--accent), var(--accent-3));
-}
-
-.meter-row b {
-  color: var(--muted);
-  font-size: 0.78rem;
-  text-align: right;
-}
-
-.signal-queue {
-  display: grid;
-  align-content: start;
-}
-
-.signal-item {
-  display: grid;
-  gap: 2px;
-  padding: 9px 0;
-  border-top: 1px solid var(--line);
-  color: inherit;
-  text-decoration: none;
-}
-
-.signal-item:first-of-type {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.signal-item span,
-.signal-item em {
-  color: var(--muted);
-  font-size: 0.76rem;
-  font-style: normal;
-}
-
-.signal-item strong {
-  display: -webkit-box;
-  overflow: hidden;
-  color: var(--ink-strong);
-  font-size: 0.9rem;
-  line-height: 1.24;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
-.controls {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  display: grid;
-  grid-template-columns: minmax(220px, 1.5fr) repeat(3, minmax(150px, 0.8fr));
-  gap: 10px;
-  align-items: end;
-  margin: 4px 0 0;
-  padding: 12px 0 9px;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background: rgba(251, 252, 253, 0.94);
-  backdrop-filter: blur(12px);
-}
-
-.controls label {
-  display: grid;
-  gap: 5px;
-  min-width: 0;
-}
-
-.controls label span {
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.controls input,
-.controls select {
-  width: 100%;
-  min-height: 36px;
-  justify-content: start;
-  color: var(--ink);
-  font: inherit;
-}
-
-.controls input {
-  padding: 8px 11px;
 }
 
 .filters {
@@ -2608,20 +2203,6 @@ main:focus {
   background: linear-gradient(135deg, #dce8e5, #f2e7d7);
 }
 
-.meta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 8px;
-  color: var(--muted);
-  font-size: 0.76rem;
-}
-
-.meta-row span:not(:last-child)::after {
-  content: "·";
-  color: #9aa6b2;
-  margin-left: 8px;
-}
-
 .episode-card h2 {
   margin: 0;
   font-size: 1.07rem;
@@ -2792,21 +2373,6 @@ main:focus {
   color: var(--ink);
 }
 
-.signal {
-  color: var(--ink);
-  font-size: 0.92rem;
-  line-height: 1.35;
-}
-
-.summary {
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  font-size: 0.88rem;
-  line-height: 1.38;
-}
-
 .status-pill,
 .notice {
   color: var(--muted);
@@ -2828,14 +2394,6 @@ main:focus {
   border-color: #f0c4bc;
 }
 
-.tag-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 10px;
-  margin: 7px 0;
-}
-
 .tags,
 .topic-tags {
   display: flex;
@@ -2852,12 +2410,6 @@ main:focus {
   border-radius: 999px;
   padding: 3px 8px;
   font-size: 0.82rem;
-}
-
-.topic-tags span {
-  color: #48525d;
-  border-color: #d8e0e7;
-  background: #f5f7f9;
 }
 
 .actions,
@@ -3074,9 +2626,7 @@ main:focus {
 .empty {
   padding: 42px 0;
   color: var(--muted);
-}
-
-@media (max-width: 720px) {
+}@media (max-width: 720px) {
   .shell { width: min(100% - 24px, 1120px); padding-top: 18px; }
   .source-cards { grid-template-columns: 1fr; }
   .source-card { min-height: 112px; }
@@ -3087,8 +2637,6 @@ main:focus {
   }
   .masthead h1 { font-size: 2.05rem; }
   .lede { font-size: 0.94rem; }
-  .site-actions { margin-top: 14px; }
-  .rss-link { margin-top: 18px; }
   .search-panel { padding: 10px; }
   .command-search { gap: 4px; }
   .command-search input {
@@ -3096,33 +2644,7 @@ main:focus {
     padding: 7px 10px;
     font-size: 0.9rem;
   }
-  .briefing { grid-template-columns: 1fr; padding-top: 14px; }
-  .spotlight {
-    grid-template-columns: 86px minmax(0, 1fr);
-    gap: 12px;
-    min-height: 0;
-  }
-  .spotlight-art { min-height: 100%; }
-  .spotlight-copy { padding: 14px 12px 14px 0; }
   .spotlight .eyebrow { margin-bottom: 6px; font-size: 0.68rem; }
-  .spotlight h2 { font-size: 1.2rem; line-height: 1.08; }
-  .spotlight-meta { font-size: 0.82rem; }
-  .spotlight-signal {
-    display: -webkit-box;
-    overflow: hidden;
-    font-size: 0.9rem;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-  }
-  .spotlight .topic-tags { display: none; }
-  .metric-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .metric-grid div { padding: 9px 8px; }
-  .metric-grid strong { font-size: 1.05rem; }
-  .metric-grid span { font-size: 0.62rem; }
-  .signal-queue { display: none; }
-  .meter-row { grid-template-columns: 88px minmax(0, 1fr) 22px; }
-  .controls { grid-template-columns: 1fr 1fr; gap: 8px; top: 0; }
-  .controls .search-box { grid-column: 1 / -1; }
   .filters {
     grid-template-columns: 1fr;
     gap: 8px;
@@ -3189,11 +2711,6 @@ main:focus {
     display: none;
   }
   .people { font-size: 0.86rem; }
-  .signal { font-size: 0.88rem; }
-  .summary {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-  }
   .tags { gap: 5px; margin: 7px 0; }
   .tags span { font-size: 0.78rem; padding: 2px 7px; }
   .actions {
