@@ -15,7 +15,7 @@ from difflib import SequenceMatcher
 from html.parser import HTMLParser
 from typing import Any
 
-from . import feeds, net, storage
+from . import dates, feeds, net, storage
 from .config import Config, SourceConfig
 from .text import clean_text, strip_html
 
@@ -35,7 +35,7 @@ def collect(
         "items_before_since": 0,
         "appearances_inserted": 0,
     }
-    since = feeds._parse_cutoff(published_since or config.app.processed_after)
+    since = dates.parse_cutoff(published_since or config.app.processed_after)
     selected_names = set(source_names)
     for source in config.active_sources:
         if selected_names and source.name not in selected_names:
@@ -59,7 +59,7 @@ def collect(
         stats["sources"] += 1
         kept = 0
         for appearance in appearances:
-            if since is not None and not feeds._episode_is_since(appearance, since):
+            if since is not None and not feeds.entry_is_since(appearance, since):
                 stats["items_before_since"] += 1
                 continue
             _, inserted = storage.upsert_appearance(conn, source_id, appearance)
@@ -130,7 +130,7 @@ def _collect_rss(
             appearance["media_type"] = "text/html"
             # Keep old entries in the result so the caller's cutoff accounting
             # remains accurate, but do not re-download their article pages.
-            if since is None or feeds._episode_is_since(appearance, since):
+            if since is None or feeds.entry_is_since(appearance, since):
                 appearance["content_text"] = _article_text(
                     str(entry.get("episode_url") or ""),
                     fallback=str(entry.get("description") or ""),
@@ -438,7 +438,7 @@ def _matching_podcast_appearance(
         (base_name, f"{base_name}%"),
     ).fetchall()
     video_title = _normalized_match_title(str(video.get("title") or ""))
-    video_duration = _duration_seconds(video.get("duration"))
+    video_duration = dates.duration_seconds(video.get("duration"))
     best = None
     best_score = 0.0
     for row in rows:
@@ -446,8 +446,8 @@ def _matching_podcast_appearance(
         if not video_title or not podcast_title:
             continue
         title_score = SequenceMatcher(None, video_title, podcast_title).ratio()
-        duration_close = _seconds_close(video_duration, _duration_seconds(row["duration"]))
-        date_close = _datetimes_close(published_at, row["published_at"], days=4)
+        duration_close = dates.durations_close(video_duration, row["duration"])
+        date_close = dates.datetimes_close(published_at, row["published_at"], days=4)
         token_score, shared_tokens = _title_token_score(video_title, podcast_title)
         if duration_close and date_close:
             score = 1.1
@@ -480,41 +480,6 @@ def _title_token_score(first: str, second: str) -> tuple[float, int]:
     if not left or not right:
         return 0.0, shared
     return shared / min(len(left), len(right)), shared
-
-
-def _datetimes_close(first: Any, second: Any, *, days: int) -> bool:
-    if not first or not second:
-        return False
-    try:
-        left = dt.datetime.fromisoformat(str(first).replace("Z", "+00:00"))
-        right = dt.datetime.fromisoformat(str(second).replace("Z", "+00:00"))
-    except ValueError:
-        return False
-    if left.tzinfo is None:
-        left = left.replace(tzinfo=dt.timezone.utc)
-    if right.tzinfo is None:
-        right = right.replace(tzinfo=dt.timezone.utc)
-    return abs((left - right).total_seconds()) <= days * 86400
-
-
-def _duration_seconds(value: Any) -> int | None:
-    if value is None:
-        return None
-    if isinstance(value, (int, float)):
-        return int(value)
-    parts = str(value).split(":")
-    if not parts or not all(part.isdigit() for part in parts):
-        return None
-    total = 0
-    for part in parts:
-        total = total * 60 + int(part)
-    return total
-
-
-def _seconds_close(first: int | None, second: int | None) -> bool:
-    if first is None or second is None:
-        return False
-    return abs(first - second) <= max(120, min(first, second) * 0.12)
 
 
 def _collect_youtube_feed(
@@ -843,25 +808,19 @@ def _duration_string(value: Any) -> str | None:
 
 
 def _youtube_duration(value: Any) -> str | None:
-    match = re.fullmatch(r"P(?:\d+D)?T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", str(value or ""))
-    if not match:
+    seconds = dates.duration_seconds(value)
+    if seconds is None:
         return None
-    hours, minutes, seconds = (int(part or 0) for part in match.groups())
-    if hours:
-        return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
-    return f"{minutes:02d}:{seconds:02d}"
+    return _duration_string(seconds)
 
 
 def _iso_datetime(value: Any) -> str | None:
     if not value:
         return None
-    try:
-        parsed = dt.datetime.fromisoformat(str(value).replace("Z", "+00:00"))
-    except ValueError:
+    parsed = dates.parse_datetime(value)
+    if parsed is None:
         return str(value)
-    if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=dt.timezone.utc)
-    return parsed.astimezone(dt.timezone.utc).replace(microsecond=0).isoformat()
+    return parsed.replace(microsecond=0).isoformat()
 
 
 def _x_post_text(post: dict[str, Any]) -> str:

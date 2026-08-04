@@ -3,13 +3,11 @@ from __future__ import annotations
 import datetime as dt
 import email.utils
 import hashlib
-import sys
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from typing import Any
 
-from .config import Config, FeedConfig
-from . import net, storage
+from . import dates, net
 from .text import clean_text, strip_html
 
 
@@ -39,54 +37,6 @@ def parse_feed(xml_bytes: bytes, fallback_name: str, hosts: tuple[str, ...] = ()
         if episode:
             episodes.append(episode)
     return ParsedFeed(title=title, homepage_url=homepage_url, image_url=image_url, episodes=episodes)
-
-
-def ingest(
-    config: Config,
-    conn,
-    *,
-    limit_per_feed: int | None = None,
-    published_since: str | None = None,
-) -> dict[str, int]:
-    stats = {
-        "feeds": 0,
-        "feed_errors": 0,
-        "episodes_seen": 0,
-        "episodes_before_since": 0,
-        "episodes_inserted": 0,
-    }
-    since = _parse_cutoff(published_since or config.app.processed_after)
-    for feed in config.active_feeds:
-        feed_id = storage.upsert_feed(conn, feed)
-        try:
-            parsed = parse_feed(fetch_feed(feed.url, config.app.user_agent), feed.name, feed.hosts)
-        except Exception as exc:  # noqa: BLE001 - continue monitoring other feeds
-            stats["feed_errors"] += 1
-            print(f"warning: feed failed: {feed.name}: {exc}", file=sys.stderr)
-            conn.commit()
-            continue
-        storage.update_feed_metadata(
-            conn,
-            feed_id,
-            image_url=parsed.image_url,
-            homepage_url=parsed.homepage_url,
-        )
-        stats["feeds"] += 1
-        kept = 0
-        for episode in parsed.episodes:
-            if since is not None and not _episode_is_since(episode, since):
-                stats["episodes_before_since"] += 1
-                continue
-            episode["hosts"] = list(feed.hosts)
-            _, inserted = storage.upsert_episode(conn, feed_id, episode)
-            stats["episodes_seen"] += 1
-            if inserted:
-                stats["episodes_inserted"] += 1
-            kept += 1
-            if limit_per_feed is not None and kept >= limit_per_feed:
-                break
-        conn.commit()
-    return stats
 
 
 def _parse_rss_item(item: ET.Element, feed_image_url: str | None, hosts: tuple[str, ...]) -> dict[str, Any] | None:
@@ -242,43 +192,25 @@ def _authors(element: ET.Element) -> list[str]:
 
 
 def _parse_date(value: str | None) -> str | None:
+    """Normalize an RSS/Atom date, keeping the raw value when it is unreadable."""
     if not value:
         return None
     try:
         parsed = email.utils.parsedate_to_datetime(value)
     except (TypeError, ValueError):
-        try:
-            parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
-        except ValueError:
+        parsed = None
+    if parsed is None:
+        normalized = dates.parse_datetime(value)
+        if normalized is None:
             return value
+        return normalized.replace(microsecond=0).isoformat()
     if parsed.tzinfo is None:
         parsed = parsed.replace(tzinfo=dt.timezone.utc)
     return parsed.astimezone(dt.timezone.utc).replace(microsecond=0).isoformat()
 
 
-def _parse_cutoff(value: str | None) -> dt.datetime | None:
-    if not value:
-        return None
-    try:
-        parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
-    except ValueError:
-        parsed = dt.datetime.fromisoformat(value + "T00:00:00+00:00")
-    if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=dt.timezone.utc)
-    return parsed.astimezone(dt.timezone.utc)
-
-
-def _episode_is_since(episode: dict[str, Any], since: dt.datetime) -> bool:
-    published_at = episode.get("published_at")
-    if not published_at:
-        return True
-    try:
-        parsed = dt.datetime.fromisoformat(str(published_at).replace("Z", "+00:00"))
-    except ValueError:
-        return True
-    if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=dt.timezone.utc)
-    return parsed.astimezone(dt.timezone.utc) >= since
+def entry_is_since(entry: dict[str, Any], since: dt.datetime) -> bool:
+    return dates.is_since(entry.get("published_at"), since)
 
 
 def _stable_guid(title: str, published: str | None) -> str:

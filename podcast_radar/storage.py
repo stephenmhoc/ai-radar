@@ -9,6 +9,7 @@ import sqlite3
 from difflib import SequenceMatcher
 from typing import Any, Iterable
 
+from . import dates
 from .config import Config, FeedConfig, SourceConfig
 
 
@@ -370,16 +371,6 @@ def update_source_metadata(
             source_id,
         ),
     )
-
-
-def update_feed_metadata(
-    conn: sqlite3.Connection,
-    feed_id: int,
-    *,
-    image_url: str | None,
-    homepage_url: str | None,
-) -> None:
-    update_source_metadata(conn, feed_id, image_url=image_url, homepage_url=homepage_url)
 
 
 def upsert_appearance(
@@ -1069,7 +1060,7 @@ def _duplicate_score(appearance: dict[str, Any], content_hash: str | None, row: 
     if len(left.split()) < 4 or len(right.split()) < 4:
         return 0.0, "title too short"
     title_score = SequenceMatcher(None, left, right).ratio()
-    if not _dates_close(appearance.get("published_at"), row["published_at"], days=4):
+    if not dates.datetimes_close(appearance.get("published_at"), row["published_at"], days=4):
         return title_score * 0.6, "similar title outside publication window"
     incoming_description = _normalized_description(str(appearance.get("description") or ""))
     existing_description = _normalized_description(
@@ -1081,7 +1072,7 @@ def _duplicate_score(appearance: dict[str, Any], content_hash: str | None, row: 
         and title_score >= 0.75
     ):
         return 0.99, "same substantial description, similar title, and publication window"
-    duration_matches = _durations_close(appearance.get("duration"), row["duration"])
+    duration_matches = dates.durations_close(appearance.get("duration"), row["duration"])
     if left == right:
         if duration_matches:
             return 0.98, "same normalized title, publication window, and duration"
@@ -1138,46 +1129,6 @@ def _normalized_title(value: str) -> str:
 
 def _normalized_description(value: str) -> str:
     return " ".join(re.findall(r"[a-z0-9]+", value.casefold()))
-
-
-def _dates_close(first: Any, second: Any, *, days: int) -> bool:
-    left = _parse_datetime(first)
-    right = _parse_datetime(second)
-    if left is None or right is None:
-        return False
-    return abs((left - right).total_seconds()) <= days * 86400
-
-
-def _parse_datetime(value: Any) -> dt.datetime | None:
-    if not value:
-        return None
-    try:
-        parsed = dt.datetime.fromisoformat(str(value).replace("Z", "+00:00"))
-    except ValueError:
-        return None
-    if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=dt.timezone.utc)
-    return parsed.astimezone(dt.timezone.utc)
-
-
-def _durations_close(first: Any, second: Any) -> bool:
-    left = _duration_seconds(first)
-    right = _duration_seconds(second)
-    if left is None or right is None:
-        return False
-    return abs(left - right) <= max(120, min(left, right) * 0.12)
-
-
-def _duration_seconds(value: Any) -> int | None:
-    if not value:
-        return None
-    parts = str(value).split(":")
-    if not all(part.isdigit() for part in parts):
-        return None
-    total = 0
-    for part in parts:
-        total = total * 60 + int(part)
-    return total
 
 
 def _ensure_column(conn: sqlite3.Connection, table: str, column: str, definition: str) -> None:
