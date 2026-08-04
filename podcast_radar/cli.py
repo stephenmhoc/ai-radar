@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import contextlib
 import http.server
 import os
 import pathlib
@@ -89,12 +90,17 @@ def main(argv: list[str] | None = None) -> int:
         print(f"wrote={path}")
         print(f"load with: launchctl bootstrap gui/$(id -u) {path}")
         return 0
+    if args.command == "serve-site":
+        return serve_site(config, args.host, args.port)
     if args.command in {"judge", "process", "run"}:
         llm_error = llm_preflight_error(config)
         if llm_error:
             print(f"error: {llm_error}", file=sys.stderr)
             return 2
-    with storage.connect(config) as conn:
+    # closing() closes the handle; the inner `with conn` keeps the implicit
+    # commit-on-success that the commands relied on. sqlite3's own context
+    # manager only manages the transaction, never the connection.
+    with contextlib.closing(storage.connect(config)) as conn, conn:
         if args.command == "ingest":
             stats = collectors.collect(
                 config,
@@ -164,8 +170,6 @@ def main(argv: list[str] | None = None) -> int:
             conn.commit()
             print(f"canonical_item_id={canonical}")
             return 0
-    if args.command == "serve-site":
-        return serve_site(config, args.host, args.port)
     parser.error(f"unknown command: {args.command}")
     return 2
 
@@ -195,7 +199,7 @@ def doctor(config: Config) -> int:
             if source.kind == "youtube" and (source.feed_url or source.playlist_url):
                 continue
             warnings.append(f"{env_name} is not set; {source.name} collection will be skipped")
-    with storage.connect(config) as conn:
+    with contextlib.closing(storage.connect(config)) as conn:
         counts = storage.status_counts(conn)
         source_counts = storage.source_counts(conn)
     print(f"config_root={config.root}")

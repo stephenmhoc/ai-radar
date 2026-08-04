@@ -13,3 +13,8 @@ podcast-radar = "podcast_radar.cli:main"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+# The distribution is named ai-radar but the import package is podcast_radar,
+# so hatchling cannot infer what to ship and refuses to build without this.
+[tool.hatch.build.targets.wheel]
+packages = ["podcast_radar"]
