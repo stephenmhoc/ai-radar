@@ -5,10 +5,9 @@ import pathlib
 import shutil
 import subprocess
 import urllib.parse
-import urllib.request
 
 from .config import Config
-from . import storage
+from . import net, storage
 from .text import clean_text, slugify, strip_html
 
 
@@ -90,8 +89,12 @@ def _run_transcription_command(command: list[str], *, command_output: bool) -> N
 
 def download_audio(config: Config, audio_url: str, output_path: pathlib.Path) -> None:
     max_bytes = config.transcription.max_audio_mb * 1024 * 1024
-    request = urllib.request.Request(audio_url, headers={"User-Agent": config.app.user_agent})
-    with urllib.request.urlopen(request, timeout=180) as response:
+    with net.open_url(
+        audio_url,
+        user_agent=config.app.user_agent,
+        timeout=180,
+        purpose="audio download",
+    ) as response:
         length = response.headers.get("Content-Length")
         if length and int(length) > max_bytes:
             raise TranscriptionError(f"audio is larger than max_audio_mb: {length} bytes")

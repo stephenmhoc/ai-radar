@@ -4,14 +4,12 @@ import datetime as dt
 import email.utils
 import hashlib
 import sys
-import urllib.error
-import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from typing import Any
 
 from .config import Config, FeedConfig
-from . import storage
+from . import net, storage
 from .text import clean_text, strip_html
 
 
@@ -24,9 +22,7 @@ class ParsedFeed:
 
 
 def fetch_feed(url: str, user_agent: str, timeout: int = 30) -> bytes:
-    request = urllib.request.Request(url, headers={"User-Agent": user_agent})
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-        return response.read()
+    return net.fetch_bytes(url, user_agent=user_agent, timeout=timeout, purpose="feed fetch")
 
 
 def parse_feed(xml_bytes: bytes, fallback_name: str, hosts: tuple[str, ...] = ()) -> ParsedFeed:

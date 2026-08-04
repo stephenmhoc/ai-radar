@@ -15,7 +15,7 @@ from difflib import SequenceMatcher
 from html.parser import HTMLParser
 from typing import Any
 
-from . import feeds, storage
+from . import feeds, net, storage
 from .config import Config, SourceConfig
 from .text import clean_text, strip_html
 
@@ -657,9 +657,7 @@ def _article_text(url: str, *, fallback: str, user_agent: str) -> str:
 
 
 def _fetch_html(url: str, *, user_agent: str) -> str:
-    request = urllib.request.Request(url, headers={"User-Agent": user_agent})
-    with urllib.request.urlopen(request, timeout=45) as response:
-        return response.read().decode(response.headers.get_content_charset() or "utf-8", errors="replace")
+    return net.fetch_text(url, user_agent=user_agent, purpose="article fetch")
 
 
 class _BlogHTMLParser(HTMLParser):
