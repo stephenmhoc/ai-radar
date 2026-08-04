@@ -209,6 +209,25 @@ async function checkViewport(browserInstance, viewport) {
   }
 
   await page.screenshot({ path: join(outDir, `${viewport.name}.png`), fullPage: true });
+
+  await page.goto(`http://${host}:${port}/sources/`, { waitUntil: "networkidle" });
+  await runAxe(page, `${viewport.name} sources page`);
+  await expectCount(page, ".source-group", 3, "source medium groups");
+  await expectCount(page, ".source-card", 40, "monitored source cards");
+  for (const sourceName of [
+    "Satya Nadella — sn scratchpad",
+    "Dario Amodei",
+    "Sam Altman",
+    "Dwarkesh Podcast — YouTube",
+    "Invest Like the Best — YouTube",
+    "OpenAI Podcast — YouTube",
+  ]) {
+    if (!(await page.getByText(sourceName, { exact: true }).count())) {
+      throw new Error(`sources page is missing ${sourceName}`);
+    }
+  }
+  await page.screenshot({ path: join(outDir, `${viewport.name}-sources.png`), fullPage: true });
+
   if (!firstDetailHref) throw new Error("missing first episode detail href");
   await page.goto(new URL(firstDetailHref, `http://${host}:${port}/`).toString(), { waitUntil: "networkidle" });
   await runAxe(page, `${viewport.name} detail page`);

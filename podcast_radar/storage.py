@@ -399,6 +399,7 @@ def upsert_appearance(
     content_text = str(appearance.get("content_text") or "").strip()
     content_hash = _content_hash(content_text)
     authors = _as_list(appearance.get("authors") or appearance.get("hosts"))
+    hinted_item_id = _valid_canonical_hint(conn, appearance.get("canonical_item_id"))
     if existing is not None:
         item_id = int(existing["item_id"])
         conn.execute(
@@ -427,11 +428,39 @@ def upsert_appearance(
                 int(existing["id"]),
             ),
         )
+        if hinted_item_id is not None and hinted_item_id != item_id:
+            conn.execute(
+                "UPDATE appearances SET item_id = ?, updated_at = ? WHERE id = ?",
+                (hinted_item_id, timestamp, int(existing["id"])),
+            )
+            remaining = conn.execute(
+                "SELECT COUNT(*) FROM appearances WHERE item_id = ?",
+                (item_id,),
+            ).fetchone()[0]
+            if remaining == 0:
+                conn.execute(
+                    """
+                    UPDATE radar_items
+                    SET status = 'merged', merged_into_item_id = ?,
+                        skip_reason = 'official cross-medium source match', updated_at = ?
+                    WHERE id = ?
+                    """,
+                    (hinted_item_id, timestamp, item_id),
+                )
+                conn.execute(
+                    "UPDATE dedupe_candidates SET status = 'merged' WHERE item_id = ? OR candidate_item_id = ?",
+                    (item_id, item_id),
+                )
+            else:
+                _refresh_item_media(conn, item_id)
+            item_id = hinted_item_id
         _refresh_item_from_appearance(conn, item_id, appearance, authors, content_text, content_hash)
         return item_id, False
 
-    duplicate = _best_duplicate(conn, source_id, appearance, content_hash)
-    if duplicate and duplicate[1] >= AUTO_MERGE_SCORE:
+    duplicate = None if hinted_item_id is not None else _best_duplicate(conn, source_id, appearance, content_hash)
+    if hinted_item_id is not None:
+        item_id = hinted_item_id
+    elif duplicate and duplicate[1] >= AUTO_MERGE_SCORE:
         item_id = duplicate[0]
     else:
         cursor = conn.execute(
@@ -493,6 +522,20 @@ def upsert_appearance(
     if duplicate and duplicate[1] >= REVIEW_SCORE and duplicate[1] < AUTO_MERGE_SCORE:
         _record_dedupe_candidate(conn, item_id, duplicate[0], duplicate[1], duplicate[2])
     return item_id, True
+
+
+def _valid_canonical_hint(conn: sqlite3.Connection, value: Any) -> int | None:
+    if value is None:
+        return None
+    try:
+        item_id = int(value)
+    except (TypeError, ValueError):
+        return None
+    row = conn.execute(
+        "SELECT id FROM radar_items WHERE id = ? AND merged_into_item_id IS NULL",
+        (item_id,),
+    ).fetchone()
+    return item_id if row is not None else None
 
 
 def upsert_episode(conn: sqlite3.Connection, feed_id: int, episode: dict[str, Any]) -> tuple[int, bool]:

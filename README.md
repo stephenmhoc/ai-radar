@@ -38,10 +38,9 @@ people = ["Example Person"]
 
 [[sources]]
 kind = "youtube"
-name = "Example YouTube channel"
-url = "https://www.youtube.com/channel/CHANNEL_ID"
-external_id = "CHANNEL_ID"
-feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=CHANNEL_ID"
+name = "Example YouTube show"
+url = "https://www.youtube.com/playlist?list=PLAYLIST_ID"
+playlist_url = "https://www.youtube.com/playlist?list=PLAYLIST_ID"
 people = []
 
 [[sources]]
@@ -53,7 +52,9 @@ people = ["Example Person"]
 api_key_env = "X_BEARER_TOKEN"
 ```
 
-Blogs normally use RSS or Atom through `feed_url`. A feedless author site can omit it; the collector follows same-site `/essay/`, `/post/`, and `/blog/` links and extracts their article text and publication dates. YouTube collection works from the public channel Atom feed when `feed_url` is configured. Setting `YOUTUBE_API_KEY` switches it to the official Data API for richer metadata such as exact duration. Transcribing selected YouTube videos additionally requires `yt-dlp`; the resulting audio still uses the configured local Whisper command. X collection uses `X_BEARER_TOKEN`, excludes reposts, reconstructs same-author threads, and applies a deterministic substantiality floor before the shared classifier.
+Blogs normally use RSS or Atom through `feed_url`. A feedless author site can omit it; the collector follows same-site `/essay/`, `/post/`, and `/blog/` links and extracts their article text and publication dates. YouTube show playlists use `playlist_url` and `yt-dlp`, which supports dated backfills instead of the public Atom feed's short recent window. General channel sources can still use `feed_url`; setting `YOUTUBE_API_KEY` switches those to the official Data API for richer metadata such as exact duration. Transcribing selected YouTube videos additionally requires `yt-dlp`; the resulting audio still uses the configured local Whisper command. X collection uses `X_BEARER_TOKEN`, excludes reposts, reconstructs same-author threads, and applies a deterministic substantiality floor before the shared classifier.
+
+The generated `/sources/` page lists every active source grouped by medium. It is the public inventory of what the Radar actually monitors.
 
 Cross-medium appearances are merged automatically only with strong evidence: identical normalized full text, an explicit cross-link, or a highly similar title, publication window, and duration. Borderline matches enter a review queue:
 
@@ -113,6 +114,12 @@ Scope judging and processing to one or more exact feed names:
 ```bash
 python3 -m podcast_radar --config config.toml judge --since 2025-01-01 --feed "AI & I"
 python3 -m podcast_radar --config config.toml process --since 2025-01-01 --feed "AI & I"
+```
+
+Collection can likewise be limited to exact source names, which is useful for a focused historical backfill:
+
+```bash
+python3 -m podcast_radar --config config.toml ingest --since 2025-01-01 --source "Dwarkesh Podcast — YouTube"
 ```
 
 Scope by title/description text for targeted backfills:
@@ -250,7 +257,7 @@ python3 -m podcast_radar --config config.toml launchd-install \
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.merimeri.ai-radar.plist
 ```
 
-The scheduled runner is `scripts/daily.sh`. It calculates `now - AI_RADAR_LOOKBACK_HOURS`, ingests every active source, and sends the normalized items through the shared classifier. Podcast and YouTube candidates are transcribed locally before final verification; blog posts and substantial X threads already supply their source text. It then summarizes verified items, rebuilds the site, and deploys `public/` to Cloudflare Pages.
+The scheduled runner is `scripts/daily.sh`. It calculates `now - AI_RADAR_LOOKBACK_HOURS`, ingests every active source, and sends the normalized items through the shared classifier. Podcast and YouTube candidates are transcribed locally before final verification; blog posts and substantial X threads already supply their source text. After the rolling window, each run also judges 10 older new items and processes one older relevant item, so missed historical work drains instead of remaining permanently outside the lookback. Set `AI_RADAR_BACKLOG_JUDGE_LIMIT` or `AI_RADAR_BACKLOG_PROCESS_LIMIT` to tune those bounds or to `0` to disable one stage. It then rebuilds the site and deploys `public/` to Cloudflare Pages.
 
 The generated LaunchAgent has `RunAtLoad = true`, so after the machine restarts and the user session is loaded, it runs once immediately in addition to the hourly schedule. The 2-hour lookback is intentional: it gives the service overlap after restarts, sleep, delayed publication, or a missed hourly run, while source identities and canonical-item deduplication prevent repeat entries. The runner also takes a local lock, so an hourly launch exits cleanly if the previous run is still processing.
 
@@ -267,9 +274,10 @@ Hourly processing flow:
 5. `judge --since <cutoff>` asks the LLM whether each new item is substantial and relevant. For audio and video, this is only a candidate prefilter.
 6. `process --since <cutoff>` obtains canonical text: local transcription for podcast and YouTube appearances, or the collected article/thread text for blogs and X.
 7. The LLM runs the same full-text verification pass for every medium. The canonical text is the source of truth for authors, speakers, affiliations, and substance.
-8. Items that fail verification are marked skipped and never appear publicly.
-9. Items that pass are summarized once, regardless of how many sources carried the material.
-10. `build-site` and Wrangler deploy only published items with verified source text and summaries. Their detail pages link to every known appearance.
+8. A bounded backlog pass judges 10 older candidates and processes one older relevant item per run by default.
+9. Items that fail verification are marked skipped and never appear publicly.
+10. Items that pass are summarized once, regardless of how many sources carried the material.
+11. `build-site` and Wrangler deploy only published items with verified source text and summaries. Their detail pages link to every known appearance.
 
 Radar items are public on the website and RSS feed only after full-text verification and summarization. Metadata-only candidates, transcription failures, summary failures, and false positives stay out of the static site.
 

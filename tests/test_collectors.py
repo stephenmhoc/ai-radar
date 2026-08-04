@@ -1,6 +1,7 @@
 import os
 import pathlib
 import sqlite3
+import subprocess
 import tempfile
 import unittest
 from unittest import mock
@@ -88,6 +89,12 @@ class CollectorTests(unittest.TestCase):
               <media:description>Detailed public-feed description.</media:description>
             </media:group>
           </entry>
+          <entry>
+            <id>yt:video:short-1</id>
+            <title>A short promotional clip</title>
+            <link rel="alternate" href="https://www.youtube.com/shorts/short-1"/>
+            <published>2026-08-01T13:00:00Z</published>
+          </entry>
         </feed>"""
 
         with mock.patch.dict(os.environ, {}, clear=True), mock.patch(
@@ -95,11 +102,119 @@ class CollectorTests(unittest.TestCase):
         ):
             appearances, metadata = collectors._collect_youtube(_config(source), source)
 
+        self.assertEqual(len(appearances), 1)
         self.assertEqual(appearances[0]["external_id"], "video-1")
         self.assertEqual(appearances[0]["media_type"], "video/youtube")
         self.assertEqual(appearances[0]["description"], "Detailed public-feed description.")
         self.assertEqual(appearances[0]["authors"], ["Example Channel"])
         self.assertEqual(metadata["homepage_url"], "https://www.youtube.com/@example")
+
+    def test_youtube_playlist_collector_combines_fast_history_with_recent_feed(self) -> None:
+        source = SourceConfig(
+            kind="youtube",
+            name="Example Podcast — YouTube",
+            url="https://www.youtube.com/@example",
+            external_id="channel-1",
+            playlist_url="https://www.youtube.com/playlist?list=podcast-1",
+        )
+        video = {
+            "id": "video-1",
+            "title": "A substantial AI conversation",
+            "webpage_url": "https://www.youtube.com/watch?v=video-1",
+            "channel": "Example Channel",
+            "channel_id": "channel-1",
+            "playlist_id": "podcast-1",
+            "duration": 3723,
+            "thumbnail": "https://img/video.jpg",
+        }
+        recent = {
+            "external_id": "video-1",
+            "title": "A substantial AI conversation",
+            "description": "The full episode description.",
+            "url": "https://www.youtube.com/watch?v=video-1",
+            "media_url": "https://www.youtube.com/watch?v=video-1",
+            "media_type": "video/youtube",
+            "published_at": "2026-08-01T12:00:00+00:00",
+            "authors": ["Example Channel"],
+            "raw": {"video_id": "video-1"},
+        }
+        completed = subprocess.CompletedProcess(
+            args=["yt-dlp"], returncode=0, stdout=f"{collectors.json.dumps(video)}\n", stderr=""
+        )
+
+        with mock.patch("podcast_radar.collectors.shutil.which", return_value="/opt/bin/yt-dlp"), mock.patch(
+            "podcast_radar.collectors.subprocess.run", return_value=completed
+        ) as run, mock.patch("podcast_radar.collectors._collect_youtube_feed", return_value=([recent], {})):
+            appearances, metadata = collectors._collect_youtube(
+                _config(source),
+                source,
+                since=collectors.dt.datetime(2026, 1, 1, tzinfo=collectors.dt.timezone.utc),
+            )
+
+        command = run.call_args.args[0]
+        self.assertIn("--flat-playlist", command)
+        self.assertNotIn("--dateafter", command)
+        self.assertEqual(appearances[0]["external_id"], "video-1")
+        self.assertEqual(appearances[0]["duration"], "01:02:03")
+        self.assertEqual(appearances[0]["media_type"], "video/youtube")
+        self.assertEqual(appearances[0]["authors"], ["Example Channel"])
+        self.assertEqual(metadata["cursor"], "video-1")
+
+    def test_youtube_playlist_collector_rejects_failed_empty_listing(self) -> None:
+        source = SourceConfig(
+            kind="youtube",
+            name="Example Podcast — YouTube",
+            url="https://www.youtube.com/@example",
+            playlist_url="https://www.youtube.com/@example/videos",
+        )
+        completed = subprocess.CompletedProcess(args=["yt-dlp"], returncode=1, stdout="", stderr="unavailable")
+
+        with mock.patch("podcast_radar.collectors.shutil.which", return_value="/opt/bin/yt-dlp"), mock.patch(
+            "podcast_radar.collectors.subprocess.run", return_value=completed
+        ):
+            with self.assertRaisesRegex(RuntimeError, "unavailable"):
+                collectors._collect_youtube(
+                    _config(source),
+                    source,
+                    since=collectors.dt.datetime(2026, 8, 1, tzinfo=collectors.dt.timezone.utc),
+                )
+
+    def test_playlist_match_uses_same_show_date_and_duration_when_titles_differ(self) -> None:
+        conn = sqlite3.connect(":memory:")
+        conn.row_factory = sqlite3.Row
+        storage.migrate(conn)
+        podcast_source = SourceConfig(
+            kind="podcast",
+            name="Invest Like the Best",
+            url="https://example.com/feed.xml",
+        )
+        source_id = storage.upsert_source(conn, podcast_source)
+        item_id, _ = storage.upsert_appearance(
+            conn,
+            source_id,
+            {
+                "external_id": "pod-1",
+                "title": "Sam Altman - How to Make an Abundant Future - [Invest Like the Best, EP.484]",
+                "url": "https://example.com/pod-1",
+                "published_at": "2026-07-28T08:00:00+00:00",
+                "duration": "53:33",
+            },
+        )
+        youtube_source = SourceConfig(
+            kind="youtube",
+            name="Invest Like the Best — YouTube",
+            url="https://youtube.com/@example",
+        )
+
+        match = collectors._matching_podcast_appearance(
+            conn,
+            youtube_source,
+            {"title": "Sam Altman on AGI, Compute, and Human Agency", "duration": 3348},
+            published_at="2026-07-28T12:00:00+00:00",
+        )
+
+        self.assertIsNotNone(match)
+        self.assertEqual(match["item_id"], item_id)
 
     def test_x_collector_combines_same_author_thread_and_drops_short_post(self) -> None:
         source = SourceConfig(

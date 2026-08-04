@@ -152,6 +152,7 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertTrue((root / "public" / "index.html").exists())
             self.assertTrue((root / "public" / "feed.xml").exists())
             self.assertTrue((root / "public" / "sitemap.xml").exists())
+            self.assertTrue((root / "public" / "sources" / "index.html").exists())
             self.assertTrue((root / "public" / "assets" / "logo.svg").exists())
             self.assertTrue((root / "public" / "assets" / "logo.png").exists())
             self.assertTrue((root / "public" / "favicon.ico").exists())
@@ -187,6 +188,7 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertIn('"hasPart":[{"@type":"PodcastEpisode"', index)
             self.assertIn('class="skip-link" href="#main-content"', index)
             self.assertIn("Made with ♥ by", index)
+            self.assertIn('href="/sources/">Monitored sources</a>', index)
             self.assertIn('href="https://merimerimeri.com/">MeriMeriMeri Software</a>', index)
             self.assertIn("Copyright 2026", index)
             self.assertIn('<main id="main-content" tabindex="-1" aria-labelledby="episode-list-title">', index)
@@ -310,8 +312,14 @@ class SiteGenerationTests(unittest.TestCase):
             self.assertNotIn('Open original episode', page)
             sitemap = (root / "public" / "sitemap.xml").read_text()
             self.assertIn("<loc>https://radar.example.com/</loc>", sitemap)
+            self.assertIn("<loc>https://radar.example.com/sources/</loc>", sitemap)
             self.assertIn("<loc>https://radar.example.com/episodes/", sitemap)
             self.assertIn("<lastmod>2024-06-18</lastmod>", sitemap)
+            sources = (root / "public" / "sources" / "index.html").read_text()
+            self.assertIn("Monitored sources", sources)
+            self.assertIn("Example", sources)
+            self.assertIn(">Podcast</span>", sources)
+            self.assertIn("A source appears here even when it has no qualifying published item yet.", sources)
 
     def test_source_link_falls_back_to_podcast_homepage_and_feed_url(self) -> None:
         episode = {

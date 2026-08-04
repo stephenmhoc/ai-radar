@@ -144,7 +144,7 @@ Rules:
 - For podcasts and YouTube channels, do not include items that only discuss target labs without a qualifying guest or central speaker.
 - For a watched person's own blog or X account, authorship may establish the person, but routine, promotional, or insubstantial posts do not qualify.
 - Do not include journalists, investors, analysts, commentators, customers, or partners unless they are explicitly listed in the target roster below.
-- If an apparent guest works at a non-target company such as Intel, Microsoft, GitHub, TSMC, Cognition, OpenInspect, SpaceX, a16z, or a startup, return include=false unless the metadata verifies a current or recent target-lab role for that guest.
+- If an apparent guest works only at an organization absent from the target roster, return include=false unless the metadata verifies a current or recent target-organization role for that guest.
 - You may include qualifying people who are not in the seed roster if metadata or strong world knowledge verify their target-lab affiliation.
 - Be conservative when the guest or affiliation is ambiguous.
 - If no qualifying target-lab guest is found, return include=false, labs=[], and matched_people=[].
@@ -195,7 +195,7 @@ Rules:
 - "matched_people" must contain only qualifying guests, central speakers, or verified authors, not people merely mentioned.
 - A target-lab person who is only discussed, quoted, referenced in news, or mentioned by another guest does not qualify.
 - Do not add labs because they are discussed, invested in, partnered with, collaborated with, competed with, or mentioned.
-- Do not include an episode whose main guest works at a non-target company such as Intel, Microsoft, GitHub, TSMC, Cognition, OpenInspect, SpaceX, a16z, or a startup unless that guest is explicitly listed in the target roster below.
+- Do not include an item whose main guest or author works only at an organization absent from the target roster unless that person is explicitly listed in the target roster below.
 - Podcast and video introductions often state who the guest is. Prefer that over topic mentions later.
 - A substantial blog post or X thread on a watched person's verified source may qualify through authorship; routine reactions, promotions, and short updates do not.
 - If the full text shows that the candidate was a false positive, return include=false, labs=[], and matched_people=[].

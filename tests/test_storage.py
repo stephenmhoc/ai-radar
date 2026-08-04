@@ -118,6 +118,60 @@ class StorageMigrationTests(unittest.TestCase):
         self.assertEqual(len(storage.loads(item["appearances_json"])), 2)
         self.assertEqual(conn.execute("SELECT COUNT(*) FROM radar_items").fetchone()[0], 1)
 
+    def test_official_source_hint_repairs_an_existing_unmerged_appearance(self) -> None:
+        conn = sqlite3.connect(":memory:")
+        conn.row_factory = sqlite3.Row
+        storage.migrate(conn)
+        podcast_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="podcast", name="Example Podcast", url="https://example.com/feed.xml"),
+        )
+        youtube_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="youtube", name="Example Podcast — YouTube", url="https://youtube.com/example"),
+        )
+        podcast_item_id, _ = storage.upsert_appearance(
+            conn,
+            podcast_id,
+            {
+                "external_id": "pod-1",
+                "title": "A podcast title",
+                "url": "https://example.com/pod-1",
+                "published_at": "2025-01-01T00:00:00+00:00",
+                "duration": "01:00:00",
+            },
+        )
+        youtube_item_id, _ = storage.upsert_appearance(
+            conn,
+            youtube_id,
+            {
+                "external_id": "video-1",
+                "title": "A differently formatted video title",
+                "url": "https://youtube.com/watch?v=video-1",
+                "duration": "01:00:00",
+            },
+        )
+        self.assertNotEqual(youtube_item_id, podcast_item_id)
+
+        repaired_item_id, inserted = storage.upsert_appearance(
+            conn,
+            youtube_id,
+            {
+                "external_id": "video-1",
+                "title": "A differently formatted video title",
+                "url": "https://youtube.com/watch?v=video-1",
+                "published_at": "2025-01-01T00:00:00+00:00",
+                "duration": "01:00:00",
+                "canonical_item_id": podcast_item_id,
+            },
+        )
+
+        self.assertFalse(inserted)
+        self.assertEqual(repaired_item_id, podcast_item_id)
+        self.assertEqual(len(storage.appearances_for_item(conn, podcast_item_id)), 2)
+        merged = conn.execute("SELECT status FROM radar_items WHERE id = ?", (youtube_item_id,)).fetchone()
+        self.assertEqual(merged["status"], "merged")
+
     def test_identical_full_text_deduplicates_blog_and_x(self) -> None:
         conn = sqlite3.connect(":memory:")
         conn.row_factory = sqlite3.Row

@@ -23,6 +23,7 @@ def main(argv: list[str] | None = None) -> int:
     ingest_parser = subparsers.add_parser("ingest", help="Collect configured podcast, YouTube, blog, and X sources.")
     ingest_parser.add_argument("--limit-per-feed", type=int, default=None)
     ingest_parser.add_argument("--since", default=None, help="Only ingest episodes published on or after this date.")
+    ingest_parser.add_argument("--source", action="append", default=[], help="Only collect this source name. Repeatable.")
 
     judge_parser = subparsers.add_parser("judge", help="Ask the LLM to classify new radar items.")
     judge_parser.add_argument("--limit", type=int, default=None)
@@ -95,7 +96,13 @@ def main(argv: list[str] | None = None) -> int:
             return 2
     with storage.connect(config) as conn:
         if args.command == "ingest":
-            stats = collectors.collect(config, conn, limit_per_source=args.limit_per_feed, published_since=args.since)
+            stats = collectors.collect(
+                config,
+                conn,
+                limit_per_source=args.limit_per_feed,
+                published_since=args.since,
+                source_names=tuple(args.source),
+            )
             _print_stats(stats)
             return 0
         if args.command == "judge":
@@ -185,7 +192,7 @@ def doctor(config: Config) -> int:
             continue
         env_name = source.api_key_env or ("YOUTUBE_API_KEY" if source.kind == "youtube" else "X_BEARER_TOKEN")
         if not os.environ.get(env_name):
-            if source.kind == "youtube" and source.feed_url:
+            if source.kind == "youtube" and (source.feed_url or source.playlist_url):
                 continue
             warnings.append(f"{env_name} is not set; {source.name} collection will be skipped")
     with storage.connect(config) as conn:

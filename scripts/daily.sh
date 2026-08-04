@@ -125,6 +125,14 @@ PY
   python3 -m podcast_radar --config config.toml ingest --since "$SINCE"
   python3 -m podcast_radar --config config.toml judge --since "$SINCE"
   python3 -m podcast_radar --config config.toml process --since "$SINCE"
+  BACKLOG_JUDGE_LIMIT=${AI_RADAR_BACKLOG_JUDGE_LIMIT:-10}
+  BACKLOG_PROCESS_LIMIT=${AI_RADAR_BACKLOG_PROCESS_LIMIT:-1}
+  if [ "$BACKLOG_JUDGE_LIMIT" -gt 0 ]; then
+    python3 -m podcast_radar --config config.toml judge --limit "$BACKLOG_JUDGE_LIMIT"
+  fi
+  if [ "$BACKLOG_PROCESS_LIMIT" -gt 0 ]; then
+    python3 -m podcast_radar --config config.toml process --limit "$BACKLOG_PROCESS_LIMIT"
+  fi
   python3 -m podcast_radar --config config.toml build-site
   deploy_site
 )

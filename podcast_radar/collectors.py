@@ -1,13 +1,17 @@
 from __future__ import annotations
 
 import datetime as dt
+import dataclasses
 import html
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
 import urllib.parse
 import urllib.request
+from difflib import SequenceMatcher
 from html.parser import HTMLParser
 from typing import Any
 
@@ -22,6 +26,7 @@ def collect(
     *,
     limit_per_source: int | None = None,
     published_since: str | None = None,
+    source_names: tuple[str, ...] = (),
 ) -> dict[str, int]:
     stats = {
         "sources": 0,
@@ -31,7 +36,10 @@ def collect(
         "appearances_inserted": 0,
     }
     since = feeds._parse_cutoff(published_since or config.app.processed_after)
+    selected_names = set(source_names)
     for source in config.active_sources:
+        if selected_names and source.name not in selected_names:
+            continue
         source_id = storage.upsert_source(conn, source)
         try:
             appearances, metadata = collect_source(config, conn, source_id, source, since=since)
@@ -88,7 +96,7 @@ def collect_source(
     if source.kind in {"podcast", "blog"}:
         return _collect_rss(config, source, since=since)
     if source.kind == "youtube":
-        return _collect_youtube(config, source)
+        return _collect_youtube(config, source, since=since, conn=conn)
     if source.kind == "x":
         row = conn.execute("SELECT cursor FROM sources WHERE id = ?", (source_id,)).fetchone()
         return _collect_x(config, source, cursor=str(row["cursor"] or "") if row else "")
@@ -186,7 +194,12 @@ def _collect_blog_index(
 def _collect_youtube(
     config: Config,
     source: SourceConfig,
+    *,
+    since: dt.datetime | None = None,
+    conn=None,
 ) -> tuple[list[dict[str, Any]], dict[str, str | None]]:
+    if source.playlist_url:
+        return _collect_youtube_playlist(config, source, since=since, conn=conn)
     if not source.external_id:
         raise ValueError(f"YouTube source requires external_id channel ID: {source.name}")
     env_name = source.api_key_env or "YOUTUBE_API_KEY"
@@ -276,6 +289,234 @@ def _collect_youtube(
     }
 
 
+def _collect_youtube_playlist(
+    config: Config,
+    source: SourceConfig,
+    *,
+    since: dt.datetime | None = None,
+    conn=None,
+) -> tuple[list[dict[str, Any]], dict[str, str | None]]:
+    executable = shutil.which("yt-dlp")
+    if not executable:
+        raise RuntimeError(f"yt-dlp is required for YouTube playlist collection: {source.name}")
+    command = [
+        executable,
+        "--flat-playlist",
+        "--dump-json",
+        "--skip-download",
+        "--ignore-errors",
+        "--no-warnings",
+        "--playlist-end",
+        "500",
+    ]
+    command.append(source.playlist_url)
+    result = subprocess.run(command, check=False, capture_output=True, text=True)
+    playlist_entries: list[dict[str, Any]] = []
+    for line in result.stdout.splitlines():
+        try:
+            video = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        video_id = str(video.get("id") or "").strip()
+        title = clean_text(str(video.get("title") or ""))
+        if not video_id or not title or video.get("live_status") == "is_upcoming":
+            continue
+        playlist_entries.append(video)
+    if result.returncode and not playlist_entries:
+        reason = clean_text(result.stderr)[-500:] or f"yt-dlp exited with {result.returncode}"
+        raise RuntimeError(f"YouTube playlist collection failed for {source.name}: {reason}")
+
+    recent_by_id: dict[str, dict[str, Any]] = {}
+    if source.external_id:
+        feed_source = dataclasses.replace(
+            source,
+            feed_url=f"https://www.youtube.com/feeds/videos.xml?channel_id={source.external_id}",
+        )
+        try:
+            recent, _ = _collect_youtube_feed(config, feed_source)
+            recent_by_id = {str(item["external_id"]): item for item in recent}
+        except Exception as exc:  # noqa: BLE001 - playlist history remains usable
+            print(f"warning: recent YouTube feed failed: {source.name}: {exc}", file=sys.stderr)
+
+    appearances: list[dict[str, Any]] = []
+    for video in playlist_entries:
+        video_id = str(video["id"])
+        title = clean_text(str(video.get("title") or ""))
+        recent = recent_by_id.get(video_id)
+        if recent is not None:
+            match = (
+                _matching_podcast_appearance(
+                    conn,
+                    source,
+                    video,
+                    published_at=recent.get("published_at"),
+                )
+                if conn is not None
+                else None
+            )
+            match_fields = (
+                {
+                    "canonical_item_id": int(match["item_id"]),
+                    "raw": {
+                        **dict(recent.get("raw", {})),
+                        "playlist_id": str(video.get("playlist_id") or ""),
+                        "playlist_url": source.playlist_url,
+                        "podcast_url": str(match["url"] or ""),
+                        "podcast_item_id": int(match["item_id"]),
+                    },
+                }
+                if match is not None
+                else {
+                    "raw": {
+                        **dict(recent.get("raw", {})),
+                        "playlist_id": str(video.get("playlist_id") or ""),
+                        "playlist_url": source.playlist_url,
+                    }
+                }
+            )
+            appearances.append(
+                {
+                    **recent,
+                    "duration": _duration_string(video.get("duration")) or recent.get("duration"),
+                    **match_fields,
+                }
+            )
+            continue
+
+        match = _matching_podcast_appearance(conn, source, video) if conn is not None else None
+        if match is None:
+            continue
+        url = str(video.get("webpage_url") or f"https://www.youtube.com/watch?v={video_id}")
+        appearances.append(
+            {
+                "external_id": video_id,
+                "title": title,
+                "description": clean_text(str(video.get("description") or "")),
+                "url": url,
+                "media_url": url,
+                "media_type": "video/youtube",
+                "image_url": _yt_dlp_thumbnail(video),
+                "published_at": str(match["published_at"] or "") or None,
+                "duration": _duration_string(video.get("duration")),
+                "authors": list(source.people or (str(video.get("channel") or source.name),)),
+                "raw": {
+                    "video_id": video_id,
+                    "channel_id": str(video.get("channel_id") or source.external_id),
+                    "playlist_id": str(video.get("playlist_id") or ""),
+                    "playlist_url": source.playlist_url,
+                    "podcast_url": str(match["url"] or ""),
+                    "podcast_item_id": int(match["item_id"]),
+                },
+                "canonical_item_id": int(match["item_id"]),
+            }
+        )
+    return appearances, {
+        "image_url": appearances[0].get("image_url") if appearances else None,
+        "homepage_url": source.url,
+        "cursor": appearances[0]["external_id"] if appearances else None,
+    }
+
+
+def _matching_podcast_appearance(
+    conn,
+    source: SourceConfig,
+    video: dict[str, Any],
+    *,
+    published_at: Any = None,
+):
+    base_name = source.name.removesuffix(" — YouTube")
+    rows = conn.execute(
+        """
+        SELECT appearances.item_id, appearances.title, appearances.published_at,
+               appearances.duration, appearances.url
+        FROM appearances
+        JOIN sources ON sources.id = appearances.source_id
+        WHERE sources.kind = 'podcast'
+          AND (sources.name = ? OR sources.name LIKE ?)
+        ORDER BY appearances.published_at DESC
+        """,
+        (base_name, f"{base_name}%"),
+    ).fetchall()
+    video_title = _normalized_match_title(str(video.get("title") or ""))
+    video_duration = _duration_seconds(video.get("duration"))
+    best = None
+    best_score = 0.0
+    for row in rows:
+        podcast_title = _normalized_match_title(str(row["title"] or ""))
+        if not video_title or not podcast_title:
+            continue
+        title_score = SequenceMatcher(None, video_title, podcast_title).ratio()
+        duration_close = _seconds_close(video_duration, _duration_seconds(row["duration"]))
+        date_close = _datetimes_close(published_at, row["published_at"], days=4)
+        token_score, shared_tokens = _title_token_score(video_title, podcast_title)
+        if duration_close and date_close:
+            score = 1.1
+        elif video_title == podcast_title:
+            score = 1.0 if duration_close else 0.9
+        elif duration_close and title_score >= 0.78:
+            score = title_score
+        elif duration_close and shared_tokens >= 2 and token_score >= 0.3:
+            score = token_score
+        else:
+            continue
+        if score > best_score:
+            best = row
+            best_score = score
+    return best
+
+
+def _normalized_match_title(value: str) -> str:
+    return " ".join(re.findall(r"[a-z0-9]+", value.casefold()))
+
+
+def _title_token_score(first: str, second: str) -> tuple[float, int]:
+    ignored = {
+        "a", "an", "and", "at", "for", "from", "in", "of", "on", "or", "the", "to", "with",
+        "episode", "ep", "full", "podcast", "show", "video",
+    }
+    left = {token for token in first.split() if token not in ignored and len(token) > 1}
+    right = {token for token in second.split() if token not in ignored and len(token) > 1}
+    shared = len(left & right)
+    if not left or not right:
+        return 0.0, shared
+    return shared / min(len(left), len(right)), shared
+
+
+def _datetimes_close(first: Any, second: Any, *, days: int) -> bool:
+    if not first or not second:
+        return False
+    try:
+        left = dt.datetime.fromisoformat(str(first).replace("Z", "+00:00"))
+        right = dt.datetime.fromisoformat(str(second).replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    if left.tzinfo is None:
+        left = left.replace(tzinfo=dt.timezone.utc)
+    if right.tzinfo is None:
+        right = right.replace(tzinfo=dt.timezone.utc)
+    return abs((left - right).total_seconds()) <= days * 86400
+
+
+def _duration_seconds(value: Any) -> int | None:
+    if value is None:
+        return None
+    if isinstance(value, (int, float)):
+        return int(value)
+    parts = str(value).split(":")
+    if not parts or not all(part.isdigit() for part in parts):
+        return None
+    total = 0
+    for part in parts:
+        total = total * 60 + int(part)
+    return total
+
+
+def _seconds_close(first: int | None, second: int | None) -> bool:
+    if first is None or second is None:
+        return False
+    return abs(first - second) <= max(120, min(first, second) * 0.12)
+
+
 def _collect_youtube_feed(
     config: Config,
     source: SourceConfig,
@@ -287,6 +528,8 @@ def _collect_youtube_feed(
     appearances: list[dict[str, Any]] = []
     for entry in parsed.episodes:
         url = str(entry.get("episode_url") or "")
+        if urllib.parse.urlparse(url).path.startswith("/shorts/"):
+            continue
         query = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
         video_id = str((query.get("v") or [entry.get("guid") or url])[0])
         appearances.append(
@@ -577,6 +820,28 @@ def _youtube_thumbnail(snippet: dict[str, Any]) -> str | None:
         if url:
             return str(url)
     return None
+
+
+def _yt_dlp_thumbnail(video: dict[str, Any]) -> str | None:
+    if video.get("thumbnail"):
+        return str(video["thumbnail"])
+    candidates = [item for item in video.get("thumbnails", []) if item.get("url")]
+    if not candidates:
+        return None
+    candidates.sort(key=lambda item: (int(item.get("width") or 0), int(item.get("height") or 0)))
+    return str(candidates[-1]["url"])
+
+
+def _duration_string(value: Any) -> str | None:
+    try:
+        total = int(float(value))
+    except (TypeError, ValueError):
+        return None
+    if total < 0:
+        return None
+    hours, remainder = divmod(total, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    return f"{hours:02d}:{minutes:02d}:{seconds:02d}" if hours else f"{minutes:02d}:{seconds:02d}"
 
 
 def _youtube_duration(value: Any) -> str | None:

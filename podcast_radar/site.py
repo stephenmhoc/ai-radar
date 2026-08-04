@@ -29,6 +29,7 @@ def build_site(config: Config, conn) -> dict[str, int]:
     (public_dir / "assets").mkdir(parents=True, exist_ok=True)
     (public_dir / "assets" / "social").mkdir(parents=True, exist_ok=True)
     (public_dir / "episodes").mkdir(parents=True, exist_ok=True)
+    (public_dir / "sources").mkdir(parents=True, exist_ok=True)
 
     logo_image_url = write_logo_image(config, public_dir)
     style_name = style_asset_name()
@@ -56,8 +57,18 @@ def build_site(config: Config, conn) -> dict[str, int]:
         render_index(config, episodes, slugs, social_image_url=social_images["home"]),
         encoding="utf-8",
     )
+    catalog = source_catalog(config, conn)
+    (public_dir / "sources" / "index.html").write_text(
+        render_sources_page(config, catalog),
+        encoding="utf-8",
+    )
     (public_dir / "feed.xml").write_text(rss["xml"], encoding="utf-8")
-    return {"items": len(episodes), "episodes": len(episodes), "rss_items": rss["items"]}
+    return {
+        "items": len(episodes),
+        "episodes": len(episodes),
+        "rss_items": rss["items"],
+        "sources": len(catalog),
+    }
 
 
 def episode_slug(episode) -> str:
@@ -160,6 +171,77 @@ def render_card(config: Config, episode, slug: str) -> str:
       </div>
     </a>
     """
+
+
+def source_catalog(config: Config, conn) -> list[dict[str, object]]:
+    stored = {
+        (str(row["kind"]), str(row["url"])): row
+        for row in conn.execute("SELECT kind, url, homepage_url, image_url FROM sources")
+    }
+    catalog: list[dict[str, object]] = []
+    for source in config.active_sources:
+        row = stored.get((source.kind, source.url))
+        homepage = str(row["homepage_url"] or "") if row else ""
+        catalog.append(
+            {
+                "kind": source.kind,
+                "name": source.name,
+                "url": homepage or source.url,
+                "people": list(source.people or source.hosts),
+                "image_url": str(row["image_url"] or "") if row else "",
+            }
+        )
+    return catalog
+
+
+def render_sources_page(config: Config, sources: list[dict[str, object]]) -> str:
+    groups: list[str] = []
+    for kind in ("podcast", "youtube", "blog", "x"):
+        matching = sorted(
+            (source for source in sources if source["kind"] == kind),
+            key=lambda source: str(source["name"]).casefold(),
+        )
+        if not matching:
+            continue
+        cards = []
+        for source in matching:
+            people = ", ".join(str(person) for person in source["people"])
+            people_html = f'<p>{escape(people)}</p>' if people else ""
+            cards.append(
+                f"""
+                <a class="source-card" href="{escape(source['url'])}" target="_blank" rel="noopener noreferrer">
+                  <span class="media-badge media-{escape(kind)}">{escape(_medium_label(kind))}</span>
+                  <strong>{escape(source['name'])}</strong>
+                  {people_html}
+                  <span class="source-card-link">Open source ↗</span>
+                </a>
+                """
+            )
+        groups.append(
+            f"""
+            <section class="source-group" aria-labelledby="source-{escape(kind)}">
+              <h2 id="source-{escape(kind)}">{escape(_medium_label(kind))} <span>{len(matching)}</span></h2>
+              <div class="source-cards">{''.join(cards)}</div>
+            </section>
+            """
+        )
+    return page(
+        config,
+        title="Monitored sources",
+        description="Every podcast, YouTube channel, blog, and account monitored by AI Radar.",
+        canonical_url=urljoin(site_root_url(config), "sources/"),
+        body=f"""
+        <nav class="top-nav" aria-label="Radar navigation"><a href="../index.html">Back to AI Radar</a></nav>
+        <main class="sources-page" id="main-content" tabindex="-1">
+          <header class="source-header">
+            <p class="eyebrow">Coverage</p>
+            <h1>Monitored sources</h1>
+            <p class="lede">Every place AI Radar checks. A source appears here even when it has no qualifying published item yet.</p>
+          </header>
+          {''.join(groups)}
+        </main>
+        """,
+    )
 
 
 def render_episode_page(config: Config, episode, slug: str, *, social_image_url: str | None = None) -> str:
@@ -299,6 +381,7 @@ def render_sitemap(config: Config, episodes, slugs: dict[int, str]) -> str:
     latest = _sitemap_date(max((_episode_sort_date(episode) for episode in episodes), default=""))
     entries = [
         _sitemap_entry(site_root_url(config), lastmod=latest, priority="1.0"),
+        _sitemap_entry(urljoin(site_root_url(config), "sources/"), lastmod=latest, priority="0.7"),
     ]
     for episode in episodes:
         slug = slugs[int(episode["id"])]
@@ -382,7 +465,7 @@ def page(
   <div class="shell">
     {body}
     <footer class="site-footer">
-      <p>Made with ♥ by <a href="https://merimerimeri.com/">MeriMeriMeri Software</a></p>
+      <p><a href="/sources/">Monitored sources</a> · Made with ♥ by <a href="https://merimerimeri.com/">MeriMeriMeri Software</a></p>
       <p>Copyright 2026</p>
     </footer>
   </div>
@@ -1840,6 +1923,82 @@ main:focus {
   font-weight: 700;
 }
 
+.sources-page {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.source-header {
+  max-width: 720px;
+  margin: 28px 0 34px;
+}
+
+.source-header h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  letter-spacing: -0.04em;
+}
+
+.source-group {
+  margin-top: 30px;
+}
+
+.source-group h2 {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+
+.source-group h2 span {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.source-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.source-card {
+  display: flex;
+  min-height: 132px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--panel);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.source-card:hover {
+  border-color: #8ebbb4;
+}
+
+.source-card strong {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.source-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.source-card-link {
+  margin-top: auto;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
 .masthead {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
@@ -2919,6 +3078,8 @@ main:focus {
 
 @media (max-width: 720px) {
   .shell { width: min(100% - 24px, 1120px); padding-top: 18px; }
+  .source-cards { grid-template-columns: 1fr; }
+  .source-card { min-height: 112px; }
   .masthead {
     grid-template-columns: 1fr;
     gap: 14px;

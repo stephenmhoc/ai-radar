@@ -145,9 +145,16 @@ people = ["Dario Amodei"]
 
 [[sources]]
 kind = "blog"
-name = "Satya Nadella"
+name = "Satya Nadella — Microsoft Blog"
 url = "https://blogs.microsoft.com/blog/author/satyanadella/"
 feed_url = "https://blogs.microsoft.com/blog/author/satyanadella/feed/"
+people = ["Satya Nadella"]
+
+[[sources]]
+kind = "blog"
+name = "Satya Nadella — sn scratchpad"
+url = "https://snscratchpad.com/"
+feed_url = "https://snscratchpad.com/index.xml"
 people = ["Satya Nadella"]
 
 [[sources]]
@@ -206,6 +213,132 @@ name = "a16z"
 url = "https://www.youtube.com/@a16z"
 external_id = "UC9cn0TuPq4dnbTY-CBsm8XA"
 feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC9cn0TuPq4dnbTY-CBsm8XA"
+
+[[sources]]
+kind = "youtube"
+name = "Dwarkesh Podcast — YouTube"
+url = "https://www.youtube.com/@DwarkeshPatel"
+external_id = "UCXl4i9dYBrFOabk0xGmbkRA"
+playlist_url = "https://www.youtube.com/playlist?list=PLd7-bHaQwnthaNDpZ32TtYONGVk95-fhF"
+
+[[sources]]
+kind = "youtube"
+name = "Latent Space — YouTube"
+url = "https://www.youtube.com/@LatentSpacePod"
+external_id = "UCxBcwypKK-W3GHd_RZ9FZrQ"
+playlist_url = "https://www.youtube.com/playlist?list=PLWEAb1SXhjlfkEF_PxzYHonU_v5LPMI8L"
+
+[[sources]]
+kind = "youtube"
+name = "Lex Fridman Podcast — YouTube"
+url = "https://www.youtube.com/@lexfridman"
+external_id = "UCSHZKyawb77ixDdsGog4iWA"
+playlist_url = "https://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4"
+
+[[sources]]
+kind = "youtube"
+name = "The Cognitive Revolution — YouTube"
+url = "https://www.youtube.com/@CognitiveRevolutionPodcast"
+external_id = "UCjNRVMBVI30Sak_p6HRWhIA"
+playlist_url = "https://www.youtube.com/playlist?list=PLVfJCYRuaJIUNqx6puWYmw7Ug_QsTlA5k"
+
+[[sources]]
+kind = "youtube"
+name = "No Priors — YouTube"
+url = "https://www.youtube.com/@NoPriorsPodcast"
+external_id = "UCSI7h9hydQ40K5MJHnCrQvw"
+playlist_url = "https://www.youtube.com/playlist?list=PLMKa0PxGwad7jf8hwwX8w5FHitXZ1L_h1"
+
+[[sources]]
+kind = "youtube"
+name = "OpenAI Podcast — YouTube"
+url = "https://www.youtube.com/playlist?list=PLOXw6I10VTv9GAOCZjUAAkSVyW2cDXs4u"
+external_id = "UCXZCJLdBC09xxGZ6gcdrc6A"
+playlist_url = "https://www.youtube.com/playlist?list=PLOXw6I10VTv9GAOCZjUAAkSVyW2cDXs4u"
+
+[[sources]]
+kind = "youtube"
+name = "Google DeepMind: The Podcast — YouTube"
+url = "https://www.youtube.com/playlist?list=PLqYmG7hTraZBiUr6_Qf8YTS2Oqy3OGZEj"
+external_id = "UCP7jMXSY2xbc3KCAE0MHQ-A"
+playlist_url = "https://www.youtube.com/playlist?list=PLqYmG7hTraZBiUr6_Qf8YTS2Oqy3OGZEj"
+
+[[sources]]
+kind = "youtube"
+name = "NVIDIA AI Podcast — YouTube"
+url = "https://www.youtube.com/@NVIDIA"
+external_id = "UCHuiy8bXnmK5nisYHUd1J5g"
+playlist_url = "https://www.youtube.com/playlist?list=PLZHnYvH1qtOZ9QztmZ-Ozys5uyiYGR0C4"
+
+[[sources]]
+kind = "youtube"
+name = "Training Data — YouTube"
+url = "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
+external_id = "UCWrF0oN6unbXrWsTN7RctTw"
+playlist_url = "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
+
+[[sources]]
+kind = "youtube"
+name = "AI + a16z — YouTube"
+url = "https://www.youtube.com/playlist?list=PLM4u6XbiXf5p-bokWYcyi8SKnMzoYW4b3"
+external_id = "UC9cn0TuPq4dnbTY-CBsm8XA"
+playlist_url = "https://www.youtube.com/playlist?list=PLM4u6XbiXf5p-bokWYcyi8SKnMzoYW4b3"
+
+[[sources]]
+kind = "youtube"
+name = "The a16z Show — YouTube"
+url = "https://www.youtube.com/playlist?list=PLM4u6XbiXf5rnUvH5NLdV_It2QLgbHBDZ"
+external_id = "UC9cn0TuPq4dnbTY-CBsm8XA"
+playlist_url = "https://www.youtube.com/playlist?list=PLM4u6XbiXf5rnUvH5NLdV_It2QLgbHBDZ"
+
+[[sources]]
+kind = "youtube"
+name = "Acquired — YouTube"
+url = "https://www.youtube.com/@AcquiredFM"
+external_id = "UCyFqFYfTW2VoIQKylJ04Rtw"
+playlist_url = "https://www.youtube.com/@AcquiredFM/videos"
+
+[[sources]]
+kind = "youtube"
+name = "Invest Like the Best — YouTube"
+url = "https://www.youtube.com/@ILTB_Podcast"
+external_id = "UCpQBb0fToph3jrDulwz1iUQ"
+playlist_url = "https://www.youtube.com/@ILTB_Podcast/videos"
+
+[[sources]]
+kind = "youtube"
+name = "Lenny's Podcast — YouTube"
+url = "https://www.youtube.com/@LennysPodcast"
+external_id = "UC6t1O76G0jYXOAoYCm153dA"
+playlist_url = "https://www.youtube.com/playlist?list=PL2fLjt2dG0N6unOOF3nHWYGcJJIQR1NKm"
+
+[[sources]]
+kind = "youtube"
+name = "Practical AI — YouTube"
+url = "https://www.youtube.com/@practicalai_show"
+external_id = "UC9tpZnMLKv5vbZIGuIIPmNg"
+playlist_url = "https://www.youtube.com/@practicalai_show/videos"
+
+[[sources]]
+kind = "youtube"
+name = "Eye on AI — YouTube"
+url = "https://www.youtube.com/@eyeonai3425"
+external_id = "UC-o9u9QL4zXzBwjvT1gmzNg"
+playlist_url = "https://www.youtube.com/playlist?list=PLacDrP-7Ys6IsnPRN0ToTfjH8gQ4s6mL9"
+
+[[sources]]
+kind = "youtube"
+name = "AI & I — YouTube"
+url = "https://www.youtube.com/@EveryInc"
+external_id = "UCjIMtrzxYc0lblGhmOgC_CA"
+playlist_url = "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL"
+
+[[sources]]
+kind = "youtube"
+name = "BG2Pod — YouTube"
+url = "https://www.youtube.com/@Bg2Pod"
+external_id = "UC-yRDvpR99LUc5l7i7jLzew"
+playlist_url = "https://www.youtube.com/@Bg2Pod/videos"
 
 [[labs]]
 name = "OpenAI"

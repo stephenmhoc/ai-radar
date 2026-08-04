@@ -80,6 +80,7 @@ class SourceConfig:
     url: str
     external_id: str = ""
     feed_url: str = ""
+    playlist_url: str = ""
     people: tuple[str, ...] = ()
     hosts: tuple[str, ...] = ()
     active: bool = True
@@ -187,6 +188,7 @@ def _source(raw: dict[str, Any]) -> SourceConfig:
         url=str(raw["url"]),
         external_id=str(raw.get("external_id", "")),
         feed_url=str(raw.get("feed_url", "")),
+        playlist_url=str(raw.get("playlist_url", "")),
         people=tuple(str(value) for value in raw.get("people", [])),
         hosts=tuple(str(value) for value in raw.get("hosts", [])),
         active=bool(raw.get("active", True)),
