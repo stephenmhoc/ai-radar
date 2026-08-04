@@ -32,6 +32,10 @@ class LLMConfig:
     temperature: float = 0.1
     max_metadata_chars: int = 12000
     max_transcript_chars: int = 130000
+    timeout_seconds: int = 120
+    max_attempts: int = 4
+    retry_backoff_seconds: float = 2.0
+    max_retry_sleep_seconds: float = 60.0
 
 
 @dataclasses.dataclass(frozen=True)

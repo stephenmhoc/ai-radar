@@ -184,6 +184,16 @@ model = "llama3.1"
 api_key_env = ""
 ```
 
+Transient provider failures are retried automatically. Rate limits (HTTP 429), request timeouts, and 5xx responses back off exponentially and honour a `Retry-After` header when the provider sends one; authentication and request errors still fail immediately so a misconfigured run stops right away. Tune the behaviour under `[llm]`:
+
+```toml
+[llm]
+timeout_seconds = 120
+max_attempts = 4            # set to 1 to disable retries
+retry_backoff_seconds = 2.0 # doubles per attempt
+max_retry_sleep_seconds = 60.0
+```
+
 The judge prompts use the configured lab roster as seed examples for people, not a hard allowlist. Lab labels remain restricted to configured targets and represent where the qualifying person works, not what organizations were discussed. Metadata judging is only a prefilter; a second decision over normalized full text determines whether the item is publishable. Podcasts and broad video channels require a qualifying guest or central speaker. A watched person's blog or X account can qualify through verified authorship, but routine and promotional posts remain excluded.
 
 ## Local Transcription

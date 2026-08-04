@@ -2,17 +2,24 @@ from __future__ import annotations
 
 import json
 import os
+import sys
+import time
 import urllib.error
 import urllib.request
 from typing import Any
 
-from .config import Config
+from .config import Config, LLMConfig
 from . import storage
 from .text import paragraphs_to_html, strip_html, truncate
 
 
 class LLMError(RuntimeError):
     pass
+
+
+# Statuses worth another attempt: request timeouts, lock/conflict responses,
+# rate limits, and any server-side failure.
+RETRYABLE_STATUS_CODES = frozenset({408, 409, 425, 429})
 
 
 class LLMClient:
@@ -44,7 +51,7 @@ class LLMClient:
         headers = {"Content-Type": "application/json"}
         if api_key:
             headers["Authorization"] = f"Bearer {api_key}"
-        return _request_json(url, payload, headers)
+        return _request_json(url, payload, headers, llm=self.config.llm)
 
     def _ollama(self, *, system: str, user: str) -> dict[str, Any]:
         url = self.config.llm.base_url.rstrip("/") + "/api/chat"
@@ -58,7 +65,12 @@ class LLMClient:
                 {"role": "user", "content": user},
             ],
         }
-        response = _raw_request_json(url, payload, {"Content-Type": "application/json"})
+        response = _raw_request_json(
+            url,
+            payload,
+            {"Content-Type": "application/json"},
+            llm=self.config.llm,
+        )
         content = response.get("message", {}).get("content", "")
         return extract_json(content)
 
@@ -266,8 +278,14 @@ def extract_json(content: str) -> dict[str, Any]:
         return json.loads(content[start : end + 1])
 
 
-def _request_json(url: str, payload: dict[str, Any], headers: dict[str, str]) -> dict[str, Any]:
-    response = _raw_request_json(url, payload, headers)
+def _request_json(
+    url: str,
+    payload: dict[str, Any],
+    headers: dict[str, str],
+    *,
+    llm: LLMConfig,
+) -> dict[str, Any]:
+    response = _raw_request_json(url, payload, headers, llm=llm)
     try:
         content = response["choices"][0]["message"]["content"]
     except (KeyError, IndexError, TypeError) as exc:
@@ -275,17 +293,69 @@ def _request_json(url: str, payload: dict[str, Any], headers: dict[str, str]) ->
     return extract_json(content)
 
 
-def _raw_request_json(url: str, payload: dict[str, Any], headers: dict[str, str]) -> dict[str, Any]:
+def _raw_request_json(
+    url: str,
+    payload: dict[str, Any],
+    headers: dict[str, str],
+    *,
+    llm: LLMConfig,
+) -> dict[str, Any]:
+    """POST a JSON payload, retrying transient provider failures.
+
+    A single rate limit or gateway hiccup used to abort a whole judge or
+    process run, because pipeline.judge_pending deliberately re-raises
+    LLMError to avoid burning through items during an outage. Retrying the
+    genuinely transient cases keeps that guard for real outages while letting
+    ordinary throttling resolve itself.
+    """
     body = json.dumps(payload).encode("utf-8")
-    request = urllib.request.Request(url, data=body, headers=headers, method="POST")
+    attempts = max(1, llm.max_attempts)
+    for attempt in range(1, attempts + 1):
+        request = urllib.request.Request(url, data=body, headers=headers, method="POST")
+        try:
+            with urllib.request.urlopen(request, timeout=llm.timeout_seconds) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode("utf-8", errors="replace")
+            error = LLMError(f"LLM request failed with HTTP {exc.code}: {detail[:500]}")
+            if attempt >= attempts or not _is_retryable_status(exc.code):
+                raise error from exc
+            delay = _retry_delay(llm, attempt, retry_after=exc.headers.get("Retry-After") if exc.headers else None)
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+            error = LLMError(f"LLM request failed: {exc}")
+            if attempt >= attempts:
+                raise error from exc
+            delay = _retry_delay(llm, attempt)
+        print(
+            f"warning: {error} (attempt {attempt}/{attempts}); retrying in {delay:.1f}s",
+            file=sys.stderr,
+        )
+        time.sleep(delay)
+    raise LLMError("LLM request failed: no attempts were made")
+
+
+def _is_retryable_status(code: int) -> bool:
+    return code in RETRYABLE_STATUS_CODES or 500 <= code < 600
+
+
+def _retry_delay(llm: LLMConfig, attempt: int, *, retry_after: str | None = None) -> float:
+    """Honour Retry-After when the provider sends one, else back off exponentially."""
+    hinted = _retry_after_seconds(retry_after)
+    if hinted is not None:
+        return max(0.0, min(hinted, llm.max_retry_sleep_seconds))
+    delay = llm.retry_backoff_seconds * (2 ** (attempt - 1))
+    return max(0.0, min(delay, llm.max_retry_sleep_seconds))
+
+
+def _retry_after_seconds(value: str | None) -> float | None:
+    if not value:
+        return None
     try:
-        with urllib.request.urlopen(request, timeout=120) as response:
-            return json.loads(response.read().decode("utf-8"))
-    except urllib.error.HTTPError as exc:
-        detail = exc.read().decode("utf-8", errors="replace")
-        raise LLMError(f"LLM request failed with HTTP {exc.code}: {detail[:500]}") from exc
-    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
-        raise LLMError(f"LLM request failed: {exc}") from exc
+        return float(str(value).strip())
+    except ValueError:
+        # The HTTP-date form is legal but rare from LLM providers; falling back
+        # to plain backoff is better than guessing at clock skew.
+        return None
 
 
 def _normalize_judge(response: dict[str, Any], config: Config) -> dict[str, Any]:
