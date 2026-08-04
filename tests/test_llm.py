@@ -2,7 +2,13 @@ import pathlib
 import unittest
 
 from podcast_radar.config import AppConfig, Config, FeedConfig, LLMConfig, LabConfig, SiteConfig, TranscriptionConfig
-from podcast_radar.llm import _normalize_judge, _normalize_summary, build_summary_prompt, extract_json
+from podcast_radar.llm import (
+    _confidence,
+    _normalize_judge,
+    _normalize_summary,
+    build_summary_prompt,
+    extract_json,
+)
 
 
 class LLMTests(unittest.TestCase):
@@ -75,6 +81,32 @@ class LLMTests(unittest.TestCase):
         self.assertTrue(result["include"])
         self.assertEqual(result["labs"], ["Atreides Management"])
         self.assertEqual(result["matched_people"], ["Gavin Baker"])
+
+    def test_confidence_survives_unusable_model_values(self) -> None:
+        self.assertEqual(_confidence(0.75), 0.75)
+        self.assertEqual(_confidence("0.75"), 0.75)
+        self.assertEqual(_confidence("high"), 0.0)
+        self.assertEqual(_confidence(None), 0.0)
+        self.assertEqual(_confidence(True), 0.0)
+        self.assertEqual(_confidence(float("nan")), 0.0)
+        self.assertEqual(_confidence(90), 1.0)
+        self.assertEqual(_confidence(-2), 0.0)
+
+    def test_unparseable_confidence_does_not_discard_the_judgement(self) -> None:
+        result = _normalize_judge(
+            {
+                "include": True,
+                "confidence": "very high",
+                "labs": ["OpenAI"],
+                "matched_people": ["Sam Altman"],
+                "guest_names": ["Sam Altman"],
+                "reason": "Sam Altman is the guest.",
+            },
+            _config(),
+        )
+
+        self.assertTrue(result["include"])
+        self.assertEqual(result["confidence"], 0.0)
 
     def test_summary_prompt_requests_long_and_short_summaries(self) -> None:
         prompt = build_summary_prompt(

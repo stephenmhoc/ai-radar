@@ -172,6 +172,78 @@ class StorageMigrationTests(unittest.TestCase):
         merged = conn.execute("SELECT status FROM radar_items WHERE id = ?", (youtube_item_id,)).fetchone()
         self.assertEqual(merged["status"], "merged")
 
+    def test_duplicate_window_counts_items_not_appearances(self) -> None:
+        conn = sqlite3.connect(":memory:")
+        conn.row_factory = sqlite3.Row
+        storage.migrate(conn)
+        podcast_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="podcast", name="Example Podcast", url="https://example.com/feed.xml"),
+        )
+        blog_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="blog", name="Example blog", url="https://example.com/blog"),
+        )
+        youtube_id = storage.upsert_source(
+            conn,
+            SourceConfig(kind="youtube", name="Example Podcast — YouTube", url="https://youtube.com/example"),
+        )
+        target_item_id, _ = storage.upsert_appearance(
+            conn,
+            podcast_id,
+            {
+                "external_id": "pod-1",
+                "title": "Sam Altman on reasoning models and post-training",
+                "url": "https://example.com/pod-1",
+                "published_at": "2026-08-01T12:00:00+00:00",
+                "duration": "01:02:00",
+            },
+        )
+        # A newer item carrying two appearances used to consume the whole
+        # comparison window and hide every older item from deduplication.
+        noise_item_id, _ = storage.upsert_appearance(
+            conn,
+            podcast_id,
+            {
+                "external_id": "pod-2",
+                "title": "An entirely unrelated conversation about hardware supply",
+                "url": "https://example.com/pod-2",
+                "published_at": "2026-08-03T12:00:00+00:00",
+                "duration": "00:31:00",
+            },
+        )
+        storage.upsert_appearance(
+            conn,
+            blog_id,
+            {
+                "external_id": "article-2",
+                "title": "An entirely unrelated conversation about hardware supply",
+                "url": "https://example.com/blog/hardware",
+                "published_at": "2026-08-03T12:00:00+00:00",
+                "canonical_item_id": noise_item_id,
+            },
+        )
+        self.assertEqual(len(storage.appearances_for_item(conn, noise_item_id)), 2)
+
+        original_window = storage.DUPLICATE_WINDOW_ITEMS
+        storage.DUPLICATE_WINDOW_ITEMS = 2
+        try:
+            youtube_item_id, _ = storage.upsert_appearance(
+                conn,
+                youtube_id,
+                {
+                    "external_id": "video-1",
+                    "title": "Sam Altman on reasoning models and post-training (Full Video)",
+                    "url": "https://youtube.com/watch?v=video-1",
+                    "published_at": "2026-08-02T12:00:00+00:00",
+                    "duration": "01:01:30",
+                },
+            )
+        finally:
+            storage.DUPLICATE_WINDOW_ITEMS = original_window
+
+        self.assertEqual(youtube_item_id, target_item_id)
+
     def test_identical_full_text_deduplicates_blog_and_x(self) -> None:
         conn = sqlite3.connect(":memory:")
         conn.row_factory = sqlite3.Row

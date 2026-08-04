@@ -300,12 +300,30 @@ def _normalize_judge(response: dict[str, Any], config: Config) -> dict[str, Any]
         reason = (reason + " " if reason else "") + "No qualifying target-lab guest was named."
     return {
         "include": include,
-        "confidence": float(response.get("confidence", 0.0) or 0.0),
+        "confidence": _confidence(response.get("confidence")),
         "labs": labs if include else [],
         "matched_people": matched_people if include else [],
         "guest_names": guests,
         "reason": reason,
     }
+
+
+def _confidence(value: Any) -> float:
+    """Coerce a model-supplied confidence into a 0-1 float.
+
+    Models occasionally answer with "high", "90%", or null. None of those are
+    worth failing an otherwise usable judgement over, so unparseable values
+    fall back to 0.0 and out-of-range numbers are clamped.
+    """
+    if isinstance(value, bool) or value is None:
+        return 0.0
+    try:
+        confidence = float(value)
+    except (TypeError, ValueError):
+        return 0.0
+    if confidence != confidence:  # NaN
+        return 0.0
+    return min(1.0, max(0.0, confidence))
 
 
 def _normalize_summary(response: dict[str, Any]) -> dict[str, Any]:

@@ -54,10 +54,17 @@ def clean_text(value: str | None) -> str:
     return value.strip()
 
 
+_TRUNCATION_MARKER = "\n\n[truncated]"
+
+
 def truncate(value: str, max_chars: int) -> str:
     if max_chars <= 0 or len(value) <= max_chars:
         return value
-    return value[: max_chars - 20].rstrip() + "\n\n[truncated]"
+    # Keep the result within max_chars: the marker has to fit inside the budget,
+    # and a budget too small for the marker just gets a hard cut instead.
+    if max_chars <= len(_TRUNCATION_MARKER):
+        return value[:max_chars]
+    return value[: max_chars - len(_TRUNCATION_MARKER)].rstrip() + _TRUNCATION_MARKER
 
 
 def slugify(value: str, fallback: str = "episode") -> str:

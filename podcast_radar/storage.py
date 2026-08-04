@@ -15,6 +15,7 @@ from .config import Config, FeedConfig, SourceConfig
 PUBLIC_STATUSES = ("published",)
 AUTO_MERGE_SCORE = 0.95
 REVIEW_SCORE = 0.82
+DUPLICATE_WINDOW_ITEMS = 400
 
 
 def connect(config: Config) -> sqlite3.Connection:
@@ -1012,8 +1013,11 @@ def _best_duplicate(
     if source is None:
         raise KeyError(f"source {source_id} not found")
     incoming_kind = str(source["kind"])
+    # The limit has to bound distinct candidate items, not joined rows. Limiting
+    # the join lets items with several appearances crowd older items out of the
+    # comparison window and silently shrink deduplication coverage.
     rows = conn.execute(
-        """
+        f"""
         SELECT radar_items.id, radar_items.title, radar_items.description, radar_items.published_at,
                radar_items.duration, radar_items.content_hash, appearances.url,
                appearances.description AS appearance_description, sources.kind
@@ -1021,9 +1025,19 @@ def _best_duplicate(
         JOIN appearances ON appearances.item_id = radar_items.id
         JOIN sources ON sources.id = appearances.source_id
         WHERE radar_items.merged_into_item_id IS NULL AND sources.kind != ?
-        ORDER BY radar_items.id DESC LIMIT 400
+          AND radar_items.id IN (
+            SELECT radar_items.id
+            FROM radar_items
+            JOIN appearances ON appearances.item_id = radar_items.id
+            JOIN sources ON sources.id = appearances.source_id
+            WHERE radar_items.merged_into_item_id IS NULL AND sources.kind != ?
+            GROUP BY radar_items.id
+            ORDER BY radar_items.id DESC
+            LIMIT {DUPLICATE_WINDOW_ITEMS}
+          )
+        ORDER BY radar_items.id DESC
         """,
-        (incoming_kind,),
+        (incoming_kind, incoming_kind),
     ).fetchall()
     best: tuple[int, float, str] | None = None
     for row in rows:
