@@ -1,0 +1,47 @@
+# Deployed to docker-server-pve2 at /opt/ai-radar/compose.yaml
+#
+# ai-radar has no long-running service; the site is published to Cloudflare
+# Pages. Everything runs as a oneshot invoked by a host systemd timer:
+#   docker compose run --rm cycle
+#
+# Transcription is not done here. Jobs are written to the shared queue at
+# /opt/transcribe-queue and a Mac worker with Metal picks them up. See the
+# transcribe-broker repo.
+
+services:
+  cycle:
+    build:
+      context: ./app
+      dockerfile: deploy/Dockerfile
+    image: ai-radar:local
+    container_name: ai-radar
+    # Never started by `up`; only invoked via `compose run`.
+    profiles: ["manual"]
+    entrypoint: ["/app/deploy/run-cycle.sh"]
+    environment:
+      TZ: America/New_York
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
+      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN:-}
+      CLOUDFLARE_ACCOUNT_ID: ${CLOUDFLARE_ACCOUNT_ID:-}
+      AI_RADAR_DEPLOY_PROJECT: ${AI_RADAR_DEPLOY_PROJECT:-}
+      AI_RADAR_DEPLOY_BRANCH: ${AI_RADAR_DEPLOY_BRANCH:-main}
+      AI_RADAR_LOOKBACK_HOURS: ${AI_RADAR_LOOKBACK_HOURS:-2}
+      AI_RADAR_BACKLOG_JUDGE_LIMIT: ${AI_RADAR_BACKLOG_JUDGE_LIMIT:-10}
+      AI_RADAR_BACKLOG_PROCESS_LIMIT: ${AI_RADAR_BACKLOG_PROCESS_LIMIT:-1}
+    volumes:
+      - ./var:/app/var
+      # public/ is deliberately NOT mounted: build-site rmtree's it on every run,
+      # which fails on a bind mount ("device or resource busy"). It is fully
+      # regenerated from the database each cycle and published to Cloudflare
+      # Pages, so there is nothing worth persisting on the host.
+      - ./config.vm.toml:/app/config.toml:ro
+      # The shared transcription queue. Same path inside and out so the value in
+      # config.vm.toml is unambiguous.
+      - /opt/transcribe-queue:/opt/transcribe-queue
+      # Read-only key whose only permitted remote command is kicking the agent;
+      # the restriction lives in the Mac's authorized_keys, not here.
+      - /root/.ssh/id_ed25519:/root/.ssh/id_ed25519:ro
+      - /root/.ssh/known_hosts:/root/.ssh/known_hosts:ro
+    logging:
+      options:
+        max-size: 10m

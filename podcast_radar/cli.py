@@ -11,7 +11,7 @@ import sys
 from functools import partial
 
 from .config import Config, load_config
-from . import collectors, launchd, llm, pipeline, site, storage
+from . import collectors, distributed, launchd, llm, pipeline, site, storage
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -45,6 +45,22 @@ def main(argv: list[str] | None = None) -> int:
     run_parser.add_argument("--match", default=None, help="Only judge/process episodes whose title or description contains this text.")
 
     subparsers.add_parser("build-site", help="Render public static site and RSS feed.")
+
+    dispatch_parser = subparsers.add_parser(
+        "dispatch-transcriptions",
+        help="Queue transcription work for the Mac worker and nudge it.",
+    )
+    dispatch_parser.add_argument("--limit", type=int, default=None)
+    dispatch_parser.add_argument("--since", default=None)
+
+    subparsers.add_parser(
+        "import-transcripts",
+        help="Import transcript bundles the Mac worker published.",
+    )
+    subparsers.add_parser(
+        "queue-status",
+        help="Show transcription queue and job counts.",
+    )
 
     list_parser = subparsers.add_parser("list", help="List radar item status counts.")
     list_parser.add_argument("--status", default=None)
@@ -144,6 +160,21 @@ def main(argv: list[str] | None = None) -> int:
             except llm.LLMError as exc:
                 print(f"error: {exc}", file=sys.stderr)
                 return 1
+            return 0
+        if args.command == "dispatch-transcriptions":
+            _print_stats(
+                pipeline.dispatch_transcriptions(
+                    config, conn, limit=args.limit, published_since=args.since
+                )
+            )
+            return 0
+        if args.command == "import-transcripts":
+            _print_stats(
+                distributed.import_results(config, conn, config.transcription.queue_root)
+            )
+            return 0
+        if args.command == "queue-status":
+            _print_stats(distributed.queue_status(conn, config.transcription.queue_root))
             return 0
         if args.command == "build-site":
             _print_stats(site.build_site(config, conn))

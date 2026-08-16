@@ -56,6 +56,14 @@ class TranscriptionConfig:
     transcript_dir: pathlib.Path = pathlib.Path("var/transcripts")
     max_audio_mb: int = 750
     keep_audio: bool = False
+    # "local" transcribes in-process with whisper-cli. "remote" hands the work to
+    # a Mac worker with Metal through the transcription broker, which is how this
+    # runs on the homelab where there is no GPU.
+    mode: str = "local"
+    queue_root: pathlib.Path = pathlib.Path("var/queue")
+    worker_ssh: str = ""
+    worker_command: str = ""
+    lease_hours: int = 6
 
 
 @dataclasses.dataclass(frozen=True)
@@ -170,6 +178,7 @@ def _transcription(raw: dict[str, Any], root: pathlib.Path) -> TranscriptionConf
         args=tuple(config.args),
         audio_dir=_resolve(root, config.audio_dir),
         transcript_dir=_resolve(root, config.transcript_dir),
+        queue_root=_resolve(root, config.queue_root),
     )
 
 

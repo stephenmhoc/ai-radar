@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from .config import Config
-from . import collectors, llm, site, storage, transcriber
+from . import collectors, distributed, llm, site, storage, transcriber
 
 
 def run(
@@ -26,6 +26,11 @@ def run(
         feed_names=feed_names,
         search_text=search_text,
     )
+    # Dispatch before summarizing so the worker transcribes in parallel with the
+    # coordinator's LLM work instead of after it.
+    if config.transcription.mode == "remote":
+        dispatch = dispatch_transcriptions(config, conn, limit=limit, published_since=since)
+        stats.update({f"dispatch_{key}": value for key, value in dispatch.items()})
     processed = process_relevant(
         config,
         conn,
@@ -38,6 +43,33 @@ def run(
     stats["judged"] = judged
     stats["processed"] = processed
     stats["rendered"] = rendered.get("items", rendered["episodes"])
+    return stats
+
+
+def dispatch_transcriptions(
+    config: Config,
+    conn,
+    *,
+    limit: int | None = None,
+    published_since: str | None = None,
+) -> dict[str, int]:
+    """Queue transcription work for the Mac worker and nudge it.
+
+    The kick is best effort: if the Mac is asleep the job stays queued and the
+    worker's own timer collects it, so this never blocks the run.
+    """
+    stats = distributed.enqueue_pending(
+        config,
+        conn,
+        config.transcription.queue_root,
+        limit=limit,
+        published_since=published_since,
+        lease_hours=config.transcription.lease_hours,
+    )
+    if stats.get("enqueued") and config.transcription.worker_ssh and config.transcription.worker_command:
+        stats["kicked"] = int(
+            distributed.kick(config.transcription.worker_ssh, config.transcription.worker_command)
+        )
     return stats
 
 
@@ -82,6 +114,11 @@ def process_relevant(
 ) -> int:
     count = 0
     since = published_since or config.app.processed_after
+    remote = config.transcription.mode == "remote"
+    if remote:
+        # Import first: transcripts that came back since the last run become
+        # 'transcribed', and the second loop below then summarizes them.
+        distributed.import_results(config, conn, config.transcription.queue_root)
     for episode in storage.episodes_for_status(
         conn,
         ("relevant",),
@@ -94,6 +131,10 @@ def process_relevant(
             if episode.get("content_text"):
                 storage.set_content(conn, int(episode["id"]), str(episode["content_text"]))
                 conn.commit()
+            elif remote:
+                # Nothing to do inline; the item stays 'relevant' until a worker
+                # returns its transcript. dispatch_transcriptions() queues it.
+                continue
             else:
                 transcriber.transcribe_episode(config, conn, episode)
         except Exception as exc:  # noqa: BLE001 - preserve per-episode progress

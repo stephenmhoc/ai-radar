@@ -1,0 +1,12 @@
+[Unit]
+Description=Run the AI Radar cycle hourly
+
+[Timer]
+# Matches the retired launchd StartInterval=3600. Offset off the hour so it does
+# not collide with the newsletter-summary run or a Prometheus scrape burst.
+OnCalendar=*-*-* *:17:00
+Persistent=true
+AccuracySec=1min
+
+[Install]
+WantedBy=timers.target
