@@ -57,9 +57,13 @@ class TranscriptionConfig:
     max_audio_mb: int = 750
     keep_audio: bool = False
     # "local" transcribes in-process with whisper-cli. "remote" hands the work to
-    # a Mac worker with Metal through the transcription broker, which is how this
-    # runs on the homelab where there is no GPU.
+    # a Mac worker with Metal through the transcription broker. "service" asks
+    # Transcribe Anything, which keeps one corpus for every project, so an
+    # episode somebody has already transcribed costs nothing at all.
     mode: str = "local"
+    service_url: str = ""
+    # Leave empty and set TRANSCRIBE_ANYTHING_TOKEN in the environment instead.
+    service_token: str = ""
     queue_root: pathlib.Path = pathlib.Path("var/queue")
     worker_ssh: str = ""
     worker_command: str = ""

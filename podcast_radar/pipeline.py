@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from .config import Config
-from . import collectors, distributed, llm, site, storage, transcriber
+from . import collectors, distributed, llm, site, storage, transcribe_anything, transcriber
 
 
 def run(
@@ -46,6 +46,14 @@ def run(
     return stats
 
 
+def collect_transcriptions(config: Config, conn) -> dict[str, int]:
+    """Pick up finished transcripts, from whichever coordinator is in use."""
+    if config.transcription.mode == "service":
+        return transcribe_anything.collect(config, conn)
+
+    return distributed.import_results(config, conn, config.transcription.queue_root)
+
+
 def dispatch_transcriptions(
     config: Config,
     conn,
@@ -58,6 +66,13 @@ def dispatch_transcriptions(
     The kick is best effort: if the Mac is asleep the job stays queued and the
     worker's own timer collects it, so this never blocks the run.
     """
+    if config.transcription.mode == "service":
+        # One shared corpus: anything already transcribed comes back now, and
+        # anything new is queued once for the whole fleet.
+        return transcribe_anything.dispatch(
+            config, conn, limit=limit, published_since=published_since
+        )
+
     stats = distributed.enqueue_pending(
         config,
         conn,
@@ -114,11 +129,11 @@ def process_relevant(
 ) -> int:
     count = 0
     since = published_since or config.app.processed_after
-    remote = config.transcription.mode == "remote"
+    remote = config.transcription.mode in ("remote", "service")
     if remote:
         # Import first: transcripts that came back since the last run become
         # 'transcribed', and the second loop below then summarizes them.
-        distributed.import_results(config, conn, config.transcription.queue_root)
+        collect_transcriptions(config, conn)
     for episode in storage.episodes_for_status(
         conn,
         ("relevant",),

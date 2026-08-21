@@ -169,9 +169,7 @@ def main(argv: list[str] | None = None) -> int:
             )
             return 0
         if args.command == "import-transcripts":
-            _print_stats(
-                distributed.import_results(config, conn, config.transcription.queue_root)
-            )
+            _print_stats(pipeline.collect_transcriptions(config, conn))
             return 0
         if args.command == "queue-status":
             _print_stats(distributed.queue_status(conn, config.transcription.queue_root))
