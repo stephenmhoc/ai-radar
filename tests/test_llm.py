@@ -1,3 +1,4 @@
+import dataclasses
 import io
 import pathlib
 import unittest
@@ -86,6 +87,27 @@ class LLMTests(unittest.TestCase):
         self.assertTrue(result["include"])
         self.assertEqual(result["labs"], ["Atreides Management"])
         self.assertEqual(result["matched_people"], ["Gavin Baker"])
+
+    def test_judge_allows_substantial_physical_ai_without_named_guest(self) -> None:
+        config = dataclasses.replace(
+            _config(),
+            labs=_config().labs + (LabConfig(name="Physical AI", aliases=("Physical AI",)),),
+        )
+        result = _normalize_judge(
+            {
+                "include": True,
+                "confidence": 0.9,
+                "labs": ["Physical AI"],
+                "matched_people": [],
+                "guest_names": [],
+                "reason": "The item is about deploying AI-controlled industrial robots.",
+            },
+            config,
+        )
+
+        self.assertTrue(result["include"])
+        self.assertEqual(result["labs"], ["Physical AI"])
+        self.assertEqual(result["matched_people"], [])
 
     def test_confidence_survives_unusable_model_values(self) -> None:
         self.assertEqual(_confidence(0.75), 0.75)

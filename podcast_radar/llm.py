@@ -144,7 +144,8 @@ Decide whether this {medium} item is worth preparing as a candidate for AI Radar
 This is a metadata-only prefilter. It does not publish the item. Include only if it likely features or was
 substantially authored by a person who is a current or recent technical member, founder, executive, senior research leader, engineering
 leader, product leader, AI infrastructure leader, or explicitly listed roster person at one of the
-target organizations below.
+target organizations below. Also include an item that is centrally about Physical AI: AI-enabled robots,
+machines, vehicles, drones, or industrial automation that use AI for perception, control, or autonomy.
 
 Target organizations and seed roster examples:
 {chr(10).join(roster_lines)}
@@ -158,8 +159,11 @@ Rules:
 - Do not include journalists, investors, analysts, commentators, customers, or partners unless they are explicitly listed in the target roster below.
 - If an apparent guest works only at an organization absent from the target roster, return include=false unless the metadata verifies a current or recent target-organization role for that guest.
 - You may include qualifying people who are not in the seed roster if metadata or strong world knowledge verify their target-lab affiliation.
+- For a substantial Physical AI item, include "Physical AI" in "labs" even if no qualifying target-organization guest is present.
+  It must be directly about building, deploying, or operating those AI-enabled physical systems, not a passing mention of robotics or AI.
+  List any actual central guest or speaker in "matched_people" when known; an unidentified Physical AI subject may leave it empty.
 - Be conservative when the guest or affiliation is ambiguous.
-- If no qualifying target-lab guest is found, return include=false, labs=[], and matched_people=[].
+- If neither a qualifying target-lab guest nor a substantial Physical AI subject is found, return include=false, labs=[], and matched_people=[].
 
 Medium: {medium}
 Source: {episode['feed_name']}
@@ -174,8 +178,8 @@ Metadata:
 Return strict JSON with:
 include: boolean
 confidence: number from 0 to 1
-labs: array of target organization names where qualifying guests work or recently worked
-matched_people: array of qualifying guest people only
+labs: array of target organization names where qualifying guests work or recently worked, plus "Physical AI" for a qualifying physical-AI item
+matched_people: array of qualifying guest people only; may be empty for a qualifying Physical AI item with no named central person
 guest_names: array of all apparent guests
 reason: concise string
 """
@@ -194,10 +198,12 @@ def build_transcript_judge_prompt(config: Config, episode) -> dict[str, str]:
     user = f"""
 Make the final publication decision for this AI Radar {medium} item using its normalized full text.
 
-The site labels are people affiliations, not topics. Include the item only if its full text,
+The site labels are people affiliations, except "Physical AI", which is a coverage category. Include the item only if its full text,
 metadata, or your strong world knowledge verifies that an actual guest, central speaker, or author is a current or recent
 technical member, founder, executive, senior research leader, engineering leader, product leader,
-AI infrastructure leader, or explicitly listed roster person at one of the target organizations below.
+AI infrastructure leader, or explicitly listed roster person at one of the target organizations below. Also include a substantial item
+centrally about Physical AI: AI-enabled robots, machines, vehicles, drones, or industrial automation that use AI for perception,
+control, or autonomy.
 
 Target organizations and seed roster examples:
 {chr(10).join(roster_lines)}
@@ -210,6 +216,8 @@ Rules:
 - Do not include an item whose main guest or author works only at an organization absent from the target roster unless that person is explicitly listed in the target roster below.
 - Podcast and video introductions often state who the guest is. Prefer that over topic mentions later.
 - A substantial blog post or X thread on a watched person's verified source may qualify through authorship; routine reactions, promotions, and short updates do not.
+- A Physical AI item must be directly about building, deploying, or operating those AI-enabled physical systems, not a passing mention of robotics or AI.
+  Tag it "Physical AI" in "labs". It may have no matched person when the physical-AI subject is clear but no central person is named.
 - If the full text shows that the candidate was a false positive, return include=false, labs=[], and matched_people=[].
 
 Medium: {medium}
@@ -230,8 +238,8 @@ Normalized full text:
 Return strict JSON with:
 include: boolean
 confidence: number from 0 to 1
-labs: array of target organization names where qualifying guests work or recently worked
-matched_people: array of qualifying guest people only
+labs: array of target organization names where qualifying guests work or recently worked, plus "Physical AI" for a qualifying physical-AI item
+matched_people: array of qualifying guest people only; may be empty for a qualifying Physical AI item with no named central person
 guest_names: array of all apparent guests
 reason: concise string explaining the guest affiliation evidence
 """
@@ -362,11 +370,12 @@ def _normalize_judge(response: dict[str, Any], config: Config) -> dict[str, Any]
     labs = _canonical_labs(config, response.get("labs"))
     guests = _list(response.get("guest_names"))
     matched_people = _matched_guest_people(response.get("matched_people"), guests)
-    include = bool(response.get("include")) and bool(labs) and bool(matched_people)
+    physical_ai = "Physical AI" in labs
+    include = bool(response.get("include")) and bool(labs) and (bool(matched_people) or physical_ai)
     reason = str(response.get("reason", "")).strip()
     if bool(response.get("include")) and not labs:
         reason = (reason + " " if reason else "") + "No configured target-lab guest affiliation was verified."
-    elif bool(response.get("include")) and not matched_people:
+    elif bool(response.get("include")) and not matched_people and not physical_ai:
         reason = (reason + " " if reason else "") + "No qualifying target-lab guest was named."
     return {
         "include": include,

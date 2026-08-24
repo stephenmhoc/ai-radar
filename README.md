@@ -12,7 +12,7 @@ https://ai-radar.merimerimeri.com
 
 - Collects configured podcast RSS feeds, YouTube channels, blog feeds, and X timelines.
 - Stores one canonical Radar item plus every place it appeared. A podcast and YouTube cross-post therefore publish once while linking to both.
-- Asks one LLM classifier whether each item has a qualifying guest, speaker, or verified author from a configured target organization. The current targets include OpenAI, Anthropic, Google DeepMind, Meta, xAI, NVIDIA, Microsoft, Replit, Hugging Face, CoreWeave, Applied Intuition, and Atreides Management.
+- Asks one LLM classifier whether each item has a qualifying guest, speaker, or verified author from a configured target organization. The current targets include OpenAI, Anthropic, Google DeepMind, Meta, xAI, NVIDIA, Microsoft, Replit, Hugging Face, CoreWeave, Applied Intuition, Atreides Management, and Atoms. It also covers substantial Physical AI material about AI-enabled robots, machines, vehicles, drones, and industrial automation.
 - Skips non-matching items before expensive content preparation where possible.
 - Locally transcribes qualifying podcast and YouTube appearances; blog articles and substantial X threads already arrive as normalized text.
 - Runs the same final full-text classifier and summarizer for every medium.
@@ -194,7 +194,7 @@ retry_backoff_seconds = 2.0 # doubles per attempt
 max_retry_sleep_seconds = 60.0
 ```
 
-The judge prompts use the configured lab roster as seed examples for people, not a hard allowlist. Lab labels remain restricted to configured targets and represent where the qualifying person works, not what organizations were discussed. Metadata judging is only a prefilter; a second decision over normalized full text determines whether the item is publishable. Podcasts and broad video channels require a qualifying guest or central speaker. A watched person's blog or X account can qualify through verified authorship, but routine and promotional posts remain excluded.
+The judge prompts use the configured lab roster as seed examples for people, not a hard allowlist. Lab labels remain restricted to configured targets and represent where the qualifying person works, not what organizations were discussed; `Physical AI` is the explicit coverage-category exception. Metadata judging is only a prefilter; a second decision over normalized full text determines whether the item is publishable. Podcasts and broad video channels require a qualifying guest or central speaker, except for substantial Physical AI coverage. A watched person's blog or X account can qualify through verified authorship, but routine and promotional posts remain excluded.
 
 ## Local Transcription
 

@@ -130,6 +130,16 @@ name = "BG2Pod with Brad Gerstner and Bill Gurley"
 url = "https://anchor.fm/s/f06c2370/podcast/rss"
 hosts = ["Brad Gerstner", "Bill Gurley"]
 
+[[feeds]]
+name = "Relentless"
+url = "https://anchor.fm/s/e402cdc8/podcast/rss"
+hosts = ["Ti Morse"]
+
+[[feeds]]
+name = "David Senra"
+url = "https://feeds.megaphone.fm/david-senra"
+hosts = ["David Senra"]
+
 [[sources]]
 kind = "blog"
 name = "Sam Altman"
@@ -461,6 +471,17 @@ aliases = ["Atreides", "Atreides Management"]
 people = [
   "Gavin Baker",
 ]
+
+[[labs]]
+name = "Atoms"
+aliases = ["Atoms", "Atoms.co"]
+people = [
+  "Travis Kalanick",
+]
+
+[[labs]]
+name = "Physical AI"
+aliases = ["Physical AI"]
 
 [[labs]]
 name = "Microsoft"
