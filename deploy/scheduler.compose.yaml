@@ -1,6 +1,6 @@
 services:
   scheduler:
-    image: mcuadros/ofelia:v0.3.22
+    image: mcuadros/ofelia:0.3.22
     container_name: scheduler
     restart: unless-stopped
     command: daemon --docker
