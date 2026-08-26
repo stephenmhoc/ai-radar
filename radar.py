@@ -21,6 +21,8 @@ from difflib import SequenceMatcher
 from html.parser import HTMLParser
 from typing import Any
 
+from error_reporter import ErrorReporter
+
 
 ARCHIVE_VERSION = 1
 DEFAULT_ARCHIVE = pathlib.Path("data/items.json")
@@ -574,7 +576,13 @@ def extract_json(content: str) -> dict[str, Any]:
     return value
 
 
-def run_cycle(settings: Settings, *, lookback_days: int) -> dict[str, int]:
+def run_cycle(
+    settings: Settings,
+    *,
+    lookback_days: int,
+    reporter: ErrorReporter | None = None,
+) -> dict[str, int]:
+    reporter = reporter or ErrorReporter(None, status="disabled")
     if settings.llm.api_key_env and not os.environ.get(settings.llm.api_key_env):
         raise RadarError(f"missing API key env var: {settings.llm.api_key_env}")
     archive = load_archive(settings.archive_path)
@@ -588,6 +596,12 @@ def run_cycle(settings: Settings, *, lookback_days: int) -> dict[str, int]:
         except Exception as exc:  # noqa: BLE001 - one broken feed must not block all sources
             source_errors += 1
             print(f"warning: source failed: {source.name}: {exc}", file=sys.stderr)
+            reporter.capture_exception(
+                exc,
+                tags={"phase": "source", "source": source.name, "source_kind": source.kind},
+                extra={"feed_url": source.feed_url},
+                fingerprint=["ai-radar", "source", source.kind, source.name],
+            )
             continue
         for entry in entries:
             if entry["id"] in known or not is_recent(entry.get("published_at"), cutoff):
@@ -613,6 +627,12 @@ def run_cycle(settings: Settings, *, lookback_days: int) -> dict[str, int]:
         except RadarError as exc:
             llm_errors += 1
             print(f"warning: item deferred: {group[0]['title']}: {exc}", file=sys.stderr)
+            reporter.capture_exception(
+                exc,
+                tags={"phase": "summary", "model": settings.llm.model},
+                extra={"source": group[0]["source"], "title": group[0]["title"]},
+                fingerprint=["ai-radar", "summary", settings.llm.model],
+            )
             continue
         best = max(group, key=lambda value: len(value.get("description") or ""))
         dates = sorted(value["published_at"] for value in group if value.get("published_at"))
@@ -778,6 +798,17 @@ def print_stats(stats: dict[str, int]) -> None:
         print(f"{key}={value}")
 
 
+def lookback_days_from_env() -> int:
+    raw = os.environ.get("AI_RADAR_LOOKBACK_DAYS", "7")
+    try:
+        value = int(raw)
+    except ValueError as exc:
+        raise RadarError("AI_RADAR_LOOKBACK_DAYS must be an integer") from exc
+    if value <= 0:
+        raise RadarError("AI_RADAR_LOOKBACK_DAYS must be greater than zero")
+    return value
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="ai-radar")
     parser.add_argument("--config", type=pathlib.Path, default=DEFAULT_CONFIG)
@@ -788,6 +819,8 @@ def main(argv: list[str] | None = None) -> int:
     subparsers.add_parser("build-site", help="Regenerate static HTML and RSS from the archive.")
     subparsers.add_parser("doctor", help="Validate configuration and tracked archive state.")
     args = parser.parse_args(argv)
+    root = args.config.expanduser().resolve().parent
+    reporter = ErrorReporter.build_from_env(root=root)
     try:
         settings = load_settings(args.config, args.archive)
         if args.command == "doctor":
@@ -798,6 +831,7 @@ def main(argv: list[str] | None = None) -> int:
             print(f"podcast_sources={sum(source.kind == 'podcast' for source in settings.sources)}")
             print(f"youtube_sources={sum(source.kind == 'youtube' for source in settings.sources)}")
             print(f"archive_items={len(archive['items'])}")
+            print(f"sentry={reporter.status}")
             if settings.llm.api_key_env and not os.environ.get(settings.llm.api_key_env):
                 print(f"warning: {settings.llm.api_key_env} is not set; run will defer new items")
             return 0
@@ -807,11 +841,18 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "run":
             if args.lookback_days <= 0:
                 raise RadarError("--lookback-days must be greater than zero")
-            print_stats(run_cycle(settings, lookback_days=args.lookback_days))
+            print_stats(run_cycle(settings, lookback_days=args.lookback_days, reporter=reporter))
             return 0
-    except (RadarError, OSError, ValueError, ET.ParseError) as exc:
+    except Exception as exc:  # noqa: BLE001 - command failures must be reported before exit
+        reporter.capture_exception(
+            exc,
+            tags={"command": args.command},
+            fingerprint=["ai-radar", "command", str(args.command), type(exc).__name__],
+        )
         print(f"error: {exc}", file=sys.stderr)
         return 1
+    finally:
+        reporter.close()
     return 2
 
 
