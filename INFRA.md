@@ -259,8 +259,8 @@ cycle performs these phases in order:
    failure. Force pushes are never used.
 3. Tag Sentry with the freshly synchronized worktree SHA and load `radar.py`.
 4. Fetch all configured sources using the lookback window, bounded response
-   sizes, public-only redirect destinations, and bounded retries for transient
-   failures.
+   sizes (16 MiB per feed), public-only redirect destinations, and bounded
+   retries for transient failures.
 5. Match exact media identity first, allow fuzzy matching only across media,
    and retain at most one podcast and one YouTube appearance per item.
 6. Defer sparse metadata or make one structured OpenRouter request and store

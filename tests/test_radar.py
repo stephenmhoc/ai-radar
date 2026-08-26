@@ -252,6 +252,7 @@ class FeedAndUrlTests(unittest.TestCase):
         self.assertEqual(fetch.call_count, 2)
 
     def test_feed_response_size_is_bounded(self) -> None:
+        self.assertEqual(radar.MAX_FEED_BYTES, 16 * 1024 * 1024)
         response = FakeBinaryResponse(b"123456")
         with self.assertRaisesRegex(radar.RadarError, "exceeded"):
             radar._read_bounded(response, max_bytes=5, label="feed response")
