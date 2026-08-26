@@ -328,6 +328,10 @@ doctor and tests inside the resulting image. Dependabot checks pip, Docker, and
 GitHub Actions weekly. Actions are an independent verification path, not the
 publisher schedule; Ofelia remains the only production scheduler.
 
+GitHub secret scanning, push protection, dependency alerts, and automated
+security updates are enabled for the public repository. Non-provider pattern
+and validity checks are not available on the repository's current plan.
+
 `main` cannot require pre-existing CI checks without also blocking the
 repository deploy key's direct generated-content pushes. Moving the worker to a
 branch-and-PR publisher would add GitHub credentials and orchestration, so the
