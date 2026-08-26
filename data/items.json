@@ -60154,6 +60154,92 @@
         "podcast": "https://www.cognitiverevolution.ai/rl-s-a-hell-of-a-drug-metagaming-reward-seeking-motivated-cot-reasoning-bronson-schoen-apollo/",
         "youtube": "https://www.youtube.com/watch?v=EimoamE3mTI"
       }
+    },
+    {
+      "id": "51a1b2d431f96862a6b8",
+      "status": "skipped",
+      "title": "Navigating AI Resistance in Organizations",
+      "source_title": "Navigating AI Resistance in Organizations",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode features Angie Jones, VP of the Agentic AI Foundation, Daniel Whitenack, CEO at Prediction Guard, and Chris Benson, AI / Autonomy Research Engineer at Lockheed Martin. None of these individuals or their organizations are on the AI Radar target list.",
+      "published_at": "2026-08-26T14:25:33+00:00",
+      "first_seen_at": "2026-08-26T15:17:23+00:00",
+      "appearances": [
+        {
+          "id": "d7bb17365ebd52669dd2",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:RrGWtOEQj8A",
+          "title": "Navigating AI Resistance in Organizations",
+          "description": "How do you help an entire organization adapt to AI, not just developers?\n\nIn this clip. we discuss the challenges of introducing AI agents to non-technical teams, from navigating resistance and fear to helping people understand how their roles may change. She explains why successful AI adoption isn’t about convincing everyone that AI can do everything, but about helping people understand where it can genuinely make their work better.\n\nAngie also shares a practical approach to building trust: start with meaningful use cases, let people experience the benefits firsthand, and gradually help them find the right balance between what they delegate to AI and what they continue to handle themselves.\n\nFEATURING:\n\nGuest - Angie Jones (VP of the Agentic AI Foundation)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast)\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast)\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://us06web.zoom.us/webinar/register/WN_tMivXvPXRJ6pi5526S5etw#/registration\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
+          "url": "https://www.youtube.com/watch?v=RrGWtOEQj8A",
+          "published_at": "2026-08-26T14:25:33+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=RrGWtOEQj8A"
+      }
+    },
+    {
+      "id": "7a82890b86a8ca41a1d8",
+      "status": "skipped",
+      "title": "AI & I — A $10B Hedge Fund’s AI Playbook (Best of the Pod)",
+      "source_title": "A $10B Hedge Fund’s AI Playbook (Best of the Pod)",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode features Will England, CEO of Walleye Capital, a hedge fund. He is not a qualifying person from the target organizations, nor is the content about Physical AI.",
+      "published_at": "2026-08-26T14:33:23+00:00",
+      "first_seen_at": "2026-08-26T15:17:36+00:00",
+      "appearances": [
+        {
+          "id": "4cee8cffb1f6b4128649",
+          "kind": "podcast",
+          "source": "AI & I",
+          "family": "ai & i",
+          "guid": "338c11ab-5386-4fbd-8c79-255ce5248d8c",
+          "title": "A $10B Hedge Fund’s AI Playbook (Best of the Pod)",
+          "description": "Will England is the CEO of Walleye Capital, a hedge fund managing nearly $10 billion in assets. An engineer by training with a math background from Oxford, he has spent his career at the intersection of machines and markets—and has made AI fluency mandatory for all 400 employees.\n\nEngland believes refusing to use AI is like refusing to use the internet in 1995 because it wasn’t perfect. His use of AI is public and effusive, including in a firm-wide email that opened with “I used ChatGPT to write this email. You should be using it, too, and be proud of it.” AI informs how Walleye drafts memos and selects stocks.\n\nOn Every’s AI & I, Dan Shipper spoke with England about why he’s betting his entire organization on AI, why “results are what matter” more than blood, sweat, and tears, and what the American frontier can teach us about leading through technological change.\n\nLike, subscribe, comment, and share!\n\nTo hear more from Dan Shipper:\n\nSubscribe to Every: https://every.to/subscribe\n\nFollow Dan Shipper on X: https://twitter.com/danshipper\n\nGo to https://attio.com/every and get 15% off your first year. \n\nTimestamps:\n\n0:00 Start\n\n0:51 Introduction\n\n3:25 What pushed Will to go all in on AI\n\n15:15 Inside the ‘AI-first’ memo Will shared at Walleye\n\n17:02 Why you shouldn’t be afraid of using AI for work\n\n31:25 How Will uses LLMs to sharpen his thinking\n\n35:57 Walleye’s approach to using AI to reduce risk\n\n39:35 What history can teach us about leading through change\n\n57:10 Will’s first principles for making better decisions\n\n59:23 Why Will journals every day—and how AI makes it easier\n\nLinks to resources mentioned in the episode:\n\nWill England/Walleye Capital: https://walleyecapital.com/bio/will-england\n\nEvery’s AI tools—Monologue, Cora, Spiral, and Sparkle: https://every.to/studio\n\nEvery’s AI consulting: https://every.to/consulting",
+          "url": "https://share.transistor.fm/s/b8265c0b",
+          "published_at": "2026-08-26T14:33:23+00:00",
+          "hosts": [
+            "Dan Shipper"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/b8265c0b"
+      }
+    },
+    {
+      "id": "0d9d601711cc9401f669",
+      "status": "published",
+      "title": "How Elon Recruits the World’s Best Engineers",
+      "source_title": "How Elon Recruits the World’s Best Engineers",
+      "short_summary": "Gavin Baker discusses Elon Musk's advantage in recruiting top hardware engineers globally for TerraFab. He suggests that Musk's ability to attract talent from Taiwan, South Korea, and Japan is a key factor, leading him to build an entire ecosystem around this recruitment.",
+      "long_summary": "Gavin Baker explains that Elon Musk's primary advantage in building TerraFab may not be capital or technology, but rather his ability to attract top talent. Baker argues that the best hardware engineers from Taiwan, South Korea, Japan, and other regions are eager to work for Elon Musk. This episode suggests that Musk is developing an entire ecosystem specifically designed to recruit these engineers. The discussion highlights talent acquisition as a critical component of Musk's strategy for TerraFab.",
+      "reason": "Gavin Baker, a qualifying person from Atreides Management, is a central speaker discussing Elon Musk (xAI) and his recruitment strategies, which are relevant to AI and technology development.",
+      "published_at": "2026-08-26T15:00:32+00:00",
+      "first_seen_at": "2026-08-26T15:17:43+00:00",
+      "appearances": [
+        {
+          "id": "f8071cbe2c7b79e0aba6",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:A_qjtSljRAs",
+          "title": "How Elon Recruits the World’s Best Engineers",
+          "description": "Gavin Baker explains why Elon Musk’s biggest advantage in building TerraFab may not just be capital or technology — it may be talent. His argument: the best hardware engineers in Taiwan, South Korea, Japan, and beyond want to work for Elon, and he’ll build an entire ecosystem around recruiting them.\n\n#ElonMusk #Tesla #SpaceX #AI #Semiconductors #InvestLikeTheBest #Technology\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/A_qjtSljRAs",
+          "published_at": "2026-08-26T15:00:32+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/A_qjtSljRAs"
+      }
     }
   ]
 }
