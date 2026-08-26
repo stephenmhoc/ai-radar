@@ -30,6 +30,7 @@ from error_reporter import ErrorReporter
 ARCHIVE_VERSION = 1
 DEFAULT_ARCHIVE = pathlib.Path("data/items.json")
 DEFAULT_CONFIG = pathlib.Path("config.toml")
+GENERATED_FILES = ("index.html", "feeds.html", "feed.xml", "_headers")
 RETRYABLE_HTTP_CODES = frozenset({408, 409, 425, 429})
 ALLOWED_STATUSES = frozenset({"seen", "deferred", "skipped", "published"})
 APPEARANCE_KINDS = frozenset({"podcast", "youtube"})
@@ -134,6 +135,10 @@ class Settings:
 
 class RadarError(RuntimeError):
     pass
+
+
+class LLMTruncationError(RadarError):
+    """The model stopped at the output-token cap, so retrying cannot help."""
 
 
 class _TextParser(HTMLParser):
@@ -358,16 +363,31 @@ def write_text_atomic(path: pathlib.Path, value: str) -> None:
         temporary.unlink(missing_ok=True)
 
 
+def parse_timestamp(value: object) -> dt.datetime | None:
+    """Parse an ISO-8601 timestamp exactly as written, or return None."""
+    if not isinstance(value, str) or not value:
+        return None
+    try:
+        return dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+def parse_utc_timestamp(value: object) -> dt.datetime | None:
+    """Parse a timestamp and normalize it to an aware UTC instant."""
+    parsed = parse_timestamp(value)
+    if parsed is None:
+        return None
+    if parsed.tzinfo is None:
+        return parsed.replace(tzinfo=dt.timezone.utc)
+    return parsed.astimezone(dt.timezone.utc)
+
+
 def _valid_timestamp(value: object, *, optional: bool = False) -> bool:
     if value is None:
         return optional
-    if not isinstance(value, str) or not value:
-        return False
-    try:
-        parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
-    except ValueError:
-        return False
-    return parsed.tzinfo is not None
+    parsed = parse_timestamp(value)
+    return parsed is not None and parsed.tzinfo is not None
 
 
 def validate_archive(archive: object, *, label: str = "archive") -> dict[str, int]:
@@ -463,18 +483,18 @@ def validate_archive(archive: object, *, label: str = "archive") -> dict[str, in
         if not isinstance(links, dict) or links != expected_links:
             errors.append(f"{prefix}.links did not match its appearances")
         if status == "published":
-            short_summary = str(item.get("short_summary") or "")
-            long_summary = str(item.get("long_summary") or "")
             if not links:
                 errors.append(f"{prefix} was published without a link")
-            if len(short_summary) < MIN_SHORT_SUMMARY_CHARS:
-                errors.append(f"{prefix}.short_summary was too short")
-            if not 1 <= sentence_count(short_summary) <= 2:
-                errors.append(f"{prefix}.short_summary was not one or two sentences")
-            if len(short_summary.split()) > MAX_SHORT_SUMMARY_WORDS:
-                errors.append(f"{prefix}.short_summary exceeded {MAX_SHORT_SUMMARY_WORDS} words")
-            if not MIN_LONG_SUMMARY_CHARS <= len(long_summary) <= MAX_LONG_SUMMARY_CHARS:
-                errors.append(f"{prefix}.long_summary length was invalid")
+            errors.extend(
+                f"{prefix}.{message}"
+                for message in summary_contract_errors(
+                    title=str(item.get("title") or ""),
+                    short_summary=str(item.get("short_summary") or ""),
+                    long_summary=str(item.get("long_summary") or ""),
+                    reason=str(item.get("reason") or ""),
+                    freshly_generated=False,
+                )
+            )
         if status == "deferred" and (item.get("short_summary") or item.get("long_summary")):
             errors.append(f"{prefix} was deferred with a summary")
 
@@ -676,9 +696,8 @@ def parse_date(value: str | None) -> str | None:
     except (TypeError, ValueError):
         parsed = None
     if parsed is None:
-        try:
-            parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
-        except ValueError:
+        parsed = parse_timestamp(value)
+        if parsed is None:
             return None
     if parsed.tzinfo is None:
         parsed = parsed.replace(tzinfo=dt.timezone.utc)
@@ -725,12 +744,9 @@ def normalized_title(value: str) -> str:
 
 
 def close_in_time(first: str | None, second: str | None, days: int = 10) -> bool:
-    if not first or not second:
-        return True
-    try:
-        left = dt.datetime.fromisoformat(first.replace("Z", "+00:00"))
-        right = dt.datetime.fromisoformat(second.replace("Z", "+00:00"))
-    except ValueError:
+    left = parse_utc_timestamp(first)
+    right = parse_utc_timestamp(second)
+    if left is None or right is None:
         return True
     return abs(left - right) <= dt.timedelta(days=days)
 
@@ -743,14 +759,6 @@ def title_score(first: str, second: str) -> float:
     if left == right:
         return 1.0
     return SequenceMatcher(None, left, right).ratio()
-
-
-def all_appearance_ids(archive: dict[str, Any]) -> set[str]:
-    return {
-        str(appearance_value["id"])
-        for item in archive["items"]
-        for appearance_value in item.get("appearances", [])
-    }
 
 
 def appearance_owners(
@@ -960,6 +968,44 @@ return empty strings for both summaries.
     }
 
 
+def summary_contract_errors(
+    *,
+    title: str,
+    short_summary: str,
+    long_summary: str,
+    reason: str,
+    freshly_generated: bool,
+) -> list[str]:
+    """Return the published-summary rule violations, worded relative to the field.
+
+    Every stored published item must satisfy the shape rules. The prose rules
+    (sentence count, non-empty title and reason) apply only to summaries this
+    application just generated: the archive still carries imported `legacy-*`
+    items whose long summaries predate them, and rejecting those would make the
+    tracked archive unloadable.
+    """
+    errors: list[str] = []
+    if len(short_summary) < MIN_SHORT_SUMMARY_CHARS:
+        errors.append("short_summary was too short")
+    if not 1 <= sentence_count(short_summary) <= 2:
+        errors.append("short_summary was not one or two sentences")
+    if len(short_summary.split()) > MAX_SHORT_SUMMARY_WORDS:
+        errors.append(f"short_summary exceeded {MAX_SHORT_SUMMARY_WORDS} words")
+    if not MIN_LONG_SUMMARY_CHARS <= len(long_summary) <= MAX_LONG_SUMMARY_CHARS:
+        errors.append("long_summary length was outside the allowed range")
+    if not freshly_generated:
+        return errors
+    if not title:
+        errors.append("title was empty")
+    if not MIN_LONG_SUMMARY_SENTENCES <= sentence_count(long_summary) <= MAX_LONG_SUMMARY_SENTENCES:
+        errors.append(
+            f"long_summary was not {MIN_LONG_SUMMARY_SENTENCES}-{MAX_LONG_SUMMARY_SENTENCES} sentences"
+        )
+    if not reason:
+        errors.append("reason was empty")
+    return errors
+
+
 def validate_summary_contract(
     *,
     title: str,
@@ -967,25 +1013,13 @@ def validate_summary_contract(
     long_summary: str,
     reason: str,
 ) -> None:
-    errors: list[str] = []
-    if not title:
-        errors.append("title was empty")
-    short_sentences = sentence_count(short_summary)
-    if len(short_summary) < MIN_SHORT_SUMMARY_CHARS:
-        errors.append("short_summary was too short")
-    if not 1 <= short_sentences <= 2:
-        errors.append("short_summary was not one or two sentences")
-    if len(short_summary.split()) > MAX_SHORT_SUMMARY_WORDS:
-        errors.append(f"short_summary exceeded {MAX_SHORT_SUMMARY_WORDS} words")
-    long_sentences = sentence_count(long_summary)
-    if not MIN_LONG_SUMMARY_CHARS <= len(long_summary) <= MAX_LONG_SUMMARY_CHARS:
-        errors.append("long_summary length was outside the allowed range")
-    if not MIN_LONG_SUMMARY_SENTENCES <= long_sentences <= MAX_LONG_SUMMARY_SENTENCES:
-        errors.append(
-            f"long_summary was not {MIN_LONG_SUMMARY_SENTENCES}-{MAX_LONG_SUMMARY_SENTENCES} sentences"
-        )
-    if not reason:
-        errors.append("reason was empty")
+    errors = summary_contract_errors(
+        title=title,
+        short_summary=short_summary,
+        long_summary=long_summary,
+        reason=reason,
+        freshly_generated=True,
+    )
     if errors:
         raise RadarError("LLM structured response failed local validation: " + "; ".join(errors))
 
@@ -1035,17 +1069,28 @@ def llm_json(
                         label="LLM response",
                     ).decode("utf-8")
                 )
-            content = raw["choices"][0]["message"]["content"]
+            choice = raw["choices"][0]
+            content = choice["message"]["content"]
+            finish_reason = choice.get("finish_reason")
             usage = raw.get("usage") if isinstance(raw, dict) else None
             actual_model = raw.get("model") if isinstance(raw, dict) else None
             if actual_model or isinstance(usage, dict):
                 print(
                     "llm_response "
                     f"model={actual_model or 'unknown'} "
+                    f"finish_reason={finish_reason or 'unknown'} "
                     f"prompt_tokens={usage.get('prompt_tokens', 'unknown') if isinstance(usage, dict) else 'unknown'} "
                     f"completion_tokens={usage.get('completion_tokens', 'unknown') if isinstance(usage, dict) else 'unknown'}"
                 )
+            if finish_reason == "length":
+                raise LLMTruncationError(
+                    "LLM response was truncated at the "
+                    f"{settings.max_output_tokens}-token output cap; "
+                    "raise llm.max_output_tokens or lower the summary limits"
+                )
             return extract_json(content)
+        except LLMTruncationError:
+            raise
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", errors="replace")
             error = RadarError(f"LLM HTTP {exc.code}: {detail[:500]}")
@@ -1221,11 +1266,19 @@ def run_cycle(
     reevaluate: dict[str, dict[str, Any]] = {}
 
     def process_entries(source: Source, entries: list[dict[str, Any]]) -> None:
-        invalid_dates = sum(not entry.get("published_at") for entry in entries)
-        if invalid_dates:
-            error = RadarError(f"{invalid_dates} feed entr{'y' if invalid_dates == 1 else 'ies'} had no valid date")
-            source_failures.append(SourceFailure(source, error, "metadata"))
-            print(f"warning: source metadata failed: {source.name}: {error}", file=sys.stderr)
+        undated = sum(not entry.get("published_at") for entry in entries)
+        if undated:
+            detail = f"{undated} of {len(entries)} feed entries had no valid date"
+            if undated == len(entries):
+                # Only a feed whose dates are entirely unusable is a real failure.
+                # An undated entry can never clear the lookback cutoff, so alerting
+                # on a handful of them would re-report the same stale archive rows
+                # on every cycle, forever.
+                error = RadarError(detail)
+                source_failures.append(SourceFailure(source, error, "metadata"))
+                print(f"warning: source metadata failed: {source.name}: {error}", file=sys.stderr)
+            else:
+                print(f"warning: source metadata partly unusable: {source.name}: {detail}", file=sys.stderr)
         for entry in entries:
             if not is_recent(entry.get("published_at"), cutoff):
                 continue
@@ -1417,15 +1470,8 @@ def run_cycle(
 
 
 def is_recent(value: str | None, cutoff: dt.datetime) -> bool:
-    if not value:
-        return False
-    try:
-        parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
-    except ValueError:
-        return False
-    if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=dt.timezone.utc)
-    return parsed >= cutoff
+    parsed = parse_utc_timestamp(value)
+    return parsed is not None and parsed >= cutoff
 
 
 def build_site(settings: Settings, archive: dict[str, Any] | None = None) -> dict[str, int]:
@@ -1436,11 +1482,15 @@ def build_site(settings: Settings, archive: dict[str, Any] | None = None) -> dic
         key=lambda value: value.get("published_at") or "",
         reverse=True,
     )
+    rendered = {
+        "index.html": render_html(settings, items),
+        "feeds.html": render_feeds_html(settings),
+        "feed.xml": render_rss(settings, items),
+        "_headers": render_headers(),
+    }
     settings.public_dir.mkdir(parents=True, exist_ok=True)
-    write_text_atomic(settings.public_dir / "index.html", render_html(settings, items))
-    write_text_atomic(settings.public_dir / "feeds.html", render_feeds_html(settings))
-    write_text_atomic(settings.public_dir / "feed.xml", render_rss(settings, items))
-    write_text_atomic(settings.public_dir / "_headers", render_headers())
+    for name in GENERATED_FILES:
+        write_text_atomic(settings.public_dir / name, rendered[name])
     return {"items": len(items), "rss_items": len(items), "feeds": len(settings.sources)}
 
 
@@ -1814,13 +1864,9 @@ def render_rss(settings: Settings, items: list[dict[str, Any]]) -> str:
         ET.SubElement(node, "link").text = primary_link
         guid = ET.SubElement(node, "guid", {"isPermaLink": "false"})
         guid.text = "ai-radar:" + str(item["id"])
-        published_at = item.get("published_at")
-        if published_at:
-            try:
-                value = dt.datetime.fromisoformat(str(published_at).replace("Z", "+00:00"))
-                ET.SubElement(node, "pubDate").text = email.utils.format_datetime(value)
-            except ValueError:
-                pass
+        published_at = parse_timestamp(item.get("published_at"))
+        if published_at is not None:
+            ET.SubElement(node, "pubDate").text = email.utils.format_datetime(published_at)
         description_parts = [html.escape(clean_text(str(item.get("long_summary") or "")))]
         source_html = render_links(links, separator=" | ")
         if source_html:
@@ -1845,11 +1891,10 @@ def render_headers() -> str:
 def date_label(value: str | None) -> str:
     if not value:
         return "Unknown date"
-    try:
-        parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
-        return f"{parsed:%b} {parsed.day}, {parsed.year}"
-    except ValueError:
+    parsed = parse_timestamp(value)
+    if parsed is None:
         return value[:10]
+    return f"{parsed:%b} {parsed.day}, {parsed.year}"
 
 
 def print_stats(stats: dict[str, int]) -> None:
@@ -1894,7 +1939,10 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"archive_{key}={value}")
             print(f"sentry={reporter.status}")
             if settings.llm.api_key_env and not os.environ.get(settings.llm.api_key_env):
-                print(f"warning: {settings.llm.api_key_env} is not set; run will defer new items")
+                print(
+                    f"warning: {settings.llm.api_key_env} is not set; "
+                    "run will fail every summary and persist no new items"
+                )
             return 0
         if args.command == "build-site":
             print_stats(build_site(settings))

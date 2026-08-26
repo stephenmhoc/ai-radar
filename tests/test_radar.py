@@ -584,6 +584,69 @@ class CycleTests(unittest.TestCase):
         self.assertEqual(second["reevaluated"], 1)
         self.assertEqual(archive["items"][0]["status"], "published")
 
+    def test_partly_undated_feed_is_not_reported_as_a_source_failure(self) -> None:
+        # A single malformed archive entry must not alert on every cycle forever;
+        # only a feed with no usable date at all is a real source failure.
+        reporter = RecordingReporter()
+        feed = f"""<rss><channel>
+          <item><guid>episode-1</guid><title>Building Useful AI Agents</title>
+            <description>{'Useful publisher notes. ' * 20}</description>
+            <link>https://example.com/episode</link>
+            <pubDate>{email.utils.format_datetime(NOW)}</pubDate></item>
+          <item><guid>legacy</guid><title>Undated legacy entry</title>
+            <description>Old entry</description>
+            <link>https://example.com/legacy</link>
+            <pubDate>not-a-date</pubDate></item>
+        </channel></rss>""".encode()
+        with tempfile.TemporaryDirectory() as directory:
+            settings = make_settings(pathlib.Path(directory), sources=(make_source(),))
+            with (
+                mock.patch.object(radar, "fetch_bytes", return_value=feed),
+                mock.patch.object(
+                    radar,
+                    "summarize_group",
+                    return_value={
+                        "status": "skipped",
+                        "title": "Building Useful AI Agents",
+                        "short_summary": "",
+                        "long_summary": "",
+                        "reason": "Not relevant.",
+                    },
+                ),
+            ):
+                stats = radar.run_cycle(settings, lookback_days=7, reporter=reporter)
+        self.assertEqual(stats["source_errors"], 0)
+        self.assertEqual(stats["new_items"], 1)
+        self.assertEqual(reporter.exceptions, [])
+
+    def test_truncated_response_fails_immediately_without_paid_retries(self) -> None:
+        settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json").llm
+        truncated = {
+            "model": "vendor/model",
+            "choices": [{"finish_reason": "length", "message": {"content": '{"include": tr'}}],
+        }
+        with (
+            mock.patch.object(radar.urllib.request, "urlopen", return_value=FakeHTTPResponse(truncated)) as urlopen,
+            mock.patch.dict(radar.os.environ, {"OPENROUTER_API_KEY": "test"}, clear=False),
+            mock.patch.object(radar.time, "sleep") as sleep,
+        ):
+            with self.assertRaises(radar.LLMTruncationError) as caught:
+                radar.llm_json(settings, system="s", user="u", schema=radar.EDITORIAL_RESPONSE_SCHEMA)
+        self.assertIn("output cap", str(caught.exception))
+        self.assertEqual(urlopen.call_count, 1)
+        sleep.assert_not_called()
+
+    def test_build_site_writes_exactly_the_staged_generated_files(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = make_settings(pathlib.Path(directory))
+            settings.archive_path.write_text(
+                json.dumps({"version": radar.ARCHIVE_VERSION, "items": [published_item()]}),
+                encoding="utf-8",
+            )
+            radar.build_site(settings)
+            written = sorted(path.name for path in settings.public_dir.iterdir())
+        self.assertEqual(written, sorted(radar.GENERATED_FILES))
+
     def test_entry_without_valid_date_is_reported_and_skipped_without_llm(self) -> None:
         reporter = RecordingReporter()
         with tempfile.TemporaryDirectory() as directory:
