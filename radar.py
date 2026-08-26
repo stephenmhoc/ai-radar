@@ -732,12 +732,10 @@ def render_html(settings: Settings, items: list[dict[str, Any]]) -> str:
     :root {{
       color-scheme: light;
       --paper: #f4f1e8;
-      --paper-deep: #e9e5da;
       --ink: #20231f;
       --muted: #6b7068;
       --forest: #1c2b23;
       --sage: #cdd9c4;
-      --accent: #687b58;
       --rule: #d5d1c6;
     }}
 
@@ -839,18 +837,14 @@ def render_html(settings: Settings, items: list[dict[str, Any]]) -> str:
 
     .episode-list {{
       margin: 0;
-      padding-left: 1.15rem;
+      padding: 0;
+      list-style: none;
     }}
 
     .episode {{
-      padding: 0 0 2.25rem 0.45rem;
+      padding: 0 0 2.25rem;
       border-bottom: 1px solid var(--rule);
       margin-bottom: 2.25rem;
-    }}
-
-    .episode::marker {{
-      color: var(--accent);
-      font-size: 0.72em;
     }}
 
     .episode-content {{ max-width: 46rem; }}
