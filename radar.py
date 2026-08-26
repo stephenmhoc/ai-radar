@@ -28,6 +28,18 @@ ARCHIVE_VERSION = 1
 DEFAULT_ARCHIVE = pathlib.Path("data/items.json")
 DEFAULT_CONFIG = pathlib.Path("config.toml")
 RETRYABLE_HTTP_CODES = frozenset({408, 409, 425, 429})
+EDITORIAL_RESPONSE_SCHEMA: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "include": {"type": "boolean"},
+        "title": {"type": "string"},
+        "short_summary": {"type": "string"},
+        "long_summary": {"type": "string"},
+        "reason": {"type": "string"},
+    },
+    "required": ["include", "title", "short_summary", "long_summary", "reason"],
+    "additionalProperties": False,
+}
 
 
 @dataclass(frozen=True)
@@ -466,7 +478,8 @@ def summarize_group(settings: Settings, group: list[dict[str, Any]]) -> dict[str
         return {
             "include": False,
             "title": best["title"],
-            "summary": "",
+            "short_summary": "",
+            "long_summary": "",
             "reason": "Publisher notes were too sparse to summarize reliably.",
         }
     roster = "\n".join(f"- {value}" for value in settings.roster)
@@ -497,37 +510,71 @@ Publisher notes:
 Return strict JSON with exactly these fields:
 include: boolean
 title: concise factual display title
-summary: one concise paragraph of 2-4 sentences grounded only in the publisher notes
+short_summary: 1-2 sentences and no more than 55 words, written for the episode list
+long_summary: 4-8 sentences with useful detail, written for the RSS feed
 reason: concise inclusion or exclusion reason
+
+Both summaries must be grounded only in the publisher notes. If include is false,
+return empty strings for both summaries.
 """.strip()
     response = llm_json(
         settings.llm,
         system=(
-            "You are a conservative editor. Never invent episode content. Return JSON only. "
+            "You are a conservative editor. Never invent episode content. "
             "If the supplied notes cannot support a useful summary, set include=false."
         ),
         user=prompt,
+        schema=EDITORIAL_RESPONSE_SCHEMA,
     )
-    include = bool(response.get("include"))
-    title = clean_text(str(response.get("title") or best["title"]))
-    summary = clean_text(str(response.get("summary") or ""))
-    if include and (not title or len(summary) < 60):
+    result = validate_editorial_response(response)
+    include = result["include"]
+    title = result["title"] or best["title"]
+    short_summary = result["short_summary"]
+    long_summary = result["long_summary"]
+    if include and (
+        not title
+        or len(short_summary) < 40
+        or sentence_count(short_summary) > 2
+        or len(short_summary.split()) > 55
+        or len(long_summary) < 120
+    ):
         include = False
-        summary = ""
+        short_summary = ""
+        long_summary = ""
         reason = "The model did not return a sufficiently grounded summary."
     else:
-        reason = clean_text(str(response.get("reason") or ""))
-    return {"include": include, "title": title, "summary": summary, "reason": reason}
+        reason = result["reason"]
+    return {
+        "include": include,
+        "title": title,
+        "short_summary": short_summary,
+        "long_summary": long_summary,
+        "reason": reason,
+    }
 
 
-def llm_json(settings: LLMSettings, *, system: str, user: str) -> dict[str, Any]:
+def llm_json(
+    settings: LLMSettings,
+    *,
+    system: str,
+    user: str,
+    schema: dict[str, Any],
+) -> dict[str, Any]:
     api_key = os.environ.get(settings.api_key_env, "")
     if settings.api_key_env and not api_key:
         raise RadarError(f"missing API key env var: {settings.api_key_env}")
     payload = {
         "model": settings.model,
         "temperature": settings.temperature,
-        "response_format": {"type": "json_object"},
+        "provider": {"require_parameters": True},
+        "response_format": {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "ai_radar_editorial_result",
+                "strict": True,
+                "schema": schema,
+            },
+        },
         "messages": [
             {"role": "system", "content": system},
             {"role": "user", "content": user},
@@ -562,18 +609,68 @@ def llm_json(settings: LLMSettings, *, system: str, user: str) -> dict[str, Any]
 
 
 def extract_json(content: str) -> dict[str, Any]:
+    if not isinstance(content, str):
+        raise RadarError("LLM structured response did not contain text")
     content = content.strip()
     try:
         value = json.loads(content)
-    except json.JSONDecodeError:
-        start = content.find("{")
-        end = content.rfind("}")
-        if start < 0 or end <= start:
-            raise RadarError("LLM response did not contain JSON") from None
-        value = json.loads(content[start : end + 1])
+    except json.JSONDecodeError as exc:
+        raise RadarError("LLM structured response was not valid JSON") from exc
     if not isinstance(value, dict):
         raise RadarError("LLM response was not a JSON object")
     return value
+
+
+def validate_editorial_response(value: dict[str, Any]) -> dict[str, Any]:
+    expected = set(EDITORIAL_RESPONSE_SCHEMA["required"])
+    if set(value) != expected:
+        raise RadarError("LLM structured response had unexpected fields")
+    if not isinstance(value["include"], bool):
+        raise RadarError("LLM structured response include was not boolean")
+    for key in expected - {"include"}:
+        if not isinstance(value[key], str):
+            raise RadarError(f"LLM structured response {key} was not text")
+    return {
+        "include": value["include"],
+        "title": clean_text(value["title"]),
+        "short_summary": clean_text(value["short_summary"]),
+        "long_summary": clean_text(value["long_summary"]),
+        "reason": clean_text(value["reason"]),
+    }
+
+
+def sentence_count(value: str) -> int:
+    text = re.sub(r"\s+", " ", clean_text(value))
+    if not text:
+        return 0
+    endings = list(re.finditer(r'[.!?](?:["”’)]*)?(?=\s+[A-Z0-9“"(\[]|$)', text))
+    return max(1, len(endings))
+
+
+def short_summary_from_long(
+    value: str,
+    *,
+    max_sentences: int = 2,
+    max_words: int = 55,
+) -> str:
+    text = re.sub(r"\s+", " ", clean_text(value))
+    if not text:
+        return ""
+    endings = list(re.finditer(r'[.!?](?:["”’)]*)?(?=\s+[A-Z0-9“"(\[]|$)', text))
+    candidate = text if len(endings) < max_sentences else text[: endings[max_sentences - 1].end()].strip()
+    if len(candidate.split()) <= max_words:
+        return candidate
+
+    first_sentence = text if not endings else text[: endings[0].end()].strip()
+    if len(first_sentence.split()) <= max_words:
+        return first_sentence
+
+    words = first_sentence.split()
+    shortened = " ".join(words[:max_words])
+    clause_break = max(shortened.rfind(","), shortened.rfind(";"), shortened.rfind(" — "))
+    if clause_break >= len(shortened) // 2:
+        shortened = shortened[:clause_break]
+    return shortened.rstrip(" ,;:—-.!?\"") + "."
 
 
 def run_cycle(
@@ -642,7 +739,8 @@ def run_cycle(
             "status": "published" if result["include"] else "skipped",
             "title": result["title"],
             "source_title": best["title"],
-            "summary": result["summary"],
+            "short_summary": result["short_summary"],
+            "long_summary": result["long_summary"],
             "reason": result["reason"],
             "published_at": dates[0] if dates else None,
             "first_seen_at": now,
@@ -705,7 +803,7 @@ def render_html(settings: Settings, items: list[dict[str, Any]]) -> str:
     for item in items:
         links = render_links(item.get("links", {}), separator=" · ")
         date = date_label(item.get("published_at"))
-        summary = escape_public_text(str(item.get("summary") or ""))
+        summary = escape_public_text(item_short_summary(item))
         link_suffix = f'<span aria-hidden="true">·</span>{links}' if links else ""
         rows.append(
             '<li class="episode">'
@@ -957,13 +1055,24 @@ def render_rss(settings: Settings, items: list[dict[str, Any]]) -> str:
                 ET.SubElement(node, "pubDate").text = email.utils.format_datetime(value)
             except ValueError:
                 pass
-        description_parts = [str(item.get("summary") or "")]
+        description_parts = [item_long_summary(item)]
         source_html = render_links(links, separator=" | ")
         if source_html:
             description_parts.extend(["<br><br>", source_html])
         ET.SubElement(node, "description").text = "".join(description_parts)
     ET.indent(rss, space="  ")
     return '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(rss, encoding="unicode") + "\n"
+
+
+def item_short_summary(item: dict[str, Any]) -> str:
+    value = clean_text(str(item.get("short_summary") or ""))
+    if value:
+        return value
+    return short_summary_from_long(str(item.get("summary") or item.get("long_summary") or ""))
+
+
+def item_long_summary(item: dict[str, Any]) -> str:
+    return clean_text(str(item.get("long_summary") or item.get("summary") or ""))
 
 
 def date_label(value: str | None) -> str:

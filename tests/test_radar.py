@@ -28,6 +28,15 @@ class StaticPublisherTests(unittest.TestCase):
         self.assertGreaterEqual(len(published), 222)
         self.assertTrue(all(item["links"] for item in published))
         self.assertTrue(all(set(item["links"]) <= {"podcast", "youtube"} for item in published))
+        self.assertTrue(all(item["short_summary"] for item in published))
+        self.assertTrue(all(item["long_summary"] for item in published))
+        self.assertTrue(all(radar.sentence_count(item["short_summary"]) <= 2 for item in published))
+        self.assertTrue(all(len(item["short_summary"].split()) <= 55 for item in published))
+        summarized = [item for item in archive["items"] if item["long_summary"]]
+        self.assertTrue(all(item["short_summary"] for item in summarized))
+        self.assertTrue(all(radar.sentence_count(item["short_summary"]) <= 2 for item in summarized))
+        self.assertTrue(all(len(item["short_summary"].split()) <= 55 for item in summarized))
+        self.assertTrue(all("summary" not in item for item in archive["items"]))
         self.assertEqual(html.count('<li class="episode">'), len(published))
         self.assertEqual(len(rss.findall("./channel/item")), len(published))
         for forbidden in ("<img", "<script", "stylesheet", "episode-card"):
@@ -59,6 +68,73 @@ class StaticPublisherTests(unittest.TestCase):
         first = {"title": "Building Useful AI Agents", "published_at": now, "family": "show"}
         second = {"title": "Building Useful AI Agents — Full Episode", "published_at": now, "family": "show"}
         self.assertEqual(len(radar.group_candidates([first, second])), 1)
+
+    def test_site_uses_short_summary_and_rss_uses_long_summary(self) -> None:
+        settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
+        item = {
+            "id": "summary-contract",
+            "status": "published",
+            "title": "Summary contract",
+            "published_at": "2026-08-25T12:00:00+00:00",
+            "short_summary": "Short site summary.",
+            "long_summary": "Long RSS summary with considerably more useful episode detail.",
+            "links": {"podcast": "https://example.com/episode"},
+        }
+
+        html = radar.render_html(settings, [item])
+        rss = ET.fromstring(radar.render_rss(settings, [item]))
+
+        self.assertIn("Short site summary.", html)
+        self.assertNotIn("Long RSS summary", html)
+        description = rss.findtext("./channel/item/description") or ""
+        self.assertIn("Long RSS summary", description)
+        self.assertNotIn("Short site summary", description)
+
+    def test_llm_request_requires_strict_structured_output(self) -> None:
+        settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json").llm
+        structured_value = {
+            "include": True,
+            "title": "Title",
+            "short_summary": "A short summary with enough information to be useful.",
+            "long_summary": "A detailed summary " * 15,
+            "reason": "Relevant guest.",
+        }
+        response = FakeHTTPResponse(
+            {"choices": [{"message": {"content": json.dumps(structured_value)}}]}
+        )
+        with (
+            mock.patch.dict("os.environ", {settings.api_key_env: "test"}),
+            mock.patch.object(radar.urllib.request, "urlopen", return_value=response) as urlopen,
+        ):
+            value = radar.llm_json(
+                settings,
+                system="system",
+                user="user",
+                schema=radar.EDITORIAL_RESPONSE_SCHEMA,
+            )
+
+        payload = json.loads(urlopen.call_args.args[0].data)
+        self.assertEqual(settings.model, "openrouter/auto")
+        self.assertEqual(value, structured_value)
+        self.assertEqual(payload["model"], "openrouter/auto")
+        self.assertEqual(payload["provider"], {"require_parameters": True})
+        self.assertEqual(payload["response_format"]["type"], "json_schema")
+        self.assertTrue(payload["response_format"]["json_schema"]["strict"])
+        self.assertEqual(
+            payload["response_format"]["json_schema"]["schema"],
+            radar.EDITORIAL_RESPONSE_SCHEMA,
+        )
+
+    def test_existing_long_summary_can_be_shortened_locally(self) -> None:
+        long_summary = (
+            "The first sentence explains the central idea clearly and directly. "
+            "The second sentence supplies one useful supporting detail. "
+            "The third sentence should remain exclusive to the RSS feed."
+        )
+        short_summary = radar.short_summary_from_long(long_summary)
+
+        self.assertEqual(radar.sentence_count(short_summary), 2)
+        self.assertNotIn("third sentence", short_summary)
 
     def test_source_failure_is_reported_without_stopping_the_cycle(self) -> None:
         reporter = RecordingReporter()
@@ -142,6 +218,20 @@ class RecordingReporter:
 
     def capture_exception(self, exception: BaseException, **context: object) -> None:
         self.exceptions.append({"exception": exception, **context})
+
+
+class FakeHTTPResponse:
+    def __init__(self, value: dict[str, object]) -> None:
+        self.body = json.dumps(value).encode()
+
+    def __enter__(self) -> FakeHTTPResponse:
+        return self
+
+    def __exit__(self, *args: object) -> None:
+        return None
+
+    def read(self) -> bytes:
+        return self.body
 
 
 if __name__ == "__main__":

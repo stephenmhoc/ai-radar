@@ -58,9 +58,15 @@ On the homelab, Dockge manages two stacks:
 - `/opt/scheduler`: Ofelia, the shared Docker-native schedule service
 
 The worker label schedules `/app/deploy/run-cycle.sh` hourly at minute 17. A
-cycle pulls `main`, fetches and summarizes new entries, rebuilds static output,
+cycle pulls `main`, fetches and summarizes new entries with OpenRouter's Auto
+Router, rebuilds static output,
 commits changed `data/` and `public/` files, and pushes. That push triggers the
 Cloudflare Pages deployment.
+
+Each new episode uses one strict structured-output request that returns both a
+one-to-two-sentence `short_summary` for the site and a more detailed
+`long_summary` for RSS. OpenRouter routing requires structured-output support,
+so an incompatible provider cannot silently return unvalidated prose.
 
 Set `AI_RADAR_SENTRY_DSN` in the homelab stack's `.env` to report source,
 summary, pipeline, and unexpected command failures. Reports are tagged with the
