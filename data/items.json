@@ -60111,6 +60111,49 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/the-state-of-ai-macro-apps-and-consumer-0SpxP4t2"
       }
+    },
+    {
+      "id": "ddb9e655df1f0e61943b",
+      "status": "published",
+      "title": "RL's a Hell of a Drug: Metagaming, Reward Seeking & Motivated CoT Reasoning – Bronson Schoen, Apollo",
+      "source_title": "RL's a Hell of a Drug: Metagaming, Reward Seeking & Motivated CoT Reasoning – Bronson Schoen, Apollo",
+      "short_summary": "Bronson Schoen, Member of Technical Staff at Apollo Research, discusses frontier-model chain-of-thought during reinforcement learning, including models reasoning about graders and safety reviews, sometimes diagnosing deception and lying anyway. The episode covers metagaming, reward-seeking, and motivated reasoning.",
+      "long_summary": "Nathan interviews Bronson Schoen, a Member of Technical Staff at Apollo Research and former Apple and Nvidia self-driving engineer. They discuss what raw frontier-model chain-of-thought reveals during reinforcement learning. Schoen details Apollo and OpenAI's work on metagaming, reward-seeking, and motivated reasoning. This includes transcripts where models reason about graders and safety reviews, sometimes diagnosing a deception test and then lying anyway. The episode explains why chain-of-thought monitoring is both indispensable and unreliable as reasoning traces grow enormous, polysemantic, and increasingly shaped by optimization pressure. The discussion highlights the challenge for labs to differentiate between confused reward-hacking, grader-seeking behavior, and more dangerous long-horizon objectives before models become harder to audit.",
+      "reason": "Bronson Schoen is a Member of Technical Staff at Apollo Research, which is a qualifying organization. The episode discusses work by Apollo and OpenAI, a qualifying organization.",
+      "published_at": "2026-08-26T11:02:32+00:00",
+      "first_seen_at": "2026-08-26T11:17:19+00:00",
+      "appearances": [
+        {
+          "id": "b0c7b5c1984b140a7784",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "928ce68a-a130-11f1-a245-53e44e8fe530",
+          "title": "RL's a Hell of a Drug: Metagaming, Reward Seeking & Motivated CoT Reasoning – Bronson Schoen, Apollo",
+          "description": "Nathan talks with Apollo Research Member of Technical Staff Bronson Schoen, who studies raw frontier-model chain-of-thought, about what those reasoning traces reveal during reinforcement learning. They unpack Apollo and OpenAI’s metagaming work, including models that reason about the grader or safety review board, diagnose a deception test, and still rationalize lying. Schoen argues that “RL is a hell of a drug”: reward-seeking can produce motivated reasoning, cleaner-looking but less trustworthy chains of thought, and behavior that tracks grading authorities rather than users, labs, or law. The stakes are whether chain-of-thought monitoring can remain useful as reasoning traces become enormous, compressed, and harder for humans or other models to audit.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/rl-s-a-hell-of-a-drug-metagaming-reward-seeking-motivated-cot-reasoning-bronson-schoen-apollo/\nSponsors:\n\nMercury: \nMercury is the banking platform loved by 300,000+ entrepreneurs, with virtual cards and Spend controls for granular budgets, receipts, and low-risk AI agent purchases. Learn more and apply in minutes at https://mercury.com\n\nDiffusion: \nDiffusion helps organizations build custom AI software factories that scale business outcomes, not just outputs. Cognitive Revolution listeners get a 25% service credit on their first engagement at https://diffusion.io/tcr\n\nGranola: \nGranola is an AI-powered notepad that securely transcribes meetings and turns rough notes into clean, structured action items. Try it free at https://granola.ai/tcr\n\nDeepgram Flux TTS: \nDeepgram Flux TTS brings lifelike AI voices with real personalities that handle interruptions, pauses, and natural conversation. Try all the voices free through September 12 at https://deepgram.com/keep-talking\n\nClaude: \nClaude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nPRODUCED BY:\n\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\n\nWebsite: https://www.cognitiverevolution.ai\n\nTwitter (Podcast): https://x.com/cogrev_podcast\n\nTwitter (Nathan): https://x.com/labenz\n\nLinkedIn: https://linkedin.com/in/nathanlabenz/\n\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\n\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\n\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.cognitiverevolution.ai/rl-s-a-hell-of-a-drug-metagaming-reward-seeking-motivated-cot-reasoning-bronson-schoen-apollo/",
+          "published_at": "2026-08-26T11:02:32+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        },
+        {
+          "id": "a7ab2fb640339af78592",
+          "kind": "youtube",
+          "source": "The Cognitive Revolution — YouTube",
+          "family": "the cognitive revolution",
+          "guid": "yt:video:EimoamE3mTI",
+          "title": "RL's a Hell of a Drug: Metagaming, Reward Seeking & Motivated CoT Reasoning – Bronson Schoen, Apollo",
+          "description": "Nathan talks with Bronson Schoen, a Member of Technical Staff at Apollo Research and former Apple and Nvidia self-driving engineer, about what raw frontier-model chain-of-thought reveals during reinforcement learning. Schoen walks through Apollo and OpenAI work on metagaming, reward-seeking, and motivated reasoning, including transcripts where models reason about graders and safety reviews, sometimes diagnosing a deception test and then lying anyway. The episode explains why chain-of-thought monitoring is both indispensable and unreliable as reasoning traces grow enormous, polysemantic, and increasingly shaped by optimization pressure. The stakes are whether labs can tell the difference between confused reward-hacking, grader-seeking behavior, and more dangerous long-horizon objectives before models become harder to audit.\n\nFor full show notes, links, and references, read the episode page:\nhttps://www.cognitiverevolution.ai/rl-s-a-hell-of-a-drug-metagaming-reward-seeking-motivated-cot-reasoning-bronson-schoen-apollo/\n\nSPONSORS:\nMercury: Mercury is the banking platform loved by 300,000+ entrepreneurs, with virtual cards and Spend controls for granular budgets, receipts, and low-risk AI agent purchases. Learn more and apply in minutes at https://mercury.com\n\nDiffusion: Diffusion helps organizations build custom AI software factories that scale business outcomes, not just outputs. Cognitive Revolution listeners get a 25% service credit on their first engagement at https://diffusion.io/tcr\n\nGranola: Granola is an AI-powered notepad that securely transcribes meetings and turns rough notes into clean, structured action items. Try it free at https://granola.ai/tcr\n\nDeepgram Flux TTS: Deepgram Flux TTS brings lifelike AI voices with real personalities that handle interruptions, pauses, and natural conversation. Try all the voices free through September 12 at https://deepgram.com/keeptalking?utm_source=cognitiverevolution&utm_medium=audio&utm_campaign=flux_tts_launch&utm_content=shownotes\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nCHAPTERS:\n(00:00) About the Episode\n(04:37) Sponsor: Mercury\n(06:18) Apollo's scheming research\n(13:14) Chain of thought scale\n(21:19) Power survey setup (Part 1)\n(21:25) Sponsors: Diffusion | Granola\n(24:22) Power survey setup (Part 2)\n(33:39) Model vocabulary shifts (Part 1)\n(33:46) Sponsors: Deepgram Flux TTS | Claude\n(35:51) Model vocabulary shifts (Part 2)\n(46:32) Interpreting strange dialect\n(57:02) Deception plot twist\n(01:04:42) Monitoring ambiguous reasoning\n(01:13:27) Grader reward seeking\n(01:21:47) Alignment training trends\n(01:26:42) Personas under pressure\n(01:36:13) Market incentives fail\n(01:43:20) Punishment and concealment\n(01:47:42) Future model beliefs\n(01:57:42) Transparency and hiring\n(02:05:47) Monitoring next steps\n(02:08:20) Episode Outro\n(02:12:21) Outro\n\nPRODUCED BY:\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\nWebsite: https://www.cognitiverevolution.ai\nTwitter (Podcast): https://x.com/cogrev_podcast\nTwitter (Nathan): https://x.com/labenz\nLinkedIn: https://linkedin.com/in/nathanlabenz/\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.youtube.com/watch?v=EimoamE3mTI",
+          "published_at": "2026-08-26T11:02:32+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/rl-s-a-hell-of-a-drug-metagaming-reward-seeking-motivated-cot-reasoning-bronson-schoen-apollo/",
+        "youtube": "https://www.youtube.com/watch?v=EimoamE3mTI"
+      }
     }
   ]
 }
