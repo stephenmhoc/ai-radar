@@ -378,6 +378,66 @@ class SummaryContractTests(unittest.TestCase):
         self.assertEqual(payload["provider"], {"require_parameters": True})
         self.assertTrue(payload["response_format"]["json_schema"]["strict"])
 
+    def test_malformed_structured_response_is_retried(self) -> None:
+        settings = replace(
+            radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json").llm,
+            max_attempts=2,
+        )
+        structured_value = {
+            "include": True,
+            "title": "Title",
+            "short_summary": VALID_SHORT,
+            "long_summary": VALID_LONG,
+            "reason": "Relevant guest.",
+        }
+        responses = [
+            FakeHTTPResponse({"choices": [{"message": {"content": '{"include": true, "title": "'}}]}),
+            FakeHTTPResponse(
+                {"choices": [{"message": {"content": json.dumps(structured_value)}}]}
+            ),
+        ]
+        with (
+            mock.patch.dict("os.environ", {settings.api_key_env: "test"}),
+            mock.patch.object(radar.urllib.request, "urlopen", side_effect=responses) as urlopen,
+            mock.patch.object(radar.time, "sleep") as sleep,
+        ):
+            value = radar.llm_json(
+                settings,
+                system="system",
+                user="user",
+                schema=radar.EDITORIAL_RESPONSE_SCHEMA,
+            )
+        self.assertEqual(value, structured_value)
+        self.assertEqual(urlopen.call_count, 2)
+        sleep.assert_called_once_with(settings.retry_backoff_seconds)
+
+    def test_malformed_structured_response_stops_at_attempt_limit(self) -> None:
+        settings = replace(
+            radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json").llm,
+            max_attempts=2,
+        )
+        responses = [
+            FakeHTTPResponse({"choices": [{"message": {"content": '{"include":'}}]}),
+            FakeHTTPResponse({"choices": [{"message": {"content": '{"include":'}}]}),
+        ]
+        with (
+            mock.patch.dict("os.environ", {settings.api_key_env: "test"}),
+            mock.patch.object(radar.urllib.request, "urlopen", side_effect=responses) as urlopen,
+            mock.patch.object(radar.time, "sleep") as sleep,
+        ):
+            with self.assertRaisesRegex(
+                radar.RadarError,
+                "structured response was not valid JSON",
+            ):
+                radar.llm_json(
+                    settings,
+                    system="system",
+                    user="user",
+                    schema=radar.EDITORIAL_RESPONSE_SCHEMA,
+                )
+        self.assertEqual(urlopen.call_count, 2)
+        sleep.assert_called_once_with(settings.retry_backoff_seconds)
+
     def test_connection_reset_is_wrapped_after_retries(self) -> None:
         settings = replace(
             radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json").llm,

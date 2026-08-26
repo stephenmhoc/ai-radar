@@ -267,6 +267,8 @@ cycle performs these phases in order:
    and retain at most one podcast and one YouTube appearance per item.
 6. Defer sparse metadata or make one structured OpenRouter request and store
    the decision and both summaries only after local validation succeeds.
+   Malformed structured responses retry within the configured bounded LLM
+   attempt policy before they count as errors.
 7. Validate and atomically save `data/items.json`; rebuild `public/index.html`,
    `public/feeds.html`, `public/feed.xml`, and `public/_headers`.
 8. Run `doctor`, all Python tests, and entrypoint compilation.
@@ -400,9 +402,11 @@ compare consecutive scheduled runs before changing source configuration.
 ### OpenRouter or structured-output failures
 
 An API, routing, JSON-schema, or local-validation failure increments
-`llm_errors` and leaves the item eligible for a later retry. Check the model tag,
-HTTP response, and Sentry event. Do not loosen schema enforcement or silently
-accept prose to make a run appear healthy.
+`llm_errors` and leaves the item eligible for a later retry. Malformed
+structured output first uses the current cycle's bounded LLM retries and reaches
+Sentry only if every attempt fails. Check the model tag, HTTP response, and
+Sentry event. Do not loosen schema enforcement or silently accept prose to make
+a run appear healthy.
 
 ### Git pull or push failures
 

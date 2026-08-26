@@ -1023,7 +1023,8 @@ def llm_json(
         headers["Authorization"] = f"Bearer {api_key}"
     body = json.dumps(payload).encode("utf-8")
     url = settings.base_url.rstrip("/") + "/chat/completions"
-    for attempt in range(1, max(1, settings.max_attempts) + 1):
+    attempt_limit = max(1, settings.max_attempts)
+    for attempt in range(1, attempt_limit + 1):
         request = urllib.request.Request(url, data=body, headers=headers, method="POST")
         try:
             with urllib.request.urlopen(request, timeout=settings.timeout_seconds) as response:
@@ -1049,8 +1050,12 @@ def llm_json(
             detail = exc.read().decode("utf-8", errors="replace")
             error = RadarError(f"LLM HTTP {exc.code}: {detail[:500]}")
             retryable = exc.code in RETRYABLE_HTTP_CODES or 500 <= exc.code < 600
-            if attempt >= settings.max_attempts or not retryable:
+            if attempt >= attempt_limit or not retryable:
                 raise error from exc
+        except RadarError as exc:
+            error = exc
+            if attempt >= attempt_limit:
+                raise
         except (
             urllib.error.URLError,
             TimeoutError,
@@ -1064,7 +1069,7 @@ def llm_json(
             UnicodeDecodeError,
         ) as exc:
             error = RadarError(f"LLM request failed: {exc}")
-            if attempt >= settings.max_attempts:
+            if attempt >= attempt_limit:
                 raise error from exc
         delay = min(settings.retry_backoff_seconds * 2 ** (attempt - 1), settings.max_retry_sleep_seconds)
         print(f"warning: {error}; retrying in {delay:.1f}s", file=sys.stderr)

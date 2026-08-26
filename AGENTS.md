@@ -28,6 +28,8 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 - A short summary is one or two sentences and no more than 55 words.
 - New editorial decisions use one OpenRouter call with strict structured output
   for `include`, `title`, `short_summary`, `long_summary`, and `reason`.
+- A malformed structured response is retryable within the configured bounded
+  LLM attempt policy; report it only if every attempt fails.
 - The configured model is `openrouter/auto`, and routing must require providers
   that support the requested structured-output parameters.
 - Validate model output locally even when the provider claims schema support.
