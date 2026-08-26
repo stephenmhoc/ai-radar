@@ -36,6 +36,8 @@ APPEARANCE_KINDS = frozenset({"podcast", "youtube"})
 MAX_FEED_BYTES = 16 * 1024 * 1024
 MAX_LLM_RESPONSE_BYTES = 1024 * 1024
 MAX_REDIRECTS = 5
+YOUTUBE_RETRY_DELAY_SECONDS = 60
+YOUTUBE_OUTAGE_MIN_SOURCES = 3
 MIN_NOTES_CHARS = 80
 MIN_SHORT_SUMMARY_CHARS = 40
 MAX_SHORT_SUMMARY_WORDS = 55
@@ -94,6 +96,13 @@ class Source:
     homepage_url: str
     family: str
     hosts: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
+class SourceFailure:
+    source: Source
+    error: BaseException
+    stage: str
 
 
 @dataclass(frozen=True)
@@ -1180,6 +1189,16 @@ def update_item_from_result(
     )
 
 
+def is_youtube_rss_outage(failures: list[SourceFailure], *, youtube_source_count: int) -> bool:
+    youtube_fetch_failures = sum(
+        failure.source.kind == "youtube" and failure.stage == "fetch" for failure in failures
+    )
+    return (
+        youtube_fetch_failures >= YOUTUBE_OUTAGE_MIN_SOURCES
+        and youtube_fetch_failures * 2 >= youtube_source_count
+    )
+
+
 def run_cycle(
     settings: Settings,
     *,
@@ -1191,19 +1210,16 @@ def run_cycle(
     by_id, by_media = appearance_owners(archive)
     cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=lookback_days)
     collected: list[dict[str, Any]] = []
-    source_failures: list[tuple[Source, BaseException]] = []
+    source_failures: list[SourceFailure] = []
+    youtube_retry_candidates: list[tuple[Source, BaseException]] = []
+    youtube_retry_recoveries = 0
     reevaluate: dict[str, dict[str, Any]] = {}
-    for source in settings.sources:
-        try:
-            entries = parse_feed(fetch_bytes(source.feed_url, user_agent=settings.user_agent), source)
-        except Exception as exc:  # noqa: BLE001 - one broken feed must not block all sources
-            source_failures.append((source, exc))
-            print(f"warning: source failed: {source.name}: {exc}", file=sys.stderr)
-            continue
+
+    def process_entries(source: Source, entries: list[dict[str, Any]]) -> None:
         invalid_dates = sum(not entry.get("published_at") for entry in entries)
         if invalid_dates:
             error = RadarError(f"{invalid_dates} feed entr{'y' if invalid_dates == 1 else 'ies'} had no valid date")
-            source_failures.append((source, error))
+            source_failures.append(SourceFailure(source, error, "metadata"))
             print(f"warning: source metadata failed: {source.name}: {error}", file=sys.stderr)
         for entry in entries:
             if not is_recent(entry.get("published_at"), cutoff):
@@ -1216,17 +1232,84 @@ def run_cycle(
                 continue
             collected.append(entry)
 
+    for source in settings.sources:
+        try:
+            entries = parse_feed(fetch_bytes(source.feed_url, user_agent=settings.user_agent), source)
+        except Exception as exc:  # noqa: BLE001 - one broken feed must not block all sources
+            if source.kind == "youtube":
+                youtube_retry_candidates.append((source, exc))
+                print(
+                    f"warning: YouTube source failed; delayed retry queued: {source.name}: {exc}",
+                    file=sys.stderr,
+                )
+            else:
+                source_failures.append(SourceFailure(source, exc, "fetch"))
+                print(f"warning: source failed: {source.name}: {exc}", file=sys.stderr)
+            continue
+        process_entries(source, entries)
+
+    if youtube_retry_candidates:
+        print(
+            f"warning: retrying {len(youtube_retry_candidates)} YouTube source(s) "
+            f"after {YOUTUBE_RETRY_DELAY_SECONDS}s",
+            file=sys.stderr,
+        )
+        time.sleep(YOUTUBE_RETRY_DELAY_SECONDS)
+        for source, _initial_error in youtube_retry_candidates:
+            try:
+                entries = parse_feed(fetch_bytes(source.feed_url, user_agent=settings.user_agent), source)
+            except Exception as exc:  # noqa: BLE001 - report only after the delayed retry
+                source_failures.append(SourceFailure(source, exc, "fetch"))
+                print(f"warning: YouTube source retry failed: {source.name}: {exc}", file=sys.stderr)
+                continue
+            youtube_retry_recoveries += 1
+            print(f"YouTube source recovered after retry: {source.name}")
+            process_entries(source, entries)
+
     if source_failures:
+        youtube_source_count = sum(source.kind == "youtube" for source in settings.sources)
+        youtube_fetch_failure_count = sum(
+            failure.source.kind == "youtube" and failure.stage == "fetch"
+            for failure in source_failures
+        )
+        youtube_outage = is_youtube_rss_outage(
+            source_failures,
+            youtube_source_count=youtube_source_count,
+        )
+        if youtube_outage:
+            source_exception = RadarError(
+                f"YouTube RSS outage: {youtube_fetch_failure_count} of "
+                f"{youtube_source_count} source(s) failed after delayed retry"
+            )
+            fingerprint = ["ai-radar", "source", "youtube-rss-outage"]
+        else:
+            source_exception = RadarError(f"{len(source_failures)} source(s) failed during collection")
+            fingerprint = ["ai-radar", "source", "cycle"]
         reporter.capture_exception(
-            RadarError(f"{len(source_failures)} source(s) failed during collection"),
-            tags={"phase": "source", "source_error_count": len(source_failures)},
+            source_exception,
+            tags={
+                "phase": "source",
+                "source_error_count": len(source_failures),
+                "youtube_source_error_count": youtube_fetch_failure_count,
+                "youtube_rss_outage": str(youtube_outage).lower(),
+            },
             extra={
                 "failures": [
-                    {"source": source.name, "kind": source.kind, "error": str(error)[:500]}
-                    for source, error in source_failures
-                ]
+                    {
+                        "source": failure.source.name,
+                        "kind": failure.source.kind,
+                        "stage": failure.stage,
+                        "error": str(failure.error)[:500],
+                    }
+                    for failure in source_failures
+                ],
+                "youtube_retry": {
+                    "attempted": len(youtube_retry_candidates),
+                    "recovered": youtube_retry_recoveries,
+                    "delay_seconds": YOUTUBE_RETRY_DELAY_SECONDS,
+                },
             },
-            fingerprint=["ai-radar", "source", "cycle"],
+            fingerprint=fingerprint,
         )
 
     matched = 0
@@ -1314,6 +1397,8 @@ def run_cycle(
     stats = {
         "sources": len(settings.sources),
         "source_errors": len(source_failures),
+        "youtube_retry_attempts": len(youtube_retry_candidates),
+        "youtube_retry_recoveries": youtube_retry_recoveries,
         "new_appearances": len(collected),
         "matched_appearances": matched,
         "new_items": new_items,

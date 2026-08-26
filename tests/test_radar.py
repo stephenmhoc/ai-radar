@@ -400,12 +400,85 @@ class CycleTests(unittest.TestCase):
                 pathlib.Path(directory),
                 sources=(make_source(name="Broken One"), make_source(name="Broken Two")),
             )
-            with mock.patch.object(radar, "fetch_bytes", side_effect=TimeoutError("timed out")):
+            with mock.patch.object(
+                radar, "fetch_bytes", side_effect=TimeoutError("timed out")
+            ) as fetch:
                 stats = radar.run_cycle(settings, lookback_days=7, reporter=reporter)
         self.assertEqual(stats["source_errors"], 2)
+        self.assertEqual(stats["youtube_retry_attempts"], 0)
+        self.assertEqual(fetch.call_count, 2)
         self.assertEqual(len(reporter.exceptions), 1)
         self.assertEqual(reporter.exceptions[0]["tags"]["source_error_count"], 2)
         self.assertEqual(reporter.exceptions[0]["fingerprint"], ["ai-radar", "source", "cycle"])
+
+    def test_youtube_failure_recovers_before_sentry_reporting(self) -> None:
+        self.assertEqual(radar.YOUTUBE_RETRY_DELAY_SECONDS, 60)
+        reporter = RecordingReporter()
+        with tempfile.TemporaryDirectory() as directory:
+            settings = make_settings(
+                pathlib.Path(directory),
+                sources=(make_source(kind="youtube", name="YouTube One"),),
+            )
+            with (
+                mock.patch.object(
+                    radar,
+                    "fetch_bytes",
+                    side_effect=[radar.RadarError("feed HTTP 404"), b"<rss><channel /></rss>"],
+                ) as fetch,
+                mock.patch.object(radar.time, "sleep") as sleep,
+            ):
+                stats = radar.run_cycle(settings, lookback_days=7, reporter=reporter)
+        self.assertEqual(stats["source_errors"], 0)
+        self.assertEqual(stats["youtube_retry_attempts"], 1)
+        self.assertEqual(stats["youtube_retry_recoveries"], 1)
+        self.assertEqual(fetch.call_count, 2)
+        sleep.assert_called_once_with(radar.YOUTUBE_RETRY_DELAY_SECONDS)
+        self.assertEqual(reporter.exceptions, [])
+
+    def test_youtube_outage_is_grouped_only_after_delayed_retry(self) -> None:
+        reporter = RecordingReporter()
+        sources = tuple(
+            make_source(kind="youtube", name=f"YouTube {index}") for index in range(4)
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            settings = make_settings(pathlib.Path(directory), sources=sources)
+            with (
+                mock.patch.object(
+                    radar,
+                    "fetch_bytes",
+                    side_effect=radar.RadarError("feed HTTP 404"),
+                ) as fetch,
+                mock.patch.object(radar.time, "sleep") as sleep,
+            ):
+                stats = radar.run_cycle(settings, lookback_days=7, reporter=reporter)
+        self.assertEqual(stats["source_errors"], 4)
+        self.assertEqual(stats["youtube_retry_attempts"], 4)
+        self.assertEqual(stats["youtube_retry_recoveries"], 0)
+        self.assertEqual(fetch.call_count, 8)
+        sleep.assert_called_once_with(radar.YOUTUBE_RETRY_DELAY_SECONDS)
+        self.assertEqual(len(reporter.exceptions), 1)
+        event = reporter.exceptions[0]
+        self.assertEqual(event["fingerprint"], ["ai-radar", "source", "youtube-rss-outage"])
+        self.assertEqual(event["tags"]["youtube_rss_outage"], "true")
+        self.assertEqual(event["tags"]["youtube_source_error_count"], 4)
+        self.assertEqual(event["extra"]["youtube_retry"]["attempted"], 4)
+        self.assertEqual(event["extra"]["youtube_retry"]["recovered"], 0)
+
+    def test_youtube_outage_requires_widespread_fetch_failures(self) -> None:
+        source = make_source(kind="youtube", name="YouTube")
+        fetch_failures = [
+            radar.SourceFailure(source, radar.RadarError("feed HTTP 404"), "fetch")
+            for _ in range(4)
+        ]
+        self.assertTrue(radar.is_youtube_rss_outage(fetch_failures, youtube_source_count=8))
+        self.assertFalse(
+            radar.is_youtube_rss_outage(fetch_failures[:3], youtube_source_count=8)
+        )
+        metadata_failures = [
+            radar.SourceFailure(source, radar.RadarError("missing date"), "metadata")
+            for _ in range(4)
+        ]
+        self.assertFalse(radar.is_youtube_rss_outage(metadata_failures, youtube_source_count=8))
 
     def test_summary_failure_is_reported_and_not_persisted(self) -> None:
         reporter = RecordingReporter()

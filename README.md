@@ -68,7 +68,8 @@ Dockge manages `/opt/ai-radar` and `/opt/scheduler` on the homelab. Ofelia runs
 transaction. Each run:
 
 1. Validates a clean checkout and publishes any previously stranded commit.
-2. Fetches sources with bounded responses, safe redirects, and retries.
+2. Fetches sources with bounded responses, safe redirects, and retries. Failed
+   YouTube feeds get one shared delayed retry before they count as errors.
 3. Defers sparse metadata or makes one structured OpenRouter request.
 4. Validates `data/items.json` and rebuilds all tracked static files.
 5. Runs the complete local verification suite.
@@ -79,8 +80,9 @@ Set `AI_RADAR_SENTRY_DSN` only in the homelab `.env`. Pipeline, source, LLM,
 validation, Git, test, lock, heartbeat, and unexpected failures report to
 Sentry. Docker invokes `scheduler_watchdog.py` independently of Ofelia; a
 missing or stale heartbeat marks the worker unhealthy and emits one grouped
-Sentry event per outage. A total Docker-host or network outage still requires
-an external monitor because the failed host cannot report its own loss.
+Sentry event per outage. Widespread YouTube failures use a separate RSS-outage
+fingerprint after the delayed retry. A total Docker-host or network outage still
+requires an external monitor because the failed host cannot report its own loss.
 
 ## Continuous integration
 
