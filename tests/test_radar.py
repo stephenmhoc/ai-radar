@@ -28,10 +28,12 @@ class StaticPublisherTests(unittest.TestCase):
         self.assertGreaterEqual(len(published), 222)
         self.assertTrue(all(item["links"] for item in published))
         self.assertTrue(all(set(item["links"]) <= {"podcast", "youtube"} for item in published))
-        self.assertEqual(html.count("<li>"), len(published))
+        self.assertEqual(html.count('<li class="episode">'), len(published))
         self.assertEqual(len(rss.findall("./channel/item")), len(published))
         for forbidden in ("<img", "<script", "stylesheet", "episode-card"):
             self.assertNotIn(forbidden, html)
+        for expected in ('class="episode-list"', 'class="episode-meta"', 'class="summary"'):
+            self.assertIn(expected, html)
         self.assertIsNone(re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", html))
 
     def test_build_site_is_deterministic(self) -> None:

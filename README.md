@@ -6,8 +6,9 @@ to select and summarize noteworthy episodes from publisher notes, and commits
 the resulting static archive, HTML page, and RSS feed to GitHub. Cloudflare
 Pages serves the tracked `public/` directory.
 
-There are no transcripts, downloads, images, JavaScript, stylesheets, detail
-pages, or runtime database.
+There are no transcripts, downloads, images, JavaScript, external stylesheets,
+detail pages, or runtime database. A small inline stylesheet gives the text-only
+archive an editorial, responsive layout without adding runtime assets.
 
 ## Files
 

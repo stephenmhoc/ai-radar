@@ -706,15 +706,20 @@ def render_html(settings: Settings, items: list[dict[str, Any]]) -> str:
         links = render_links(item.get("links", {}), separator=" · ")
         date = date_label(item.get("published_at"))
         summary = escape_public_text(str(item.get("summary") or ""))
+        link_suffix = f'<span aria-hidden="true">·</span>{links}' if links else ""
         rows.append(
-            "<li>"
+            '<li class="episode">'
+            '<article class="episode-content">'
+            '<p class="episode-meta">'
             f'<time datetime="{html.escape(str(item.get("published_at") or ""))}">{html.escape(date)}</time>'
-            f" — {html.escape(str(item['title']))}"
-            f"{(' — ' + links) if links else ''}"
-            f"<br>{summary}"
+            f"{link_suffix}"
+            "</p>"
+            f'<h2>{html.escape(str(item["title"]))}</h2>'
+            f'<p class="summary">{summary}</p>'
+            "</article>"
             "</li>"
         )
-    body = "\n".join(rows) or "<li>No episodes yet.</li>"
+    body = "\n".join(rows) or '<li class="episode empty">No episodes yet.</li>'
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -723,15 +728,198 @@ def render_html(settings: Settings, items: list[dict[str, Any]]) -> str:
   <title>{html.escape(settings.title)}</title>
   <meta name="description" content="{html.escape(settings.description, quote=True)}">
   <link rel="alternate" type="application/rss+xml" title="{html.escape(settings.title, quote=True)}" href="/feed.xml">
+  <style>
+    :root {{
+      color-scheme: light;
+      --paper: #f4f1e8;
+      --paper-deep: #e9e5da;
+      --ink: #20231f;
+      --muted: #6b7068;
+      --forest: #1c2b23;
+      --sage: #cdd9c4;
+      --accent: #687b58;
+      --rule: #d5d1c6;
+    }}
+
+    * {{ box-sizing: border-box; }}
+
+    html {{
+      background: var(--paper);
+      font-size: 16px;
+      text-rendering: optimizeLegibility;
+    }}
+
+    body {{
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }}
+
+    a {{
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+    }}
+
+    a:hover {{ text-decoration-thickness: 2px; }}
+
+    a:focus-visible {{
+      border-radius: 0.15rem;
+      outline: 3px solid #9caf88;
+      outline-offset: 4px;
+    }}
+
+    header {{
+      background: var(--forest);
+      color: #f6f3e9;
+      padding: clamp(3.5rem, 9vw, 7rem) max(1.5rem, calc((100vw - 52rem) / 2));
+    }}
+
+    .eyebrow {{
+      margin: 0 0 1rem;
+      color: var(--sage);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }}
+
+    h1 {{
+      max-width: 12ch;
+      margin: 0;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+      font-size: clamp(3.25rem, 9vw, 6.75rem);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      line-height: 0.88;
+    }}
+
+    .dek {{
+      max-width: 38rem;
+      margin: 1.75rem 0 0;
+      color: #d9ddd5;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.65;
+    }}
+
+    .rss-link {{
+      display: inline-block;
+      margin-top: 1.75rem;
+      border: 1px solid #637267;
+      border-radius: 999px;
+      padding: 0.65rem 1rem;
+      color: #f6f3e9;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.035em;
+      text-decoration: none;
+    }}
+
+    .rss-link:hover {{
+      border-color: var(--sage);
+      background: #26392e;
+    }}
+
+    main {{
+      width: min(52rem, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 3.75rem 0 6rem;
+    }}
+
+    .section-label {{
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 750;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }}
+
+    .episode-list {{
+      margin: 0;
+      padding-left: 1.15rem;
+    }}
+
+    .episode {{
+      padding: 0 0 2.25rem 0.45rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 2.25rem;
+    }}
+
+    .episode::marker {{
+      color: var(--accent);
+      font-size: 0.72em;
+    }}
+
+    .episode-content {{ max-width: 46rem; }}
+
+    .episode-meta {{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem 0.65rem;
+      margin: 0 0 0.6rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 650;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+    }}
+
+    .episode-meta a {{
+      color: #465b3c;
+      font-weight: 750;
+    }}
+
+    h2 {{
+      margin: 0;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+      font-size: clamp(1.3rem, 3vw, 1.62rem);
+      font-weight: 600;
+      letter-spacing: -0.018em;
+      line-height: 1.22;
+    }}
+
+    .summary {{
+      max-width: 68ch;
+      margin: 0.8rem 0 0;
+      color: #444941;
+      font-size: 0.98rem;
+      line-height: 1.72;
+    }}
+
+    .episode:last-child {{
+      margin-bottom: 0;
+      border-bottom: 0;
+    }}
+
+    @media (max-width: 36rem) {{
+      header {{ padding-block: 3.5rem 4rem; }}
+      h1 {{ font-size: clamp(3.4rem, 18vw, 5rem); }}
+      main {{
+        width: min(100% - 2.25rem, 52rem);
+        padding-top: 2.75rem;
+      }}
+      .episode {{
+        margin-bottom: 1.8rem;
+        padding-bottom: 1.8rem;
+      }}
+      .summary {{ font-size: 0.95rem; }}
+    }}
+  </style>
 </head>
 <body>
   <header>
+    <p class="eyebrow">Podcasts &amp; videos</p>
     <h1>{html.escape(settings.title)}</h1>
-    <p>{html.escape(settings.description)}</p>
-    <p><a href="/feed.xml">RSS feed</a></p>
+    <p class="dek">{html.escape(settings.description)}</p>
+    <a class="rss-link" href="/feed.xml">Follow via RSS&nbsp; ↗</a>
   </header>
   <main>
-    <ul>
+    <p class="section-label">Latest episodes</p>
+    <ul class="episode-list">
       {body}
     </ul>
   </main>
@@ -788,7 +976,8 @@ def date_label(value: str | None) -> str:
     if not value:
         return "Unknown date"
     try:
-        return dt.datetime.fromisoformat(value.replace("Z", "+00:00")).date().isoformat()
+        parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+        return f"{parsed:%b} {parsed.day}, {parsed.year}"
     except ValueError:
         return value[:10]
 
