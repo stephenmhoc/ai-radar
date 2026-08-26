@@ -59186,7 +59186,7 @@
           "family": "practical ai",
           "guid": "yt:video:fQifEVyDwtk",
           "title": "AI Proficiency: From Users to Builders |Episode #368|",
-          "description": "As AI continues to reshape how organizations work, companies are increasingly asking what AI proficiency should look like across their workforce, and how they can help employees adapt without simply mandating AI adoption. Our returning guest Mike Lewis, joins Dan and Chris to explore AI proficiency through the L0–L3 framework, with a particular focus on the role of non-technical builders. They discuss AI resistance, identifying the right people to build AI-powered solutions, turning tacit knowledge into durable processes, and finding measurable business value from AI.\n\nFEATURING:\n\nGuest - Mike Lewis (Chief AI Architect at TiER1 Performance)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast)\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast)\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://us06web.zoom.us/webinar/register/WN_tMivXvPXRJ6pi5526S5etw#/registration\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/\n\nCHAPTERS:\n\n00:00 Welcome to Practical AI Podcast!\n02:14 Understanding Organizational Performance and AI\n10:02 Defining AI Proficiency Levels\n14:52 Sponsor: Prediction Guard\n17:05 Navigating Employee Resistance to AI\n18:12 Addressing Fears and Concerns about AI Adoption\n26:39 Integrating AI with Existing Tools\n32:31 Sponsor: Midwest AI Summit\n33:36 Identifying and Training L2 Candidates\n38:28 The Role of L2s in Value Creation\n44:47 Orchestrating Human and AI Collaboration\n52:19 Encouraging Creative Solutions in AI Adoption\n54:00 Thank you for watching!",
+          "description": "As AI continues to reshape how organizations work, companies are increasingly asking what AI proficiency should look like across their workforce, and how they can help employees adapt without simply mandating AI adoption. Our returning guest Mike Lewis, joins Dan and Chris to explore AI proficiency through the L0–L3 framework, with a particular focus on the role of non-technical builders. They discuss AI resistance, identifying the right people to build AI-powered solutions, turning tacit knowledge into durable processes, and finding measurable business value from AI.\n\nFEATURING:\n\nGuest - Mike Lewis (Chief AI Architect at TiER1 Performance)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast)\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast)\n\nSPONSORS:\n\n- Midwest AI Summit: Join AI practitioners on October 15 in Indianapolis for practical sessions, hands-on discussions, and real-world AI solutions. Use code PracticalAI20 to save 20% on your registration. https://midwestaisummit.com/#tickets\n- Prediction Guard: A self-hosted AI control plane for running agents in high impact environments. predictionguard.com/practicalai\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://us06web.zoom.us/webinar/register/WN_tMivXvPXRJ6pi5526S5etw#/registration\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/\n\nCHAPTERS:\n\n00:00 Welcome to Practical AI Podcast!\n02:14 Understanding Organizational Performance and AI\n10:02 Defining AI Proficiency Levels\n14:52 Sponsor: Prediction Guard\n17:05 Navigating Employee Resistance to AI\n18:12 Addressing Fears and Concerns about AI Adoption\n26:39 Integrating AI with Existing Tools\n32:31 Sponsor: Midwest AI Summit\n33:36 Identifying and Training L2 Candidates\n38:28 The Role of L2s in Value Creation\n44:47 Orchestrating Human and AI Collaboration\n52:19 Encouraging Creative Solutions in AI Adoption\n54:00 Thank you for watching!",
           "url": "https://www.youtube.com/watch?v=fQifEVyDwtk",
           "published_at": "2026-08-24T21:13:26+00:00",
           "hosts": []
@@ -59286,7 +59286,7 @@
           "family": "training data",
           "guid": "2e1d938c-9fed-11f1-b924-cf663b124449",
           "title": "Search Was Built for Humans. Parallel's Parag Agrawal Is Rebuilding It for Agents",
-          "description": "Parag Agrawal is making a bet that goes against two decades of web search: agents will query the web a thousand times more than humans ever have, and the infrastructure built around human clicks is wrong for them. The former Twitter CEO, now founder and CEO of Parallel Web Systems, explains why Parallel treats human click data as a bug and trains on agent feedback instead. He unpacks the counterintuitive choice to ship a search agent before a search engine, building an index incrementally, and how the new Turbo product cut agentic search to 200 milliseconds. But the problem Parag keeps returning to is economic: the ad-supported internet collapses when agents show up instead of people. His fix draws on Shapley values to pay content owners for the value their pages provide agents, with real dollars reaching publishers, he predicts, within 12 to 24 months.\n\nHosted by Sonya Huang and Andrew Reed, Sequoia Capital",
+          "description": "Parag Agrawal is making a bet that goes against two decades of web search: agents will query the web a thousand times more than humans ever have, and the infrastructure built around human clicks is wrong for them. The former Twitter CEO, now founder and CEO of Parallel Web Systems, explains why Parallel treats human click data as a bug and trains on agent feedback instead. He unpacks the counterintuitive choice to ship a search agent before a search engine, building an index incrementally, and how the new Turbo product cut agentic search to 200 milliseconds. But the problem Parag keeps returning to is economic: the ad-supported internet collapses when agents show up instead of people. His fix draws on Shapley values to pay content owners for the value their pages provide agents, with real dollars reaching publishers, he predicts, within 12 to 24 months.\n\nHosted by Sonya Huang and Andrew Reed, Sequoia Capital\n\n00:00 Introduction\n03:25 What Is Web Search\n05:17 Why Start a New Index\n07:52 Search Agents First\n10:17 Not a Neolab\n13:14 Agents vs Google Search\n19:38 Inside the Search Stack\n28:59 Search Multipliers With Agents\n30:21 Meeting Prep Agent Workflows\n31:46 Quality Cost Latency And Turbo\n32:42 Are Agents Overtaking Humans\n34:28 Ads Model Meets Agent Web\n37:20 New Incentives For Content\n40:48 Shapley Values Attribution\n47:46 Parallel Web And Future Vision",
           "url": "https://www.sequoiacap.com/",
           "published_at": "2026-08-25T09:00:00+00:00",
           "hosts": []
@@ -59355,7 +59355,7 @@
           "family": "sequoia capital",
           "guid": "yt:video:fUcnE6pjq5w",
           "title": "Parallel’s Parag Agrawal: Building a New Web for AI Agents",
-          "description": "Parag Agrawal is making a bet that goes against two decades of web search: agents will query the web a thousand times more than humans ever have, and the infrastructure built around human clicks is wrong for them. The former Twitter CEO, now founder and CEO of Parallel Web Systems, explains why Parallel treats human click data as a bug and trains on agent feedback instead. He unpacks the counterintuitive choice to ship a search agent before a search engine, building an index incrementally, and how the new Turbo product cut agentic search to 200 milliseconds. But the problem Parag keeps returning to is economic: the ad-supported internet collapses when agents show up instead of people. His fix draws on Shapley values to pay content owners for the value their pages provide agents, with real dollars reaching publishers, he predicts, within 12 to 24 months.\n\nHosted by Sonya Huang and Andrew Reed, Sequoia Capital",
+          "description": "Parag Agrawal is making a bet that goes against two decades of web search: agents will query the web a thousand times more than humans ever have, and the infrastructure built around human clicks is wrong for them. The former Twitter CEO, now founder and CEO of Parallel Web Systems, explains why Parallel treats human click data as a bug and trains on agent feedback instead. He unpacks the counterintuitive choice to ship a search agent before a search engine, building an index incrementally, and how the new Turbo product cut agentic search to 200 milliseconds. But the problem Parag keeps returning to is economic: the ad-supported internet collapses when agents show up instead of people. His fix draws on Shapley values to pay content owners for the value their pages provide agents, with real dollars reaching publishers, he predicts, within 12 to 24 months.\n\nHosted by Sonya Huang and Andrew Reed, Sequoia Capital\n\n00:00 Introduction\n03:25 What Is Web Search\n05:17 Why Start a New Index\n07:52 Search Agents First\n10:17 Not a Neolab\n13:14 Agents vs Google Search\n19:38 Inside the Search Stack\n28:59 Search Multipliers With Agents\n30:21 Meeting Prep Agent Workflows\n31:46 Quality Cost Latency And Turbo\n32:42 Are Agents Overtaking Humans\n34:28 Ads Model Meets Agent Web\n37:20 New Incentives For Content\n40:48 Shapley Values Attribution\n47:46 Parallel Web And Future Vision",
           "url": "https://www.youtube.com/watch?v=fUcnE6pjq5w",
           "published_at": "2026-08-25T12:00:23+00:00",
           "hosts": []
@@ -60339,6 +60339,34 @@
       "links": {
         "podcast": "https://deepmind.com/podcast",
         "youtube": "https://www.youtube.com/watch?v=tBjgCj_dGZM"
+      }
+    },
+    {
+      "id": "139c3be39e3a1672f55e",
+      "status": "skipped",
+      "title": "How Web Search Actually Works",
+      "source_title": "How Web Search Actually Works | Parag Agrawal, Parallel Web Systems",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Parag Agrawal and Parallel Web Systems are not on the target organization or person list, and the episode does not cover Physical AI.",
+      "published_at": "2026-08-26T16:00:26+00:00",
+      "first_seen_at": "2026-08-26T17:17:21+00:00",
+      "appearances": [
+        {
+          "id": "1071a414e35deb9c70fe",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:jz10siMXNXM",
+          "title": "How Web Search Actually Works | Parag Agrawal, Parallel Web Systems",
+          "description": "The clearest explanation of web search you'll hear. Parag Agrawal breaks down crawling, indexing, retrieval and ranking — and why the whole thing is really a billion-to-billion matching problem: hundreds of billions of pages, hundreds of billions of queries, and one job, matchmaking between them.",
+          "url": "https://www.youtube.com/shorts/jz10siMXNXM",
+          "published_at": "2026-08-26T16:00:26+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/jz10siMXNXM"
       }
     }
   ]
