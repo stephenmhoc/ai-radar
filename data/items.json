@@ -60025,6 +60025,36 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/ROqpfx_9LGY"
       }
+    },
+    {
+      "id": "00654e1d956d03034c5d",
+      "status": "skipped",
+      "title": "Building Defense Technologies to Protect Democracies | Torsten Reil, Helsing",
+      "source_title": "Building Defense Technologies to Protect Democracies | Torsten Reil, Helsing",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode features Torsten Reil, co-founder of Helsing, a European defense technology company focused on AI and autonomous systems. While Helsing's work involves AI-controlled machines and autonomous fighter jets, Torsten Reil is not a qualifying person from the specified target organizations. The content is about Physical AI, but the speaker is not a qualifying person.",
+      "published_at": "2026-08-26T08:00:00+00:00",
+      "first_seen_at": "2026-08-26T08:17:19+00:00",
+      "appearances": [
+        {
+          "id": "d7d8b061066d422c5fe6",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "87a547a6-a0fb-11f1-8478-d75e756ffb88",
+          "title": "Building Defense Technologies to Protect Democracies | Torsten Reil, Helsing",
+          "description": "Torsten Reil has spent his career working at the intersection of artificial intelligence, simulation and entrepreneurship. He began as a biologist studying neural networks and complex systems before founding NaturalMotion, whose technology was used in films including Lord of the Rings, Troy and Harry Potter and later in games including Grand Theft Auto and Red Dead Redemption. After building and selling NaturalMotion, he eventually returned to entrepreneurship to co-found Helsing, a European defense technology company focused on artificial intelligence and autonomous systems.\n\nReil believes warfare is undergoing a fundamental shift from humans operating expensive weapons systems toward what he calls autonomous mass: large numbers of AI-controlled machines operating together. He explains why drones are making tanks, artillery and eventually crewed fighter jets increasingly vulnerable; how AI can navigate without GPS in jammed environments; and why Helsing developed Centaur, an AI fighter pilot that has controlled a real Saab Gripen in air combat against a human-operated aircraft. That work led Helsing to begin building its own autonomous fighter jet, the CA1 Europa.\n\nThe underlying strategy is to combine simpler, mass-manufacturable hardware with increasingly capable software. Reil argues that future conflicts will become battles of materiel, making manufacturing capacity as important as technological sophistication. Helsing's HX-2 strike drone was redesigned to scale from dozens of units per month to a baseline of 1,000, with the ability to surge to 3,000. He also explains Helsing's concept of distributed “resilience factories,” which allow countries to manufacture systems domestically while reducing their dependence on vulnerable centralized production facilities.\n\nReil also describes how he runs Helsing and why he considers talent density the most important ingredient in company performance and culture. The company closely monitors recruiting, conducts quarterly performance calibration and makes an unusually large investment in finding and retaining exceptional people. He discusses Helsing's values of “whatever it takes” and “the truth is in the field,” why founders should pursue ambitions large enough to matter, and why he believes commentary has little value compared with actually building something that changes the world.\n\nShow notes: https://www.davidsenra.com/episode/torsten-reil\n\nMade possible by\n\nRamp: https://ramp.com\n\nAppLovin: https://applovin.com\n\nDeel: https://deel.com/senra\n\nChapters\n\n(00:00:00) Drones, Tanks & the Future of Warfare\n\n(00:07:08) Why Torsten Founded Helsing\n\n(00:09:27) Founder Conviction & Betting on European Defense\n\n(00:19:19) Helsing's Mission: Protecting Democracies\n\n(00:23:38) Programs of Record & Winning the Eurofighter Contract\n\n(00:28:35) Building a Superhuman AI Fighter Pilot\n\n(00:36:14) Deterrence, Autonomous Weapons & the Morality of Defense\n\n(00:42:11) Mass Manufacturing, Software & the Future of Materiel\n\n(00:48:33) Airbase Vulnerability, Procurement & Scaling Strike Drones\n\n(00:52:46) Talent Density, Hiring & Performance Management\n\n(00:59:44) How Torsten Hires Exceptional People\n\n(01:05:27) Helsing's Culture: Whatever It Takes & Truth Is in the Field\n\n(01:07:38) Deploying in Ukraine & the Weight of Defense Technology\n\n(01:10:50) NaturalMotion, Gaming & Torsten's Path Into AI\n\n(01:18:33) Outsiders, First Principles & Ambitious North Stars\n\n(01:20:54) Why Commentary Is Worthless & Founders Should Build\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/torsten-reil⁠",
+          "published_at": "2026-08-26T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/torsten-reil⁠"
+      }
     }
   ]
 }
