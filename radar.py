@@ -231,7 +231,9 @@ def parse_feed(xml_bytes: bytes, source: Source) -> list[dict[str, Any]]:
     root = ET.fromstring(xml_bytes)
     if local_name(root.tag) == "feed":
         return parse_atom(root, source)
-    channel = first_child(root, "channel") or root
+    channel = first_child(root, "channel")
+    if channel is None:
+        channel = root
     entries: list[dict[str, Any]] = []
     for element in children(channel, "item"):
         title = element_text(element, "title")
