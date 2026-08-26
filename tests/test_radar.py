@@ -3,6 +3,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import pathlib
+import re
 import tempfile
 import unittest
 import xml.etree.ElementTree as ET
@@ -29,6 +30,7 @@ class StaticPublisherTests(unittest.TestCase):
         self.assertEqual(len(rss.findall("./channel/item")), len(published))
         for forbidden in ("<img", "<script", "stylesheet", "episode-card"):
             self.assertNotIn(forbidden, html)
+        self.assertIsNone(re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", html))
 
     def test_build_site_is_deterministic(self) -> None:
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")

@@ -103,6 +103,13 @@ def strip_html(value: str | None) -> str:
     return parser.text()
 
 
+def escape_public_text(value: str) -> str:
+    # Cloudflare's email-obfuscation feature injects a JavaScript decoder when
+    # prose happens to contain an address. A zero-width break keeps the visible
+    # text intact while preserving this site's script-free contract.
+    return html.escape(value).replace("@", "&#8203;@")
+
+
 def load_settings(config_path: pathlib.Path, archive_path: pathlib.Path) -> Settings:
     config_path = config_path.expanduser().resolve()
     root = config_path.parent
@@ -678,7 +685,7 @@ def render_html(settings: Settings, items: list[dict[str, Any]]) -> str:
     for item in items:
         links = render_links(item.get("links", {}), separator=" · ")
         date = date_label(item.get("published_at"))
-        summary = html.escape(str(item.get("summary") or ""))
+        summary = escape_public_text(str(item.get("summary") or ""))
         rows.append(
             "<li>"
             f'<time datetime="{html.escape(str(item.get("published_at") or ""))}">{html.escape(date)}</time>'
