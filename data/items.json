@@ -59215,7 +59215,7 @@
           "family": "openai",
           "guid": "yt:video:jzmNh8lbSp8",
           "title": "Make information visual with ChatGPT",
-          "description": "Turn dense information into interactive visualizations with the Visualize skill in ChatGPT and Codex. Katia Gil Guzman shows how to transform meeting notes into an interface, iterate with calendar views and actions, and export the result as an image or publish it as a site.",
+          "description": "Turn dense information into interactive visualizations with the Visualize plugin in ChatGPT and Codex. Katia Gil Guzman shows how to transform meeting notes into an interface, iterate with calendar views and actions, and export the result as an image or publish it as a site.\n\nSimply type \"@Visualize\" or ask ChatGPT Work or Codex to visualize anything for you.\n\nLearn more: https://learn.chatgpt.com/docs/visualizations",
           "url": "https://www.youtube.com/watch?v=jzmNh8lbSp8",
           "published_at": "2026-08-24T23:09:56+00:00",
           "hosts": []
@@ -59383,7 +59383,7 @@
           "family": "y combinator",
           "guid": "yt:video:o0ORPbSEgd8",
           "title": "Max Junestrand: You Need The Willingness To Learn Faster Than Anyone Else",
-          "description": "In this talk and fireside at Startup School 2026, Legora Co-founder and CEO Max Junestrand reflects on lessons learned while building a legal product that is now used across 50 countries and went from $1 million to $100 million ARR in roughly 18 months. \n\nApply to Y Combinator: https://www.ycombinator.com/apply\nWork at a startup: https://www.ycombinator.com/jobs\n\nChapters:\n\n00:00 — Intro\n01:25 — What Lawyers Actually Needed\n03:15 — The Origin Story\n06:09 — Moving Into a Law Firm\n07:22 — The YC Rejection \n11:11 — San Francisco\n12:20 — 80 Investor Meetings in 10 Days\n13:26 — Freezing Sales to Fix the Product\n16:19 — The Legora Product Manifesto\n17:56 — Unlearning the Fancy Resume Hire\n20:21 — The Law of Jante Problem\n24:13 — Stockholm Onboarding as Superpower\n25:26 — What Actually Made the Company\n27:55 — Does Domain Expertise Still Matter?\n29:14 — Betting on Model Improvement\n34:09 — Building Your Own Evals\n36:29 — When Should You Start a Startup?\n41:41 — How Competitiveness Shows Up at Legora\n44:17 — What Happens When You're #1?\n45:04 — How to Become More Ambitious\n48:43 — Storytelling as the CEO Superpower\n54:00 — Zero to $100M in 18 Months",
+          "description": "Today, more than 3% of the world’s lawyers use Legora, and the company has grown from $1 million to $100 million in ARR since launching in October 2024.\n\nAt Startup School 2026, Legora co-founder and CEO Max Junestrand shares how they built one of the fastest-growing enterprise software companies in the world, from cold emailing lawyers and moving into a customer’s office to freezing sales for six months to rebuild the product. He explains why building a company is ultimately about people, how to create a culture that wants to win, and why founders have to learn to love the hustle.\n\nTranscript: https://www.ycrootaccess.com/p/max-junestrand-you-need-the-willingness\n\nApply to Y Combinator: https://www.ycombinator.com/apply\nWork at a startup: https://www.ycombinator.com/jobs\n\nChapters:\n00:00 — Intro\n01:25 — What Lawyers Actually Needed\n03:15 — The Origin Story\n06:09 — Moving Into a Law Firm\n07:22 — The YC Rejection \n11:11 — San Francisco\n12:20 — 80 Investor Meetings in 10 Days\n13:26 — Freezing Sales to Fix the Product\n16:19 — The Legora Product Manifesto\n17:56 — Unlearning the Fancy Resume Hire\n20:21 — The Law of Jante Problem\n24:13 — Stockholm Onboarding as Superpower\n25:26 — What Actually Made the Company\n27:55 — Does Domain Expertise Still Matter?\n29:14 — Betting on Model Improvement\n34:09 — Building Your Own Evals\n36:29 — When Should You Start a Startup?\n41:41 — How Competitiveness Shows Up at Legora\n44:17 — What Happens When You're #1?\n45:04 — How to Become More Ambitious\n48:43 — Storytelling as the CEO Superpower\n54:00 — Zero to $100M in 18 Months",
           "url": "https://www.youtube.com/watch?v=o0ORPbSEgd8",
           "published_at": "2026-08-25T14:00:29+00:00",
           "hosts": []
@@ -60367,6 +60367,34 @@
       ],
       "links": {
         "youtube": "https://www.youtube.com/shorts/jz10siMXNXM"
+      }
+    },
+    {
+      "id": "ab94fbfd67a1021c7e55",
+      "status": "skipped",
+      "title": "Rich Sutton: \"I'm not weird. The field is weird\"",
+      "source_title": "Rich Sutton: \"I'm not weird. The field is weird\"",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Rich Sutton is not a qualifying person from the specified target organizations. The content does not discuss Physical AI.",
+      "published_at": "2026-08-26T19:00:24+00:00",
+      "first_seen_at": "2026-08-26T19:17:20+00:00",
+      "appearances": [
+        {
+          "id": "11b23e2121eea1c19474",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:lOVObXQdlyg",
+          "title": "Rich Sutton: \"I'm not weird. The field is weird\"",
+          "description": "Rich Sutton gets called a radical. He thinks he's the one thinking normally. Before the current AI moment, nobody would have said \"continual learning\" — learning that wasn't continual made no sense as a concept. We act, we learn, we keep learning. That the field needed a special term for it says more about the field.\n\n#ai #machinelearning #llm",
+          "url": "https://www.youtube.com/shorts/lOVObXQdlyg",
+          "published_at": "2026-08-26T19:00:24+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/lOVObXQdlyg"
       }
     }
   ]
