@@ -1,10 +1,5 @@
 [app]
-timezone = "America/New_York"
-database_path = "var/radar.sqlite3"
 public_dir = "public"
-state_dir = "var"
-processed_after = "2026-01-01"
-lookback_days = 14
 user_agent = "ai-radar/0.1"
 
 [llm]
@@ -14,26 +9,18 @@ api_key_env = "OPENROUTER_API_KEY"
 model = "minimax/minimax-m3"
 temperature = 0.1
 max_metadata_chars = 12000
-max_transcript_chars = 130000
-
-[transcription]
-provider = "command"
-command = "whisper-cli"
-args = ["-m", "/Users/merimerimeri/.cache/whisper.cpp/ggml-large-v3-turbo-q5_0.bin", "-f", "{audio_path}", "-otxt", "-of", "{output_stem}", "-l", "en", "-bs", "1", "-bo", "1", "-np", "--prompt", "AI podcast transcript. Common terms: OpenAI, Anthropic, Google DeepMind, DeepMind, Meta AI, xAI, NVIDIA, Replit, Hugging Face, CoreWeave, Applied Intuition, ChatGPT, Claude, Gemini, GPT-4, GPT-5, GPT-5.1, o3, Sora, Codex, MCP, model behavior, post-training, reinforcement learning, reasoning models, steerability, inference, agents. Episode metadata: {feed_name}. {episode_title}. Hosts: {episode_hosts}. Description: {episode_description}"]
-output_path = "{output_stem}.txt"
-audio_dir = "var/audio"
-transcript_dir = "var/transcripts"
-max_audio_mb = 750
-keep_audio = false
+timeout_seconds = 120
+max_attempts = 4
+retry_backoff_seconds = 2.0
+max_retry_sleep_seconds = 60.0
 
 [site]
 title = "AI Radar"
-description = "Substantial podcasts, videos, articles, and threads from major AI lab leaders."
+description = "Noteworthy AI podcast and video episodes, summarized from publisher notes."
 base_url = "https://ai-radar.merimerimeri.com"
 cname = "ai-radar.merimerimeri.com"
-max_items = 250
 rss_title = "AI Radar"
-rss_description = "Substantial public appearances and writing from major AI lab leaders."
+rss_description = "Noteworthy AI podcast and video episodes, summarized from publisher notes."
 
 [[feeds]]
 name = "Dwarkesh Podcast"
@@ -139,33 +126,6 @@ hosts = ["Ti Morse"]
 name = "David Senra"
 url = "https://feeds.megaphone.fm/david-senra"
 hosts = ["David Senra"]
-
-[[sources]]
-kind = "blog"
-name = "Sam Altman"
-url = "https://blog.samaltman.com/"
-feed_url = "https://blog.samaltman.com/posts.atom"
-people = ["Sam Altman"]
-
-[[sources]]
-kind = "blog"
-name = "Dario Amodei"
-url = "https://darioamodei.com/"
-people = ["Dario Amodei"]
-
-[[sources]]
-kind = "blog"
-name = "Satya Nadella — Microsoft Blog"
-url = "https://blogs.microsoft.com/blog/author/satyanadella/"
-feed_url = "https://blogs.microsoft.com/blog/author/satyanadella/feed/"
-people = ["Satya Nadella"]
-
-[[sources]]
-kind = "blog"
-name = "Satya Nadella — sn scratchpad"
-url = "https://snscratchpad.com/"
-feed_url = "https://snscratchpad.com/index.xml"
-people = ["Satya Nadella"]
 
 [[sources]]
 kind = "youtube"

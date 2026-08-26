@@ -1,0 +1,14 @@
+services:
+  scheduler:
+    image: mcuadros/ofelia:v0.3.22
+    container_name: scheduler
+    restart: unless-stopped
+    command: daemon --docker
+    environment:
+      TZ: America/New_York
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"

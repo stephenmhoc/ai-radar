@@ -1,5 +1,4 @@
 var/
-public/
 .venv/
 .pycache/
 __pycache__/
