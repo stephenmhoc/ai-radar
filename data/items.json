@@ -60424,6 +60424,49 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/6tlDEpIrfBc"
       }
+    },
+    {
+      "id": "91fdf75d9448d77fbcd2",
+      "status": "skipped",
+      "title": "DHH: Future of Programming, AI, Agentic Engineering, Vibe Coding & Linux | Lex Fridman Podcast #501",
+      "source_title": "DHH: Future of Programming, AI, Agentic Engineering, Vibe Coding & Linux | Lex Fridman Podcast #501",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Guest DHH (CTO of 37signals / Ruby on Rails) is not affiliated with any qualifying target organizations, and the episode is not focused on physical AI.",
+      "published_at": "2026-08-26T21:44:41+00:00",
+      "first_seen_at": "2026-08-26T22:17:24+00:00",
+      "appearances": [
+        {
+          "id": "1e23cc9435cc496e9402",
+          "kind": "podcast",
+          "source": "Lex Fridman Podcast",
+          "family": "lex fridman podcast",
+          "guid": "https://lexfridman.com/?p=6506",
+          "title": "#501 – DHH: Future of Programming, AI, Agentic Engineering, Vibe Coding & Linux",
+          "description": "DHH is the creator of Ruby on Rails, Omarchy Linux, CTO of 37signals, and a racecar driver.\n\nThank you for listening ❤ Check out our sponsors: \nhttps://lexfridman.com/sponsors/ep501-sc\n\nSee below for timestamps, transcript, and to give feedback, submit questions, contact Lex, etc.\n\nTranscript:\n\nhttps://lexfridman.com/dhh-2-transcript\n\nCONTACT LEX:\n\nFeedback\n – give feedback to Lex: \nhttps://lexfridman.com/survey\n\nAMA\n – submit questions, videos or call-in: \nhttps://lexfridman.com/ama\n\nHiring\n – join our team: \nhttps://lexfridman.com/hiring\n\nOther\n – other ways to get in touch: \nhttps://lexfridman.com/contact\n\nEPISODE LINKS:\n\nDHH’s X: \nhttps://x.com/dhh\n\nDHH’s Blog: \nhttps://world.hey.com/dhh\n\nOmarchy: \nhttps://omarchy.org\n\nRuby on Rails: \nhttps://rubyonrails.org\n\n37signals: \nhttps://37signals.com\n\nSPONSORS:\n\nTo support this podcast, check out our sponsors & get discounts:\n\nWispr Flow:\n AI-powered voice dictation app.\n\nGo to \nhttps://wisprflow.ai/lex\n\nBlitzy:\n AI agent for large enterprise codebases.\n\nGo to \nhttps://blitzy.com/lex\n\nNetSuite:\n Business management software.\n\nGo to \nhttp://netsuite.ai/lex\n\nShopify:\n Sell stuff online.\n\nGo to \nhttps://shopify.com/lex\n\nLMNT:\n Zero-sugar electrolyte drink mix.\n\nGo to \nhttps://drinkLMNT.com/lex\n\nPlaud:\n AI-powered note-taking devices and software.\n\nGo to \nhttps://plaud.ai/lex\n\nHiggsfield AI:\n AI-based video generation, filmmaking, and creative studio.\n\nGo to \nhttps://higgsfield.ai\n\nPerplexity:\n AI-powered answer engine.\n\nGo to \nhttps://perplexity.ai/\n\nOUTLINE:\n\n(00:00) – Introduction\n\n(01:14) – Sponsors, Comments, and Reflections\n\n(08:56) – Programming with AI agents\n\n(24:14) – How software will change\n\n(33:30) – AI impact on open source\n\n(43:21) – Building Omarchy Linux distro\n\n(53:05) – Vibe coding vs agentic engineering\n\n(1:06:06) – The end of manual programming\n\n(1:16:24) – Advice for programmers\n\n(1:28:31) – Surviving Internet Hate\n\n(1:37:46) – Programming setup for AI Agents\n\n(1:50:11) – Obsessing about speed\n\n(2:13:06) – Voice prompting vs typing\n\n(2:27:05) – Best AI coding models\n\n(2:43:55) – Best AI coding harnesses\n\n(2:56:57) – AI video generation and filmmaking\n\n(3:16:28) – Fatherhood\n\n(3:44:35) – Linux will win the desktop\n\n(3:55:51) – PewDiePie\n\n(4:05:25) – Future of programming\n\n(4:28:18) – Politics and immigration\n\n(4:59:55) – Longevity, over-optimization, and fear of death\n\n(5:11:38) – Eternal recurrence and future of human civization",
+          "url": "https://lexfridman.com/dhh-2/?utm_source=rss&utm_medium=rss&utm_campaign=dhh-2",
+          "published_at": "2026-08-26T21:47:04+00:00",
+          "hosts": [
+            "Lex Fridman"
+          ]
+        },
+        {
+          "id": "8daf3806a61eb872d742",
+          "kind": "youtube",
+          "source": "Lex Fridman Podcast — YouTube",
+          "family": "lex fridman podcast",
+          "guid": "yt:video:NYFGCESmikA",
+          "title": "DHH: Future of Programming, AI, Agentic Engineering, Vibe Coding & Linux | Lex Fridman Podcast #501",
+          "description": "DHH is the creator of Ruby on Rails, Omarchy Linux, CTO of 37signals, and a racecar driver.\nThank you for listening ❤ Check out our sponsors: https://lexfridman.com/sponsors/ep501-sb\nSee below for timestamps, transcript, and to give feedback, submit questions, contact Lex, etc.\n\n*Transcript:*\nhttps://lexfridman.com/dhh-2-transcript\n\n*CONTACT LEX:*\n*Feedback* - give feedback to Lex: https://lexfridman.com/survey\n*AMA* - submit questions, videos or call-in: https://lexfridman.com/ama\n*Hiring* - join our team: https://lexfridman.com/hiring\n*Other* - other ways to get in touch: https://lexfridman.com/contact\n\n*EPISODE LINKS:*\nDHH's X: https://x.com/dhh\nDHH's Blog: https://world.hey.com/dhh\nOmarchy: https://omarchy.org\nRuby on Rails: https://rubyonrails.org\n37signals: https://37signals.com\n\n*SPONSORS:*\nTo support this podcast, check out our sponsors & get discounts:\n*Wispr Flow:* AI-powered voice dictation app.\nGo to https://lexfridman.com/s/wispr_flow-ep501-sb\n*Blitzy:* AI agent for large enterprise codebases.\nGo to https://lexfridman.com/s/blitzy-ep501-sb\n*NetSuite:* Business management software.\nGo to https://lexfridman.com/s/netsuite-ep501-sb\n*Shopify:* Sell stuff online.\nGo to https://lexfridman.com/s/shopify-ep501-sb\n*LMNT:* Zero-sugar electrolyte drink mix.\nGo to https://lexfridman.com/s/lmnt-ep501-sb\n*Plaud:* AI-powered note-taking devices and software.\nGo to https://lexfridman.com/s/plaud-ep501-sb\n*Higgsfield AI:* AI-based video generation, filmmaking, and creative studio.\nGo to https://lexfridman.com/s/higgsfield-ep501-sb\n*Perplexity:* AI-powered answer engine.\nGo to https://lexfridman.com/s/perplexity-ep501-sb\n\n*OUTLINE:*\n0:00 - Episode highlight\n1:27 - Introduction\n2:56 - Programming with AI agents\n18:14 - How software will change\n27:30 - AI impact on open source\n37:21 - Building Omarchy Linux distro\n47:05 - Vibe coding vs agentic engineering\n1:00:06 - The end of manual programming\n1:10:24 - Advice for programmers\n1:22:30 - Surviving Internet Hate\n1:31:46 - Programming setup for AI Agents\n1:44:11 - Obsessing about speed\n2:07:06 - Voice prompting vs typing\n2:21:05 - Best AI coding models\n2:37:55 - Best AI coding harnesses\n2:50:57 - AI video generation and filmmaking\n3:10:28 - Fatherhood\n3:38:35 - Linux will win the desktop\n3:49:51 - PewDiePie\n3:59:24 - Future of programming\n4:22:17 - Politics and immigration\n4:53:54 - Longevity, over-optimization, and fear of death\n5:05:38 - Eternal recurrence and future of human civization\n\n*PODCAST LINKS:*\n- Podcast Website: https://lexfridman.com/podcast\n- Apple Podcasts: https://apple.co/2lwqZIr\n- Spotify: https://spoti.fi/2nEwCF8\n- RSS: https://lexfridman.com/feed/podcast/\n- Podcast Playlist: https://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4\n- Clips Channel: https://www.youtube.com/lexclips\n\n*SOCIAL LINKS:*\n- X: https://x.com/lexfridman\n- Instagram: https://instagram.com/lexfridman\n- TikTok: https://tiktok.com/@lexfridman\n- LinkedIn: https://linkedin.com/in/lexfridman\n- Facebook: https://facebook.com/lexfridman\n- Patreon: https://patreon.com/lexfridman\n- Telegram: https://t.me/lexfridman\n- Reddit: https://reddit.com/r/lexfridman",
+          "url": "https://www.youtube.com/watch?v=NYFGCESmikA",
+          "published_at": "2026-08-26T21:44:41+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://lexfridman.com/dhh-2/?utm_source=rss&utm_medium=rss&utm_campaign=dhh-2",
+        "youtube": "https://www.youtube.com/watch?v=NYFGCESmikA"
+      }
     }
   ]
 }
