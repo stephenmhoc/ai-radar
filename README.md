@@ -21,6 +21,8 @@ archive an editorial, responsive layout without adding runtime assets.
 - `scheduled_cycle.py`: the complete pull, publish, test, commit, and push cycle
 - `deploy/compose.yaml`: long-running worker registered with the Docker scheduler
 - `deploy/scheduler.compose.yaml`: shared Ofelia scheduler stack for Dockge
+- `INFRA.md`: production architecture, operations, recovery, and verification
+- `AGENTS.md`: repository-wide instructions for future coding agents
 
 ## Local commands
 
