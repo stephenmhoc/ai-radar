@@ -59690,12 +59690,12 @@
     },
     {
       "id": "055a24d83267a3e57b88",
-      "status": "deferred",
+      "status": "skipped",
       "title": "Disney Paid $4 Billion for Marvel. What Did It Get?",
       "source_title": "Disney Paid $4 Billion for Marvel. What Did It Get?",
       "short_summary": "",
       "long_summary": "",
-      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "reason": "The publisher notes do not mention any qualifying individuals or organizations from the AI Radar list, nor do they indicate a focus on Physical AI.",
       "published_at": "2026-08-20T22:34:21+00:00",
       "first_seen_at": "2026-08-26T00:44:07+00:00",
       "appearances": [
@@ -59706,7 +59706,7 @@
           "family": "acquired",
           "guid": "yt:video:Zdg8rzp4u_o",
           "title": "Disney Paid $4 Billion for Marvel. What Did It Get?",
-          "description": "",
+          "description": "🎙 From Disney: The Renaissance and the Empire\n\n#shorts #podcast #acquired #businesshistory",
           "url": "https://www.youtube.com/shorts/Zdg8rzp4u_o",
           "published_at": "2026-08-20T22:34:21+00:00",
           "hosts": []
@@ -59888,12 +59888,12 @@
     },
     {
       "id": "2abd245ea4f831c3953d",
-      "status": "deferred",
+      "status": "skipped",
       "title": "Why Steve Jobs Bought Pixar",
       "source_title": "Why Steve Jobs Bought Pixar",
       "short_summary": "",
       "long_summary": "",
-      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "reason": "The publisher notes discuss Steve Jobs and Pixar, and Disney, which are not related to AI Radar's target organizations or Physical AI.",
       "published_at": "2026-08-25T13:26:05+00:00",
       "first_seen_at": "2026-08-26T00:44:39+00:00",
       "appearances": [
@@ -59904,7 +59904,7 @@
           "family": "acquired",
           "guid": "yt:video:mROkxmZ4fvw",
           "title": "Why Steve Jobs Bought Pixar",
-          "description": "",
+          "description": "🎙 From Disney: The Renaissance and the Empire\n\n#shorts #podcast #acquired #businesshistory",
           "url": "https://www.youtube.com/shorts/mROkxmZ4fvw",
           "published_at": "2026-08-25T13:26:05+00:00",
           "hosts": []
@@ -60287,7 +60287,7 @@
           "family": "latent space",
           "guid": "substack:post:212802973",
           "title": "🔬“We have foundation models for language, not for physics” — Anima Anandkumar, Bren Professor of Computing",
-          "description": "A few years ago, Caltech Prof. \nAnima Anandkumar\n set out to develop the first open-source weather model with AI. Talking to experts in the field, she was met with skepticism. Weather is chaotic, physics simulations are hard, have been developed for decades, and require supercomputers, the data just isn’t there. Despite reservations, Anima went forth and built. Within a year her team had developed \nFourCastNet\n, a predictive model that is competitive with the best physics-based simulations available. Thanks to Anima, and her follow up work, anyone can now predict weather accurately over a short timescale using consumer grade GPUs. \n\nIn the fifteen or so science episodes we’ve released on \nLatent.Space\n, we’ve covered atoms, molecules, materials, biology, and math. Anima is a pioneer in studying physical systems that are continuous. Weather, fusion, and fluid or heat flow are huge areas of science that are extremely difficult to model: they are large, chaotic, and fundamentally multi-scale. This is a field the AI community has somewhat neglected, but one we expect will grow fast. We plan to cover large physical systems more in coming episodes.\n\nOne thing you can glean from Anima’s work is that this area of AI resists the scaling ideas that have permeated the rest of the field. The data isn’t there: open source datasets in many of these domains are limited to tens or hundreds of thousands of examples, far from what token-hungry transformers need. Even worse, the resolution that physics demands pushes the context length into the hundreds of billions, so you can’t just throw more tokens at the problem. That isn’t a ceiling though, just a slower road: progress here comes from building in structure and inductive biases. Sorry for all you bitter-lesson-pilled language modelers.\n\n“If each dimension is even a few hundred grid points, which is where industrial scale starts... we’re talking hundreds of billions to even a trillion context length. So forget ever having a transformer for anything of this scale, all of the world’s compute will not be enough.”\n\nThe math underneath\n\nTo tackle these systems, Anima pioneered a technique known as \nNeural Operators\n, one of the most beautiful theoretical developments in AI of the last decade. These allow you to combine data and physical laws to enable multi-scale inputs and outputs. We’re no longer modeling a grid, we’re modeling a function that evolves over many scales. This allows Anima and crew to build in priors based upon physical intuition.\n\nTo see how physical priors are still helpful for AI modeling, let’s revisit the problem of weather forecasting on a global scale. The earth is a sphere, which meant that accurate modeling involved using the right basis set — the \nSpherical Harmonics\n. Run a weather model on a grid and it blows up fast. Move to the natural basis for the problem and it stays stable far longer, long enough to roll out months ahead instead of days. Anima’s \nFourier Neural Operator\n learns directly in this frequency domain, and its spherical variant powers \nFourCastNet 3\n, which models the weather across the whole globe and keeps running stably far into the future.\n\nThe physical world is forgiving\n\nAnima explored Neural Operators across other physical domains too, and one striking observation is that the physical world is more forgiving than you’d expect. In fusion, a few thousand samples are enough to predict plasma disruptions, and to do it a million times faster than traditional simulation.\n\nNone of this is a rejection of scale, it is a different route to it. Anima ultimately still wants to build a “foundation model for physics”, a model that spans many phenomena and does both simulation and design. You get there by building in the structure the physical world already has, not by waiting for data that will never exist. It is a start, and it will take longer than the token-driven parts of AI, because for the physical world tokens were never the answer.\n\n“All of the things that work with deep learning, let’s take them, but make them a bit more principled.”\n\nWeather is only the beginning\n\nNeural operators and weather modeling were a personal passion of mine, so we’ve spent much of this blog and the episode exploring this work. Anima has done so much more! In the episode, we cover several other recent developments from Anima:\n\n* Anima has a series of works integrating neural networks and automated proof techniques. We talk about \nTorchLean\n, a new framework that lets you write PyTorch-style networks inside the proof assistant \nLean\n and \nformally verify them\n. This is a major step for proving bounds on neural networks, something that would be really important for someone trying to, e.g., add a neural network as part of the control loop to their fusion reactor!\n\n* Anima was \nrecently appointed to the United Nations Scientific Advisory Board\n! We talk with her about her goals of bringing evidence-based viewpoints to policy, and how AI in scientific domains can improve people’s lives all over the world.\n\nThis episode has something for every AI or science nerd! Elegant math? ✅ Old school harmonic analysis? ✅ Fundamental developments in modern AI? ✅ Practical ways of modeling the physical world? ✅\n\nGive it a watch\n!\n\nThis is a public episode. If you'd like to discuss this with other subscribers or get access to bonus episodes, visit \nwww.latent.space/subscribe",
+          "description": "A few years ago, Caltech Prof. and co-founder of Accelerated Understanding, \nAnima Anandkumar\n set out to develop the first open-source weather model with AI. Talking to experts in the field, she was met with skepticism. Weather is chaotic, physics simulations are hard, have been developed for decades, and require supercomputers, the data just isn’t there. Despite reservations, Anima went forth and built. Within a year her team had developed \nFourCastNet\n, a predictive model that is competitive with the best physics-based simulations available. Thanks to Anima, and her follow up work, anyone can now predict weather accurately over a short timescale using consumer grade GPUs. \n\nIn the fifteen or so science episodes we’ve released on \nLatent.Space\n, we’ve covered atoms, molecules, materials, biology, and math. Anima is a pioneer in studying physical systems that are continuous. Weather, fusion, and fluid or heat flow are huge areas of science that are extremely difficult to model: they are large, chaotic, and fundamentally multi-scale. This is a field the AI community has somewhat neglected, but one we expect will grow fast. We plan to cover large physical systems more in coming episodes.\n\nOne thing you can glean from Anima’s work is that this area of AI resists the scaling ideas that have permeated the rest of the field. The data isn’t there: open source datasets in many of these domains are limited to tens or hundreds of thousands of examples, far from what token-hungry transformers need. Even worse, the resolution that physics demands pushes the context length into the hundreds of billions, so you can’t just throw more tokens at the problem. That isn’t a ceiling though, just a slower road: progress here comes from building in structure and inductive biases. Sorry for all you bitter-lesson-pilled language modelers.\n\n“If each dimension is even a few hundred grid points, which is where industrial scale starts... we’re talking hundreds of billions to even a trillion context length. So forget ever having a transformer for anything of this scale, all of the world’s compute will not be enough.”\n\nThe math underneath\n\nTo tackle these systems, Anima pioneered a technique known as \nNeural Operators\n, one of the most beautiful theoretical developments in AI of the last decade. These allow you to combine data and physical laws to enable multi-scale inputs and outputs. We’re no longer modeling a grid, we’re modeling a function that evolves over many scales. This allows Anima and crew to build in priors based upon physical intuition.\n\nTo see how physical priors are still helpful for AI modeling, let’s revisit the problem of weather forecasting on a global scale. The earth is a sphere, which meant that accurate modeling involved using the right basis set — the \nSpherical Harmonics\n. Run a weather model on a grid and it blows up fast. Move to the natural basis for the problem and it stays stable far longer, long enough to roll out months ahead instead of days. Anima’s \nFourier Neural Operator\n learns directly in this frequency domain, and its spherical variant powers \nFourCastNet 3\n, which models the weather across the whole globe and keeps running stably far into the future.\n\nThe physical world is forgiving\n\nAnima explored Neural Operators across other physical domains too, and one striking observation is that the physical world is more forgiving than you’d expect. In fusion, a few thousand samples are enough to predict plasma disruptions, and to do it a million times faster than traditional simulation.\n\nNone of this is a rejection of scale, it is a different route to it. Anima ultimately still wants to build a “foundation model for physics”, a model that spans many phenomena and does both simulation and design. You get there by building in the structure the physical world already has, not by waiting for data that will never exist. It is a start, and it will take longer than the token-driven parts of AI, because for the physical world tokens were never the answer.\n\n“All of the things that work with deep learning, let’s take them, but make them a bit more principled.”\n\nWeather is only the beginning\n\nNeural operators and weather modeling were a personal passion of mine, so we’ve spent much of this blog and the episode exploring this work. Anima has done so much more! In the episode, we cover several other recent developments from Anima:\n\n* Anima has a series of works integrating neural networks and automated proof techniques. We talk about \nTorchLean\n, a new framework that lets you write PyTorch-style networks inside the proof assistant \nLean\n and \nformally verify them\n. This is a major step for proving bounds on neural networks, something that would be really important for someone trying to, e.g., add a neural network as part of the control loop to their fusion reactor!\n\n* Anima was \nrecently appointed to the United Nations Scientific Advisory Board\n! We talk with her about her goals of bringing evidence-based viewpoints to policy, and how AI in scientific domains can improve people’s lives all over the world.\n\nThis episode has something for every AI or science nerd! Elegant math? ✅ Old school harmonic analysis? ✅ Fundamental developments in modern AI? ✅ Practical ways of modeling the physical world? ✅\n\nGive it a watch\n!\n\nThis is a public episode. If you'd like to discuss this with other subscribers or get access to bonus episodes, visit \nwww.latent.space/subscribe",
           "url": "https://www.latent.space/p/anima",
           "published_at": "2026-08-26T15:15:00+00:00",
           "hosts": [
@@ -60395,6 +60395,34 @@
       ],
       "links": {
         "youtube": "https://www.youtube.com/shorts/lOVObXQdlyg"
+      }
+    },
+    {
+      "id": "b2da1118831c46357c9d",
+      "status": "skipped",
+      "title": "The connection between Ichiro Suzuki and Disney+",
+      "source_title": "The connection between Ichiro Suzuki and Disney+",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode content, based on the title and notes, appears to be about Disney and Ichiro Suzuki, with no mention of AI, Physical AI, or any qualifying individuals or organizations from the AI Radar list.",
+      "published_at": "2026-08-26T20:20:53+00:00",
+      "first_seen_at": "2026-08-26T21:17:24+00:00",
+      "appearances": [
+        {
+          "id": "8833a4358a2c3ed65d0c",
+          "kind": "youtube",
+          "source": "Acquired — YouTube",
+          "family": "acquired",
+          "guid": "yt:video:6tlDEpIrfBc",
+          "title": "The connection between Ichiro Suzuki and Disney+",
+          "description": "🎙 From Disney: The Renaissance and the Empire\n\n#shorts #podcast #acquired #businesshistory",
+          "url": "https://www.youtube.com/shorts/6tlDEpIrfBc",
+          "published_at": "2026-08-26T20:20:53+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/6tlDEpIrfBc"
       }
     }
   ]
