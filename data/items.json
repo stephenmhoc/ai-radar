@@ -60240,6 +60240,106 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/A_qjtSljRAs"
       }
+    },
+    {
+      "id": "fb619ce401ae1a399772",
+      "status": "skipped",
+      "title": "The State of AI: Models, Moats, and the Consumer Renaissance",
+      "source_title": "The State of AI: Models, Moats, and the Consumer Renaissance",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode features Anish Acharya and Jen Kha discussing the AI model landscape and consumer AI applications, but does not feature any qualifying key people or target organizations, nor does it cover physical AI.",
+      "published_at": "2026-08-26T14:30:27+00:00",
+      "first_seen_at": "2026-08-26T16:17:23+00:00",
+      "appearances": [
+        {
+          "id": "d06237efc87b4f365891",
+          "kind": "youtube",
+          "source": "The a16z Show — YouTube",
+          "family": "the a16z show",
+          "guid": "yt:video:zEZ0rQ8Ef-Y",
+          "title": "The State of AI: Models, Moats, and the Consumer Renaissance",
+          "description": "Anish Acharya joins Jen Kha to break down the next frontier of AI, from the evolving model landscape and open-source AI to why the application layer, and consumer AI in particular, may be entering a new phase.\n\nAnish explains why he believes there will be multiple winners at the model layer, why traditional moats like network effects, scale, and brand still matter, and how companies can choose between frontier and open-weight models depending on the economics of the task. They also explore why models are increasingly specializing, and how applications can combine different types of intelligence to create products that are more valuable than any single model.\n\nThe conversation then turns to consumer AI: personal agents that can shop and manage your inbox, coding tools enabling a new generation of small businesses, and why Anish thinks we're seeing a renaissance for consumer builders. They also discuss the changing economics of AI software, the rise of \"luxury software,\" and why the biggest risk for today's founders may no longer be thinking too big, but thinking too small.\n\nTimestamps:\n00:00 - Intro\n01:20 - Who Wins the AI Model Race in Three Years?\n02:49 - What's Next in the Frontier of Intelligence\n07:51 - Why Open Source Is the Only Option for Some Startups\n19:57 - Redefining Consumer: When the Plumber Uses GrokBot\n22:16 - Town Demo: Personal Agents & Managing Chaos\n24:31 - One Dominant Personal Agent or Many Talking to Each Other?\n25:26 - Apps vs Model Companies: Who Captures the Value?\n29:16 - The New Economics of AI Apps: Margins, Compute & Capital as Moat\n30:44 - Who's Actually Building Apps Today? Founder Archetypes\n32:20 - Why Giving Founders Too Much Money Isn't Fatal Anymore\n34:05 - Go-to-Market for Startups Selling to SMEs\n\nResources:\nFollow Anish Acharya on X: https://x.com/illscience\nFollow Jen Kha on X: https://x.com/jkhamehl\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=zEZ0rQ8Ef-Y",
+          "published_at": "2026-08-26T14:30:27+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=zEZ0rQ8Ef-Y"
+      }
+    },
+    {
+      "id": "6fee7325a67bb6c4a7cc",
+      "status": "published",
+      "title": "Anima Anandkumar on Foundation Models for Physics and Neural Operators",
+      "source_title": "🔬“We have foundation models for language, not for physics” — Anima Anandkumar, Bren Professor of Computing",
+      "short_summary": "Caltech professor Anima Anandkumar discusses modeling physical systems with AI, pioneering Neural Operators, and building weather forecasting models like FourCastNet. She explains why physical AI requires structural priors rather than just scaling transformers, and introduces TorchLean for formal verification.",
+      "long_summary": "Caltech professor Anima Anandkumar explores the challenge of building foundation models for continuous physical systems such as weather, fusion, and fluid dynamics. She explains why traditional transformer scaling fails in scientific domains due to limited data and extreme context length requirements, requiring structural priors and inductive biases instead. Anandkumar details her work on Neural Operators and Fourier Neural Operators, which power models like FourCastNet to run accurate weather simulations on consumer GPUs. The discussion also covers applying Neural Operators to predict plasma disruptions in fusion far faster than classical methods. Additionally, Anandkumar covers TorchLean, a framework for writing and formally verifying neural networks in Lean, and her appointment to the United Nations Scientific Advisory Board.",
+      "reason": "Anima Anandkumar is an explicitly listed qualifying person for NVIDIA.",
+      "published_at": "2026-08-26T15:15:00+00:00",
+      "first_seen_at": "2026-08-26T16:17:27+00:00",
+      "appearances": [
+        {
+          "id": "fb4c5bed7a7ca7e5901d",
+          "kind": "podcast",
+          "source": "Latent Space",
+          "family": "latent space",
+          "guid": "substack:post:212802973",
+          "title": "🔬“We have foundation models for language, not for physics” — Anima Anandkumar, Bren Professor of Computing",
+          "description": "A few years ago, Caltech Prof. \nAnima Anandkumar\n set out to develop the first open-source weather model with AI. Talking to experts in the field, she was met with skepticism. Weather is chaotic, physics simulations are hard, have been developed for decades, and require supercomputers, the data just isn’t there. Despite reservations, Anima went forth and built. Within a year her team had developed \nFourCastNet\n, a predictive model that is competitive with the best physics-based simulations available. Thanks to Anima, and her follow up work, anyone can now predict weather accurately over a short timescale using consumer grade GPUs. \n\nIn the fifteen or so science episodes we’ve released on \nLatent.Space\n, we’ve covered atoms, molecules, materials, biology, and math. Anima is a pioneer in studying physical systems that are continuous. Weather, fusion, and fluid or heat flow are huge areas of science that are extremely difficult to model: they are large, chaotic, and fundamentally multi-scale. This is a field the AI community has somewhat neglected, but one we expect will grow fast. We plan to cover large physical systems more in coming episodes.\n\nOne thing you can glean from Anima’s work is that this area of AI resists the scaling ideas that have permeated the rest of the field. The data isn’t there: open source datasets in many of these domains are limited to tens or hundreds of thousands of examples, far from what token-hungry transformers need. Even worse, the resolution that physics demands pushes the context length into the hundreds of billions, so you can’t just throw more tokens at the problem. That isn’t a ceiling though, just a slower road: progress here comes from building in structure and inductive biases. Sorry for all you bitter-lesson-pilled language modelers.\n\n“If each dimension is even a few hundred grid points, which is where industrial scale starts... we’re talking hundreds of billions to even a trillion context length. So forget ever having a transformer for anything of this scale, all of the world’s compute will not be enough.”\n\nThe math underneath\n\nTo tackle these systems, Anima pioneered a technique known as \nNeural Operators\n, one of the most beautiful theoretical developments in AI of the last decade. These allow you to combine data and physical laws to enable multi-scale inputs and outputs. We’re no longer modeling a grid, we’re modeling a function that evolves over many scales. This allows Anima and crew to build in priors based upon physical intuition.\n\nTo see how physical priors are still helpful for AI modeling, let’s revisit the problem of weather forecasting on a global scale. The earth is a sphere, which meant that accurate modeling involved using the right basis set — the \nSpherical Harmonics\n. Run a weather model on a grid and it blows up fast. Move to the natural basis for the problem and it stays stable far longer, long enough to roll out months ahead instead of days. Anima’s \nFourier Neural Operator\n learns directly in this frequency domain, and its spherical variant powers \nFourCastNet 3\n, which models the weather across the whole globe and keeps running stably far into the future.\n\nThe physical world is forgiving\n\nAnima explored Neural Operators across other physical domains too, and one striking observation is that the physical world is more forgiving than you’d expect. In fusion, a few thousand samples are enough to predict plasma disruptions, and to do it a million times faster than traditional simulation.\n\nNone of this is a rejection of scale, it is a different route to it. Anima ultimately still wants to build a “foundation model for physics”, a model that spans many phenomena and does both simulation and design. You get there by building in the structure the physical world already has, not by waiting for data that will never exist. It is a start, and it will take longer than the token-driven parts of AI, because for the physical world tokens were never the answer.\n\n“All of the things that work with deep learning, let’s take them, but make them a bit more principled.”\n\nWeather is only the beginning\n\nNeural operators and weather modeling were a personal passion of mine, so we’ve spent much of this blog and the episode exploring this work. Anima has done so much more! In the episode, we cover several other recent developments from Anima:\n\n* Anima has a series of works integrating neural networks and automated proof techniques. We talk about \nTorchLean\n, a new framework that lets you write PyTorch-style networks inside the proof assistant \nLean\n and \nformally verify them\n. This is a major step for proving bounds on neural networks, something that would be really important for someone trying to, e.g., add a neural network as part of the control loop to their fusion reactor!\n\n* Anima was \nrecently appointed to the United Nations Scientific Advisory Board\n! We talk with her about her goals of bringing evidence-based viewpoints to policy, and how AI in scientific domains can improve people’s lives all over the world.\n\nThis episode has something for every AI or science nerd! Elegant math? ✅ Old school harmonic analysis? ✅ Fundamental developments in modern AI? ✅ Practical ways of modeling the physical world? ✅\n\nGive it a watch\n!\n\nThis is a public episode. If you'd like to discuss this with other subscribers or get access to bonus episodes, visit \nwww.latent.space/subscribe",
+          "url": "https://www.latent.space/p/anima",
+          "published_at": "2026-08-26T15:15:00+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.latent.space/p/anima"
+      }
+    },
+    {
+      "id": "dcc3b6ee9bcd6ae7aeed",
+      "status": "published",
+      "title": "Google DeepMind: The Mathematics of AI Uncertainty",
+      "source_title": "The mathematics of AI uncertainty",
+      "short_summary": "Google DeepMind VP of Research Zoubin Ghahramani discusses machine uncertainty, Bayesian thinking in artificial intelligence, and whether self-doubt is a critical missing piece for advancing AI systems.",
+      "long_summary": "In this episode, Cambridge professor and Google DeepMind VP of Research Zoubin Ghahramani explores the mathematics of AI uncertainty. While modern AI often responds with unwavering authority even when incorrect, Ghahramani discusses his decades of work focused on giving machines an awareness of their limitations. The discussion covers the difference between correctness and confidence, historical perspectives on the field, and the application of Bayesian thinking in AI. Finally, the episode examines how uncertainty manifests in the real world and what these principles mean for future AI research and AGI.",
+      "reason": "Features Zoubin Ghahramani, VP of Research at Google DeepMind, discussing AI uncertainty and Bayesian thinking.",
+      "published_at": "2026-08-26T15:35:59+00:00",
+      "first_seen_at": "2026-08-26T16:17:30+00:00",
+      "appearances": [
+        {
+          "id": "a6d1aed3c79f34f60863",
+          "kind": "podcast",
+          "source": "Google DeepMind: The Podcast",
+          "family": "google deepmind: the podcast",
+          "guid": "b6ddc30d-9b7d-4192-8939-a821301570f5",
+          "title": "The mathematics of AI uncertainty",
+          "description": "Now, if you ask an AI a question, it will usually give you an absolute answer with unwavering authority, even if that answer turns out to be wrong. In fact, today's AI seems to be missing a fundamental human trait: self-doubt. Long before the current wave of large language models, one academic researcher was trying to give machines a sense of their own limitations. Zoubin Ghahramani has spent the last 30 years pioneering a type of intelligence built on the mathematics of uncertainty. Today, as a professor at Cambridge and VP of Research at Google DeepMind, Zoubin finds himself at the heart of another interesting debate: will improving machine uncertainty be one of the missing pieces to ever improving AI?\n\nTimecodes:\n\n00:00 Introduction\n\n01:06 The role of uncertainty\n\n07:45 Correctness vs confidence\n\n09:40 Historical perspectives\n\n16:10 Bayesian thinking in AI\n\n26:30 Uncertainty in the real world\n\n36:42 Future research and AGI\n\nPlease leave us a review on Spotify or Apple Podcasts if you enjoyed this episode. We always want to hear from our audience whether that's in the form of feedback, new idea or a guest recommendation! \n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://deepmind.com/podcast",
+          "published_at": "2026-08-26T15:35:59+00:00",
+          "hosts": []
+        },
+        {
+          "id": "8ccaddd540430106f877",
+          "kind": "youtube",
+          "source": "Google DeepMind",
+          "family": "google deepmind",
+          "guid": "yt:video:tBjgCj_dGZM",
+          "title": "The mathematics of AI uncertainty",
+          "description": "Long before the current wave of large language models, one academic researcher was trying to give machines a sense of their own limitations. Zoubin Ghahramani has spent the last 30 years pioneering a type of intelligence built on the mathematics of uncertainty. Today, as a professor at Cambridge and VP of research at Google DeepMind, Zoubin finds himself at the heart of an interesting debate: will improving machine uncertainty be one of the missing pieces to ever improving AI? \n\nTimecodes:\n00:00 Introduction \n01:06 The role of uncertainty \n07:45 Correctness vs confidence \n09:40 Historical perspectives\n16:10 Bayesian thinking in AI \n26:30 Uncertainty in the real world \n36:42 Future research and AGI \n___\n\nSubscribe to our channel https://www.youtube.com/@googledeepmind \nFind us on X https://x.com/GoogleDeepMind\nFollow us on Instagram https://instagram.com/googledeepmind \nAdd us on Linkedin https://www.linkedin.com/company/deepmind/",
+          "url": "https://www.youtube.com/watch?v=tBjgCj_dGZM",
+          "published_at": "2026-08-26T15:45:28+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://deepmind.com/podcast",
+        "youtube": "https://www.youtube.com/watch?v=tBjgCj_dGZM"
+      }
     }
   ]
 }
