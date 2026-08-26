@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feeds — AI Radar</title>
+  <meta name="description" content="Noteworthy AI podcast and video episodes, summarized from publisher notes.">
+  <link rel="alternate" type="application/rss+xml" title="AI Radar" href="/feed.xml">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f1e8;
+      --ink: #20231f;
+      --muted: #6b7068;
+      --forest: #1c2b23;
+      --sage: #cdd9c4;
+      --rule: #d5d1c6;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: var(--paper);
+      font-size: 16px;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover { text-decoration-thickness: 2px; }
+
+    a:focus-visible {
+      border-radius: 0.15rem;
+      outline: 3px solid #9caf88;
+      outline-offset: 4px;
+    }
+
+    header {
+      background: var(--forest);
+      color: #f6f3e9;
+      padding: clamp(3.5rem, 9vw, 7rem) max(1.5rem, calc((100vw - 52rem) / 2));
+    }
+
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: var(--sage);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 12ch;
+      margin: 0;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+      font-size: clamp(3.25rem, 9vw, 6.75rem);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      line-height: 0.88;
+    }
+
+    .dek {
+      max-width: 38rem;
+      margin: 1.75rem 0 0;
+      color: #d9ddd5;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.65;
+    }
+
+    .rss-link {
+      display: inline-block;
+      border: 1px solid #637267;
+      border-radius: 999px;
+      padding: 0.65rem 1rem;
+      color: #f6f3e9;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.035em;
+      text-decoration: none;
+    }
+
+    .rss-link:hover {
+      border-color: var(--sage);
+      background: #26392e;
+    }
+
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+
+    .secondary-link {
+      color: #b8c0b8;
+      font-size: 0.78rem;
+      font-weight: 650;
+      letter-spacing: 0.035em;
+      text-decoration-color: #637267;
+    }
+
+    .secondary-link:hover { color: #f6f3e9; }
+
+    main {
+      width: min(52rem, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 3.75rem 0 6rem;
+    }
+
+    .section-label {
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 750;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .episode-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .episode {
+      padding: 0 0 2.25rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 2.25rem;
+    }
+
+    .episode-content { max-width: 46rem; }
+
+    .episode-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem 0.65rem;
+      margin: 0 0 0.6rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 650;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+    }
+
+    .episode-meta a {
+      color: #465b3c;
+      font-weight: 750;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+      font-size: clamp(1.3rem, 3vw, 1.62rem);
+      font-weight: 600;
+      letter-spacing: -0.018em;
+      line-height: 1.22;
+    }
+
+    .summary {
+      max-width: 68ch;
+      margin: 0.8rem 0 0;
+      color: #444941;
+      font-size: 0.98rem;
+      line-height: 1.72;
+    }
+
+    .episode:last-child {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .feed-group + .feed-group { margin-top: 3rem; }
+
+    .feed-group-title {
+      margin: 0 0 1rem;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+      font-size: 1.35rem;
+      letter-spacing: -0.015em;
+    }
+
+    .feed-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--rule);
+    }
+
+    .feed-item {
+      display: grid;
+      grid-template-columns: minmax(10rem, 1fr) auto;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .feed-name {
+      margin: 0;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .feed-links {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 36rem) {
+      header { padding-block: 3.5rem 4rem; }
+      h1 { font-size: clamp(3.4rem, 18vw, 5rem); }
+      main {
+        width: min(100% - 2.25rem, 52rem);
+        padding-top: 2.75rem;
+      }
+      .episode {
+        margin-bottom: 1.8rem;
+        padding-bottom: 1.8rem;
+      }
+      .summary { font-size: 0.95rem; }
+      .feed-item {
+        display: block;
+        padding-block: 1rem;
+      }
+      .feed-links { margin-top: 0.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Podcasts &amp; videos</p>
+    <h1>AI Radar</h1>
+    <p class="dek">Noteworthy AI podcast and video episodes, summarized from publisher notes.</p>
+    <nav class="header-links" aria-label="AI Radar links">
+      <a class="rss-link" href="/feed.xml">Follow via RSS&nbsp; ↗</a>
+      <a class="secondary-link" href="/">Episodes</a>
+    </nav>
+  </header>
+  <main>
+    <p class="section-label">Monitored sources</p>
+    <section class="feed-group"><h2 class="feed-group-title">Podcast feeds</h2><ul class="feed-list"><li class="feed-item"><p class="feed-name">Acquired</p><p class="feed-links"><a href="https://www.acquired.fm/episodes/rss.xml" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.acquired.fm/episodes/rss.xml" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">AI &amp; I</p><p class="feed-links"><a href="https://feeds.transistor.fm/how-do-you-use-chatgpt" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://feeds.transistor.fm/how-do-you-use-chatgpt" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">AI + a16z</p><p class="feed-links"><a href="https://feeds.simplecast.com/Hb_IuXOo" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://feeds.simplecast.com/Hb_IuXOo" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">BG2Pod with Brad Gerstner and Bill Gurley</p><p class="feed-links"><a href="https://anchor.fm/s/f06c2370/podcast/rss" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://anchor.fm/s/f06c2370/podcast/rss" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">David Senra</p><p class="feed-links"><a href="https://feeds.megaphone.fm/david-senra" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://feeds.megaphone.fm/david-senra" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Dwarkesh Podcast</p><p class="feed-links"><a href="https://api.substack.com/feed/podcast/69345.rss" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://api.substack.com/feed/podcast/69345.rss" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Eye on AI</p><p class="feed-links"><a href="https://rss.libsyn.com/shows/195446/destinations/1383449.xml" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://rss.libsyn.com/shows/195446/destinations/1383449.xml" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Google DeepMind: The Podcast</p><p class="feed-links"><a href="https://feeds.simplecast.com/JT6pbPkg" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://feeds.simplecast.com/JT6pbPkg" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Hard Fork</p><p class="feed-links"><a href="https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/column/hard-fork/rss.xml" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/column/hard-fork/rss.xml" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Invest Like the Best</p><p class="feed-links"><a href="https://feeds.megaphone.fm/CLS2859450455" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://feeds.megaphone.fm/CLS2859450455" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Latent Space</p><p class="feed-links"><a href="https://api.substack.com/feed/podcast/1084089.rss" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://api.substack.com/feed/podcast/1084089.rss" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Lenny&#x27;s Podcast</p><p class="feed-links"><a href="https://api.substack.com/feed/podcast/10845.rss" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://api.substack.com/feed/podcast/10845.rss" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Lex Fridman Podcast</p><p class="feed-links"><a href="https://lexfridman.com/feed/podcast/" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://lexfridman.com/feed/podcast/" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">No Priors</p><p class="feed-links"><a href="https://feeds.megaphone.fm/nopriors" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://feeds.megaphone.fm/nopriors" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">NVIDIA AI Podcast</p><p class="feed-links"><a href="https://feeds.megaphone.fm/nvidiaaipodcast" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://feeds.megaphone.fm/nvidiaaipodcast" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">OpenAI Podcast</p><p class="feed-links"><a href="https://feeds.acast.com/public/shows/68470ba8d911dedd6501609c" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://feeds.acast.com/public/shows/68470ba8d911dedd6501609c" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Practical AI</p><p class="feed-links"><a href="https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Relentless</p><p class="feed-links"><a href="https://anchor.fm/s/e402cdc8/podcast/rss" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://anchor.fm/s/e402cdc8/podcast/rss" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">The a16z Show</p><p class="feed-links"><a href="https://feeds.simplecast.com/JGE3yC0V" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://feeds.simplecast.com/JGE3yC0V" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">The Cognitive Revolution</p><p class="feed-links"><a href="https://feeds.megaphone.fm/RINTP3108857801" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://feeds.megaphone.fm/RINTP3108857801" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Training Data</p><p class="feed-links"><a href="https://feeds.megaphone.fm/trainingdata" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://feeds.megaphone.fm/trainingdata" rel="noopener noreferrer">Source</a></p></li></ul></section><section class="feed-group"><h2 class="feed-group-title">YouTube feeds</h2><ul class="feed-list"><li class="feed-item"><p class="feed-name">a16z</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC9cn0TuPq4dnbTY-CBsm8XA" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@a16z" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Acquired — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCyFqFYfTW2VoIQKylJ04Rtw" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@AcquiredFM" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">AI &amp; I — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@EveryInc" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">AI + a16z — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLM4u6XbiXf5p-bokWYcyi8SKnMzoYW4b3" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/playlist?list=PLM4u6XbiXf5p-bokWYcyi8SKnMzoYW4b3" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Anthropic</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@anthropic-ai" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">BG2Pod — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC-yRDvpR99LUc5l7i7jLzew" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@Bg2Pod" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Bloomberg Originals</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCUMZ7gohGI9HcU9VNsr2FJQ" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@business" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Dwarkesh Podcast — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLd7-bHaQwnthaNDpZ32TtYONGVk95-fhF" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@DwarkeshPatel" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Eye on AI — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLacDrP-7Ys6IsnPRN0ToTfjH8gQ4s6mL9" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@eyeonai3425" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Google DeepMind</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@GoogleDeepMind" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Google DeepMind: The Podcast — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLqYmG7hTraZBiUr6_Qf8YTS2Oqy3OGZEj" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/playlist?list=PLqYmG7hTraZBiUr6_Qf8YTS2Oqy3OGZEj" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Invest Like the Best — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCpQBb0fToph3jrDulwz1iUQ" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@ILTB_Podcast" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Joanna Stern</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCi0_2sEpmT6FKn5-y6_W3cA" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@JoannaStern" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Latent Space — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLWEAb1SXhjlfkEF_PxzYHonU_v5LPMI8L" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@LatentSpacePod" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Lenny&#x27;s Podcast — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PL2fLjt2dG0N6unOOF3nHWYGcJJIQR1NKm" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@LennysPodcast" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Lex Fridman Podcast — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@lexfridman" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">No Priors — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLMKa0PxGwad7jf8hwwX8w5FHitXZ1L_h1" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@NoPriorsPodcast" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">NVIDIA AI Podcast — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLZHnYvH1qtOZ9QztmZ-Ozys5uyiYGR0C4" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@NVIDIA" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">OpenAI</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@OpenAI" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">OpenAI Podcast — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLOXw6I10VTv9GAOCZjUAAkSVyW2cDXs4u" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/playlist?list=PLOXw6I10VTv9GAOCZjUAAkSVyW2cDXs4u" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Practical AI — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC9tpZnMLKv5vbZIGuIIPmNg" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@practicalai_show" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Sequoia Capital</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCWrF0oN6unbXrWsTN7RctTw" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@sequoiacapital" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">The a16z Show — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLM4u6XbiXf5rnUvH5NLdV_It2QLgbHBDZ" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/playlist?list=PLM4u6XbiXf5rnUvH5NLdV_It2QLgbHBDZ" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">The Cognitive Revolution — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLVfJCYRuaJIUNqx6puWYmw7Ug_QsTlA5k" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@CognitiveRevolutionPodcast" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Training Data — YouTube</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8" rel="noopener noreferrer">Source</a></p></li><li class="feed-item"><p class="feed-name">Y Combinator</p><p class="feed-links"><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCcefcZRL2oaA_uBNeo5UOWg" rel="noopener noreferrer">Feed</a> <span aria-hidden="true">·</span> <a href="https://www.youtube.com/@ycombinator" rel="noopener noreferrer">Source</a></p></li></ul></section>
+  </main>
+</body>
+</html>

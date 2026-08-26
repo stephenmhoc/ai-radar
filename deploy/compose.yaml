@@ -15,6 +15,7 @@ services:
       AI_RADAR_SENTRY_DSN: ${AI_RADAR_SENTRY_DSN}
       AI_RADAR_SENTRY_ENVIRONMENT: ${AI_RADAR_SENTRY_ENVIRONMENT:-production}
       AI_RADAR_LOOKBACK_DAYS: ${AI_RADAR_LOOKBACK_DAYS:-7}
+      AI_RADAR_HEARTBEAT_MAX_AGE_SECONDS: ${AI_RADAR_HEARTBEAT_MAX_AGE_SECONDS:-9000}
       GIT_AUTHOR_NAME: AI Radar
       GIT_AUTHOR_EMAIL: ai-radar@users.noreply.github.com
       GIT_COMMITTER_NAME: AI Radar
@@ -28,6 +29,12 @@ services:
       ofelia.job-exec.ai-radar.schedule: "0 17 * * * *"
       ofelia.job-exec.ai-radar.command: "/app/deploy/run-cycle.sh"
       ofelia.job-exec.ai-radar.no-overlap: "true"
+    healthcheck:
+      test: ["CMD", "python3", "/app/scheduler_watchdog.py"]
+      interval: 30m
+      timeout: 15s
+      retries: 1
+      start_period: 2h
     logging:
       options:
         max-size: 10m

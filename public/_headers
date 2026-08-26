@@ -1,2 +1,8 @@
+/*
+  Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+
 /feed.xml
   Content-Type: application/rss+xml; charset=utf-8

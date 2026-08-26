@@ -68,6 +68,15 @@ class ErrorReporter:
             print(f"warning: Sentry failed to capture an exception: {exc}", file=sys.stderr)
             return None
 
+    def set_tags(self, tags: dict[str, object]) -> None:
+        if self._sdk is None:
+            return
+        try:
+            for key, value in tags.items():
+                self._sdk.set_tag(key, value)
+        except Exception as exc:  # noqa: BLE001
+            print(f"warning: Sentry failed to set tags: {exc}", file=sys.stderr)
+
     def close(self) -> None:
         if self._sdk is None:
             return

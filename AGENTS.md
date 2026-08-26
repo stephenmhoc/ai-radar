@@ -22,8 +22,8 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 ## Treat these contracts as intentional
 
 - `data/items.json` is canonical state and belongs in Git.
-- `public/index.html`, `public/feed.xml`, and `public/_headers` are generated,
-  tracked production artifacts.
+- `public/index.html`, `public/feeds.html`, `public/feed.xml`, and
+  `public/_headers` are generated, tracked production artifacts.
 - The site uses `short_summary`; RSS uses `long_summary`.
 - A short summary is one or two sentences and no more than 55 words.
 - New editorial decisions use one OpenRouter call with strict structured output
@@ -34,10 +34,16 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 - Do not send the existing archive back through OpenRouter without explicit
   approval. For archive-wide transformations, preserve every prior long summary
   and prove the migration is lossless.
-- Sparse notes should be skipped; invented or weakly grounded summaries are
-  worse than no publication.
+- Sparse notes should be deferred and reconsidered only after richer metadata
+  arrives; invented or weakly grounded summaries are worse than no publication.
+- A canonical item may have at most one podcast appearance and one YouTube
+  appearance. YouTube identity is the source-independent video ID; never group
+  distinct same-medium episodes through fuzzy title matching.
 - Keep source failures isolated and report them, but preserve the scheduled
   cycle's degraded/nonzero result when any source or LLM error occurred.
+- Pipeline, Git, validation, test, lock, heartbeat, and unexpected failures must
+  reach Sentry. Keep the Docker heartbeat watchdog independent of Ofelia so a
+  stopped scheduler is observable while the worker and host remain alive.
 
 ## Work from current evidence
 
@@ -53,6 +59,8 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   public endpoints. A successful Git push alone is not proof of deployment.
 - When investigating Sentry failures, distinguish unit-test fixture messages
   from live collection statistics and the job's final result.
+- For scheduler liveness, inspect both Ofelia logs and the worker's Docker
+  health/heartbeat; neither one alone proves the complete path.
 - A burst of YouTube RSS errors may be upstream and transient. Probe individual
   feed URLs and compare runs before editing many sources or blaming the LLM.
 
@@ -76,6 +84,8 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 
 - Make the smallest coherent change and keep implementation, tests,
   documentation, generated files, and deployment configuration consistent.
+- After every change, always check and update the relevant documentation before
+  considering the work complete.
 - Edit the version-controlled templates in `deploy/`; if production Compose
   state changes, update the corresponding Dockge stack and verify the live
   container matches.
@@ -87,6 +97,8 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   decorative list markers unless the user asks.
 - Preserve deterministic rendering. Re-running `build-site` with unchanged
   archive/config must not alter output.
+- Preserve `public/feeds.html` as a deterministic rendering of every active
+  source in `config.toml`, and keep its link visually secondary in the header.
 - Avoid broad archive rewrites when a narrow migration is sufficient. When a
   large JSON diff is necessary, compare IDs, order, statuses, links, and old/new
   semantic fields programmatically.
@@ -101,7 +113,7 @@ For ordinary code, content, or rendering changes, run:
 python3 radar.py doctor
 python3 radar.py build-site
 python3 -m unittest discover -s tests -v
-python3 -m py_compile radar.py scheduled_cycle.py error_reporter.py
+python3 -m py_compile radar.py scheduled_cycle.py scheduler_watchdog.py error_reporter.py scripts/check_archive_evolution.py
 git diff --check
 git status --short
 ```
@@ -109,6 +121,11 @@ git status --short
 Add focused tests for every changed contract. At minimum, summary changes must
 prove the site/RSS split, schema payload, local validation, archive compatibility,
 and deterministic output.
+
+GitHub Actions is an independent check on every pull request and `main` push;
+Ofelia remains the only production publisher schedule. Keep action permissions
+read-only, pin third-party actions to commit SHAs, and never expose production
+secrets to pull-request code.
 
 Do not make a synthetic OpenRouter request merely to test connectivity when a
 payload/unit test is sufficient. A real cycle may cost money or publish content.
@@ -128,13 +145,15 @@ for a review, diagnosis, or plan. When the user authorizes release:
 4. Confirm local `HEAD` and GitHub `main` are the same SHA using `git ls-remote`.
 5. Require a successful GitHub check named `Cloudflare Pages`.
 6. Verify HTTP 200 from the site and RSS URLs and check the changed content in
-   each output, not only headers.
+   each output, not only headers. Also verify `/feeds.html` when sources or
+   rendering changed.
 7. Sync and verify `/opt/ai-radar/repo` through the existing private homelab
    access when production worker behavior changed.
 8. Confirm the homelab checkout is clean and on the released SHA.
 9. Confirm Dockge's `ai-radar` and `scheduler` containers and Ofelia labels are
    correct.
-10. For scheduling changes, observe a complete scheduler-triggered run.
+10. For scheduling changes, observe a complete scheduler-triggered run and
+    confirm the worker health check reads a fresh heartbeat.
 
 Normal deployment is Git-based. Do not use direct `wrangler pages deploy` unless
 the user explicitly requests it or Git integration is being recovered. Do not

@@ -3,7 +3,6 @@ public_dir = "public"
 user_agent = "ai-radar/0.1"
 
 [llm]
-provider = "openai_compatible"
 base_url = "https://openrouter.ai/api/v1"
 api_key_env = "OPENROUTER_API_KEY"
 model = "openrouter/auto"
@@ -13,14 +12,12 @@ timeout_seconds = 120
 max_attempts = 4
 retry_backoff_seconds = 2.0
 max_retry_sleep_seconds = 60.0
+max_output_tokens = 1200
 
 [site]
 title = "AI Radar"
 description = "Noteworthy AI podcast and video episodes, summarized from publisher notes."
 base_url = "https://ai-radar.merimerimeri.com"
-cname = "ai-radar.merimerimeri.com"
-rss_title = "AI Radar"
-rss_description = "Noteworthy AI podcast and video episodes, summarized from publisher notes."
 
 [[feeds]]
 name = "Dwarkesh Podcast"

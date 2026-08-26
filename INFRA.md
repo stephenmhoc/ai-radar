@@ -16,7 +16,7 @@ Homelab Docker worker -----> OpenRouter Auto Router
           |                    one structured result
           |                 (short + long summaries)
           v
-Static archive, HTML, and RSS in Git
+Static archive, HTML pages, and RSS in Git
           |
           v
 GitHub public repository, main branch
@@ -42,7 +42,7 @@ existing site and RSS feed remain available from Cloudflare; only updates stop.
 | Homelab worker | Fetch sources, classify episodes, request summaries, render static files, test, commit, and push | Git checkout mounted at `/app` |
 | OpenRouter | Select a compatible model through `openrouter/auto` and return one strict structured result per new candidate | None owned by AI Radar |
 | GitHub | Canonical repository, publication history, and handoff to hosting | `main`, especially `data/` and `public/` |
-| Cloudflare Pages | Serve the static site and RSS feed at the public domain | Deployed copy of `public/` |
+| Cloudflare Pages | Serve the static episode archive, source list, and RSS feed | Deployed copy of `public/` |
 | Ofelia | Run the worker on an explicit Docker-native schedule | Docker labels on the worker |
 | Dockge | Manage the worker and scheduler Compose stacks | `/opt/ai-radar` and `/opt/scheduler` |
 | Sentry | Receive source, LLM, pipeline-phase, and unexpected failures | Sentry project events |
@@ -63,8 +63,11 @@ Important paths:
 - `data/items.json` is the canonical database-free archive. It records seen,
   skipped, and published items and is committed to Git.
 - `public/index.html` is the generated static site.
+- `public/feeds.html` is the generated list of all active podcast and YouTube
+  feeds and shares the site's inline visual system.
 - `public/feed.xml` is the generated RSS feed.
-- `public/_headers` sets the RSS content type on Cloudflare Pages.
+- `public/_headers` sets the RSS content type and static security headers on
+  Cloudflare Pages.
 - `radar.py` performs collection, selection, summarization, and rendering.
 - `scheduled_cycle.py` owns the pull-to-push production transaction.
 - `error_reporter.py` owns Sentry event reporting.
@@ -72,9 +75,14 @@ Important paths:
 
 The static outputs are build artifacts, but they are intentionally tracked.
 Git therefore contains both the source archive and the exact files that
-Cloudflare serves. At the 2026-08-25 validation point, the archive contained
-1,748 records and the site and RSS feed each exposed 224 published episodes.
-These counts should grow over time.
+Cloudflare serves. At the 2026-08-26 hardening point, the repaired archive
+contained 1,730 canonical records, 2,617 unique appearances, 224 published
+episodes, and two deferred sparse records. The site and RSS feed each exposed
+the same 224 published episodes, and the feeds page listed all 47 active
+sources. The repair removed 245 incorrectly grouped appearances and 18 empty
+duplicate/corrupt seen records without changing any existing long summary or
+calling OpenRouter. Future archive evolution is append-only unless an explicit,
+verified repair is required.
 
 ### Summary contract
 
@@ -88,9 +96,23 @@ provider that supports the requested parameters. The result contains:
 - `long_summary`: four to eight sentences, used by RSS.
 - `reason`: concise inclusion or exclusion rationale.
 
-The application validates the returned field names and types locally. Included
-items also have local length checks. Provider or validation failures leave the
-candidate unprocessed so a later cycle can retry it.
+The application validates the exact returned fields, types, sentence counts,
+and size limits locally. The response has a configured output-token ceiling,
+and logs record the actual routed model and token usage. Provider or validation
+failures leave the candidate unprocessed so a later cycle can retry it. Sparse
+notes produce a `deferred` record and are reconsidered only if an existing
+appearance gains better notes or a matching appearance adds useful metadata.
+
+Publisher notes, titles, URLs, and names are explicitly treated as untrusted
+prompt data. The local archive validator also requires unique item and
+appearance IDs, source-independent YouTube video identity, at most one podcast
+and one YouTube appearance per canonical item, safe HTTP(S) links, valid
+timezone-aware timestamps, allowed statuses, and exact generated links.
+
+The Cloudflare portion of this architecture remains free static Pages.
+OpenRouter is a separate service: `openrouter/auto` can route to paid models.
+`max_output_tokens` bounds response size and the logs expose routed-model usage,
+but neither setting makes Auto Router free.
 
 The historical archive was migrated without sending old episodes back through
 OpenRouter: prior summaries became `long_summary`, and short versions were
@@ -109,6 +131,7 @@ Current Git integration:
 - Build output directory: `public`
 - Custom domain: `ai-radar.merimerimeri.com`
 - Public site: `https://ai-radar.merimerimeri.com/`
+- Public source list: `https://ai-radar.merimerimeri.com/feeds.html`
 - Public RSS: `https://ai-radar.merimerimeri.com/feed.xml`
 
 A push to `main` triggers Pages automatically. The Cloudflare Pages check on the
@@ -123,10 +146,11 @@ shape unless the user explicitly expands the architecture, and check free-plan
 eligibility before adding any Cloudflare product.
 
 `public/_headers` ensures `/feed.xml` is served as
-`application/rss+xml; charset=utf-8`. Cloudflare also serves the site with the
-security and cache headers observed on the public endpoint. Do not assume a
+`application/rss+xml; charset=utf-8`. It also supplies a restrictive static
+Content Security Policy, referrer policy, frame denial, and MIME sniffing
+protection. Do not assume a
 successful Git push is a successful release: verify the Pages check and both
-public URLs.
+public pages plus RSS.
 
 ## Homelab runtime
 
@@ -156,7 +180,17 @@ bind-mounted code.
 
 The image is based on `python:3.12-slim` and adds CA certificates, Git, the
 OpenSSH client, and the Python dependencies in `requirements.txt`. It does not
-run an HTTP server.
+run an HTTP server. `.dockerignore` keeps Git metadata, local caches, and other
+development-only files out of the image context.
+
+The worker has a Docker health check independent of Ofelia. Every scheduled
+invocation atomically updates `var/scheduler-heartbeat.json` when it starts and
+finishes. Docker runs `scheduler_watchdog.py` every 30 minutes after a two-hour
+startup grace period. If the last start is more than 9,000 seconds old, the
+watchdog reports one grouped Sentry event for the outage and marks the worker
+unhealthy. A fresh heartbeat clears the local alert latch so a later outage can
+report again. `AI_RADAR_HEARTBEAT_MAX_AGE_SECONDS` can raise the threshold but
+may not set it below one hour.
 
 ### Scheduler stack
 
@@ -215,40 +249,53 @@ host-key checking.
 ## Scheduled publication transaction
 
 `/app/deploy/run-cycle.sh` changes to `/app`, establishes the scoped Git SSH
-configuration, and executes `scheduled_cycle.py`. A cycle performs these phases
-in order:
+configuration, and executes `scheduled_cycle.py`. A nonblocking process lock
+covers the complete transaction, including manual `docker exec` invocations. A
+cycle performs these phases in order:
 
-1. Fast-forward pull `origin/main`.
-2. Load the freshly pulled `radar.py`.
-3. Fetch all configured sources using the configured lookback window.
-4. Group duplicate podcast/YouTube appearances into canonical candidates.
-5. For new candidates with adequate publisher notes, make one structured
-   OpenRouter request and store the decision and both summaries.
-6. Rebuild `data/items.json`, `public/index.html`, and `public/feed.xml`.
-7. Run the full Python unit-test suite.
-8. Stage only `data/items.json` and the files under `public/` owned by the
-   publisher.
-9. If staged output changed, commit as `AI Radar` and push `HEAD:main`.
-10. Let the GitHub integration trigger Cloudflare Pages.
+1. Write a running heartbeat and require a clean tracked worktree.
+2. Fetch `origin/main`, safely rebase any local publication commit when the
+   remote advanced, and push any commit stranded by an earlier transient push
+   failure. Force pushes are never used.
+3. Tag Sentry with the freshly synchronized worktree SHA and load `radar.py`.
+4. Fetch all configured sources using the lookback window, bounded response
+   sizes, public-only redirect destinations, and bounded retries for transient
+   failures.
+5. Match exact media identity first, allow fuzzy matching only across media,
+   and retain at most one podcast and one YouTube appearance per item.
+6. Defer sparse metadata or make one structured OpenRouter request and store
+   the decision and both summaries only after local validation succeeds.
+7. Validate and atomically save `data/items.json`; rebuild `public/index.html`,
+   `public/feeds.html`, `public/feed.xml`, and `public/_headers`.
+8. Run `doctor`, all Python tests, and entrypoint compilation.
+9. Stage only the canonical archive and generated public artifacts. Commit as
+   `AI Radar` when the staged output changed.
+10. Re-fetch, safely reconcile any concurrent `main` update, and push every
+    ahead commit, including one left by a previous failed push.
+11. Write the finished heartbeat and let the Git integration trigger Pages.
 
 Individual source and LLM failures are isolated so other sources can finish.
-After generated changes are safely tested and pushed, any source or LLM error
-still marks the scheduled cycle degraded and returns a nonzero exit. This makes
-partial upstream failures visible rather than silently treating them as a
-healthy run.
+Remaining source failures are aggregated into one Sentry event per cycle after
+retries, while each deferred LLM failure retains its item context. After safe
+publication, any source or LLM error still marks the cycle degraded and returns
+nonzero. Git, test, validation, lock, heartbeat, and unexpected failures also
+produce Sentry events.
 
 ## Sentry and logs
 
 AI Radar sends error events to its Sentry project when
 `AI_RADAR_SENTRY_DSN` is present. Events include deployment environment, Git
-release, application, host, failing phase, and source/model tags where
-applicable. Source failures use stable fingerprints so repeated upstream errors
-group together.
+release, freshly synchronized worktree SHA, application, host, failing phase,
+and source/model tags where applicable. Stable fingerprints group repeated
+source-cycle, summary, pipeline-phase, and stale-heartbeat failures.
 
 AI Radar does not use a Sentry cron monitor. The free-plan cron-monitor slot is
-reserved for another homelab application; AI Radar uses ordinary error events.
-The scheduler logs are therefore the primary schedule/run record, while Sentry
-is the failure record.
+reserved for another homelab application; the Docker health check provides
+independent Ofelia liveness detection using ordinary Sentry error events. The
+scheduler logs remain the primary schedule/run record, while Sentry is the
+failure record. A complete Docker-host, power, or network outage cannot be
+self-reported; guaranteeing notification for that boundary requires an
+external heartbeat monitor.
 
 Useful read-only checks on the homelab:
 
@@ -258,12 +305,34 @@ docker compose ps
 docker logs --tail 100 ai-radar
 docker logs --tail 100 scheduler
 docker inspect ai-radar --format '{{json .Config.Labels}}'
+docker inspect ai-radar --format '{{json .State.Health}}'
 cd /opt/ai-radar/repo && git status --short && git log -1 --oneline
 ```
 
 The unit tests intentionally emit sample warning/error text while exercising
 Sentry and degraded-cycle behavior. Distinguish those fixture messages from the
 collection statistics and the Ofelia job's final exit status.
+
+## GitHub continuous integration
+
+`.github/workflows/ci.yml` runs on pull requests and pushes to `main` with
+read-only repository permissions. Python 3.11 and 3.12 jobs run `doctor`, rebuild
+every public artifact and require no diff, execute all tests, compile every
+entrypoint, and run `git diff --check`. Pull requests compare the candidate
+archive with the base branch and reject removed canonical items, downgraded
+published items, removed media, or changes to existing nonempty long summaries.
+
+A separate container job validates both Compose templates, checks
+`deploy/run-cycle.sh` with ShellCheck, builds `deploy/Dockerfile`, and runs the
+doctor and tests inside the resulting image. Dependabot checks pip, Docker, and
+GitHub Actions weekly. Actions are an independent verification path, not the
+publisher schedule; Ofelia remains the only production scheduler.
+
+`main` cannot require pre-existing CI checks without also blocking the
+repository deploy key's direct generated-content pushes. Moving the worker to a
+branch-and-PR publisher would add GitHub credentials and orchestration, so the
+current design runs CI immediately after every push and relies on Pages keeping
+the previous successful deployment if its commit check fails.
 
 ## Verification and release checks
 
@@ -273,7 +342,7 @@ Before committing a code or content change locally:
 python3 radar.py doctor
 python3 radar.py build-site
 python3 -m unittest discover -s tests -v
-python3 -m py_compile radar.py scheduled_cycle.py error_reporter.py
+python3 -m py_compile radar.py scheduled_cycle.py scheduler_watchdog.py error_reporter.py scripts/check_archive_evolution.py
 git diff --check
 git status --short
 ```
@@ -281,16 +350,18 @@ git status --short
 After pushing:
 
 1. Confirm local `HEAD` equals GitHub `main` with `git ls-remote`.
-2. Confirm the GitHub check named `Cloudflare Pages` completed successfully for
-   that commit.
-3. Request `/` and `/feed.xml` and require HTTP 200.
-4. Confirm the site contains the expected short summary and the RSS item
+2. Confirm all `CI` jobs and the `Cloudflare Pages` check completed successfully
+   for that commit.
+3. Request `/`, `/feeds.html`, and `/feed.xml` and require HTTP 200.
+4. Confirm the site contains the expected short summary, the feeds page contains
+   all configured sources, and the RSS item
    contains the expected long summary.
 5. Confirm the homelab checkout reached the same commit and is clean.
 6. Confirm both `ai-radar` and `scheduler` containers are running and the
    Ofelia labels still describe the expected job.
-7. For scheduler changes, observe a real Ofelia-triggered run; container uptime
-   alone is not proof that collection and publication work.
+7. For scheduler changes, observe a real Ofelia-triggered run and require a
+   fresh healthy Docker heartbeat; container uptime alone is not proof that
+   collection and publication work.
 
 A manual production cycle is state-changing because it may discover content,
 call OpenRouter, commit, push, and deploy:
@@ -307,11 +378,12 @@ output and final exit code.
 ### Source failures
 
 Podcast or YouTube RSS endpoints can return timeouts, 404s, or 5xx responses.
-The collector reports the affected source to Sentry, continues with other
-sources, and marks the overall run degraded. Multiple simultaneous YouTube RSS
-failures are not evidence that the summary-model change is broken; reproduce
-the individual feed requests and compare consecutive scheduled runs before
-changing source configuration.
+The collector retries transient timeouts, 429s, and 5xx responses, aggregates
+remaining failures into one Sentry event with per-source context, continues
+with other sources, and marks the overall run degraded. It does not retry a
+404. Multiple simultaneous YouTube RSS failures are not evidence that the
+summary-model change is broken; reproduce the individual feed requests and
+compare consecutive scheduled runs before changing source configuration.
 
 ### OpenRouter or structured-output failures
 
@@ -322,9 +394,20 @@ accept prose to make a run appear healthy.
 
 ### Git pull or push failures
 
-Check the cycle phase and use the mounted repository deploy key. Verify file
-permissions, the repository-scoped key in GitHub, and the strict known-hosts
-file. Never substitute a broad personal key or disable host verification.
+The next cycle automatically retries an ahead commit left by a transient push
+failure. Concurrent nonconflicting `main` changes are safely rebased before
+push. A rebase conflict is aborted, reported, and leaves the publication commit
+intact for manual resolution. Check the cycle phase and mounted deploy key;
+never substitute a broad personal key, force push, or disable host verification.
+
+### Scheduler or heartbeat failures
+
+Check both Ofelia logs and `docker inspect ai-radar --format
+'{{json .State.Health}}'`. A stale or missing heartbeat should have one grouped
+Sentry event and an unhealthy worker state. Confirm the worker still has the
+health-check definition, the scheduler labels remain intact, and the heartbeat
+file can be written under `/app/var`. The watchdog cannot report when the
+Docker host itself or its network is completely unavailable.
 
 ### Cloudflare deployment failures
 
@@ -344,7 +427,7 @@ The public site remains online but stops receiving updates. Recovery requires:
    from secure backup or newly rotated credentials.
 5. The shared Ofelia stack at `/opt/scheduler`.
 6. A successful test run, real scheduled cycle, Git push, Pages check, and live
-   site/RSS verification.
+   site, feeds page, and RSS verification.
 
 No SQLite restore is required. The committed JSON archive is the publication
 state, and Git history provides its recovery path.
