@@ -3,7 +3,6 @@ from __future__ import annotations
 import pathlib
 import subprocess
 import sys
-import time
 
 from error_reporter import ErrorReporter
 
@@ -28,10 +27,7 @@ def load_radar_module():
 
 
 def run_scheduled_cycle(reporter: ErrorReporter) -> int:
-    started_at = time.monotonic()
-    check_in_id = reporter.start_check_in()
     phase = "git-pull"
-    ok = False
     try:
         command("git", "pull", "--ff-only", "origin", "main")
 
@@ -69,7 +65,6 @@ def run_scheduled_cycle(reporter: ErrorReporter) -> int:
                 f"cycle completed with source_errors={stats['source_errors']} "
                 f"and llm_errors={stats['llm_errors']}"
             )
-        ok = True
         return 0
     except Exception as exc:  # noqa: BLE001 - every scheduled failure must reach Sentry
         if not isinstance(exc, DegradedCycleError):
@@ -81,7 +76,6 @@ def run_scheduled_cycle(reporter: ErrorReporter) -> int:
         print(f"error: scheduled cycle failed during {phase}: {exc}", file=sys.stderr)
         return 1
     finally:
-        reporter.finish_check_in(check_in_id, ok=ok, duration=time.monotonic() - started_at)
         reporter.close()
 
 

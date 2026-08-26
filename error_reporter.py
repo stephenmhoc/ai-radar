@@ -11,7 +11,6 @@ from typing import Any
 SENTRY_DSN_ENV = "AI_RADAR_SENTRY_DSN"
 SENTRY_ENVIRONMENT_ENV = "AI_RADAR_SENTRY_ENVIRONMENT"
 SENTRY_RELEASE_ENV = "AI_RADAR_SENTRY_RELEASE"
-MONITOR_SLUG = "ai-radar-hourly"
 
 
 class ErrorReporter:
@@ -52,9 +51,9 @@ class ErrorReporter:
         tags: dict[str, object] | None = None,
         extra: dict[str, object] | None = None,
         fingerprint: list[str] | None = None,
-    ) -> None:
+    ) -> str | None:
         if self._sdk is None:
-            return
+            return None
         try:
             with self._sdk.push_scope() as scope:
                 for key, value in (tags or {}).items():
@@ -63,52 +62,11 @@ class ErrorReporter:
                     scope.set_extra(key, value)
                 if fingerprint:
                     scope.fingerprint = fingerprint
-                self._sdk.capture_exception(exception)
+                event_id = self._sdk.capture_exception(exception)
+                return str(event_id) if event_id else None
         except Exception as exc:  # noqa: BLE001
             print(f"warning: Sentry failed to capture an exception: {exc}", file=sys.stderr)
-
-    def start_check_in(self) -> str | None:
-        if self._sdk is None:
             return None
-        try:
-            from sentry_sdk.crons import capture_checkin
-
-            return capture_checkin(
-                monitor_slug=MONITOR_SLUG,
-                status="in_progress",
-                monitor_config={
-                    "schedule": {"type": "crontab", "value": cron_schedule()},
-                    "timezone": os.environ.get("TZ", "America/New_York"),
-                    "checkin_margin": 15,
-                    "max_runtime": 50,
-                    "failure_issue_threshold": 1,
-                    "recovery_threshold": 1,
-                },
-            )
-        except Exception as exc:  # noqa: BLE001
-            print(f"warning: Sentry failed to start the scheduled check-in: {exc}", file=sys.stderr)
-            return None
-
-    def finish_check_in(
-        self,
-        check_in_id: str | None,
-        *,
-        ok: bool,
-        duration: float,
-    ) -> None:
-        if self._sdk is None or check_in_id is None:
-            return
-        try:
-            from sentry_sdk.crons import capture_checkin
-
-            capture_checkin(
-                monitor_slug=MONITOR_SLUG,
-                check_in_id=check_in_id,
-                status="ok" if ok else "error",
-                duration=duration,
-            )
-        except Exception as exc:  # noqa: BLE001
-            print(f"warning: Sentry failed to finish the scheduled check-in: {exc}", file=sys.stderr)
 
     def close(self) -> None:
         if self._sdk is None:
@@ -117,17 +75,6 @@ class ErrorReporter:
             self._sdk.flush(timeout=5.0)
         except Exception as exc:  # noqa: BLE001
             print(f"warning: Sentry failed to flush events: {exc}", file=sys.stderr)
-
-
-def cron_schedule() -> str:
-    raw = os.environ.get("AI_RADAR_SCHEDULE_MINUTE", "17").strip()
-    try:
-        minute = int(raw)
-    except ValueError:
-        minute = 17
-    if not 0 <= minute <= 59:
-        minute = 17
-    return f"{minute} * * * *"
 
 
 def sentry_release(root: pathlib.Path) -> str | None:

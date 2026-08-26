@@ -20,7 +20,7 @@ GOOD_STATS = {
 
 
 class ScheduledCycleTests(unittest.TestCase):
-    def test_success_marks_the_whole_check_in_ok(self) -> None:
+    def test_success_flushes_the_reporter(self) -> None:
         reporter = RecordingReporter()
         radar = mock.Mock()
         radar.lookback_days_from_env.return_value = 7
@@ -37,7 +37,6 @@ class ScheduledCycleTests(unittest.TestCase):
             result = scheduled_cycle.run_scheduled_cycle(reporter)
 
         self.assertEqual(result, 0)
-        self.assertTrue(reporter.finished["ok"])
         self.assertTrue(reporter.closed)
 
     def test_pipeline_failure_is_reported_with_its_phase(self) -> None:
@@ -51,24 +50,16 @@ class ScheduledCycleTests(unittest.TestCase):
 
         self.assertEqual(result, 1)
         self.assertEqual(reporter.exceptions[0]["tags"]["phase"], "git-pull")
-        self.assertFalse(reporter.finished["ok"])
         self.assertTrue(reporter.closed)
 
 
 class RecordingReporter:
     def __init__(self) -> None:
         self.exceptions: list[dict[str, object]] = []
-        self.finished: dict[str, object] = {}
         self.closed = False
-
-    def start_check_in(self) -> str:
-        return "check-in-id"
 
     def capture_exception(self, exception: BaseException, **context: object) -> None:
         self.exceptions.append({"exception": exception, **context})
-
-    def finish_check_in(self, check_in_id: str, **context: object) -> None:
-        self.finished = {"check_in_id": check_in_id, **context}
 
     def close(self) -> None:
         self.closed = True

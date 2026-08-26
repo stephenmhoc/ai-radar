@@ -16,7 +16,7 @@ pages, or runtime database.
 - `public/index.html`: plain bulleted episode list
 - `public/feed.xml`: RSS feed
 - `radar.py`: collection, classification, summarization, and static rendering
-- `error_reporter.py`: Sentry exception reporting and hourly monitor check-ins
+- `error_reporter.py`: Sentry exception reporting
 - `scheduled_cycle.py`: the complete pull, publish, test, commit, and push cycle
 - `deploy/compose.yaml`: long-running worker registered with the Docker scheduler
 - `deploy/scheduler.compose.yaml`: shared Ofelia scheduler stack for Dockge
@@ -56,9 +56,7 @@ On the homelab, Dockge manages two stacks:
 - `/opt/ai-radar`: the worker and its dedicated GitHub deploy key
 - `/opt/scheduler`: Ofelia, the shared Docker-native schedule service
 
-The worker label schedules `/app/deploy/run-cycle.sh` hourly at minute 17. The
-same `AI_RADAR_SCHEDULE_MINUTE` value configures Sentry's `ai-radar-hourly`
-monitor, preventing the scheduler and expected check-in time from drifting. A
+The worker label schedules `/app/deploy/run-cycle.sh` hourly at minute 17. A
 cycle pulls `main`, fetches and summarizes new entries, rebuilds static output,
 commits changed `data/` and `public/` files, and pushes. That push triggers the
 Cloudflare Pages deployment.
@@ -66,8 +64,9 @@ Cloudflare Pages deployment.
 Set `AI_RADAR_SENTRY_DSN` in the homelab stack's `.env` to report source,
 summary, pipeline, and unexpected command failures. Reports are tagged with the
 deployment environment, Git release, app, host, and failing phase. Individual
-source failures remain isolated so the rest of a cycle can finish; the overall
-scheduled check-in is still marked failed.
+source failures remain isolated so the rest of a cycle can finish. Sentry's
+free plan permits one cron monitor, which remains assigned to Life; AI Radar
+uses error events only and does not require a paid monitor.
 
 Secrets stay only in `/opt/ai-radar/.env` and `/opt/ai-radar/secrets/`; neither
 path is part of the repository.
