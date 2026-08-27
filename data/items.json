@@ -61587,6 +61587,62 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/djVUCj5i4sw"
       }
+    },
+    {
+      "id": "1e65eb6d5d81c0d49ac7",
+      "status": "skipped",
+      "title": "Delivering more meals to more moms with ChatGPT",
+      "source_title": "Delivering more meals to more moms with ChatGPT",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a short promotional video from OpenAI about a customer using ChatGPT to generate labels from a spreadsheet. It does not contain a substantial interview or conversation with a qualifying individual, nor does it offer substantive technical or strategic work, original reporting, or durable analysis.",
+      "published_at": "2026-08-27T21:30:15+00:00",
+      "first_seen_at": "2026-08-27T23:17:21+00:00",
+      "appearances": [
+        {
+          "id": "be34c5ef4a0215a2b955",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:Lj03DNImB3s",
+          "title": "Delivering more meals to more moms with ChatGPT",
+          "description": "Mandela started Welcome Home to deliver meals to new moms, not to spend 90 minutes every week updating labels.\nSo we helped her get the best out of ChatGPT, by turning her weekly menu spreadsheet into ready-to-print labels in just 6 minutes.\n\nYour turn: what do you wish existed? Drop your idea below or send us a DM. Maybe we’ll come build it with you next. More at getwelcomehome.co",
+          "url": "https://www.youtube.com/shorts/Lj03DNImB3s",
+          "published_at": "2026-08-27T21:30:15+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/Lj03DNImB3s"
+      }
+    },
+    {
+      "id": "0f17225d39238961dc55",
+      "status": "published",
+      "title": "Building the Foundation for the Agentic AI Era",
+      "source_title": "Building the Foundation for the Agentic AI Era |Episode #369|",
+      "short_summary": "This episode discusses building an AI ecosystem where agents, tools, and systems can work together at scale. It explores open standards and projects shaping the agentic future, including MCP, A2A, and Goose, and the importance of neutral standards for AI adoption.",
+      "long_summary": "This episode of Practical AI focuses on establishing an AI ecosystem that enables agents, tools, and systems to collaborate effectively at scale. The discussion highlights open standards and projects, such as MCP, A2A, and Goose, which are crucial for the agentic AI future. It also delves into the requirements for driving AI adoption across organizations and emphasizes the significance of neutral standards. The conversation further explores global perspectives on agentic AI and how humans can balance delegation to AI with their own contributions.",
+      "reason": "The item discusses consequential work on agent systems, AI-native software, and the economics/business strategy of AI development, specifically focusing on building an AI ecosystem with agents, tools, and systems working together at scale, and the importance of open standards.",
+      "published_at": "2026-08-27T22:00:34+00:00",
+      "first_seen_at": "2026-08-27T23:17:23+00:00",
+      "appearances": [
+        {
+          "id": "6a59993733e67b6c52ce",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:8Xp1UxlMU70",
+          "title": "Building the Foundation for the Agentic AI Era |Episode #369|",
+          "description": "How do we build an AI ecosystem where agents, tools, and systems can work together at scale? We discuss the open standards and projects shaping the agentic future, including MCP, A2A, Goose, etc. They also explore what it takes to drive AI adoption across an entire organization, the importance of neutral standards, global perspectives on agentic AI, and how humans can find the right balance between what they delegate to AI and what they do themselves.\n\nFEATURING:\n\nGuest - Angie Jones (VP of the Agentic AI Foundation)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast)\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast)\n\nLINKS:\n\n- Agentic AI Foundaton: https://aaif.io/\n\nSPONSORS:\n\n- Prediction Guard: A self-hosted AI control plane for running agents in high impact environments. predictionguard.com/practicalai\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://us06web.zoom.us/webinar/register/WN_tMivXvPXRJ6pi5526S5etw#/registration\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
+          "url": "https://www.youtube.com/watch?v=8Xp1UxlMU70",
+          "published_at": "2026-08-27T22:00:34+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=8Xp1UxlMU70"
+      }
     }
   ]
 }
