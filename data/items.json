@@ -61531,6 +61531,34 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-meta-wanted-to-reduce-teams"
       }
+    },
+    {
+      "id": "26c0788a9efbf4df1242",
+      "status": "published",
+      "title": "Rich Sutton on the Bitter Lesson",
+      "source_title": "\"Is it Bitter Lesson-pilled?\" | Rich Sutton, Oak Lab",
+      "short_summary": "Rich Sutton discusses the \"Bitter Lesson\" essay, clarifying its core message. He explains that the essay advocates for algorithms that scale with computation, not against sophisticated algorithms.",
+      "long_summary": "Rich Sutton, from Oak Lab, provides his 26-word compression of the \"Bitter Lesson\" essay, which he notes is frequently misquoted. He clarifies that the essay is not an argument against sophisticated algorithms. Instead, it advocates for algorithms that are designed to scale effectively with increased computation. This perspective highlights the importance of computational scaling in AI development.",
+      "reason": "Rich Sutton is a highly relevant expert in AI, and the discussion of the 'Bitter Lesson' is a foundational and consequential topic in AI research.",
+      "published_at": "2026-08-27T19:00:22+00:00",
+      "first_seen_at": "2026-08-27T19:17:24+00:00",
+      "appearances": [
+        {
+          "id": "61c128b801219d3c01d1",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:yCkV6Bm1hVk",
+          "title": "\"Is it Bitter Lesson-pilled?\" | Rich Sutton, Oak Lab",
+          "description": "The Bitter Lesson may be the most-quoted essay in AI, which makes it one of the most misquoted. Rich Sutton gives his own 26-word compression — and the part people keep skipping: it isn't an argument against sophisticated algorithms, it's an argument for algorithms that scale with computation.\n\n#ai #llm #machinelearning",
+          "url": "https://www.youtube.com/shorts/yCkV6Bm1hVk",
+          "published_at": "2026-08-27T19:00:22+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/yCkV6Bm1hVk"
+      }
     }
   ]
 }
