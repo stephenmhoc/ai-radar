@@ -61221,6 +61221,230 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=diEimbi8SdM"
       }
+    },
+    {
+      "id": "68d0962928498aeedfe2",
+      "status": "skipped",
+      "title": "Magic Manga Girl",
+      "source_title": "Magic Manga Girl",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a promotional video from OpenAI about ChatGPT Images. It does not feature a substantial interview or conversation with a qualifying individual, nor does it offer original reporting, analysis, or research. It is a routine promotion.",
+      "published_at": "2026-08-27T15:43:25+00:00",
+      "first_seen_at": "2026-08-27T16:17:25+00:00",
+      "appearances": [
+        {
+          "id": "c5eee43e956381bf4766",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:UPcy4gkhoGc",
+          "title": "Magic Manga Girl",
+          "description": "Turn any idea into a finished design with layouts and text using ChatGPT Images.",
+          "url": "https://www.youtube.com/watch?v=UPcy4gkhoGc",
+          "published_at": "2026-08-27T15:43:25+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=UPcy4gkhoGc"
+      }
+    },
+    {
+      "id": "b914898343b0f60ddd6a",
+      "status": "published",
+      "title": "OpenAI Science Class",
+      "source_title": "Science Class",
+      "short_summary": "OpenAI discusses using ChatGPT Images to transform ideas into finished designs with layouts and text. This presentation focuses on practical applications of their AI technology.",
+      "long_summary": "This YouTube video from OpenAI, titled \"Science Class,\" features a discussion on the capabilities of ChatGPT Images. The presentation focuses on how users can leverage this tool to convert any idea into a complete design. It highlights the ability to generate designs that include both layouts and text, demonstrating a practical application of OpenAI's AI technology. The content is directly from OpenAI, a frontier AI organization, and concerns their frontier models and products.",
+      "reason": "The item is a YouTube video from OpenAI, a frontier AI organization, discussing their frontier models and products (ChatGPT Images).",
+      "published_at": "2026-08-27T15:43:29+00:00",
+      "first_seen_at": "2026-08-27T16:17:27+00:00",
+      "appearances": [
+        {
+          "id": "b86c2af3d1e162725d35",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:ppVPLmfKSfo",
+          "title": "Science Class",
+          "description": "Turn any idea into a finished design with layouts and text using ChatGPT Images.",
+          "url": "https://www.youtube.com/watch?v=ppVPLmfKSfo",
+          "published_at": "2026-08-27T15:43:29+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=ppVPLmfKSfo"
+      }
+    },
+    {
+      "id": "34e0740beb47b4616f30",
+      "status": "deferred",
+      "title": "Tennis",
+      "source_title": "Tennis",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-08-27T15:43:32+00:00",
+      "first_seen_at": "2026-08-27T16:17:27+00:00",
+      "appearances": [
+        {
+          "id": "1cff93a495010073e283",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:huct2N_J5mc",
+          "title": "Tennis",
+          "description": "Turn your image into any art style you can imagine with ChatGPT Images.",
+          "url": "https://www.youtube.com/watch?v=huct2N_J5mc",
+          "published_at": "2026-08-27T15:43:32+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=huct2N_J5mc"
+      }
+    },
+    {
+      "id": "be753b24ba36a75b7dc8",
+      "status": "published",
+      "title": "OpenAI: Turn any idea into a finished design with layouts and text using ChatGPT Images",
+      "source_title": "Mochi",
+      "short_summary": "OpenAI demonstrates how to turn ideas into finished designs with layouts and text using ChatGPT Images. This showcases a new capability for design generation.",
+      "long_summary": "OpenAI presents a demonstration of using ChatGPT Images to transform ideas into complete designs. The process involves generating layouts and incorporating text directly within the designs. This highlights an advancement in AI-powered design tools, allowing users to create finished visual content from conceptual input. The video focuses on the practical application of ChatGPT Images for design generation.",
+      "reason": "The item is a direct appearance from OpenAI, a target organization, showcasing a new product capability related to frontier models and AI-native software.",
+      "published_at": "2026-08-27T15:43:35+00:00",
+      "first_seen_at": "2026-08-27T16:17:29+00:00",
+      "appearances": [
+        {
+          "id": "2a9751e8a3a5a45a0e33",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:lPgm4LByPRw",
+          "title": "Mochi",
+          "description": "Turn any idea into a finished design with layouts and text using ChatGPT Images.",
+          "url": "https://www.youtube.com/watch?v=lPgm4LByPRw",
+          "published_at": "2026-08-27T15:43:35+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=lPgm4LByPRw"
+      }
+    },
+    {
+      "id": "ac7f78795d266fe288d7",
+      "status": "skipped",
+      "title": "Soccer",
+      "source_title": "Soccer",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes only mention a YouTube video from OpenAI about soccer and using ChatGPT Images to turn ideas into designs. This does not constitute a substantial interview or conversation with a qualifying individual, nor does it provide consequential technical or strategic work as defined by AI Radar's criteria. The content appears to be a product demonstration or promotional material, which does not meet the bar for inclusion.",
+      "published_at": "2026-08-27T15:43:38+00:00",
+      "first_seen_at": "2026-08-27T16:17:30+00:00",
+      "appearances": [
+        {
+          "id": "17fa18ac32b9f995b01a",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:w1dcfvUCZYw",
+          "title": "Soccer",
+          "description": "Turn any idea into a finished design with layouts and text using ChatGPT Images.",
+          "url": "https://www.youtube.com/watch?v=w1dcfvUCZYw",
+          "published_at": "2026-08-27T15:43:38+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=w1dcfvUCZYw"
+      }
+    },
+    {
+      "id": "a01e5a554c4abefd8096",
+      "status": "deferred",
+      "title": "Lost Cat",
+      "source_title": "Lost Cat",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-08-27T15:43:42+00:00",
+      "first_seen_at": "2026-08-27T16:17:30+00:00",
+      "appearances": [
+        {
+          "id": "0d106a2e28a4c8e85645",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:piNZDb8XLZo",
+          "title": "Lost Cat",
+          "description": "Bring any idea to life in any image size with ChatGPT Images.",
+          "url": "https://www.youtube.com/watch?v=piNZDb8XLZo",
+          "published_at": "2026-08-27T15:43:42+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=piNZDb8XLZo"
+      }
+    },
+    {
+      "id": "83229643da9806286f2c",
+      "status": "deferred",
+      "title": "Retirement",
+      "source_title": "Retirement",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-08-27T15:43:46+00:00",
+      "first_seen_at": "2026-08-27T16:17:30+00:00",
+      "appearances": [
+        {
+          "id": "72dcb441bb643a3eddb2",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:rh4BtN2NxmE",
+          "title": "Retirement",
+          "description": "Bring your ideas to life with text in multiple languages",
+          "url": "https://www.youtube.com/watch?v=rh4BtN2NxmE",
+          "published_at": "2026-08-27T15:43:46+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=rh4BtN2NxmE"
+      }
+    },
+    {
+      "id": "b40f59fc6d23705b3895",
+      "status": "skipped",
+      "title": "Who Gets Paid When An AI Answers Your Question? | Parag Agrawal, Parallel Web Systems",
+      "source_title": "Who Gets Paid When An AI Answers Your Question? | Parag Agrawal, Parallel Web Systems",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Parag Agrawal is not on the list of qualifying individuals, and the content does not meet the criteria for consequential work from an unlisted individual or organization. The topic of splitting a pie created by collaboration is not directly related to frontier models, AI infrastructure, important AI companies, or physical AI.",
+      "published_at": "2026-08-27T16:00:10+00:00",
+      "first_seen_at": "2026-08-27T16:17:32+00:00",
+      "appearances": [
+        {
+          "id": "eb0f8e08e7d9255d7e17",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:GceVfLmc5J4",
+          "title": "Who Gets Paid When An AI Answers Your Question? | Parag Agrawal, Parallel Web Systems",
+          "description": "If an agent runs ten searches to write one paragraph, who gets paid? Parag Agrawal explains Shapley values — the game theory for splitting a pie created by collaboration — and how Parallel uses it to estimate what any single source actually contributed to an agent's output.\n\n#ai #internet #websearch",
+          "url": "https://www.youtube.com/shorts/GceVfLmc5J4",
+          "published_at": "2026-08-27T16:00:10+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/GceVfLmc5J4"
+      }
     }
   ]
 }
