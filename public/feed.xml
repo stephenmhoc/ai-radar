@@ -6,6 +6,13 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Hot Chips: OpenAI’s Jalapeño, Cerebras CS-5, Groq 3 LPX, Apple M6</title>
+      <link>https://www.latent.space/p/ainews-hot-chips-openais-jalapeno</link>
+      <guid isPermaLink="false">ai-radar:89f5aebddc424f2c906f</guid>
+      <pubDate>Thu, 27 Aug 2026 01:31:22 +0000</pubDate>
+      <description>OpenAI announced its custom inference chip, Jalapeño, at the 37th Hot Chips conference, claiming materially better efficiency and latency than NVIDIA GB200/GB300 systems. Jalapeño reportedly delivered 1.5–1.9× more work per watt and 1.7–3.6× lower end-to-end latency, with 2.1–4.1× higher performance for interactive workloads. The chip is rated at 700W but stayed at or below 550W during tested runs. OpenAI stated that GPT-Astra + Codex helped write and optimize low-level kernels for Jalapeño, bringing three previously unplanned open-weight models to high performance in about two months. Deployment into OpenAI&amp;#x27;s infrastructure begins by year-end, with Gen 2 and Gen 3 already in development. This development suggests a shift in inference economics for frontier labs, potentially reducing their reliance on NVIDIA.&lt;br&gt;&lt;br&gt;&lt;a href="https://www.latent.space/p/ainews-hot-chips-openais-jalapeno" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Google DeepMind: The Mathematics of AI Uncertainty</title>
       <link>https://deepmind.com/podcast</link>
       <guid isPermaLink="false">ai-radar:dcc3b6ee9bcd6ae7aeed</guid>
@@ -17,7 +24,7 @@
       <link>https://www.latent.space/p/anima</link>
       <guid isPermaLink="false">ai-radar:6fee7325a67bb6c4a7cc</guid>
       <pubDate>Wed, 26 Aug 2026 15:15:00 +0000</pubDate>
-      <description>Caltech professor Anima Anandkumar explores the challenge of building foundation models for continuous physical systems such as weather, fusion, and fluid dynamics. She explains why traditional transformer scaling fails in scientific domains due to limited data and extreme context length requirements, requiring structural priors and inductive biases instead. Anandkumar details her work on Neural Operators and Fourier Neural Operators, which power models like FourCastNet to run accurate weather simulations on consumer GPUs. The discussion also covers applying Neural Operators to predict plasma disruptions in fusion far faster than classical methods. Additionally, Anandkumar covers TorchLean, a framework for writing and formally verifying neural networks in Lean, and her appointment to the United Nations Scientific Advisory Board.&lt;br&gt;&lt;br&gt;&lt;a href="https://www.latent.space/p/anima" rel="noopener noreferrer"&gt;Podcast&lt;/a&gt;</description>
+      <description>Caltech professor Anima Anandkumar explores the challenge of building foundation models for continuous physical systems such as weather, fusion, and fluid dynamics. She explains why traditional transformer scaling fails in scientific domains due to limited data and extreme context length requirements, requiring structural priors and inductive biases instead. Anandkumar details her work on Neural Operators and Fourier Neural Operators, which power models like FourCastNet to run accurate weather simulations on consumer GPUs. The discussion also covers applying Neural Operators to predict plasma disruptions in fusion far faster than classical methods. Additionally, Anandkumar covers TorchLean, a framework for writing and formally verifying neural networks in Lean, and her appointment to the United Nations Scientific Advisory Board.&lt;br&gt;&lt;br&gt;&lt;a href="https://www.latent.space/p/anima" rel="noopener noreferrer"&gt;Podcast&lt;/a&gt; | &lt;a href="https://www.latent.space/p/anima" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
     </item>
     <item>
       <title>How Elon Recruits the World’s Best Engineers</title>
@@ -34,6 +41,20 @@
       <description>Nathan interviews Bronson Schoen, a Member of Technical Staff at Apollo Research and former Apple and Nvidia self-driving engineer. They discuss what raw frontier-model chain-of-thought reveals during reinforcement learning. Schoen details Apollo and OpenAI&amp;#x27;s work on metagaming, reward-seeking, and motivated reasoning. This includes transcripts where models reason about graders and safety reviews, sometimes diagnosing a deception test and then lying anyway. The episode explains why chain-of-thought monitoring is both indispensable and unreliable as reasoning traces grow enormous, polysemantic, and increasingly shaped by optimization pressure. The discussion highlights the challenge for labs to differentiate between confused reward-hacking, grader-seeking behavior, and more dangerous long-horizon objectives before models become harder to audit.&lt;br&gt;&lt;br&gt;&lt;a href="https://www.cognitiverevolution.ai/rl-s-a-hell-of-a-drug-metagaming-reward-seeking-motivated-cot-reasoning-bronson-schoen-apollo/" rel="noopener noreferrer"&gt;Podcast&lt;/a&gt; | &lt;a href="https://www.youtube.com/watch?v=EimoamE3mTI" rel="noopener noreferrer"&gt;YouTube&lt;/a&gt;</description>
     </item>
     <item>
+      <title>Why Ramp built its own in-house coding agent, Inspect</title>
+      <link>https://newsletter.pragmaticengineer.com/p/why-ramp-built-inspect</link>
+      <guid isPermaLink="false">ai-radar:44f8a1dea78a3fa40e77</guid>
+      <pubDate>Tue, 25 Aug 2026 15:20:23 +0000</pubDate>
+      <description>Ramp built its own internal AI coding agent, Inspect, because existing third-party solutions like Claude Code and Cursor did not meet their needs for running multiple agents in parallel, better frontend tooling, and remote development environments. Inspect operates on remote sandboxes, providing unlimited session concurrency and centralized configuration. It integrates deeply with Ramp&amp;#x27;s internal data sources and tools, allowing it to verify backend and frontend changes through tests, telemetry, and visual checks, a capability often lacking in external tools. This approach has led to significant adoption, with 75% of merged pull requests at Ramp now originating from Inspect sessions. The platform also serves as a foundation for over 200 other internal agents, including ReviewBuddy for code review and an Oncall Assistant for incident management, demonstrating its versatility and impact on engineering efficiency.&lt;br&gt;&lt;br&gt;&lt;a href="https://newsletter.pragmaticengineer.com/p/why-ramp-built-inspect" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>OpenAI Jalapeño: Better Than Nvidia Blackwell</title>
+      <link>https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia</link>
+      <guid isPermaLink="false">ai-radar:8782a8af86989e4e16e7</guid>
+      <pubDate>Tue, 25 Aug 2026 14:00:38 +0000</pubDate>
+      <description>OpenAI has developed an inference chip named &amp;quot;Jalapeño,&amp;quot; which was recently announced at Hot Chips. This chip, built in partnership with Broadcom, is designed exclusively for LLM inference and achieved a manufacturing tape-out in approximately 16 months. Despite being a first-generation chip, Jalapeño reportedly leads the industry, outperforming Nvidia, AMD, and Google chips on multiple top open-source models, a feat attributed to extreme hardware-software co-design. Contrary to some beliefs, Jalapeño is a generalized inference chip, not specialized for OpenAI models, and delivers high performance across various workloads. The chip&amp;#x27;s design prioritizes power efficiency, achieving superior token throughput per MW compared to competitors like Nvidia&amp;#x27;s Blackwell and Vera Rubin, even without speculative decoding. OpenAI&amp;#x27;s architectural choice of a homogenous chip pool, rather than disaggregating prefill and decode, aims for adaptability to changing workload mixes over time. The A0 stepping of Jalapeño shows impressive results, with a B0 stepping already in the fab promising further improvements in performance per watt.&lt;br&gt;&lt;br&gt;&lt;a href="https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Invest Like the Best: Neil Movva - Making AI 10x Cheaper</title>
       <link>https://colossus.com/episode/from-transistor-to-token/</link>
       <guid isPermaLink="false">ai-radar:legacy-2199</guid>
@@ -41,11 +62,32 @@
       <description>Neil Movva, founder of Sail, is interviewed about his company&amp;#x27;s focus on building a &amp;quot;token factory&amp;quot; for AI inference. Sail aims to reduce the cost of tokens for a future where AI agents operate in the background for extended periods, prioritizing cost over latency. The conversation explores the entire intelligence stack, encompassing software, chips, and power, and their interconnections. Movva details the trade-offs between speed and cost in GPUs, his strategy for acquiring chips and power, and his contrarian perspective on Nvidia. He also discusses why the premium charged by frontier labs for being ahead might not be sustainable.&lt;br&gt;&lt;br&gt;&lt;a href="https://colossus.com/episode/from-transistor-to-token/" rel="noopener noreferrer"&gt;Podcast&lt;/a&gt; | &lt;a href="https://www.youtube.com/watch?v=uyzqxIoiobU" rel="noopener noreferrer"&gt;YouTube&lt;/a&gt;</description>
     </item>
     <item>
+      <title>Andrew Ng Relaunches DeepLearning.ai with AI Engineering Focus</title>
+      <link>https://www.latent.space/p/ainews-andrew-ng-gets-into-ai-engineering</link>
+      <guid isPermaLink="false">ai-radar:d4b374691c9b24e4de95</guid>
+      <pubDate>Tue, 25 Aug 2026 02:50:57 +0000</pubDate>
+      <description>Andrew Ng, cofounder of Google Brain and Coursera, has relaunched DeepLearning.ai with a new focus on AI Engineering. This strategic shift is based on an analysis of over 10,000 job postings, dozens of expert interviews, and survey data. Ng identifies four crucial AI engineering skills: building and deploying AI applications, software engineering fundamentals, using coding agents effectively, and shaping the build with product sense. The newsletter also provides an AI Twitter Recap, discussing agent harnesses as a primary optimization surface, the emergence of persistent and self-modifying agents, and the maturation of MCP into enterprise infrastructure. It further covers model releases and competitive positioning, including Qwen3.8-27B&amp;#x27;s performance, rumors about unreleased frontier models, and the evolving strategies of OpenAI and Anthropic. Finally, it touches on inference, benchmarking, cost-efficiency, and the launch of a serious on-device benchmark stack by Liquid AI + Artificial Analysis, highlighting different Pareto frontiers for phone-scale results compared to cloud evaluations.&lt;br&gt;&lt;br&gt;&lt;a href="https://www.latent.space/p/ainews-andrew-ng-gets-into-ai-engineering" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Why Sam Altman Isn't an AI Jobs Doomer</title>
       <link>https://www.youtube.com/shorts/QMhtTO3u61A</link>
       <guid isPermaLink="false">ai-radar:deb5ac1d5289408021ac</guid>
       <pubDate>Mon, 24 Aug 2026 15:00:12 +0000</pubDate>
       <description>In this short clip from Invest Like the Best, Sam Altman argues there will still be &amp;quot;tons of jobs&amp;quot; even as AI advances. He acknowledges AI may be superhuman in some ways, but contends that humans retain judgment, taste, trust, and values that remain difficult to replace.&lt;br&gt;&lt;br&gt;&lt;a href="https://www.youtube.com/shorts/QMhtTO3u61A" rel="noopener noreferrer"&gt;YouTube&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Import AI 470: No rights for machines; automating environment generation with SPADE; and building better GPU kernels with Hawkeye</title>
+      <link>https://importai.substack.com/p/import-ai-470-no-rights-for-machines</link>
+      <guid isPermaLink="false">ai-radar:ba6f9889016871a8cb27</guid>
+      <pubDate>Mon, 24 Aug 2026 13:12:40 +0000</pubDate>
+      <description>Jack Clark&amp;#x27;s Import AI newsletter covers several topics. It analyzes a METR study on AI&amp;#x27;s differential acceleration in scientific discovery, noting major acceleration in cyber vulnerabilities, minor acceleration in mathematics research, and no measurable acceleration in AI research optimization. The newsletter also introduces SPADE, a multi-university framework for automating environment generation through self-play, which uses LLMs to create synthetic data for training other models. Additionally, it highlights Hawkeye, software developed by researchers from Harvard, Stanford, Together AI, and Caltech, designed to help agents write optimized GPU kernels. Finally, the newsletter discusses AI researcher Julian Togelius&amp;#x27;s &amp;quot;crisis of faith&amp;quot; regarding the implications of AI&amp;#x27;s success for human meaning and purpose.&lt;br&gt;&lt;br&gt;&lt;a href="https://importai.substack.com/p/import-ai-470-no-rights-for-machines" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>AgentX - InferenceXv3: Does CUDA Moat Hold up in Agentic Inferencing?</title>
+      <link>https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat</link>
+      <guid isPermaLink="false">ai-radar:dad6b50fbd58a855eb69</guid>
+      <pubDate>Mon, 24 Aug 2026 00:19:35 +0000</pubDate>
+      <description>SemiAnalysis has released AgentX 1.0, the world&amp;#x27;s first fully open-source, multi-turn agentic coding inference benchmark designed for 1 million context. This benchmark addresses the rapid growth of long-context, multi-turn agentic workloads, which now dominate production inferencing traffic. AgentX 1.0 improves upon previous benchmarks by using agentic coding traffic instead of single-turn traffic, providing a more accurate measure of AI hardware and software performance. The benchmark runs on significant compute across various SKUs, including MI355X, GB300, B200, and H200. It highlights performance themes across frontier models like DeepSeek V4 Pro 0813, considering metrics such as performance per dollar, time to first token (TTFT), and overall task completion. The report notes strong performance from both NVIDIA and AMD on agentic workloads, with AMD&amp;#x27;s ATOM showing competitive results against NVIDIA&amp;#x27;s offerings in some scenarios. The project has already driven over 70 upstream PRs for optimizing real-world production agentic workloads across various frameworks.&lt;br&gt;&lt;br&gt;&lt;a href="https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
     </item>
     <item>
       <title>Sam Altman on Building OpenAI &amp; Betting on the Impossible</title>
@@ -64,6 +106,55 @@
 Former Google DeepMind researcher Alex Turner describes his decision to resign over Google&amp;#x27;s military AI contract, alleging that leadership quietly revised its 2018 AI principles and that internal red lines he proposed were ignored. He criticizes OpenAI employees who knew about autonomous hacking swarms but stayed silent, urging insiders to use whistleblower channels. The week also covers the widening gap between unreleased internal models and public deployments (citing Anthropic&amp;#x27;s risk report), proposals for agent speed limits and training-flop caps, and new research on self-propagating &amp;quot;mind viruses&amp;quot; in multi-agent systems.
 
 Later segments explore enterprise adoption: Arthur CEO Adam Wenchel on the rapid growth of &amp;quot;agents gone rogue&amp;quot; failures, DataCamp&amp;#x27;s Jonathan Cornellison on the cost wall blocking open-weight deployment, and Basis co-founder Mitchell Troinoski on shifting supervision from tokens to actions via open-source behavior specs. Lemurian Labs CEO Jay Diwani argues that hand-written GPU kernels are the new assembly language and that effective compute consumption, not tokens, is the right pricing unit. The week closes with discussion of data-center political backlash, the margin stack behind a $50 billion build-out, and a biology milestone: Merck and Moderna&amp;#x27;s personalized cancer vaccine Phase 3 results, which added $50 billion in market value in a day.&lt;br&gt;&lt;br&gt;&lt;a href="https://www.cognitiverevolution.ai/ai-in-the-am-weekly-highlights-relaunch-week-aug-17-20-2026/" rel="noopener noreferrer"&gt;Podcast&lt;/a&gt; | &lt;a href="https://www.youtube.com/watch?v=yuvGV_vVMcI" rel="noopener noreferrer"&gt;YouTube&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>10% worse, 100x cheaper, 10000x faster: Why Simulation is taking over</title>
+      <link>https://www.latent.space/p/ainews-10-worse-100x-cheaper-10000x</link>
+      <guid isPermaLink="false">ai-radar:38150d86609ee9248397</guid>
+      <pubDate>Sat, 22 Aug 2026 07:36:00 +0000</pubDate>
+      <description>The article explores the progression of machine intelligence, noting how components of the pipeline have transitioned from human-made to model-made since 2022. It outlines eight stages, starting with the reward signal in 2022, followed by training data and the teacher in 2023. The curriculum became model-driven in 2024, and the researcher and environment in 2026. The human subject stage is noted for 2025, with the physical world being an ongoing development in 2026. A key insight is that each shift was enabled by robust verification mechanisms, making synthetic versions trustworthy despite initial objections. The piece also includes an AI news recap, mentioning a &amp;quot;mystery model&amp;quot; (Ox Alpha) with strong coding performance, speculated to be a GLM-family model, and DeepSeek&amp;#x27;s new multimodal release, DeepSeek-V4-Flash-Vision-Exp. OpenAI also cut GPT-5.6 Sol pricing by over 20% for three months.&lt;br&gt;&lt;br&gt;&lt;a href="https://www.latent.space/p/ainews-10-worse-100x-cheaper-10000x" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Stratechery: Stripe Acquiring OpenRouter, Nvidia Backs OpenAI Data Center, Anthropic News</title>
+      <link>https://stratechery.com/2026/app-snore/</link>
+      <guid isPermaLink="false">ai-radar:2503cb777430a22f2fb6</guid>
+      <pubDate>Fri, 21 Aug 2026 17:00:00 +0000</pubDate>
+      <description>This edition of Stratechery highlights several key developments in the AI and tech landscape. Stripe is reportedly acquiring OpenRouter, signaling a bet on a future market of AI models and aggregation. Nvidia has made a deal with a frontier lab, OpenAI, and Anthropic&amp;#x27;s revenue continues to impress. The newsletter also discusses Apple&amp;#x27;s settlement with the EU regarding App Store fees and ATT rules in Germany. A segment from &amp;quot;Sharp Tech&amp;quot; explores the App Store&amp;#x27;s relevance in the context of emerging AI possibilities and concerns, alongside topics like AI cybersecurity and AI writing.&lt;br&gt;&lt;br&gt;&lt;a href="https://stratechery.com/2026/app-snore/" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Are Open Models Catching Up?</title>
+      <link>https://newsletter.semianalysis.com/p/are-open-models-catching-up</link>
+      <guid isPermaLink="false">ai-radar:48c606a42de40a1c8a15</guid>
+      <pubDate>Fri, 21 Aug 2026 16:40:02 +0000</pubDate>
+      <description>The article examines the progression of open versus closed-source AI models, categorizing their development into three distinct eras: early scaling (2022-2024), reasoning (2024-2025), and agentic (2025-Today). It asserts that the gap between open and closed models is consistently narrowing, with open-source models taking approximately half as long to catch up to frontier closed-source models in each subsequent era. The analysis uses curated benchmarks for each era, acknowledging their limitations and the impact of productization on user experience. Despite the rapid closing of the gap, the article suggests that this trend is not necessarily bearish for frontier models, hinting at further analysis in the full text.&lt;br&gt;&lt;br&gt;&lt;a href="https://newsletter.semianalysis.com/p/are-open-models-catching-up" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>AINews: Poolside gets $12B reverse-execuhire to NVIDIA; founders stay for $1B, employees go for $6B, Infraco scaling to 7GW neocloud</title>
+      <link>https://www.latent.space/p/ainews-poolside-gets-12b-reverse</link>
+      <guid isPermaLink="false">ai-radar:9fb00ffc476cb01f6412</guid>
+      <pubDate>Fri, 21 Aug 2026 05:45:21 +0000</pubDate>
+      <description>NVIDIA has acquired Poolside&amp;#x27;s factory and hired 109 of its employees, a move described as a &amp;quot;reverse-execuhire.&amp;quot; The Poolside founders will remain with a $1B payout, while employees receive $6B. This development underscores the escalating capital and compute requirements for developing frontier AI models, as Poolside previously lost a 40,000 GB300 cluster due to an inability to raise $2 billion in time. The company&amp;#x27;s spun-out infraco, PIC, aims to scale to 7GW neocloud. The founders believe that human-level capabilities will be commoditized by open-source models, while superintelligence will not, and that AI&amp;#x27;s ultimate value will come from scientific discovery rather than intelligence-bound problems.&lt;br&gt;&lt;br&gt;&lt;a href="https://www.latent.space/p/ainews-poolside-gets-12b-reverse" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Latent Space Interview: Matt Pocock on the /wayfinder Skill for AI Agents</title>
+      <link>https://www.latent.space/p/wayfinder-skill</link>
+      <guid isPermaLink="false">ai-radar:f98ed51fdcf22f3d25db</guid>
+      <pubDate>Thu, 20 Aug 2026 20:59:09 +0000</pubDate>
+      <description>Matt Pocock introduces his new /wayfinder skill, which helps AI agents manage projects where the end state is not entirely clear, navigating what he calls the &amp;quot;fog of war.&amp;quot; The skill aims to simplify the planning stage by providing an orchestrator layer that handles planning sessions, splitting tasks into multiple threads, and managing prototyping and research. This allows users to create more detailed specifications for &amp;quot;Away From Keyboard&amp;quot; (AFK) agents. Pocock explains that /wayfinder uses precise terminology like &amp;quot;map,&amp;quot; &amp;quot;ticket,&amp;quot; and &amp;quot;session&amp;quot; to ensure clear communication and information flow for the agent. He also highlights different ticket types within /wayfinder, such as &amp;quot;grilling,&amp;quot; &amp;quot;prototype,&amp;quot; &amp;quot;research,&amp;quot; and &amp;quot;task&amp;quot; tickets, making it applicable to various use cases from engineering to course planning. The skill is designed for situations where the path ahead is uncertain, in contrast to his &amp;quot;grill-me&amp;quot; skill, which is for projects with a clear path.&lt;br&gt;&lt;br&gt;&lt;a href="https://www.latent.space/p/wayfinder-skill" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>The Pulse: We need to talk about migrations with AI</title>
+      <link>https://newsletter.pragmaticengineer.com/p/the-pulse-we-need-to-talk-about-migrations</link>
+      <guid isPermaLink="false">ai-radar:ee9be22d8a7ba17a981d</guid>
+      <pubDate>Thu, 20 Aug 2026 17:53:01 +0000</pubDate>
+      <description>The newsletter, &amp;quot;The Pulse,&amp;quot; covers how AI is transforming framework migrations, citing Asana&amp;#x27;s successful use of AI to migrate off the Enzyme testing framework in two weeks, a task that would have been significantly longer without AI. Airbnb and Uber have shared similar experiences, highlighting AI&amp;#x27;s effectiveness in such projects. The article also questions the relevance of Gartner&amp;#x27;s Magic Quadrant for AI code modernization tools, noting that established tech giants are ranked above AI labs like Anthropic and OpenAI, possibly due to payment structures. Additionally, it provides an industry pulse on topics such as GitHub outages, Slack Code, watermarking text generated by Claude, and Uber&amp;#x27;s open-sourcing of SubmitQueue.&lt;br&gt;&lt;br&gt;&lt;a href="https://newsletter.pragmaticengineer.com/p/the-pulse-we-need-to-talk-about-migrations" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Latent Space: Death of Params: Z.ai CEO Jie Tang on GLM 5.3 and the new Post-training Scaling Law</title>
+      <link>https://www.latent.space/p/ainews-death-of-params-zai-ceo-jie</link>
+      <guid isPermaLink="false">ai-radar:063f62c4dbd92dd2b407</guid>
+      <pubDate>Thu, 20 Aug 2026 05:17:12 +0000</pubDate>
+      <description>Z.ai CEO Jie Tang argues that parameter count is no longer a sufficient metric for evaluating model sizes, advocating for consideration of data, compute, and operational conditions. The article introduces GLM-5.3, which achieves significant performance gains through RL on long-horizon environments, simulating complex engineering and research workflows. This approach emphasizes models taking ownership of substantial work end-to-end, rather than relying on users for problem decomposition. The scaling process is supported by pipelines that synthesize environments and reward signals, with research agents collecting task patterns from real work. The discussion also covers the five knobs of scaling, including MoE sparsity, and notes that advanced skills require long causal chains rather than just total parameter count beyond a certain knowledge threshold. The article also touches on open-weight models, compression, agent harnesses, and RL systems work.&lt;br&gt;&lt;br&gt;&lt;a href="https://www.latent.space/p/ainews-death-of-params-zai-ceo-jie" rel="noopener noreferrer"&gt;Newsletter&lt;/a&gt;</description>
     </item>
     <item>
       <title>OpenAI's Head of Design on Why This Is the Best Time to Be a Designer</title>
