@@ -61559,6 +61559,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/yCkV6Bm1hVk"
       }
+    },
+    {
+      "id": "7384becfc10b462bf0fb",
+      "status": "published",
+      "title": "Anthropic: Model Hardware Standard (MHS)",
+      "source_title": "We're building a way for AI models to connect to any device and run real experiments.",
+      "short_summary": "Anthropic is building a way for AI models to connect to any device and run real experiments. The Model Hardware Standard (MHS) provides a common interface for AI to connect to lab and manufacturing equipment, operating safely with built-in limits.",
+      "long_summary": "Scientists often spend considerable time making devices communicate due to varied programming interfaces and a lack of standardized integration with AI. The Model Hardware Standard (MHS) addresses this by offering AI models a unified method to connect with lab and manufacturing equipment. This standard ensures safe operation through limits built into each device. MHS originated as a collaboration between Anthropic and HHMI Janelia Research Campus, and is currently in a research preview phase with partners in science, robotics, and manufacturing.",
+      "reason": "The item describes a new initiative from Anthropic, a target organization, focused on AI infrastructure and physical AI integration.",
+      "published_at": "2026-08-27T19:42:35+00:00",
+      "first_seen_at": "2026-08-27T20:17:25+00:00",
+      "appearances": [
+        {
+          "id": "6f478aae6c6f662b6f9e",
+          "kind": "youtube",
+          "source": "Anthropic",
+          "family": "anthropic",
+          "guid": "yt:video:djVUCj5i4sw",
+          "title": "We're building a way for AI models to connect to any device and run real experiments.",
+          "description": "Scientists spend a significant amount of their time just getting their devices to communicate with one another. Each device tends to have its own programming interface, and so far there has been no standardized way to integrate them, or to allow them to connect to AI. \n\nThe Model Hardware Standard (MHS) gives AI models one common way to connect to lab and manufacturing equipment and operate it safely, with limits built into each device.\n\nMHS started as a collaboration between Anthropic and HHMI Janelia Research Campus, and is beginning as a research preview with partners across science, robotics and manufacturing.",
+          "url": "https://www.youtube.com/shorts/djVUCj5i4sw",
+          "published_at": "2026-08-27T19:42:35+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/djVUCj5i4sw"
+      }
     }
   ]
 }

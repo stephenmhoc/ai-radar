@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Anthropic: Model Hardware Standard (MHS) — Anthropic</title>
+      <link>https://www.youtube.com/shorts/djVUCj5i4sw</link>
+      <guid isPermaLink="false">ai-radar:7384becfc10b462bf0fb</guid>
+      <pubDate>Thu, 27 Aug 2026 19:42:35 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA">Anthropic</source>
+      <description>Scientists often spend considerable time making devices communicate due to varied programming interfaces and a lack of standardized integration with AI. The Model Hardware Standard (MHS) addresses this by offering AI models a unified method to connect with lab and manufacturing equipment. This standard ensures safe operation through limits built into each device. MHS originated as a collaboration between Anthropic and HHMI Janelia Research Campus, and is currently in a research preview phase with partners in science, robotics, and manufacturing.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Anthropic&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/shorts/djVUCj5i4sw"&gt;We&amp;#x27;re building a way for AI models to connect to any device and run real experiments.&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Rich Sutton on the Bitter Lesson — Sequoia Capital</title>
       <link>https://www.youtube.com/shorts/yCkV6Bm1hVk</link>
       <guid isPermaLink="false">ai-radar:26c0788a9efbf4df1242</guid>
