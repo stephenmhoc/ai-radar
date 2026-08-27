@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Rethinking Legacy Data Infrastructure with Eon Co-Founders Ofir Ehrlich and Gonen Stein — No Priors</title>
+      <link>https://feeds.megaphone.fm/nopriors</link>
+      <guid isPermaLink="false">ai-radar:d0da3331849fb84951e2</guid>
+      <pubDate>Thu, 27 Aug 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.megaphone.fm/nopriors">No Priors</source>
+      <description>Eon CEO Ofir Ehrlich and President Gonen Stein join Elad Gil to discuss how Eon is redefining cloud backup into a secure data foundation for enterprise AI. They highlight the increasing value of real-world datasets, citing Google&amp;#x27;s purchase of Spirit Airlines&amp;#x27; data, and position data as a company&amp;#x27;s protective moat in the current AI landscape. The co-founders explain how Eon facilitates access to scattered and locked historical enterprise data, providing mapping, classification, and access controls necessary for AI workflows. They also address new security challenges, such as protecting against rogue AI agents with legitimate system permissions and the influx of autonomous agents. The discussion explores how these changes necessitate a re-imagining of data infrastructure and the implications of AI&amp;#x27;s rapid adoption compared to the slower evolution of the cloud era.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · No Priors&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://feeds.megaphone.fm/nopriors"&gt;Rethinking Legacy Data Infrastructure with Eon Co-Founders Ofir Ehrlich and Gonen Stein&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · No Priors&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=YscDZpVF4CQ"&gt;Rethinking Legacy Data Infrastructure with Eon Co-Founders Ofir Ehrlich and Gonen Stein&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>NVIDIA Acquires Hugging Face for $13B; Z.ai Launches GLM-5.3-Flash Model — Latent Space</title>
       <link>https://www.latent.space/p/ainews-nvidia-buys-huggingface-for</link>
       <guid isPermaLink="false">ai-radar:43e6b323726996e36618</guid>

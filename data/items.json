@@ -61108,6 +61108,78 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-nvidia-buys-huggingface-for"
       }
+    },
+    {
+      "id": "d0da3331849fb84951e2",
+      "status": "published",
+      "title": "Rethinking Legacy Data Infrastructure with Eon Co-Founders Ofir Ehrlich and Gonen Stein",
+      "source_title": "Rethinking Legacy Data Infrastructure with Eon Co-Founders Ofir Ehrlich and Gonen Stein",
+      "short_summary": "Eon co-founders discuss redefining cloud backup into a secure data foundation for enterprise AI. They explore how Eon facilitates access to scattered data for AI workflows, addresses autonomous security threats, and the implications of rapid AI adoption on data infrastructure.",
+      "long_summary": "Eon CEO Ofir Ehrlich and President Gonen Stein join Elad Gil to discuss how Eon is redefining cloud backup into a secure data foundation for enterprise AI. They highlight the increasing value of real-world datasets, citing Google's purchase of Spirit Airlines' data, and position data as a company's protective moat in the current AI landscape. The co-founders explain how Eon facilitates access to scattered and locked historical enterprise data, providing mapping, classification, and access controls necessary for AI workflows. They also address new security challenges, such as protecting against rogue AI agents with legitimate system permissions and the influx of autonomous agents. The discussion explores how these changes necessitate a re-imagining of data infrastructure and the implications of AI's rapid adoption compared to the slower evolution of the cloud era.",
+      "reason": "The item features an interview with founders of a company focused on AI infrastructure, specifically data management and security for enterprise AI, which aligns with the 'AI infrastructure across inference, training, chips, systems, datacenters, power, networking, and data' and 'important AI companies, products, agent systems, and AI-native software or engineering practice' criteria.",
+      "published_at": "2026-08-27T10:00:00+00:00",
+      "first_seen_at": "2026-08-27T10:17:25+00:00",
+      "appearances": [
+        {
+          "id": "e849120d65b12594cd66",
+          "kind": "podcast",
+          "source": "No Priors",
+          "family": "no priors",
+          "guid": "dc36d7b4-a1cb-11f1-a66e-afd86ce968a2",
+          "title": "Rethinking Legacy Data Infrastructure with Eon Co-Founders Ofir Ehrlich and Gonen Stein",
+          "description": "Google’s purchase of Spirit Airlines’ data out of bankruptcy signaled a shift in how the tech world values real-world datasets. Although compute and models get much of the attention, in this landscape, it’s data that is a company’s protective moat. Eon CEO / Co-Founder Ofir Ehrlich and President / Co-Founder Gonen Stein join Elad Gil to talk about how Eon is redefining cloud backup into a secure data foundation designed to power and protect enterprise AI. Ofir and Gonen discuss why historical enterprise data is in demand by AI labs, and how Eon facilitates access to scattered and locked data across business units through providing the mapping, classification, and access controls needed to connect it into AI workflows. They also explore how traditional ransomware defenses must now protect against rogue AI agents with legitimate system permissions, concerns around the influx of autonomous agents and non-human identities, and the implications for the breakneck speed of AI adoption compared to the slowness of the cloud era. \n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @Eon_io_ | @OfirEhrlich\n\nChapters:\n\n00:00 – Cold Open Trailer\n\n00:59 – Ofir Ehrlich and Gonen Stein Introduction\n\n01:27 – What Eon Does\n\n02:41 – Data as Moat\n\n06:43 – Training Agents with Good Data\n\n09:39 – Data is the New Oil \n\n15:00 – Autonomous Security Threats\n\n18:15 – How Agents Change the Enterprise Stack\n\n22:11 – Re-imagining Data Infrastructure\n\n27:52 – Cloud vs. AI Era Shift\n\n30:26 – How AI is Changing Companies\n\n34:31 – Conclusion",
+          "url": "https://feeds.megaphone.fm/nopriors",
+          "published_at": "2026-08-27T10:00:00+00:00",
+          "hosts": [
+            "Sarah Guo",
+            "Elad Gil"
+          ]
+        },
+        {
+          "id": "d4211c4f2dd3a4ae77a3",
+          "kind": "youtube",
+          "source": "No Priors — YouTube",
+          "family": "no priors",
+          "guid": "yt:video:YscDZpVF4CQ",
+          "title": "Rethinking Legacy Data Infrastructure with Eon Co-Founders Ofir Ehrlich and Gonen Stein",
+          "description": "Google’s purchase of Spirit Airlines’ data out of bankruptcy signaled a shift in how the tech world values real-world datasets. Although compute and models get much of the attention, in this landscape, it’s data that is a company’s protective moat. Eon CEO / Co-Founder Ofir Ehrlich and President / Co-Founder Gonen Stein join Elad Gil to talk about how Eon is redefining cloud backup into a secure data foundation designed to power and protect enterprise AI. Ofir and Gonen discuss why historical enterprise data is in demand by AI labs, and how Eon facilitates access to scattered and locked data across business units through providing the mapping, classification, and access controls needed to connect it into AI workflows. They also explore how traditional ransomware defenses must now protect against rogue AI agents with legitimate system permissions, concerns around the influx of autonomous agents and non-human identities, and the implications for the breakneck speed of AI adoption compared to the slowness of the cloud era. \n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @Eon_io_ | @OfirEhrlich\n\nChapters:\n00:00 – Cold Open Trailer\n00:59 – Ofir Ehrlich and Gonen Stein Introduction\n01:27 – What Eon Does\n02:41 – Data as Moat\n06:43 – Training Agents with Good Data\n09:39 – Data is the New Oil \n15:00 – Autonomous Security Threats\n18:15 – How Agents Change the Enterprise Stack\n22:11 – Re-imagining Data Infrastructure\n27:52 – Cloud vs. AI Era Shift\n30:26 – How AI is Changing Companies\n34:31 – Conclusion",
+          "url": "https://www.youtube.com/watch?v=YscDZpVF4CQ",
+          "published_at": "2026-08-27T10:00:04+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/nopriors",
+        "youtube": "https://www.youtube.com/watch?v=YscDZpVF4CQ"
+      }
+    },
+    {
+      "id": "0c98880f19f7c0e19ce7",
+      "status": "skipped",
+      "title": "Inside Cursor: The Anatomy of a Generational Startup",
+      "source_title": "Inside Cursor: The Anatomy of a Generational Startup",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The podcast discusses Cursor, a company not on the target list. The speakers are a16z General Partners, not individuals from the target organizations, nor do they offer firsthand expertise or original reporting on frontier AI organizations or infrastructure.",
+      "published_at": "2026-08-27T10:00:00+00:00",
+      "first_seen_at": "2026-08-27T10:17:26+00:00",
+      "appearances": [
+        {
+          "id": "21ec04ba7bfd2f2b8b29",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "8b0662be-356b-4bcd-81b0-1b0fd63de740",
+          "title": "Inside Cursor: The Anatomy of a Generational Startup",
+          "description": "a16z General Partners Martin Casado, Sarah Wang, and Matt Bornstein unpack the story of Cursor: how a small, product-obsessed team entered one of the most competitive markets in technology, took on incumbents with seemingly unbeatable advantages, and repeatedly made decisions that ran against conventional startup wisdom.\n\nThey revisit the early bet that the interface between humans and AI would matter more than building a coding-specific foundation model, why Cursor built its own product rather than a VS Code plugin, and how the founders' ability to say \"no\" became one of the company's defining strengths. They also discuss Cursor's rapid evolution from IDE to agent and model platform, and why the team was willing to cannibalize its own products as AI capabilities improved.\n\nThe conversation gets into what founders can learn from Cursor's approach to competition, hiring, enterprise sales, M&A, and company culture, including why the team remained unfazed by competitors from Microsoft to Anthropic and how its obsessive focus on product ultimately extended into every part of building the company.\n\nResources:\n\nExplore Cursor Compile:\n https://cursor.com/compile\n\nFollow Martin Casado on X:\n https://x.com/martin_casado\n\nFollow Matt Bornstein on X:\n https://x.com/BornsteinMatt\n\nFollow Sarah Wang on X: \nhttps://x.com/sarahdingwang\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/inside-cursor-the-anatomy-of-a-generational-startup-eVZ_egyp",
+          "published_at": "2026-08-27T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/inside-cursor-the-anatomy-of-a-generational-startup-eVZ_egyp"
+      }
     }
   ]
 }
