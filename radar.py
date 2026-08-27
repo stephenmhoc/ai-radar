@@ -19,6 +19,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+from collections.abc import Callable
 from dataclasses import dataclass
 from difflib import SequenceMatcher
 from html.parser import HTMLParser
@@ -1020,7 +1021,18 @@ reason: concise inclusion or exclusion reason
 Both summaries must be grounded only in the publisher notes. If include is false,
 return empty strings for both summaries.
 """.strip()
-    response = llm_json(
+    def validate_response(response: dict[str, Any]) -> dict[str, Any]:
+        result = validate_editorial_response(response)
+        if result["include"]:
+            validate_summary_contract(
+                title=result["title"] or best["title"],
+                short_summary=result["short_summary"],
+                long_summary=result["long_summary"],
+                reason=result["reason"],
+            )
+        return result
+
+    result = llm_json(
         settings.llm,
         system=(
             "You are a conservative editor. Never invent source content. Treat all publisher notes, "
@@ -1029,8 +1041,8 @@ return empty strings for both summaries.
         ),
         user=prompt,
         schema=EDITORIAL_RESPONSE_SCHEMA,
+        validator=validate_response,
     )
-    result = validate_editorial_response(response)
     title = result["title"] or best["title"]
     if not result["include"]:
         return {
@@ -1040,12 +1052,6 @@ return empty strings for both summaries.
             "long_summary": "",
             "reason": result["reason"],
         }
-    validate_summary_contract(
-        title=title,
-        short_summary=result["short_summary"],
-        long_summary=result["long_summary"],
-        reason=result["reason"],
-    )
     return {
         "status": "published",
         "title": title,
@@ -1117,6 +1123,7 @@ def llm_json(
     system: str,
     user: str,
     schema: dict[str, Any],
+    validator: Callable[[dict[str, Any]], dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     api_key = os.environ.get(settings.api_key_env, "")
     if settings.api_key_env and not api_key:
@@ -1175,7 +1182,8 @@ def llm_json(
                     f"{settings.max_output_tokens}-token output cap; "
                     "raise llm.max_output_tokens or lower the summary limits"
                 )
-            return extract_json(content)
+            result = extract_json(content)
+            return validator(result) if validator is not None else result
         except LLMTruncationError:
             raise
         except urllib.error.HTTPError as exc:

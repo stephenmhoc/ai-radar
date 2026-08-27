@@ -97,7 +97,9 @@ transaction. Each run:
 2. Fetches sources with bounded responses, safe redirects, and retries. Failed
    YouTube feeds get one shared delayed retry before they count as errors. A
    source fails on metadata only when no entry in its feed carries a valid date.
-3. Defers sparse metadata or makes one structured OpenRouter request.
+3. Defers sparse metadata or obtains one locally validated structured OpenRouter
+   decision, retrying correctable provider failures within the bounded attempt
+   policy.
 4. Validates `data/items.json` and rebuilds all tracked static files.
 5. Runs the complete local verification suite.
 6. Commits generated changes, safely rebases a concurrent `main` update, and
@@ -109,11 +111,12 @@ Sentry. Docker invokes `scheduler_watchdog.py` independently of Ofelia; a
 missing or stale heartbeat marks the worker unhealthy and emits one grouped
 Sentry event per outage. Widespread YouTube failures use a separate RSS-outage
 fingerprint after the delayed retry and report only once until a recovered cycle
-clears the local alert latch. Malformed LLM structured responses use the existing
-bounded retry policy and reach Sentry only if every attempt fails. A response
-truncated at the output-token cap is reported immediately instead, since retrying
-buys the same truncation. A total Docker-host or network outage still requires an
-external monitor because the failed host cannot report its own loss.
+clears the local alert latch. Malformed or locally invalid LLM structured
+responses use the existing bounded retry policy and reach Sentry only if every
+attempt fails. A response truncated at the output-token cap is reported
+immediately instead, since retrying buys the same truncation. A total Docker-host
+or network outage still requires an external monitor because the failed host
+cannot report its own loss.
 
 ## Continuous integration
 

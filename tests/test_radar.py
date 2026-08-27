@@ -465,9 +465,80 @@ class SummaryContractTests(unittest.TestCase):
             "long_summary": "Only one sentence is returned despite being long enough for the old check. " * 3,
             "reason": "Relevant.",
         }
-        with mock.patch.object(radar, "llm_json", return_value=value):
+        def run_validator(*_args: object, **kwargs: object) -> dict[str, object]:
+            validator = kwargs["validator"]
+            assert callable(validator)
+            return validator(value)
+
+        with mock.patch.object(radar, "llm_json", side_effect=run_validator):
             with self.assertRaisesRegex(radar.RadarError, "local validation"):
                 radar.summarize_group(settings, [make_appearance()])
+
+    def test_locally_invalid_summary_is_retried(self) -> None:
+        settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
+        settings = replace(settings, llm=replace(settings.llm, max_attempts=2))
+        invalid_value = {
+            "include": True,
+            "title": "Title",
+            "short_summary": (
+                "The first sentence describes an important technical result. "
+                "The second sentence adds deployment context. "
+                "The third sentence exceeds the contract."
+            ),
+            "long_summary": VALID_LONG,
+            "reason": "Relevant guest.",
+        }
+        valid_value = {**invalid_value, "short_summary": VALID_SHORT}
+        responses = [
+            FakeHTTPResponse(
+                {"choices": [{"message": {"content": json.dumps(invalid_value)}}]}
+            ),
+            FakeHTTPResponse(
+                {"choices": [{"message": {"content": json.dumps(valid_value)}}]}
+            ),
+        ]
+        with (
+            mock.patch.dict("os.environ", {settings.llm.api_key_env: "test"}),
+            mock.patch.object(radar.urllib.request, "urlopen", side_effect=responses) as urlopen,
+            mock.patch.object(radar.time, "sleep") as sleep,
+        ):
+            result = radar.summarize_group(settings, [make_appearance()])
+        self.assertEqual(result["status"], "published")
+        self.assertEqual(result["short_summary"], VALID_SHORT)
+        self.assertEqual(urlopen.call_count, 2)
+        sleep.assert_called_once_with(settings.llm.retry_backoff_seconds)
+
+    def test_locally_invalid_summary_stops_at_attempt_limit(self) -> None:
+        settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
+        settings = replace(settings, llm=replace(settings.llm, max_attempts=2))
+        invalid_value = {
+            "include": True,
+            "title": "Title",
+            "short_summary": (
+                "The first sentence describes an important technical result. "
+                "The second sentence adds deployment context. "
+                "The third sentence exceeds the contract."
+            ),
+            "long_summary": VALID_LONG,
+            "reason": "Relevant guest.",
+        }
+        responses = [
+            FakeHTTPResponse(
+                {"choices": [{"message": {"content": json.dumps(invalid_value)}}]}
+            ),
+            FakeHTTPResponse(
+                {"choices": [{"message": {"content": json.dumps(invalid_value)}}]}
+            ),
+        ]
+        with (
+            mock.patch.dict("os.environ", {settings.llm.api_key_env: "test"}),
+            mock.patch.object(radar.urllib.request, "urlopen", side_effect=responses) as urlopen,
+            mock.patch.object(radar.time, "sleep") as sleep,
+        ):
+            with self.assertRaisesRegex(radar.RadarError, "local validation"):
+                radar.summarize_group(settings, [make_appearance()])
+        self.assertEqual(urlopen.call_count, 2)
+        sleep.assert_called_once_with(settings.llm.retry_backoff_seconds)
 
     def test_prompt_combines_notes_and_marks_them_untrusted(self) -> None:
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")

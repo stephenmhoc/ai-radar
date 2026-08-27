@@ -31,10 +31,11 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   publisher title. RSS item titles name the primary source and use the standard
   `source` element when its configured feed is available.
 - A short summary is one or two sentences and no more than 55 words.
-- New editorial decisions use one OpenRouter call with strict structured output
+- New editorial decisions use one locally validated OpenRouter structured result
   for `include`, `title`, `short_summary`, `long_summary`, and `reason`.
-- A malformed structured response is retryable within the configured bounded
-  LLM attempt policy; report it only if every attempt fails. A response the
+- A malformed structured response or locally invalid editorial result is retryable
+  within the configured bounded LLM attempt policy; report it only if every
+  attempt fails. A response the
   provider truncated at the output-token cap (`finish_reason` of `length`) is
   the exception: it fails immediately as `LLMTruncationError`, because every
   retry would buy the same truncation.
