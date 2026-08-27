@@ -61175,10 +61175,23 @@
           "url": "https://a16z.simplecast.com/episodes/inside-cursor-the-anatomy-of-a-generational-startup-eVZ_egyp",
           "published_at": "2026-08-27T10:00:00+00:00",
           "hosts": []
+        },
+        {
+          "id": "a8c3618c8e04745144dc",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:GHrnbvkVPZA",
+          "title": "Inside Cursor: The Anatomy of a Generational Startup",
+          "description": "a16z General Partners Martin Casado, Sarah Wang, and Matt Bornstein unpack the story of Cursor: how a small, product-obsessed team entered one of the most competitive markets in technology, took on incumbents with seemingly unbeatable advantages, and repeatedly made decisions that ran against conventional startup wisdom.\n\nThey revisit the early bet that the interface between humans and AI would matter more than building a coding-specific foundation model, why Cursor built its own product rather than a VS Code plugin, and how the founders' ability to say \"no\" became one of the company's defining strengths. They also discuss Cursor's rapid evolution from IDE to agent and model platform, and why the team was willing to cannibalize its own products as AI capabilities improved.\n\nThe conversation gets into what founders can learn from Cursor's approach to competition, hiring, enterprise sales, M&A, and company culture, including why the team remained unfazed by competitors from Microsoft to Anthropic and how its obsessive focus on product ultimately extended into every part of building the company.\n\nTimestamps:\n00:00 - Intro\n00:53 - Back to Early 2024: How a16z First Met Cursor\n05:23 - The VS Code Fork vs Plug-In Decision & the Enterprise Bet\n09:57 - Vertical Liftoff: Why the B Round Was a No-Brainer\n17:03 - The Hardest Round: Claude Code, Competition & the D\n23:38 - How You Do Anything Is How You Do Everything: The Hiring Engine\n27:24 - Cursor Culture: Craftsmanship, Taste & Twinkle Lights\n34:02 - The SpaceX Parallel: Elon-ish Ambition & Impossible Competitors\n\nResources:\nExplore Cursor Compile: https://cursor.com/compile\nFollow Martin Casado on X: https://x.com/martin_casado\nFollow Matt Bornstein on X: https://x.com/BornsteinMatt\nFollow Sarah Wang on X: https://x.com/sarahdingwang\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=GHrnbvkVPZA",
+          "published_at": "2026-08-27T14:30:08+00:00",
+          "hosts": []
         }
       ],
       "links": {
-        "podcast": "https://a16z.simplecast.com/episodes/inside-cursor-the-anatomy-of-a-generational-startup-eVZ_egyp"
+        "podcast": "https://a16z.simplecast.com/episodes/inside-cursor-the-anatomy-of-a-generational-startup-eVZ_egyp",
+        "youtube": "https://www.youtube.com/watch?v=GHrnbvkVPZA"
       }
     },
     {
