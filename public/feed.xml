@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Inside Ukraine's Azov Drone R&amp;D: The Engineer Building AI Weapons 18 km From the FrontLine — Eye on AI</title>
+      <link>https://www.youtube.com/watch?v=diEimbi8SdM</link>
+      <guid isPermaLink="false">ai-radar:dc8ced472e16379c724c</guid>
+      <pubDate>Thu, 27 Aug 2026 13:50:59 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLacDrP-7Ys6IsnPRN0ToTfjH8gQ4s6mL9">Eye on AI</source>
+      <description>This interview features Alexander Palamarchuk, an engineer in Ukraine&amp;#x27;s Azov Brigade, discussing drone development near the front line. He details the evolution of drone warfare, from early reconnaissance devices to current AI-assisted autonomous systems. The conversation highlights the jamming arms race, where units constantly search for clean frequency windows to counter Russian jamming. A key insight is the &amp;quot;AI discrimination problem&amp;quot;: current AI can recognize vehicles but struggles to distinguish military from civilian targets, which is the primary barrier to fully autonomous lethal drones. Alexander predicts this gap will close in approximately two years, positioning NATO countries to lead due to their software capabilities. The discussion also covers methods to evade jamming, such as fiber-optic tethers and custom long-range systems.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Eye on AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=diEimbi8SdM"&gt;Inside Ukraine&amp;#x27;s Azov Drone R&amp;amp;D: The Engineer Building AI Weapons 18 km From the FrontLine&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Rethinking Legacy Data Infrastructure with Eon Co-Founders Ofir Ehrlich and Gonen Stein — No Priors</title>
       <link>https://feeds.megaphone.fm/nopriors</link>
       <guid isPermaLink="false">ai-radar:d0da3331849fb84951e2</guid>
