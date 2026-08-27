@@ -81,10 +81,11 @@ validation, Git, test, lock, heartbeat, and unexpected failures report to
 Sentry. Docker invokes `scheduler_watchdog.py` independently of Ofelia; a
 missing or stale heartbeat marks the worker unhealthy and emits one grouped
 Sentry event per outage. Widespread YouTube failures use a separate RSS-outage
-fingerprint after the delayed retry. Malformed LLM structured responses use the
-existing bounded retry policy and reach Sentry only if every attempt fails. A
-total Docker-host or network outage still requires an external monitor because
-the failed host cannot report its own loss.
+fingerprint after the delayed retry and report only once until a recovered cycle
+clears the local alert latch. Malformed LLM structured responses use the existing
+bounded retry policy and reach Sentry only if every attempt fails. A total
+Docker-host or network outage still requires an external monitor because the
+failed host cannot report its own loss.
 
 ## Continuous integration
 

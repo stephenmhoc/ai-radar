@@ -524,6 +524,49 @@ class CycleTests(unittest.TestCase):
         self.assertEqual(event["extra"]["youtube_retry"]["attempted"], 4)
         self.assertEqual(event["extra"]["youtube_retry"]["recovered"], 0)
 
+    def test_youtube_outage_reports_once_until_a_recovered_cycle(self) -> None:
+        reporter = RecordingReporter()
+        sources = tuple(
+            make_source(kind="youtube", name=f"YouTube {index}") for index in range(4)
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            settings = make_settings(pathlib.Path(directory), sources=sources)
+            alert_path = settings.public_dir.parent / "var/youtube-rss-outage-alerted"
+            with (
+                mock.patch.object(
+                    radar,
+                    "fetch_bytes",
+                    side_effect=radar.RadarError("feed HTTP 404"),
+                ),
+                mock.patch.object(radar.time, "sleep"),
+            ):
+                first = radar.run_cycle(settings, lookback_days=7, reporter=reporter)
+                second = radar.run_cycle(settings, lookback_days=7, reporter=reporter)
+            self.assertEqual(first["source_errors"], 4)
+            self.assertEqual(second["source_errors"], 4)
+            self.assertEqual(len(reporter.exceptions), 1)
+            self.assertTrue(alert_path.exists())
+
+            with mock.patch.object(
+                radar,
+                "fetch_bytes",
+                return_value=b"<rss><channel /></rss>",
+            ):
+                recovered = radar.run_cycle(settings, lookback_days=7, reporter=reporter)
+            self.assertEqual(recovered["source_errors"], 0)
+            self.assertFalse(alert_path.exists())
+
+            with (
+                mock.patch.object(
+                    radar,
+                    "fetch_bytes",
+                    side_effect=radar.RadarError("feed HTTP 404"),
+                ),
+                mock.patch.object(radar.time, "sleep"),
+            ):
+                radar.run_cycle(settings, lookback_days=7, reporter=reporter)
+            self.assertEqual(len(reporter.exceptions), 2)
+
     def test_youtube_outage_requires_widespread_fetch_failures(self) -> None:
         source = make_source(kind="youtube", name="YouTube")
         fetch_failures = [
@@ -607,8 +650,9 @@ class RecordingReporter:
     def __init__(self) -> None:
         self.exceptions: list[dict[str, object]] = []
 
-    def capture_exception(self, exception: BaseException, **context: object) -> None:
+    def capture_exception(self, exception: BaseException, **context: object) -> str:
         self.exceptions.append({"exception": exception, **context})
+        return "event-id"
 
 
 class FakeBinaryResponse:

@@ -45,8 +45,9 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   cycle's degraded/nonzero result when any source or LLM error occurred.
 - Retry failed YouTube fetches once as a shared delayed pass before reporting
   them. Widespread failures that survive the retry use the dedicated
-  `youtube-rss-outage` Sentry fingerprint; recovered failures do not degrade the
-  cycle.
+  `youtube-rss-outage` Sentry fingerprint and a persistent once-per-outage alert
+  latch; recovered failures do not degrade the cycle and a recovered cycle
+  clears the latch.
 - Pipeline, Git, validation, test, lock, heartbeat, and unexpected failures must
   reach Sentry. Keep the Docker heartbeat watchdog independent of Ofelia so a
   stopped scheduler is observable while the worker and host remain alive.
