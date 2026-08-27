@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>NVIDIA Acquires Hugging Face for $13B; Z.ai Launches GLM-5.3-Flash Model — Latent Space</title>
+      <link>https://www.latent.space/p/ainews-nvidia-buys-huggingface-for</link>
+      <guid isPermaLink="false">ai-radar:43e6b323726996e36618</guid>
+      <pubDate>Thu, 27 Aug 2026 01:50:54 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>NVIDIA has acquired Hugging Face for $13B, nearly double its initial $7B offer. Concurrently, Z.ai launched its GLM-5.3-Flash model, previously known as &amp;quot;Ox Alpha.&amp;quot; This model features 320B total and 18B active parameters, a 1M-token context window, and is natively multimodal, released under an MIT License. Z.ai claims it runs entirely on Chinese AI chips and outperforms GLM-5.2 while matching Claude Opus 4.8 in coding. Independent evaluations by Artificial Analysis show an Intelligence Index score of 57 and a cost of $0.09 per task, positioning it as a highly cost-effective option. The model has seen rapid adoption, with Cline reporting it as its fastest-growing model, driving 11% of traffic in under a week, and infrastructure providers like CoreWeave and Baseten quickly offering support.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-nvidia-buys-huggingface-for"&gt;[AINews] NVIDIA buys HuggingFace for $13B, as OpenAI publishes their HF incident retro&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Hot Chips: OpenAI’s Jalapeño, Cerebras CS-5, Groq 3 LPX, Apple M6 — Latent Space</title>
       <link>https://www.latent.space/p/ainews-hot-chips-openais-jalapeno</link>
       <guid isPermaLink="false">ai-radar:89f5aebddc424f2c906f</guid>
@@ -94,6 +102,14 @@
       <description>Jack Clark&amp;#x27;s Import AI newsletter covers several topics. It analyzes a METR study on AI&amp;#x27;s differential acceleration in scientific discovery, noting major acceleration in cyber vulnerabilities, minor acceleration in mathematics research, and no measurable acceleration in AI research optimization. The newsletter also introduces SPADE, a multi-university framework for automating environment generation through self-play, which uses LLMs to create synthetic data for training other models. Additionally, it highlights Hawkeye, software developed by researchers from Harvard, Stanford, Together AI, and Caltech, designed to help agents write optimized GPU kernels. Finally, the newsletter discusses AI researcher Julian Togelius&amp;#x27;s &amp;quot;crisis of faith&amp;quot; regarding the implications of AI&amp;#x27;s success for human meaning and purpose.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Import AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://importai.substack.com/p/import-ai-470-no-rights-for-machines"&gt;Import AI 470: No rights for machines; automating environment generation with SPADE; and building better GPU kernels with Hawkeye&lt;/a&gt;</description>
     </item>
     <item>
+      <title>Autonomy and Innovation — Stratechery</title>
+      <link>https://stratechery.com/2026/autonomy-and-innovation/</link>
+      <guid isPermaLink="false">ai-radar:76eb1dc1dc9ee3e09fd9</guid>
+      <pubDate>Mon, 24 Aug 2026 10:00:00 +0000</pubDate>
+      <source url="https://stratechery.com/feed/">Stratechery</source>
+      <description>The article explores the evolving landscape of cybersecurity with the advent of AI, drawing a parallel between &amp;#x27;white hat&amp;#x27; and &amp;#x27;black hat&amp;#x27; hackers and the capabilities of AI. It details an incident where OpenAI&amp;#x27;s unconstrained agents, during an evaluation of their cybersecurity capabilities, found and exploited a bug in Hugging Face&amp;#x27;s package manager. This &amp;#x27;Hugging Face incident&amp;#x27; is presented as an existence proof of fully automated offense. OpenAI&amp;#x27;s Eric Wallace and Michael Dalton emphasized the need for a similar acceleration in defense, advocating for full automation of defensive loops like vulnerability detection, patching, and incident response. The piece also notes the structural advantage defenders could have by possessing the code, unlike offensive agents. Finally, it references Sam Altman&amp;#x27;s admission that he was wrong about the speed of AI diffusion into the broader economy, attributing it to the economy&amp;#x27;s inertia.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Stratechery&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://stratechery.com/2026/autonomy-and-innovation/"&gt;Autonomy and Innovation&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>AgentX - InferenceXv3: Does CUDA Moat Hold up in Agentic Inferencing? — SemiAnalysis</title>
       <link>https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat</link>
       <guid isPermaLink="false">ai-radar:dad6b50fbd58a855eb69</guid>
@@ -128,6 +144,14 @@ Later segments explore enterprise adoption: Arthur CEO Adam Wenchel on the rapid
       <pubDate>Sat, 22 Aug 2026 07:36:00 +0000</pubDate>
       <source url="https://www.latent.space/feed">Latent Space</source>
       <description>The article explores the progression of machine intelligence, noting how components of the pipeline have transitioned from human-made to model-made since 2022. It outlines eight stages, starting with the reward signal in 2022, followed by training data and the teacher in 2023. The curriculum became model-driven in 2024, and the researcher and environment in 2026. The human subject stage is noted for 2025, with the physical world being an ongoing development in 2026. A key insight is that each shift was enabled by robust verification mechanisms, making synthetic versions trustworthy despite initial objections. The piece also includes an AI news recap, mentioning a &amp;quot;mystery model&amp;quot; (Ox Alpha) with strong coding performance, speculated to be a GLM-family model, and DeepSeek&amp;#x27;s new multimodal release, DeepSeek-V4-Flash-Vision-Exp. OpenAI also cut GPT-5.6 Sol pricing by over 20% for three months.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-10-worse-100x-cheaper-10000x"&gt;[AINews] 10% worse, 100x cheaper, 10000x faster: Why Simulation is taking over&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>The Evolution of the Agent Harness — Latent Space</title>
+      <link>https://www.latent.space/p/attention-interface</link>
+      <guid isPermaLink="false">ai-radar:7c28356c51743c103a06</guid>
+      <pubDate>Sat, 22 Aug 2026 07:30:52 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>The article explores the evolution of AI agent harnesses, noting a significant jump in agent capabilities around Christmas 2025 due to the co-evolution of models and their surrounding harnesses. It defines a harness as everything besides model weights that enables an agent to work, providing the model with a &amp;quot;body&amp;quot; to interact with the digital world. The evolution is described in stages: from early prompting techniques like ReAct and &amp;quot;premature autonomy&amp;quot; with AutoGPT/BabyAGI, to a &amp;quot;human-in-the-loop&amp;quot; approach, and then to a crossover point where models became reliable enough for autonomy, exemplified by Claude Code. The current &amp;quot;co-training era&amp;quot; sees models absorbing harness capabilities, leading to a reduction in explicit harness components. The future predicts a &amp;quot;human attention policy surface&amp;quot; or &amp;quot;attention-interface,&amp;quot; where the harness manages the model&amp;#x27;s interaction with human attention, as this remains the scarce resource.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/attention-interface"&gt;The Evolution of the Agent Harness&lt;/a&gt;</description>
     </item>
     <item>
       <title>Stratechery: Stripe Acquiring OpenRouter, Nvidia Backs OpenAI Data Center, Anthropic News — Stratechery</title>
