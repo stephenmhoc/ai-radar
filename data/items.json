@@ -61473,6 +61473,64 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=t64oZKCdG8Q"
       }
+    },
+    {
+      "id": "4fcb6e0c87c6cb93aa59",
+      "status": "published",
+      "title": "Anthropic Introduces the Model Hardware Standard (MHS) for Physical Experiments",
+      "source_title": "AI models can now help run physical science experiments",
+      "short_summary": "Anthropic and HHMI Janelia Research Campus have developed the Model Hardware Standard (MHS), enabling AI agents to safely operate physical equipment for scientific research and advanced manufacturing.",
+      "long_summary": "Anthropic has introduced the Model Hardware Standard (MHS), a new framework designed for AI agents to safely operate physical equipment in scientific research and advanced manufacturing. The effort began as a collaboration between Anthropic’s Beneficial Deployments team and the HHMI Janelia Research Campus. The project focuses on how AI models can help run physical science experiments to accelerate scientific discovery. MHS is currently being tested in a research preview with select partners.",
+      "reason": "Official release from Anthropic detailing their Model Hardware Standard (MHS) for enabling AI agents to interface with physical laboratory equipment.",
+      "published_at": "2026-08-27T17:54:32+00:00",
+      "first_seen_at": "2026-08-27T18:17:27+00:00",
+      "appearances": [
+        {
+          "id": "15e9e6b934ee2987320e",
+          "kind": "youtube",
+          "source": "Anthropic",
+          "family": "anthropic",
+          "guid": "yt:video:P1zBiAQU1IA",
+          "title": "AI models can now help run physical science experiments",
+          "description": "The Model Hardware Standard (MHS) is a new standard for AI agents to safely operate physical equipment in scientific research and advanced manufacturing. \n\nMHS began as a collaboration between Anthropic’s Beneficial Deployments team and HHMI Janelia Research Campus. This video tells the story of how MHS was developed and shows how it can be used to accelerate scientific research. \n\nMHS is now in research preview with select partners. Read more about how we're learning what AI can do in the physical world: https://www.anthropic.com/news/model-hardware-standard-research-preview",
+          "url": "https://www.youtube.com/watch?v=P1zBiAQU1IA",
+          "published_at": "2026-08-27T17:54:32+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=P1zBiAQU1IA"
+      }
+    },
+    {
+      "id": "0d2ee659021659ced8b6",
+      "status": "deferred",
+      "title": "The Pulse: Meta wanted to reduce teams by 60% because of AI",
+      "source_title": "The Pulse: Meta wanted to reduce teams by 60% because of AI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-08-27T17:59:17+00:00",
+      "first_seen_at": "2026-08-27T18:17:27+00:00",
+      "appearances": [
+        {
+          "id": "98cdc5232d4788de8248",
+          "kind": "newsletter",
+          "source": "The Pragmatic Engineer",
+          "family": "the pragmatic engineer",
+          "guid": "https://newsletter.pragmaticengineer.com/p/the-pulse-meta-wanted-to-reduce-teams",
+          "title": "The Pulse: Meta wanted to reduce teams by 60% because of AI",
+          "description": "The Pulse is a series covering events, insights, and trends within Big Tech and startups.\n\nToday, we cover:\n\nDid Meta really decide to reduce team sizes by 60% because of AI? \nAn in-depth report by Reuters details how Meta’s leadership decided to slash team sizes by 60%, hatching plans in January to execute the social media giant’s largest-ever layoffs. But …\n\n Read more",
+          "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-meta-wanted-to-reduce-teams",
+          "published_at": "2026-08-27T17:59:17+00:00",
+          "hosts": [
+            "Gergely Orosz"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-meta-wanted-to-reduce-teams"
+      }
     }
   ]
 }

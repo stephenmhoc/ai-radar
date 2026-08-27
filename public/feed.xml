@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Anthropic Introduces the Model Hardware Standard (MHS) for Physical Experiments — Anthropic</title>
+      <link>https://www.youtube.com/watch?v=P1zBiAQU1IA</link>
+      <guid isPermaLink="false">ai-radar:4fcb6e0c87c6cb93aa59</guid>
+      <pubDate>Thu, 27 Aug 2026 17:54:32 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA">Anthropic</source>
+      <description>Anthropic has introduced the Model Hardware Standard (MHS), a new framework designed for AI agents to safely operate physical equipment in scientific research and advanced manufacturing. The effort began as a collaboration between Anthropic’s Beneficial Deployments team and the HHMI Janelia Research Campus. The project focuses on how AI models can help run physical science experiments to accelerate scientific discovery. MHS is currently being tested in a research preview with select partners.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Anthropic&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=P1zBiAQU1IA"&gt;AI models can now help run physical science experiments&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>OpenAI: Turn any idea into a finished design with layouts and text using ChatGPT Images — OpenAI</title>
       <link>https://www.youtube.com/watch?v=lPgm4LByPRw</link>
       <guid isPermaLink="false">ai-radar:be753b24ba36a75b7dc8</guid>
