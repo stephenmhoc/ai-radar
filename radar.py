@@ -1263,6 +1263,8 @@ def run_cycle(
     source_failures: list[SourceFailure] = []
     youtube_retry_candidates: list[tuple[Source, BaseException]] = []
     youtube_retry_recoveries = 0
+    youtube_outage = False
+    youtube_outage_alert_path = settings.public_dir.parent / "var/youtube-rss-outage-alerted"
     reevaluate: dict[str, dict[str, Any]] = {}
 
     def process_entries(source: Source, entries: list[dict[str, Any]]) -> None:
@@ -1343,32 +1345,51 @@ def run_cycle(
         else:
             source_exception = RadarError(f"{len(source_failures)} source(s) failed during collection")
             fingerprint = ["ai-radar", "source", "cycle"]
-        reporter.capture_exception(
-            source_exception,
-            tags={
-                "phase": "source",
-                "source_error_count": len(source_failures),
-                "youtube_source_error_count": youtube_fetch_failure_count,
-                "youtube_rss_outage": str(youtube_outage).lower(),
-            },
-            extra={
-                "failures": [
-                    {
-                        "source": failure.source.name,
-                        "kind": failure.source.kind,
-                        "stage": failure.stage,
-                        "error": str(failure.error)[:500],
-                    }
-                    for failure in source_failures
-                ],
-                "youtube_retry": {
-                    "attempted": len(youtube_retry_candidates),
-                    "recovered": youtube_retry_recoveries,
-                    "delay_seconds": YOUTUBE_RETRY_DELAY_SECONDS,
+        if youtube_outage and youtube_outage_alert_path.exists():
+            print(
+                "warning: continuing YouTube RSS outage already reported; "
+                "suppressing repeat Sentry event",
+                file=sys.stderr,
+            )
+        else:
+            event_id = reporter.capture_exception(
+                source_exception,
+                tags={
+                    "phase": "source",
+                    "source_error_count": len(source_failures),
+                    "youtube_source_error_count": youtube_fetch_failure_count,
+                    "youtube_rss_outage": str(youtube_outage).lower(),
                 },
-            },
-            fingerprint=fingerprint,
-        )
+                extra={
+                    "failures": [
+                        {
+                            "source": failure.source.name,
+                            "kind": failure.source.kind,
+                            "stage": failure.stage,
+                            "error": str(failure.error)[:500],
+                        }
+                        for failure in source_failures
+                    ],
+                    "youtube_retry": {
+                        "attempted": len(youtube_retry_candidates),
+                        "recovered": youtube_retry_recoveries,
+                        "delay_seconds": YOUTUBE_RETRY_DELAY_SECONDS,
+                    },
+                },
+                fingerprint=fingerprint,
+            )
+            if youtube_outage and event_id:
+                try:
+                    youtube_outage_alert_path.parent.mkdir(parents=True, exist_ok=True)
+                    youtube_outage_alert_path.write_text(str(event_id) + "\n", encoding="utf-8")
+                except OSError as exc:
+                    print(f"warning: YouTube outage alert latch could not be written: {exc}", file=sys.stderr)
+
+    if not youtube_outage:
+        try:
+            youtube_outage_alert_path.unlink(missing_ok=True)
+        except OSError as exc:
+            print(f"warning: YouTube outage alert latch could not be cleared: {exc}", file=sys.stderr)
 
     matched = 0
     new_items = 0

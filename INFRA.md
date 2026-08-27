@@ -284,9 +284,12 @@ retries, while each deferred LLM failure retains its item context. A YouTube
 failure that recovers on the delayed pass does not reach Sentry or degrade the
 cycle. If at least three and at least half of the configured YouTube sources
 still fail fetches, Sentry uses a dedicated `youtube-rss-outage` fingerprint
-with retry and recovery counts. After safe publication, any remaining source or
-LLM error still marks the cycle degraded and returns nonzero. Git, test,
-validation, lock, heartbeat, and unexpected failures also produce Sentry events.
+with retry and recovery counts. A persistent latch under `var/` suppresses
+repeat Sentry events during the same continuous outage and is cleared as soon
+as a cycle falls below the outage threshold. After safe publication, any
+remaining source or LLM error still marks the cycle degraded and returns
+nonzero. Git, test, validation, lock, heartbeat, and unexpected failures also
+produce Sentry events.
 
 ## Sentry and logs
 
@@ -395,9 +398,12 @@ with other sources, and marks the overall run degraded. Because YouTube's RSS
 service can return transient 404s across active channels, all failed YouTube
 fetches receive one batch retry after 60 seconds. Failures are reported only
 after that pass, and widespread remaining failures use the dedicated outage
-fingerprint. Multiple simultaneous YouTube RSS failures are not evidence that
-the summary-model change is broken; reproduce the individual feed requests and
-compare consecutive scheduled runs before changing source configuration.
+fingerprint once per continuous outage. The local alert latch resets after a
+cycle falls below the broad-outage threshold, while each affected cycle remains
+degraded and nonzero. Multiple simultaneous YouTube RSS failures are not
+evidence that the summary-model change is broken; reproduce the individual feed
+requests and compare consecutive scheduled runs before changing source
+configuration.
 
 ### OpenRouter or structured-output failures
 
