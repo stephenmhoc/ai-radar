@@ -1,8 +1,9 @@
 # AI Radar
 
 AI Radar is a deliberately small, database-free publisher. A Docker worker on
-the homelab reads podcast and YouTube feeds, asks an OpenRouter-compatible model
-to select and summarize noteworthy episodes from publisher notes, and commits
+the homelab reads podcast, YouTube, and newsletter feeds, asks an
+OpenRouter-compatible model to select and summarize noteworthy items from
+publisher notes, and commits
 the resulting static archive, HTML pages, and RSS feed to GitHub. Cloudflare
 Pages serves the tracked `public/` directory.
 
@@ -12,10 +13,11 @@ editorial, responsive layout without adding runtime assets.
 
 ## Files
 
-- `config.toml`: podcast feeds, YouTube feeds, editorial roster, and LLM config
+- `config.toml`: podcast, YouTube, and newsletter feeds, editorial roster, and
+  LLM config
 - `data/items.json`: durable canonical publication and seen-item state
-- `public/index.html`: episode archive using short summaries
-- `public/feeds.html`: monitored podcast and YouTube feeds
+- `public/index.html`: item archive using short summaries
+- `public/feeds.html`: monitored podcast, YouTube, and newsletter feeds
 - `public/feed.xml`: RSS feed using long summaries
 - `radar.py`: collection, classification, validation, and static rendering
 - `scheduled_cycle.py`: locked pull-to-push production transaction
@@ -38,12 +40,29 @@ python3 -m unittest discover -s tests -v
 python3 -m py_compile radar.py scheduled_cycle.py scheduler_watchdog.py error_reporter.py scripts/check_archive_evolution.py
 ```
 
-To fetch and summarize new episodes, set the configured API key and run:
+To fetch and summarize new items, set the configured API key and run:
 
 ```bash
 export OPENROUTER_API_KEY="..."
 python3 radar.py run --lookback-days 7
 ```
+
+Lab interviews remain the highest-priority signal. The editorial policy also
+admits consequential work on frontier research, AI infrastructure, important AI
+products and companies, AI-native engineering, strategy, policy, and Physical
+AI. Newsletter issues must offer original reporting, research, interviews, or
+durable analysis; generic roundups and incidental AI mentions are excluded.
+
+When that policy changes, one previously excluded item can be safely refreshed
+from its configured feeds and rejudged without replaying the archive:
+
+```bash
+python3 radar.py reconsider --match "unique title text"
+```
+
+`reconsider` makes one real editorial model request after refreshing the matched
+item's publisher notes. It rejects empty, missing, ambiguous, and already
+published matches.
 
 Sparse publisher notes produce a `deferred` record that is reconsidered only
 when richer metadata arrives. Model, provider, and local-validation failures

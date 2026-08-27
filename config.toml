@@ -16,7 +16,7 @@ max_output_tokens = 1200
 
 [site]
 title = "AI Radar"
-description = "Noteworthy AI podcast and video episodes, summarized from publisher notes."
+description = "Noteworthy AI conversations and writing, summarized from publisher notes."
 base_url = "https://ai-radar.merimerimeri.com"
 
 [[feeds]]
@@ -123,6 +123,54 @@ hosts = ["Ti Morse"]
 name = "David Senra"
 url = "https://feeds.megaphone.fm/david-senra"
 hosts = ["David Senra"]
+
+[[newsletters]]
+name = "Stratechery"
+url = "https://stratechery.com/"
+feed_url = "https://stratechery.com/feed/"
+authors = ["Ben Thompson"]
+
+[[newsletters]]
+name = "The Pragmatic Engineer"
+url = "https://newsletter.pragmaticengineer.com/"
+feed_url = "https://newsletter.pragmaticengineer.com/feed"
+authors = ["Gergely Orosz"]
+
+[[newsletters]]
+name = "SemiAnalysis"
+url = "https://newsletter.semianalysis.com/"
+feed_url = "https://newsletter.semianalysis.com/feed"
+authors = ["Dylan Patel"]
+
+[[newsletters]]
+name = "Import AI"
+url = "https://importai.substack.com/"
+feed_url = "https://importai.substack.com/feed"
+authors = ["Jack Clark"]
+
+[[newsletters]]
+name = "Interconnects"
+url = "https://www.interconnects.ai/"
+feed_url = "https://www.interconnects.ai/feed"
+authors = ["Nathan Lambert"]
+
+[[newsletters]]
+name = "Latent Space — Newsletter"
+url = "https://www.latent.space/"
+feed_url = "https://www.latent.space/feed"
+authors = ["Alessio Fanelli", "Swyx"]
+
+[[newsletters]]
+name = "One Useful Thing"
+url = "https://www.oneusefulthing.org/"
+feed_url = "https://www.oneusefulthing.org/feed"
+authors = ["Ethan Mollick"]
+
+[[newsletters]]
+name = "AI Snake Oil"
+url = "https://www.aisnakeoil.com/"
+feed_url = "https://www.aisnakeoil.com/feed"
+authors = ["Arvind Narayanan", "Sayash Kapoor"]
 
 [[sources]]
 kind = "youtube"

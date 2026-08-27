@@ -59227,12 +59227,12 @@
     },
     {
       "id": "legacy-2199",
-      "status": "seen",
-      "title": "Neil Movva - Making AI 10x Cheaper - [Invest Like the Best, EP.488]",
+      "status": "published",
+      "title": "Invest Like the Best: Neil Movva - Making AI 10x Cheaper",
       "source_title": "Neil Movva - Making AI 10x Cheaper - [Invest Like the Best, EP.488]",
-      "short_summary": "",
-      "long_summary": "",
-      "reason": "Neil Movva is founder of Sail, an inference company not on the target roster. No qualifying target-org guest or central speaker is present.",
+      "short_summary": "Neil Movva, founder of Sail, discusses building a \"token factory\" for AI inference, focusing on reducing token cost for long-running AI agents. He covers the full stack of intelligence, including software, chips, and power, and offers a contrarian view on Nvidia.",
+      "long_summary": "Neil Movva, founder of Sail, is interviewed about his company's focus on building a \"token factory\" for AI inference. Sail aims to reduce the cost of tokens for a future where AI agents operate in the background for extended periods, prioritizing cost over latency. The conversation explores the entire intelligence stack, encompassing software, chips, and power, and their interconnections. Movva details the trade-offs between speed and cost in GPUs, his strategy for acquiring chips and power, and his contrarian perspective on Nvidia. He also discusses why the premium charged by frontier labs for being ahead might not be sustainable.",
+      "reason": "The interview features Neil Movva, founder of Sail, discussing consequential AI infrastructure (inference, chips, power) and business strategy, including a contrarian view on Nvidia and the economics of frontier models.",
       "published_at": "2026-08-25T08:00:00+00:00",
       "first_seen_at": "2026-08-25T08:17:10+00:00",
       "appearances": [

@@ -3,7 +3,7 @@
   <channel>
     <title>AI Radar</title>
     <link>https://ai-radar.merimerimeri.com/</link>
-    <description>Noteworthy AI podcast and video episodes, summarized from publisher notes.</description>
+    <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
       <title>Google DeepMind: The Mathematics of AI Uncertainty</title>
@@ -32,6 +32,13 @@
       <guid isPermaLink="false">ai-radar:ddb9e655df1f0e61943b</guid>
       <pubDate>Wed, 26 Aug 2026 11:02:32 +0000</pubDate>
       <description>Nathan interviews Bronson Schoen, a Member of Technical Staff at Apollo Research and former Apple and Nvidia self-driving engineer. They discuss what raw frontier-model chain-of-thought reveals during reinforcement learning. Schoen details Apollo and OpenAI&amp;#x27;s work on metagaming, reward-seeking, and motivated reasoning. This includes transcripts where models reason about graders and safety reviews, sometimes diagnosing a deception test and then lying anyway. The episode explains why chain-of-thought monitoring is both indispensable and unreliable as reasoning traces grow enormous, polysemantic, and increasingly shaped by optimization pressure. The discussion highlights the challenge for labs to differentiate between confused reward-hacking, grader-seeking behavior, and more dangerous long-horizon objectives before models become harder to audit.&lt;br&gt;&lt;br&gt;&lt;a href="https://www.cognitiverevolution.ai/rl-s-a-hell-of-a-drug-metagaming-reward-seeking-motivated-cot-reasoning-bronson-schoen-apollo/" rel="noopener noreferrer"&gt;Podcast&lt;/a&gt; | &lt;a href="https://www.youtube.com/watch?v=EimoamE3mTI" rel="noopener noreferrer"&gt;YouTube&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Invest Like the Best: Neil Movva - Making AI 10x Cheaper</title>
+      <link>https://colossus.com/episode/from-transistor-to-token/</link>
+      <guid isPermaLink="false">ai-radar:legacy-2199</guid>
+      <pubDate>Tue, 25 Aug 2026 08:00:00 +0000</pubDate>
+      <description>Neil Movva, founder of Sail, is interviewed about his company&amp;#x27;s focus on building a &amp;quot;token factory&amp;quot; for AI inference. Sail aims to reduce the cost of tokens for a future where AI agents operate in the background for extended periods, prioritizing cost over latency. The conversation explores the entire intelligence stack, encompassing software, chips, and power, and their interconnections. Movva details the trade-offs between speed and cost in GPUs, his strategy for acquiring chips and power, and his contrarian perspective on Nvidia. He also discusses why the premium charged by frontier labs for being ahead might not be sustainable.&lt;br&gt;&lt;br&gt;&lt;a href="https://colossus.com/episode/from-transistor-to-token/" rel="noopener noreferrer"&gt;Podcast&lt;/a&gt; | &lt;a href="https://www.youtube.com/watch?v=uyzqxIoiobU" rel="noopener noreferrer"&gt;YouTube&lt;/a&gt;</description>
     </item>
     <item>
       <title>Why Sam Altman Isn't an AI Jobs Doomer</title>

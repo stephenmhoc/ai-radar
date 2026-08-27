@@ -8,7 +8,7 @@ repository is public.
 ## Architecture at a glance
 
 ```text
-Podcast and YouTube feeds
+Podcast, YouTube, and newsletter feeds
           |
           v
 Homelab Docker worker -----> OpenRouter Auto Router
@@ -39,10 +39,10 @@ existing site and RSS feed remain available from Cloudflare; only updates stop.
 
 | Component | Responsibility | Durable state |
 | --- | --- | --- |
-| Homelab worker | Fetch sources, classify episodes, request summaries, render static files, test, commit, and push | Git checkout mounted at `/app` |
+| Homelab worker | Fetch sources, classify items, request summaries, render static files, test, commit, and push | Git checkout mounted at `/app` |
 | OpenRouter | Select a compatible model through `openrouter/auto` and return one strict structured result per new candidate | None owned by AI Radar |
 | GitHub | Canonical repository, publication history, and handoff to hosting | `main`, especially `data/` and `public/` |
-| Cloudflare Pages | Serve the static episode archive, source list, and RSS feed | Deployed copy of `public/` |
+| Cloudflare Pages | Serve the static item archive, source list, and RSS feed | Deployed copy of `public/` |
 | Ofelia | Run the worker on an explicit Docker-native schedule | Docker labels on the worker |
 | Dockge | Manage the worker and scheduler Compose stacks | `/opt/ai-radar` and `/opt/scheduler` |
 | Sentry | Receive source, LLM, pipeline-phase, and unexpected failures | Sentry project events |
@@ -59,30 +59,31 @@ production branch.
 
 Important paths:
 
-- `config.toml` defines sources, editorial rules, public URLs, and LLM settings.
+- `config.toml` defines podcast, YouTube, and newsletter sources, editorial rules, public URLs, and LLM settings.
 - `data/items.json` is the canonical database-free archive. It records seen,
   skipped, and published items and is committed to Git.
-- `public/index.html` is the generated static site.
-- `public/feeds.html` is the generated list of all active podcast and YouTube
-  feeds and shares the site's inline visual system.
+- `public/index.html` is the generated static item archive.
+- `public/feeds.html` is the generated list of all active podcast, YouTube, and
+  newsletter feeds and shares the site's inline visual system.
 - `public/feed.xml` is the generated RSS feed.
 - `public/_headers` sets the RSS content type and static security headers on
   Cloudflare Pages.
-- `radar.py` performs collection, selection, summarization, and rendering.
+- `radar.py` performs collection, selection, summarization, targeted
+  reconsideration, and rendering.
 - `scheduled_cycle.py` owns the pull-to-push production transaction.
 - `error_reporter.py` owns Sentry event reporting.
 - `deploy/` contains the version-controlled templates for both homelab stacks.
 
 The static outputs are build artifacts, but they are intentionally tracked.
 Git therefore contains both the source archive and the exact files that
-Cloudflare serves. At the 2026-08-26 hardening point, the repaired archive
-contained 1,730 canonical records, 2,617 unique appearances, 224 published
-episodes, and two deferred sparse records. The site and RSS feed each exposed
-the same 224 published episodes, and the feeds page listed all 47 active
-sources. The repair removed 245 incorrectly grouped appearances and 18 empty
-duplicate/corrupt seen records without changing any existing long summary or
-calling OpenRouter. Future archive evolution is append-only unless an explicit,
-verified repair is required.
+Cloudflare serves. At the 2026-08-26 newsletter expansion point, the archive
+contained 1,745 canonical records, 2,635 unique appearances, 229 published
+items, and no deferred sparse records. The site and RSS feed each exposed the
+same 229 published items, and the feeds page listed all 55 active sources,
+including eight newsletters. The preceding repair removed 245 incorrectly
+grouped appearances and 18 empty duplicate/corrupt seen records without changing
+any existing long summary or calling OpenRouter. Future archive evolution is
+append-only unless an explicit, verified repair is required.
 
 ### Summary contract
 
@@ -106,8 +107,22 @@ appearance gains better notes or a matching appearance adds useful metadata.
 Publisher notes, titles, URLs, and names are explicitly treated as untrusted
 prompt data. The local archive validator also requires unique item and
 appearance IDs, source-independent YouTube video identity, at most one podcast
-and one YouTube appearance per canonical item, safe HTTP(S) links, valid
-timezone-aware timestamps, allowed statuses, and exact generated links.
+appearance, one YouTube appearance, and one newsletter appearance per canonical
+item, safe HTTP(S) links, valid timezone-aware timestamps, allowed statuses, and
+exact generated links. Newsletter RSS parsing prefers full encoded article
+content over teaser descriptions and bounds stored publisher text at 24,000
+characters per appearance. Newsletter-only items with fewer than 400 characters
+of publisher text are deferred without a model call so paywall teasers do not
+create weak summaries or repeated validation failures.
+
+Frontier-lab interviews remain the primary editorial signal. The same structured
+decision can include unusually substantive frontier-model research, AI
+infrastructure, AI-native software and engineering, strategy, policy, and
+Physical AI work. Newsletter issues require original reporting, research,
+interviews, or durable analysis; generic link roundups and incidental AI mentions
+remain out of scope. A targeted `radar.py reconsider --match` command exists for
+one unpublished item after a policy change, so a narrow correction does not send
+the existing archive back through OpenRouter.
 
 The Cloudflare portion of this architecture remains free static Pages.
 OpenRouter is a separate service: `openrouter/auto` can route to paid models.
@@ -264,7 +279,8 @@ cycle performs these phases in order:
    receive one shared delayed retry after 60 seconds before they count as
    source errors.
 5. Match exact media identity first, allow fuzzy matching only across media,
-   and retain at most one podcast and one YouTube appearance per item.
+   and retain at most one podcast, one YouTube, and one newsletter appearance
+   per item.
 6. Defer sparse metadata or make one structured OpenRouter request and store
    the decision and both summaries only after local validation succeeds.
    Malformed structured responses retry within the configured bounded LLM

@@ -43,9 +43,15 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   and prove the migration is lossless.
 - Sparse notes should be deferred and reconsidered only after richer metadata
   arrives; invented or weakly grounded summaries are worse than no publication.
-- A canonical item may have at most one podcast appearance and one YouTube
-  appearance. YouTube identity is the source-independent video ID; never group
-  distinct same-medium episodes through fuzzy title matching.
+- A canonical item may have at most one podcast appearance, one YouTube
+  appearance, and one newsletter appearance. YouTube identity is the
+  source-independent video ID; never group distinct same-medium items through
+  fuzzy title matching.
+- Frontier-lab interviews remain the highest-priority editorial signal. Also
+  admit unusually substantive AI research, infrastructure, product/engineering,
+  strategy, policy, and Physical AI work. Newsletter issues need original
+  reporting, research, interviews, or durable analysis; exclude generic
+  roundups and incidental AI mentions.
 - Keep source failures isolated and report them, but preserve the scheduled
   cycle's degraded/nonzero result when any source or LLM error occurred.
 - An undated feed entry can never clear the lookback cutoff, so a source counts
@@ -117,7 +123,8 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 - Preserve deterministic rendering. Re-running `build-site` with unchanged
   archive/config must not alter output.
 - Preserve `public/feeds.html` as a deterministic rendering of every active
-  source in `config.toml`, and keep its link visually secondary in the header.
+  podcast, YouTube, and newsletter source in `config.toml`, and keep its link
+  visually secondary in the header.
 - Avoid broad archive rewrites when a narrow migration is sufficient. When a
   large JSON diff is necessary, compare IDs, order, statuses, links, and old/new
   semantic fields programmatically.
