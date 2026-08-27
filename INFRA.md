@@ -85,6 +85,13 @@ grouped appearances and 18 empty duplicate/corrupt seen records without changing
 any existing long summary or calling OpenRouter. Future archive evolution is
 append-only unless an explicit, verified repair is required.
 
+The generated site and RSS preserve the AI Radar editorial headline and summary
+while presenting every appearance with its medium, readable source name, and
+original publisher title linked to the source item. RSS titles also name the
+primary source and expose it through the standard RSS `source` element when the
+configured feed is available. This is derived entirely from canonical archive
+and configuration state; it does not require an archive migration or model call.
+
 ### Summary contract
 
 New candidates use a single OpenRouter chat-completions call. The configured

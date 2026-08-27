@@ -110,7 +110,19 @@ class StaticPublisherTests(unittest.TestCase):
 
         self.assertEqual(stats["published"], len(published))
         self.assertEqual(html_text.count('<li class="episode">'), len(published))
+        self.assertEqual(html_text.count('<ul class="source-list"'), len(published))
+        self.assertEqual(
+            html_text.count('<li class="source-item">'),
+            sum(len(item["appearances"]) for item in published),
+        )
         self.assertEqual(len(rss.findall("./channel/item")), len(published))
+        self.assertEqual(len(rss.findall("./channel/item/source")), len(published))
+        self.assertTrue(
+            all(
+                "<strong>Sources</strong>" in (node.findtext("description") or "")
+                for node in rss.findall("./channel/item")
+            )
+        )
         self.assertEqual(feeds_text.count('<li class="feed-item">'), len(settings.sources))
         self.assertIn('href="/feeds.html"', html_text)
         self.assertIn('href="/"', feeds_text)
@@ -211,6 +223,58 @@ class FeedAndUrlTests(unittest.TestCase):
             len(entries[0]["description"]), radar.MAX_APPEARANCE_DESCRIPTION_CHARS
         )
 
+    def test_source_names_and_original_titles_are_clear_on_the_site_and_in_rss(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = make_settings(
+                pathlib.Path(directory),
+                sources=(
+                    make_source(),
+                    make_source(kind="youtube", name="Test Show — YouTube"),
+                ),
+            )
+        item = published_item()
+        item["title"] = "The editorial AI Radar headline"
+        item["appearances"].append(
+            make_appearance(
+                kind="youtube",
+                source_name="Test Show — YouTube",
+                guid="video-1",
+                title="The original video title",
+                url="https://www.youtube.com/watch?v=video-1",
+            )
+        )
+        item["links"] = radar.source_links(
+            item["appearances"], preferred_title=str(item["source_title"])
+        )
+        radar.validate_archive({"version": 1, "items": [item]})
+        html_text = radar.render_html(settings, [item])
+        self.assertIn('<span class="source-kind">Podcast</span>', html_text)
+        self.assertIn("Test Show", html_text)
+        self.assertIn('<span class="source-title-label">Episode:</span>', html_text)
+        self.assertIn("Building Useful AI Agents&nbsp;↗", html_text)
+        self.assertIn('<span class="source-kind">YouTube</span>', html_text)
+        self.assertIn("The original video title&nbsp;↗", html_text)
+        self.assertNotIn("Test Show — YouTube", html_text)
+
+        rss = ET.fromstring(radar.render_rss(settings, [item]))
+        rss_item = rss.find("./channel/item")
+        assert rss_item is not None
+        self.assertEqual(
+            rss_item.findtext("title"), "The editorial AI Radar headline — Test Show"
+        )
+        self.assertEqual(rss_item.findtext("link"), "https://example.com/episode-1")
+        source = rss_item.find("source")
+        assert source is not None
+        self.assertEqual(source.text, "Test Show")
+        self.assertEqual(source.attrib["url"], "https://example.com/test-show.xml")
+        description = rss_item.findtext("description") or ""
+        self.assertIn("<strong>Podcast · Test Show</strong>", description)
+        self.assertIn("<strong>Episode:</strong>", description)
+        self.assertIn("Building Useful AI Agents</a>", description)
+        self.assertIn("<strong>YouTube · Test Show</strong>", description)
+        self.assertIn("<strong>Video:</strong>", description)
+        self.assertIn("The original video title</a>", description)
+
     def test_newsletter_is_rendered_and_used_as_the_rss_link(self) -> None:
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
         item = published_item()
@@ -218,15 +282,21 @@ class FeedAndUrlTests(unittest.TestCase):
             kind="newsletter",
             source_name="AI Letter",
             guid="article-1",
+            title="The original newsletter issue title",
             url="https://example.com/article-1",
         )
         item["appearances"] = [newsletter]
         item["links"] = {"newsletter": "https://example.com/article-1"}
         radar.validate_archive({"version": 1, "items": [item]})
-        self.assertIn(">Newsletter</a>", radar.render_html(settings, [item]))
+        html_text = radar.render_html(settings, [item])
+        self.assertIn('<span class="source-kind">Newsletter</span>', html_text)
+        self.assertIn("AI Letter", html_text)
+        self.assertIn('<span class="source-title-label">Issue:</span>', html_text)
         rss = ET.fromstring(radar.render_rss(settings, [item]))
-        self.assertEqual(
-            rss.findtext("./channel/item/link"), "https://example.com/article-1"
+        self.assertEqual(rss.findtext("./channel/item/link"), "https://example.com/article-1")
+        self.assertIn(
+            "<strong>Issue:</strong>",
+            rss.findtext("./channel/item/description") or "",
         )
 
     def test_unsafe_episode_link_falls_back_to_source_homepage(self) -> None:

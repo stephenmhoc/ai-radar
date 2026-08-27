@@ -157,10 +157,42 @@
       text-transform: uppercase;
     }
 
-    .episode-meta a {
-      color: #465b3c;
+    .source-list {
+      display: grid;
+      gap: 0.8rem;
+      margin: 1rem 0 0;
+      padding: 0 0 0 1rem;
+      border-left: 3px solid var(--sage);
+      list-style: none;
+    }
+
+    .source-name {
+      margin: 0;
+      color: #363c35;
+      font-size: 0.82rem;
       font-weight: 750;
     }
+
+    .source-kind {
+      color: #52644a;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .source-title {
+      margin: 0.15rem 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .source-title-label {
+      margin-right: 0.35rem;
+      font-weight: 700;
+    }
+
+    .source-title a { color: #465b3c; }
 
     h2 {
       margin: 0;

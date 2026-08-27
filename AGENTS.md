@@ -27,6 +27,9 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   `GENERATED_FILES` is the single list of them; the scheduled cycle stages
   exactly that list, so a new artifact cannot be rendered but left uncommitted.
 - The site uses `short_summary`; RSS uses `long_summary`.
+- The site and RSS identify each appearance by medium, source name, and original
+  publisher title. RSS item titles name the primary source and use the standard
+  `source` element when its configured feed is available.
 - A short summary is one or two sentences and no more than 55 words.
 - New editorial decisions use one OpenRouter call with strict structured output
   for `include`, `title`, `short_summary`, `long_summary`, and `reason`.

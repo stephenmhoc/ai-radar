@@ -34,6 +34,11 @@ GENERATED_FILES = ("index.html", "feeds.html", "feed.xml", "_headers")
 RETRYABLE_HTTP_CODES = frozenset({408, 409, 425, 429})
 ALLOWED_STATUSES = frozenset({"seen", "deferred", "skipped", "published"})
 APPEARANCE_KINDS = frozenset({"newsletter", "podcast", "youtube"})
+APPEARANCE_PRESENTATION = {
+    "podcast": ("Podcast", "Episode"),
+    "youtube": ("YouTube", "Video"),
+    "newsletter": ("Newsletter", "Issue"),
+}
 MAX_FEED_BYTES = 16 * 1024 * 1024
 MAX_LLM_RESPONSE_BYTES = 1024 * 1024
 MAX_REDIRECTS = 5
@@ -302,6 +307,36 @@ def source_family(name: str) -> str:
         re.sub(r"\s*[—-]\s*(?:Newsletter|YouTube)\s*$", "", name, flags=re.IGNORECASE)
         .strip()
         .casefold()
+    )
+
+
+def source_display_name(appearance_value: dict[str, Any]) -> str:
+    name = clean_text(str(appearance_value.get("source") or ""))
+    kind = str(appearance_value.get("kind") or "")
+    if kind in {"newsletter", "youtube"}:
+        name = re.sub(
+            rf"\s*[—-]\s*{re.escape(APPEARANCE_PRESENTATION[kind][0])}\s*$",
+            "",
+            name,
+            flags=re.IGNORECASE,
+        ).strip()
+    return name
+
+
+def ordered_appearances(item: dict[str, Any]) -> list[dict[str, Any]]:
+    order = {kind: index for index, kind in enumerate(APPEARANCE_PRESENTATION)}
+    values = [
+        value
+        for value in item.get("appearances", [])
+        if isinstance(value, dict) and public_http_url(value.get("url"))
+    ]
+    return sorted(
+        values,
+        key=lambda value: (
+            order.get(str(value.get("kind") or ""), len(order)),
+            source_display_name(value).casefold(),
+            clean_text(str(value.get("title") or "")).casefold(),
+        ),
     )
 
 
@@ -1644,18 +1679,17 @@ def render_html(
 ) -> str:
     rows: list[str] = []
     for item in items:
-        links = render_links(item.get("links", {}), separator=" · ")
         date = date_label(item.get("published_at"))
         summary = escape_public_text(clean_text(str(item.get("short_summary") or "")))
-        link_suffix = f'<span aria-hidden="true">·</span>{links}' if links else ""
+        sources = render_source_details(item)
         rows.append(
             '<li class="episode">'
             '<article class="episode-content">'
             '<p class="episode-meta">'
             f'<time datetime="{html.escape(str(item.get("published_at") or ""))}">{html.escape(date)}</time>'
-            f"{link_suffix}"
             "</p>"
             f'<h2>{html.escape(str(item["title"]))}</h2>'
+            f"{sources}"
             f'<p class="summary">{summary}</p>'
             "</article>"
             "</li>"
@@ -1822,10 +1856,42 @@ def render_html(
       text-transform: uppercase;
     }}
 
-    .episode-meta a {{
-      color: #465b3c;
+    .source-list {{
+      display: grid;
+      gap: 0.8rem;
+      margin: 1rem 0 0;
+      padding: 0 0 0 1rem;
+      border-left: 3px solid var(--sage);
+      list-style: none;
+    }}
+
+    .source-name {{
+      margin: 0;
+      color: #363c35;
+      font-size: 0.82rem;
       font-weight: 750;
     }}
+
+    .source-kind {{
+      color: #52644a;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }}
+
+    .source-title {{
+      margin: 0.15rem 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }}
+
+    .source-title-label {{
+      margin-right: 0.35rem;
+      font-weight: 700;
+    }}
+
+    .source-title a {{ color: #465b3c; }}
 
     h2 {{
       margin: 0;
@@ -1972,24 +2038,59 @@ def render_feeds_html(settings: Settings) -> str:
     )
 
 
-def render_links(links: dict[str, str], *, separator: str) -> str:
-    values: list[str] = []
-    podcast_url = public_http_url(links.get("podcast"))
-    if podcast_url:
-        values.append(
-            f'<a href="{html.escape(podcast_url, quote=True)}" rel="noopener noreferrer">Podcast</a>'
+def render_source_details(item: dict[str, Any]) -> str:
+    rows: list[str] = []
+    for appearance_value in ordered_appearances(item):
+        kind = str(appearance_value.get("kind") or "")
+        labels = APPEARANCE_PRESENTATION.get(kind)
+        if labels is None:
+            continue
+        kind_label, title_label = labels
+        source_name = source_display_name(appearance_value)
+        source_title = clean_text(str(appearance_value.get("title") or ""))
+        url = public_http_url(appearance_value.get("url"))
+        if not source_name or not source_title or url is None:
+            continue
+        rows.append(
+            '<li class="source-item">'
+            '<p class="source-name">'
+            f'<span class="source-kind">{html.escape(kind_label)}</span>'
+            ' <span aria-hidden="true">·</span> '
+            f"{escape_public_text(source_name)}"
+            "</p>"
+            '<p class="source-title">'
+            f'<span class="source-title-label">{html.escape(title_label)}:</span>'
+            f'<a href="{html.escape(url, quote=True)}" rel="noopener noreferrer">'
+            f"{escape_public_text(source_title)}&nbsp;↗</a>"
+            "</p>"
+            "</li>"
         )
-    youtube_url = public_http_url(links.get("youtube"))
-    if youtube_url:
-        values.append(
-            f'<a href="{html.escape(youtube_url, quote=True)}" rel="noopener noreferrer">YouTube</a>'
+    if not rows:
+        return ""
+    return '<ul class="source-list" aria-label="Content sources">' + "".join(rows) + "</ul>"
+
+
+def rss_source_details(item: dict[str, Any]) -> str:
+    rows: list[str] = []
+    for appearance_value in ordered_appearances(item):
+        kind = str(appearance_value.get("kind") or "")
+        labels = APPEARANCE_PRESENTATION.get(kind)
+        if labels is None:
+            continue
+        kind_label, title_label = labels
+        source_name = source_display_name(appearance_value)
+        source_title = clean_text(str(appearance_value.get("title") or ""))
+        url = public_http_url(appearance_value.get("url"))
+        if not source_name or not source_title or url is None:
+            continue
+        rows.append(
+            f"<strong>{html.escape(kind_label)} · {html.escape(source_name)}</strong><br>"
+            f"<strong>{html.escape(title_label)}:</strong> "
+            f'<a href="{html.escape(url, quote=True)}">{html.escape(source_title)}</a>'
         )
-    newsletter_url = public_http_url(links.get("newsletter"))
-    if newsletter_url:
-        values.append(
-            f'<a href="{html.escape(newsletter_url, quote=True)}" rel="noopener noreferrer">Newsletter</a>'
-        )
-    return separator.join(values)
+    if not rows:
+        return ""
+    return "<br><br><strong>Sources</strong><br><br>" + "<br><br>".join(rows)
 
 
 def render_rss(settings: Settings, items: list[dict[str, Any]]) -> str:
@@ -2001,7 +2102,13 @@ def render_rss(settings: Settings, items: list[dict[str, Any]]) -> str:
     ET.SubElement(channel, "language").text = "en-us"
     for item in items:
         node = ET.SubElement(channel, "item")
-        ET.SubElement(node, "title").text = str(item["title"])
+        appearances = ordered_appearances(item)
+        primary_appearance = appearances[0] if appearances else None
+        source_name = source_display_name(primary_appearance) if primary_appearance else ""
+        item_title = str(item["title"])
+        if source_name:
+            item_title = f"{item_title} — {source_name}"
+        ET.SubElement(node, "title").text = item_title
         links = item.get("links", {})
         primary_link = (
             public_http_url(links.get("podcast"))
@@ -2015,10 +2122,25 @@ def render_rss(settings: Settings, items: list[dict[str, Any]]) -> str:
         published_at = parse_timestamp(item.get("published_at"))
         if published_at is not None:
             ET.SubElement(node, "pubDate").text = email.utils.format_datetime(published_at)
+        if primary_appearance is not None:
+            configured_source = next(
+                (
+                    source
+                    for source in settings.sources
+                    if source.kind == primary_appearance.get("kind")
+                    and source.name == primary_appearance.get("source")
+                ),
+                None,
+            )
+            if configured_source is not None:
+                source_feed_url = public_http_url(configured_source.feed_url)
+                if source_feed_url:
+                    source_node = ET.SubElement(node, "source", {"url": source_feed_url})
+                    source_node.text = source_name
         description_parts = [html.escape(clean_text(str(item.get("long_summary") or "")))]
-        source_html = render_links(links, separator=" | ")
+        source_html = rss_source_details(item)
         if source_html:
-            description_parts.extend(["<br><br>", source_html])
+            description_parts.append(source_html)
         ET.SubElement(node, "description").text = "".join(description_parts)
     ET.indent(rss, space="  ")
     return '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(rss, encoding="unicode") + "\n"

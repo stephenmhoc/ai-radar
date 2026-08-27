@@ -11,6 +11,12 @@ There are no transcripts, downloads, images, JavaScript, external stylesheets,
 detail pages, or runtime database. Inline CSS gives the text-only pages an
 editorial, responsive layout without adding runtime assets.
 
+Every published item keeps its AI Radar headline and summary while clearly
+identifying each original appearance by medium, source name, and publisher
+title. The title links directly to the episode, video, or newsletter issue. RSS
+also includes the primary source name in the item title, a standard source
+element, and the complete source list in the description.
+
 ## Files
 
 - `config.toml`: podcast, YouTube, and newsletter feeds, editorial roster, and
