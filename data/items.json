@@ -61445,6 +61445,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/GceVfLmc5J4"
       }
+    },
+    {
+      "id": "822f321b1a97c0090ad9",
+      "status": "skipped",
+      "title": "How to Build a Personalized Meal Planner with ChatGPT Work",
+      "source_title": "How to Build a Personalized Meal Planner with ChatGPT Work",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a basic consumer-focused workflow demonstration rather than a substantive technical or strategic discussion or interview.",
+      "published_at": "2026-08-27T16:16:32+00:00",
+      "first_seen_at": "2026-08-27T17:17:26+00:00",
+      "appearances": [
+        {
+          "id": "e92c0f9059057f3a301b",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:t64oZKCdG8Q",
+          "title": "How to Build a Personalized Meal Planner with ChatGPT Work",
+          "description": "Follow a working mom as she turns a simple note about her daughter’s food preferences and allergies into a personalized weekly meal planner. See how she creates a shareable site, prepares an Instacart cart for approval, captures meal feedback from her phone, and sets up a weekly task to start the next plan.",
+          "url": "https://www.youtube.com/watch?v=t64oZKCdG8Q",
+          "published_at": "2026-08-27T16:16:32+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=t64oZKCdG8Q"
+      }
     }
   ]
 }
