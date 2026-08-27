@@ -185,14 +185,13 @@ def _run_locked_cycle(reporter: ErrorReporter) -> int:
         )
 
         phase = "git-stage"
+        # radar owns the list of generated files so a new output cannot be
+        # rendered but left unstaged.
         command(
             "git",
             "add",
             "data/items.json",
-            "public/index.html",
-            "public/feeds.html",
-            "public/feed.xml",
-            "public/_headers",
+            *(f"public/{name}" for name in radar.GENERATED_FILES),
         )
         diff = subprocess.run(
             ["git", "diff", "--cached", "--quiet"],

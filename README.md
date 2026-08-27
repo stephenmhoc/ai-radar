@@ -47,7 +47,8 @@ python3 radar.py run --lookback-days 7
 
 Sparse publisher notes produce a `deferred` record that is reconsidered only
 when richer metadata arrives. Model, provider, and local-validation failures
-are not persisted, so a later run can retry them. New editorial decisions use
+are not persisted at all, so a later run can retry them; a missing API key
+therefore fails every summary rather than deferring anything. New editorial decisions use
 one strict structured-output request returning both the one-to-two-sentence
 site summary and four-to-eight-sentence RSS summary. The application validates
 the result locally, caps output tokens, and logs the actual routed model and
@@ -69,7 +70,8 @@ transaction. Each run:
 
 1. Validates a clean checkout and publishes any previously stranded commit.
 2. Fetches sources with bounded responses, safe redirects, and retries. Failed
-   YouTube feeds get one shared delayed retry before they count as errors.
+   YouTube feeds get one shared delayed retry before they count as errors. A
+   source fails on metadata only when no entry in its feed carries a valid date.
 3. Defers sparse metadata or makes one structured OpenRouter request.
 4. Validates `data/items.json` and rebuilds all tracked static files.
 5. Runs the complete local verification suite.
@@ -83,9 +85,10 @@ missing or stale heartbeat marks the worker unhealthy and emits one grouped
 Sentry event per outage. Widespread YouTube failures use a separate RSS-outage
 fingerprint after the delayed retry and report only once until a recovered cycle
 clears the local alert latch. Malformed LLM structured responses use the existing
-bounded retry policy and reach Sentry only if every attempt fails. A total
-Docker-host or network outage still requires an external monitor because the
-failed host cannot report its own loss.
+bounded retry policy and reach Sentry only if every attempt fails. A response
+truncated at the output-token cap is reported immediately instead, since retrying
+buys the same truncation. A total Docker-host or network outage still requires an
+external monitor because the failed host cannot report its own loss.
 
 ## Continuous integration
 

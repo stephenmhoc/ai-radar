@@ -97,6 +97,8 @@ def report_once(error: SchedulerHeartbeatError, *, extra: dict[str, object]) -> 
 
 
 def main() -> int:
+    max_age: int | None = None
+    heartbeat: dict[str, object] = {}
     try:
         max_age = max_age_seconds_from_env()
         age, heartbeat = heartbeat_age_seconds()
@@ -111,7 +113,7 @@ def main() -> int:
             )
     except SchedulerHeartbeatError as exc:
         print(f"error: {exc}", file=sys.stderr)
-        report_once(exc, extra={"heartbeat": locals().get("heartbeat", {}), "max_age_seconds": locals().get("max_age")})
+        report_once(exc, extra={"heartbeat": heartbeat, "max_age_seconds": max_age})
         return 1
 
     ALERT_PATH.unlink(missing_ok=True)

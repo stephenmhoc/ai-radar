@@ -23,13 +23,18 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 
 - `data/items.json` is canonical state and belongs in Git.
 - `public/index.html`, `public/feeds.html`, `public/feed.xml`, and
-  `public/_headers` are generated, tracked production artifacts.
+  `public/_headers` are generated, tracked production artifacts. `radar.py`'s
+  `GENERATED_FILES` is the single list of them; the scheduled cycle stages
+  exactly that list, so a new artifact cannot be rendered but left uncommitted.
 - The site uses `short_summary`; RSS uses `long_summary`.
 - A short summary is one or two sentences and no more than 55 words.
 - New editorial decisions use one OpenRouter call with strict structured output
   for `include`, `title`, `short_summary`, `long_summary`, and `reason`.
 - A malformed structured response is retryable within the configured bounded
-  LLM attempt policy; report it only if every attempt fails.
+  LLM attempt policy; report it only if every attempt fails. A response the
+  provider truncated at the output-token cap (`finish_reason` of `length`) is
+  the exception: it fails immediately as `LLMTruncationError`, because every
+  retry would buy the same truncation.
 - The configured model is `openrouter/auto`, and routing must require providers
   that support the requested structured-output parameters.
 - Validate model output locally even when the provider claims schema support.
@@ -43,6 +48,13 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   distinct same-medium episodes through fuzzy title matching.
 - Keep source failures isolated and report them, but preserve the scheduled
   cycle's degraded/nonzero result when any source or LLM error occurred.
+- An undated feed entry can never clear the lookback cutoff, so a source counts
+  as failed on metadata only when no entry in its feed has a valid date. A
+  partial mix is a stderr warning: a few malformed archive rows must not alert
+  on every hourly cycle forever.
+- Published summaries have one rule set, `summary_contract_errors`. Stored items
+  are held to the shape rules only; the prose rules apply to freshly generated
+  summaries, because imported `legacy-*` long summaries predate them.
 - Retry failed YouTube fetches once as a shared delayed pass before reporting
   them. Widespread failures that survive the retry use the dedicated
   `youtube-rss-outage` Sentry fingerprint and a persistent once-per-outage alert

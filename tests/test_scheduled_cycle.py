@@ -8,6 +8,7 @@ import tempfile
 import unittest
 from unittest import mock
 
+import radar
 import scheduled_cycle
 
 
@@ -43,9 +44,10 @@ def configure_repo(root: pathlib.Path) -> None:
 class ScheduledCycleTests(unittest.TestCase):
     def test_success_flushes_reporter_and_updates_release_tag(self) -> None:
         reporter = RecordingReporter()
-        radar = mock.Mock()
-        radar.lookback_days_from_env.return_value = 7
-        radar.run_cycle.return_value = GOOD_STATS
+        radar_module = mock.Mock()
+        radar_module.GENERATED_FILES = radar.GENERATED_FILES
+        radar_module.lookback_days_from_env.return_value = 7
+        radar_module.run_cycle.return_value = GOOD_STATS
         with (
             mock.patch.object(scheduled_cycle, "write_heartbeat"),
             mock.patch.object(scheduled_cycle, "publication_lock", return_value=contextlib.nullcontext()),
@@ -53,7 +55,7 @@ class ScheduledCycleTests(unittest.TestCase):
             mock.patch.object(scheduled_cycle, "publish_ahead_commits"),
             mock.patch.object(scheduled_cycle, "command_output", return_value="abc123"),
             mock.patch.object(scheduled_cycle, "command"),
-            mock.patch.object(scheduled_cycle, "load_radar_module", return_value=radar),
+            mock.patch.object(scheduled_cycle, "load_radar_module", return_value=radar_module),
             mock.patch.object(
                 scheduled_cycle.subprocess,
                 "run",
