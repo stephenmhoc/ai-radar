@@ -61990,6 +61990,34 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/internet-hype-and-real-world-change/"
       }
+    },
+    {
+      "id": "9c13948bd34a832ae84e",
+      "status": "skipped",
+      "title": "Will AGI be one mind? Rich Sutton says no",
+      "source_title": "Will AGI be one mind? Rich Sutton says no",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a short video featuring Rich Sutton, but he is not on the list of qualifying individuals. The content discusses AGI and continual learning, but it does not offer sufficiently deep technical or strategic insights from a qualifying source to meet the inclusion criteria.",
+      "published_at": "2026-08-28T19:00:19+00:00",
+      "first_seen_at": "2026-08-28T19:17:21+00:00",
+      "appearances": [
+        {
+          "id": "ce8979369467d2c9adc3",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:bOXP_Lb3s4g",
+          "title": "Will AGI be one mind? Rich Sutton says no",
+          "description": "If continual learning works, is the endpoint a single mind that can swing from a tree branch and build a spaceship? Rich Sutton: \"It's a single design. There'll be many minds.\" Khurram Javed's reason reads like a proof — two equally complex systems can't model each other, so no single system ever learns everything.\n\n#ai #llm #continuallearning",
+          "url": "https://www.youtube.com/shorts/bOXP_Lb3s4g",
+          "published_at": "2026-08-28T19:00:19+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/bOXP_Lb3s4g"
+      }
     }
   ]
 }
