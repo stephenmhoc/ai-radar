@@ -61876,6 +61876,62 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=Zx1Ec8LWFeM"
       }
+    },
+    {
+      "id": "97ecaa6f7c66fcaa1474",
+      "status": "skipped",
+      "title": "Inclusive Approach in Global AI Standards",
+      "source_title": "Inclusive Approach in Global AI Standards",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest and organization are not on the priority roster, and this short podcast clip on general AI standards lacks the substantive technical depth or high-priority industry relevance required.",
+      "published_at": "2026-08-28T15:54:03+00:00",
+      "first_seen_at": "2026-08-28T16:17:22+00:00",
+      "appearances": [
+        {
+          "id": "a4624cc8596ec736d51c",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:sjYAaRK74lo",
+          "title": "Inclusive Approach in Global AI Standards",
+          "description": "How do you build AI standards that work across different countries, industries, and use cases?\n\nIn this clip, Angie discusses why global perspectives matter when developing standards for agentic AI, from robotics and regional adoption to emerging regulations and challenges around transparency.\n\nFEATURING:\n\nGuest - Angie Jones (VP of the Agentic AI Foundation)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast)\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast)\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://us06web.zoom.us/webinar/register/WN_tMivXvPXRJ6pi5526S5etw#/registration\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
+          "url": "https://www.youtube.com/watch?v=sjYAaRK74lo",
+          "published_at": "2026-08-28T15:54:03+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=sjYAaRK74lo"
+      }
+    },
+    {
+      "id": "4f126a3fe678cd549e1f",
+      "status": "skipped",
+      "title": "⚙️How do we build an AI ecosystem where agents, tools, and systems can work together at scale?",
+      "source_title": "⚙️How do we build an AI ecosystem where agents, tools, and systems can work together at scale?",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a promotional YouTube short clip rather than a full substantive interview or technical report, and the speaker/organization is outside the primary target roster.",
+      "published_at": "2026-08-28T16:00:43+00:00",
+      "first_seen_at": "2026-08-28T16:17:25+00:00",
+      "appearances": [
+        {
+          "id": "d8d491f700ddb70dfeb0",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:UoPVBxkcbvg",
+          "title": "⚙️How do we build an AI ecosystem where agents, tools, and systems can work together at scale?",
+          "description": "In this latest episode, Angie Jones, VP of the Agentic AI Foundation, joins us to discuss the open standards and projects shaping the agentic future, including MCP, A2A, Goose, and more. They also dig into making AI adoption accessible beyond developers and why open, neutral standards will matter as the ecosystem grows.\n\n➡️ Full episode linked!\n\nListen more at https://practicalai.show/",
+          "url": "https://www.youtube.com/shorts/UoPVBxkcbvg",
+          "published_at": "2026-08-28T16:00:43+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/UoPVBxkcbvg"
+      }
     }
   ]
 }
