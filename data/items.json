@@ -61932,6 +61932,64 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/UoPVBxkcbvg"
       }
+    },
+    {
+      "id": "2a900aef33c1472d553e",
+      "status": "skipped",
+      "title": "Every Page You Publish Now Has Two Audiences | Parag Agrawal, Parallel Web Systems",
+      "source_title": "Every Page You Publish Now Has Two Audiences | Parag Agrawal, Parallel Web Systems",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a short video featuring Parag Agrawal discussing his company Parallel Web Systems. While the topic relates to AI and web systems, Parag Agrawal is not on the list of qualifying individuals, and the content is a short, promotional clip rather than a substantial interview or deep technical discussion. The publisher notes do not provide sufficient detail to qualify it as a consequential item based on its content alone.",
+      "published_at": "2026-08-28T16:00:27+00:00",
+      "first_seen_at": "2026-08-28T17:17:21+00:00",
+      "appearances": [
+        {
+          "id": "5352ea4dd0aa2a6d9c68",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:AJfOYH_BBjQ",
+          "title": "Every Page You Publish Now Has Two Audiences | Parag Agrawal, Parallel Web Systems",
+          "description": "Parag Agrawal on how Parallel got its name — and the idea behind it: a parallel web, built for AIs, with different properties than the one built for us. Which means every page you publish now has two audiences, whether you intended it or not.",
+          "url": "https://www.youtube.com/shorts/AJfOYH_BBjQ",
+          "published_at": "2026-08-28T16:00:27+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/AJfOYH_BBjQ"
+      }
+    },
+    {
+      "id": "ad83e7242dd7ea0b275d",
+      "status": "published",
+      "title": "Stratechery: Internet Hype and Real World Change",
+      "source_title": "2026.35: Internet Hype and Real World Change",
+      "short_summary": "This Stratechery newsletter includes articles on agentic cybersecurity, AI's impact on startups vs. incumbents, and the backlash against AI data centers. It also covers Apple and OpenAI's hardware announcements and Nvidia's open-source investments.",
+      "long_summary": "This edition of Stratechery features \"Autonomy and Innovation,\" an article arguing that incentives favor offense in agentic cybersecurity, a dynamic that will also limit incumbents and fuel startups. Another piece, \"How Data Center Discourse Ends,\" suggests that the backlash against AI data centers will ultimately be a non-issue. The newsletter also highlights \"Apple Updates Mini and Studio, AI Computers, OpenAI Jalapeño,\" which discusses Apple and OpenAI's distinct hardware announcements and their implications for Nvidia. Additionally, it mentions \"Nvidia’s Risky Business\" as a video topic and covers Nvidia's open-source investments in a Sharp Tech segment.",
+      "reason": "The newsletter contains substantive analysis on frontier models (OpenAI Jalapeño), AI infrastructure (data centers, Nvidia hardware, open-source investments), and the economics/business strategy of AI (startups vs. incumbents, agentic cybersecurity).",
+      "published_at": "2026-08-28T17:00:00+00:00",
+      "first_seen_at": "2026-08-28T17:17:24+00:00",
+      "appearances": [
+        {
+          "id": "fd46fd58619c707e489c",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=19819",
+          "title": "2026.35: Internet Hype and Real World Change",
+          "description": "(Photo by Natalie Behring/Getty Images)\n\nWelcome back to This Week in Stratechery!\n\nAs a reminder, each week, every Friday, we’re sending out this overview of content in the Stratechery bundle; \nhighlighted links are free for everyone\n. Additionally, you have complete control over what we send to you. If you don’t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in \nyour delivery settings\n.\n\nOn that note, here were a few of our favorites this week.\n\nThe Breaker’s Advantage\n. One of the most important takeaways of \nThe Hugging Face Incident\n is that agents are more useful for attacking infrastructure than in defending it. While in theory defenders know the code, their number one job is to not break things; for attackers breaking things is the point. This week’s Article \nAutonomy and Innovation\n makes the case that this dichotomy isn’t just relevant to security: it also explains why startups consistently defeat incumbents, and why AI’s takeover of the economy will take longer than people think.\n\nThe New Battle for HDMI1. \nFor years Netflix insisted its service stood alone, resisting attempts by companies like Apple to integrate their service. Now Netflix is poised to go in the other direction, potentially selling access to other streaming services. \nBen wrote about the company’s shift on Tuesday\n, and \non this week’s Sharp Tech\n chalked it up to Hollywood staying irrational longer than Netflix could stay patient. \n—\nAndrew Sharp\n\nHow Data Center Discourse Ends. \nThe backlash to the continued buildout of AI data centers has continued all summer, and now looks even more widespread than it was when Ben \ntackled the issue in May\n and we dedicated \nan entire episode of Sharp Tech to the controversy\n. Now that people in tech are legitimately worried, however, it’s time to zag: \nI think that this will ultimately be a non-issue\n, just like so many other overwhelming Internet movements. \n—\nAS\n\nStratechery Articles and Updates\n\nAutonomy and Innovation\n— Incentives favor offense when it comes to agentic cybersecurity; it’s the same dynamic that will limit incumbents and fuel startups in the long run.\n\nNetflix to Sell Streaming Services?, Streamers as Aggregators, Revisiting Roku\n— Netflix is considering selling other streaming services, and I think it’s a good idea; it’s also a let-down for Netflix’s original goals and potential pivots.\n\nApple Updates Mini and Studio, AI Computers, OpenAI Jalapeño\n— Apple and OpenAI have two completely different hardware announcements; both represent pressure on Nvidia.\n\nSharp Text by Andrew Sharp\n\nHalt and Catch Ire\n — \nA survey of data center madness, and why I’d bet the under on the durability of the backlash\n.\n\nDithering with Ben Thompson and Daring Fireball’s John Gruber\n\nOmarchy and Open Macs\n\nAI Macs\n\nAsianometry with Jon Yu\n\nHas the Solid State Transformer’s Time Finally Come?\n\nSharp China with Andrew Sharp and Sinocism’s Bill Bishop\n\nFive US-China (and Russia) Questions; Cabbage with Formaldehyde; The Continuing Tax Crackdown; Unitree Stock Down 45%\n\nGreatest of All Talk\n\nPeyton Watson to the Cavs, Building a Top Five for 2031, Top 5 Feats of Loser Behavior\n\nSharp Tech with Andrew Sharp and Ben Thompson\n\nMeta’s New Restrictions for Teens, Nvidia’s Open Source Investments, Q&A on Netflix, Druckenmiller, Parameters and Performance\n\nThis week’s Stratechery video is on \nNvidia’s Risky Business\n.",
+          "url": "https://stratechery.com/2026/internet-hype-and-real-world-change/",
+          "published_at": "2026-08-28T17:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/internet-hype-and-real-world-change/"
+      }
     }
   ]
 }
