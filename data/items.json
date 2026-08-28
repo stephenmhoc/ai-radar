@@ -61848,6 +61848,34 @@
         "podcast": "https://www.cognitiverevolution.ai/ai-am-highlights-recursive-self-improvement-rushed-and-vibe-coded/",
         "youtube": "https://www.youtube.com/watch?v=OQL6UitpI-Y"
       }
+    },
+    {
+      "id": "600789a5ece0cec50071",
+      "status": "published",
+      "title": "Why Top Founders Are Racing Into AI Infrastructure",
+      "source_title": "Why Top Founders Are Racing Into AI Infrastructure",
+      "short_summary": "Ben Horowitz, Martin Casado, Raghu Raghuram, and Erik Torenberg discuss a16z's new Machine Age Fund and the AI infrastructure buildout. They argue the bottleneck is shifting from models to underlying infrastructure, including chips, memory, networking, power, cooling, and data centers, requiring significant capital and compute.",
+      "long_summary": "Ben Horowitz, Martin Casado, Raghu Raghuram, and Erik Torenberg discuss the launch of a16z's Machine Age Fund, focusing on the infrastructure buildout behind AI. They argue that the primary bottleneck in AI is increasingly shifting from the models themselves to the underlying infrastructure, encompassing chips, memory, networking, power, cooling, and data centers. The discussion highlights surging hyperscaler CapEx, critical components booked years in advance, and the dramatically increasing compute requirements for new generations of reasoning and agents. They explore why this cycle differs from previous infrastructure booms, how AI is transforming engineering problems into capital and compute-intensive challenges, and where future infrastructure companies might emerge. The conversation also touches on founders returning to hard technical problems in hardware and systems, and the necessity of rebuilding the computing stack for the \"Machine Age.\"",
+      "reason": "The item discusses AI infrastructure, including chips, memory, networking, power, cooling, and data centers, which is a core area of interest for AI Radar. The speakers are prominent figures in venture capital and technology, offering insights into the economics and business strategy shaping AI development.",
+      "published_at": "2026-08-28T13:11:59+00:00",
+      "first_seen_at": "2026-08-28T13:17:24+00:00",
+      "appearances": [
+        {
+          "id": "851633757f524b26883b",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:Zx1Ec8LWFeM",
+          "title": "Why Top Founders Are Racing Into AI Infrastructure",
+          "description": "Ben Horowitz, Martin Casado, Raghu Raghuram, and Erik Torenberg discuss the launch of a16z's new Machine Age Fund and the infrastructure buildout behind AI, from chips, memory, and networking to power, cooling, and data centers.\n\nWhy a dedicated fund now? The group argues that the bottleneck in AI is increasingly shifting from the models themselves to everything beneath them. Hyperscaler CapEx is surging, critical components are booked years in advance, and each new generation of reasoning and agents requires dramatically more compute. They unpack why this cycle looks different from previous infrastructure booms and how AI is turning problems once constrained by engineering into problems that can increasingly be attacked with capital and compute.\n\nThey also explore where the next generation of infrastructure companies could emerge, why founders are returning to hard technical problems across hardware and systems, and what it will take to rebuild the computing stack for the Machine Age.\n\nTimestamps:\n00:00 - Intro\n00:50 - Introducing the Machine Age Fund\n02:00 - Why Founder Interest in Hardware Just 4x'd\n04:00 - How Do We Know Demand Isn't a Hype Cycle?\n07:00 - Sold Out to 2028: The Unprecedented Supply Crunch\n10:00 - What's Actually Bottlenecked Right Now\n14:00 - Tokens, Scaling & Why There's No Natural Regulator\n19:00 - Agents as a New Kind of Employee: The GrokBot Moment\n25:00 - What \"AI-Designed\" Infrastructure Actually Looks Like\n28:00 - Rack Power, Liquid Cooling & the Data Center Redesign\n34:00 - 44 Gigawatts by 2028: Why Building Faster Is So Hard\n38:00 - Why \"Machine Age\" Is the Right Name\n40:00 - Won't Incumbents Like Nvidia Take Everything?\n48:00 - The Founder Profile: Why Hardware Needs Experience\n\nResources:\nRead more about the Machine Age Fund : https://www.a16z.news/p/the-machine-age-fund\nFollow Ben Horowitz on X: https://x.com/bhorowitz\nFollow Raghu Raghuram on X: https://x.com/RaghuRaghuram\nFollow Martin Casado on X: https://x.com/martin_casado\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=Zx1Ec8LWFeM",
+          "published_at": "2026-08-28T13:11:59+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=Zx1Ec8LWFeM"
+      }
     }
   ]
 }
