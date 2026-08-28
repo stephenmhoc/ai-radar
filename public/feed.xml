@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Anthropic: Model Hardware Standard for AI Operating Physical Equipment — Anthropic</title>
+      <link>https://www.youtube.com/watch?v=UxJZrCFzTHY</link>
+      <guid isPermaLink="false">ai-radar:5eea8743e4f000bfe278</guid>
+      <pubDate>Fri, 28 Aug 2026 00:40:16 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA">Anthropic</source>
+      <description>Anthropic has introduced the Model Hardware Standard (MHS), a new standard created to help AI agents safely interact with and control physical equipment. The initiative originated as a beneficial deployments project between Anthropic and the HHMI Janelia Research Campus before evolving into a broader industry collaboration. This release demonstrates how MHS functions alongside early real-world examples of AI agents driving lab and manufacturing hardware. The standard is currently available in a research preview for select partners.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Anthropic&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=UxJZrCFzTHY"&gt;Model Hardware Standard: AI operating physical equipment&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Building the Foundation for the Agentic AI Era — Practical AI</title>
       <link>https://www.youtube.com/watch?v=8Xp1UxlMU70</link>
       <guid isPermaLink="false">ai-radar:0f17225d39238961dc55</guid>

@@ -61643,6 +61643,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=8Xp1UxlMU70"
       }
+    },
+    {
+      "id": "5eea8743e4f000bfe278",
+      "status": "published",
+      "title": "Anthropic: Model Hardware Standard for AI Operating Physical Equipment",
+      "source_title": "Model Hardware Standard: AI operating physical equipment",
+      "short_summary": "Anthropic introduced the Model Hardware Standard (MHS), a framework designed to enable AI agents to safely operate physical equipment in scientific research and advanced manufacturing.",
+      "long_summary": "Anthropic has introduced the Model Hardware Standard (MHS), a new standard created to help AI agents safely interact with and control physical equipment. The initiative originated as a beneficial deployments project between Anthropic and the HHMI Janelia Research Campus before evolving into a broader industry collaboration. This release demonstrates how MHS functions alongside early real-world examples of AI agents driving lab and manufacturing hardware. The standard is currently available in a research preview for select partners.",
+      "reason": "Official technical release from Anthropic detailing the Model Hardware Standard for AI agents operating physical equipment in scientific research and manufacturing.",
+      "published_at": "2026-08-28T00:40:16+00:00",
+      "first_seen_at": "2026-08-28T01:17:24+00:00",
+      "appearances": [
+        {
+          "id": "9e78ce43b9bb52d89d2e",
+          "kind": "youtube",
+          "source": "Anthropic",
+          "family": "anthropic",
+          "guid": "yt:video:UxJZrCFzTHY",
+          "title": "Model Hardware Standard: AI operating physical equipment",
+          "description": "The Model Hardware Standard (MHS) is a new standard for AI agents to safely operate physical equipment in scientific research and advanced manufacturing. \n\nMHS started as part of a beneficial deployments project between Anthropic and HHMI Janelia Research Campus and is evolving into a wider industry effort.\n\nThis video shows what MHS is, how it works, and early examples of AI agents operating lab and manufacturing equipment.\n\nMHS is now in research preview with select partners. Read more about how we're learning what AI can do in the physical world: https://www.anthropic.com/news/model-hardware-standard-research-preview",
+          "url": "https://www.youtube.com/watch?v=UxJZrCFzTHY",
+          "published_at": "2026-08-28T00:40:16+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=UxJZrCFzTHY"
+      }
     }
   ]
 }
