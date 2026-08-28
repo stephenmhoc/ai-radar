@@ -62018,6 +62018,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/bOXP_Lb3s4g"
       }
+    },
+    {
+      "id": "75b338ff7e3b04cce505",
+      "status": "skipped",
+      "title": "Mark Zuckerberg hates Meta's Best Business",
+      "source_title": "Mark Zuckerberg hates Meta's Best Business",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a short video featuring Mark Zuckerberg, but the publisher notes do not indicate an interview or conversation with him. The notes describe his argument about Meta's ad machine as a societal positive, which is not directly related to AI Radar's focus areas.",
+      "published_at": "2026-08-28T19:33:26+00:00",
+      "first_seen_at": "2026-08-28T20:17:21+00:00",
+      "appearances": [
+        {
+          "id": "9de5510b6da3dba2eb26",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:g1p4qIstERI",
+          "title": "Mark Zuckerberg hates Meta's Best Business",
+          "description": "His argument: Meta’s ad machine helps entrepreneurs find customers, helps people discover products they actually want, and funds free entertainment for billions of users. In his view, Facebook advertising isn’t a necessary evil — it’s a societal positive.\n\n#Meta #Facebook #MarkZuckerberg #Advertising #BenThompson #Business #Technology #InvestLikeTheBest\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/g1p4qIstERI",
+          "published_at": "2026-08-28T19:33:26+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/g1p4qIstERI"
+      }
     }
   ]
 }
