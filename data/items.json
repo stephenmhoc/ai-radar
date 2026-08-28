@@ -61746,6 +61746,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=GUB-MVVuWqU"
       }
+    },
+    {
+      "id": "dc27c4324c9b24335079",
+      "status": "published",
+      "title": "The Infrastructure Behind the Machine Age",
+      "source_title": "The Infrastructure Behind the Machine Age",
+      "short_summary": "Ben Horowitz, Martin Casado, Raghu Raghuram, and Erik Torenberg discuss the infrastructure requirements powering AI, analyzing shifts toward hardware bottlenecks across chips, networking, cooling, power, and data centers.",
+      "long_summary": "In this episode of The a16z Show, Ben Horowitz, Martin Casado, Raghu Raghuram, and Erik Torenberg discuss the launch of a16z's Machine Age Fund and the physical and systems infrastructure necessary for AI. They argue that the primary bottleneck in artificial intelligence is shifting from frontier models to underlying infrastructure components such as chips, memory, networking, power, cooling, and data centers. The group explores why this cycle differs from previous infrastructure booms, noting surging hyperscaler capital expenditures and the heavy compute requirements of reasoning and agent systems. They also address where the next wave of infrastructure startups will emerge and what is needed to rebuild the full computing stack.",
+      "reason": "Substantive strategic and technical discussion on AI infrastructure, including power, data centers, hardware systems, networking, and the economics of hyperscaler compute buildouts.",
+      "published_at": "2026-08-28T10:00:00+00:00",
+      "first_seen_at": "2026-08-28T10:17:24+00:00",
+      "appearances": [
+        {
+          "id": "a99a1b5587c97d4bfa72",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "a3717c93-a145-4f25-9fe6-6b47cd11b9d1",
+          "title": "The Infrastructure Behind the Machine Age",
+          "description": "Ben Horowitz, Martin Casado, Raghu Raghuram, and Erik Torenberg discuss the launch of a16z's new Machine Age Fund and the infrastructure buildout behind AI, from chips, memory, and networking to power, cooling, and data centers.\n\nWhy a dedicated fund now? The group argues that the bottleneck in AI is increasingly shifting from the models themselves to everything beneath them. Hyperscaler CapEx is surging, critical components are booked years in advance, and each new generation of reasoning and agents requires dramatically more compute. They unpack why this cycle looks different from previous infrastructure booms and how AI is turning problems once constrained by engineering into problems that can increasingly be attacked with capital and compute.\n\nThey also explore where the next generation of infrastructure companies could emerge, why founders are returning to hard technical problems across hardware and systems, and what it will take to rebuild the computing stack for the Machine Age.\n\nResources:\n\nRead more about the Machine Age Fund : \nhttps://www.a16z.news/p/the-machine-age-fund\n\nFollow Ben Horowitz on X:\n https://x.com/bhorowitz\n\nFollow Raghu Raghuram on X: \nhttps://x.com/RaghuRaghuram\n\nFollow Martin Casado on X:\n https://x.com/martin_casado\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/the-infrastructure-behind-the-machine-age-M3g5NamY",
+          "published_at": "2026-08-28T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/the-infrastructure-behind-the-machine-age-M3g5NamY"
+      }
     }
   ]
 }

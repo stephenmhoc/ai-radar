@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>The Infrastructure Behind the Machine Age — The a16z Show</title>
+      <link>https://a16z.simplecast.com/episodes/the-infrastructure-behind-the-machine-age-M3g5NamY</link>
+      <guid isPermaLink="false">ai-radar:dc27c4324c9b24335079</guid>
+      <pubDate>Fri, 28 Aug 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.simplecast.com/JGE3yC0V">The a16z Show</source>
+      <description>In this episode of The a16z Show, Ben Horowitz, Martin Casado, Raghu Raghuram, and Erik Torenberg discuss the launch of a16z&amp;#x27;s Machine Age Fund and the physical and systems infrastructure necessary for AI. They argue that the primary bottleneck in artificial intelligence is shifting from frontier models to underlying infrastructure components such as chips, memory, networking, power, cooling, and data centers. The group explores why this cycle differs from previous infrastructure booms, noting surging hyperscaler capital expenditures and the heavy compute requirements of reasoning and agent systems. They also address where the next wave of infrastructure startups will emerge and what is needed to rebuild the full computing stack.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · The a16z Show&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://a16z.simplecast.com/episodes/the-infrastructure-behind-the-machine-age-M3g5NamY"&gt;The Infrastructure Behind the Machine Age&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Latent Space Newsletter: OpenAI AGI Timelines, Hugging Face Microduck, GLM-5.3-Flash, Gemini Omni 1.1 Flash, Agent Harnesses, and AI Cyber Defense — Latent Space</title>
       <link>https://www.latent.space/p/ainews-openai-to-reach-agi-bar-by</link>
       <guid isPermaLink="false">ai-radar:dcbe8eee5ffab9aead85</guid>
