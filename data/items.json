@@ -61774,6 +61774,37 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/the-infrastructure-behind-the-machine-age-M3g5NamY"
       }
+    },
+    {
+      "id": "640e7f5fc8d0cd378753",
+      "status": "skipped",
+      "title": "Hard Fork — Meta Shifts the Blame + Do Data Center Bans Work? + The Final HatGPT",
+      "source_title": "Meta Shifts the Blame + Do Data Center Bans Work? + The Final HatGPT",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The provided publisher notes discuss a Meta settlement and do not contain information relevant to AI Radar's focus areas or target organizations/individuals in a substantive way. The title mentions 'HatGPT' but this is not elaborated upon in the notes.",
+      "published_at": "2026-08-28T11:00:03+00:00",
+      "first_seen_at": "2026-08-28T11:17:21+00:00",
+      "appearances": [
+        {
+          "id": "fffab81c0f80b71a063d",
+          "kind": "podcast",
+          "source": "Hard Fork",
+          "family": "hard fork",
+          "guid": "https://www.nytimes.com/2026/08/28/podcasts/hardfork-meta-settlement.html",
+          "title": "Meta Shifts the Blame + Do Data Center Bans Work? + The Final HatGPT",
+          "description": "Meta negotiated an unusual provision in their landmark settlement: If TikTok and YouTube also agree to penalties and changes to their products, Meta will pay more.",
+          "url": "https://www.nytimes.com/2026/08/28/podcasts/hardfork-meta-settlement.html",
+          "published_at": "2026-08-28T11:00:03+00:00",
+          "hosts": [
+            "Kevin Roose",
+            "Casey Newton"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.nytimes.com/2026/08/28/podcasts/hardfork-meta-settlement.html"
+      }
     }
   ]
 }
