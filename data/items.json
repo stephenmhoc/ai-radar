@@ -62046,6 +62046,230 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/g1p4qIstERI"
       }
+    },
+    {
+      "id": "0bf487978c71896039c3",
+      "status": "deferred",
+      "title": "Getting Started with ChatGPT Work",
+      "source_title": "Getting Started with ChatGPT Work",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-08-28T20:51:11+00:00",
+      "first_seen_at": "2026-08-28T21:17:18+00:00",
+      "appearances": [
+        {
+          "id": "1239e9c60695f50c03d5",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:Rk4VyQxDq5s",
+          "title": "Getting Started with ChatGPT Work",
+          "description": "",
+          "url": "https://www.youtube.com/watch?v=Rk4VyQxDq5s",
+          "published_at": "2026-08-28T20:51:11+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=Rk4VyQxDq5s"
+      }
+    },
+    {
+      "id": "0121cc34b006184b5561",
+      "status": "skipped",
+      "title": "Build a Shareable Site",
+      "source_title": "Build a Shareable Site",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a tutorial for using ChatGPT Work to build a website, which is a product demonstration rather than an interview, research, or substantive discussion about frontier AI development or strategy.",
+      "published_at": "2026-08-28T20:51:45+00:00",
+      "first_seen_at": "2026-08-28T21:17:21+00:00",
+      "appearances": [
+        {
+          "id": "4e257f5118d7ca197a05",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:0qK3KqvtRrg",
+          "title": "Build a Shareable Site",
+          "description": "Turn a conversation into a website people can use with ChatGPT Work. Build a group-trip site with an itinerary, activity voting, and shared expenses, then refine it by asking for changes. See how to choose who can visit, manage your projects in Sites, and bring launch metrics and team updates together in a dashboard.\n\nFollow the lesson and try it yourself: https://learn.chatgpt.com/training/walkthroughs/building-a-shareable-site",
+          "url": "https://www.youtube.com/watch?v=0qK3KqvtRrg",
+          "published_at": "2026-08-28T20:51:45+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=0qK3KqvtRrg"
+      }
+    },
+    {
+      "id": "6b5722890dc235e15401",
+      "status": "published",
+      "title": "OpenAI — Plugins & Skills",
+      "source_title": "Plugins & Skills",
+      "short_summary": "This video from OpenAI demonstrates how plugins and skills function within ChatGPT Work. It shows using Gmail and Google Calendar to manage client interactions, schedule meetings, and prepare briefs, then saving the process as a reusable skill.",
+      "long_summary": "This OpenAI video tutorial focuses on the integration and functionality of plugins and skills within ChatGPT Work. The demonstration illustrates a practical application where a user leverages Gmail and Google Calendar plugins to locate a client's email, arrange a kickoff meeting, and compile a meeting brief, complete with links to original sources. The process is then saved as a \"Meeting Prep\" skill, allowing for its reuse with consistent instructions and formatting for subsequent meetings. The video aims to teach users how to streamline workflows and automate tasks using these features.",
+      "reason": "The item is a video from OpenAI, a target organization, demonstrating the functionality of plugins and skills in ChatGPT Work, which falls under frontier models and AI-native software.",
+      "published_at": "2026-08-28T20:51:45+00:00",
+      "first_seen_at": "2026-08-28T21:17:23+00:00",
+      "appearances": [
+        {
+          "id": "f3ac091556edef463cda",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:5QPBVrAAdBk",
+          "title": "Plugins & Skills",
+          "description": "Learn how plugins and skills work together in ChatGPT Work. Use Gmail and Google Calendar to find a client’s email, schedule a kickoff, and prepare a meeting brief with links to the original sources. Then save the process as a Meeting Prep skill so you can reuse the same instructions and format for your next meeting.\n\nFollow the lesson and try it yourself: https://learn.chatgpt.com/training/walkthroughs/plugins-and-skills",
+          "url": "https://www.youtube.com/watch?v=5QPBVrAAdBk",
+          "published_at": "2026-08-28T20:51:45+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=5QPBVrAAdBk"
+      }
+    },
+    {
+      "id": "3160339176eb2aee2b79",
+      "status": "published",
+      "title": "OpenAI — Scheduled Tasks",
+      "source_title": "Scheduled Tasks",
+      "short_summary": "This video from OpenAI demonstrates how to use ChatGPT Work to schedule repeatable tasks, such as preparing meeting briefs using Gmail and Google Calendar. It covers reviewing results, changing or pausing tasks, and using saved skills for consistent formatting.",
+      "long_summary": "This OpenAI video tutorial focuses on using ChatGPT Work to automate repeatable tasks. It illustrates how to schedule tasks, specifically demonstrating the preparation of meeting briefs using Gmail and Google Calendar. The tutorial also covers how to review the results of scheduled tasks, make changes, or pause them as needed. Furthermore, it shows how to leverage a saved skill to maintain consistent formatting across tasks. Users can follow along with a provided lesson to try it themselves.",
+      "reason": "This is a direct tutorial from OpenAI, a frontier AI organization, demonstrating a feature of their product, ChatGPT Work. This qualifies as consequential work about an important AI company and product.",
+      "published_at": "2026-08-28T20:51:45+00:00",
+      "first_seen_at": "2026-08-28T21:17:25+00:00",
+      "appearances": [
+        {
+          "id": "f33965deff37017033e4",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:urXc4xxixVU",
+          "title": "Scheduled Tasks",
+          "description": "Put a repeatable task on a schedule with ChatGPT Work. See how to use Gmail and Google Calendar to prepare meeting briefs, check the results, and schedule the task to run every weekday. Learn how to review results, change or pause tasks in the Scheduled tab, and use a saved skill to keep the format consistent.\n\nFollow the lesson and try it yourself: https://learn.chatgpt.com/training/walkthroughs/scheduled-tasks",
+          "url": "https://www.youtube.com/watch?v=urXc4xxixVU",
+          "published_at": "2026-08-28T20:51:45+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=urXc4xxixVU"
+      }
+    },
+    {
+      "id": "d46864279815fa6ef36d",
+      "status": "published",
+      "title": "OpenAI: Use Your Computer and Browser",
+      "source_title": "Use Your Computer and Browser",
+      "short_summary": "This video demonstrates how ChatGPT can assist with tasks across desktop applications and browsers. It shows using ChatGPT to control Spotify, prepare a time-off request in Google Calendar, and draft an out-of-office event, highlighting features like screen context sharing and draft review.",
+      "long_summary": "This video from OpenAI illustrates how ChatGPT Work can facilitate tasks within desktop applications and web browsers. The demonstration includes using ChatGPT to initiate music playback in Spotify. It further shows how to combine Chrome and Google Calendar functionalities to prepare a time-off request and an associated out-of-office event. The walkthrough also covers key features such as sharing screen context with Appshots, granting necessary access, and reviewing drafts before final submission or saving. This entire process is showcased using the ChatGPT desktop app.",
+      "reason": "The item is a demonstration from OpenAI, a frontier AI organization, showcasing the capabilities of their ChatGPT desktop app for interacting with computer and browser applications. This falls under important AI companies, products, and AI-native software.",
+      "published_at": "2026-08-28T20:51:46+00:00",
+      "first_seen_at": "2026-08-28T21:17:39+00:00",
+      "appearances": [
+        {
+          "id": "f066ea0cdce30aecb399",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:981SivztzOc",
+          "title": "Use Your Computer and Browser",
+          "description": "See how ChatGPT Work can help with tasks in your desktop apps and browser. Use Computer to start music in Spotify, then combine Chrome and Google Calendar to prepare a time-off request and an out-of-office event. Learn how to share screen context with Appshots, grant access, and review the drafts before submitting or saving anything. This walkthrough uses the ChatGPT desktop app.\n\nFollow the lesson and try it yourself: https://learn.chatgpt.com/training/walkthroughs/using-your-computer-and-browser",
+          "url": "https://www.youtube.com/watch?v=981SivztzOc",
+          "published_at": "2026-08-28T20:51:46+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=981SivztzOc"
+      }
+    },
+    {
+      "id": "6cb259f1d3483fe5ac7a",
+      "status": "published",
+      "title": "OpenAI: Talk to ChatGPT Work",
+      "source_title": "Talk to ChatGPT Work",
+      "short_summary": "OpenAI demonstrates using Voice in ChatGPT Work to brainstorm ideas, build a visual pitch deck, and review results. The demonstration shows how to continue tasks from a phone by connecting to a computer through Remote.",
+      "long_summary": "This video from OpenAI showcases the Voice feature in ChatGPT Work. Users can brainstorm ideas aloud and transform them into presentations. The demonstration illustrates how to use the desktop app to discuss ideas for a team event, instruct ChatGPT to create a visual pitch deck, and then review the generated output. Additionally, it highlights the capability to seamlessly continue the same task from a mobile phone by connecting to the computer via Remote.",
+      "reason": "The item is a direct demonstration from OpenAI, a frontier AI organization, showcasing a product feature (Voice in ChatGPT Work) which falls under important AI companies and products.",
+      "published_at": "2026-08-28T20:51:46+00:00",
+      "first_seen_at": "2026-08-28T21:17:41+00:00",
+      "appearances": [
+        {
+          "id": "64c800fb33c1f85dfe62",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:DLcQSp_CIIc",
+          "title": "Talk to ChatGPT Work",
+          "description": "Brainstorm out loud and turn your ideas into a presentation with Voice in ChatGPT Work. In the desktop app, talk through ideas for a team event, ask ChatGPT to build a visual pitch deck, and review the result. You’ll also see how to continue the same task from your phone by connecting to your computer through Remote.\n\nFollow the lesson and try it yourself: https://learn.chatgpt.com/training/walkthroughs/using-voice",
+          "url": "https://www.youtube.com/watch?v=DLcQSp_CIIc",
+          "published_at": "2026-08-28T20:51:46+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=DLcQSp_CIIc"
+      }
+    },
+    {
+      "id": "e443135255d245ee6333",
+      "status": "published",
+      "title": "OpenAI — Create Slides, Docs, and Templates",
+      "source_title": "Create Slides, Docs, and Templates",
+      "short_summary": "This video demonstrates how to use ChatGPT Work to transform a meeting transcript into a structured Google Doc and a leadership deck. It covers connecting Google Drive, generating sections, and creating Google Slides presentations, with the option to save formats using Template Creator for future use.",
+      "long_summary": "The video showcases ChatGPT Work's capabilities in automating document and presentation creation. It details the process of converting a meeting transcript into a structured Google Doc, allowing users to specify desired sections and verify content against the original transcript. Furthermore, it illustrates how to generate a Google Slides presentation from the created document. The demonstration also highlights the utility of Template Creator for saving both document and presentation formats for reuse.",
+      "reason": "The item is a video from OpenAI, a frontier AI organization, demonstrating the use of ChatGPT Work for document and presentation creation, which falls under important AI companies and products.",
+      "published_at": "2026-08-28T20:51:46+00:00",
+      "first_seen_at": "2026-08-28T21:17:42+00:00",
+      "appearances": [
+        {
+          "id": "3456215bab78529b053c",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:syML5KT-HzI",
+          "title": "Create Slides, Docs, and Templates",
+          "description": "Turn a meeting transcript into a structured Google Doc and a leadership deck with ChatGPT Work. Connect Google Drive, ask for the sections you need, and check the document against the original transcript. Then create a Google Slides presentation from the document and save both formats with Template Creator so you can use them again.\n\nFollow the lesson and try it yourself: https://learn.chatgpt.com/training/walkthroughs/creating-slides-and-docs",
+          "url": "https://www.youtube.com/watch?v=syML5KT-HzI",
+          "published_at": "2026-08-28T20:51:46+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=syML5KT-HzI"
+      }
+    },
+    {
+      "id": "abc5e7053d4f27fd1d7b",
+      "status": "skipped",
+      "title": "Use ChatGPT Work on Your Phone",
+      "source_title": "Use ChatGPT Work on Your Phone",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a promotional video from OpenAI demonstrating how to use ChatGPT on a phone for work and personal tasks. It does not contain a substantial interview or conversation with a qualifying individual, nor does it offer original reporting, analysis, or research. It is a routine product demonstration.",
+      "published_at": "2026-08-28T20:51:46+00:00",
+      "first_seen_at": "2026-08-28T21:17:44+00:00",
+      "appearances": [
+        {
+          "id": "5d659de0b016422f9a40",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:yfnh8SuMbNw",
+          "title": "Use ChatGPT Work on Your Phone",
+          "description": "Use ChatGPT Work on your phone to catch up on work and handle personal tasks before you reach your desk. Follow a Slack and Gmail catch-up, then review recent spending with the read-only Finances plugin. You’ll also see how to pair your phone with Remote to check progress and guide tasks running on your computer. For Remote, your computer needs to stay awake and online.\n\nFollow the lesson and try it yourself: https://learn.chatgpt.com/training/walkthroughs/working-on-your-phone",
+          "url": "https://www.youtube.com/watch?v=yfnh8SuMbNw",
+          "published_at": "2026-08-28T20:51:46+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=yfnh8SuMbNw"
+      }
     }
   ]
 }
