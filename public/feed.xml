@@ -22,6 +22,14 @@
       <description>This item from OpenAI showcases a feature of ChatGPT Images. The tool enables users to convert any idea into a complete design, incorporating both layouts and text. The video, titled &amp;quot;Magic Manga Girl,&amp;quot; serves as a demonstration of this capability. It highlights how ChatGPT Images can be utilized for creative design processes.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · OpenAI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=S6TIVzqTmu8"&gt;Magic Manga Girl (:30)&lt;/a&gt;</description>
     </item>
     <item>
+      <title>AINews: OpenAI shuts off Cursor, GLM-5.3, Hy4-preview, Qwen3.8-Flash, Speculative Decoding, Search, Cloud Runtime Design, Agent Benchmarks, Alignment, Video, Vision, and Embodied AI — Latent Space</title>
+      <link>https://www.latent.space/p/ainews-openai-shuts-off-cursor</link>
+      <guid isPermaLink="false">ai-radar:a5e139ead653e7ac70cb</guid>
+      <pubDate>Sat, 29 Aug 2026 05:11:52 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>OpenAI has shut off Cursor, citing &amp;quot;our experience with Elon Musk’s companies violating contracts,&amp;quot; following Cursor&amp;#x27;s acquisition by SpaceX. This decision highlights the competitive landscape between OpenAI and xAI, with both companies now offering serious coding alternatives. The newsletter also details new open-weight frontier models, including Z.ai&amp;#x27;s GLM-5.3 family, Tencent&amp;#x27;s Hy4-preview, and Alibaba&amp;#x27;s Qwen3.8-Flash, which expand capabilities in agentic coding, cyber defense, and long-context MoE designs. Further sections cover advancements in inference and systems, such as vLLM&amp;#x27;s speculative decoding writeup and the emergence of search as an evaluated subsystem. Agent benchmarks are shifting towards verified task completion, and Google&amp;#x27;s &amp;quot;wiki&amp;quot; skill-evolution paper suggests skill transfer across model families. The newsletter also discusses the OpenAI/Hugging Face exploit-gym incident, Anthropic&amp;#x27;s automated alignment research, and improvements in video generation, vision models, and embodied AI, including the Microduck wave.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-openai-shuts-off-cursor"&gt;[AINews] OpenAI shuts off Cursor&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>OpenAI: Use Your Computer and Browser — OpenAI</title>
       <link>https://www.youtube.com/watch?v=981SivztzOc</link>
       <guid isPermaLink="false">ai-radar:d46864279815fa6ef36d</guid>
