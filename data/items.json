@@ -62270,6 +62270,62 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=yfnh8SuMbNw"
       }
+    },
+    {
+      "id": "0939254c6b4d5de2fc18",
+      "status": "deferred",
+      "title": "Tennis (:30)",
+      "source_title": "Tennis (:30)",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-08-29T05:22:32+00:00",
+      "first_seen_at": "2026-08-29T07:17:52+00:00",
+      "appearances": [
+        {
+          "id": "a3b9ea0eae45310a4263",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:IEpTT48oW5Y",
+          "title": "Tennis (:30)",
+          "description": "Turn your image into any art style you can imagine with ChatGPT Images.",
+          "url": "https://www.youtube.com/watch?v=IEpTT48oW5Y",
+          "published_at": "2026-08-29T05:22:32+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=IEpTT48oW5Y"
+      }
+    },
+    {
+      "id": "415945dbc281cfcc3f93",
+      "status": "published",
+      "title": "OpenAI — Magic Manga Girl",
+      "source_title": "Magic Manga Girl (:30)",
+      "short_summary": "OpenAI's ChatGPT Images allows users to transform ideas into finished designs with layouts and text. This feature is demonstrated in the video.",
+      "long_summary": "This item from OpenAI showcases a feature of ChatGPT Images. The tool enables users to convert any idea into a complete design, incorporating both layouts and text. The video, titled \"Magic Manga Girl,\" serves as a demonstration of this capability. It highlights how ChatGPT Images can be utilized for creative design processes.",
+      "reason": "The item is a direct appearance from OpenAI, a frontier AI organization, demonstrating a product feature (ChatGPT Images).",
+      "published_at": "2026-08-29T05:22:53+00:00",
+      "first_seen_at": "2026-08-29T07:17:57+00:00",
+      "appearances": [
+        {
+          "id": "5e65726734c9fabcf846",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:S6TIVzqTmu8",
+          "title": "Magic Manga Girl (:30)",
+          "description": "Turn any idea into a finished design with layouts and text using ChatGPT Images.",
+          "url": "https://www.youtube.com/watch?v=S6TIVzqTmu8",
+          "published_at": "2026-08-29T05:22:53+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=S6TIVzqTmu8"
+      }
     }
   ]
 }
