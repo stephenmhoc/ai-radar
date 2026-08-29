@@ -50,6 +50,8 @@ MIN_NOTES_CHARS = 80
 MIN_NEWSLETTER_NOTES_CHARS = 400
 MIN_SHORT_SUMMARY_CHARS = 40
 MAX_SHORT_SUMMARY_WORDS = 55
+MAX_ACCEPTED_SHORT_SUMMARY_WORDS = MAX_SHORT_SUMMARY_WORDS * 3 // 2
+MAX_SHORT_SUMMARY_CHARS = 600
 MIN_LONG_SUMMARY_CHARS = 120
 MAX_LONG_SUMMARY_CHARS = 3000
 MIN_LONG_SUMMARY_SENTENCES = 4
@@ -88,7 +90,7 @@ EDITORIAL_RESPONSE_SCHEMA: dict[str, Any] = {
     "properties": {
         "include": {"type": "boolean"},
         "title": {"type": "string", "maxLength": 200},
-        "short_summary": {"type": "string", "maxLength": 400},
+        "short_summary": {"type": "string", "maxLength": MAX_SHORT_SUMMARY_CHARS},
         "long_summary": {"type": "string", "maxLength": MAX_LONG_SUMMARY_CHARS},
         "reason": {"type": "string", "maxLength": 500},
     },
@@ -797,6 +799,13 @@ def youtube_video_id(appearance_value: dict[str, Any]) -> str:
     return guid_match.group(1) if guid_match else guid
 
 
+def is_youtube_short(appearance_value: dict[str, Any]) -> bool:
+    if appearance_value.get("kind") != "youtube":
+        return False
+    path = urllib.parse.urlparse(str(appearance_value.get("url") or "")).path
+    return re.search(r"(?:^|/)shorts(?:/|$)", path, flags=re.IGNORECASE) is not None
+
+
 def media_identity(appearance_value: dict[str, Any]) -> tuple[str, str, str]:
     kind = str(appearance_value.get("kind") or "")
     if kind == "youtube":
@@ -871,9 +880,14 @@ def matching_item(archive: dict[str, Any], candidate: dict[str, Any]) -> dict[st
 def group_candidates(candidates: list[dict[str, Any]]) -> list[list[dict[str, Any]]]:
     groups: list[list[dict[str, Any]]] = []
     for candidate in sorted(candidates, key=lambda value: value.get("published_at") or ""):
+        if is_youtube_short(candidate):
+            groups.append([candidate])
+            continue
         match = None
         for group in groups:
             exemplar = group[0]
+            if is_youtube_short(exemplar):
+                continue
             if media_identity(exemplar) == media_identity(candidate):
                 match = group
                 break
@@ -955,6 +969,14 @@ def combined_publisher_notes(group: list[dict[str, Any]], *, max_chars: int) -> 
 
 def summarize_group(settings: Settings, group: list[dict[str, Any]]) -> dict[str, Any]:
     best = max(group, key=lambda value: len(value.get("description") or ""))
+    if all(is_youtube_short(value) for value in group):
+        return {
+            "status": "skipped",
+            "title": best["title"],
+            "short_summary": "",
+            "long_summary": "",
+            "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+        }
     notes = combined_publisher_notes(group, max_chars=settings.llm.max_metadata_chars)
     note_content_chars = sum(len(clean_text(value.get("description") or "")) for value in group)
     minimum_notes_chars = (
@@ -996,7 +1018,9 @@ technical founders and operators building consequential AI infrastructure, such 
 For newsletters, favor original reporting, analysis, research, or interviews; reject generic link roundups,
 thin reactions, routine promotion, and articles where AI is only incidental. For interview shows, the
 qualifying person must be an actual guest or central speaker. Do not qualify an item merely because a
-target organization is mentioned. Be conservative.
+target organization is mentioned. For YouTube, reject brief promotional or highlight clips, isolated quotes,
+launch teasers, and social snippets even when they feature a target person or come from a model company;
+favor complete interviews, talks, demonstrations, and explainers with durable substance. Be conservative.
 
 Appearances:
 {appearances_text}
@@ -1082,8 +1106,12 @@ def summary_contract_errors(
         errors.append("short_summary was too short")
     if not 1 <= sentence_count(short_summary) <= 2:
         errors.append("short_summary was not one or two sentences")
-    if len(short_summary.split()) > MAX_SHORT_SUMMARY_WORDS:
-        errors.append(f"short_summary exceeded {MAX_SHORT_SUMMARY_WORDS} words")
+    if len(short_summary.split()) > MAX_ACCEPTED_SHORT_SUMMARY_WORDS:
+        errors.append(
+            "short_summary exceeded "
+            f"{MAX_ACCEPTED_SHORT_SUMMARY_WORDS}-word acceptance ceiling "
+            f"({MAX_SHORT_SUMMARY_WORDS}-word target)"
+        )
     if not MIN_LONG_SUMMARY_CHARS <= len(long_summary) <= MAX_LONG_SUMMARY_CHARS:
         errors.append("long_summary length was outside the allowed range")
     if not freshly_generated:
@@ -1115,6 +1143,18 @@ def validate_summary_contract(
     )
     if errors:
         raise RadarError("LLM structured response failed local validation: " + "; ".join(errors))
+
+
+def validation_retry_instruction(error: RadarError) -> str:
+    instruction = (
+        "The previous structured result failed local validation: "
+        f"{error}. Return a complete corrected JSON result and fix every listed problem."
+    )
+    if "short_summary exceeded" in str(error):
+        instruction += (
+            f" Shorten short_summary to no more than the requested {MAX_SHORT_SUMMARY_WORDS} words."
+        )
+    return instruction
 
 
 def llm_json(
@@ -1149,10 +1189,10 @@ def llm_json(
     headers = {"Content-Type": "application/json"}
     if api_key:
         headers["Authorization"] = f"Bearer {api_key}"
-    body = json.dumps(payload).encode("utf-8")
     url = settings.base_url.rstrip("/") + "/chat/completions"
     attempt_limit = max(1, settings.max_attempts)
     for attempt in range(1, attempt_limit + 1):
+        body = json.dumps(payload).encode("utf-8")
         request = urllib.request.Request(url, data=body, headers=headers, method="POST")
         try:
             with urllib.request.urlopen(request, timeout=settings.timeout_seconds) as response:
@@ -1183,7 +1223,19 @@ def llm_json(
                     "raise llm.max_output_tokens or lower the summary limits"
                 )
             result = extract_json(content)
-            return validator(result) if validator is not None else result
+            if validator is None:
+                return result
+            try:
+                return validator(result)
+            except RadarError as exc:
+                if attempt < attempt_limit:
+                    payload["messages"].extend(
+                        [
+                            {"role": "assistant", "content": content},
+                            {"role": "user", "content": validation_retry_instruction(exc)},
+                        ]
+                    )
+                raise
         except LLMTruncationError:
             raise
         except urllib.error.HTTPError as exc:
@@ -1495,6 +1547,9 @@ def run_cycle(
     llm_errors = 0
     unmatched: list[dict[str, Any]] = []
     for candidate in collected:
+        if is_youtube_short(candidate):
+            unmatched.append(candidate)
+            continue
         item = matching_item(archive, candidate)
         if item is None:
             unmatched.append(candidate)

@@ -94,22 +94,28 @@ and configuration state; it does not require an archive migration or model call.
 
 ### Summary contract
 
-New candidates use a single OpenRouter chat-completions call. The configured
-model is `openrouter/auto`; the request uses a strict JSON schema and requires a
-provider that supports the requested parameters. The result contains:
+New candidates use a strict OpenRouter chat-completions request with bounded
+retries. The configured model is `openrouter/auto`; the request uses a strict
+JSON schema and requires a provider that supports the requested parameters. The
+accepted result contains:
 
 - `include`: editorial inclusion decision.
 - `title`: display title.
-- `short_summary`: one or two sentences and at most 55 words, used by the site.
+- `short_summary`: one or two sentences with a 55-word generation target, used
+  by the site. Local validation tolerates up to 82 words (1.5x, rounded down).
 - `long_summary`: four to eight sentences, used by RSS.
 - `reason`: concise inclusion or exclusion rationale.
 
 The application validates the exact returned fields, types, sentence counts,
-and size limits locally. The response has a configured output-token ceiling,
-and logs record the actual routed model and token usage. Provider or validation
-failures leave the candidate unprocessed so a later cycle can retry it. Sparse
-notes produce a `deferred` record and are reconsidered only if an existing
-appearance gains better notes or a matching appearance adds useful metadata.
+and size limits locally. A short summary above 82 words is retried with the
+prior result plus explicit feedback to shorten it to the 55-word target. Other
+locally invalid results receive the same bounded corrective-feedback retry;
+only exhaustion becomes an LLM error. The response has a configured output-token
+ceiling, and logs record the actual routed model and token usage. Provider or
+validation failures leave the candidate unprocessed so a later cycle can retry
+it. Sparse notes produce a `deferred` record and are reconsidered only if an
+existing appearance gains better notes or a matching appearance adds useful
+metadata.
 
 Publisher notes, titles, URLs, and names are explicitly treated as untrusted
 prompt data. The local archive validator also requires unique item and
@@ -127,7 +133,11 @@ decision can include unusually substantive frontier-model research, AI
 infrastructure, AI-native software and engineering, strategy, policy, and
 Physical AI work. Newsletter issues require original reporting, research,
 interviews, or durable analysis; generic link roundups and incidental AI mentions
-remain out of scope. A targeted `radar.py reconsider --match` command exists for
+remain out of scope. YouTube Shorts are recognized from their canonical URL,
+isolated from cross-medium fuzzy matching, and stored as skipped without an LLM
+call. The editorial prompt also rejects brief promotional, highlight, launch,
+quote, and social clips whose only signal is a notable company or speaker. A
+targeted `radar.py reconsider --match` command exists for
 one unpublished item after a policy change, so a narrow correction does not send
 the existing archive back through OpenRouter.
 
@@ -288,10 +298,11 @@ cycle performs these phases in order:
 5. Match exact media identity first, allow fuzzy matching only across media,
    and retain at most one podcast, one YouTube, and one newsletter appearance
    per item.
-6. Defer sparse metadata or obtain one locally validated structured OpenRouter
-   decision and both summaries. Malformed responses and locally invalid results
-   retry within the configured bounded LLM attempt policy before they count as
-   errors.
+6. Locally skip YouTube Shorts, defer sparse metadata, or obtain one locally
+   validated structured OpenRouter decision and both summaries. Malformed
+   responses and locally invalid results retry within the configured bounded LLM
+   attempt policy; validation retries include corrective feedback before they
+   count as errors.
 7. Validate and atomically save `data/items.json`; rebuild `public/index.html`,
    `public/feeds.html`, `public/feed.xml`, and `public/_headers`.
 8. Run `doctor`, all Python tests, and entrypoint compilation.
@@ -433,9 +444,11 @@ configuration.
 An API, routing, JSON-schema, or local-validation failure increments
 `llm_errors` and leaves the item eligible for a later retry. Malformed structured
 output, including locally invalid summaries, first uses the current cycle's
-bounded LLM retries and reaches Sentry only if every attempt fails. Check the
-model tag, HTTP response, and Sentry event. Do not loosen schema enforcement or
-silently accept prose to make a run appear healthy.
+bounded LLM retries and reaches Sentry only if every attempt fails. The prompt's
+short-summary target remains 55 words, the local ceiling is 82 words, and an
+over-ceiling result is explicitly sent back for shortening. Check the model tag,
+HTTP response, and Sentry event. Do not loosen schema enforcement or silently
+accept prose to make a run appear healthy.
 
 ### Git pull or push failures
 

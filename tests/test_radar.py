@@ -27,6 +27,10 @@ VALID_LONG = (
 )
 
 
+def short_summary_with_words(count: int) -> str:
+    return " ".join(["word"] * (count - 1) + ["word."])
+
+
 def make_source(*, kind: str = "podcast", name: str = "Test Show") -> radar.Source:
     return radar.Source(
         kind=kind,
@@ -410,12 +414,60 @@ class MatchingTests(unittest.TestCase):
         )
         self.assertEqual(len(radar.group_candidates([podcast, youtube])), 1)
 
+    def test_youtube_short_is_isolated_from_cross_medium_matching(self) -> None:
+        podcast = make_appearance(kind="podcast")
+        youtube_short = make_appearance(
+            kind="youtube",
+            guid="short222",
+            title="Building Useful AI Agents — Full Episode",
+            url="https://www.youtube.com/shorts/short222",
+        )
+        groups = radar.group_candidates([podcast, youtube_short])
+        self.assertEqual(len(groups), 2)
+        self.assertTrue(any(radar.is_youtube_short(group[0]) for group in groups))
+
 
 class SummaryContractTests(unittest.TestCase):
     def test_sentence_counter_handles_lowercase_and_abbreviations(self) -> None:
         self.assertEqual(radar.sentence_count("First sentence. second sentence. third sentence."), 3)
         self.assertEqual(radar.sentence_count("U.S. systems differ. Another sentence follows."), 2)
         self.assertEqual(radar.sentence_count("Pre-training vs. post-training is discussed."), 1)
+
+    def test_short_summary_keeps_55_word_target_with_82_word_acceptance_ceiling(self) -> None:
+        self.assertEqual(radar.MAX_SHORT_SUMMARY_WORDS, 55)
+        self.assertEqual(radar.MAX_ACCEPTED_SHORT_SUMMARY_WORDS, 82)
+        accepted = short_summary_with_words(82)
+        radar.validate_summary_contract(
+            title="Title",
+            short_summary=accepted,
+            long_summary=VALID_LONG,
+            reason="Relevant.",
+        )
+        item = published_item()
+        item["short_summary"] = accepted
+        radar.validate_archive({"version": 1, "items": [item]})
+        with self.assertRaisesRegex(radar.RadarError, "82-word acceptance ceiling"):
+            radar.validate_summary_contract(
+                title="Title",
+                short_summary=short_summary_with_words(83),
+                long_summary=VALID_LONG,
+                reason="Relevant.",
+            )
+
+    def test_youtube_short_is_skipped_without_an_llm_call(self) -> None:
+        settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
+        group = [
+            make_appearance(
+                kind="youtube",
+                guid="short222",
+                url="https://www.youtube.com/shorts/short222",
+            )
+        ]
+        with mock.patch.object(radar, "llm_json") as llm:
+            result = radar.summarize_group(settings, group)
+        self.assertEqual(result["status"], "skipped")
+        self.assertIn("YouTube Shorts", result["reason"])
+        llm.assert_not_called()
 
     def test_excluded_result_clears_model_supplied_summaries(self) -> None:
         value = radar.validate_editorial_response(
@@ -540,6 +592,41 @@ class SummaryContractTests(unittest.TestCase):
         self.assertEqual(urlopen.call_count, 2)
         sleep.assert_called_once_with(settings.llm.retry_backoff_seconds)
 
+    def test_overlong_short_summary_retry_explicitly_requests_shortening(self) -> None:
+        settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
+        settings = replace(settings, llm=replace(settings.llm, max_attempts=2))
+        overlong_value = {
+            "include": True,
+            "title": "Title",
+            "short_summary": short_summary_with_words(83),
+            "long_summary": VALID_LONG,
+            "reason": "Relevant guest.",
+        }
+        valid_value = {**overlong_value, "short_summary": VALID_SHORT}
+        responses = [
+            FakeHTTPResponse(
+                {"choices": [{"message": {"content": json.dumps(overlong_value)}}]}
+            ),
+            FakeHTTPResponse(
+                {"choices": [{"message": {"content": json.dumps(valid_value)}}]}
+            ),
+        ]
+        with (
+            mock.patch.dict("os.environ", {settings.llm.api_key_env: "test"}),
+            mock.patch.object(radar.urllib.request, "urlopen", side_effect=responses) as urlopen,
+            mock.patch.object(radar.time, "sleep"),
+        ):
+            result = radar.summarize_group(settings, [make_appearance()])
+        self.assertEqual(result["short_summary"], VALID_SHORT)
+        retry_payload = json.loads(urlopen.call_args_list[1].args[0].data)
+        self.assertEqual(retry_payload["messages"][-2]["role"], "assistant")
+        self.assertEqual(
+            json.loads(retry_payload["messages"][-2]["content"])["short_summary"],
+            overlong_value["short_summary"],
+        )
+        self.assertIn("Shorten short_summary", retry_payload["messages"][-1]["content"])
+        self.assertIn("55 words", retry_payload["messages"][-1]["content"])
+
     def test_prompt_combines_notes_and_marks_them_untrusted(self) -> None:
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
         response = {
@@ -572,6 +659,7 @@ class SummaryContractTests(unittest.TestCase):
         self.assertIn("Newsletter-specific", llm.call_args.kwargs["user"])
         self.assertIn("AI infrastructure", llm.call_args.kwargs["user"])
         self.assertIn("original reporting", llm.call_args.kwargs["user"])
+        self.assertIn("reject brief promotional or highlight clips", llm.call_args.kwargs["user"])
         self.assertIn("untrusted data", llm.call_args.kwargs["system"])
 
     def test_llm_request_is_strict_bounded_and_observable(self) -> None:
@@ -600,6 +688,11 @@ class SummaryContractTests(unittest.TestCase):
         self.assertEqual(payload["model"], "openrouter/auto")
         self.assertEqual(payload["max_tokens"], settings.max_output_tokens)
         self.assertEqual(payload["provider"], {"require_parameters": True})
+        self.assertEqual(
+            payload["response_format"]["json_schema"]["schema"]["properties"]
+            ["short_summary"]["maxLength"],
+            radar.MAX_SHORT_SUMMARY_CHARS,
+        )
         self.assertTrue(payload["response_format"]["json_schema"]["strict"])
 
     def test_malformed_structured_response_is_retried(self) -> None:
@@ -677,6 +770,34 @@ class SummaryContractTests(unittest.TestCase):
 
 
 class CycleTests(unittest.TestCase):
+    def test_new_youtube_short_is_skipped_instead_of_matching_a_published_item(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = pathlib.Path(directory)
+            settings = make_settings(
+                root,
+                sources=(make_source(kind="youtube", name="Test Show — YouTube"),),
+            )
+            radar.save_archive(root / "items.json", {"version": 1, "items": [published_item()]})
+            feed = rss_feed(
+                description="Brief publisher notes about a highlighted moment. " * 10,
+                date=email.utils.format_datetime(NOW),
+                link="https://www.youtube.com/shorts/short222",
+            )
+            with (
+                mock.patch.object(radar, "fetch_bytes", return_value=feed),
+                mock.patch.object(radar, "llm_json") as llm,
+            ):
+                stats = radar.run_cycle(settings, lookback_days=7)
+
+            archive = radar.load_archive(root / "items.json")
+            published = next(item for item in archive["items"] if item["status"] == "published")
+            skipped = next(item for item in archive["items"] if item["status"] == "skipped")
+            self.assertEqual(stats["new_items"], 1)
+            self.assertEqual(stats["skipped"], 1)
+            self.assertEqual(len(published["appearances"]), 1)
+            self.assertTrue(radar.is_youtube_short(skipped["appearances"][0]))
+            llm.assert_not_called()
+
     def test_reconsider_refreshes_and_rejudges_one_unpublished_item(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = pathlib.Path(directory)

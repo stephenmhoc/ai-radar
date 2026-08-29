@@ -58,6 +58,9 @@ admits consequential work on frontier research, AI infrastructure, important AI
 products and companies, AI-native engineering, strategy, policy, and Physical
 AI. Newsletter issues must offer original reporting, research, interviews, or
 durable analysis; generic roundups and incidental AI mentions are excluded.
+YouTube Shorts are skipped locally without an LLM call. Other brief promotional,
+highlight, launch, quote, and social clips are editorially excluded; a notable
+name or model-company source is not enough to qualify them.
 
 When that policy changes, one previously excluded item can be safely refreshed
 from its configured feeds and rejudged without replaying the archive:
@@ -74,10 +77,13 @@ Sparse publisher notes produce a `deferred` record that is reconsidered only
 when richer metadata arrives. Model, provider, and local-validation failures
 are not persisted at all, so a later run can retry them; a missing API key
 therefore fails every summary rather than deferring anything. New editorial decisions use
-one strict structured-output request returning both the one-to-two-sentence
+one strict structured-output decision shape returning both the one-to-two-sentence
 site summary and four-to-eight-sentence RSS summary. The application validates
 the result locally, caps output tokens, and logs the actual routed model and
-token usage.
+token usage. The prompt still targets at most 55 words for `short_summary`, but
+the local length check accepts up to 82 words. A result above that 1.5x tolerance
+is retried with explicit feedback to shorten it to the 55-word target; the error
+reaches Sentry only if the bounded attempts are exhausted.
 
 Cloudflare hosting remains free static Pages. OpenRouter billing is separate:
 `openrouter/auto` can select paid models, so the token cap limits output size but
@@ -112,8 +118,9 @@ missing or stale heartbeat marks the worker unhealthy and emits one grouped
 Sentry event per outage. Widespread YouTube failures use a separate RSS-outage
 fingerprint after the delayed retry and report only once until a recovered cycle
 clears the local alert latch. Malformed or locally invalid LLM structured
-responses use the existing bounded retry policy and reach Sentry only if every
-attempt fails. A response truncated at the output-token cap is reported
+responses use the existing bounded retry policy, with corrective validation
+feedback, and reach Sentry only if every attempt fails. A response truncated at
+the output-token cap is reported
 immediately instead, since retrying buys the same truncation. A total Docker-host
 or network outage still requires an external monitor because the failed host
 cannot report its own loss.

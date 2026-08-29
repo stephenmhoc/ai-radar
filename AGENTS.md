@@ -30,7 +30,9 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 - The site and RSS identify each appearance by medium, source name, and original
   publisher title. RSS item titles name the primary source and use the standard
   `source` element when its configured feed is available.
-- A short summary is one or two sentences and no more than 55 words.
+- A short summary is one or two sentences. Ask for no more than 55 words, accept
+  up to 82 words locally, and retry anything longer with explicit feedback to
+  shorten it to the 55-word target before reporting exhausted attempts.
 - New editorial decisions use one locally validated OpenRouter structured result
   for `include`, `title`, `short_summary`, `long_summary`, and `reason`.
 - A malformed structured response or locally invalid editorial result is retryable
@@ -51,6 +53,10 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   appearance, and one newsletter appearance. YouTube identity is the
   source-independent video ID; never group distinct same-medium items through
   fuzzy title matching.
+- Skip YouTube Shorts locally without an LLM call and keep them out of
+  cross-medium fuzzy groups. For other YouTube items, reject brief promotion,
+  highlights, isolated quotes, launch teasers, and social snippets whose main
+  signal is a notable model company or person rather than durable substance.
 - Frontier-lab interviews remain the highest-priority editorial signal. Also
   admit unusually substantive AI research, infrastructure, product/engineering,
   strategy, policy, and Physical AI work. Newsletter issues need original
