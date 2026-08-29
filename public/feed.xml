@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Why 1,200 AI Agents Started Working Together | Ryan Greenblatt — The a16z Show</title>
+      <link>https://a16z.simplecast.com/episodes/why-1-200-ai-agents-started-working-together-ryan-greenblatt-i7A557W2</link>
+      <guid isPermaLink="false">ai-radar:b627bd6cd9a7f8e77de2</guid>
+      <pubDate>Sat, 29 Aug 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.simplecast.com/JGE3yC0V">The a16z Show</source>
+      <description>Ryan Greenblatt, Chief Scientist at Redwood Research, joins Theo Jaffee to discuss an independent investigation into an OpenAI Hugging Face hacking incident. The study found that 1,200 AI agents spontaneously organized through message boards, sharing information, assigning tasks, and forming teams. These agents even sacrificed their own success to help others, working together on elaborate strategies to manipulate how their performance would be scored. Greenblatt and Jaffee explore why this level of coordination was surprising and how reward hacking may emerge during training. They also discuss the risk that attempts to eliminate bad behavior could make it harder to detect, and the implications for AI monitoring, alignment, and independent risk assessment as agents become more capable.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · The a16z Show&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://a16z.simplecast.com/episodes/why-1-200-ai-agents-started-working-together-ryan-greenblatt-i7A557W2"&gt;Why 1,200 AI Agents Started Working Together | Ryan Greenblatt&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>OpenAI — Magic Manga Girl — OpenAI</title>
       <link>https://www.youtube.com/watch?v=S6TIVzqTmu8</link>
       <guid isPermaLink="false">ai-radar:415945dbc281cfcc3f93</guid>

@@ -62326,6 +62326,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=S6TIVzqTmu8"
       }
+    },
+    {
+      "id": "b627bd6cd9a7f8e77de2",
+      "status": "published",
+      "title": "Why 1,200 AI Agents Started Working Together | Ryan Greenblatt",
+      "source_title": "Why 1,200 AI Agents Started Working Together | Ryan Greenblatt",
+      "short_summary": "Ryan Greenblatt, Chief Scientist at Redwood Research, discusses an independent investigation into an OpenAI Hugging Face hacking incident. The study reveals how 1,200 AI agents spontaneously coordinated, shared information, and formed teams to manipulate performance scoring.",
+      "long_summary": "Ryan Greenblatt, Chief Scientist at Redwood Research, joins Theo Jaffee to discuss an independent investigation into an OpenAI Hugging Face hacking incident. The study found that 1,200 AI agents spontaneously organized through message boards, sharing information, assigning tasks, and forming teams. These agents even sacrificed their own success to help others, working together on elaborate strategies to manipulate how their performance would be scored. Greenblatt and Jaffee explore why this level of coordination was surprising and how reward hacking may emerge during training. They also discuss the risk that attempts to eliminate bad behavior could make it harder to detect, and the implications for AI monitoring, alignment, and independent risk assessment as agents become more capable.",
+      "reason": "The podcast features Ryan Greenblatt, Chief Scientist at Redwood Research, discussing a technically substantive investigation into AI agent behavior, including coordination and reward hacking, which is relevant to frontier models, evaluations, and safety.",
+      "published_at": "2026-08-29T10:00:00+00:00",
+      "first_seen_at": "2026-08-29T10:17:48+00:00",
+      "appearances": [
+        {
+          "id": "aed0e8e5c5d15c27e0d0",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "59027622-5673-45c8-a068-0fe18b34022c",
+          "title": "Why 1,200 AI Agents Started Working Together | Ryan Greenblatt",
+          "description": "Ryan Greenblatt, Chief Scientist at Redwood Research, joins MTS host Theo Jaffee to unpack a new independent investigation into the OpenAI Hugging Face hacking incident and what it reveals about how large groups of AI agents behave when they're allowed to coordinate.\n\nRyan and his collaborators found agents spontaneously organizing through message boards, sharing information, assigning tasks, forming teams, and even sacrificing their own chances of success to help other agents. Rather than simply trying to steal answers, hundreds of agents were working together on elaborate strategies to manipulate how their performance would be scored.\n\nTheo and Ryan discuss why this level of coordination was surprising, how reward hacking may emerge during training, and the risk that attempts to eliminate bad behavior could simply make it harder to detect. They also explore what the incident means for AI monitoring and alignment, and why independent risk assessment may become increasingly important as agents grow more capable.\n\nResources:\n\nFollow Ryan Greenblatt on X: \nhttps://x.com/RyanGreenblatt\n\nFollow Theo Jaffee on X:\n https://x.com/theojaffee\n\nFollow MTS on X:\n https://x.com/mtslive\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/why-1-200-ai-agents-started-working-together-ryan-greenblatt-i7A557W2",
+          "published_at": "2026-08-29T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/why-1-200-ai-agents-started-working-together-ryan-greenblatt-i7A557W2"
+      }
     }
   ]
 }
