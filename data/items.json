@@ -62413,6 +62413,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/OODrOctjEZU"
       }
+    },
+    {
+      "id": "8e4ba57b7be450f284a1",
+      "status": "skipped",
+      "title": "If AI Agents Can Do It Today, What's Left For Tomorrow? | Parag Agrawal , Parallel Web Systems",
+      "source_title": "If AI Agents Can Do It Today, What's Left For Tomorrow? | Parag Agrawal , Parallel Web Systems",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes are from a brief YouTube Short clip and lack sufficient technical depth and detail to support a substantial summary.",
+      "published_at": "2026-08-29T16:00:23+00:00",
+      "first_seen_at": "2026-08-29T16:17:22+00:00",
+      "appearances": [
+        {
+          "id": "260e9dd9e947bf71d191",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:pKqFz39dyh4",
+          "title": "If AI Agents Can Do It Today, What's Left For Tomorrow? | Parag Agrawal , Parallel Web Systems",
+          "description": "If a task is worth doing and there are GPUs available, an agent will just do it today. So what work is left for tomorrow? Parag Agrawal argues the only work left is work triggered by something changing — and one of those triggers is everything that changed on the web. Search stops being a request and becomes a standing instruction.",
+          "url": "https://www.youtube.com/shorts/pKqFz39dyh4",
+          "published_at": "2026-08-29T16:00:23+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/pKqFz39dyh4"
+      }
     }
   ]
 }
