@@ -62572,6 +62572,34 @@
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security"
       }
+    },
+    {
+      "id": "01aa94423d9abc1a0a97",
+      "status": "skipped",
+      "title": "$1,1,00,000,000. The Machine Age Fund | a16z",
+      "source_title": "$1,1,00,000,000. The Machine Age Fund | a16z",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This item is a brief promotional fundraise announcement video rather than a substantive technical interview, talk, or deep explainer.",
+      "published_at": "2026-08-30T18:25:45+00:00",
+      "first_seen_at": "2026-08-30T19:17:23+00:00",
+      "appearances": [
+        {
+          "id": "aaf792496abb87e31d8b",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:1bmsSH9dmgQ",
+          "title": "$1,1,00,000,000. The Machine Age Fund | a16z",
+          "description": "At Andreessen Horowitz, we just raised $1.1 billion for the Machine Age Fund to back the founders building the technologies, companies, and infrastructure defining this new era. The Machine Age is here.\n\nThis is an a16z Original, produced by the New Media team for the 2026 fundraise.",
+          "url": "https://www.youtube.com/watch?v=1bmsSH9dmgQ",
+          "published_at": "2026-08-30T18:25:45+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=1bmsSH9dmgQ"
+      }
     }
   ]
 }
