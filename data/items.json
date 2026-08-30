@@ -62471,6 +62471,34 @@
       "links": {
         "podcast": "https://www.davidsenra.com/episode/doug-leone"
       }
+    },
+    {
+      "id": "e9d87251c6d6ec4bb637",
+      "status": "published",
+      "title": "Why a16z Launched the Machine Age Fund | Jen Kha",
+      "source_title": "Why a16z Launched the Machine Age Fund | Jen Kha",
+      "short_summary": "Jen Kha, a16z Managing Partner, discusses the firm's Machine Age Fund and its investment thesis in rebuilding physical infrastructure for AI. She explains why chips, networking, and data centers are becoming investable again as AI demand pushes existing infrastructure to its limits.",
+      "long_summary": "Jen Kha, a16z Managing Partner and Head of Global Partnerships, joins MTS hosts to discuss the a16z Machine Age Fund. The fund's investment thesis focuses on rebuilding the physical infrastructure that powers AI. Kha explains that components like chips, networking, memory, cooling, and data centers are becoming investable again after decades of software dominance. As AI demand strains current infrastructure, a16z created a dedicated fund, recognizing that hardware founders are rethinking the stack from first principles. The discussion also covers the global race for AI adoption, the needs of hardware startups beyond capital, and the return of experienced systems builders to entrepreneurship to construct new infrastructure.",
+      "reason": "The item discusses AI infrastructure, specifically chips, networking, and data centers, which are core areas of interest for AI Radar. The speaker, Jen Kha, is a managing partner at a prominent investment firm, offering insights into the economics and business strategy shaping AI development.",
+      "published_at": "2026-08-30T10:00:00+00:00",
+      "first_seen_at": "2026-08-30T10:17:23+00:00",
+      "appearances": [
+        {
+          "id": "dda30a07b17499714fac",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "8fe5cec4-1819-471b-b826-50cc7292e4f5",
+          "title": "Why a16z Launched the Machine Age Fund | Jen Kha",
+          "description": "a16z Managing Partner and Head of Global Partnerships Jen Kha joins MTS hosts Theo Jaffee and Sophia Dew to discuss a16z's Machine Age Fund and the investment thesis behind rebuilding the physical infrastructure that powers AI.\n\nJen explains why chips, networking, memory, cooling, data centers, and other parts of the physical computing stack are becoming investable again after decades in which software captured much of the industry's attention. As AI demand pushes existing infrastructure to its limits, she explains why a16z created a dedicated fund and why hardware founders are increasingly rethinking the stack from first principles.\n\nThey also discuss the global race to adopt AI, what hardware startups need beyond capital, the backlash against data centers in the U.S., and why experienced systems builders are returning to entrepreneurship as a new generation of infrastructure gets built.\n\nResources:\n\nFollow Jen Kha on X: \nhttps://x.com/jkhamehl\n\nFollow Theo Jaffee on X:\n https://x.com/theojaffee\n\nFollow Sophia Dew on X:\n https://x.com/sophiadew\n\nFollow MTS on X:\n https://x.com/mtslive\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/why-a16z-launched-the-machine-age-fund-jen-kha-MopZc0wl",
+          "published_at": "2026-08-30T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/why-a16z-launched-the-machine-age-fund-jen-kha-MopZc0wl"
+      }
     }
   ]
 }
