@@ -39,11 +39,23 @@ element, and the complete source list in the description.
 The publisher requires Python 3.11+. Publishing uses the standard library; the
 worker image also installs the Sentry SDK from `requirements.txt`.
 
+Local development uses [mise](https://mise.jdx.dev/) to activate Python 3.12
+and ShellCheck. Run `mise install` once after cloning, then create the ignored
+virtual environment and install the pinned Python dependency:
+
 ```bash
-python3 radar.py doctor
-python3 radar.py build-site
-python3 -m unittest discover -s tests -v
-python3 -m py_compile radar.py scheduled_cycle.py scheduler_watchdog.py error_reporter.py scripts/check_archive_evolution.py
+python -m venv .venv
+.venv/bin/python -m pip install --requirement requirements.txt
+```
+
+Python 3.11 is also supported by CI and can be invoked locally with
+`mise exec python@3.11 -- python` when a compatibility check is needed.
+
+```bash
+.venv/bin/python radar.py doctor
+.venv/bin/python radar.py build-site
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python -m py_compile radar.py scheduled_cycle.py scheduler_watchdog.py error_reporter.py scripts/check_archive_evolution.py
 ```
 
 To fetch and summarize new items, set the configured API key and run:
