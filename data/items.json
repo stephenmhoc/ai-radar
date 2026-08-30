@@ -62441,6 +62441,36 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/pKqFz39dyh4"
       }
+    },
+    {
+      "id": "e86cf4f38a18b866dd60",
+      "status": "published",
+      "title": "Doug Leone on Sequoia, Fear, Great Founders & Starting Over at 69",
+      "source_title": "Doug Leone on Sequoia, Fear, Great Founders & Starting Over at 69",
+      "short_summary": "Doug Leone, former head of Sequoia Capital, discusses his career, investment philosophy, and the AI revolution. He emphasizes the importance of backing extreme outliers and helping founders turn products into businesses, noting that AI is rewriting business more radically than anything he has seen before.",
+      "long_summary": "Doug Leone, who led Sequoia Capital for 26 years, shares insights from his career, including his journey from an immigrant to a venture capitalist. He explains his investment heuristics, focusing on extreme outliers capable of returning 100 times the original investment, and highlights the mistake of selling winners too early. Leone discusses his role in helping founders build businesses, recruit teams, and navigate challenges, citing examples like David Vélez of Nubank. He also touches on the importance of trust, architecting boards, and delivering difficult feedback. Leone believes the AI revolution is rewriting business more radically than any previous technological shift.",
+      "reason": "The item features Doug Leone, a prominent venture capitalist, discussing the AI revolution and its impact on business, which aligns with the 'economics, business strategy, and policy forces that materially shape AI development and adoption' criterion.",
+      "published_at": "2026-08-30T08:00:00+00:00",
+      "first_seen_at": "2026-08-30T08:17:21+00:00",
+      "appearances": [
+        {
+          "id": "15152d365714b6655875",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "e1bcab5e-a3de-11f1-aa35-67d2173479f4",
+          "title": "Doug Leone on Sequoia, Fear, Great Founders & Starting Over at 69",
+          "description": "Doug Leone spent 26 years helping lead Sequoia Capital through successive eras of technological change. Born in Italy, he came to the United States without speaking English and carried the insecurity of an outsider into his career. That fear became fuel: whenever he felt himself falling behind, he forced himself to start over. After stepping down from Sequoia at 65 to make room for the next generation, he returned four years later. Now he considers himself a low-level analyst again, racing to understand an AI revolution that he believes is rewriting business more radically than anything he has seen before.\n\nLeone explains the three questions he asks before making an investment: Would he put his children's money into it? If he could make only 20 investments in his life, would this be one of them? Could it return the entire fund? He is interested only in extreme outliers—companies capable of returning 100 times the original investment—and says the biggest mistake venture investors make is selling their winners too early. Sequoia once owned enormous stakes in Apple, Cisco, Google and NVIDIA, but even the greatest investors failed to anticipate how long exceptional companies could continue compounding.\n\nHis role as an investor is not to shape a founder's technology. It is to help turn a product into a business: recruiting the first team, building sales and marketing, navigating crucible moments and preserving the founder as the soul of the company. He describes backing David Vélez before Nubank existed, what Fred Luddy's unusual ServiceNow pitch revealed about him and why Sequoia looks for the same qualities in founders and its own partners: a hypercompetitive person with a heart of gold.\n\nLeone also discusses trust as the accelerant that makes business move quickly. Trust requires both competence and good intentions, and it is earned by helping founders when they are most vulnerable. He explains why founders should architect their boards as carefully as their products, why productive disagreement is different from argument and how to deliver difficult feedback so it can actually be heard. He closes with lessons from his longtime partner Michael Moritz: listen to the exact words people choose, put the other person first and always ask what a company could become if everything goes right.\n\nShow notes: https://www.davidsenra.com/episode/doug-leone\n\nMade possible by\n\nRamp: https://ramp.com\n\nAppLovin: https://applovin.com/senra\n\nDeel: https://deel.com/senra\n\nChapters\n\n(00:00:00) How to Dominate for Decades\n\n(00:03:17) Turning Fear Into a Tailwind\n\n(00:05:40) Immigrant Drive, Hard Work & the Beach Club\n\n(00:12:19) Simplifying Life & Choosing Discomfort\n\n(00:14:37) The Homeless Sequoia Partner With No Plan B\n\n(00:16:49) Stepping Down, Coming Back & Starting Over\n\n(00:20:04) Why AI Is Different From Every Previous Technology Shift\n\n(00:22:13) Doug's Three Investment Heuristics\n\n(00:23:52) The Cost of Selling Great Companies Too Early\n\n(00:25:39) Helping Founders Turn Products Into Businesses\n\n(00:28:28) David Vélez, Nubank & the Psychology of Founder Support\n\n(00:32:25) Why Founders Must Remain the Soul of the Company\n\n(00:36:13) Torturing Yourself Into Greatness\n\n(00:39:57) Don Valentine, Succession & the Sequoia School of Hard Knocks\n\n(00:44:28) Staying Grounded & Developing a Sniffer for People\n\n(00:47:46) Hypercompetitive With a Heart of Gold\n\n(00:50:13) Fred Luddy, Israeli Founders & Radical Directness\n\n(00:52:28) Trust Is the Accelerant of Business\n\n(00:59:57) Starting From Zero & Hunting for the Next Great Founder\n\n(01:05:59) Architect Your Board Like Your Product\n\n(01:10:24) Truth, Disagreement & the Art of Difficult Feedback\n\n(01:13:43) Humanity, Introversion & the Value of Relationships\n\n(01:18:18) What Doug Learned From Michael Moritz\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/doug-leone",
+          "published_at": "2026-08-30T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/doug-leone"
+      }
     }
   ]
 }
