@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>SemiAnalysis on Neocloud Security and the Impact of AI on Vulnerabilities — SemiAnalysis</title>
+      <link>https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security</link>
+      <guid isPermaLink="false">ai-radar:8a2d23cc5ac88c071260</guid>
+      <pubDate>Sun, 30 Aug 2026 15:46:22 +0000</pubDate>
+      <source url="https://newsletter.semianalysis.com/feed">SemiAnalysis</source>
+      <description>SemiAnalysis examines the state of cybersecurity in the AI infrastructure ecosystem based on its ClusterMAX 3.0 testing across GPU clusters, Slurm, Kubernetes, and bare-metal environments. The piece evaluates whether advanced AI models and initiatives like Anthropic&amp;#x27;s Project Glasswing and OpenAI&amp;#x27;s Daybreak are driving a surge in detected vulnerabilities. While security benchmarks show open models rapidly improving at exploit generation and AI stack libraries show higher CVE activity, aggregate vulnerability data across core software like the Linux kernel, PyTorch, and Docker does not yet show a dramatic statistical shift. The report also highlights examples of AI-automated bug hunting from Google Chrome&amp;#x27;s security team using Gemini and urges neocloud providers to eliminate known vulnerabilities and secure their multi-vendor infrastructure.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · SemiAnalysis&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security"&gt;Most Neoclouds Suck At Security&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Lenny's Podcast: Tara Seshan on Persistent AI Coworkers and Product Strategy at OpenAI — Lenny's Podcast</title>
       <link>https://www.lennysnewsletter.com/p/ais-third-era-the-rise-of-persistent</link>
       <guid isPermaLink="false">ai-radar:4dbdba7f5205f05c35b7</guid>
