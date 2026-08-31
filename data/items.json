@@ -62787,6 +62787,36 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=ZDsV3yPQjEE"
       }
+    },
+    {
+      "id": "bf62822e9485792fa743",
+      "status": "skipped",
+      "title": "The rise and fall of agent civilizations",
+      "source_title": "The rise and fall of agent civilizations",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a video recording of a previously published post, not an interview or conversation with a qualifying person, nor does it offer original reporting or analysis.",
+      "published_at": "2026-08-31T20:36:53+00:00",
+      "first_seen_at": "2026-08-31T21:17:23+00:00",
+      "appearances": [
+        {
+          "id": "35c1dee83abea39d6505",
+          "kind": "podcast",
+          "source": "Dwarkesh Podcast",
+          "family": "dwarkesh podcast",
+          "guid": "substack:post:213603862",
+          "title": "The rise and fall of agent civilizations",
+          "description": "This is a video recording of a post I wrote last week. You can read the original \nhere\n.\n\nThis is a public episode. If you would like to discuss this with other subscribers or get access to bonus episodes, visit \nwww.dwarkesh.com",
+          "url": "https://www.dwarkesh.com/p/openai-huggingface-narration",
+          "published_at": "2026-08-31T20:36:53+00:00",
+          "hosts": [
+            "Dwarkesh Patel"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.dwarkesh.com/p/openai-huggingface-narration"
+      }
     }
   ]
 }
