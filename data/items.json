@@ -62731,6 +62731,34 @@
       "links": {
         "newsletter": "https://importai.substack.com/p/import-ai-471-why-hugging-face-worries"
       }
+    },
+    {
+      "id": "4fbdf4239a097cbc779b",
+      "status": "skipped",
+      "title": "Sam Altman on Living Through the Singularity",
+      "source_title": "Sam Altman on Living Through the Singularity",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-08-31T14:00:29+00:00",
+      "first_seen_at": "2026-08-31T15:17:18+00:00",
+      "appearances": [
+        {
+          "id": "e66a3d456021b7832e8d",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:hzf1DumW_7M",
+          "title": "Sam Altman on Living Through the Singularity",
+          "description": "Sam Altman explains why the arrival of superintelligence may feel less dramatic than people expect—and why humans may adapt to it faster than we imagine.\n\n#SamAltman #OpenAI #AGI #Superintelligence #Singularity #ArtificialIntelligence #FutureOfAI #Technology\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/hzf1DumW_7M",
+          "published_at": "2026-08-31T14:00:29+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/hzf1DumW_7M"
+      }
     }
   ]
 }
