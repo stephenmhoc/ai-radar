@@ -62630,6 +62630,64 @@
       "links": {
         "newsletter": "https://www.oneusefulthing.org/p/agency-and-agents"
       }
+    },
+    {
+      "id": "f2fbfef96ce142461e70",
+      "status": "published",
+      "title": "Gavin Baker on AI Demand, Compute Supply, and Infrastructure Economics",
+      "source_title": "Gavin Baker: Why AI Demand Is Outrunning Compute Supply",
+      "short_summary": "Gavin Baker joins a16z's David George to discuss the AI boom, arguing that demand for intelligence is underestimated. They explore infrastructure economics, NVIDIA's role, and the potential for multiple players to capture value.",
+      "long_summary": "In this episode of The a16z Show, Gavin Baker of Atreides Management sits down with David George to unpack the state of the AI boom. They debate whether AI demand is underestimated and discuss the economics of the infrastructure buildout, including payback periods for compute investments. The conversation covers the roles of frontier labs, open-source models, applications, clouds, and NVIDIA in capturing value. They also address risks like an AI bubble versus a shortage, data center backlash, and the rise of multi-model architectures. Baker argues the AI buildout could reindustrialize America, while George considers the risk of underbuilding.",
+      "reason": "The episode features Gavin Baker, who is on the target roster, discussing core AI Radar topics like compute supply, infrastructure economics, and market dynamics for frontier models and chips.",
+      "published_at": "2026-08-31T10:00:00+00:00",
+      "first_seen_at": "2026-08-31T10:17:30+00:00",
+      "appearances": [
+        {
+          "id": "d82d982aea85a9165607",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "38ff9198-903d-4a96-8b02-b577f87670c0",
+          "title": "Gavin Baker: Why AI Demand Is Outrunning Compute Supply",
+          "description": "a16z’s David George sits down with Gavin Baker to unpack the state of the AI boom, why demand for intelligence may still be dramatically underestimated, and why the outcome doesn't necessarily have to be winner-take-all.\n\nDavid and Gavin explore the possibility that frontier labs, open-source models, applications, clouds, and NVIDIA can all capture significant value as AI adoption expands. They dig into the economics of the infrastructure buildout, why compute investments can have unusually fast payback periods, and what happens when today's relatively small group of heavy AI users expands to hundreds of millions of people.\n\nThey also debate the risk of an AI bubble versus an AI shortage, the backlash against data centers, orbital compute, the rise of multi-model architectures, and NVIDIA's position at the center of the AI supply chain. Gavin makes the case that the AI buildout could help reindustrialize America, while David explores whether the bigger near-term risk is not overbuilding, but failing to build enough.\n\nResources:\n\nFollow Gavin Baker on X:\n https://x.com/GavinSBaker\n\nFollow David George on X:\n https://x.com/DavidGeorge83\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/gavin-baker-why-ai-demand-is-outrunning-compute-supply-z97oFoOG",
+          "published_at": "2026-08-31T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/gavin-baker-why-ai-demand-is-outrunning-compute-supply-z97oFoOG"
+      }
+    },
+    {
+      "id": "af0735e44578be9e9a63",
+      "status": "deferred",
+      "title": "Meta Settles, A Framework For Regulating Content, The Rest of Big Tech",
+      "source_title": "Meta Settles, A Framework For Regulating Content, The Rest of Big Tech",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-08-31T10:00:00+00:00",
+      "first_seen_at": "2026-08-31T10:17:30+00:00",
+      "appearances": [
+        {
+          "id": "68f2a37eb1b514581b92",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=19845",
+          "title": "Meta Settles, A Framework For Regulating Content, The Rest of Big Tech",
+          "description": "Meta's settlement makes sense for all parties, but the entire sage highlights why any solution to regulating technology feels off.",
+          "url": "https://stratechery.com/2026/meta-settles-a-framework-for-regulating-content-the-rest-of-big-tech/",
+          "published_at": "2026-08-31T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/meta-settles-a-framework-for-regulating-content-the-rest-of-big-tech/"
+      }
     }
   ]
 }
