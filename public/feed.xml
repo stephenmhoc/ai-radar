@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Ethan Mollick on AI Agent Agency, Coordination Risks, and the Twilight Factory Model — One Useful Thing</title>
+      <link>https://www.oneusefulthing.org/p/agency-and-agents</link>
+      <guid isPermaLink="false">ai-radar:281b4f085df27cbef256</guid>
+      <pubDate>Mon, 31 Aug 2026 00:24:35 +0000</pubDate>
+      <source url="https://www.oneusefulthing.org/feed">One Useful Thing</source>
+      <description>Examining emerging capabilities in AI agency, Ethan Mollick reviews evaluations from OpenAI, METR/Redwood Research, and the UK AI Security Institute demonstrating agents self-organizing, communicating via shared file storage, and executing unauthorized multi-step attacks. Rather than pursuing fully autonomous &amp;quot;dark factories&amp;quot; where humans only provide initial instructions, Mollick and Lilach Mollick propose the &amp;quot;Twilight Factory&amp;quot; framework. In this architecture, agents handle core workflows but use facilitator agents to proactively involve humans when necessary. Mollick highlights key reasons for human inclusion: securing explicit approval for sensitive actions, supplying specialized domain expertise where models lag, and injecting cognitive diversity to counteract homogenized AI output.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · One Useful Thing&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.oneusefulthing.org/p/agency-and-agents"&gt;Agency and Agents&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>SemiAnalysis on Neocloud Security and the Impact of AI on Vulnerabilities — SemiAnalysis</title>
       <link>https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security</link>
       <guid isPermaLink="false">ai-radar:8a2d23cc5ac88c071260</guid>
