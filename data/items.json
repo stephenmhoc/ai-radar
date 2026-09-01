@@ -62848,6 +62848,36 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-fals-h3-max-live-breaks-the"
       }
+    },
+    {
+      "id": "70bd08c9cfc5355c4971",
+      "status": "published",
+      "title": "Sarah Guo on What the 250 People Building AI Believe",
+      "source_title": "Sarah Guo - What the 250 People Building AI Believe - [Invest Like the Best, EP.489]",
+      "short_summary": "Sarah Guo, founder and managing partner of Conviction, discusses the beliefs of those building AI, the challenges faced by researchers, and the potential for robots and scientific discovery. She emphasizes that no single company will own the future of AI.",
+      "long_summary": "Sarah Guo, founder and managing partner of Conviction, a venture firm focused on AI-native companies, shares insights into the current state of AI development. She discusses the perspectives of the individuals actively building AI, the internal struggles of leading researchers, and the proximity of advancements like household robots and accelerated scientific discovery. Guo's central belief is that the future of AI will not be dominated by a single company, which has implications for founders, investors, and resource allocation in the rapidly evolving field. The conversation also touches on topics such as the AI talent race, compute as a constraint, the future of robotics, and the case for open-source AI.",
+      "reason": "The item is a substantial interview with Sarah Guo, a founder and managing partner of a venture firm focused on AI-native companies, offering firsthand expertise and analysis on the economics, business strategy, and policy forces shaping AI development.",
+      "published_at": "2026-09-01T08:00:00+00:00",
+      "first_seen_at": "2026-09-01T08:17:22+00:00",
+      "appearances": [
+        {
+          "id": "21f6132a680327aa5408",
+          "kind": "podcast",
+          "source": "Invest Like the Best",
+          "family": "invest like the best",
+          "guid": "987a3d0c-a547-11f1-907d-e7244a2569a6",
+          "title": "Sarah Guo - What the 250 People Building AI Believe - [Invest Like the Best, EP.489]",
+          "description": "My guest today is Sarah Guo, founder and managing partner of Conviction, the venture firm she built to back AI-native companies from their earliest days. \n\nSarah has become one of the most sought-after early-stage investors in AI, often the first check into the companies defining the frontier. \n\nIn this conversation, we go inside that frontier: what the small group of people actually building AI believe right now, why some of the field's best researchers are wrestling with their own sense of purpose, and how close we are to robots in the home and a genuine acceleration in scientific discovery. \n\nAt the center is Sarah's conviction that no single company will own the future of AI, and what that means for founders, investors, and anyone allocating their time and resources in a world moving this fast.\n\nOur managing editor Dom Cooke wrote a profile of Sarah for Colossus, \"Sarah's Wager,\" on how she built the firm closest to the AI frontier and why she's now betting against its biggest companies. \n\nPlease enjoy this conversation with Sarah Guo.\n\nFor the full show notes, transcript, and links to mentioned content, check out the episode page ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠here⁠⁠⁠⁠⁠. \n\n-----\n\nBecome a Colossus member to get our quarterly print magazine and private audio experience, including exclusive profiles and early access to select episodes. Subscribe at ⁠colossus.com/subscribe⁠.\n\n-----\n\n⁠Ramp’s⁠ mission is to help companies manage their spend in a way that reduces expenses and frees up time for teams to work on more valuable projects. Go to⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠ ⁠ramp.com/invest⁠⁠ to sign up for free and get a $250 welcome bonus.\n\n-----\n\nTrusted by thousands of businesses, ⁠Vanta⁠ continuously monitors your security posture and streamlines audits so you can win enterprise deals and build customer trust without the traditional overhead. Invest Like the Best listeners get a special offer of $1,000 off Vanta when you go to ⁠vanta.com/invest⁠. \n\n-----\n\nWorkOS⁠ is the infrastructure B2B and AI-native companies use to sell to enterprise. It covers everything enterprise security requires: SSO, SCIM, RBAC, Audit Logs, AI governance, and more. Trusted by 2,000+ fast-growing companies, including OpenAI, Anthropic, Cursor, and Vercel.\n\n-----\n\nRogo is the AI platform for finance. They're building agents for Wall Street that are trained to understand how bankers and investors actually do work: from diligence and modeling, to turning analysis into deliverables. To learn more, visit rogo.ai/invest.\n\n-----\n\n⁠Ridgeline⁠ has built a complete, real-time, modern operating system for investment managers. It handles trading, portfolio management, compliance, customer reporting, and much more through an all-in-one real-time cloud platform. Visit⁠ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠ridgeline.ai⁠.\n\n-----\n\nEditing and post-production work for this episode was provided by The Podcast Consultant.\n\nTimestamps:\n\n(00:00:00) Welcome to Invest Like the Best\n\n(00:02:16) Investing Without a Backtest\n\n(00:03:31) The AI Wager\n\n(00:06:16) Building the Best Investment Firm\n\n(00:08:37) Finding Non-Obvious AI Opportunities\n\n(00:11:00) The Frontier AI Talent Race\n\n(00:13:50) Compute as the Constraint\n\n(00:19:10) The Future of Robotics\n\n(00:22:15) Making Investment Decisions\n\n(00:26:13) How Sarah Spends Her Time\n\n(00:28:15) Raising a Venture Fund\n\n(00:30:49) Lessons From Her Parents\n\n(00:34:38) The Case for Open Source AI\n\n(00:39:01) Abundant Intelligence Isn't Inevitable\n\n(00:40:55) Compute Independence\n\n(00:43:14) Debates Inside Conviction\n\n(00:45:27) AI's Opportunity in Biology\n\n(00:48:58) Why Conviction\n\n(00:50:31) Finding Truth and Taking Risk\n\n(00:54:16) What Changes in the Next Year\n\n(00:56:46) The Kindest Thing",
+          "url": "https://colossus.com/episode/no-priors-just-conviction/",
+          "published_at": "2026-09-01T08:00:00+00:00",
+          "hosts": [
+            "Patrick O'Shaughnessy"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://colossus.com/episode/no-priors-just-conviction/"
+      }
     }
   ]
 }
