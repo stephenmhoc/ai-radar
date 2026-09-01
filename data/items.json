@@ -62906,6 +62906,107 @@
       "links": {
         "podcast": "https://feeds.megaphone.fm/trainingdata"
       }
+    },
+    {
+      "id": "8554b543543a9285060b",
+      "status": "published",
+      "title": "Write, Change, Recall, Forget: MongoDB's Pete Johnson on How Retrieval Drives Agent Performance",
+      "source_title": "Write, Change, Recall, Forget: MongoDB's Pete Johnson on How Retrieval Drives Agent Performance",
+      "short_summary": "Pete Johnson, Field CTO of AI at MongoDB, discusses the history of database architecture and the challenge of agent memory. The conversation covers SQL vs. NoSQL, enterprise database choices, contextualized chunking, retrieval quality, and enterprise AI deployment.",
+      "long_summary": "Pete Johnson, Field CTO of AI at MongoDB, joins Nathan for a discussion that intertwines the history of database architecture with the current state of agent memory. Johnson frames the conversation by noting his birth coincided with E.F. Codd's relational-model paper, which led to SQL. He explains that the relational model was designed for a world where storage was a scarce resource, favoring normalization. The episode delves into topics such as SQL versus NoSQL, enterprise database choices, schema flexible search, and the tradeoffs of contextualized chunking. Further discussion covers retrieval quality thresholds, agent memory systems, enterprise AI deployment, and global AI adoption.",
+      "reason": "The item features an interview with Pete Johnson, Field CTO of AI at MongoDB, discussing agent memory systems, enterprise AI deployment, and database architecture, which are relevant to AI-native software and engineering practice.",
+      "published_at": "2026-09-01T09:26:38+00:00",
+      "first_seen_at": "2026-09-01T10:17:25+00:00",
+      "appearances": [
+        {
+          "id": "73057d7bd86aa65fe71c",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "5faf9776-a18f-11f1-9dc1-d3d77021b3b7",
+          "title": "Write, Change, Recall, Forget: MongoDB's Pete Johnson on How Retrieval Drives Agent Performance",
+          "description": "Nathan's guest this episode is Pete Johnson, Field CTO of AI at MongoDB, and the conversation is really two conversations woven together: a history of database architecture, and a status report on the still-unsolved problem of agent memory. Pete opens with a framing device that recurs throughout — he was born in February 1970, four months before E.F. Codd's original relational-model paper that gave rise to SQL. The relational model, he explains, was built for a world where storage was the scarce resource, so normalization — splitting data across linked tables to avoid duplication — was the rational design choice.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/write-change-recall-forget-mongodb-s-pete-johnson-on-how-retrieval-drives-agent-performance/\nSponsors:\n\nMercury: Mercury is the banking platform loved by 300,000+ entrepreneurs, with virtual cards and Spend controls for granular budgets, receipts, and low-risk AI agent purchases. Learn more and apply in minutes at https://mercury.com\n\nGranola: Granola is an AI-powered notepad that securely transcribes meetings and turns rough notes into clean, structured action items. Try it free at https://granola.ai/tcr\n\nDiffusion: Diffusion helps organizations build custom AI software factories that scale business outcomes, not just outputs. Cognitive Revolution listeners get a 25% service credit on their first engagement at https://diffusion.io/tcr\n\nDeepgram Flux TTS: Deepgram Flux TTS brings lifelike AI voices with real personalities that handle interruptions, pauses, and natural conversation. Try all the voices free through September 12 at https://deepgram.com/keep-talking\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(03:15) Sponsor: Mercury\n\n(04:56) SQL versus NoSQL\n\n(11:24) Enterprise database choices (Part 1)\n\n(18:30) Sponsors: Granola | Diffusion\n\n(21:27) Enterprise database choices (Part 2)\n\n(21:27) Schema flexible search\n\n(33:50) Contextualized chunking tradeoffs (Part 1)\n\n(35:12) Sponsors: Deepgram Flux TTS | Claude\n\n(37:17) Contextualized chunking tradeoffs (Part 2)\n\n(46:22) Retrieval quality thresholds\n\n(53:17) Agent memory systems\n\n(01:05:51) Enterprise AI deployment\n\n(01:16:32) Voyage acquisition strategy\n\n(01:23:38) Global AI adoption\n\n(01:30:56) Episode Outro\n\n(01:34:41) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing",
+          "url": "https://www.cognitiverevolution.ai/write-change-recall-forget-mongodb-s-pete-johnson-on-how-retrieval-drives-agent-performance/",
+          "published_at": "2026-09-01T09:26:39+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        },
+        {
+          "id": "e2a33271f69a6f0fde3a",
+          "kind": "youtube",
+          "source": "The Cognitive Revolution — YouTube",
+          "family": "the cognitive revolution",
+          "guid": "yt:video:8FDFCUngrAg",
+          "title": "Write, Change, Recall, Forget: MongoDB's Pete Johnson on How Retrieval Drives Agent Performance",
+          "description": "Nathan's guest this episode is Pete Johnson, Field CTO of AI at MongoDB, and the conversation is really two conversations woven together: a history of database architecture, and a status report on the still-unsolved problem of agent memory. Pete opens with a framing device that recurs throughout — he was born in February 1970, four months before E.F. Codd's original relational-model paper that gave rise to SQL. The relational model, he explains, was built for a world where storage was the scarce resource, so normalization — splitting data across linked tables to avoid duplication — was the rational design choice.\n\nFor full show notes, links, and references, read the episode page:\nhttps://www.cognitiverevolution.ai/write-change-recall-forget-mongodb-s-pete-johnson-on-how-retrieval-drives-agent-performance/\n\nSPONSORS:\nMercury: Mercury is the banking platform loved by 300,000+ entrepreneurs, with virtual cards and Spend controls for granular budgets, receipts, and low-risk AI agent purchases. Learn more and apply in minutes at https://mercury.com\n\nGranola: Granola is an AI-powered notepad that securely transcribes meetings and turns rough notes into clean, structured action items. Try it free at https://granola.ai/tcr\n\nDiffusion: Diffusion helps organizations build custom AI software factories that scale business outcomes, not just outputs. Cognitive Revolution listeners get a 25% service credit on their first engagement at https://diffusion.io/tcr\n\nDeepgram Flux TTS: Deepgram Flux TTS brings lifelike AI voices with real personalities that handle interruptions, pauses, and natural conversation. Try all the voices free through September 12 at https://deepgram.com/keeptalking?utm_source=cognitiverevolution&utm_medium=audio&utm_campaign=flux_tts_launch&utm_content=shownotes\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nCHAPTERS:\n(00:00) About the Episode\n(03:15) Sponsor: Mercury\n(04:56) SQL versus NoSQL\n(11:24) Enterprise database choices (Part 1)\n(18:30) Sponsors: Granola | Diffusion\n(21:27) Enterprise database choices (Part 2)\n(21:27) Schema flexible search\n(33:50) Contextualized chunking tradeoffs (Part 1)\n(35:12) Sponsors: Deepgram Flux TTS | Claude\n(37:17) Contextualized chunking tradeoffs (Part 2)\n(46:22) Retrieval quality thresholds\n(53:17) Agent memory systems\n(01:05:51) Enterprise AI deployment\n(01:16:32) Voyage acquisition strategy\n(01:23:38) Global AI adoption\n(01:30:56) Episode Outro\n(01:34:41) Outro\n\nPRODUCED BY:\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\nWebsite: https://www.cognitiverevolution.ai\nTwitter (Podcast): https://x.com/cogrev_podcast\nTwitter (Nathan): https://x.com/labenz\nLinkedIn: https://linkedin.com/in/nathanlabenz/\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.youtube.com/watch?v=8FDFCUngrAg",
+          "published_at": "2026-09-01T09:26:38+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/write-change-recall-forget-mongodb-s-pete-johnson-on-how-retrieval-drives-agent-performance/",
+        "youtube": "https://www.youtube.com/watch?v=8FDFCUngrAg"
+      }
+    },
+    {
+      "id": "d469e004de4cb1ae10ff",
+      "status": "published",
+      "title": "The a16z Show — Daniel Litt: The Mathematician's Guide to AI",
+      "source_title": "Daniel Litt: The Mathematician's Guide to AI",
+      "short_summary": "Daniel Litt, Assistant Professor of Mathematics at the University of Toronto, discusses AI's progress in mathematics, what frontier models can do, and what they still lack. He explores how AI is changing mathematical research and the implications for human thinking.",
+      "long_summary": "Daniel Litt, Assistant Professor of Mathematics at the University of Toronto, joins Lisha Li on The a16z Show to discuss AI's rapid progress in mathematics. Litt explains that while some AI-generated results are impressive, such as an autonomous solution to the Erdős unit distance problem, current models primarily excel at calculations and combining known techniques. He argues that these models still struggle with intuition, theory building, and identifying new questions, which are crucial for mathematical progress. The conversation also explores how AI is transforming mathematical research, the potential for AI-generated papers to distort academic incentives, and the broader question of how humans can continue to improve their thinking as AI advances in intellectual work.",
+      "reason": "The item features a substantive conversation with an expert on frontier models, specifically their capabilities and limitations in mathematics, and the impact on research and human cognition, aligning with the 'frontier models, research, evaluations' and 'economics, business strategy, and policy forces that materially shape AI development' criteria.",
+      "published_at": "2026-09-01T10:00:00+00:00",
+      "first_seen_at": "2026-09-01T10:17:28+00:00",
+      "appearances": [
+        {
+          "id": "bd83b25f384265df6ff1",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "530a274b-dbf9-4577-9c39-1207c889db37",
+          "title": "Daniel Litt: The Mathematician's Guide to AI",
+          "description": "a16z’s Lisha Li sits down with Daniel Litt, Assistant Professor of Mathematics at the University of Toronto, to unpack AI's rapid progress in mathematics, what today's frontier models can actually do, and what they're still missing about the way mathematicians think.\n\nDaniel explains why some recent AI-generated results are genuinely impressive, including an autonomous solution to the Erdős unit distance problem, but argues that solving problems is only one part of mathematics. Today's models can grind through calculations, combine known techniques, and search enormous spaces, but still struggle with intuition, theory building, identifying the right questions, and developing the kind of big-picture understanding that drives much of mathematical progress.\n\nLisha and Daniel also explore how AI is already changing mathematical research, why an explosion of AI-generated papers could distort academic incentives, and what happens if researchers outsource the work of thinking rather than use AI to deepen it. Ultimately, they ask a question that extends far beyond mathematics: as AI gets better at intellectual work, how do we make sure humans keep getting better at thinking too?\n\nResources:\n\nFollow Daniel Litt on X: \nhttps://x.com/littmath\n\nFollow Lisha Li on X: \nhttps://x.com/lishali88\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/daniel-litt-the-mathematicians-guide-to-ai-TyLaUSzk",
+          "published_at": "2026-09-01T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/daniel-litt-the-mathematicians-guide-to-ai-TyLaUSzk"
+      }
+    },
+    {
+      "id": "1137245b602156225608",
+      "status": "deferred",
+      "title": "Nvidia Earnings, Dollars Per Gigawatt, Open and Hugging Face",
+      "source_title": "Nvidia Earnings, Dollars Per Gigawatt, Open and Hugging Face",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-01T10:00:00+00:00",
+      "first_seen_at": "2026-09-01T10:17:28+00:00",
+      "appearances": [
+        {
+          "id": "d77d143c8041acde07f4",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=19853",
+          "title": "Nvidia Earnings, Dollars Per Gigawatt, Open and Hugging Face",
+          "description": "Nvidia's earnings were remarking and boring — two sides of the same coin. Everything the company does is about avoiding a consolidated world.",
+          "url": "https://stratechery.com/2026/nvidia-earnings-dollars-per-gigawatt-open-and-hugging-face/",
+          "published_at": "2026-09-01T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/nvidia-earnings-dollars-per-gigawatt-open-and-hugging-face/"
+      }
     }
   ]
 }
