@@ -62901,10 +62901,23 @@
           "url": "https://feeds.megaphone.fm/trainingdata",
           "published_at": "2026-09-01T09:00:00+00:00",
           "hosts": []
+        },
+        {
+          "id": "034045ff84adc5762793",
+          "kind": "youtube",
+          "source": "Training Data — YouTube",
+          "family": "training data",
+          "guid": "yt:video:JWMF5EpP0KE",
+          "title": "Making Cities Awesome: Peregrine’s Nick Noone & Ben Rudolph",
+          "description": "Most public safety technology companies grow by collecting more data. Peregrine inverted the model: no sensors, no new data, a business built on connecting the data and information cities already own. Co-founders Nick Noone and Ben Rudolph received more than two dozen no's before San Pablo PD let them in the door in February 2018. Today, Peregrine powers law enforcement, emergency medical services, fire and rescue, and other services in more than 400 cities and communities globally. Nick and Ben explain their north star for data sovereignty, and discuss how Peregrine's philosophy and privacy-first approach to data access and ownership preserves individual privacy and cities' sovereignty. They walk through how AI and long-horizon agents are being deployed: a cold case agent that reproduced an exoneration detectives had reached by hand, a Wisconsin county that placed a suspect using cell records buried in 300GB of evidence, identifying threats to a synagogue, root-causing an escalation in weather-related incidents, and more.\n\nHosted by Sonya Huang, Sequoia Capital \n\n00:00 Introduction\n02:07 What Forward Deployed Engineering Means\n03:58 What Silicon Valley Gets Wrong\n05:23 UNHCR, Dimagi And Downstream Data Problems\n08:25 Why Cities, Why Safety\n10:45 Two Dozen Nos And San Pablo PD\n14:19 Building Through Defund The Police\n18:16 The Inversion Of The Collection Model\n21:20 Data Ownership And Governance\n22:57 From Nice Search To Deep Analysis\n29:59 Agents Writing The Integrations\n31:45 The Cold Case Agent\n35:02 The Anti-Network-Effect Proposition\n38:40 Facial Recognition And Hard Decisions\n40:48 Technology For The Underdogs\n42:54 Trusting The Individual Contributor\n48:50 Ten Thousand Cities",
+          "url": "https://www.youtube.com/watch?v=JWMF5EpP0KE",
+          "published_at": "2026-09-01T12:00:16+00:00",
+          "hosts": []
         }
       ],
       "links": {
-        "podcast": "https://feeds.megaphone.fm/trainingdata"
+        "podcast": "https://feeds.megaphone.fm/trainingdata",
+        "youtube": "https://www.youtube.com/watch?v=JWMF5EpP0KE"
       }
     },
     {
