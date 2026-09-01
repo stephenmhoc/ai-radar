@@ -63020,6 +63020,34 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/nvidia-earnings-dollars-per-gigawatt-open-and-hugging-face/"
       }
+    },
+    {
+      "id": "e5607dde78dcc95ec258",
+      "status": "published",
+      "title": "She Knows the 250 People Building AI. Here's What They Actually Believe.",
+      "source_title": "She Knows the 250 People Building AI. Here's What They Actually Believe.",
+      "short_summary": "Sarah Guo, founder of Conviction, discusses what AI researchers believe, the race for compute, open-source AI, robotics, and AI's impact on biology and drug discovery. She also shares her framework for building investment conviction.",
+      "long_summary": "Sarah Guo, founder of Conviction and an investor in AI, discusses with Patrick O'Shaughnessy what people at the frontier of AI believe, including some researchers' views on exponential intelligence. The conversation covers the race for compute, the future of open-source AI, and the potential need for America's compute independence. They also explore rapid progress in robotics and how AI could transform biology and drug discovery. Guo shares her framework for building investment conviction in the evolving AI market.",
+      "reason": "The item is a substantial interview with a prominent investor in AI, discussing consequential topics such as frontier models, AI infrastructure, and the economics and business strategy of AI development, aligning with AI Radar's scope for original analysis and interviews.",
+      "published_at": "2026-09-01T12:37:06+00:00",
+      "first_seen_at": "2026-09-01T13:17:23+00:00",
+      "appearances": [
+        {
+          "id": "0f2e490f63de075d296a",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:hY6S__xeCjg",
+          "title": "She Knows the 250 People Building AI. Here's What They Actually Believe.",
+          "description": "Sarah Guo is the founder of Conviction and one of the most closely watched investors in AI. In this conversation, Sarah and Patrick discuss what the people at the frontier of AI actually believe, why some researchers think exponential intelligence may be only a few years away, and how she’s navigating an investing environment that can’t be backtested.\n\nThey also explore the race for compute, the future of open-source AI, why America may need compute independence, the rapid progress in robotics, how AI could transform biology and drug discovery, and Sarah’s framework for building conviction before the rest of the market catches up.\n\nTimestamps\n\n0:00 Intro\n1:08 Investing Through the AI Boom\n5:03 Building Conviction in AI\n12:06 What AI Researchers Believe\n15:44 Compute, Capital & Robotics\n24:03 How Sarah Makes Investments\n39:24 The Case for Open Source\n49:01 America’s Compute Independence\n51:32 AI’s New Investment Markets\n59:36 Finding Truth & What’s Next\n\n#InvestLikeTheBest #SarahGuo #ArtificialIntelligence #AI #VentureCapital #Investing #OpenSourceAI #Robotics #Technology #Startups\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/watch?v=hY6S__xeCjg",
+          "published_at": "2026-09-01T12:37:06+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=hY6S__xeCjg"
+      }
     }
   ]
 }
