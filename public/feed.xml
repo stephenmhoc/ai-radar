@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Anthropic Introduces Claude Fable 5.1 — Anthropic</title>
+      <link>https://www.youtube.com/watch?v=ROF2Nv_KjOM</link>
+      <guid isPermaLink="false">ai-radar:d0746e4df4ba81213462</guid>
+      <pubDate>Tue, 01 Sep 2026 18:02:31 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA">Anthropic</source>
+      <description>Anthropic has released Claude Fable 5.1, an upgrade to its most capable class of models. This new version excels at complex, long-running tasks, such as mathematical proofs or contracts with numerous cross-references. It also demonstrates strong research capabilities, offering a glimpse into AI&amp;#x27;s potential contribution to scientific progress. Fable 5.1 avoids shortcuts and can identify and fix root causes of software issues. Across benchmarks, it sets a new standard, achieving similar or better results than Fable 5 at a much lower cost. Claude Fable 5.1 is now available everywhere.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Anthropic&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=ROF2Nv_KjOM"&gt;Introducing Claude Fable 5.1&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>The Pragmatic Engineer: Five years — The Pragmatic Engineer</title>
       <link>https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-five-years</link>
       <guid isPermaLink="false">ai-radar:73c271421c36f02981e9</guid>
