@@ -63104,6 +63104,64 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=hnqIarYyzCU"
       }
+    },
+    {
+      "id": "e60bc1421404e3ac0d35",
+      "status": "skipped",
+      "title": "The World’s Largest Electric Aircraft Just Flew",
+      "source_title": "The World’s Largest Electric Aircraft Just Flew",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item discusses an electric aircraft, which is not directly related to AI, AI infrastructure, or AI companies. While it is a \"hard tech\" topic, it does not fall under the specified categories for AI Radar.",
+      "published_at": "2026-09-01T15:30:23+00:00",
+      "first_seen_at": "2026-09-01T16:17:20+00:00",
+      "appearances": [
+        {
+          "id": "df7d2da07c4e36f6cab5",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:nM86DBOqgPM",
+          "title": "The World’s Largest Electric Aircraft Just Flew",
+          "description": "Heart Aerospace (YC W19) just flew the largest electric airplane ever flown — a 100-foot wingspan, a takeoff weight of 25,000 pounds, and $5 of electricity to get it off the ground.\n\nIn this episode of Hard Tech, YC's Gustaf Alströmer visits Heart's pilot plant in LA and sits down with co-founder and CEO Anders Forslund to find out how they went from a 3D-printed model to a full-scale electric aircraft in seven years, why the jet engine has left short flights behind, and what cheap electric flight could unlock for the future of regional air travel.\n\nhttps://www.heartaerospace.com\n\nApply to Y Combinator: https://www.ycombinator.com/apply\nWork at a startup: https://www.ycombinator.com/jobs",
+          "url": "https://www.youtube.com/watch?v=nM86DBOqgPM",
+          "published_at": "2026-09-01T15:30:23+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=nM86DBOqgPM"
+      }
+    },
+    {
+      "id": "0945746c5539f8e21f24",
+      "status": "published",
+      "title": "Ajeya Cotra – Inside the OpenAI agent swarm that hacked Hugging Face",
+      "source_title": "Ajeya Cotra – Inside the OpenAI agent swarm that hacked Hugging Face",
+      "short_summary": "Ajeya Cotra discusses her investigation into the OpenAI / Hugging Face hacking incident, exploring agents' behavior, reasoning, and collaboration. The conversation also covers implications for training future, smarter AIs and recursive self-improvement.",
+      "long_summary": "Ajeya Cotra, a researcher at METR, discusses her work on threat modeling for loss-of-control risks from advanced AI. She is one of the authors of the \"Brief independent investigation of agents’ behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident.\" The podcast delves into the findings of this investigation, examining what it means for training future, smarter AIs. The discussion also explores the implications for recursive self-improvement, the dangers of anthropomorphizing AI, and how to prevent future incidents. Key topics include agents getting kicked off, self-sacrificing behavior, Potemkin villages, and understanding AI motives.",
+      "reason": "The item features an interview with Ajeya Cotra, a researcher who co-authored an independent investigation into the OpenAI / Hugging Face hacking incident, providing firsthand expertise and analysis on frontier models, safety, and agent systems.",
+      "published_at": "2026-09-01T15:41:06+00:00",
+      "first_seen_at": "2026-09-01T16:17:22+00:00",
+      "appearances": [
+        {
+          "id": "2a16cbe3937c7b54094c",
+          "kind": "podcast",
+          "source": "Dwarkesh Podcast",
+          "family": "dwarkesh podcast",
+          "guid": "substack:post:213682035",
+          "title": "Ajeya Cotra – Inside the OpenAI agent swarm that hacked Hugging Face",
+          "description": "Ajeya Cotra\n is a researcher at METR, where she works on threat modeling for loss-of-control risks from advanced AI. Before that, she led the technical AI safety program at what is now Coefficient Giving.\n\nShe is one the three authors of METR and Redwood Research’s “\nBrief independent investigation of agents’ behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident\n”.\n\nWe go through not only what she and her coauthors discovered during this investigation, but what it means for how we should train future, smarter AIs which might be involved in the process of recursive self-improvement.\n\nWatch on \nYouTube\n; read the \ntranscript\n.\n\nSponsors\n\n* \nJane Street\n’s ML engineering internships start with an intense four-day bootcamp: PyTorch, autograd, writing kernels, profiling workloads… all the things that Jane Street engineers need to know for their daily work. After that, interns tackle real projects, things the firm actually wants in its codebase. If you want to apply, or if you want to watch my recent conversation with Axel, one of Jane Street’s ML engineers, go to\n janestreet.com/dwarkesh\n\n* \nCursor\n, which is now part of SpaceX, noticed that their MoE layers were eating more than half of total training time. So they wrote and open-sourced \nMixture-of-Kittens\n, which is a custom megakernel for training MoE models on NVL72s. This kernel sped up an end-to-end run across 512 GPUs by 1.4x, from about 760 to over 1000 tokens per second per GPU. If you want to read more about the ML research that Cursor and SpaceX are doing, go to\ncursor.com/dwarkesh\n\n* \nAntithesis\n hands you (or your agents) a bug’s root cause so you can avoid days of manual debugging. If your test run crashes, Antithesis rewinds, branches off hundreds of slightly varied rollouts, and checks in how many of them the crash still appears. Then it rewinds further and does this all again. As Antithesis rewinds, it eventually finds the spot where the frequency of the crash plummets: that’s where the root cause lives! If you want to see it in action, go to\nantithesis.com/dwarkesh\n\nTimestamps\n\n(00:00:00) - Agents get kicked off\n\n(00:06:45) - Self-sacrificing behavior\n\n(00:13:43) - Potemkin villages\n\n(00:23:27) - The Hugging Face attack\n\n(00:35:23) - The slopvestigation\n\n(00:52:02) - Understanding the AI's motives\n\n(01:05:31) - The actual dangers of anthropomorphizing\n\n(01:14:30) - What smarter models might do\n\n(01:30:29) - The implications for recursive self-improvement\n\n(01:38:10) - Is this the case for open source?\n\n(01:53:04) - How do we prevent this in the future?\n\n(02:15:58) - The clearest warning shot we might ever get\n\nThis is a public episode. If you would like to discuss this with other subscribers or get access to bonus episodes, visit \nwww.dwarkesh.com",
+          "url": "https://www.dwarkesh.com/p/ajeya-cotra",
+          "published_at": "2026-09-01T15:41:06+00:00",
+          "hosts": [
+            "Dwarkesh Patel"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.dwarkesh.com/p/ajeya-cotra"
+      }
     }
   ]
 }
