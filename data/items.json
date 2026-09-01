@@ -63048,6 +63048,62 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=hY6S__xeCjg"
       }
+    },
+    {
+      "id": "a816b5c0e751242f2185",
+      "status": "published",
+      "title": "Can AI Learn Mathematical Intuition?",
+      "source_title": "Can AI Learn Mathematical Intuition?",
+      "short_summary": "Daniel Litt, Assistant Professor of Mathematics at the University of Toronto, discusses AI's progress in mathematics with a16z's Lisha Li. They explore what frontier models can do, what they lack in mathematical intuition, and how AI is changing mathematical research and academic incentives.",
+      "long_summary": "a16z’s Lisha Li interviews Daniel Litt, Assistant Professor of Mathematics at the University of Toronto, about AI's advancements in mathematics. Litt acknowledges impressive AI-generated results, such as an autonomous solution to the Erdős unit distance problem, but emphasizes that solving problems is only one aspect of mathematics. He notes that current models excel at calculations and combining known techniques but struggle with intuition, theory building, identifying key questions, and developing a broader understanding. The discussion also covers how AI is influencing mathematical research, the potential for an influx of AI-generated papers to distort academic incentives, and the implications if researchers outsource thinking rather than using AI to enhance it. They ultimately question how to ensure humans continue to improve their thinking skills as AI becomes more capable in intellectual work.",
+      "reason": "The item features a substantive conversation with a subject matter expert on frontier models, research, and the impact of AI on intellectual work, aligning with the criteria for consequential work.",
+      "published_at": "2026-09-01T14:30:24+00:00",
+      "first_seen_at": "2026-09-01T15:17:23+00:00",
+      "appearances": [
+        {
+          "id": "dc16c34a58e990d29f31",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:tQI35CSNB08",
+          "title": "Can AI Learn Mathematical Intuition?",
+          "description": "a16z’s Lisha Li sits down with Daniel Litt, Assistant Professor of Mathematics at the University of Toronto, to unpack AI's rapid progress in mathematics, what today's frontier models can actually do, and what they're still missing about the way mathematicians think.\n\nDaniel explains why some recent AI-generated results are genuinely impressive, including an autonomous solution to the Erdős unit distance problem, but argues that solving problems is only one part of mathematics. Today's models can grind through calculations, combine known techniques, and search enormous spaces, but still struggle with intuition, theory building, identifying the right questions, and developing the kind of big-picture understanding that drives much of mathematical progress.\n\nLisha and Daniel also explore how AI is already changing mathematical research, why an explosion of AI-generated papers could distort academic incentives, and what happens if researchers outsource the work of thinking rather than use AI to deepen it. Ultimately, they ask a question that extends far beyond mathematics: as AI gets better at intellectual work, how do we make sure humans keep getting better at thinking too?\n\nTimestamps:\n00:00 - Intro\n01:00 - Meet Daniel Litt: A Practicing Mathematician's Evolving Views on AI\n02:24 - The Most Impressive Result: The Erdős Unit Distance Problem\n06:12 - What AI Is Actually Doing for Working Mathematicians Today\n12:12 - Intuition, Taste & Why Math Isn't Just About Proofs\n20:26 - Deep Thinking vs Pattern Matching: What Models Are Missing\n26:17 - Why the Unit Distance Result Was Actually Creative\n33:33 - How Should the Math Community Adapt to AI?\n43:26 - Where AI Will Impact Applied Math First\n46:24 - Taking Advantage of AI Without Losing the Craft\n49:21 - Comparing Anthropic vs OpenAI in Math\n51:34 - Why Some Labs Have Gone More Secretive\n59:40 - Raising a Mathematician: Teaching Math to a Toddler\n\nResources:\nFollow Daniel Litt on X: https://x.com/littmath\nFollow Lisha Li on X: https://x.com/lishali88\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=tQI35CSNB08",
+          "published_at": "2026-09-01T14:30:24+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=tQI35CSNB08"
+      }
+    },
+    {
+      "id": "f9a94fb41eb21a8e1eea",
+      "status": "skipped",
+      "title": "AI Governance in 2026: Think Beyond Models",
+      "source_title": "AI Governance in 2026: Think Beyond Models",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item features Chetan Gupta, Chief AI Officer at Rackspace, discussing enterprise AI architectures. Rackspace is not a target organization, and the speaker is not a listed individual from a frontier AI organization. The content, while relevant to AI, does not meet the criteria for inclusion based on the provided notes.",
+      "published_at": "2026-09-01T14:43:43+00:00",
+      "first_seen_at": "2026-09-01T15:17:24+00:00",
+      "appearances": [
+        {
+          "id": "0eb4f0d56174a9599f25",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:hnqIarYyzCU",
+          "title": "AI Governance in 2026: Think Beyond Models",
+          "description": "As AI models evolve rapidly, enterprises face growing questions around open-weight models, data sovereignty, governance, and geopolitical considerations. So how should organizations make strategic AI decisions in a constantly changing landscape?\n\nIn this clip, Chetan, shares practical guidance for enterprises: identify sensitive workloads, consider local and open-weight models where appropriate, avoid becoming locked into a single model family, and build an architecture that can adapt as the AI landscape changes.\n\nHis key takeaway? \"Stop thinking models and start thinking enterprise AI architectures.\"\n\nFull episode coming out this Thursday!\n\nFEATURING:\n\nGuest - Chetan Gupta (Chief AI Officer at Rackspace)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast)\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast)\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://us06web.zoom.us/webinar/register/WN_tMivXvPXRJ6pi5526S5etw#/registration\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
+          "url": "https://www.youtube.com/watch?v=hnqIarYyzCU",
+          "published_at": "2026-09-01T14:43:43+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=hnqIarYyzCU"
+      }
     }
   ]
 }
