@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>The Pragmatic Engineer: Five years — The Pragmatic Engineer</title>
+      <link>https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-five-years</link>
+      <guid isPermaLink="false">ai-radar:73c271421c36f02981e9</guid>
+      <pubDate>Tue, 01 Sep 2026 17:14:34 +0000</pubDate>
+      <source url="https://newsletter.pragmaticengineer.com/feed">The Pragmatic Engineer</source>
+      <description>The Pragmatic Engineer newsletter marks its fifth anniversary, reflecting on its journey from a niche publication to one with over 1.1 million readers and tens of thousands of paid subscribers. The author, Gergely Orosz, recounts the newsletter&amp;#x27;s evolution, starting with in-depth articles on software engineering topics. Key milestones include the introduction of &amp;#x27;The Pulse&amp;#x27; for weekly tech news and the shift to direct engagement with companies for engineering deep dives, leading to articles like &amp;#x27;Inside OpenAI: how does ChatGPT ship so quickly?&amp;#x27; and &amp;#x27;Building Meta’s Threads app&amp;#x27;. The publication also expanded with The Pragmatic Engineer Podcast in 2024, featuring guests like Simon Willison, and The Pragmatic Summit in 2025, which hosted 500 attendees and 15 speakers. The newsletter continues to focus on how software development is changing and how engineers, teams, and companies adapt.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · The Pragmatic Engineer&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-five-years"&gt;The Pragmatic Engineer: Five years&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>How Top AI Open Source Projects Are Managing Thousands of Contributors — Latent Space</title>
+      <link>https://www.latent.space/p/pr-not-welcome</link>
+      <guid isPermaLink="false">ai-radar:7bb3abb8c4f88fae1b02</guid>
+      <pubDate>Tue, 01 Sep 2026 16:17:15 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>Leading AI-native open-source projects are adopting new strategies to manage contributions, moving away from traditional pull requests. Vercel&amp;#x27;s AI SDK, which receives over 20 million npm downloads weekly, deployed a &amp;quot;software factory&amp;quot; with various agents to handle its backlog of over 1,000 open issues and nearly 800 pull requests. These agents now author 25-35% of merged PRs and close 70-80% of issues. Similarly, the Astro web framework uses agents for auto-triage, significantly reducing open issues. Some projects, like Flue and tldraw, are taking a more radical approach by automatically closing external pull requests and converting them into issues or discussions, relying on their own agents for implementation. This shift is driven by the ability of AI agents to perform tasks like bug reproduction, fixing, and review, leading to a reevaluation of community contribution models in open source.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/pr-not-welcome"&gt;PRs NOT Welcome: How Top AI Open Source Projects Are Managing Thousands of Contributors&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Ajeya Cotra – Inside the OpenAI agent swarm that hacked Hugging Face — Dwarkesh Podcast</title>
       <link>https://www.dwarkesh.com/p/ajeya-cotra</link>
       <guid isPermaLink="false">ai-radar:0945746c5539f8e21f24</guid>
