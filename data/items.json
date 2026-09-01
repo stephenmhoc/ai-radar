@@ -62878,6 +62878,34 @@
       "links": {
         "podcast": "https://colossus.com/episode/no-priors-just-conviction/"
       }
+    },
+    {
+      "id": "ee06ab0897d739349c99",
+      "status": "published",
+      "title": "Making Cities Awesome: Peregrine’s Nick Noone & Ben Rudolph",
+      "source_title": "Making Cities Awesome: Peregrine’s Nick Noone & Ben Rudolph",
+      "short_summary": "Peregrine co-founders Nick Noone and Ben Rudolph discuss their company's approach to public safety technology, which focuses on connecting existing city data without new sensors. They explain how AI and long-horizon agents are deployed for tasks like cold case analysis and identifying threats, emphasizing data sovereignty and privacy.",
+      "long_summary": "Peregrine co-founders Nick Noone and Ben Rudolph discuss their company's unique approach to public safety technology, which inverts the traditional model by connecting existing city data rather than collecting new information. They highlight Peregrine's philosophy of data sovereignty and a privacy-first approach to data access and ownership. The co-founders detail how AI and long-horizon agents are being deployed for various applications, including a cold case agent that reproduced an exoneration and identifying threats to a synagogue. They also touch on the challenges of building their business, having received numerous rejections before their first success with San Pablo PD, and their commitment to preserving individual privacy and cities' sovereignty.",
+      "reason": "The podcast features co-founders discussing the deployment of AI and long-horizon agents for public safety, including specific use cases like cold case analysis and threat identification, which qualifies as consequential AI-native software and agent systems.",
+      "published_at": "2026-09-01T09:00:00+00:00",
+      "first_seen_at": "2026-09-01T09:17:22+00:00",
+      "appearances": [
+        {
+          "id": "77f780c512d1d82e5598",
+          "kind": "podcast",
+          "source": "Training Data",
+          "family": "training data",
+          "guid": "2361fcb0-a56c-11f1-bcee-5b403a4e1902",
+          "title": "Making Cities Awesome: Peregrine’s Nick Noone & Ben Rudolph",
+          "description": "Most public safety technology companies grow by collecting more data. Peregrine inverted the model: no sensors, no new data, a business built on connecting the data and information cities already own. Co-founders Nick Noone and Ben Rudolph received more than two dozen no's before San Pablo PD let them in the door in February 2018. Today, Peregrine powers law enforcement, emergency medical services, fire and rescue, and other services in more than 400 cities and communities globally. Nick and Ben explain their north star for data sovereignty, and discuss how Peregrine's philosophy and privacy-first approach to data access and ownership preserves individual privacy and cities' sovereignty. They walk through how AI and long-horizon agents are being deployed: a cold case agent that reproduced an exoneration detectives had reached by hand, a Wisconsin county that placed a suspect using cell records buried in 300GB of evidence, identifying threats to a synagogue, root-causing an escalation in weather-related incidents, and more.\n\n00:00 Introduction\n\n02:07 What Forward Deployed Engineering Means\n\n03:58 What Silicon Valley Gets Wrong\n\n05:23 UNHCR, Dimagi And Downstream Data Problems\n\n08:25 Why Cities, Why Safety\n\n10:45 Two Dozen Nos And San Pablo PD\n\n14:19 Building Through Defund The Police\n\n18:16 The Inversion Of The Collection Model\n\n21:20 Data Ownership And Governance\n\n22:57 From Nice Search To Deep Analysis\n\n29:59 Agents Writing The Integrations\n\n31:45 The Cold Case Agent\n\n35:02 The Anti-Network-Effect Proposition\n\n38:40 Facial Recognition And Hard Decisions\n\n40:48 Technology For The Underdogs\n\n42:54 Trusting The Individual Contributor\n\n48:50 Ten Thousand Cities",
+          "url": "https://feeds.megaphone.fm/trainingdata",
+          "published_at": "2026-09-01T09:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/trainingdata"
+      }
     }
   ]
 }
