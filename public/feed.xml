@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Latent Space Newsletter: AI News - Fal's H3 Max Live breaks the infinite videogen barrier — Latent Space</title>
+      <link>https://www.latent.space/p/ainews-fals-h3-max-live-breaks-the</link>
+      <guid isPermaLink="false">ai-radar:e2aa872710ce00978fd7</guid>
+      <pubDate>Tue, 01 Sep 2026 04:36:54 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>The Latent Space newsletter reports on Fal&amp;#x27;s H3 Max Live, an autoregressive continuous version of H3 Max that allows for continuous, audience-steerable video generation, achieving real-time factor 1 at 768p in early preview. The newsletter also highlights Meta&amp;#x27;s Muse Code SDK for custom agents, DeepSeek V4 Flash Vision weights, and the strong performance of GLM-5.3 Flash and Qwen3.8-Flash-Next on agentic cost/performance benchmarks. Tencent Hunyuan&amp;#x27;s Hy4 Preview is noted as a 770B MoE model with over 1M context, showing gains in coding and agent stability. Further sections cover Hermes Agent&amp;#x27;s feature release for multi-agent workflows, the evolving DeepSeek Harness, and context management as a research frontier with WikiSkill/SKILL.state and Tencent&amp;#x27;s ContextPilot. Inference, compute, and AI infrastructure discussions include Apple hardware as a potential bottleneck for computer-use RL, Together AI and HUMAIN&amp;#x27;s 250MW Saudi data center for open models, and fragmentation in inference specialization and serving architecture. Runway introduced Solaris, an &amp;quot;Interface World Model&amp;quot; for generating interactive interfaces, and LeVJEPA offers a compute-efficient route to temporal representation learning.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-fals-h3-max-live-breaks-the"&gt;[AINews] Fal’s H3 Max Live breaks the infinite videogen barrier&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>In 5 to 10 Years, Using Weapons Without AI Will Be Considered Unethical | Yaroslav Azhnyuk — Eye on AI</title>
       <link>https://www.youtube.com/watch?v=ZDsV3yPQjEE</link>
       <guid isPermaLink="false">ai-radar:2f621b81b068613ee299</guid>
