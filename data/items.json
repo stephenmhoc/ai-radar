@@ -63411,6 +63411,62 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/fable-5-1-enterprise-frontier-safeguards/"
       }
+    },
+    {
+      "id": "08cd812ad5c2818602fc",
+      "status": "skipped",
+      "title": "Inside Moderna’s Biggest mRNA Test Since COVID",
+      "source_title": "Inside Moderna’s Biggest mRNA Test Since COVID",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The content discusses mRNA technology for cancer treatment, which is outside the scope of AI Radar's focus on frontier AI organizations, models, infrastructure, or related economic/policy forces. No AI-related topics or target individuals/organizations are mentioned.",
+      "published_at": "2026-09-02T14:30:26+00:00",
+      "first_seen_at": "2026-09-02T15:17:20+00:00",
+      "appearances": [
+        {
+          "id": "c3c054ba6b608d97321e",
+          "kind": "youtube",
+          "source": "The a16z Show — YouTube",
+          "family": "the a16z show",
+          "guid": "yt:video:yTNMEYeCgWw",
+          "title": "Inside Moderna’s Biggest mRNA Test Since COVID",
+          "description": "a16z General Partner Jorge Conde sits down with Moderna CEO Stéphane Bancel to discuss a major milestone for mRNA technology: positive Phase 3 results from Moderna and Merck’s individualized treatment for melanoma, after more than a decade of work on personalized cancer vaccines.\n\nStéphane explains how the treatment works by sequencing an individual patient’s tumor and healthy cells, identifying the mutations most relevant to their cancer, and encoding up to 34 of them into an mRNA designed specifically for that patient. Rather than simply unleashing the immune system, the goal is to teach it exactly what to recognize and attack.\n\nThey also unpack the engineering challenge of manufacturing a different medicine for every patient, how Moderna has brought the process down to roughly 42 days from biopsy to treatment, and what it would take to manufacture personalized medicines at scale. Finally, Stéphane looks beyond melanoma to lung, kidney, bladder, pancreatic, and gastric cancers, as well as Moderna’s longer-term work applying mRNA to rare genetic and autoimmune diseases.\n\nTimestamps:\n00:00 - Intro\n00:59 - How Moderna Went From COVID to Cancer\n02:48 - The Phase 3 News: mRNA Cancer Vaccine + Keytruda in Melanoma\n05:46 - What Is Keytruda & Why Isn't It Enough Alone?\n09:23 - Preventing the Return of Cancer: What \"Vaccine\" Really Means Here\n11:16 - Why 20 Years and 1,000 Trials Failed Before mRNA Worked\n15:09 - Inside the Algorithm: How Moderna Picks the 34 Neoantigens\n18:48 - The Operational Lift of Making a Vaccine for Every Patient\n20:16 - Vein to Vein: How Fast Can You Deliver a Personalized Vaccine?\n24:33 - Manufacturing at Scale & the COGS Question\n27:08 - How Do You Regulate a Medicine That's Different Every Time?\n29:37 - Beyond Melanoma: Which Cancers Are Next?\n35:58 - The Full Arc: From COVID to Cancer to Autoimmune Disease\n\nResources:\nFollow Stéphane Bancel on LinkedIn: https://www.linkedin.com/in/st%C3%A9phane-bancel-8185251/\nFollow Jorge Conde on X: https://x.com/JorgeCondeBio\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=yTNMEYeCgWw",
+          "published_at": "2026-09-02T14:30:26+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=yTNMEYeCgWw"
+      }
+    },
+    {
+      "id": "a33f5f9ce5ae0487aa75",
+      "status": "skipped",
+      "title": "How a Professional Writer Writes With AI",
+      "source_title": "How a Professional Writer Writes With AI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item describes a professional writer's personal use of AI tools like ChatGPT and Claude for writing and career coaching. While it touches on AI, it does not feature a qualifying person from a target organization, nor does it present deeply technical or strategically substantive work on frontier models, infrastructure, or the broader AI ecosystem. The content is more focused on personal productivity and workflow with existing AI tools rather than advancing AI development or understanding.",
+      "published_at": "2026-09-02T15:00:53+00:00",
+      "first_seen_at": "2026-09-02T15:17:22+00:00",
+      "appearances": [
+        {
+          "id": "b6dfe567e246f03fc944",
+          "kind": "youtube",
+          "source": "AI & I — YouTube",
+          "family": "ai & i",
+          "guid": "yt:video:vey_dBnDTAU",
+          "title": "How a Professional Writer Writes With AI",
+          "description": "Two years ago, Katie Parrott was laid off from a crypto firm and couldn’t afford a career coach — so she turned to a $20-a-month ChatGPT subscription instead.\n\nThe Every staff writer’s habit of feeding AI good context eventually became compound writing, a codified system for brainstorming, drafting, and editing with AI. Today, that system is a plugin any writer can use.\n\nOn this week’s AI & I, Natalia Quintero talks with Katie about turning good ingredients into good writing, borrowing the taste of writers she admires, and why AI helped her fall back in love with the page.\n\nIf you found this episode interesting, please like, subscribe, comment, and share!\nTo hear more from Natalia Quintero:\nSubscribe to Every: https://every.to/subscribe\nFollow her on X: @NataliaZarina\n\nTimestamps for YouTube:\n0:00 Start\n0:49 Introduction\n1:21 How Katie went from being laid off to using ChatGPT as a career coach\n8:06 Turning AI into a “content agency of one”\n10:59 Building the context files and style guides that make AI outputs useful\n14:15 What makes a Claude project actually work\n21:18 How AI helped with a mental health crisis and “computer errands”\n27:03 Katie’s career coach, now a fully autonomous Codex project\n32:27 What compounding means, and building the Compound Writing plugin\n38:00 Borrowing Vonnegut, Hitchcock, and Sorkin as AI editing skills\n44:49 Katie’s thesis: education and access will matter more than ever\n\nLinks to resources mentioned in the episode:\nKatie Parrott on X: @kplikethebird\nCompound writing plugin: [LINK COMING SOON]\nCompound engineering plugin (Kieran Klassen): github.com/EveryInc/compound-engineering-plugin\nParrott’s companion piece on compound writing: [LINK COMING SOON]\nParrott, “I Hired ChatGPT as My Career Coach”: every.to/working-overtime/i-hired-chatgpt-as-my-career-coach\nParrott, “AI Turned Me Into a Content Agency of One”: every.to/working-overtime/ai-turned-me-into-a-content-agency-of-one",
+          "url": "https://www.youtube.com/watch?v=vey_dBnDTAU",
+          "published_at": "2026-09-02T15:00:53+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=vey_dBnDTAU"
+      }
     }
   ]
 }
