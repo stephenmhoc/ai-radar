@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>The Inference Frontier: from 100 to 10,000 tokens per second — Latent Space</title>
+      <link>https://www.youtube.com/watch?v=3uSI8q_RN-o</link>
+      <guid isPermaLink="false">ai-radar:e3eed5b8b60128fac484</guid>
+      <pubDate>Wed, 02 Sep 2026 17:05:14 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLWEAb1SXhjlfkEF_PxzYHonU_v5LPMI8L">Latent Space</source>
+      <description>Cerebras co-founder and CTO Sean Lie discusses the company&amp;#x27;s efforts to push AI inference beyond 4,000 tokens per second, aiming for 10,000 TPS. He details Cerebras&amp;#x27; wafer-scale architecture, including CS4 and the upcoming CS5, and explains why faster inference enables new AI capabilities. The conversation highlights Cerebras&amp;#x27; partnership with OpenAI, including OpenAI&amp;#x27;s use of ultra-fast inference for internal research and their Jalapeño chip. Lie also provides a critique of other AI hardware, such as Groq, and discusses the future of heterogeneous and disaggregated AI infrastructure, model-hardware co-design, and the growing strategic competition in semiconductors between the US and China.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=3uSI8q_RN-o"&gt;The Inference Frontier: from 100 to 10,000 tokens per second — Sean Lie, Cerebras CTO&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Jensen Huang’s Genius Nvidia Strategy — Invest Like the Best</title>
+      <link>https://www.youtube.com/watch?v=NRatFCGSXSs</link>
+      <guid isPermaLink="false">ai-radar:5089276a63115321c0c5</guid>
+      <pubDate>Wed, 02 Sep 2026 16:30:40 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCpQBb0fToph3jrDulwz1iUQ">Invest Like the Best</source>
+      <description>The video, titled &amp;quot;Jensen Huang’s Genius Nvidia Strategy,&amp;quot; explores Nvidia&amp;#x27;s business approach. It suggests that Jensen Huang has enabled Nvidia to create significant value for companies that purchase its chips. A key aspect of this strategy, according to Neil Movva, is that Nvidia avoids direct competition with its customers. Instead, the company benefits from an entire ecosystem of businesses that are actively working to generate more demand for Nvidia&amp;#x27;s hardware. This approach positions Nvidia as a foundational technology provider within the AI and computing landscape.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Invest Like the Best&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=NRatFCGSXSs"&gt;Jensen Huang’s Genius Nvidia Strategy&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Claude Fable/Mythos 5.1: new SOTA model, 75% cache price cut but 70% more output tokens — Latent Space</title>
       <link>https://www.latent.space/p/ainews-claude-fablemythos-51-new</link>
       <guid isPermaLink="false">ai-radar:dea91c6af677ac6d0e5b</guid>
