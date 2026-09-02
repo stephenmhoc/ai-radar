@@ -63624,6 +63624,34 @@
       "links": {
         "podcast": "https://podcasters.spotify.com/pod/show/ti-morse/episodes/Manufacturing-1-000s-of-Solid-Rocket-Motors--Ethan-Thornton--Mach-Industries-e3o8h27"
       }
+    },
+    {
+      "id": "48cbbb5a69078a5a108f",
+      "status": "skipped",
+      "title": "Less about Models; More about Architecture |Episode #370|",
+      "source_title": "Less about Models; More about Architecture |Episode #370|",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest and organization (Chetan Gupta at Rackspace) are outside the target frontier AI roster, and the discussion focuses on general enterprise AI architecture and IT deployment rather than qualifying frontier research or infrastructure.",
+      "published_at": "2026-09-02T21:28:24+00:00",
+      "first_seen_at": "2026-09-02T22:17:24+00:00",
+      "appearances": [
+        {
+          "id": "48053a8dbf582f740a84",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:dZyIjdzZXaE",
+          "title": "Less about Models; More about Architecture |Episode #370|",
+          "description": "As AI moves from experimentation to enterprise deployment, are organizations thinking too much about models and not enough about architecture? In this episode, Daniel and Chris talk with Chetan Gupta, about the evolution from industrial AI and physical AI to today’s enterprise AI landscape. Discover how organizations can navigate the complex AI landscape responsibly and effectively as they think about AI architecture, model deployment, AI governance, and AI sovereignty.\n\nFEATURING:\n\nGuest - Chetan Gupta (Chief AI Officer at Rackspace)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast)\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast)\n\nSPONSORS:\n\n- Midwest AI Summit: Join AI practitioners on October 15 in Indianapolis for practical sessions, hands-on discussions, and real-world AI solutions. Use code PracticalAI20 to save 20% on your registration. https://midwestaisummit.com/#tickets\n- Prediction Guard: A self-hosted AI control plane for running agents in high impact environments. predictionguard.com/practicalai\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://us06web.zoom.us/webinar/register/WN_tMivXvPXRJ6pi5526S5etw#/registration\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/\n\nCHAPTERS:\n\n00:00 Welcome to Practical AI podcast!\n00:50 Chetan Gupta's Background and Career Path\n03:30 The Evolution of Industrial AI\n07:11 Understanding Physical AI and Its Applications\n10:28 Cultural Perspectives on Robotics and AI\n14:06 Sponsor: Midwest AI Summit\n15:17 Operationalizing AI in Modern Enterprises\n19:24 AI's Writing Capabilities and Limitations\n21:41 Governance and Assurance in AI Deployment\n23:49 Navigating Open Models and Data Sovereignty\n26:44 Sponsor: Prediction Guard\n27:43 Operational Sovereignty and Control in AI Systems\n28:10 Understanding Sovereignty in AI for Enterprises\n32:32 Building Effective AI Architectures\n37:29 Evaluating AI Models for Consistent Outcomes\n40:55 Challenges and Future Directions for AI at Rackspace\n44:20 See you next time!",
+          "url": "https://www.youtube.com/watch?v=dZyIjdzZXaE",
+          "published_at": "2026-09-02T21:28:24+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=dZyIjdzZXaE"
+      }
     }
   ]
 }
