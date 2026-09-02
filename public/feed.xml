@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Claude Fable/Mythos 5.1: new SOTA model, 75% cache price cut but 70% more output tokens — Latent Space</title>
+      <link>https://www.latent.space/p/ainews-claude-fablemythos-51-new</link>
+      <guid isPermaLink="false">ai-radar:dea91c6af677ac6d0e5b</guid>
+      <pubDate>Wed, 02 Sep 2026 07:46:08 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>Anthropic launched Claude Fable 5.1 and Claude Mythos 5.1, positioning them as the world&amp;#x27;s most advanced models for coding and knowledge work, particularly for autonomous, multi-step tasks. The models retain previous pricing for input/output/cache write but feature a 75% cache read price cut to $0.25/MTok, benefiting long sessions and agentic workloads. Fable 5.1 has a 1M token context window and supports image+text inputs, topping Artificial Analysis&amp;#x27;s Intelligence Index at 66. However, it is 20% more expensive per task than Fable 5 due to using approximately 1.7 times more output tokens. Community analysis suggests Fable and Mythos 5.1 may share identical weights, with differences primarily in safety/routing behavior, including server-side fallbacks for ~4% of output tokens in AA&amp;#x27;s evaluations.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-claude-fablemythos-51-new"&gt;[AINews] Claude Fable/Mythos 5.1: new SOTA model, 75% cache price cut but 70% more output tokens&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Korea’s Trillion-Dollar Sovereign AI Investment — SemiAnalysis</title>
       <link>https://newsletter.semianalysis.com/p/koreas-trillion-dollar-sovereign</link>
       <guid isPermaLink="false">ai-radar:3b245ec0bf372e0275d9</guid>
