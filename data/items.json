@@ -63594,6 +63594,36 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/NkXJBU2YLUQ"
       }
+    },
+    {
+      "id": "87f127d53b1c9911229d",
+      "status": "skipped",
+      "title": "Manufacturing 1,000s of Solid Rocket Motors | Ethan Thornton, Mach Industries",
+      "source_title": "Manufacturing 1,000s of Solid Rocket Motors | Ethan Thornton, Mach Industries",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The podcast focuses on defense hardware manufacturing, specifically solid rocket motors, missiles, and drones. The publisher notes contain no mention of AI, autonomy, or related software technologies.",
+      "published_at": "2026-09-02T19:49:10+00:00",
+      "first_seen_at": "2026-09-02T21:17:33+00:00",
+      "appearances": [
+        {
+          "id": "686ac922ca52037e2dd1",
+          "kind": "podcast",
+          "source": "Relentless",
+          "family": "relentless",
+          "guid": "daa7c6f2-fa6e-46fc-87d2-751fd503191e",
+          "title": "Manufacturing 1,000s of Solid Rocket Motors | Ethan Thornton, Mach Industries",
+          "description": "Ethan Thornton is the founder and CEO of Mach Industries. Mach is an LA based defense tech startup working on solid rocket motors, high-altitude balloons, missiles, long-range precision strike drones, low-cost kinetic interceptors and multiple other programs which are not currently announced.",
+          "url": "https://podcasters.spotify.com/pod/show/ti-morse/episodes/Manufacturing-1-000s-of-Solid-Rocket-Motors--Ethan-Thornton--Mach-Industries-e3o8h27",
+          "published_at": "2026-09-02T19:49:10+00:00",
+          "hosts": [
+            "Ti Morse"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://podcasters.spotify.com/pod/show/ti-morse/episodes/Manufacturing-1-000s-of-Solid-Rocket-Motors--Ethan-Thornton--Mach-Industries-e3o8h27"
+      }
     }
   ]
 }
