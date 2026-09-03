@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Eye on AI: Inside Ukraine's Largest Drone Manufacturer — Eye on AI</title>
+      <link>https://www.youtube.com/watch?v=uijxxz_UEps</link>
+      <guid isPermaLink="false">ai-radar:fbd4877e3c7e01b93176</guid>
+      <pubDate>Thu, 03 Sep 2026 15:55:46 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLacDrP-7Ys6IsnPRN0ToTfjH8gQ4s6mL9">Eye on AI</source>
+      <description>Marko Kushnir, communications director of General Cherry, discusses the company&amp;#x27;s growth from producing 10 drones a month to nearly 100,000. He explains how drone warfare has evolved from improvised innovation to mass industrial production, with daily feedback from front-line units. The conversation covers General Cherry&amp;#x27;s AI targeting system, which uses a small on-device model for autonomous guidance with approximately 70% accuracy, and why AI is not yet standard in kamikaze FPVs due to cost. Kushnir also addresses the strategic asymmetry in the conflict, where Ukraine innovates faster while Russia scales faster, and expresses concerns about fully autonomous AI drones. He concludes by arguing that ubiquitous drones will create a drone security industry, similar to cybersecurity, for governments, police, and corporations.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Eye on AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=uijxxz_UEps"&gt;From 10 Drones a Month to Nearly 100,000 — Inside Ukraine&amp;#x27;s Largest Drone Manufacturer&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Google DeepMind: WeatherNext 3 for more accurate, timely, and local weather forecasts — Google DeepMind</title>
+      <link>https://www.youtube.com/watch?v=_6jZlnRsXXQ</link>
+      <guid isPermaLink="false">ai-radar:af2c2b3b33f741c5982c</guid>
+      <pubDate>Thu, 03 Sep 2026 14:58:32 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A">Google DeepMind</source>
+      <description>Google DeepMind has developed WeatherNext 3, a new approach to weather prediction that learns directly from real-world observations like live satellite feeds and ground-level weather station data. Unlike traditional models that refresh every six hours, WeatherNext 3 produces a fresh forecast every hour. It provides hyper-local resolution at 5km for temperature and humidity, enhancing detail for diverse geographical areas. The model also offers actionable data, including 100m wind speeds for wind energy management and detailed cloud/radiation metrics for solar energy planning. WeatherNext 3 delivers high-resolution insights globally and is accessible through Google Search, Gemini, and Google Maps.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Google DeepMind&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=_6jZlnRsXXQ"&gt;WeatherNext 3: More accurate, timely, and local weather forecasts&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Paul Graham On Startups, Ambition, and Great Founders — Y Combinator</title>
       <link>https://www.youtube.com/watch?v=5bxp78i96S8</link>
       <guid isPermaLink="false">ai-radar:3cad9139a764791925dd</guid>

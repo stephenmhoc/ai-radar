@@ -63824,6 +63824,62 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/uAUhDU7bbfM"
       }
+    },
+    {
+      "id": "af2c2b3b33f741c5982c",
+      "status": "published",
+      "title": "Google DeepMind: WeatherNext 3 for more accurate, timely, and local weather forecasts",
+      "source_title": "WeatherNext 3: More accurate, timely, and local weather forecasts",
+      "short_summary": "Google DeepMind introduces WeatherNext 3, a new model for weather forecasting. It offers hourly refreshes, hyper-local 5km resolution, and actionable data for various applications.",
+      "long_summary": "Google DeepMind has developed WeatherNext 3, a new approach to weather prediction that learns directly from real-world observations like live satellite feeds and ground-level weather station data. Unlike traditional models that refresh every six hours, WeatherNext 3 produces a fresh forecast every hour. It provides hyper-local resolution at 5km for temperature and humidity, enhancing detail for diverse geographical areas. The model also offers actionable data, including 100m wind speeds for wind energy management and detailed cloud/radiation metrics for solar energy planning. WeatherNext 3 delivers high-resolution insights globally and is accessible through Google Search, Gemini, and Google Maps.",
+      "reason": "The item is a demonstration from Google DeepMind, a target organization, about a new frontier model for weather forecasting, which is a consequential technical development.",
+      "published_at": "2026-09-03T14:58:32+00:00",
+      "first_seen_at": "2026-09-03T16:17:42+00:00",
+      "appearances": [
+        {
+          "id": "114fd0d07a5001bb87b8",
+          "kind": "youtube",
+          "source": "Google DeepMind",
+          "family": "google deepmind",
+          "guid": "yt:video:_6jZlnRsXXQ",
+          "title": "WeatherNext 3: More accurate, timely, and local weather forecasts",
+          "description": "WeatherNext 3: More accurate, timely, and local weather forecasts \n\nPredicting the weather is one of the oldest, most complex challenges we face. Traditional numerical weather prediction models are powerful, but they can be slow to run and costly at a global scale. WeatherNext 3 takes a different approach. Built on a fundamentally different architecture, WeatherNext 3 learns directly from real-world observations, including live satellite feeds and ground-level weather station data.\n\nWhat makes WeatherNext 3 different?\nHourly refresh: While traditional models typically refresh every six hours, WN3 produces a fresh forecast every single hour.\nHyper-Local resolution: Native 5km resolution for temperature and humidity, enabling better detail for coastal regions, mountains, and urban areas.\nActionable data: Includes variables like 100m wind speeds for wind energy management and detailed cloud/radiation metrics for solar energy planning.\nGlobal reach: Delivering high-resolution insights everywhere.\nYou can now use WeatherNext 3 through Google Search, Gemini, Google Maps and more. \n\nLearn more: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/\nRead the full paper: https://storage.googleapis.com/deepmind-media/papers/weathernext_3.pdf\nDisclaimer: For official weather forecasts, severe weather warnings, and public safety advisories, please refer to your local meteorological agency or national weather service.\n\n___\n\nSubscribe to our channel https://www.youtube.com/@googledeepmind \nFind us on X https://x.com/GoogleDeepMind\nFollow us on Instagram https://instagram.com/googledeepmind \nAdd us on Linkedin https://www.linkedin.com/company/deepmind/",
+          "url": "https://www.youtube.com/watch?v=_6jZlnRsXXQ",
+          "published_at": "2026-09-03T14:58:32+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=_6jZlnRsXXQ"
+      }
+    },
+    {
+      "id": "fbd4877e3c7e01b93176",
+      "status": "published",
+      "title": "Eye on AI: Inside Ukraine's Largest Drone Manufacturer",
+      "source_title": "From 10 Drones a Month to Nearly 100,000 — Inside Ukraine's Largest Drone Manufacturer",
+      "short_summary": "This interview with Marko Kushnir of General Cherry details the industrialization of drone warfare, including the company's AI targeting system and the strategic asymmetry between Ukraine and Russia in drone technology. It also discusses the potential for a new drone security industry.",
+      "long_summary": "Marko Kushnir, communications director of General Cherry, discusses the company's growth from producing 10 drones a month to nearly 100,000. He explains how drone warfare has evolved from improvised innovation to mass industrial production, with daily feedback from front-line units. The conversation covers General Cherry's AI targeting system, which uses a small on-device model for autonomous guidance with approximately 70% accuracy, and why AI is not yet standard in kamikaze FPVs due to cost. Kushnir also addresses the strategic asymmetry in the conflict, where Ukraine innovates faster while Russia scales faster, and expresses concerns about fully autonomous AI drones. He concludes by arguing that ubiquitous drones will create a drone security industry, similar to cybersecurity, for governments, police, and corporations.",
+      "reason": "The item features an interview with a leader from a company building consequential AI infrastructure (AI-enabled drones) and discusses the economics, business strategy, and policy forces shaping AI development and adoption in a physical AI context.",
+      "published_at": "2026-09-03T15:55:46+00:00",
+      "first_seen_at": "2026-09-03T16:17:44+00:00",
+      "appearances": [
+        {
+          "id": "737ef175264a1c5f2c81",
+          "kind": "youtube",
+          "source": "Eye on AI — YouTube",
+          "family": "eye on ai",
+          "guid": "yt:video:uijxxz_UEps",
+          "title": "From 10 Drones a Month to Nearly 100,000 — Inside Ukraine's Largest Drone Manufacturer",
+          "description": "In 2023, General Cherry started making 10 drones a month. Today they're approaching 100,000. This is what the industrialization of drone warfare actually looks like.\n\nIn this episode, Craig Smith sits down with Marko Kushnir, communications director of General Cherry - one of Ukraine's top-five drone manufacturers - for a ground-level briefing on how drone warfare has evolved from improvised battlefield innovation to mass industrial production. General Cherry now works with over 110 military brigades and 300 units, producing kamikaze FPV drones, fiber optic FPVs with ranges up to 40 kilometers, tactical interceptors that have confirmed over 5,000 Russian drone kills, and strategic interceptors for Shahed drones, all driven by daily feedback loops with front-line units who test products in live combat conditions. Marko explains how the company's AI targeting system works in practice: a small on-device model built into the interceptor activates when the operator identifies a target, then guides the drone autonomously to impact, achieving approximately 70% accuracy, while the reason AI isn't in standard kamikaze FPVs yet is simply cost: five standard drones are more valuable than one AI-equipped drone at current prices. \n\nThe conversation covers the strategic asymmetry that defines the entire conflict - Ukraine innovates faster, Russia copies and scales faster - and why Marko finds the prospect of fully autonomous AI drones alarming even from Ukraine's side: any system Ukraine deploys will be in Russian hands within weeks. The episode closes with Marko's most forward-looking argument: just as the internet created a cybersecurity industry that every organization eventually had to build, the arrival of ubiquitous drones is creating a drone security industry, and every government, police force, and major corporation will soon need one.\n\nKey Topics Covered:\n● How General Cherry scaled from 10 to nearly 100,000 drones per month in two years, working with 110 brigades, with the best units consuming over 5,000 drones per month individually\n● How a small Ukrainian interceptor drone costing $2,000 can destroy a Shahed that costs up to $100,000, solving the problem of Ukraine being forced to spend expensive Western missiles on cheap Iranian drones\n● How General Cherry's AI targeting works\n● Why Ukraine innovates faster and Russia scales faster, and how the tyranny-vertical vs. capitalist-startup dynamic defines which side leads the technology race at any given moment\n● Why fully autonomous AI drones are frightening even to the people building them: any capability Ukraine develops will be copied and deployed by Russia within weeks, making full autonomy a danger to both sides simultaneously\n● Why the era of drone security is arriving for civilian life the same way the era of cybersecurity arrived with the internet, and why General Cherry is already planning its international expansion around that thesis\n\nAs global governments debate drone policy in theory, this conversation from inside one of the world's most active drone manufacturers - iterating products in live combat conditions daily - offers the most operationally grounded picture available of where AI-assisted drone warfare stands right now, and why its civilian implications are arriving faster than most people realize.\n\nSubscribe to Eye on A.I. for weekly conversations with the people building and deploying the future of AI. \nCraig Smith on X: https://x.com/craigss \nEYE on A.I. on X: https://x.com/EyeOn_AI \n\nConnect with Marko Kushnir\nLinkedIn: https://www.linkedin.com/in/marko-kushnir-b4864a225/ \n\nTimestamps\n00:00 The rise of autonomous drone warfare\n01:03 Inside one of Ukraine’s biggest drone companies\n03:53 Scaling from 10 to nearly 100,000 drones a month\n05:32 Ukraine’s massive drone manufacturing industry\n07:17 Building AI drones with battlefield feedback\n14:01 How AI targeting works in combat drones\n16:16 Intercepting Russia’s Shahed drones\n19:38 How drones created the modern “kill zone”\n27:31 The terrifying future of autonomous weapons\n30:05 Ukraine vs. Russia in the drone technology race\n33:35 What happens to Ukraine’s drone industry after the war?\n35:45 Why drone security could become the next cybersecurity",
+          "url": "https://www.youtube.com/watch?v=uijxxz_UEps",
+          "published_at": "2026-09-03T15:55:46+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=uijxxz_UEps"
+      }
     }
   ]
 }
