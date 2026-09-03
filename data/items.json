@@ -64056,6 +64056,62 @@
       "links": {
         "newsletter": "https://www.latent.space/p/astra"
       }
+    },
+    {
+      "id": "91bdc01919813907c7b9",
+      "status": "skipped",
+      "title": "First impressions of GPT-6 Astra from developers",
+      "source_title": "First impressions of GPT-6 Astra from developers",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The video is a promotional developer reaction and highlight clip rather than a substantial interview, lecture, or deep technical demonstration, and the brief publisher notes lack sufficient detail.",
+      "published_at": "2026-09-03T21:20:49+00:00",
+      "first_seen_at": "2026-09-03T22:17:23+00:00",
+      "appearances": [
+        {
+          "id": "85fb98f0584a51f990b3",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:-TTyyY3VWh8",
+          "title": "First impressions of GPT-6 Astra from developers",
+          "description": "See what Ben Davis, Peter Gostev, and Tom Krcha are building with GPT-6 Astra, from a playable 3D history of London to new directions for a matcha shop website to solving a DEF CON puzzle with parallel agents.\n\nGPT-6 Astra helps them explore ideas, stay on track, and tackle problems that previously felt out of reach.",
+          "url": "https://www.youtube.com/watch?v=-TTyyY3VWh8",
+          "published_at": "2026-09-03T21:20:49+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=-TTyyY3VWh8"
+      }
+    },
+    {
+      "id": "ed499b5c8060fcd30741",
+      "status": "skipped",
+      "title": "Are enterprises thinking too much about AI models and not enough about architecture?",
+      "source_title": "Are enterprises thinking too much about AI models and not enough about architecture?",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-03T22:00:27+00:00",
+      "first_seen_at": "2026-09-03T22:17:23+00:00",
+      "appearances": [
+        {
+          "id": "62e546a9c5774bc52e2c",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:gpe2EsgDL6g",
+          "title": "Are enterprises thinking too much about AI models and not enough about architecture?",
+          "description": "In the latest episode of Practical AI, we are joined by Chetan Gupta, Chief AI Officer at Rackspace Technology, to explore how AI is evolving from industrial and physical AI to today’s enterprise AI landscape. We discuss:\n\n1️⃣ Building practical AI architectures beyond the model\n2️⃣ Navigating model deployment, governance, and AI sovereignty\n3️⃣ Making AI safer, scalable, and effective for enterprise use\n\nFull episode linked below!",
+          "url": "https://www.youtube.com/shorts/gpe2EsgDL6g",
+          "published_at": "2026-09-03T22:00:27+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/gpe2EsgDL6g"
+      }
     }
   ]
 }
