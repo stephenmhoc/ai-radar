@@ -63668,6 +63668,78 @@
         "podcast": "https://share.transistor.fm/s/ec79b4ac",
         "youtube": "https://www.youtube.com/watch?v=dZyIjdzZXaE"
       }
+    },
+    {
+      "id": "18308a7a95fd43d13d0b",
+      "status": "published",
+      "title": "Redefining Chip Architecture with Arm CEO Rene Haas",
+      "source_title": "Redefining Chip Architecture with Arm CEO Rene Haas",
+      "short_summary": "Arm CEO Rene Haas discusses Arm's role in the chip supply chain, its transition to manufacturing CPUs, and how it addresses AI-driven compute demands. He also covers hardware supply chain bottlenecks, SoftBank's strategy, and the future of robotics.",
+      "long_summary": "Arm CEO Rene Haas joins Elad Gil and Sarah Guo to discuss Arm's position in the chip supply chain and its response to AI-driven demands for compute. Haas explains Arm's shift from an IP licensing model to producing physical chips, including the Arm AGI CPU for Meta. The conversation covers bottlenecks in hardware supply chains, SoftBank's ecosystem and capital strategy, and the critical importance of US semiconductor manufacturing independence. Haas also delves into the future of robotics and why CPUs remain crucial for executing AI workloads, offering insights into Arm's outlook and opportunities in the CPU market.",
+      "reason": "The interview features Rene Haas, CEO of Arm, discussing AI infrastructure, including chips, data centers, and robotics, which are all relevant to AI Radar's scope. The discussion also touches on Meta, a target organization.",
+      "published_at": "2026-09-03T10:00:00+00:00",
+      "first_seen_at": "2026-09-03T10:17:32+00:00",
+      "appearances": [
+        {
+          "id": "2bcac79314d4c7b48beb",
+          "kind": "podcast",
+          "source": "No Priors",
+          "family": "no priors",
+          "guid": "8476d0dc-a726-11f1-86e6-bbc25e1787ef",
+          "title": "Redefining Chip Architecture with Arm CEO Rene Haas",
+          "description": "From data center orchestrators to AGI and robotics, CPUs remain the heart of modern computing. Arm CEO Rene Haas joins Elad Gil and Sarah Guo to explore how Arm is positioned at the epicenter of AI-driven demands for compute. Rene explains Arm’s position in the chip supply chain, and how Arm transitioned from an IP licensing model to producing physical chips like the Arm AGI CPU for Meta. He also discusses bottlenecks in hardware supply chains, SoftBank’s ecosystem and capital strategy, why US semiconductor manufacturing independence is critical, the future of robotics, and why CPUs remain crucial for executing AI workloads.\n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @renehaas237 | @Arm\n\nChapters:\n\n00:00 – Cold Open Trailer\n\n00:49 – Rene Haas Introduction\n\n01:14 – Arm and Chip Supply Chain\n\n02:37 – Shift from IP to Manufacturing CPUs\n\n04:23 – CPU IP and Customers\n\n06:55 – AI Adoption at Arm\n\n10:15 – Changes in Chip Time to Market\n\n13:27 – Data Center Buildout Bottleneck\n\n15:13 – Softbank Leverage and Capital Strategy\n\n17:43 – Softbank Portfolio Overview\n\n20:13 – Robotics Opportunities for Arm\n\n24:49 – US Manufacturing Protectionism\n\n28:59 – Data Center Backlash\n\n32:30 – Arm Outlook\n\n33:31 – CPU Opportunity\n\n37:06 – Conclusion",
+          "url": "https://feeds.megaphone.fm/nopriors",
+          "published_at": "2026-09-03T10:00:00+00:00",
+          "hosts": [
+            "Sarah Guo",
+            "Elad Gil"
+          ]
+        },
+        {
+          "id": "51df565485da142cdd28",
+          "kind": "youtube",
+          "source": "No Priors — YouTube",
+          "family": "no priors",
+          "guid": "yt:video:85Y6h_jbRfs",
+          "title": "Redefining Chip Architecture with Arm CEO Rene Haas",
+          "description": "From data center orchestrators to AGI and robotics, CPUs remain the heart of modern computing. Arm CEO Rene Haas joins Elad Gil and Sarah Guo to explore how Arm is positioned at the epicenter of AI-driven demands for compute. Rene explains Arm’s position in the chip supply chain, and how Arm transitioned from an IP licensing model to producing physical chips like the Arm AGI CPU for Meta. He also discusses bottlenecks in hardware supply chains, SoftBank’s ecosystem and capital strategy, why US semiconductor manufacturing independence is critical, the future of robotics, and why CPUs remain crucial for executing AI workloads.\n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @renehaas237 | @Arm\n\nChapters:\n00:00 – Cold Open Trailer\n00:49 – Rene Haas Introduction\n01:14 – Arm and Chip Supply Chain\n02:37 – Shift from IP to Manufacturing CPUs\n04:23 – CPU IP and Customers\n06:55 – AI Adoption at Arm\n10:15 – Changes in Chip Time to Market\n13:27 – Data Center Buildout Bottleneck\n15:13 – Softbank Leverage and Capital Strategy\n17:43 – Softbank Portfolio Overview\n20:13 – Robotics Opportunities for Arm\n24:49 – US Manufacturing Protectionism\n28:59 – Data Center Backlash\n32:30 – Arm Outlook\n33:31 – CPU Opportunity\n37:06 – Conclusion",
+          "url": "https://www.youtube.com/watch?v=85Y6h_jbRfs",
+          "published_at": "2026-09-03T10:00:26+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/nopriors",
+        "youtube": "https://www.youtube.com/watch?v=85Y6h_jbRfs"
+      }
+    },
+    {
+      "id": "af55ae197fd2b3a7505f",
+      "status": "skipped",
+      "title": "The $100B Niches Hiding Inside Payments",
+      "source_title": "The $100B Niches Hiding Inside Payments",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The podcast discusses fintech and payments, with no mention of AI, frontier models, AI infrastructure, or any of the target organizations or individuals.",
+      "published_at": "2026-09-03T10:00:00+00:00",
+      "first_seen_at": "2026-09-03T10:17:33+00:00",
+      "appearances": [
+        {
+          "id": "9a5eea084ba6c4fb483e",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "c2b497da-b59b-41be-86a6-a966bd3ef724",
+          "title": "The $100B Niches Hiding Inside Payments",
+          "description": "Erik Torenberg is joined by a16z General Partner Alex Rampell and Affirm Co-Founder and CEO Max Levchin for a conversation on 25 years of fintech, from the early days of digital payments to the origins of Affirm and the next generation of agentic commerce.\n\nMax and Alex revisit what surprised them most about how payments evolved, why the card interface has been so difficult to displace, and why even the smallest corners of payments can become enormous markets. They also trace the early idea maze behind Affirm, from \"pay with your identity\" and the pajama problem to the realization that installment financing could dramatically increase merchant conversion.\n\nThe conversation also gets into real versus \"fake\" 0% financing, what people misunderstand about Affirm today, why negative customer acquisition cost can be such a powerful business model advantage, and why Max is more bullish on agentic payments than on agents choosing what people buy.\n\nResources:\n\nFollow Max Levchin on X: \nhttps://x.com/mlevchin\n\nFollow Alex Rampell on X: \nhttps://x.com/arampell\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/the-100b-niches-hiding-inside-payments-aKQoOt7o",
+          "published_at": "2026-09-03T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/the-100b-niches-hiding-inside-payments-aKQoOt7o"
+      }
     }
   ]
 }
