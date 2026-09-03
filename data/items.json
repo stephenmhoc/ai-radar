@@ -63740,6 +63740,90 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/the-100b-niches-hiding-inside-payments-aKQoOt7o"
       }
+    },
+    {
+      "id": "3cad9139a764791925dd",
+      "status": "published",
+      "title": "Paul Graham On Startups, Ambition, and Great Founders",
+      "source_title": "Paul Graham On Startups, Ambition, and Great Founders",
+      "short_summary": "Paul Graham discusses startups, ambition, and what makes great founders. He also shares what surprised him about AI and the origins of Y Combinator.",
+      "long_summary": "YC Visiting Partner Vivian Shen interviews Paul Graham at the original YC office. The conversation covers the 21-year history of Y Combinator and why today's startups are more ambitious. Graham delves into frighteningly ambitious ideas and the motivations behind founders. He also discusses what makes a founder formidable and shares his surprises regarding AI. The interview concludes with insights into how YC started and what aspects have remained consistent over time.",
+      "reason": "The interview features Paul Graham, a prominent figure in the startup ecosystem, discussing AI, which aligns with the criteria for consequential work on AI companies and the economics/business strategy shaping AI development.",
+      "published_at": "2026-09-03T14:30:27+00:00",
+      "first_seen_at": "2026-09-03T15:17:34+00:00",
+      "appearances": [
+        {
+          "id": "aabb1ac42fc96569d899",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:5bxp78i96S8",
+          "title": "Paul Graham On Startups, Ambition, and Great Founders",
+          "description": "YC Visiting Partner Vivian Shen sits down with Paul Graham at the original YC office in Mountain View to talk about startups, AI, ambition, and what makes great founders.\n\nApply to Y Combinator: https://www.ycombinator.com/apply\nWork at a startup: https://www.ycombinator.com/jobs\n\nChapters:\n00:00 — 21 Years of YC\n01:07 — Why Today’s Startups Are More Ambitious\n04:09 — Frighteningly Ambitious Ideas\n05:13 — What Actually Motivates Founders\n09:28 — What Makes a Founder Formidable\n12:54 — What Surprised PG About AI\n17:58 — How YC Started and What Hasn’t Changed",
+          "url": "https://www.youtube.com/watch?v=5bxp78i96S8",
+          "published_at": "2026-09-03T14:30:27+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=5bxp78i96S8"
+      }
+    },
+    {
+      "id": "c791d9a443a925e5e96b",
+      "status": "skipped",
+      "title": "Why AI Agents Could Finally Reinvent the Credit Card",
+      "source_title": "Why AI Agents Could Finally Reinvent the Credit Card",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item discusses fintech and payments, with a brief mention of \"agentic payments\" at the end. This is not a central subject of AI Radar, which focuses on frontier models, infrastructure, and AI companies. The speakers are not from target organizations, and the content does not offer unusually strong firsthand expertise or durable analysis in AI.",
+      "published_at": "2026-09-03T14:30:27+00:00",
+      "first_seen_at": "2026-09-03T15:17:35+00:00",
+      "appearances": [
+        {
+          "id": "d3ee41ca4d04f7b94459",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:J3pegsM5drk",
+          "title": "Why AI Agents Could Finally Reinvent the Credit Card",
+          "description": "Erik Torenberg is joined by a16z General Partner Alex Rampell and Affirm Co-Founder and CEO Max Levchin for a conversation on 25 years of fintech, from the early days of digital payments to the origins of Affirm and the next generation of agentic commerce.\n\nMax and Alex revisit what surprised them most about how payments evolved, why the card interface has been so difficult to displace, and why even the smallest corners of payments can become enormous markets. They also trace the early idea maze behind Affirm, from \"pay with your identity\" and the pajama problem to the realization that installment financing could dramatically increase merchant conversion.\n\nThe conversation also gets into real versus \"fake\" 0% financing, what people misunderstand about Affirm today, why negative customer acquisition cost can be such a powerful business model advantage, and why Max is more bullish on agentic payments than on agents choosing what people buy.\n\nTimestamps:\n00:00 - Intro\n01:01 - Meet Max & Alex: 25 Years of Thinking About Fintech\n01:33 - What's Surprised Them: Apple Pay, Google Pay & Changing Consumer Behavior\n03:36 - Max on the 60-Year-Old Rules Still Running Payments\n10:00 - What Idea Should Exist But Doesn't Yet?\n12:36 - Did Crypto Feel Like the Realization of a Dream, or Orthogonal?\n17:15 - The Origin of Affirm: Solving the Pajama Problem\n20:01 - Pay With Your Identity: Social Credit & the General Store Model\n27:00 - The Allen & Company 1-800-Flowers Demo\n30:57 - The 40 Years in the Desert & Finding Product Market Fit\n33:00 - Beautylish, Mattresses & the 30% Conversion Breakthrough\n42:15 - What People Miss About Affirm Today: From Satisfying Demand to Creating It\n48:58 - The PayPal Mafia: Why So Many Founders Came Out of It\n52:44 - Agentic Payments vs Agentic Shopping: The Real Innovation Ahead\n\nResources:\nFollow Max Levchin on X: https://x.com/mlevchin\nFollow Alex Rampell on X: https://x.com/arampell\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=J3pegsM5drk",
+          "published_at": "2026-09-03T14:30:27+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=J3pegsM5drk"
+      }
+    },
+    {
+      "id": "c9ca7f97ba5c50dd9b1e",
+      "status": "skipped",
+      "title": "Brian Chesky’s #1 Most Important Job as CEO",
+      "source_title": "Brian Chesky’s #1 Most Important Job as CEO",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-03T14:54:44+00:00",
+      "first_seen_at": "2026-09-03T15:17:35+00:00",
+      "appearances": [
+        {
+          "id": "6ef3ca155a1b0d7bdccf",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:uAUhDU7bbfM",
+          "title": "Brian Chesky’s #1 Most Important Job as CEO",
+          "description": "Brian Chesky says this is the most important job a CEO has.\n\n#BrianChesky #Airbnb #FounderMode #CEOAdvice #StartupAdvice #Hiring #Recruiting #Leadership #Entrepreneurship #BusinessTok\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/uAUhDU7bbfM",
+          "published_at": "2026-09-03T14:54:44+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/uAUhDU7bbfM"
+      }
     }
   ]
 }
