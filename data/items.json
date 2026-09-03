@@ -63969,6 +63969,34 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-tech-companies-move-to"
       }
+    },
+    {
+      "id": "6e1e00dc3b136e798705",
+      "status": "skipped",
+      "title": "Are enterprises thinking too much about AI models and not enough about architecture?",
+      "source_title": "Are enterprises thinking too much about AI models and not enough about architecture?",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-03T17:26:12+00:00",
+      "first_seen_at": "2026-09-03T18:17:17+00:00",
+      "appearances": [
+        {
+          "id": "134ac345355d974766fe",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:QDDm3TTjWas",
+          "title": "Are enterprises thinking too much about AI models and not enough about architecture?",
+          "description": "In the latest episode of Practical AI, we are joined by Chetan Gupta, Chief AI Officer at Rackspace Technology, to explore how AI is evolving from industrial and physical AI to today’s enterprise AI landscape.\n\nWe discuss:\n1️⃣ Building practical AI architectures beyond the model\n2️⃣ Navigating model deployment, governance, and AI sovereignty\n3️⃣ Making AI safer, scalable, and effective for enterprise use\n\nFull episode linked below!",
+          "url": "https://www.youtube.com/shorts/QDDm3TTjWas",
+          "published_at": "2026-09-03T17:26:12+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/QDDm3TTjWas"
+      }
     }
   ]
 }
