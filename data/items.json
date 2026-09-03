@@ -63647,9 +63647,25 @@
           "url": "https://www.youtube.com/watch?v=dZyIjdzZXaE",
           "published_at": "2026-09-02T21:28:24+00:00",
           "hosts": []
+        },
+        {
+          "id": "094f064e21b8da3e0af7",
+          "kind": "podcast",
+          "source": "Practical AI",
+          "family": "practical ai",
+          "guid": "7bb54711-ad56-4a39-85ae-290d2a0eaff5",
+          "title": "Less about Models; More about Architecture",
+          "description": "As AI moves from experimentation to enterprise deployment, are organizations thinking too much about models and not enough about architecture? In this episode, Daniel and Chris talk with Chetan Gupta, Chief AI Officer at Rackspace, about the evolution from industrial AI and physical AI to today’s enterprise AI landscape. Discover how organizations can navigate the complex AI landscape responsibly and effectively as they think about AI architecture, model deployment, AI governance, and AI sovereignty.\n\nFeaturing: \n\nChetan Gupta – \nLinkedIn\n\nDaniel Whitenack – \nWebsite\n, \nGitHub\n, \nX\n\nChris Benson – \nWebsite\n, \nLinkedIn\n, \nBluesky\n, \nGitHub\n, \nX\n\nSponsors:\n\nMidwest AI Summit:\n Join AI practitioners on October 15 in Indianapolis for practical sessions, hands-on discussions, and real-world AI solutions. Use code PracticalAI20 to save 20% on your registration. \nhttps://midwestaisummit.com/#tickets\n\nPrediction Guard: \nA self-hosted AI control plane for running agents in high impact environments. \npredictionguard.com/practicalai\n\nResources and Events:\n\nRegister for \nupcoming webinars here\n!\n\nPrior \nWebinars from our partner Prediction Guard\n\nMidwest AI Summit 2026",
+          "url": "https://share.transistor.fm/s/ec79b4ac",
+          "published_at": "2026-09-03T09:00:00+00:00",
+          "hosts": [
+            "Chris Benson",
+            "Daniel Whitenack"
+          ]
         }
       ],
       "links": {
+        "podcast": "https://share.transistor.fm/s/ec79b4ac",
         "youtube": "https://www.youtube.com/watch?v=dZyIjdzZXaE"
       }
     }
