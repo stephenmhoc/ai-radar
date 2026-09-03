@@ -63997,6 +63997,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/QDDm3TTjWas"
       }
+    },
+    {
+      "id": "713b6b151845276b4a40",
+      "status": "published",
+      "title": "OpenAI — Introducing GPT-6 Astra: the most intelligent and aligned model in the world.",
+      "source_title": "Introducing GPT-6 Astra: the most intelligent and aligned model in the world.",
+      "short_summary": "OpenAI introduces GPT-6 Astra, a new model excelling in long-running computer-use tasks and software engineering. It demonstrates improved honesty and reduced deceptive behavior, rolling out to enterprises and Trusted Access Program customers, with broader availability soon.",
+      "long_summary": "OpenAI has introduced GPT-6 Astra, which they describe as the most intelligent and aligned model globally. This new model achieves state-of-the-art results on benchmarks for long-running computer-use tasks across various professions and desktop applications, indicating its capability to perform any computer-based task efficiently. GPT-6 Astra is also highlighted as the best model for software engineering to date. Furthermore, it is presented as OpenAI's most aligned model, featuring improvements in honesty and reductions in deceptive behavior. The rollout begins today for enterprises and customers in their Trusted Access Program, with broader availability in ChatGPT Work and Codex coming to Plus, Pro, Business, and Enterprise plans, as well as API and AWS customers, in the coming days. For the optimal experience, users are advised to utilize the ChatGPT desktop app.",
+      "reason": "The item is a YouTube video from OpenAI, a target organization, introducing a new frontier model, GPT-6 Astra, which is a consequential technical development in AI.",
+      "published_at": "2026-09-03T19:40:03+00:00",
+      "first_seen_at": "2026-09-03T20:17:24+00:00",
+      "appearances": [
+        {
+          "id": "84adca71b8ab7a85f7dc",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:1QNsdr-Qx_I",
+          "title": "Introducing GPT-6 Astra: the most intelligent and aligned model in the world.",
+          "description": "GPT-6 Astra achieves state-of-the-art results on benchmarks for long-running computer-use tasks across professions and desktop apps, which means anything you can do on a computer, Astra can do for you, fast. \n\nIt’s also the best model for software engineering to date and our most aligned model yet, with improvements in honesty and reductions in deceptive behavior.\n \nGPT-6 Astra is rolling out today for enterprises and customers in our Trusted Access Program, with broad availability in ChatGPT Work and Codex coming to Plus, Pro, Business and Enterprise plans, and API and AWS customers in the next few days.\n\nTo experience Astra at its best, use the ChatGPT desktop app.\n\n“Put That There\" clip courtesy of MIT Media Laboratory, Chris Schmandt, and Eric Hulteen.",
+          "url": "https://www.youtube.com/watch?v=1QNsdr-Qx_I",
+          "published_at": "2026-09-03T19:40:03+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=1QNsdr-Qx_I"
+      }
     }
   ]
 }
