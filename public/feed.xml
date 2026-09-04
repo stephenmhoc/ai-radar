@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>GPT-6 Astra: OpenAI’s biggest LLM launch of all time — Latent Space</title>
+      <link>https://www.latent.space/p/ainews-gpt-6-astra-openais-biggest</link>
+      <guid isPermaLink="false">ai-radar:0def9508b0c95c095486</guid>
+      <pubDate>Fri, 04 Sep 2026 05:18:11 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>OpenAI launched GPT-6 Astra, its new flagship model, claiming it to be its most intelligent and aligned model yet. The company positioned Astra for computer use, software engineering, math/science, polished office work, and cybersecurity. The launch included claims of new breakthroughs in math and science, and stronger cybersecurity capabilities. Astra is rolling out first to a limited set of organizations, then to ChatGPT Plus/Pro/Business/Enterprise, the API, and AWS. Pricing is set at $10 / 1M input tokens and $50 / 1M output tokens for standard use, with a faster option at $20 / 1M input and $100 / 1M output for up to 2.5x speed. Product features announced alongside Astra include Codex asking questions while continuing independent work, an experimental context feature for long tasks, and Responses API additions like async function calling and mid-turn steering.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-gpt-6-astra-openais-biggest"&gt;[AINews] GPT-6 Astra: OpenAI’s biggest LLM launch of all time&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>GPT-6 Astra: an automated AI Engineer you can hire for &lt;$6 an hour — Latent Space</title>
       <link>https://www.latent.space/p/astra</link>
       <guid isPermaLink="false">ai-radar:f13d0d53110a18f3a71c</guid>
