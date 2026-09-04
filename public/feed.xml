@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Fei-Fei Li, Justin Johnson, and Ben Mildenhall on World Models and Spatial Intelligence — The a16z Show</title>
+      <link>https://a16z.simplecast.com/episodes/fei-fei-li-the-race-to-build-world-models-for-ai-tvIN7XfT</link>
+      <guid isPermaLink="false">ai-radar:a8936ad614f16ace7748</guid>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.simplecast.com/JGE3yC0V">The a16z Show</source>
+      <description>In this episode of The a16z Show, World Labs co-founders Fei-Fei Li, Justin Johnson, and Ben Mildenhall talk with Martin Casado about Atlas, their new world model aimed at advancing spatial intelligence. Central to Atlas is new view prediction, an approach that predicts what an environment looks like from different positions in space and time given existing views or images. This methodology integrates generation and 3D reconstruction into a unified model, exploring whether view prediction can serve as a fundamental primitive for understanding physical reality. The founders examine the technical bets underpinning Atlas, detailing current capabilities, limitations, and the necessity of dynamics, editability, and simulation in future world models. Additionally, they discuss practical applications in architecture, creative industries, and robotics, where Fei-Fei Li notes that access to real-world training data remains a critical bottleneck.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · The a16z Show&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://a16z.simplecast.com/episodes/fei-fei-li-the-race-to-build-world-models-for-ai-tvIN7XfT"&gt;Fei Fei Li: The Race to Build World Models For AI&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Stratechery: Greg Brockman on OpenAI, Astra, and Alignment — Stratechery</title>
+      <link>https://stratechery.com/2026/an-interview-with-openai-president-greg-brockman-about-astra-and-alignment/</link>
+      <guid isPermaLink="false">ai-radar:d404886e6dc544d24fd4</guid>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0000</pubDate>
+      <source url="https://stratechery.com/feed/">Stratechery</source>
+      <description>In an interview on Stratechery, OpenAI President and co-founder Greg Brockman reflects on his career trajectory, beginning with his early focus on competitive math and chemistry in North Dakota before learning to code and transferring from Harvard to MIT. He recounts meeting Patrick and John Collison in 2010, joining Stripe as an early employee, and rising to chief technology officer before co-founding OpenAI in 2015. Recorded around the announcement of OpenAI&amp;#x27;s new model Astra, the discussion examines OpenAI&amp;#x27;s positioning across the AI value chain and its competitive dynamics with companies like Microsoft and suppliers like Nvidia. Brockman also addresses the launch of ChatGPT, leadership drama from 2023, whether serving a billion users presents disadvantages, OpenAI&amp;#x27;s alignment commitments, and cybersecurity.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Stratechery&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://stratechery.com/2026/an-interview-with-openai-president-greg-brockman-about-astra-and-alignment/"&gt;An Interview with OpenAI President Greg Brockman About Astra and Alignment&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>GPT-6 Astra: OpenAI’s biggest LLM launch of all time — Latent Space</title>
       <link>https://www.latent.space/p/ainews-gpt-6-astra-openais-biggest</link>
       <guid isPermaLink="false">ai-radar:0def9508b0c95c095486</guid>
