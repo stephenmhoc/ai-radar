@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>OpenAI Introduces GPT-6 Astra — OpenAI</title>
+      <link>https://www.youtube.com/watch?v=bOC3DisEOfg</link>
+      <guid isPermaLink="false">ai-radar:1c4e83d707a9bb673e59</guid>
+      <pubDate>Fri, 04 Sep 2026 20:22:31 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">OpenAI</source>
+      <description>OpenAI has introduced GPT-6 Astra, described as their latest frontier model designed for tasks where raw intelligence is crucial. Charlie Guo, a Developer Experience Engineer at OpenAI, demonstrates the new model&amp;#x27;s capabilities. Key improvements highlighted include enhanced Computer Use and more robust outputs for creative and knowledge-based tasks. Additionally, the demonstration showcases new features such as asynchronous tool calling and steering within the Responses API.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · OpenAI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=bOC3DisEOfg"&gt;Introducing GPT-6 Astra for developers&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Building the Right AI Architecture — Practical AI</title>
       <link>https://www.youtube.com/watch?v=5NDuQGHM-ws</link>
       <guid isPermaLink="false">ai-radar:73d3268391729f68cdfd</guid>

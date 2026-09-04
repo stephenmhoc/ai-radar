@@ -64682,6 +64682,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/VwTAEwgLKqo"
       }
+    },
+    {
+      "id": "1c4e83d707a9bb673e59",
+      "status": "published",
+      "title": "OpenAI Introduces GPT-6 Astra",
+      "source_title": "Introducing GPT-6 Astra for developers",
+      "short_summary": "OpenAI introduces GPT-6 Astra, their latest frontier model, demonstrated by Developer Experience Engineer Charlie Guo. The model shows improved Computer Use, stronger creative and knowledge-work outputs, and new asynchronous tool calling and steering in the Responses API.",
+      "long_summary": "OpenAI has introduced GPT-6 Astra, described as their latest frontier model designed for tasks where raw intelligence is crucial. Charlie Guo, a Developer Experience Engineer at OpenAI, demonstrates the new model's capabilities. Key improvements highlighted include enhanced Computer Use and more robust outputs for creative and knowledge-based tasks. Additionally, the demonstration showcases new features such as asynchronous tool calling and steering within the Responses API.",
+      "reason": "The item is a demonstration of a new frontier model (GPT-6 Astra) from OpenAI, a target organization, presented by an OpenAI engineer. This directly aligns with the criteria for consequential, technically substantive work about frontier models and important AI companies.",
+      "published_at": "2026-09-04T20:22:31+00:00",
+      "first_seen_at": "2026-09-04T21:17:22+00:00",
+      "appearances": [
+        {
+          "id": "0e4018ca7f78413ff891",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:bOC3DisEOfg",
+          "title": "Introducing GPT-6 Astra for developers",
+          "description": "Meet GPT-6 Astra, our latest frontier model for tasks where raw intelligence matters. Charlie Guo, Developer Experience Engineer at OpenAI, demonstrates improved Computer Use, stronger creative and knowledge-work outputs, and new asynchronous tool calling and steering in the Responses API.\n\nRead more: https://openai.com/index/gpt-6-astra/",
+          "url": "https://www.youtube.com/watch?v=bOC3DisEOfg",
+          "published_at": "2026-09-04T20:22:31+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=bOC3DisEOfg"
+      }
     }
   ]
 }
