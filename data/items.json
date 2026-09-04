@@ -64447,7 +64447,7 @@
           "family": "y combinator",
           "guid": "yt:video:rY0wnfFHYbs",
           "title": "Open Models Are Collapsing The Cost Of AI",
-          "description": "In this episode of the Lightcone, Ollama Co-founder Jeffrey Morgan sits down with the hosts to talk about the massive shift toward open models in enterprise, the 150X growth in tokens since the start of the year driven by coding agents, and how Chinese models now dominate cloud token consumption. \n\nApply to Y Combinator: https://www.ycombinator.com/apply\nWork at a startup: https://www.ycombinator.com/jobs\n\n00:00 — Intro\n01:16 — Who's Actually Using Open Models?\n02:13 — Is It All About Cost?\n03:31 — The Token Usage Explosion\n05:31 — Fine Tuning: Hype Cycle or Here to Stay?\n07:27 — Where Open Models Beat Claude\n08:26 — Launching Models at Scale\n11:31 — Olama as the OS Layer\n13:58 — Hidden Layers Between Model and App\n17:28 — Open vs. Closed: The Steady State\n20:41 — Local vs. Cloud Models\n23:12 — Why Chinese Models Dominate Cloud\n24:00 — NVIDIA's Open Source Play\n26:03 — The Return to Local\n27:15 — Getting GPUs Is Hard\n29:16 — The Flash Model Revolution\n31:35 — God Model vs. Orchestration\n33:37 — The Geopolitics Question\n36:14 — From Docker to Ollama\n37:12 — Applied to YC With the Wrong Idea\n40:36 — Lost in the Wilderness for Two Years\n42:15 — The Pivot That Changed Everything\n44:49 — 100K GitHub Stars, No Revenue\n47:40 — How Do You Monetize Open Source?\n49:43 — Why Do YC as a Second-Time Founder?\n51:49 — What Seeing \"Good\" Actually Does for You\n53:38 — Old DevOps Rules That Don't Apply Anymore",
+          "description": "Ollama (YC W21) is used by 9 million developers and 85% of the Fortune 500, giving co-founder and CEO Jeffrey Morgan a unique view into which AI models people are actually using and how that’s changing.\n\nRight now, the biggest shift he sees is toward open models, driven by coding agents, falling costs, and capabilities that are rapidly catching up to the frontier labs. On Ollama Cloud, that shift has driven a 150x increase in token usage since the start of the year.\n\nIn this episode of the Lightcone, Jeff joins us to talk about the future of open models and the story behind Ollama, from two years of searching for the right idea to building one of the most widely used AI developer tools in the world.\n\nApply to Y Combinator: https://www.ycombinator.com/apply\nWork at a startup: https://www.ycombinator.com/jobs\n\n00:00 — Intro\n01:16 — Who's Actually Using Open Models?\n02:13 — Is It All About Cost?\n03:31 — The Token Usage Explosion\n05:31 — Fine Tuning: Hype Cycle or Here to Stay?\n07:27 — Where Open Models Beat Claude\n08:26 — Launching Models at Scale\n11:31 — Olama as the OS Layer\n13:58 — Hidden Layers Between Model and App\n17:28 — Open vs. Closed: The Steady State\n20:41 — Local vs. Cloud Models\n23:12 — Why Chinese Models Dominate Cloud\n24:00 — NVIDIA's Open Source Play\n26:03 — The Return to Local\n27:15 — Getting GPUs Is Hard\n29:16 — The Flash Model Revolution\n31:35 — God Model vs. Orchestration\n33:37 — The Geopolitics Question\n36:14 — From Docker to Ollama\n37:12 — Applied to YC With the Wrong Idea\n40:36 — Lost in the Wilderness for Two Years\n42:15 — The Pivot That Changed Everything\n44:49 — 100K GitHub Stars, No Revenue\n47:40 — How Do You Monetize Open Source?\n49:43 — Why Do YC as a Second-Time Founder?\n51:49 — What Seeing \"Good\" Actually Does for You\n53:38 — Old DevOps Rules That Don't Apply Anymore",
           "url": "https://www.youtube.com/watch?v=rY0wnfFHYbs",
           "published_at": "2026-09-04T14:00:10+00:00",
           "hosts": []
@@ -64597,6 +64597,34 @@
       ],
       "links": {
         "newsletter": "https://stratechery.com/2026/friction-and-feedback/"
+      }
+    },
+    {
+      "id": "f372a439b9c47af10f17",
+      "status": "skipped",
+      "title": "Work super hard.",
+      "source_title": "Work super hard.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-04T19:13:16+00:00",
+      "first_seen_at": "2026-09-04T19:17:18+00:00",
+      "appearances": [
+        {
+          "id": "8b6910d485ef1bf4cc81",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:x5oPLU4Wi0E",
+          "title": "Work super hard.",
+          "description": "Before any of it, Elon Musk and his brother couldn’t afford an apartment. They slept on the office couch and showered at the YMCA while building their first company.\n\nThat company became the foundation for everything that came after.",
+          "url": "https://www.youtube.com/shorts/x5oPLU4Wi0E",
+          "published_at": "2026-09-04T19:13:16+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/x5oPLU4Wi0E"
       }
     }
   ]
