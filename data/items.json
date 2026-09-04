@@ -64626,6 +64626,62 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/x5oPLU4Wi0E"
       }
+    },
+    {
+      "id": "829cd7ef8487a118150a",
+      "status": "skipped",
+      "title": "Hard Tech Startups Are Built One Milestone at a Time",
+      "source_title": "Hard Tech Startups Are Built One Milestone at a Time",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-04T19:35:16+00:00",
+      "first_seen_at": "2026-09-04T20:17:19+00:00",
+      "appearances": [
+        {
+          "id": "00c662a583cfaa9efb2a",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:knW0YgE-Wd8",
+          "title": "Hard Tech Startups Are Built One Milestone at a Time",
+          "description": "At Heart Aerospace, Anders Forslund built the company one material milestone at a time, using each one to earn the credibility and capital to build the next.\n\n“We really had no technology. I came to YC Demo Day with a little 3D-printed model.”\n\n“We went from having the LOIs to building the 400-kilowatt motor, which was the size of a small jet engine. That in turn attracted actual pre-orders, and then that attracted more capital.”\n\nTheir first major airline customer came through the spam folder.\n\n“United Airlines came through an inbound email through our info email... we showed them the electric motor we built, and they kind of immediately got it.”",
+          "url": "https://www.youtube.com/shorts/knW0YgE-Wd8",
+          "published_at": "2026-09-04T19:35:16+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/knW0YgE-Wd8"
+      }
+    },
+    {
+      "id": "acd7f9549c73aa353a26",
+      "status": "skipped",
+      "title": "ESPN Funded the Disney You Love",
+      "source_title": "ESPN Funded the Disney You Love",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-04T19:48:22+00:00",
+      "first_seen_at": "2026-09-04T20:17:19+00:00",
+      "appearances": [
+        {
+          "id": "781d46b2527d737fcfce",
+          "kind": "youtube",
+          "source": "Acquired — YouTube",
+          "family": "acquired",
+          "guid": "yt:video:VwTAEwgLKqo",
+          "title": "ESPN Funded the Disney You Love",
+          "description": "🎙 From Disney: The Renaissance and the Empire\n\n#shorts #podcast #acquired #businesshistory",
+          "url": "https://www.youtube.com/shorts/VwTAEwgLKqo",
+          "published_at": "2026-09-04T19:48:22+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/VwTAEwgLKqo"
+      }
     }
   ]
 }
