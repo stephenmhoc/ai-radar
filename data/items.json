@@ -64229,6 +64229,37 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/an-interview-with-openai-president-greg-brockman-about-astra-and-alignment/"
       }
+    },
+    {
+      "id": "5fba411c8a7a04d2355f",
+      "status": "deferred",
+      "title": "The A.I. Mob That Attacked Hugging Face + METR’s Ajeya Cotra",
+      "source_title": "The A.I. Mob That Attacked Hugging Face + METR’s Ajeya Cotra",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-04T11:00:03+00:00",
+      "first_seen_at": "2026-09-04T11:17:18+00:00",
+      "appearances": [
+        {
+          "id": "aa9681df2bd28f7a46fc",
+          "kind": "podcast",
+          "source": "Hard Fork",
+          "family": "hard fork",
+          "guid": "https://www.nytimes.com/2026/09/04/podcasts/hugging-face-hack-reports.html",
+          "title": "The A.I. Mob That Attacked Hugging Face + METR’s Ajeya Cotra",
+          "description": "This is probably the most important thing to have happened in A.I. this year.",
+          "url": "https://www.nytimes.com/2026/09/04/podcasts/hugging-face-hack-reports.html",
+          "published_at": "2026-09-04T11:00:03+00:00",
+          "hosts": [
+            "Kevin Roose",
+            "Casey Newton"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.nytimes.com/2026/09/04/podcasts/hugging-face-hack-reports.html"
+      }
     }
   ]
 }
