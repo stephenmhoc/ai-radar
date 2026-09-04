@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Building the Right AI Architecture — Practical AI</title>
+      <link>https://www.youtube.com/watch?v=5NDuQGHM-ws</link>
+      <guid isPermaLink="false">ai-radar:73d3268391729f68cdfd</guid>
+      <pubDate>Fri, 04 Sep 2026 15:45:35 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UC9tpZnMLKv5vbZIGuIIPmNg">Practical AI</source>
+      <description>Chetan Gupta, Chief AI Officer at Rackspace, explains the architectural considerations for deploying AI effectively within enterprises. He details components such as compute, data, models, inference, agent harnesses, orchestration, and governance. Gupta highlights the importance of the AI &amp;quot;harness&amp;quot; as a crucial layer for transforming models into practical outcomes. He also addresses how organizations can construct an architecture that supports multiple AI use cases without being overwhelmed by complexity, as AI transitions from individual models to complex enterprise systems.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Practical AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=5NDuQGHM-ws"&gt;Building the Right AI Architecture&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Why World Models Could Change Robotics, 3D, and Creativity — The a16z Show</title>
       <link>https://www.youtube.com/watch?v=qn1QDDBnTA0</link>
       <guid isPermaLink="false">ai-radar:8df6853a1909246dd27a</guid>

@@ -64512,6 +64512,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=qn1QDDBnTA0"
       }
+    },
+    {
+      "id": "73d3268391729f68cdfd",
+      "status": "published",
+      "title": "Building the Right AI Architecture",
+      "source_title": "Building the Right AI Architecture",
+      "short_summary": "Chetan Gupta, Chief AI Officer at Rackspace, discusses the architecture needed to deploy AI effectively, covering compute, data, models, inference, agent harnesses, orchestration, and governance. He emphasizes the AI \"harness\" as a critical layer for turning models into useful outcomes.",
+      "long_summary": "Chetan Gupta, Chief AI Officer at Rackspace, explains the architectural considerations for deploying AI effectively within enterprises. He details components such as compute, data, models, inference, agent harnesses, orchestration, and governance. Gupta highlights the importance of the AI \"harness\" as a crucial layer for transforming models into practical outcomes. He also addresses how organizations can construct an architecture that supports multiple AI use cases without being overwhelmed by complexity, as AI transitions from individual models to complex enterprise systems.",
+      "reason": "The item discusses consequential, technically or strategically substantive work about important AI companies, products, agent systems, and AI-native software or engineering practice, specifically focusing on AI architecture and deployment in enterprises.",
+      "published_at": "2026-09-04T15:45:35+00:00",
+      "first_seen_at": "2026-09-04T16:17:23+00:00",
+      "appearances": [
+        {
+          "id": "f3d121febef5371ff818",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:5NDuQGHM-ws",
+          "title": "Building the Right AI Architecture",
+          "description": "As AI moves from individual models to complex enterprise systems, organizations need to think beyond the model itself.\n\nIn this clip, Chetan breaks down the architecture needed to deploy AI effectively, from compute, data, and models to inference, agent harnesses, orchestration, and governance. He explains why the AI “harness” is a critical layer for turning models into useful outcomes, and how enterprises can build an architecture that supports multiple AI use cases without becoming overwhelmed by the complexity.\n\nFEATURING:\n\nGuest - Chetan Gupta (Chief AI Officer at Rackspace)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast)\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast)\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://us06web.zoom.us/webinar/register/WN_tMivXvPXRJ6pi5526S5etw#/registration\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
+          "url": "https://www.youtube.com/watch?v=5NDuQGHM-ws",
+          "published_at": "2026-09-04T15:45:35+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=5NDuQGHM-ws"
+      }
     }
   ]
 }
