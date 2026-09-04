@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Why World Models Could Change Robotics, 3D, and Creativity — The a16z Show</title>
+      <link>https://www.youtube.com/watch?v=qn1QDDBnTA0</link>
+      <guid isPermaLink="false">ai-radar:8df6853a1909246dd27a</guid>
+      <pubDate>Fri, 04 Sep 2026 14:30:28 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLM4u6XbiXf5rnUvH5NLdV_It2QLgbHBDZ">The a16z Show</source>
+      <description>World Labs co-founders Fei-Fei Li, Justin Johnson, and Ben Mildenhall discuss their Atlas world model with a16z General Partner Martin Casado. Atlas centers on &amp;quot;new view prediction,&amp;quot; where the model predicts environment appearance from different spatial and temporal positions, integrating generation and 3D reconstruction. The conversation delves into the technical bets behind Atlas, its current capabilities and limitations, and the significance of dynamics, editability, and simulation in the development of world models. They also explore potential applications in creative work, architecture, and robotics, highlighting the constraint of real-world training data for robotics. The discussion contrasts world models with video models and considers the future of 4D video.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · The a16z Show&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=qn1QDDBnTA0"&gt;Why World Models Could Change Robotics, 3D, and Creativity&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Open Models Are Collapsing The Cost Of AI — Y Combinator</title>
+      <link>https://www.youtube.com/watch?v=rY0wnfFHYbs</link>
+      <guid isPermaLink="false">ai-radar:832247ed0ad9483f189f</guid>
+      <pubDate>Fri, 04 Sep 2026 14:00:10 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCcefcZRL2oaA_uBNeo5UOWg">Y Combinator</source>
+      <description>In this episode, Ollama Co-founder Jeffrey Morgan explores the significant shift towards open models within enterprise settings. He highlights a 150X growth in token usage since the beginning of the year, largely attributed to coding agents. Morgan also notes that Chinese models currently dominate cloud token consumption. The discussion delves into the role of fine-tuning, comparing open and closed models, and the dynamics of local versus cloud model deployment. Additionally, he touches upon NVIDIA&amp;#x27;s involvement in the open-source ecosystem and the challenges of acquiring GPUs.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Y Combinator&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=rY0wnfFHYbs"&gt;Open Models Are Collapsing The Cost Of AI&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>OpenAI: Use ChatGPT Work to build custom creative tools — OpenAI</title>
       <link>https://www.youtube.com/watch?v=D-QteDHdHes</link>
       <guid isPermaLink="false">ai-radar:bfdb136f81295bb3a2cb</guid>

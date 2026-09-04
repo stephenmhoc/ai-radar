@@ -64428,6 +64428,90 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=5iu0nY9lIy8"
       }
+    },
+    {
+      "id": "832247ed0ad9483f189f",
+      "status": "published",
+      "title": "Open Models Are Collapsing The Cost Of AI",
+      "source_title": "Open Models Are Collapsing The Cost Of AI",
+      "short_summary": "Ollama Co-founder Jeffrey Morgan discusses the shift to open models in enterprise, the 150X growth in tokens driven by coding agents, and the dominance of Chinese models in cloud token consumption. He also covers fine-tuning, local vs. cloud models, and NVIDIA's open-source play.",
+      "long_summary": "In this episode, Ollama Co-founder Jeffrey Morgan explores the significant shift towards open models within enterprise settings. He highlights a 150X growth in token usage since the beginning of the year, largely attributed to coding agents. Morgan also notes that Chinese models currently dominate cloud token consumption. The discussion delves into the role of fine-tuning, comparing open and closed models, and the dynamics of local versus cloud model deployment. Additionally, he touches upon NVIDIA's involvement in the open-source ecosystem and the challenges of acquiring GPUs.",
+      "reason": "The item features an interview with the co-founder of Ollama, a company building consequential AI infrastructure, discussing frontier models, AI infrastructure, and the economics of AI development.",
+      "published_at": "2026-09-04T14:00:10+00:00",
+      "first_seen_at": "2026-09-04T15:17:23+00:00",
+      "appearances": [
+        {
+          "id": "5984d2fd44628c580870",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:rY0wnfFHYbs",
+          "title": "Open Models Are Collapsing The Cost Of AI",
+          "description": "In this episode of the Lightcone, Ollama Co-founder Jeffrey Morgan sits down with the hosts to talk about the massive shift toward open models in enterprise, the 150X growth in tokens since the start of the year driven by coding agents, and how Chinese models now dominate cloud token consumption. \n\nApply to Y Combinator: https://www.ycombinator.com/apply\nWork at a startup: https://www.ycombinator.com/jobs\n\n00:00 — Intro\n01:16 — Who's Actually Using Open Models?\n02:13 — Is It All About Cost?\n03:31 — The Token Usage Explosion\n05:31 — Fine Tuning: Hype Cycle or Here to Stay?\n07:27 — Where Open Models Beat Claude\n08:26 — Launching Models at Scale\n11:31 — Olama as the OS Layer\n13:58 — Hidden Layers Between Model and App\n17:28 — Open vs. Closed: The Steady State\n20:41 — Local vs. Cloud Models\n23:12 — Why Chinese Models Dominate Cloud\n24:00 — NVIDIA's Open Source Play\n26:03 — The Return to Local\n27:15 — Getting GPUs Is Hard\n29:16 — The Flash Model Revolution\n31:35 — God Model vs. Orchestration\n33:37 — The Geopolitics Question\n36:14 — From Docker to Ollama\n37:12 — Applied to YC With the Wrong Idea\n40:36 — Lost in the Wilderness for Two Years\n42:15 — The Pivot That Changed Everything\n44:49 — 100K GitHub Stars, No Revenue\n47:40 — How Do You Monetize Open Source?\n49:43 — Why Do YC as a Second-Time Founder?\n51:49 — What Seeing \"Good\" Actually Does for You\n53:38 — Old DevOps Rules That Don't Apply Anymore",
+          "url": "https://www.youtube.com/watch?v=rY0wnfFHYbs",
+          "published_at": "2026-09-04T14:00:10+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=rY0wnfFHYbs"
+      }
+    },
+    {
+      "id": "8c97505cf6b76d24b292",
+      "status": "skipped",
+      "title": "What Makes Elon Musk Built Different",
+      "source_title": "What Makes Elon Musk Built Different",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-04T14:00:32+00:00",
+      "first_seen_at": "2026-09-04T15:17:23+00:00",
+      "appearances": [
+        {
+          "id": "8dab3a6829b8cf50a1c1",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:-d4pRRHvuNE",
+          "title": "What Makes Elon Musk Built Different",
+          "description": "Gavin Baker explains why Elon Musk operates differently than almost anyone else in American industry — from bringing manufacturing back to America to building a data center in 122 days when others take three years.\n\n#ElonMusk #SpaceX #Tesla #AI #DataCenters #InvestLikeTheBest #Technology\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/-d4pRRHvuNE",
+          "published_at": "2026-09-04T14:00:32+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/-d4pRRHvuNE"
+      }
+    },
+    {
+      "id": "8df6853a1909246dd27a",
+      "status": "published",
+      "title": "Why World Models Could Change Robotics, 3D, and Creativity",
+      "source_title": "Why World Models Could Change Robotics, 3D, and Creativity",
+      "short_summary": "World Labs co-founders discuss their Atlas world model, focusing on \"new view prediction\" for spatial intelligence. They explore its technical aspects, applications in creative work, architecture, and robotics, and the importance of dynamics, editability, and simulation.",
+      "long_summary": "World Labs co-founders Fei-Fei Li, Justin Johnson, and Ben Mildenhall discuss their Atlas world model with a16z General Partner Martin Casado. Atlas centers on \"new view prediction,\" where the model predicts environment appearance from different spatial and temporal positions, integrating generation and 3D reconstruction. The conversation delves into the technical bets behind Atlas, its current capabilities and limitations, and the significance of dynamics, editability, and simulation in the development of world models. They also explore potential applications in creative work, architecture, and robotics, highlighting the constraint of real-world training data for robotics. The discussion contrasts world models with video models and considers the future of 4D video.",
+      "reason": "The item features an interview with founders of a company developing frontier models (world models) and discusses their technical work, applications in robotics, and the broader implications for AI development.",
+      "published_at": "2026-09-04T14:30:28+00:00",
+      "first_seen_at": "2026-09-04T15:17:25+00:00",
+      "appearances": [
+        {
+          "id": "32004cc4a710ed8db830",
+          "kind": "youtube",
+          "source": "The a16z Show — YouTube",
+          "family": "the a16z show",
+          "guid": "yt:video:qn1QDDBnTA0",
+          "title": "Why World Models Could Change Robotics, 3D, and Creativity",
+          "description": "World Labs co-founders Fei-Fei Li, Justin Johnson, and Ben Mildenhall join a16z General Partner Martin Casado to discuss Atlas, their latest world model, and what it reveals about the pursuit of spatial intelligence.\n\nAt the center of Atlas is what the team calls “new view prediction”: given images or views of a scene, the model predicts what that environment should look like from a different position in space and time. This brings generation and 3D reconstruction into the same model, and raises a broader question about whether predicting views could become a useful primitive for understanding the physical world.\n\nThey discuss the technical bets behind the model, what it can and can’t yet capture, and the importance of dynamics, editability, and simulation as world models develop. The conversation also explores applications in creative work, architecture, and robotics, where Fei-Fei argues that one of today’s biggest constraints is access to real-world training data.\n\nTimestamps:\n00:00 - Intro\n00:51 - What Atlas Is & Why It Matters\n05:15 - Is This a Scaled-Up Video Model or a New Architecture?\n08:15 - Spatial Intelligence & Why New View Prediction Matters\n21:27 - Did You Know It Was Going to Work?\n24:42 - Use Cases: Creatives, Games & Robotics\n35:21 - The Elephant in the Room: Video Models vs World Models\n37:55 - Will We Get 4D Video You Can Walk Around In?\n42:22 - Why New View Prediction Is the Next Token Prediction\n\nResources:\nFollow Fei-Fei Li on X: https://x.com/drfeifei\nFollow Justin Johnson on X: https://x.com/jcjohnss\nFollow Ben Mildenhall on X: https://x.com/BenMildenhall\nFollow Martin Casado on X: https://x.com/martin_casado\nLearn more about Atlas: https://www.worldlabs.ai/blog/atlas\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=qn1QDDBnTA0",
+          "published_at": "2026-09-04T14:30:28+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=qn1QDDBnTA0"
+      }
     }
   ]
 }
