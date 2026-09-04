@@ -64143,6 +64143,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-gpt-6-astra-openais-biggest"
       }
+    },
+    {
+      "id": "9bef01b4fdebcf0872ec",
+      "status": "skipped",
+      "title": "Why Extreme Heat Is Costing Europe",
+      "source_title": "Why Extreme Heat Is Costing Europe",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The content discusses extreme heat in Europe and its economic impact, with no mention of AI, frontier models, AI infrastructure, or any of the target organizations or individuals.",
+      "published_at": "2026-09-04T08:00:24+00:00",
+      "first_seen_at": "2026-09-04T09:17:22+00:00",
+      "appearances": [
+        {
+          "id": "7c7fe42a80ab8c8cdd40",
+          "kind": "youtube",
+          "source": "Bloomberg Originals",
+          "family": "bloomberg originals",
+          "guid": "yt:video:uHR9tZ-LUGw",
+          "title": "Why Extreme Heat Is Costing Europe",
+          "description": "As record temperatures sweep Europe, governments face hard trade-offs. Bloomberg Originals explores whether the continent can adapt to extreme heat amid political turmoil and economic scarcity.\n\nSubscribe to Bloomberg Green Daily for the latest in climate science, clean energy, green finance, environmental politics, electric vehicles, zero-emissions tech and sustainable living.\nhttps://www.bloomberg.com/account/newsletters/green-daily\n\nRead more: Europe’s Endless Heat Waves Imperil Once Reliable Power Sources\nhttps://www.bloomberg.com/news/articles/2026-08-01/europe-s-endless-heat-waves-imperil-once-reliable-power-sources\n\n00:00 Introduction\n00:32 Why Europe Is Unprepared for Extreme Heat\n01:11 The Cost of Adaptation\n01:55 Titlecard\n02:12 Why Europe Is Warming Faster Than Any Continent\n02:31 Comparing Historical Heat Waves: 2003 vs. 2026\n03:05 Quantifying Lost Economic Productivity\n03:33 Rising Demand for Air Conditioning\n04:44 The Cooling Demand-Feedback Loop\n05:28 Global Warming Stress on Power Grids\n05:51 Europe's Energy Problem\n06:19 Can Energy Efficiency Help Bridge the Gap?\n06:55 Hydropower and Nuclear Power Reductions\n07:24 Low Water Levels In the Rhine River\n08:07 The Insurance Gap\n09:00 The Growing Climate Economy\n09:33 Scenarios for Mixed Heat Impacts\n09:52 Conclusion\n\n#Heatwave #Europe #Summer #Economy #AirConditioning \n--------\nLike this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1\n\nGet unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals\nBloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. \n\nSubscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.\n\nVisit our partner channel Bloomberg News for global news and insight in an instant.",
+          "url": "https://www.youtube.com/watch?v=uHR9tZ-LUGw",
+          "published_at": "2026-09-04T08:00:24+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=uHR9tZ-LUGw"
+      }
     }
   ]
 }
