@@ -64260,6 +64260,174 @@
       "links": {
         "podcast": "https://www.nytimes.com/2026/09/04/podcasts/hugging-face-hack-reports.html"
       }
+    },
+    {
+      "id": "f5f3d57dc4a37e778b6c",
+      "status": "skipped",
+      "title": "Use ChatGPT Work to turn marketing ideas into finished work",
+      "source_title": "Use ChatGPT Work to turn marketing ideas into finished work",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional video for a product, not a substantial interview, talk, or demonstration with durable substance. It promotes ChatGPT Work for marketing teams.",
+      "published_at": "2026-09-04T12:20:19+00:00",
+      "first_seen_at": "2026-09-04T13:17:21+00:00",
+      "appearances": [
+        {
+          "id": "ff958be5644eb8b43b55",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:NSqlZ1L81nQ",
+          "title": "Use ChatGPT Work to turn marketing ideas into finished work",
+          "description": "Turn marketing ideas into work your team can review.\n\nThis is how our marketing team uses ChatGPT Work to connect its files and tools and build presentations, docs and creative assets—with marketers deciding what to refine and ship.\n\nWatch the full webinar: https://goldcast.registration.public-pr50.goldcast.io/on-demand/d863a2bc-77cf-4197-8ba4-b4a8b837c0b3?utm_medium=social&utm_source=youtube&utm_campaign=WBR-ChatGPT-Work-Series-Marketing\n\nLearn more: https://openai.com/business/solutions/marketing/?utm_medium=social&utm_source=youtube&utm_campaign=WBR-ChatGPT-Work-Series-Marketing",
+          "url": "https://www.youtube.com/watch?v=NSqlZ1L81nQ",
+          "published_at": "2026-09-04T12:20:19+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=NSqlZ1L81nQ"
+      }
+    },
+    {
+      "id": "8a5ddce3ce3825d1aa30",
+      "status": "skipped",
+      "title": "Use ChatGPT Work to pressure-test marketing campaign briefs",
+      "source_title": "Use ChatGPT Work to pressure-test marketing campaign briefs",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional video from OpenAI, not a complete interview, talk, demonstration, or explainer with durable substance. It promotes ChatGPT Work for marketing campaign briefs.",
+      "published_at": "2026-09-04T12:21:56+00:00",
+      "first_seen_at": "2026-09-04T13:17:22+00:00",
+      "appearances": [
+        {
+          "id": "50e8b1d4034f651aed34",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:HHt8CPJRviA",
+          "title": "Use ChatGPT Work to pressure-test marketing campaign briefs",
+          "description": "Sharpen your campaign brief before you go to market.\n\nThis is how our marketing team uses ChatGPT Work to simulate buyer discussions using existing customer research—so we can sharpen positioning and prepare better questions for real customer research.\n\nWatch the full webinar: https://goldcast.registration.public-pr50.goldcast.io/on-demand/d863a2bc-77cf-4197-8ba4-b4a8b837c0b3?utm_medium=social&utm_source=youtube&utm_campaign=WBR-ChatGPT-Work-Series-Marketing\n\nLearn more: https://openai.com/business/solutions/marketing/?utm_medium=social&utm_source=youtube&utm_campaign=WBR-ChatGPT-Work-Series-Marketing",
+          "url": "https://www.youtube.com/watch?v=HHt8CPJRviA",
+          "published_at": "2026-09-04T12:21:56+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=HHt8CPJRviA"
+      }
+    },
+    {
+      "id": "73b22afe4251f4578b2a",
+      "status": "skipped",
+      "title": "OpenAI — Use ChatGPT Work to create campaign emails",
+      "source_title": "Use ChatGPT Work to create campaign emails",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional clip from OpenAI, which is explicitly excluded by the guidelines for YouTube content. It is not a complete interview, talk, demonstration, or explainer with durable substance.",
+      "published_at": "2026-09-04T12:23:37+00:00",
+      "first_seen_at": "2026-09-04T13:17:23+00:00",
+      "appearances": [
+        {
+          "id": "d6f6fbcc53c33fb47353",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:N-MJ1W8Vj9E",
+          "title": "Use ChatGPT Work to create campaign emails",
+          "description": "Turn a brief into campaign emails your team can refine.\n\nThis is how our marketing team uses ChatGPT Work to build a shared library of use cases and draft emails from briefs, Figma templates and brand guidance—so reviews can focus on messaging and creative.\n\nWatch the full webinar: https://goldcast.registration.public-pr50.goldcast.io/on-demand/d863a2bc-77cf-4197-8ba4-b4a8b837c0b3?utm_medium=social&utm_source=youtube&utm_campaign=WBR-ChatGPT-Work-Series-Marketing\n\nLearn more: https://openai.com/business/solutions/marketing/?utm_medium=social&utm_source=youtube&utm_campaign=WBR-ChatGPT-Work-Series-Marketing",
+          "url": "https://www.youtube.com/watch?v=N-MJ1W8Vj9E",
+          "published_at": "2026-09-04T12:23:37+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=N-MJ1W8Vj9E"
+      }
+    },
+    {
+      "id": "759517850c77549f931b",
+      "status": "skipped",
+      "title": "OpenAI — Use ChatGPT Images to explore campaign concepts",
+      "source_title": "Use ChatGPT Images to explore campaign concepts",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a brief promotional video from OpenAI, not a substantial interview, talk, or demonstration. It lacks the durable substance required for inclusion.",
+      "published_at": "2026-09-04T12:25:30+00:00",
+      "first_seen_at": "2026-09-04T13:17:24+00:00",
+      "appearances": [
+        {
+          "id": "3307e99d570c8106555d",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:Ez-anO32D_s",
+          "title": "Use ChatGPT Images to explore campaign concepts",
+          "description": "Explore more campaign ideas before choosing a direction.\n\nThis is how our marketing team used ChatGPT Images to explore billboard concepts from a scouting photo, compare visual directions and iterate before settling on a final composite.\n\nWatch the full webinar: https://goldcast.registration.public-pr50.goldcast.io/on-demand/d863a2bc-77cf-4197-8ba4-b4a8b837c0b3?utm_medium=social&utm_source=youtube&utm_campaign=WBR-ChatGPT-Work-Series-Marketing\n\nLearn more: https://openai.com/business/solutions/marketing/?utm_medium=social&utm_source=youtube&utm_campaign=WBR-ChatGPT-Work-Series-Marketing",
+          "url": "https://www.youtube.com/watch?v=Ez-anO32D_s",
+          "published_at": "2026-09-04T12:25:30+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=Ez-anO32D_s"
+      }
+    },
+    {
+      "id": "bfdb136f81295bb3a2cb",
+      "status": "published",
+      "title": "OpenAI: Use ChatGPT Work to build custom creative tools",
+      "source_title": "Use ChatGPT Work to build custom creative tools",
+      "short_summary": "OpenAI demonstrates how its marketing team uses ChatGPT Work to create custom design tools. The process involves turning a brief, brand book, and wireframe into a tool for a fictional brand, then building campaign imagery and a product website.",
+      "long_summary": "This video from OpenAI showcases how their marketing team leverages ChatGPT Work to develop custom creative tools. The demonstration illustrates the process of transforming a brief, brand book, and wireframe into a specialized design tool for a fictional brand named NOVA. Subsequently, this tool is used to generate campaign imagery and construct a product website. The content highlights practical applications of ChatGPT Work in marketing workflows.",
+      "reason": "The item is a demonstration from OpenAI, a target organization, showing the use of ChatGPT Work to build custom creative tools, which is a substantive application of their technology.",
+      "published_at": "2026-09-04T12:27:16+00:00",
+      "first_seen_at": "2026-09-04T13:17:26+00:00",
+      "appearances": [
+        {
+          "id": "6db521f0ba3cd58f6325",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:D-QteDHdHes",
+          "title": "Use ChatGPT Work to build custom creative tools",
+          "description": "Build the creative tools your team needs.\n\nThis is how our marketing team uses ChatGPT Work to turn a brief, brand book and wireframe into a custom design tool for fictional brand NOVA, then build campaign imagery and a product website.\n\nWatch the full webinar: https://goldcast.registration.public-pr50.goldcast.io/on-demand/d863a2bc-77cf-4197-8ba4-b4a8b837c0b3?utm_medium=social&utm_source=youtube&utm_campaign=WBR-ChatGPT-Work-Series-Marketing\n\nLearn more: https://openai.com/business/solutions/marketing/?utm_medium=social&utm_source=youtube&utm_campaign=WBR-ChatGPT-Work-Series-Marketing",
+          "url": "https://www.youtube.com/watch?v=D-QteDHdHes",
+          "published_at": "2026-09-04T12:27:16+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=D-QteDHdHes"
+      }
+    },
+    {
+      "id": "5e11b70a5e2323e95567",
+      "status": "skipped",
+      "title": "OpenAI — Use ChatGPT Work to analyze ad performance and refine creative",
+      "source_title": "Use ChatGPT Work to analyze ad performance and refine creative",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional video for ChatGPT Work, lacking the durable substance required for inclusion. It is a highlight clip rather than a complete interview, talk, or explainer.",
+      "published_at": "2026-09-04T12:29:12+00:00",
+      "first_seen_at": "2026-09-04T13:17:27+00:00",
+      "appearances": [
+        {
+          "id": "e922803798ca85621ea7",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:5iu0nY9lIy8",
+          "title": "Use ChatGPT Work to analyze ad performance and refine creative",
+          "description": "Turn ad insights into your next creative idea.\n\nThis demo follows a shopper from product discovery to a clearly labeled ad, then shows how our marketing team uses ChatGPT Work to compare the fictional NOVA campaign’s performance and explore what creative to try next.\n\nWatch the full webinar: https://goldcast.registration.public-pr50.goldcast.io/on-demand/d863a2bc-77cf-4197-8ba4-b4a8b837c0b3?utm_medium=social&utm_source=youtube&utm_campaign=WBR-ChatGPT-Work-Series-Marketing\n\nLearn more: https://openai.com/business/solutions/marketing/?utm_medium=social&utm_source=youtube&utm_campaign=WBR-ChatGPT-Work-Series-Marketing",
+          "url": "https://www.youtube.com/watch?v=5iu0nY9lIy8",
+          "published_at": "2026-09-04T12:29:12+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=5iu0nY9lIy8"
+      }
     }
   ]
 }
