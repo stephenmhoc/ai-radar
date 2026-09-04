@@ -64540,6 +64540,64 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=5NDuQGHM-ws"
       }
+    },
+    {
+      "id": "1bb96e584fe2a743565e",
+      "status": "skipped",
+      "title": "Why Peregrine's founders left national security to work on cities",
+      "source_title": "Why Peregrine's founders left national security to work on cities",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-04T17:45:16+00:00",
+      "first_seen_at": "2026-09-04T18:17:18+00:00",
+      "appearances": [
+        {
+          "id": "6a2f07c2aebdd50e6320",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:-ylAqar2Ea4",
+          "title": "Why Peregrine's founders left national security to work on cities",
+          "description": "Nick Noone was flying in and out of Baghdad. Ben Rudolph was working refugee crises in Africa. In 2016 they decided to come together to work backwards to a single answer: safety sits at the bottom of the pyramid.\n\n#ai #publicsafety",
+          "url": "https://www.youtube.com/shorts/-ylAqar2Ea4",
+          "published_at": "2026-09-04T17:45:16+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/-ylAqar2Ea4"
+      }
+    },
+    {
+      "id": "dd7a074aa5f4144b9393",
+      "status": "skipped",
+      "title": "2026.36: Friction and Feedback",
+      "source_title": "2026.36: Friction and Feedback",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This item is a weekly digest and link roundup summarizing bundle content across multiple topics, rather than an standalone original interview or in-depth technical analysis.",
+      "published_at": "2026-09-04T17:55:39+00:00",
+      "first_seen_at": "2026-09-04T18:17:23+00:00",
+      "appearances": [
+        {
+          "id": "f0c5b665c349f2508348",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=19878",
+          "title": "2026.36: Friction and Feedback",
+          "description": "(Photo by New York Yankees/Getty Images)\n\nWelcome back to This Week in Stratechery!\n\nAs a reminder, each week, every Friday, we’re sending out this overview of content in the Stratechery bundle; \nhighlighted links are free for everyone\n. Additionally, you have complete control over what we send to you. If you don’t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in \nyour delivery settings\n.\n\nOn that note, here were a few of our favorites this week.\n\nThe Market Speaks.\n Anthropic released Fable 5.1 this week, and the most interesting part of their announcement had nothing to do with the model or its capabilities, but rather its terms. \nAnthropic is walking back their controversial data retention policies\n that sparked a huge backlash earlier this year. The reason? The company needs to make money, and OpenAI is competing hard (and OpenAI had a model release of their own, which I talked to OpenAI President Greg Brockman about in \nthe Stratechery Interview\n). \n—\nBen Thompson\n\nApple Finds Religion.\n Dedicated readers and listeners are no doubt familiar with Ben’s crusade to fix the Vision Pro, and specifically Apple’s approach to \nproducing live events in immersive video\n. Well, Apple nailed it with their immersive broadcast of Friday Night Baseball. Come to \nMonday’s Dithering episode\n to hear John’s experience with the Red Sox and Yankees, and stay for Ben’s smug satisfaction (and don’t worry, he registers a few additional complaints for good measure). \n—\nAndrew Sharp \n\nSociety Loses Friction.\n Meta announced last week that as part of a settlement with 29 states it will make sweeping changes to restrict the use of Instagram and Meta among teens. Ben had conflicted reactions to the news \non Monday\n, and \non Thursday’s Sharp Tech\n we went deeper on the libertarian vs. conservative tensions that will inform a variety of these regulation questions going forward. That conversation ultimately echoed a \nvery early Stratechery riff\n on the society-altering implications of tech that removes friction; 13 years later, our generation is still catching up. \n—\nAS\n\nStratechery Articles and Updates\n\nMeta Settles, A Framework For Regulating Content, The Rest of Big Tech\n— Meta’s settlement makes sense for all parties, but the entire sage highlights why any solution to regulating technology feels off.\n\nNvidia Earnings, Dollars Per Gigawatt, Open and Hugging Face\n— Nvidia’s earnings were remarking and boring — two sides of the same coin. Everything the company does is about avoiding a consolidated world.\n\nFable 5.1, Enterprise Frontier Safeguards\n— Fable 5.1 is out, and the hated Fable data retention policy is not just being altered, but entirely removed in the meantime. Plus, why increased caching is a win-win.\n\nAn Interview with OpenAI President Greg Brockman About Astra and Alignment\n— An interview with OpenAI President and Co-Founder Greg Brockman about the history of OpenAI, Astra and alignment, and the weight of building the future.\n\nSharp Text by Andrew Sharp\n\nThe War and Reasonable Doubt\n — \nChecking in with the Iran War after six months of widespread criticism and recent signs of American success.\n\nDithering with Ben Thompson and Daring Fireball’s John Gruber\n\nVision Pro Baseball\n\nNvidia Buys Hugging Face\n\nAsianometry with Jon Yu\n\nThe Little Ceiling Robots Inside a Semiconductor Fab\n\nAI, EDA, and Chip Design\n\nSharp China with Andrew Sharp and Sinocism’s Bill Bishop\n\nChina’s Global Strategy; Tragedy on the Nepal-Tibet Border; A 19-1 Vote at the G-20; TikTok Dodges Congress\n\nGreatest of All Talk\n\nWho We’ll Be Watching This Year, Relegation Candidates and Conspiracy Corner, News and Notes on Kuminga, Westbrook, KD\n\nSharp Tech with Andrew Sharp and Ben Thompson\n\nFable 5.1 and Anthropic’s Data Retention Pivot, AI Civilizations and Related Matters, Q&A on Meta, Shopify, 3-D Printing\n\nThis week’s Sharp Tech video is on how Apple’s App Store drama looks irrelevant next to AI.",
+          "url": "https://stratechery.com/2026/friction-and-feedback/",
+          "published_at": "2026-09-04T17:55:39+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/friction-and-feedback/"
+      }
     }
   ]
 }
