@@ -64797,6 +64797,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/grok-bot"
       }
+    },
+    {
+      "id": "e3212692b6168ce069ad",
+      "first_seen_at": "2026-09-05T17:17:18+00:00",
+      "status": "skipped",
+      "title": "Paul Graham on what motivates founders",
+      "source_title": "Paul Graham on what motivates founders",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-05T16:46:07+00:00",
+      "appearances": [
+        {
+          "id": "534272f352a3fd9fe089",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:Wxq7ZIEodJg",
+          "title": "Paul Graham on what motivates founders",
+          "description": "Paul Graham on what drives founders through the hard parts:\n\n“Being dutiful is not enough. The obstacles are too fearsome for mere dutifulness.”\n\n“You know what actually motivates founders day to day? The fear of failure.”\n\n“If your server’s crashing, you’re not thinking, ‘I got to deal with this because if I deal with it, I’ll become a billionaire.’ You’re thinking, ‘Oh no, the server’s crashing. It will be a disaster. The engine of my model train set is falling off the edge of the table. I need to go and save it.’”",
+          "url": "https://www.youtube.com/shorts/Wxq7ZIEodJg",
+          "published_at": "2026-09-05T16:46:07+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/Wxq7ZIEodJg"
+      }
     }
   ]
 }
