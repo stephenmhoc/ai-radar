@@ -81,6 +81,25 @@ class ScheduledCycleTests(unittest.TestCase):
         self.assertEqual(reporter.exceptions[0]["tags"]["phase"], "git-sync")
         self.assertTrue(reporter.closed)
 
+    def test_shared_verification_failure_prevents_staging_and_publication(self) -> None:
+        reporter = RecordingReporter()
+        radar_module = mock.Mock()
+        radar_module.run_cycle.return_value = GOOD_STATS
+        with (
+            mock.patch.object(scheduled_cycle, "ensure_clean_worktree"),
+            mock.patch.object(scheduled_cycle, "publish_ahead_commits") as publish,
+            mock.patch.object(scheduled_cycle, "command_output", return_value="abc123"),
+            mock.patch.object(scheduled_cycle, "load_radar_module", return_value=radar_module),
+            mock.patch.object(
+                scheduled_cycle, "command",
+                side_effect=subprocess.CalledProcessError(1, ["python", "scripts/verify.py"]),
+            ) as command,
+        ):
+            self.assertEqual(scheduled_cycle._run_locked_cycle(reporter), 1)
+        command.assert_called_once_with(scheduled_cycle.sys.executable, "scripts/verify.py")
+        self.assertEqual(publish.call_count, 1)  # Initial sync only; no publication after failure.
+        self.assertEqual(reporter.exceptions[0]["tags"]["phase"], "tests")
+
     def test_lock_failure_is_reported(self) -> None:
         reporter = RecordingReporter()
         with (

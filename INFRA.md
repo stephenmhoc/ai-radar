@@ -68,8 +68,14 @@ Important paths:
 - `public/feed.xml` is the generated RSS feed.
 - `public/_headers` sets the RSS content type and static security headers on
   Cloudflare Pages.
-- `radar.py` performs collection, selection, summarization, targeted
-  reconsideration, and rendering.
+- `radar.py` orchestrates collection, matching, archive validation, and targeted
+  reconsideration. `editorial.py` owns editorial/model decisions; `rendering.py`
+  owns deterministic HTML/RSS and the generated-file manifest, exposed through
+  `radar.py` for staging. `radar_common.py` holds their shared types and helpers.
+- `scripts/verify.py` is the offline verification entrypoint used locally, by CI,
+  and by the scheduled worker. It builds twice in a temporary directory and
+  compares every artifact with the existing output before running tests and
+  compiling all root, script, and test Python files.
 - `scheduled_cycle.py` owns the pull-to-push production transaction.
 - `error_reporter.py` owns Sentry event reporting.
 - `deploy/` contains the version-controlled templates for both homelab stacks.
@@ -115,7 +121,9 @@ ceiling, and logs record the actual routed model and token usage. Provider or
 validation failures leave the candidate unprocessed so a later cycle can retry
 it. Sparse notes produce a `deferred` record and are reconsidered only if an
 existing appearance gains better notes or a matching appearance adds useful
-metadata.
+metadata. Deferred items are refreshed on copies; their metadata and editorial
+result are applied together after success, so a temporary model failure cannot
+consume the next cycle's retry trigger.
 
 Publisher notes, titles, URLs, and names are explicitly treated as untrusted
 prompt data. The local archive validator also requires unique item and
@@ -297,7 +305,8 @@ cycle performs these phases in order:
    source errors.
 5. Match exact media identity first, allow fuzzy matching only across media,
    and retain at most one podcast, one YouTube, and one newsletter appearance
-   per item.
+   per item. Matching checks all appearances in each group; distinct items of the
+   same medium stay separate, and duplicate media can enrich existing notes.
 6. Locally skip YouTube Shorts, defer sparse metadata, or obtain one locally
    validated structured OpenRouter decision and both summaries. Malformed
    responses and locally invalid results retry within the configured bounded LLM
@@ -305,7 +314,9 @@ cycle performs these phases in order:
    count as errors.
 7. Validate and atomically save `data/items.json`; rebuild `public/index.html`,
    `public/feeds.html`, `public/feed.xml`, and `public/_headers`.
-8. Run `doctor`, all Python tests, and entrypoint compilation.
+8. Run `scripts/verify.py`: doctor, two isolated output builds, all Python tests,
+   compilation, and patch checks. Test subprocesses do not inherit production
+   Sentry or OpenRouter credentials.
 9. Stage only the canonical archive and generated public artifacts. Commit as
    `AI Radar` when the staged output changed.
 10. Re-fetch, safely reconcile any concurrent `main` update, and push every
@@ -323,7 +334,9 @@ repeat Sentry events during the same continuous outage and is cleared as soon
 as a cycle falls below the outage threshold. After safe publication, any
 remaining source or LLM error still marks the cycle degraded and returns
 nonzero. Git, test, validation, lock, heartbeat, and unexpected failures also
-produce Sentry events.
+produce Sentry events. The YouTube latch applies only to widespread fetch
+failures; unrelated source failures and YouTube metadata failures are reported
+in a separate cycle event even while that latch is active.
 
 ## Sentry and logs
 
@@ -360,15 +373,18 @@ collection statistics and the Ofelia job's final exit status.
 ## GitHub continuous integration
 
 `.github/workflows/ci.yml` runs on pull requests and pushes to `main` with
-read-only repository permissions. Python 3.11 and 3.12 jobs run `doctor`, rebuild
-every public artifact and require no diff, execute all tests, compile every
-entrypoint, and run `git diff --check`. Pull requests compare the candidate
+read-only repository permissions. Python 3.11 and 3.12 jobs run
+`python scripts/verify.py`, the same verification entrypoint used by the worker.
+It validates the archive, checks isolated deterministic builds against all
+production artifacts, executes tests, compiles Python, and checks patches.
+Pull requests compare the candidate
 archive with the base branch and reject removed canonical items, downgraded
 published items, removed media, or changes to existing nonempty long summaries.
 
 A separate container job validates both Compose templates, checks
 `deploy/run-cycle.sh` with ShellCheck, builds `deploy/Dockerfile`, and runs the
-doctor and tests inside the resulting image. Dependabot checks pip, Docker, and
+same verifier inside the resulting image (Git patch checks are skipped when
+Git metadata is absent from the image). Dependabot checks pip, Docker, and
 GitHub Actions weekly. Actions are an independent verification path, not the
 publisher schedule; Ofelia remains the only production scheduler.
 
@@ -387,11 +403,8 @@ the previous successful deployment if its commit check fails.
 Before committing a code or content change locally:
 
 ```bash
-python3 radar.py doctor
 python3 radar.py build-site
-python3 -m unittest discover -s tests -v
-python3 -m py_compile radar.py scheduled_cycle.py scheduler_watchdog.py error_reporter.py scripts/check_archive_evolution.py
-git diff --check
+python3 scripts/verify.py
 git status --short
 ```
 

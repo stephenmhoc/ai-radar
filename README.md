@@ -25,7 +25,11 @@ element, and the complete source list in the description.
 - `public/index.html`: item archive using short summaries
 - `public/feeds.html`: monitored podcast, YouTube, and newsletter feeds
 - `public/feed.xml`: RSS feed using long summaries
-- `radar.py`: collection, classification, validation, and static rendering
+- `radar.py`: feed collection, matching, archive validation, and CLI orchestration
+- `editorial.py`: editorial prompt, model requests, and summary validation
+- `rendering.py`: deterministic HTML/RSS rendering and generated-file manifest
+- `radar_common.py`: shared types, text handling, and media identity
+- `scripts/verify.py`: shared offline verification for local work, CI, and the worker
 - `scheduled_cycle.py`: locked pull-to-push production transaction
 - `scheduler_watchdog.py`: Docker health check and missed-schedule Sentry alert
 - `error_reporter.py`: Sentry exception reporting
@@ -52,10 +56,8 @@ Python 3.11 is also supported by CI and can be invoked locally with
 `mise exec python@3.11 -- python` when a compatibility check is needed.
 
 ```bash
-.venv/bin/python radar.py doctor
 .venv/bin/python radar.py build-site
-.venv/bin/python -m unittest discover -s tests -v
-.venv/bin/python -m py_compile radar.py scheduled_cycle.py scheduler_watchdog.py error_reporter.py scripts/check_archive_evolution.py
+.venv/bin/python scripts/verify.py
 ```
 
 To fetch and summarize new items, set the configured API key and run:
@@ -86,7 +88,10 @@ item's publisher notes. It rejects empty, missing, ambiguous, and already
 published matches.
 
 Sparse publisher notes produce a `deferred` record that is reconsidered only
-when richer metadata arrives. Model, provider, and local-validation failures
+when richer metadata arrives. Refreshed notes and new appearances are applied
+together with a successful editorial result; a failed attempt leaves the old
+record intact so the same richer metadata can trigger the next cycle's retry.
+Model, provider, and local-validation failures
 are not persisted at all, so a later run can retry them; a missing API key
 therefore fails every summary rather than deferring anything. New editorial decisions use
 one strict structured-output decision shape returning both the one-to-two-sentence
@@ -129,7 +134,9 @@ Sentry. Docker invokes `scheduler_watchdog.py` independently of Ofelia; a
 missing or stale heartbeat marks the worker unhealthy and emits one grouped
 Sentry event per outage. Widespread YouTube failures use a separate RSS-outage
 fingerprint after the delayed retry and report only once until a recovered cycle
-clears the local alert latch. Malformed or locally invalid LLM structured
+clears the local alert latch. Other source failures, including undated YouTube
+feeds, remain independently reportable during a YouTube fetch outage. Malformed
+or locally invalid LLM structured
 responses use the existing bounded retry policy, with corrective validation
 feedback, and reach Sentry only if every attempt fails. A response truncated at
 the output-token cap is reported
@@ -137,12 +144,20 @@ immediately instead, since retrying buys the same truncation. A total Docker-hos
 or network outage still requires an external monitor because the failed host
 cannot report its own loss.
 
+Matching uses one rule for new groups and archived items: exact media identity
+wins, fuzzy matching only crosses media, and every group preserves distinct
+same-medium items. Repeated copies of the same video enrich its existing
+appearance. Shorts remain isolated from fuzzy matching.
+
 ## Continuous integration
 
 GitHub Actions runs on every pull request and `main` push with Python 3.11 and
-3.12. It validates the archive, proves all static output is deterministic, runs
-the tests, compiles every entrypoint, validates Compose, checks the shell
-entrypoint, builds the Docker image, and tests inside it. Pull requests also
+3.12. Both CI and the scheduled worker call `scripts/verify.py`. The verifier
+makes no model requests, leaves production artifacts untouched, and strips
+production reporting/model credentials from its test subprocesses. It validates
+the archive, proves all static output is deterministic, runs the tests, and
+compiles Python. CI additionally validates Compose, checks the shell entrypoint,
+builds the Docker image, and runs the verifier inside it. Pull requests also
 enforce append-only archive evolution and preservation of existing long
 summaries. Dependabot covers Python, Docker, and GitHub Actions dependencies.
 

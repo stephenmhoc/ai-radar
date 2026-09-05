@@ -171,21 +171,10 @@ def _run_locked_cycle(reporter: ErrorReporter) -> int:
         degraded = stats["source_errors"] > 0 or stats["llm_errors"] > 0
 
         phase = "tests"
-        command(sys.executable, "radar.py", "doctor")
-        command(sys.executable, "-m", "unittest", "discover", "-s", "tests")
-        command(
-            sys.executable,
-            "-m",
-            "py_compile",
-            "radar.py",
-            "scheduled_cycle.py",
-            "scheduler_watchdog.py",
-            "error_reporter.py",
-            "scripts/check_archive_evolution.py",
-        )
+        command(sys.executable, "scripts/verify.py")
 
         phase = "git-stage"
-        # radar owns the list of generated files so a new output cannot be
+        # radar exposes the renderer's list of generated files so a new output cannot be
         # rendered but left unstaged.
         command(
             "git",

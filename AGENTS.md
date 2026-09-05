@@ -23,9 +23,10 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 
 - `data/items.json` is canonical state and belongs in Git.
 - `public/index.html`, `public/feeds.html`, `public/feed.xml`, and
-  `public/_headers` are generated, tracked production artifacts. `radar.py`'s
-  `GENERATED_FILES` is the single list of them; the scheduled cycle stages
-  exactly that list, so a new artifact cannot be rendered but left uncommitted.
+  `public/_headers` are generated, tracked production artifacts. `rendering.py`'s
+  `GENERATED_FILES` (also exposed through `radar.py`) is the single list of them;
+  the scheduled cycle stages exactly that list, so a new artifact cannot be
+  rendered but left uncommitted.
 - The site uses `short_summary`; RSS uses `long_summary`.
 - The site and RSS identify each appearance by medium, source name, and original
   publisher title. RSS item titles name the primary source and use the standard
@@ -47,12 +48,15 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 - Do not send the existing archive back through OpenRouter without explicit
   approval. For archive-wide transformations, preserve every prior long summary
   and prove the migration is lossless.
+- Refresh deferred items on copies and apply metadata and editorial results
+  together after success; failed requests must preserve the retry trigger.
 - Sparse notes should be deferred and reconsidered only after richer metadata
   arrives; invented or weakly grounded summaries are worse than no publication.
 - A canonical item may have at most one podcast appearance, one YouTube
   appearance, and one newsletter appearance. YouTube identity is the
   source-independent video ID; never group distinct same-medium items through
-  fuzzy title matching.
+  fuzzy title matching. Use `matching_score` for both archive matching and new
+  groups, and check every appearance in a group before accepting a fuzzy match.
 - Skip YouTube Shorts locally without an LLM call and keep them out of
   cross-medium fuzzy groups. For other YouTube items, reject brief promotion,
   highlights, isolated quotes, launch teasers, and social snippets whose main
@@ -75,7 +79,8 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   them. Widespread failures that survive the retry use the dedicated
   `youtube-rss-outage` Sentry fingerprint and a persistent once-per-outage alert
   latch; recovered failures do not degrade the cycle and a recovered cycle
-  clears the latch.
+  clears the latch. Only YouTube fetch failures participate in suppression;
+  other source failures and YouTube metadata failures must still report.
 - Pipeline, Git, validation, test, lock, heartbeat, and unexpected failures must
   reach Sentry. Keep the Docker heartbeat watchdog independent of Ofelia so a
   stopped scheduler is observable while the worker and host remain alive.
@@ -146,13 +151,16 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 For ordinary code, content, or rendering changes, run:
 
 ```bash
-python3 radar.py doctor
 python3 radar.py build-site
-python3 -m unittest discover -s tests -v
-python3 -m py_compile radar.py scheduled_cycle.py scheduler_watchdog.py error_reporter.py scripts/check_archive_evolution.py
-git diff --check
+python3 scripts/verify.py
 git status --short
 ```
+
+`scripts/verify.py` owns the shared checks: doctor, two isolated builds compared
+with existing generated files, tests, compilation of root/scripts/tests Python,
+and `git diff --check`. CI and the worker must use this same entrypoint. The
+verifier leaves production files untouched and runs test subprocesses without
+production Sentry or OpenRouter credentials.
 
 Add focused tests for every changed contract. At minimum, summary changes must
 prove the site/RSS split, schema payload, local validation, archive compatibility,

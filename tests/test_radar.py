@@ -3,6 +3,7 @@ from __future__ import annotations
 import datetime as dt
 import email.message
 import email.utils
+import html
 import json
 import pathlib
 import re
@@ -14,6 +15,9 @@ from dataclasses import replace
 from unittest import mock
 
 import radar
+import editorial
+import rendering
+import radar_common
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -31,8 +35,8 @@ def short_summary_with_words(count: int) -> str:
     return " ".join(["word"] * (count - 1) + ["word."])
 
 
-def make_source(*, kind: str = "podcast", name: str = "Test Show") -> radar.Source:
-    return radar.Source(
+def make_source(*, kind: str = "podcast", name: str = "Test Show") -> radar_common.Source:
+    return radar_common.Source(
         kind=kind,
         name=name,
         feed_url=f"https://example.com/{name.replace(' ', '-').casefold()}.xml",
@@ -85,7 +89,7 @@ def published_item(item_id: str = "item-1") -> dict[str, object]:
     }
 
 
-def make_settings(root: pathlib.Path, *, sources: tuple[radar.Source, ...] = ()) -> radar.Settings:
+def make_settings(root: pathlib.Path, *, sources: tuple[radar_common.Source, ...] = ()) -> radar_common.Settings:
     return replace(
         radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json"),
         archive_path=root / "items.json",
@@ -159,14 +163,14 @@ class StaticPublisherTests(unittest.TestCase):
 
     def test_feed_page_lists_every_source_with_matching_style(self) -> None:
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
-        value = radar.render_feeds_html(settings)
+        value = rendering.render_feeds_html(settings)
         self.assertIn("Monitored sources", value)
         self.assertIn("Podcast feeds", value)
         self.assertIn("YouTube feeds", value)
         self.assertIn("Newsletter feeds", value)
         self.assertIn("--forest: #1c2b23", value)
         for source in settings.sources:
-            self.assertIn(radar.html.escape(source.name), value)
+            self.assertIn(html.escape(source.name), value)
             self.assertIn(source.feed_url.replace("&", "&amp;"), value)
 
     def test_config_loads_curated_newsletters_and_shared_source_families(self) -> None:
@@ -194,7 +198,7 @@ class StaticPublisherTests(unittest.TestCase):
         first = published_item("one")
         second = published_item("two")
         second["appearances"][0]["id"] = "another-id"  # type: ignore[index]
-        with self.assertRaisesRegex(radar.RadarError, "media identity"):
+        with self.assertRaisesRegex(radar_common.RadarError, "media identity"):
             radar.validate_archive({"version": 1, "items": [first, second]})
 
 
@@ -209,7 +213,7 @@ class FeedAndUrlTests(unittest.TestCase):
         entries = radar.parse_feed(value, make_source(kind="youtube"))
         self.assertEqual(len(entries), 1)
         self.assertEqual(entries[0]["published_at"], "2026-08-25T12:00:00+00:00")
-        self.assertEqual(radar.youtube_video_id(entries[0]), "abc1234")
+        self.assertEqual(radar_common.youtube_video_id(entries[0]), "abc1234")
 
     def test_newsletter_rss_prefers_full_content_and_bounds_archived_notes(self) -> None:
         full_text = "Detailed firsthand analysis of AI infrastructure. " * 800
@@ -251,7 +255,7 @@ class FeedAndUrlTests(unittest.TestCase):
             item["appearances"], preferred_title=str(item["source_title"])
         )
         radar.validate_archive({"version": 1, "items": [item]})
-        html_text = radar.render_html(settings, [item])
+        html_text = rendering.render_html(settings, [item])
         self.assertIn('<span class="source-kind">Podcast</span>', html_text)
         self.assertIn("Test Show", html_text)
         self.assertIn('<span class="source-title-label">Episode:</span>', html_text)
@@ -260,7 +264,7 @@ class FeedAndUrlTests(unittest.TestCase):
         self.assertIn("The original video title&nbsp;↗", html_text)
         self.assertNotIn("Test Show — YouTube", html_text)
 
-        rss = ET.fromstring(radar.render_rss(settings, [item]))
+        rss = ET.fromstring(rendering.render_rss(settings, [item]))
         rss_item = rss.find("./channel/item")
         assert rss_item is not None
         self.assertEqual(
@@ -292,11 +296,11 @@ class FeedAndUrlTests(unittest.TestCase):
         item["appearances"] = [newsletter]
         item["links"] = {"newsletter": "https://example.com/article-1"}
         radar.validate_archive({"version": 1, "items": [item]})
-        html_text = radar.render_html(settings, [item])
+        html_text = rendering.render_html(settings, [item])
         self.assertIn('<span class="source-kind">Newsletter</span>', html_text)
         self.assertIn("AI Letter", html_text)
         self.assertIn('<span class="source-title-label">Issue:</span>', html_text)
-        rss = ET.fromstring(radar.render_rss(settings, [item]))
+        rss = ET.fromstring(rendering.render_rss(settings, [item]))
         self.assertEqual(rss.findtext("./channel/item/link"), "https://example.com/article-1")
         self.assertIn(
             "<strong>Issue:</strong>",
@@ -322,8 +326,8 @@ class FeedAndUrlTests(unittest.TestCase):
             "youtube": "https://youtube.com/watch?v=safe123",
         }
         item["long_summary"] = '<img src=x onerror="alert(1)"> Four safe sentences follow. Two. Three. Four.'
-        html_text = radar.render_html(settings, [item])
-        rss = ET.fromstring(radar.render_rss(settings, [item]))
+        html_text = rendering.render_html(settings, [item])
+        rss = ET.fromstring(rendering.render_rss(settings, [item]))
         description = rss.findtext("./channel/item/description") or ""
         self.assertNotIn("javascript:", html_text)
         self.assertNotIn("javascript:", description)
@@ -341,7 +345,7 @@ class FeedAndUrlTests(unittest.TestCase):
             "getaddrinfo",
             return_value=[(2, 1, 6, "", ("127.0.0.1", 0))],
         ):
-            with self.assertRaisesRegex(radar.RadarError, "non-public"):
+            with self.assertRaisesRegex(radar_common.RadarError, "non-public"):
                 radar.validate_fetch_destination("https://example.com/feed.xml")
 
     def test_redirect_destination_is_revalidated(self) -> None:
@@ -361,7 +365,7 @@ class FeedAndUrlTests(unittest.TestCase):
             mock.patch.object(radar.urllib.request, "build_opener", return_value=opener),
             mock.patch.object(radar.socket, "getaddrinfo", side_effect=addresses),
         ):
-            with self.assertRaisesRegex(radar.RadarError, "non-public"):
+            with self.assertRaisesRegex(radar_common.RadarError, "non-public"):
                 radar._fetch_once(
                     "https://example.com/feed.xml",
                     user_agent="test",
@@ -384,8 +388,8 @@ class FeedAndUrlTests(unittest.TestCase):
     def test_feed_response_size_is_bounded(self) -> None:
         self.assertEqual(radar.MAX_FEED_BYTES, 16 * 1024 * 1024)
         response = FakeBinaryResponse(b"123456")
-        with self.assertRaisesRegex(radar.RadarError, "exceeded"):
-            radar._read_bounded(response, max_bytes=5, label="feed response")
+        with self.assertRaisesRegex(radar_common.RadarError, "exceeded"):
+            radar_common._read_bounded(response, max_bytes=5, label="feed response")
 
 
 class MatchingTests(unittest.TestCase):
@@ -424,20 +428,20 @@ class MatchingTests(unittest.TestCase):
         )
         groups = radar.group_candidates([podcast, youtube_short])
         self.assertEqual(len(groups), 2)
-        self.assertTrue(any(radar.is_youtube_short(group[0]) for group in groups))
+        self.assertTrue(any(radar_common.is_youtube_short(group[0]) for group in groups))
 
 
 class SummaryContractTests(unittest.TestCase):
     def test_sentence_counter_handles_lowercase_and_abbreviations(self) -> None:
-        self.assertEqual(radar.sentence_count("First sentence. second sentence. third sentence."), 3)
-        self.assertEqual(radar.sentence_count("U.S. systems differ. Another sentence follows."), 2)
-        self.assertEqual(radar.sentence_count("Pre-training vs. post-training is discussed."), 1)
+        self.assertEqual(editorial.sentence_count("First sentence. second sentence. third sentence."), 3)
+        self.assertEqual(editorial.sentence_count("U.S. systems differ. Another sentence follows."), 2)
+        self.assertEqual(editorial.sentence_count("Pre-training vs. post-training is discussed."), 1)
 
     def test_short_summary_keeps_55_word_target_with_82_word_acceptance_ceiling(self) -> None:
-        self.assertEqual(radar.MAX_SHORT_SUMMARY_WORDS, 55)
-        self.assertEqual(radar.MAX_ACCEPTED_SHORT_SUMMARY_WORDS, 82)
+        self.assertEqual(editorial.MAX_SHORT_SUMMARY_WORDS, 55)
+        self.assertEqual(editorial.MAX_ACCEPTED_SHORT_SUMMARY_WORDS, 82)
         accepted = short_summary_with_words(82)
-        radar.validate_summary_contract(
+        editorial.validate_summary_contract(
             title="Title",
             short_summary=accepted,
             long_summary=VALID_LONG,
@@ -446,8 +450,8 @@ class SummaryContractTests(unittest.TestCase):
         item = published_item()
         item["short_summary"] = accepted
         radar.validate_archive({"version": 1, "items": [item]})
-        with self.assertRaisesRegex(radar.RadarError, "82-word acceptance ceiling"):
-            radar.validate_summary_contract(
+        with self.assertRaisesRegex(radar_common.RadarError, "82-word acceptance ceiling"):
+            editorial.validate_summary_contract(
                 title="Title",
                 short_summary=short_summary_with_words(83),
                 long_summary=VALID_LONG,
@@ -463,14 +467,14 @@ class SummaryContractTests(unittest.TestCase):
                 url="https://www.youtube.com/shorts/short222",
             )
         ]
-        with mock.patch.object(radar, "llm_json") as llm:
-            result = radar.summarize_group(settings, group)
+        with mock.patch.object(editorial, "llm_json") as llm:
+            result = editorial.summarize_group(settings, group)
         self.assertEqual(result["status"], "skipped")
         self.assertIn("YouTube Shorts", result["reason"])
         llm.assert_not_called()
 
     def test_excluded_result_clears_model_supplied_summaries(self) -> None:
-        value = radar.validate_editorial_response(
+        value = editorial.validate_editorial_response(
             {
                 "include": False,
                 "title": "Excluded",
@@ -485,8 +489,8 @@ class SummaryContractTests(unittest.TestCase):
     def test_sparse_notes_are_deferred_without_an_llm_call(self) -> None:
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
         group = [make_appearance(description="Too short.")]
-        with mock.patch.object(radar, "llm_json") as llm:
-            result = radar.summarize_group(settings, group)
+        with mock.patch.object(editorial, "llm_json") as llm:
+            result = editorial.summarize_group(settings, group)
         self.assertEqual(result["status"], "deferred")
         llm.assert_not_called()
 
@@ -498,13 +502,13 @@ class SummaryContractTests(unittest.TestCase):
                 description="A short paid-newsletter teaser that cannot ground a detailed summary. " * 3,
             )
         ]
-        self.assertGreater(sum(len(value["description"]) for value in group), radar.MIN_NOTES_CHARS)
+        self.assertGreater(sum(len(value["description"]) for value in group), editorial.MIN_NOTES_CHARS)
         self.assertLess(
             sum(len(value["description"]) for value in group),
-            radar.MIN_NEWSLETTER_NOTES_CHARS,
+            editorial.MIN_NEWSLETTER_NOTES_CHARS,
         )
-        with mock.patch.object(radar, "llm_json") as llm:
-            result = radar.summarize_group(settings, group)
+        with mock.patch.object(editorial, "llm_json") as llm:
+            result = editorial.summarize_group(settings, group)
         self.assertEqual(result["status"], "deferred")
         llm.assert_not_called()
 
@@ -522,9 +526,9 @@ class SummaryContractTests(unittest.TestCase):
             assert callable(validator)
             return validator(value)
 
-        with mock.patch.object(radar, "llm_json", side_effect=run_validator):
-            with self.assertRaisesRegex(radar.RadarError, "local validation"):
-                radar.summarize_group(settings, [make_appearance()])
+        with mock.patch.object(editorial, "llm_json", side_effect=run_validator):
+            with self.assertRaisesRegex(radar_common.RadarError, "local validation"):
+                editorial.summarize_group(settings, [make_appearance()])
 
     def test_locally_invalid_summary_is_retried(self) -> None:
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
@@ -551,10 +555,10 @@ class SummaryContractTests(unittest.TestCase):
         ]
         with (
             mock.patch.dict("os.environ", {settings.llm.api_key_env: "test"}),
-            mock.patch.object(radar.urllib.request, "urlopen", side_effect=responses) as urlopen,
+            mock.patch.object(editorial.urllib.request, "urlopen", side_effect=responses) as urlopen,
             mock.patch.object(radar.time, "sleep") as sleep,
         ):
-            result = radar.summarize_group(settings, [make_appearance()])
+            result = editorial.summarize_group(settings, [make_appearance()])
         self.assertEqual(result["status"], "published")
         self.assertEqual(result["short_summary"], VALID_SHORT)
         self.assertEqual(urlopen.call_count, 2)
@@ -584,11 +588,11 @@ class SummaryContractTests(unittest.TestCase):
         ]
         with (
             mock.patch.dict("os.environ", {settings.llm.api_key_env: "test"}),
-            mock.patch.object(radar.urllib.request, "urlopen", side_effect=responses) as urlopen,
+            mock.patch.object(editorial.urllib.request, "urlopen", side_effect=responses) as urlopen,
             mock.patch.object(radar.time, "sleep") as sleep,
         ):
-            with self.assertRaisesRegex(radar.RadarError, "local validation"):
-                radar.summarize_group(settings, [make_appearance()])
+            with self.assertRaisesRegex(radar_common.RadarError, "local validation"):
+                editorial.summarize_group(settings, [make_appearance()])
         self.assertEqual(urlopen.call_count, 2)
         sleep.assert_called_once_with(settings.llm.retry_backoff_seconds)
 
@@ -613,10 +617,10 @@ class SummaryContractTests(unittest.TestCase):
         ]
         with (
             mock.patch.dict("os.environ", {settings.llm.api_key_env: "test"}),
-            mock.patch.object(radar.urllib.request, "urlopen", side_effect=responses) as urlopen,
+            mock.patch.object(editorial.urllib.request, "urlopen", side_effect=responses) as urlopen,
             mock.patch.object(radar.time, "sleep"),
         ):
-            result = radar.summarize_group(settings, [make_appearance()])
+            result = editorial.summarize_group(settings, [make_appearance()])
         self.assertEqual(result["short_summary"], VALID_SHORT)
         retry_payload = json.loads(urlopen.call_args_list[1].args[0].data)
         self.assertEqual(retry_payload["messages"][-2]["role"], "assistant")
@@ -650,8 +654,8 @@ class SummaryContractTests(unittest.TestCase):
                 description="Newsletter-specific original reporting about inference systems. " * 4,
             ),
         ]
-        with mock.patch.object(radar, "llm_json", return_value=response) as llm:
-            result = radar.summarize_group(settings, group)
+        with mock.patch.object(editorial, "llm_json", return_value=response) as llm:
+            result = editorial.summarize_group(settings, group)
         self.assertEqual(result["status"], "published")
         self.assertIn("untrusted data", llm.call_args.kwargs["user"])
         self.assertIn("Podcast-specific", llm.call_args.kwargs["user"])
@@ -680,9 +684,9 @@ class SummaryContractTests(unittest.TestCase):
         )
         with (
             mock.patch.dict("os.environ", {settings.api_key_env: "test"}),
-            mock.patch.object(radar.urllib.request, "urlopen", return_value=response) as urlopen,
+            mock.patch.object(editorial.urllib.request, "urlopen", return_value=response) as urlopen,
         ):
-            value = radar.llm_json(settings, system="system", user="user", schema=radar.EDITORIAL_RESPONSE_SCHEMA)
+            value = editorial.llm_json(settings, system="system", user="user", schema=editorial.EDITORIAL_RESPONSE_SCHEMA)
         payload = json.loads(urlopen.call_args.args[0].data)
         self.assertEqual(value, structured_value)
         self.assertEqual(payload["model"], "openrouter/auto")
@@ -691,7 +695,7 @@ class SummaryContractTests(unittest.TestCase):
         self.assertEqual(
             payload["response_format"]["json_schema"]["schema"]["properties"]
             ["short_summary"]["maxLength"],
-            radar.MAX_SHORT_SUMMARY_CHARS,
+            editorial.MAX_SHORT_SUMMARY_CHARS,
         )
         self.assertTrue(payload["response_format"]["json_schema"]["strict"])
 
@@ -715,14 +719,14 @@ class SummaryContractTests(unittest.TestCase):
         ]
         with (
             mock.patch.dict("os.environ", {settings.api_key_env: "test"}),
-            mock.patch.object(radar.urllib.request, "urlopen", side_effect=responses) as urlopen,
+            mock.patch.object(editorial.urllib.request, "urlopen", side_effect=responses) as urlopen,
             mock.patch.object(radar.time, "sleep") as sleep,
         ):
-            value = radar.llm_json(
+            value = editorial.llm_json(
                 settings,
                 system="system",
                 user="user",
-                schema=radar.EDITORIAL_RESPONSE_SCHEMA,
+                schema=editorial.EDITORIAL_RESPONSE_SCHEMA,
             )
         self.assertEqual(value, structured_value)
         self.assertEqual(urlopen.call_count, 2)
@@ -739,18 +743,18 @@ class SummaryContractTests(unittest.TestCase):
         ]
         with (
             mock.patch.dict("os.environ", {settings.api_key_env: "test"}),
-            mock.patch.object(radar.urllib.request, "urlopen", side_effect=responses) as urlopen,
+            mock.patch.object(editorial.urllib.request, "urlopen", side_effect=responses) as urlopen,
             mock.patch.object(radar.time, "sleep") as sleep,
         ):
             with self.assertRaisesRegex(
-                radar.RadarError,
+                radar_common.RadarError,
                 "structured response was not valid JSON",
             ):
-                radar.llm_json(
+                editorial.llm_json(
                     settings,
                     system="system",
                     user="user",
-                    schema=radar.EDITORIAL_RESPONSE_SCHEMA,
+                    schema=editorial.EDITORIAL_RESPONSE_SCHEMA,
                 )
         self.assertEqual(urlopen.call_count, 2)
         sleep.assert_called_once_with(settings.retry_backoff_seconds)
@@ -762,11 +766,11 @@ class SummaryContractTests(unittest.TestCase):
         )
         with (
             mock.patch.dict("os.environ", {settings.api_key_env: "test"}),
-            mock.patch.object(radar.urllib.request, "urlopen", side_effect=ConnectionResetError("reset")),
+            mock.patch.object(editorial.urllib.request, "urlopen", side_effect=ConnectionResetError("reset")),
             mock.patch.object(radar.time, "sleep"),
         ):
-            with self.assertRaisesRegex(radar.RadarError, "LLM request failed"):
-                radar.llm_json(settings, system="system", user="user", schema=radar.EDITORIAL_RESPONSE_SCHEMA)
+            with self.assertRaisesRegex(radar_common.RadarError, "LLM request failed"):
+                editorial.llm_json(settings, system="system", user="user", schema=editorial.EDITORIAL_RESPONSE_SCHEMA)
 
 
 class CycleTests(unittest.TestCase):
@@ -785,7 +789,7 @@ class CycleTests(unittest.TestCase):
             )
             with (
                 mock.patch.object(radar, "fetch_bytes", return_value=feed),
-                mock.patch.object(radar, "llm_json") as llm,
+                mock.patch.object(editorial, "llm_json") as llm,
             ):
                 stats = radar.run_cycle(settings, lookback_days=7)
 
@@ -795,7 +799,7 @@ class CycleTests(unittest.TestCase):
             self.assertEqual(stats["new_items"], 1)
             self.assertEqual(stats["skipped"], 1)
             self.assertEqual(len(published["appearances"]), 1)
-            self.assertTrue(radar.is_youtube_short(skipped["appearances"][0]))
+            self.assertTrue(radar_common.is_youtube_short(skipped["appearances"][0]))
             llm.assert_not_called()
 
     def test_reconsider_refreshes_and_rejudges_one_unpublished_item(self) -> None:
@@ -867,7 +871,7 @@ class CycleTests(unittest.TestCase):
                 mock.patch.object(
                     radar,
                     "fetch_bytes",
-                    side_effect=[radar.RadarError("feed HTTP 404"), b"<rss><channel /></rss>"],
+                    side_effect=[radar_common.RadarError("feed HTTP 404"), b"<rss><channel /></rss>"],
                 ) as fetch,
                 mock.patch.object(radar.time, "sleep") as sleep,
             ):
@@ -890,7 +894,7 @@ class CycleTests(unittest.TestCase):
                 mock.patch.object(
                     radar,
                     "fetch_bytes",
-                    side_effect=radar.RadarError("feed HTTP 404"),
+                    side_effect=radar_common.RadarError("feed HTTP 404"),
                 ) as fetch,
                 mock.patch.object(radar.time, "sleep") as sleep,
             ):
@@ -920,7 +924,7 @@ class CycleTests(unittest.TestCase):
                 mock.patch.object(
                     radar,
                     "fetch_bytes",
-                    side_effect=radar.RadarError("feed HTTP 404"),
+                    side_effect=radar_common.RadarError("feed HTTP 404"),
                 ),
                 mock.patch.object(radar.time, "sleep"),
             ):
@@ -944,7 +948,7 @@ class CycleTests(unittest.TestCase):
                 mock.patch.object(
                     radar,
                     "fetch_bytes",
-                    side_effect=radar.RadarError("feed HTTP 404"),
+                    side_effect=radar_common.RadarError("feed HTTP 404"),
                 ),
                 mock.patch.object(radar.time, "sleep"),
             ):
@@ -954,7 +958,7 @@ class CycleTests(unittest.TestCase):
     def test_youtube_outage_requires_widespread_fetch_failures(self) -> None:
         source = make_source(kind="youtube", name="YouTube")
         fetch_failures = [
-            radar.SourceFailure(source, radar.RadarError("feed HTTP 404"), "fetch")
+            radar.SourceFailure(source, radar_common.RadarError("feed HTTP 404"), "fetch")
             for _ in range(4)
         ]
         self.assertTrue(radar.is_youtube_rss_outage(fetch_failures, youtube_source_count=8))
@@ -962,7 +966,7 @@ class CycleTests(unittest.TestCase):
             radar.is_youtube_rss_outage(fetch_failures[:3], youtube_source_count=8)
         )
         metadata_failures = [
-            radar.SourceFailure(source, radar.RadarError("missing date"), "metadata")
+            radar.SourceFailure(source, radar_common.RadarError("missing date"), "metadata")
             for _ in range(4)
         ]
         self.assertFalse(radar.is_youtube_rss_outage(metadata_failures, youtube_source_count=8))
@@ -975,7 +979,7 @@ class CycleTests(unittest.TestCase):
             feed = rss_feed(description="Useful publisher notes. " * 10, date=email.utils.format_datetime(NOW))
             with (
                 mock.patch.object(radar, "fetch_bytes", return_value=feed),
-                mock.patch.object(radar, "summarize_group", side_effect=radar.RadarError("provider down")),
+                mock.patch.object(radar, "summarize_group", side_effect=radar_common.RadarError("provider down")),
             ):
                 stats = radar.run_cycle(settings, lookback_days=7, reporter=reporter)
             archive = radar.load_archive(root / "items.json")
@@ -1053,12 +1057,12 @@ class CycleTests(unittest.TestCase):
             "choices": [{"finish_reason": "length", "message": {"content": '{"include": tr'}}],
         }
         with (
-            mock.patch.object(radar.urllib.request, "urlopen", return_value=FakeHTTPResponse(truncated)) as urlopen,
+            mock.patch.object(editorial.urllib.request, "urlopen", return_value=FakeHTTPResponse(truncated)) as urlopen,
             mock.patch.dict(radar.os.environ, {"OPENROUTER_API_KEY": "test"}, clear=False),
             mock.patch.object(radar.time, "sleep") as sleep,
         ):
-            with self.assertRaises(radar.LLMTruncationError) as caught:
-                radar.llm_json(settings, system="s", user="u", schema=radar.EDITORIAL_RESPONSE_SCHEMA)
+            with self.assertRaises(radar_common.LLMTruncationError) as caught:
+                editorial.llm_json(settings, system="s", user="u", schema=editorial.EDITORIAL_RESPONSE_SCHEMA)
         self.assertIn("output cap", str(caught.exception))
         self.assertEqual(urlopen.call_count, 1)
         sleep.assert_not_called()
@@ -1072,7 +1076,7 @@ class CycleTests(unittest.TestCase):
             )
             radar.build_site(settings)
             written = sorted(path.name for path in settings.public_dir.iterdir())
-        self.assertEqual(written, sorted(radar.GENERATED_FILES))
+        self.assertEqual(written, sorted(rendering.GENERATED_FILES))
 
     def test_entry_without_valid_date_is_reported_and_skipped_without_llm(self) -> None:
         reporter = RecordingReporter()
