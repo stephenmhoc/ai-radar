@@ -64825,6 +64825,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/Wxq7ZIEodJg"
       }
+    },
+    {
+      "id": "1202a36246bd49870903",
+      "first_seen_at": "2026-09-05T18:17:18+00:00",
+      "status": "skipped",
+      "title": "100 water rescues in one month. Nobody knew why. Peregrine found the pattern.",
+      "source_title": "100 water rescues in one month. Nobody knew why. Peregrine found the pattern.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-05T17:15:01+00:00",
+      "appearances": [
+        {
+          "id": "8f780a3cb8c54a8a53d5",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:y--F-PowqUs",
+          "title": "100 water rescues in one month. Nobody knew why. Peregrine found the pattern.",
+          "description": "A Florida county couldn't explain a spike in flood rescues. The agent traced it: three consecutive days of a weather pattern, carving sand channels, creating perfect rip current conditions.\n\n#ai #publicsafety",
+          "url": "https://www.youtube.com/shorts/y--F-PowqUs",
+          "published_at": "2026-09-05T17:15:01+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/y--F-PowqUs"
+      }
     }
   ]
 }
