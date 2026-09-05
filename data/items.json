@@ -64710,6 +64710,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=bOC3DisEOfg"
       }
+    },
+    {
+      "id": "f9919652844cc891daf2",
+      "status": "published",
+      "title": "OpenAI — GPT-6 Astra with Ben Davis",
+      "source_title": "GPT-6 Astra with Ben Davis",
+      "short_summary": "Ben Davis shares first impressions of GPT-6 Astra after testing it on DEF CON puzzle challenges. He explains how parallel research branches help the model solve complex problems, including one previously unsolved.",
+      "long_summary": "Ben Davis shares his first impressions of GPT-6 Astra after testing it on some of DEF CON's hardest puzzle challenges. He explains how parallel research branches help the model test theories, stay on track, and solve complex problems. This includes one particular problem that no one else had solved. The discussion focuses on the model's capabilities and problem-solving approach.",
+      "reason": "The item is a YouTube video from OpenAI, a target organization, featuring a discussion about their frontier model, GPT-6 Astra, and its problem-solving capabilities.",
+      "published_at": "2026-09-05T00:11:56+00:00",
+      "first_seen_at": "2026-09-05T01:17:22+00:00",
+      "appearances": [
+        {
+          "id": "7e3132758fc169a19ed1",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:B-jjnydci50",
+          "title": "GPT-6 Astra with Ben Davis",
+          "description": "Ben Davis shares his first impressions of GPT-6 Astra after testing it on some of DEF CON's hardest puzzle challenges. He explains how parallel research branches help the model test theories, stay on track, and solve complex problems, including one no one else had solved.",
+          "url": "https://www.youtube.com/watch?v=B-jjnydci50",
+          "published_at": "2026-09-05T00:11:56+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=B-jjnydci50"
+      }
     }
   ]
 }
