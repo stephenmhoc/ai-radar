@@ -64738,6 +64738,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=B-jjnydci50"
       }
+    },
+    {
+      "id": "2879a4da02f03a4f4d54",
+      "status": "published",
+      "title": "Aaron Levie on Why Open AI Wins",
+      "source_title": "Aaron Levie on Why Open AI Wins",
+      "short_summary": "Box co-founder and CEO Aaron Levie discusses open-weight AI, its economics, and its potential to strengthen the U.S. AI ecosystem. He argues open models foster innovation and create more use cases, debating model distillation and competition with China.",
+      "long_summary": "Box co-founder and CEO Aaron Levie joins The a16z Show to advocate for open-weight AI, exploring the economics of open versus closed models. He posits that greater openness could bolster the U.S. AI ecosystem by creating more use cases and driving faster innovation from closed labs. The discussion covers model distillation, America's competition with China, and whether restricting access might accelerate competing AI ecosystems. They also consider the implications of frontier models for knowledge work and how AI has transformed software engineering at Box. Levie suggests that enterprises are unlikely to rely on a single model, making the layer that routes between models, data, and workflows increasingly valuable.",
+      "reason": "The item features a discussion with a prominent CEO on the economics, strategy, and policy of open-weight AI, directly addressing frontier models and the AI ecosystem.",
+      "published_at": "2026-09-05T10:00:00+00:00",
+      "first_seen_at": "2026-09-05T11:17:22+00:00",
+      "appearances": [
+        {
+          "id": "87a4e8ea08e065c37061",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "c467545c-37d0-4862-8fce-65d81646cd39",
+          "title": "Aaron Levie on Why Open AI Wins",
+          "description": "Box co-founder and CEO Aaron Levie joins MTS hosts Theo Jaffee and Sofia Puccini to make the case for open-weight AI, unpack the economics of open versus closed models, and explain why he believes more openness could strengthen rather than undermine the U.S. AI ecosystem.\n\nAaron argues that open models create more use cases, push closed labs to innovate faster, and don't fundamentally change where the economics of AI ultimately accrue. They debate model distillation, America's competition with China, why restricting access may simply accelerate competing AI ecosystems, and whether U.S. labs should begin releasing open-weight versions of previous-generation models.\n\nThey also get into what the latest frontier models mean for knowledge work, how AI has changed software engineering at Box, and why Aaron believes companies cutting engineers may simply not be ambitious enough. Finally, they discuss why enterprises are unlikely to bet on a single model and why the layer that routes between models, data, and workflows could become increasingly valuable.\n\nResources:\n\nFollow Aaron Levie on X:\nhttps://x.com/levie\n\nFollow Theo Jaffee on X:\nhttps://x.com/theojaffee\n\nFollow Sofia Puccini on X:\nhttps://x.com/schisofrenia\n\nFollow MTS on X:\nhttps://x.com/mtslive\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/aaron-levie-on-why-open-ai-wins-YUnuv_hR",
+          "published_at": "2026-09-05T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/aaron-levie-on-why-open-ai-wins-YUnuv_hR"
+      }
     }
   ]
 }
