@@ -64926,6 +64926,34 @@
       "links": {
         "podcast": "https://www.davidsenra.com/zach-dell"
       }
+    },
+    {
+      "id": "550dba5f3b8c6310bcb0",
+      "first_seen_at": "2026-09-06T10:17:20+00:00",
+      "status": "skipped",
+      "title": "Your AI Doctor Is Coming | Julie Yoo",
+      "source_title": "Your AI Doctor Is Coming | Julie Yoo",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The podcast features Julie Yoo, a General Partner at a16z, discussing AI in healthcare. While the topic is relevant to AI, a16z is not a target organization, and Julie Yoo is not a listed individual whose interview would automatically qualify the item. The content does not offer unusually strong firsthand expertise, original reporting, or durable analysis from a target individual or organization.",
+      "published_at": "2026-09-06T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "a83dbf1955acd6b09645",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "34e47cf8-efba-4478-8edb-a0baa42e00af",
+          "title": "Your AI Doctor Is Coming | Julie Yoo",
+          "description": "a16z General Partner Julie Yoo joins MTS host Sophia Dew to explain why she believes healthcare could benefit more from AI than almost any other industry, and why decades of slow technology adoption may actually give healthcare an advantage in the AI era.\n\nJulie traces healthcare’s evolution from paper records and fax machines through electronic health records and telehealth, and explains why AI represents something different: an organic adoption wave driven by tools that doctors and patients actually want to use. Because healthcare never built the same layers of legacy software as other industries, it may now be able to leapfrog directly into agentic AI.\n\nThey also explore how AI could dramatically lower the cost of care, why consumers are becoming a more important payer, where Julie sees the biggest opportunities for healthcare founders, and a future where everyone has a highly personalized AI doctor in their pocket for life.\n\nResources:\n\nFollow Julie Yoo on X: \nhttps://x.com/julesyoo\n\nFollow Sophia Dew on X:\nhttps://x.com/sophiadew\n\nFollow MTS on X:\nhttps://x.com/mtslive\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/your-ai-doctor-is-coming-julie-yoo-YEmlPria",
+          "published_at": "2026-09-06T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/your-ai-doctor-is-coming-julie-yoo-YEmlPria"
+      }
     }
   ]
 }
