@@ -64997,6 +64997,34 @@
         "podcast": "https://www.lennysnewsletter.com/p/why-companies-are-becoming-a-series",
         "youtube": "https://www.youtube.com/watch?v=LdIyXiq2DTY"
       }
+    },
+    {
+      "id": "c111423beda2664ac132",
+      "first_seen_at": "2026-09-06T18:17:26+00:00",
+      "status": "published",
+      "title": "OpenAI — GPT-6 Astra with Peter Gostev",
+      "source_title": "GPT-6 Astra with Peter Gostev",
+      "short_summary": "Peter Gostev discusses his first impressions of GPT-6 Astra, highlighting its more natural feedback, greater reliability, and ability to handle complex tasks with less supervision. He shares examples like building a 3D London and improving a large app.",
+      "long_summary": "Peter Gostev shares his initial experiences with GPT-6 Astra. He describes using the model to create a 3D representation of London that evolves through various historical periods. Gostev also details how GPT-6 Astra assisted in enhancing an application containing approximately 150,000 lines of code. He emphasizes the model's improved natural feedback, enhanced reliability, and its capacity to undertake complex assignments with reduced oversight.",
+      "reason": "The item is a YouTube video from OpenAI, a target organization, featuring a discussion about a frontier model (GPT-6 Astra) and its capabilities, aligning with the criteria for consequential work on frontier models.",
+      "published_at": "2026-09-06T17:53:59+00:00",
+      "appearances": [
+        {
+          "id": "0908830c4bf3b6c7d640",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:A4BUbpKdenc",
+          "title": "GPT-6 Astra with Peter Gostev",
+          "description": "Peter Gostev shares his first impressions of GPT-6 Astra, from building a 3D London that moves through different historical eras to improving an app with around 150,000 lines of code. He discusses more natural feedback, greater reliability, and taking on complex tasks with less supervision.",
+          "url": "https://www.youtube.com/watch?v=A4BUbpKdenc",
+          "published_at": "2026-09-06T17:53:59+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=A4BUbpKdenc"
+      }
     }
   ]
 }
