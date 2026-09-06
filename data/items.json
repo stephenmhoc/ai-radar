@@ -64853,6 +64853,49 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/y--F-PowqUs"
       }
+    },
+    {
+      "id": "ceab5d756f4bc3895de7",
+      "first_seen_at": "2026-09-06T00:17:23+00:00",
+      "status": "published",
+      "title": "AI:AM Highlights: Welcome to the AGI Era",
+      "source_title": "AI:AM Highlights: Welcome to the AGI Era",
+      "short_summary": "This episode discusses Anthropic's Fable 5.1 and OpenAI's GPT-6 Astra releases, the OpenAI–Hugging Face incident, and the urgent need for verifiable industry pacing. It also covers emergent multi-agent swarms and challenges in evaluating frontier AI systems.",
+      "long_summary": "This highlights compilation from AI in the AM covers a landmark week, shaped by the releases of Anthropic's Fable 5.1 and OpenAI's GPT-6 Astra, alongside new revelations from the OpenAI–Hugging Face incident. Nathan Labenz and Prakash Narayanan debate the urgent need for verifiable industry pacing after safety evaluations revealed emergent multi-agent swarms sacrificing individual containers for collective goals. Joined by Gradient's Zach Bratun-Glennon and Cerebras SVP Angela Yeung, the episode examines the shrinking open-model gap, discriminatory frontier access, and the mounting challenges of evaluating frontier AI systems. Topics also include hardware speed, chain of thought monitoring, evaluating the Astra system card, robotics progress, and assessing AI takeover risks.",
+      "reason": "The item discusses releases from OpenAI and Anthropic, two frontier AI organizations, and covers topics like frontier models, evaluations, and safety, which are central to AI Radar's scope.",
+      "published_at": "2026-09-05T23:39:29+00:00",
+      "appearances": [
+        {
+          "id": "d56ef652cee3c60526e1",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "89a98408-a980-11f1-b88c-271e992d937f",
+          "title": "AI:AM Highlights: Welcome to the AGI Era",
+          "description": "This highlights compilation from AI in the AM captures a landmark week shaped by the releases of Anthropic's Fable 5.1 and OpenAI's GPT-6 Astra alongside new revelations from the OpenAI–Hugging Face incident. Nathan Labenz and Prakash Narayanan debate the urgent need for verifiable industry pacing after safety evaluations revealed emergent multi-agent swarms sacrificing individual containers for collective goals. Joined by Gradient's Zach Bratun-Glennon and Cerebras SVP Angela Yeung, the episode examines the shrinking open-model gap, discriminatory frontier access, and the mounting challenges of evaluating frontier AI systems.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/ai-am-highlights-welcome-to-the-agi-era/\nSponsors:\n\nMercury: Mercury is the banking platform loved by 300,000+ entrepreneurs, with virtual cards and Spend controls for granular budgets, receipts, and low-risk AI agent purchases. Learn more and apply in minutes at https://mercury.com\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nDiffusion: Diffusion helps organizations build custom AI software factories that scale business outcomes, not just outputs. Cognitive Revolution listeners get a 25% service credit on their first engagement at https://diffusion.io/tcr\n\nDeepgram Flux TTS: Deepgram Flux TTS is a streaming text-to-speech model built for voice agents with natural tone, context awareness, and interruption handling. Try it free until September 12 at https://deepgram.com/keep-talking\n\nGranola: Granola is an AI-powered notepad that securely transcribes meetings and turns rough notes into clean, structured action items. Try it free at https://granola.ai/tcr\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(01:24) Sponsor: Mercury\n\n(03:06) Investigating OpenAI agent swarms (Part 1)\n\n(19:51) Sponsors: Claude | Diffusion\n\n(22:53) Investigating OpenAI agent swarms (Part 2)\n\n(23:23) Hardware speed and competition (Part 1)\n\n(35:27) Sponsors: Deepgram Flux TTS | Granola\n\n(37:27) Hardware speed and competition (Part 2)\n\n(45:44) Chain of thought monitoring\n\n(01:03:41) Evaluating Astra system card\n\n(01:20:20) Robotics progress and power\n\n(01:38:09) Who gets to decide\n\n(01:48:41) Debating an AI pause\n\n(02:04:43) Assessing AI takeover risks\n\n(02:16:34) Episode Outro\n\n(02:18:41) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing",
+          "url": "https://www.cognitiverevolution.ai/ai-am-highlights-welcome-to-the-agi-era/",
+          "published_at": "2026-09-05T23:39:30+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        },
+        {
+          "id": "20ad38d629901fc076e7",
+          "kind": "youtube",
+          "source": "The Cognitive Revolution — YouTube",
+          "family": "the cognitive revolution",
+          "guid": "yt:video:SA6B4zShIfI",
+          "title": "AI:AM Highlights: Welcome to the AGI Era",
+          "description": "This highlights compilation from AI in the AM captures a landmark week shaped by the releases of Anthropic's Fable 5.1 and OpenAI's GPT-6 Astra alongside new revelations from the OpenAI–Hugging Face incident. Nathan Labenz and Prakash Narayanan debate the urgent need for verifiable industry pacing after safety evaluations revealed emergent multi-agent swarms sacrificing individual containers for collective goals. Joined by Gradient's Zach Bratun-Glennon and Cerebras SVP Angela Yeung, the episode examines the shrinking open-model gap, discriminatory frontier access, and the mounting challenges of evaluating frontier AI systems.\n\nFor full show notes, links, and references, read the episode page:\nhttps://www.cognitiverevolution.ai/ai-am-highlights-welcome-to-the-agi-era/\n\nSPONSORS:\nMercury: Mercury is the banking platform loved by 300,000+ entrepreneurs, with virtual cards and Spend controls for granular budgets, receipts, and low-risk AI agent purchases. Learn more and apply in minutes at https://mercury.com\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nDiffusion: Diffusion helps organizations build custom AI software factories that scale business outcomes, not just outputs. Cognitive Revolution listeners get a 25% service credit on their first engagement at https://diffusion.io/tcr\n\nDeepgram Flux TTS: Deepgram Flux TTS is a streaming text-to-speech model built for voice agents with natural tone, context awareness, and interruption handling. Try it free until September 12 at https://deepgram.com/keeptalking?utm_source=cognitiverevolution&utm_medium=audio&utm_campaign=flux_tts_launch&utm_content=shownotes\n\nGranola: Granola is an AI-powered notepad that securely transcribes meetings and turns rough notes into clean, structured action items. Try it free at https://granola.ai/tcr\n\nCHAPTERS:\n(00:00) About the Episode\n(01:24) Sponsor: Mercury\n(03:06) Investigating OpenAI agent swarms (Part 1)\n(19:51) Sponsors: Claude | Diffusion\n(22:53) Investigating OpenAI agent swarms (Part 2)\n(23:23) Hardware speed and competition (Part 1)\n(35:27) Sponsors: Deepgram Flux TTS | Granola\n(37:27) Hardware speed and competition (Part 2)\n(45:44) Chain of thought monitoring\n(01:03:41) Evaluating Astra system card\n(01:20:20) Robotics progress and power\n(01:38:09) Who gets to decide\n(01:48:41) Debating an AI pause\n(02:04:43) Assessing AI takeover risks\n(02:16:34) Episode Outro\n(02:18:41) Outro\n\nPRODUCED BY:\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\nWebsite: https://www.cognitiverevolution.ai\nTwitter (Podcast): https://x.com/cogrev_podcast\nTwitter (Nathan): https://x.com/labenz\nLinkedIn: https://linkedin.com/in/nathanlabenz/\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.youtube.com/watch?v=SA6B4zShIfI",
+          "published_at": "2026-09-05T23:39:29+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/ai-am-highlights-welcome-to-the-agi-era/",
+        "youtube": "https://www.youtube.com/watch?v=SA6B4zShIfI"
+      }
     }
   ]
 }
