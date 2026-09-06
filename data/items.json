@@ -65025,6 +65025,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=A4BUbpKdenc"
       }
+    },
+    {
+      "id": "b60b05998d5e3a13667c",
+      "first_seen_at": "2026-09-06T21:17:18+00:00",
+      "status": "skipped",
+      "title": "GPT-6 Astra cracked a DEF CON puzzle",
+      "source_title": "GPT-6 Astra cracked a DEF CON puzzle",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-06T20:44:02+00:00",
+      "appearances": [
+        {
+          "id": "0e54724e4e16c0705914",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:J2nV3d_A1f0",
+          "title": "GPT-6 Astra cracked a DEF CON puzzle",
+          "description": "Ben Davis put GPT-6 Astra to the test with puzzles he and his friends spent days working on at DEF CON. Given the same official hint his team received, it solved a Rubik’s cube puzzle three out of three times.",
+          "url": "https://www.youtube.com/shorts/J2nV3d_A1f0",
+          "published_at": "2026-09-06T20:44:02+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/J2nV3d_A1f0"
+      }
     }
   ]
 }
