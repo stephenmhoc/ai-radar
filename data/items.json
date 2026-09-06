@@ -64896,6 +64896,36 @@
         "podcast": "https://www.cognitiverevolution.ai/ai-am-highlights-welcome-to-the-agi-era/",
         "youtube": "https://www.youtube.com/watch?v=SA6B4zShIfI"
       }
+    },
+    {
+      "id": "c8b89b102ab55701291b",
+      "first_seen_at": "2026-09-06T08:17:21+00:00",
+      "status": "published",
+      "title": "Zach Dell on Base Power, Energy Abundance & Building a Company for Life",
+      "source_title": "Zach Dell on Base Power, Energy Abundance & Building a Company for Life",
+      "short_summary": "Zach Dell, co-founder of Base Power, discusses his company's model for making electricity more affordable and reliable using home batteries. He explains how Base operates these batteries as a fleet, charging when electricity is cheap and discharging when expensive, while also providing backup power.",
+      "long_summary": "Zach Dell, co-founder of Base Power, discusses his company's mission to make electricity more affordable and reliable. Base Power installs batteries at homes, retaining ownership and operating them as a fleet to optimize energy usage and provide backup. Dell explains how this model makes the existing grid more efficient and addresses infrastructure bottlenecks. He also touches on Base Core, the company's designed and manufactured battery, and a longer-term ambition to meet the growing power demands of AI. Dell shares insights from his entrepreneurial journey, including lessons from his father, Michael Dell, and former SpaceX employees, emphasizing vertical integration and technology to build a compounding cost advantage.",
+      "reason": "The podcast features Zach Dell, co-founder of Base Power, discussing the growing power demands of AI and the company's strategy to meet these demands through battery technology and infrastructure. This aligns with AI Radar's interest in AI infrastructure, power, and important AI companies.",
+      "published_at": "2026-09-06T08:00:00+00:00",
+      "appearances": [
+        {
+          "id": "23b7532440d05a59e1de",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "49a51026-a93e-11f1-b730-cf206b1c2e56",
+          "title": "Zach Dell on Base Power, Energy Abundance & Building a Company for Life",
+          "description": "Zach Dell is the co-founder of Base Power, an energy company on a mission to make electricity more affordable and reliable. His starting insight was that home batteries had the wrong business model. Companies sold expensive backup systems that sat idle most of the time. Base installs batteries at homes, retains ownership and operates them as a fleet: charging when electricity is cheap, discharging when it is expensive and providing backup when the grid goes down. The homeowner gets lower electricity bills and backup power. Base gets an asset it can put to work every day.\n\nDell explains why batteries can make the existing grid more efficient, why installing them where people consume electricity helps overcome infrastructure bottlenecks and how Base serves both homeowners and utilities. His strategy is to build a compounding cost advantage through vertical integration and technology. That now includes Base Core, a battery designed and manufactured by the company, and a longer-term ambition to help meet the growing power demands of AI.\n\nDell grew up watching his father, Michael Dell, build a company and knew from childhood that he wanted to become an entrepreneur. After several early ventures failed, he went into investing to study what makes a great business. He describes the “Dad Terminal”—ongoing conversations with his father about strategy, operations and the problems in front of them—and the lessons Base has adopted from former SpaceX employees. Engineers and manufacturing teams work close together, and the entire company organizes around a few clearly defined goals.\n\nHe also explains the operating habits behind Base: monthly written updates, visible performance dashboards and a physical turtle placed on the desk of the person responsible for resolving a critical bottleneck. He keeps separate notebooks for working in the business and working on it, setting aside time each night to think on paper without distractions. He discusses building a beloved brand in energy, why his co-founder conversations focus on what is going wrong and why Base is his last company. His ambition is a lifelong effort to make, move, store and sell electricity more affordably and reliably.\n\nShow notes: https://www.davidsenra.com/zach-dell\n\nMade possible by\n\nRamp: https://ramp.com\n\nAppLovin: https://applovin.com/senra\n\nDeel: https://deel.com/senra\n\nChapters\n\n(00:00:00) Energy Abundance & the Power Demands of AI\n\n(00:06:15) How Batteries Make the Grid More Efficient\n\n(00:09:09) Early Ventures & the Insight Behind Base\n\n(00:15:34) We Don't Sell Batteries. We Sell Electricity.\n\n(00:22:25) How Base Works With Utilities & Competes for Customers\n\n(00:30:44) Learning From Michael Dell: The \"Dad Terminal\"\n\n(00:32:22) Vertical Integration & Lessons From SpaceX\n\n(00:39:34) Writing Clearly & Making Time to Think\n\n(00:44:53) North Stars, Turtles & Relentless Execution\n\n(00:53:55) Learning From Great Founders & Building a Beloved Brand\n\n(00:56:27) What's Your Constraint?\n\n(01:06:26) Base Core & Taking Control of Manufacturing\n\n(01:11:02) A Lifelong Mission & the Last Company He'll Build\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/zach-dell",
+          "published_at": "2026-09-06T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/zach-dell"
+      }
     }
   ]
 }
