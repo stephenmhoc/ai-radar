@@ -65197,6 +65197,37 @@
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/tpu-inferencex-full-steam"
       }
+    },
+    {
+      "id": "989495ffabe1d6e15d76",
+      "first_seen_at": "2026-09-07T22:17:23+00:00",
+      "status": "published",
+      "title": "Latent Space Frontier AEO Tracker: What Astra Chooses",
+      "source_title": "The Frontier AEO Tracker: What Astra Chooses (and every other frontier model, and what you can do about it)",
+      "short_summary": "Latent Space developed a Frontier AEO tracker, inspired by \"What Claude Code Actually Chooses,\" to analyze model recommendations across 161 categories. It uses Astra for answer extraction and a proprietary AEO score, revealing dominant products and model biases.",
+      "long_summary": "Latent Space created a Frontier AEO tracker, building on \"What Claude Code Actually Chooses,\" to evaluate model recommendations. The methodology extends AmplifyingAI's approach, running 6 prompt variations over 7 models in 161 categories, from coding agents to AI podcasts. Astra extracts answers, which are then scored using a proprietary AEO system that weights first choices, alternatives, mentions, and negative recommendations. The tracker identifies dominant products, model biases (e.g., Claude Code recommending Fable/Opus), and \"soft biases.\" It also analyzes \"consequential flips\" in model choices between generations from the same lab, such as Opus to Fable and Sol to Astra, noting differences in source searching and confidence. The analysis includes top cited sources influencing agent recommendations and an examination of top failures.",
+      "reason": "The item describes a technically substantive work involving frontier models, evaluations, and AI-native software/engineering practice. It details a methodology for analyzing model recommendations and biases across various categories.",
+      "published_at": "2026-09-07T21:32:37+00:00",
+      "appearances": [
+        {
+          "id": "088139e2c2e1cc4189e1",
+          "kind": "newsletter",
+          "source": "Latent Space — Newsletter",
+          "family": "latent space",
+          "guid": "https://www.latent.space/p/aeo",
+          "title": "The Frontier AEO Tracker: What Astra Chooses (and every other frontier model, and what you can do about it)",
+          "description": "Naive \nautoresearch investment\n in our AEO have yielded impressive ROI, and so naturally it was time to take it seriously. We were inspired by \nWhat Claude Code Actually Chooses\n, and decided to extend/adjust it to our tastes. \n\nAfter \na \nfew billion tokens\n of prototyping, aligning, and scaling \npipelines, here’s \nthe \nLatent Space Frontier AEO tracker\n. Our \nmethodology\n extends \nAmplifyingAI’s\n to run 6 prompt variations over 7 \nmodels\n1\n (search on) in 161 \ncategories\n, from \ncoding agents\n to \nAI podcasts\n to \nAI Sandboxes\n to \nManaged Databases\n to \nASR models\n to even oddball categories like \nAngel investors\n and \nCorporate spend\n and \nPayroll software\n.\n\nAnswer extraction was done by Astra, and scored for a \nproprietary AEO score\n that gives weight to \nfirst choices, alternative choices\n, \nmentions\n, but \nalso negative weights\n to mild and strong anti-recommendations (which are rare, but do happen). Because we know you’ll want it, we also extracted the top cited \nsources\n which influence Agent recommendations, as well as an analysis of \ntop failures\n.\n\nBasic Results\n\nHere are the most dominant products (in their categories) in the world:\n\nThere are some familiar names in there — opening up the natural question of contamination, which we have checked. Since we have nothing to hide, \nevery prompt and answer pair\n is inspectable.\n\nHowever, \nbias\n does exist - when models are asked for coding agent recommendations, Fable/Opus like \nClaude Code\n and Sol/Astra like \nCodex\n and Grok loves \nCursor\n and Muse loves \nMuse Code\n and SWE-1.7 loves \nDevin\n and so on. I wonder why. You can see other “\nsoft biases\n” emerge too…\n\nThat said there are notable examples of GPT models recommending Claude, a laudable nonbias:\n\nThere are \n28 categories\n (out of our total 161) which have a universally dominant primary choice - among all surveyed frontier models.\n\nThere are a lot more \n“close contests” and “always the vibesmaid, never the vibe”\n categories which should be key AEO battlegrounds.\n\nSol vs Astra, Opus vs Fable\n\nNew pretrains for new model classes represents a new opportunity to check in on what the labs are moving towards in their data and RL priorities, and to check in on whether startups’ investments in AEO are paying off. We prepared special reports analyzing our rankings, observing \nVERY consequential flips in model choices\n between model generations from the same lab.\n\nWe have separate \nOpus→Fable\n and \nSol→Astra\n summary pages. For some flips, we highlighted a neutral analysis of what competitors did better in each scenario.\n\nEfficiency vs Confidence, and Recommendation Sourcing\n\nOne of our most surprising findings between Sol→Astra and Opus→Fable is that Anthropic seems to be biasing their models to searching more sources (Sol median of 9 sources, vs Astra median of 5, vs Opus median of 11 sources, vs Fable of 15). Astra seems to be just generally a lot more “\nconfident\n”, or “\nefficient\n”, depending how you look at it - Astra is FAR less likely to change its mind when you lightly paraphrase your question. This makes the \nvalue of AEO\n itself rise as choice randomness declines.\n\nSources analysis\n also somewhat strongly predicts what the labs do prioritize vs don’t. \n\nHowever the sample size is small here and only represents what we can scrape from attempted toolcalls, not the pretrain dataset. What we CAN validate is that AEO practices measured by \nOra and Vercel\n, like \nmarkdown content-negotiation\n, are real and failures discourage models from reading your content.\n\nJust for fun\n\nHere are the top \nAngels\n in the world according to LLMs (some dedupes left to do…).\n\nSee more\n\nWe also made a little \nfamily feud type game\n where you can see if your priors align with the data. Fun!\n\nWe are open to further suggestions and business enquiries to develop this if it is of interest. Ping \n@latentspacepod\n or email \nbusiness@latent.space\n (we have a business manager now! woo!)\n\n1\n\nAs we note in our methodology post, we did try VERY hard to include Gemini/Antigravity, GLM/Zcode, and DeepSeek/DeepCode, but errors and rate limits made them untenable to include in this first run analysis. Please let us know how to raise limits if you represent these companies.",
+          "url": "https://www.latent.space/p/aeo",
+          "published_at": "2026-09-07T21:32:37+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://www.latent.space/p/aeo"
+      }
     }
   ]
 }

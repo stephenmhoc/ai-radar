@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Latent Space Frontier AEO Tracker: What Astra Chooses — Latent Space</title>
+      <link>https://www.latent.space/p/aeo</link>
+      <guid isPermaLink="false">ai-radar:989495ffabe1d6e15d76</guid>
+      <pubDate>Mon, 07 Sep 2026 21:32:37 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>Latent Space created a Frontier AEO tracker, building on &amp;quot;What Claude Code Actually Chooses,&amp;quot; to evaluate model recommendations. The methodology extends AmplifyingAI&amp;#x27;s approach, running 6 prompt variations over 7 models in 161 categories, from coding agents to AI podcasts. Astra extracts answers, which are then scored using a proprietary AEO system that weights first choices, alternatives, mentions, and negative recommendations. The tracker identifies dominant products, model biases (e.g., Claude Code recommending Fable/Opus), and &amp;quot;soft biases.&amp;quot; It also analyzes &amp;quot;consequential flips&amp;quot; in model choices between generations from the same lab, such as Opus to Fable and Sol to Astra, noting differences in source searching and confidence. The analysis includes top cited sources influencing agent recommendations and an examination of top failures.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/aeo"&gt;The Frontier AEO Tracker: What Astra Chooses (and every other frontier model, and what you can do about it)&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>SemiAnalysis: TPU Inference Externalization Full Steam Ahead - InferenceX — SemiAnalysis</title>
       <link>https://newsletter.semianalysis.com/p/tpu-inferencex-full-steam</link>
       <guid isPermaLink="false">ai-radar:d759527175ef2fe113d7</guid>
