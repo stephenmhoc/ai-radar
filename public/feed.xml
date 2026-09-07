@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>SemiAnalysis: TPU Inference Externalization Full Steam Ahead - InferenceX — SemiAnalysis</title>
+      <link>https://newsletter.semianalysis.com/p/tpu-inferencex-full-steam</link>
+      <guid isPermaLink="false">ai-radar:d759527175ef2fe113d7</guid>
+      <pubDate>Mon, 07 Sep 2026 20:00:18 +0000</pubDate>
+      <source url="https://newsletter.semianalysis.com/feed">SemiAnalysis</source>
+      <description>SemiAnalysis provides an in-depth analysis of Google&amp;#x27;s TPUv7 Ironwood, highlighting its performance-per-dollar advantage in inference workloads against NVIDIA&amp;#x27;s B200 and B300. The report indicates Ironwood delivers up to 50% better performance per dollar, with a 19% lower cost than B200 and 34% lower than B300 at 100 tokens/s/user interactivity. It also discusses the new TorchTPU stack, which allows TPUs to function as native PyTorch devices, a significant improvement over the previous TorchAX approach. Google&amp;#x27;s strategy to externalize TPUs for inference is examined, including plans to support open-weight models like Qwen3.5 397B, Kimi K3, and GLM5.3. The article also touches on future optimizations like disaggregated serving and speculative decoding, and the expected release of the TorchTPU stack from private beta around October.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · SemiAnalysis&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.semianalysis.com/p/tpu-inferencex-full-steam"&gt;TPU Inference Externalization Full Steam Ahead - InferenceX&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>OpenAI — GPT-6 Astra with Tom Krcha — OpenAI</title>
       <link>https://www.youtube.com/watch?v=QDLlQ5IL2Bk</link>
       <guid isPermaLink="false">ai-radar:728716d15c1e9e475c0b</guid>
