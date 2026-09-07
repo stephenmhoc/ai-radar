@@ -65139,6 +65139,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=n9xKblqyQ28"
       }
+    },
+    {
+      "id": "728716d15c1e9e475c0b",
+      "first_seen_at": "2026-09-07T18:17:22+00:00",
+      "status": "published",
+      "title": "OpenAI — GPT-6 Astra with Tom Krcha",
+      "source_title": "GPT-6 Astra with Tom Krcha",
+      "short_summary": "Tom Krcha shares first impressions of GPT-6 Astra, demonstrating its use in a customizable logo tool, website designs, and adjustable photo shaders. The model assists designers in developing ideas, building interactive prototypes, and clarifying creative direction for engineering teams.",
+      "long_summary": "Tom Krcha shares his first impressions of GPT-6 Astra, showcasing its capabilities through various design applications. He demonstrates the model's use in a customizable logo tool, for creating website designs with coordinated visual details, and with adjustable photo shaders. Krcha explores how GPT-6 Astra helps designers develop ideas and build interactive prototypes. The model also aids in bringing a clearer creative direction to engineering teams.",
+      "reason": "The item is a YouTube video from OpenAI, a target organization, featuring a demonstration of a frontier model (GPT-6 Astra) and its applications in design.",
+      "published_at": "2026-09-07T17:15:32+00:00",
+      "appearances": [
+        {
+          "id": "7517b011942216c59e77",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:QDLlQ5IL2Bk",
+          "title": "GPT-6 Astra with Tom Krcha",
+          "description": "Tom Krcha shares his first impressions of GPT-6 Astra through a customizable logo tool, website designs with coordinated visual details, and adjustable photo shaders. He explores how the model helps designers develop ideas, build interactive prototypes, and bring a clearer creative direction to their engineering teams.",
+          "url": "https://www.youtube.com/watch?v=QDLlQ5IL2Bk",
+          "published_at": "2026-09-07T17:15:32+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=QDLlQ5IL2Bk"
+      }
     }
   ]
 }
