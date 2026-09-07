@@ -65053,6 +65053,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/J2nV3d_A1f0"
       }
+    },
+    {
+      "id": "aabf8a1513abe1452e36",
+      "first_seen_at": "2026-09-07T10:17:29+00:00",
+      "status": "published",
+      "title": "Can Open Source Keep AI Power From Concentrating?",
+      "source_title": "Can Open Source Keep AI Power From Concentrating?",
+      "short_summary": "This podcast explores whether open source can prevent AI power concentration. It features Lukasz Kaiser, co-author of \"Attention Is All You Need,\" discussing how future breakthroughs might enable smaller, more specialized models.",
+      "long_summary": "The a16z Show podcast investigates whether open source can prevent AI power from concentrating in the hands of a few companies. Host Sophia Dew interviews researchers and founders at the Open Source AI Summit. Lukasz Kaiser, co-author of \"Attention Is All You Need,\" suggests that current concentration is due to the technological paradigm, but future breakthroughs could lead to more capable, smaller models. The discussion covers why China leads in open-weight models, the need for more open-model startups in the U.S., and the implications for companies owning their intelligence. It also addresses the limitations of openness when compute access remains concentrated.",
+      "reason": "The item features Lukasz Kaiser, co-author of \"Attention Is All You Need,\" discussing frontier models and the open-model ecosystem. This qualifies as a substantial conversation with a senior research leader on a strategically substantive topic.",
+      "published_at": "2026-09-07T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "7107b21d4ce2c3d1ed94",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "ac47c1cb-6452-44a2-9e35-afa19b1a34b9",
+          "title": "Can Open Source Keep AI Power From Concentrating?",
+          "description": "MTS host Sophia Dew visits the Open Source AI Summit in San Francisco to ask researchers and founders across the AI stack a central question: can open source prevent AI power from concentrating in the hands of a few companies?\n\nLukasz Kaiser, co-author of \nAttention Is All You Need\n, argues that today’s concentration may be a feature of the current technological paradigm rather than a permanent feature of AI. Transformers reward enormous amounts of data and compute, but future breakthroughs could make smaller, more specialized models far more capable.\n\nAcross conversations with researchers and builders working on open models, infrastructure, and applications, Sophia explores why China has taken the lead in open-weight models, whether the U.S. needs more open-model startups, what it means for companies to own their own intelligence, and where openness alone falls short, particularly when access to compute remains concentrated.\n\nResources:\n\nFollow Lukasz Kaiser on X:\nhttps://x.com/lukaszkaiser\n\nFollow Sophia Dew on X:\nhttps://x.com/sophiadew\n\nFollow MTS on X:\nhttps://x.com/mtslive\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/can-open-source-keep-ai-power-from-concentrating-SoZe4_xf",
+          "published_at": "2026-09-07T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/can-open-source-keep-ai-power-from-concentrating-SoZe4_xf"
+      }
     }
   ]
 }
