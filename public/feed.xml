@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Self-Improving Harnesses, Local Personal AI And YC's Agent For Work | YC Paper Club — Y Combinator</title>
+      <link>https://www.youtube.com/watch?v=n9xKblqyQ28</link>
+      <guid isPermaLink="false">ai-radar:b3de7d812fa7a4427016</guid>
+      <pubDate>Mon, 07 Sep 2026 14:00:03 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCcefcZRL2oaA_uBNeo5UOWg">Y Combinator</source>
+      <description>This Y Combinator Paper Club session focuses on the critical role of AI harnesses, which are often underestimated despite their significant impact on model performance. The discussion covers the historical development of harnesses and advocates for making them as expressive as possible. Speakers delve into self-improving harnesses, including Seth Karten&amp;#x27;s Prime Agent, and the concept of context as a multi-level cache. Jon Saad-Falcon presents OpenJarvis, focusing on personal AI running on local devices and its cost-effectiveness compared to cloud solutions. Josh France and Regan Bell share YC&amp;#x27;s experience building QM, an agent harness for internal work, detailing the evolution of their internal agents and the development of tools like OpenClaw and the grind tool for managing agent goals and budgets.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Y Combinator&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=n9xKblqyQ28"&gt;Self-Improving Harnesses, Local Personal AI And YC&amp;#x27;s Agent For Work | YC Paper Club&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>DeepMind's cheating math agents; populist AI policies; and Forethought theorizes a nightwatchman — Import AI</title>
       <link>https://importai.substack.com/p/import-ai-472-deepminds-cheating</link>
       <guid isPermaLink="false">ai-radar:9dd7f54f45692db62ae5</guid>

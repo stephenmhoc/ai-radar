@@ -65111,6 +65111,34 @@
       "links": {
         "newsletter": "https://importai.substack.com/p/import-ai-472-deepminds-cheating"
       }
+    },
+    {
+      "id": "b3de7d812fa7a4427016",
+      "first_seen_at": "2026-09-07T14:17:25+00:00",
+      "status": "published",
+      "title": "Self-Improving Harnesses, Local Personal AI And YC's Agent For Work | YC Paper Club",
+      "source_title": "Self-Improving Harnesses, Local Personal AI And YC's Agent For Work | YC Paper Club",
+      "short_summary": "This Y Combinator Paper Club session explores the state of AI harnesses, their evolution, and their role in improving model performance. It covers self-improving harnesses, local personal AI, and YC's internal agent for work, featuring insights from researchers and founders.",
+      "long_summary": "This Y Combinator Paper Club session focuses on the critical role of AI harnesses, which are often underestimated despite their significant impact on model performance. The discussion covers the historical development of harnesses and advocates for making them as expressive as possible. Speakers delve into self-improving harnesses, including Seth Karten's Prime Agent, and the concept of context as a multi-level cache. Jon Saad-Falcon presents OpenJarvis, focusing on personal AI running on local devices and its cost-effectiveness compared to cloud solutions. Josh France and Regan Bell share YC's experience building QM, an agent harness for internal work, detailing the evolution of their internal agents and the development of tools like OpenClaw and the grind tool for managing agent goals and budgets.",
+      "reason": "The item is a substantial discussion from Y Combinator, a prominent organization, featuring researchers and founders discussing frontier AI topics such as self-improving harnesses, local personal AI, and agent systems for work. This aligns with the criteria for consequential, technically or strategically substantive work about frontier models, agent systems, and AI-native software.",
+      "published_at": "2026-09-07T14:00:03+00:00",
+      "appearances": [
+        {
+          "id": "13ad3613c93003103b9a",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:n9xKblqyQ28",
+          "title": "Self-Improving Harnesses, Local Personal AI And YC's Agent For Work | YC Paper Club",
+          "description": "Harnesses get dismissed as just scaffolding, just prompt engineering, and not real research. But that couldn't be farther from the truth. The same model weights that score 30% on ARC-AGI score 95% with a better harness. So we gathered a group of researchers and founders working at the frontier to do a deep dive into the state of harnesses. We'll cover how we got to this point, the case for making your harness as expressive as possible, and what YC learned building an agent for every employee in the company.\n\nChapters:\n00:00 - Why harnesses matter\n04:27 - Building an auto-researcher by accident\n07:13 - A five minute history of harnesses\n13:56 - Self-improving harnesses\n17:22 - Tonight's speakers\n18:35 - Seth Karten: Prime Agent, a self-improving RLM harness\n21:50 - Context as an L1, L2, L3 cache\n24:51 - From Turing machine to von Neumann computer\n28:33 - Messaging between agents\n30:04 - ARC-AGI results\n33:09 - Emulator Bench and GPU kernels\n37:30 - Jon Saad-Falcon: OpenJarvis, personal AI on personal devices\n38:26 - How far behind are local models\n39:21 - The five primitives of a personal AI stack\n42:47 - Letting cloud models optimize your local stack\n43:53 - 800x cheaper than the cloud\n45:58 - Josh France and Regan Bell: QM, YC's agent harness for work\n47:29 - A history of YC's internal agents\n49:24 - OpenClaw and a fleet of 50 agents\n51:04 - Pulling the brain out of the sandbox\n54:43 - Letting the agent choose its own sandbox and model\n57:16 - The grind tool: budgets on goals\n58:50 - Agents don't understand social context\n\nApply to Y Combinator: https://www.ycombinator.com/apply\nWork at a startup: https://www.ycombinator.com/jobs",
+          "url": "https://www.youtube.com/watch?v=n9xKblqyQ28",
+          "published_at": "2026-09-07T14:00:03+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=n9xKblqyQ28"
+      }
     }
   ]
 }
