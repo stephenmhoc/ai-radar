@@ -65727,6 +65727,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=-VukmrOT1eE"
       }
+    },
+    {
+      "id": "4874abfb71e6b74e5b18",
+      "first_seen_at": "2026-09-08T20:17:35+00:00",
+      "status": "published",
+      "title": "OpenAI — Introducing GPT-Image-2.5 in the API",
+      "source_title": "Introducing GPT-Image-2.5 in the API",
+      "short_summary": "OpenAI introduces Sunburst and Flare, two new GPT-Image-2.5 models available in the API. Sunburst offers sharper details and natural lighting, while Flare delivers high-quality images over 50% faster.",
+      "long_summary": "OpenAI has announced the release of Sunburst and Flare, their two new GPT-Image-2.5 models, which are now accessible via the API. Sunburst is designed to provide sharper details, more natural lighting, and enhanced control over edits. Flare, on the other hand, focuses on speed, delivering high-quality images over 50% faster than previous iterations. A key feature of both models is their support for transparent backgrounds, making them suitable for a range of assets from infographics to games.",
+      "reason": "The item is a demonstration from OpenAI, a target organization, introducing new frontier models (GPT-Image-2.5) and their availability in the API, which is a consequential product/infrastructure update.",
+      "published_at": "2026-09-08T19:11:55+00:00",
+      "appearances": [
+        {
+          "id": "786a8284daf7234284e0",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:A7MSwdXj86k",
+          "title": "Introducing GPT-Image-2.5 in the API",
+          "description": "Meet Sunburst and Flare, our two new GPT-Image-2.5 models. Sunburst brings sharper details, more natural lighting, and greater control across edits. Flare delivers high quality images over 50% faster. Both support transparent backgrounds for assets ranging from infographics to games.\n\nAvailable now in the API.",
+          "url": "https://www.youtube.com/watch?v=A7MSwdXj86k",
+          "published_at": "2026-09-08T19:11:55+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=A7MSwdXj86k"
+      }
     }
   ]
 }

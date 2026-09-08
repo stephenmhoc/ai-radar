@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>OpenAI — Introducing GPT-Image-2.5 in the API — OpenAI</title>
+      <link>https://www.youtube.com/watch?v=A7MSwdXj86k</link>
+      <guid isPermaLink="false">ai-radar:4874abfb71e6b74e5b18</guid>
+      <pubDate>Tue, 08 Sep 2026 19:11:55 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">OpenAI</source>
+      <description>OpenAI has announced the release of Sunburst and Flare, their two new GPT-Image-2.5 models, which are now accessible via the API. Sunburst is designed to provide sharper details, more natural lighting, and enhanced control over edits. Flare, on the other hand, focuses on speed, delivering high-quality images over 50% faster than previous iterations. A key feature of both models is their support for transparent backgrounds, making them suitable for a range of assets from infographics to games.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · OpenAI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=A7MSwdXj86k"&gt;Introducing GPT-Image-2.5 in the API&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>OpenAI: Introducing ChatGPT Images 2.5 — OpenAI</title>
       <link>https://www.youtube.com/watch?v=6l7ble9P74o</link>
       <guid isPermaLink="false">ai-radar:9963df014a499dbe588d</guid>
