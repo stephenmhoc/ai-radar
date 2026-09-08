@@ -6,6 +6,30 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Eye on AI: Alexander Whedon of Subquadratic on Solving AI's Quadratic Compute Problem — Eye on AI</title>
+      <link>https://www.youtube.com/watch?v=-uLn8m_-vKw</link>
+      <guid isPermaLink="false">ai-radar:0d48d7a9a9043f44d685</guid>
+      <pubDate>Tue, 08 Sep 2026 15:04:18 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLacDrP-7Ys6IsnPRN0ToTfjH8gQ4s6mL9">Eye on AI</source>
+      <description>Alexander Whedon, co-founder and CTO of Subquadratic, explains how their sparse attention mechanism solves the quadratic compute problem in AI models, where doubling the context window quadruples compute. SubQ&amp;#x27;s method achieves 40 times faster inference and 64 times less compute than standard attention at one million tokens, without quality tradeoffs. This innovation allows enterprises to process hundreds of billions of tokens of data that were previously inaccessible due to cost and complexity. Whedon also discusses how this technology transforms coding agents, enabling them to read entire codebases efficiently and perform a fundamentally different, longer horizon of work. The conversation covers the impact on long context reasoning, the potential end of RAG as a complex workaround, and why SubQ is uniquely positioned in multi-million token pre-training.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Eye on AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=-uLn8m_-vKw"&gt;86% of What Coding Agents Do Is Just Reading — Not Solving | Alexander Whedon of Subquadratic&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Inside OpenAI’s Breakthroughs in Mathematical Reasoning — a16z</title>
+      <link>https://www.youtube.com/watch?v=1JvyLGd2Sfs</link>
+      <guid isPermaLink="false">ai-radar:b0ff5183203018d4078a</guid>
+      <pubDate>Tue, 08 Sep 2026 14:30:11 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UC9cn0TuPq4dnbTY-CBsm8XA">a16z</source>
+      <description>OpenAI mathematicians Mehtaab Sawhney and Mark Sellke discuss the rapid advancements in AI&amp;#x27;s mathematical capabilities and what recent results reveal about model reasoning. They explore what happens when AI begins making progress on problems mathematicians have struggled with for decades. The discussion covers recent results from OpenAI’s models, such as advances in sphere packing and the construction of a non-sofic group. They explain that the reasoning traces often resemble the work of an expert mathematician, including choosing promising approaches and backtracking. The mathematicians also explore the implications for the field of mathematics, including how the role of human taste and judgment may change and the potential for AI to produce more mathematics than humans can absorb.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · a16z&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=1JvyLGd2Sfs"&gt;Inside OpenAI’s Breakthroughs in Mathematical Reasoning&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Interconnects: Latest open artifacts (#24): Motif-3, GLM-5.3, Hy4-preview and open model licenses — Interconnects</title>
+      <link>https://www.interconnects.ai/p/latest-open-artifacts-24-motif-3</link>
+      <guid isPermaLink="false">ai-radar:08120aaa6d3929adf2a9</guid>
+      <pubDate>Tue, 08 Sep 2026 14:15:25 +0000</pubDate>
+      <source url="https://www.interconnects.ai/feed">Interconnects</source>
+      <description>The newsletter Interconnects covers the evolving landscape of open model licenses, observing that Western model makers like Google and Meta are increasingly adopting Apache 2.0. Conversely, some Chinese model developers are implementing more restrictive custom licenses, such as those for Kimi K3, MiniMax M3, and Zhipu’s GLM-5.3, which include specific revenue thresholds or commercial agreement requirements. The article also reviews several new model releases. Motif-3 by Motif-Technologies is noted for its innovation and impressive scores, released under an MIT license. dots3-note-prev from dots-studio, associated with RedNote/Xiaohongshu, is highlighted for its performance, including winning the IMO 2026. Qwen3.8-Flash-Next by Qwen offers a preview of a new architectural version. GLM-5.3-Flash by zai-org is discussed for its release strategy, initially as a &amp;quot;stealth model&amp;quot; to build hype. Finally, Hy4-preview by Tencent is presented as a competent model with potential for significant improvement, following the trajectory of its predecessor.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Interconnects&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.interconnects.ai/p/latest-open-artifacts-24-motif-3"&gt;Latest open artifacts (#24): Motif-3, GLM-5.3, Hy4-preview and open model licenses&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>AlphaGenome Atlas: Understanding the human genome — Google DeepMind</title>
       <link>https://www.youtube.com/watch?v=U0aToL5C-bQ</link>
       <guid isPermaLink="false">ai-radar:5f106c1372db78104990</guid>
