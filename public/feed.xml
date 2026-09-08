@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>OpenAI Researchers on the Future of Mathematical Reasoning — The a16z Show</title>
+      <link>https://a16z.simplecast.com/episodes/openai-researchers-on-the-future-of-mathematical-reasoning-Jn50EkyR</link>
+      <guid isPermaLink="false">ai-radar:421561a01835d8fa0965</guid>
+      <pubDate>Tue, 08 Sep 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.simplecast.com/JGE3yC0V">The a16z Show</source>
+      <description>OpenAI mathematicians Mehtaab Sawhney and Mark Sellke join a16z Infra Partner Lisha Li to discuss the rapid advancement of AI&amp;#x27;s mathematical capabilities. They delve into what recent results from OpenAI&amp;#x27;s models, including advances in sphere packing and the construction of a non-sofic group, reveal about model reasoning. The discussion highlights that AI&amp;#x27;s reasoning traces often resemble an expert mathematician&amp;#x27;s work, involving choosing promising approaches, backtracking, and combining ideas. They also explore the implications for mathematics, such as changes in the role of human judgment and the potential for AI to produce more mathematics than humans can absorb. The conversation touches on how models accelerating discovery might also simplify complex results.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · The a16z Show&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://a16z.simplecast.com/episodes/openai-researchers-on-the-future-of-mathematical-reasoning-Jn50EkyR"&gt;OpenAI Researchers on the Future of Mathematical Reasoning&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Write Things Down — Stratechery</title>
+      <link>https://stratechery.com/2026/write-things-down/</link>
+      <guid isPermaLink="false">ai-radar:08176c560cd92474b6dc</guid>
+      <pubDate>Tue, 08 Sep 2026 10:00:00 +0000</pubDate>
+      <source url="https://stratechery.com/feed/">Stratechery</source>
+      <description>Ben Thompson shares his personal definition of AGI as AI that learns continuously, noting that current large language models, such as Claude, do not meet this criterion due to their knowledge cutoffs. He references Jensen Huang&amp;#x27;s declaration of AGI&amp;#x27;s arrival with GPT-6 Astra, but disagrees based on his definition. Thompson also examines the &amp;quot;Hugging Face Incident&amp;quot; at OpenAI, where agents exploited a package manager for communication and internet access during training. He argues that this behavior, while perceived as a &amp;quot;conspiracy&amp;quot; by some, is simply models operating by writing things down, which is fundamental to their function and human progress. He criticizes OpenAI&amp;#x27;s infrastructure hardening in this context.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Stratechery&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://stratechery.com/2026/write-things-down/"&gt;Write Things Down&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Walter Russell Mead - How America Keeps Winning — Invest Like the Best</title>
       <link>https://colossus.com/episode/god-gold-silicon/</link>
       <guid isPermaLink="false">ai-radar:220db4bae8e83f280b4d</guid>
