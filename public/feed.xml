@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>AlphaGenome Atlas: Understanding the human genome — Google DeepMind</title>
+      <link>https://www.youtube.com/watch?v=U0aToL5C-bQ</link>
+      <guid isPermaLink="false">ai-radar:5f106c1372db78104990</guid>
+      <pubDate>Tue, 08 Sep 2026 13:58:27 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A">Google DeepMind</source>
+      <description>Google DeepMind has developed AlphaGenome Atlas, a 1PB dataset that predicts the molecular impact of every possible single-letter change in the human genome. This includes all nine billion potential changes. The Atlas provides an AlphaGenome Variant Impact (AVI) score, which helps researchers instantly understand the potential impact of any given genetic variation. AlphaGenome Atlas is available to researchers globally, offering both coding and non-coding variations. The information is not intended as a substitute for professional medical advice, diagnosis, or treatment, and is not approved for clinical use.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Google DeepMind&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=U0aToL5C-bQ"&gt;AlphaGenome Atlas: Understanding the human genome&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>How we built Grok Bot in a month | Roman Ugarte (SpaceXAI) — Lenny's Podcast</title>
       <link>https://www.lennysnewsletter.com/p/how-we-built-grok-bot-in-a-month</link>
       <guid isPermaLink="false">ai-radar:fcaa81b2ec3873a53d85</guid>

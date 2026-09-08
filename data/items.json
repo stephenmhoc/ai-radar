@@ -65387,6 +65387,62 @@
         "podcast": "https://www.lennysnewsletter.com/p/how-we-built-grok-bot-in-a-month",
         "youtube": "https://www.youtube.com/watch?v=maSdsTLaMuU"
       }
+    },
+    {
+      "id": "5f106c1372db78104990",
+      "first_seen_at": "2026-09-08T14:17:22+00:00",
+      "status": "published",
+      "title": "AlphaGenome Atlas: Understanding the human genome",
+      "source_title": "AlphaGenome Atlas: Understanding the human genome",
+      "short_summary": "Google DeepMind introduces AlphaGenome Atlas, a 1PB dataset predicting the molecular impact of every single-letter change in the human genome. It provides an AlphaGenome Variant Impact (AVI) score to help researchers understand potential variations.",
+      "long_summary": "Google DeepMind has developed AlphaGenome Atlas, a 1PB dataset that predicts the molecular impact of every possible single-letter change in the human genome. This includes all nine billion potential changes. The Atlas provides an AlphaGenome Variant Impact (AVI) score, which helps researchers instantly understand the potential impact of any given genetic variation. AlphaGenome Atlas is available to researchers globally, offering both coding and non-coding variations. The information is not intended as a substitute for professional medical advice, diagnosis, or treatment, and is not approved for clinical use.",
+      "reason": "The item is a demonstration from Google DeepMind, a target organization, about a consequential technical work related to frontier models and research in genomics.",
+      "published_at": "2026-09-08T13:58:27+00:00",
+      "appearances": [
+        {
+          "id": "b9309c411b5dda058917",
+          "kind": "youtube",
+          "source": "Google DeepMind",
+          "family": "google deepmind",
+          "guid": "yt:video:U0aToL5C-bQ",
+          "title": "AlphaGenome Atlas: Understanding the human genome",
+          "description": "We’ve used AlphaGenome to predict the molecular impact of every possible single-letter change in the human genome. All nine billion of them.\n\nAlphaGenome Atlas is a 1PB dataset containing every single possible nucleotide variant alongside an AlphaGenome Variant Impact (AVI) score. This score helps researchers instantly understand the potential impact of any given variation.\n\nAlphaGenome Atlas is available to researchers around the world, with coding and non-coding variations available. \n\nLearn more: https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome\n\nDisclaimer: The information provided by AlphaGenome Atlas is not intended to be a substitute for professional medical advice, diagnosis, or treatment, and does not constitute medical or other professional advice. AlphaGenome has not been validated for, and is not approved for, any clinical use.\n\n___\n\nSubscribe to our channel https://www.youtube.com/@googledeepmind \nFind us on X https://x.com/GoogleDeepMind\nFollow us on Instagram https://instagram.com/googledeepmind \nAdd us on Linkedin https://www.linkedin.com/company/deepmind/",
+          "url": "https://www.youtube.com/watch?v=U0aToL5C-bQ",
+          "published_at": "2026-09-08T13:58:27+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=U0aToL5C-bQ"
+      }
+    },
+    {
+      "id": "9517a732a862d65070de",
+      "first_seen_at": "2026-09-08T14:17:22+00:00",
+      "status": "skipped",
+      "title": "AlphaGenome Atlas: Using AI to find disease causing variants 🧬",
+      "source_title": "AlphaGenome Atlas: Using AI to find disease causing variants 🧬",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-08T14:02:28+00:00",
+      "appearances": [
+        {
+          "id": "e4f991eb294363b56543",
+          "kind": "youtube",
+          "source": "Google DeepMind",
+          "family": "google deepmind",
+          "guid": "yt:video:ya04CpsRJH0",
+          "title": "AlphaGenome Atlas: Using AI to find disease causing variants 🧬",
+          "description": "How do you find a single typo in a person's DNA that causes a rare disease? It is like finding a needle in a 9-billion-piece haystack.\n\nEnter AlphaGenome Atlas: a new AI-powered database charting the molecular impact of every possible genetic variant.\n\nScientists are already using it to look into unsolved rare diseases, map rare mutations linked to complex traits, and more.\n\n🔗 Find out how by tapping the link → https://goo.gle/4ihF2LZ",
+          "url": "https://www.youtube.com/shorts/ya04CpsRJH0",
+          "published_at": "2026-09-08T14:02:28+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/ya04CpsRJH0"
+      }
     }
   ]
 }
