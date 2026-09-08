@@ -65316,6 +65316,34 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/write-things-down/"
       }
+    },
+    {
+      "id": "62a61dd3885b2eb7b2ba",
+      "first_seen_at": "2026-09-08T12:17:22+00:00",
+      "status": "skipped",
+      "title": "Why China Can't Beat America",
+      "source_title": "Why China Can't Beat America",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a broad geopolitical and foreign policy interview with Walter Russell Mead; artificial intelligence is at most incidental rather than the core technical or strategic focus.",
+      "published_at": "2026-09-08T12:00:29+00:00",
+      "appearances": [
+        {
+          "id": "5ff2d388a417d5ecfca8",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:v-2BdiL6r74",
+          "title": "Why China Can't Beat America",
+          "description": "Walter Russell Mead joins us for a sweeping conversation about American power, China, and the forces reshaping the global order. Walter explains why he believes the postwar world system may be breaking down even as America itself remains remarkably powerful, and traces the strategy that has allowed the Dutch, British, and Americans to dominate global affairs for centuries.\n\nTIMESTAMPS\n0:00 Intro\n1:01 America, Trump and World Order\n9:23 Why America Keeps Winning\n20:40 China’s Structural Weakness\n26:39 Technology and American Power\n36:51 Four Foreign Policy Traditions\n53:59 The Future of Warfare\n1:00:52 Taiwan and Asian Power\n1:08:39 Middle East and Deterrence\n1:15:04 America’s Next 20 Years\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc\n\n#InvestLikeTheBest #WalterRussellMead #Geopolitics #China #UnitedStates #ArtificialIntelligence #ForeignPolicy #Technology.",
+          "url": "https://www.youtube.com/watch?v=v-2BdiL6r74",
+          "published_at": "2026-09-08T12:00:29+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=v-2BdiL6r74"
+      }
     }
   ]
 }
