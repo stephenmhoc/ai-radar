@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>How we built Grok Bot in a month | Roman Ugarte (SpaceXAI) — Lenny's Podcast</title>
+      <link>https://www.lennysnewsletter.com/p/how-we-built-grok-bot-in-a-month</link>
+      <guid isPermaLink="false">ai-radar:fcaa81b2ec3873a53d85</guid>
+      <pubDate>Tue, 08 Sep 2026 12:30:23 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/10845.rss">Lenny's Podcast</source>
+      <description>Roman Ugarte, who helped incubate and build Grok Bot at SpaceXAI, discusses the rapid development of this knowledge-work agent. The team took Grok Bot from its initial code to a working internal product in four weeks, followed by a public launch three weeks later. The conversation covers the origin story of Grok Bot, the decision to build it from scratch rather than integrate it into Cursor, and the process of manually onboarding early users. Ugarte also shares insights into the two early product decisions that contributed to Grok Bot&amp;#x27;s success and its &amp;quot;colleague-pilled&amp;quot; product philosophy. Additionally, he provides advice on moats and how Cursor maintained its competitive edge in the market.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Lenny&amp;#x27;s Podcast&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.lennysnewsletter.com/p/how-we-built-grok-bot-in-a-month"&gt;How we built Grok Bot in a month | Roman Ugarte (SpaceXAI)&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Lenny&amp;#x27;s Podcast&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=maSdsTLaMuU"&gt;How we built Grok Bot in a month | Roman Ugarte (SpaceXAI)&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>OpenAI Researchers on the Future of Mathematical Reasoning — The a16z Show</title>
       <link>https://a16z.simplecast.com/episodes/openai-researchers-on-the-future-of-mathematical-reasoning-Jn50EkyR</link>
       <guid isPermaLink="false">ai-radar:421561a01835d8fa0965</guid>
