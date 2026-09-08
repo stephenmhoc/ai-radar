@@ -65755,6 +65755,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=A7MSwdXj86k"
       }
+    },
+    {
+      "id": "3de598403a7cd02fb78a",
+      "first_seen_at": "2026-09-08T23:17:19+00:00",
+      "status": "skipped",
+      "title": "Happy Alumni Demo Day!",
+      "source_title": "Happy Alumni Demo Day!",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-08T22:28:55+00:00",
+      "appearances": [
+        {
+          "id": "3b38d05c1d467b25612a",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:GFWRBvSe8c8",
+          "title": "Happy Alumni Demo Day!",
+          "description": "",
+          "url": "https://www.youtube.com/shorts/GFWRBvSe8c8",
+          "published_at": "2026-09-08T22:28:55+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/GFWRBvSe8c8"
+      }
     }
   ]
 }
