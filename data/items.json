@@ -65643,6 +65643,90 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=9FylxTglT2o"
       }
+    },
+    {
+      "id": "9963df014a499dbe588d",
+      "first_seen_at": "2026-09-08T19:17:23+00:00",
+      "status": "published",
+      "title": "OpenAI: Introducing ChatGPT Images 2.5",
+      "source_title": "Introducing ChatGPT Images 2.5",
+      "short_summary": "OpenAI introduces ChatGPT Images 2.5, featuring faster image generation, improved fidelity for more natural images, consistent details across edits, and comment-based editing for precise changes.",
+      "long_summary": "OpenAI has launched ChatGPT Images 2.5, an update designed to enhance image creation. This new version offers faster image generation, aiming to maintain creative flow. It also boasts improved fidelity, resulting in more natural and recognizable images. Users can expect consistent details to be maintained across multiple edits. Additionally, ChatGPT Images 2.5 includes comment-based editing tools, allowing users to make specific changes to only the desired elements.",
+      "reason": "The item is a YouTube video from OpenAI, a target organization, introducing a new product feature (ChatGPT Images 2.5) with substantive details about its capabilities.",
+      "published_at": "2026-09-08T18:44:08+00:00",
+      "appearances": [
+        {
+          "id": "efc8cb7f593f39198943",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:6l7ble9P74o",
+          "title": "Introducing ChatGPT Images 2.5",
+          "description": "Say hello to ChatGPT Images 2.5—faster, sharper, smarter, with better tools for creating whatever you can dream of. \n\n- Faster image generation to keep your ideas flowing\n- Improved fidelity for more natural, recognizable images\n- Consistent details across multiple edits\n- Comment-based edits to change only what you want",
+          "url": "https://www.youtube.com/watch?v=6l7ble9P74o",
+          "published_at": "2026-09-08T18:44:08+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=6l7ble9P74o"
+      }
+    },
+    {
+      "id": "c298401dc116b52d0a9b",
+      "first_seen_at": "2026-09-08T19:17:24+00:00",
+      "status": "skipped",
+      "title": "Sketch with ChatGPT Images 2.5",
+      "source_title": "Sketch with ChatGPT Images 2.5",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional video from OpenAI, which falls under the category of 'brief promotional or highlight clips, isolated quotes, launch teasers, and social snippets' that should be rejected even when featuring a target person or coming from a model company.",
+      "published_at": "2026-09-08T18:46:42+00:00",
+      "appearances": [
+        {
+          "id": "15080054bd13ac74f287",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:imPtIEAEHSU",
+          "title": "Sketch with ChatGPT Images 2.5",
+          "description": "Some ideas are easier to draw than describe. \n\nUse Sketch to draw right in ChatGPT and show it exactly what you have in mind.\n\nJust type “@ Sketch” in ChatGPT.",
+          "url": "https://www.youtube.com/watch?v=imPtIEAEHSU",
+          "published_at": "2026-09-08T18:46:42+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=imPtIEAEHSU"
+      }
+    },
+    {
+      "id": "ae4bac223aa1c6f71a71",
+      "first_seen_at": "2026-09-08T19:17:26+00:00",
+      "status": "skipped",
+      "title": "Templates with ChatGPT Images 2.5",
+      "source_title": "Templates with ChatGPT Images 2.5",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional video from OpenAI about a new feature, not a substantial interview, talk, or demonstration with durable substance. It is a short clip announcing a product update rather than a deep dive or technical explanation.",
+      "published_at": "2026-09-08T18:48:03+00:00",
+      "appearances": [
+        {
+          "id": "62e921881f106ab17df6",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:-VukmrOT1eE",
+          "title": "Templates with ChatGPT Images 2.5",
+          "description": "Have an idea but need help getting started? \n\nUse templates for popular image formats like posters or merch, then add your message, design elements, or style to make it your own.\nChatGPT Images 2.5 is rolling out today to all ChatGPT, ChatGPT Work, and Codex users across desktop, mobile, and web.",
+          "url": "https://www.youtube.com/watch?v=-VukmrOT1eE",
+          "published_at": "2026-09-08T18:48:03+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=-VukmrOT1eE"
+      }
     }
   ]
 }
