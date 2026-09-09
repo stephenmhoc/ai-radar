@@ -63942,12 +63942,12 @@
     },
     {
       "id": "4a751e9aafebffa1bf7e",
-      "status": "deferred",
+      "status": "published",
       "title": "The Pulse: tech companies move to open AI models",
       "source_title": "The Pulse: tech companies move to open AI models",
-      "short_summary": "",
-      "long_summary": "",
-      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "short_summary": "This article covers a new trend of tech companies moving to open AI models, automatic software maintenance experiments by Linear and Anthropic, and the frontier AI lab wars, including OpenAI pulling models from SpaceX/Cursor. It also touches on an HR tech startup's one-dev-per-project approach and industry pulse updates.",
+      "long_summary": "The article highlights a new trend where tech companies like Uber, Pinterest, Stripe, Coinbase, Ramp, and AT&T are significantly reducing their AI expenses by switching from proprietary models to open models and implementing smart model routing. It also details experiments by Linear and Anthropic in automatic software maintenance, where AI agents are being used to fix bugs and address technical debt, showing promising but not yet fully autonomous results. The piece discusses the ongoing 'frontier AI lab wars,' noting OpenAI's decision to withdraw its GPT models from SpaceX/Cursor due to SpaceX's emergence as a rival frontier model. Additionally, it mentions an HR tech startup's successful one-developer-per-project approach and provides various industry updates, including Meta's move to Slack for improved agent interoperability, layoffs at Uber and PagerDuty, and increased token usage on OpenRouter.",
+      "reason": "The article discusses frontier models, AI infrastructure, and important AI companies (OpenAI, Anthropic, Meta, SpaceX), covering strategic and technical aspects of AI development and adoption.",
       "published_at": "2026-09-03T17:00:14+00:00",
       "first_seen_at": "2026-09-03T17:17:30+00:00",
       "appearances": [
@@ -63958,7 +63958,7 @@
           "family": "the pragmatic engineer",
           "guid": "https://newsletter.pragmaticengineer.com/p/the-pulse-tech-companies-move-to",
           "title": "The Pulse: tech companies move to open AI models",
-          "description": "The Pulse is a series covering events, insights, and trends within Big Tech and startups.\n\nToday, we cover:\n\nNew trend: tech companies moving to open models. \nUber, Pinterest, Stripe, Coinbase, Ramp, and AT&T are making large savings on their AI bills by dropping proprietary models and using smart model routing.\n\nAutomatic software maintenance experiments by L…\n\n Read more",
+          "description": "The Pulse is a series covering events, insights, and trends within Big Tech and startups.\n\nToday, we cover:\n\nNew trend: tech companies moving to open models. \nUber, Pinterest, Stripe, Coinbase, Ramp, and AT&T are making large savings on their AI bills by dropping proprietary models and using smart model routing.\n\nAutomatic software maintenance experiments by Linear and Anthropic. \nBoth startups are experimenting with how far they can push AI agents to automatically fix bugs and remove tech debt. It’s working better than anyone might’ve expected in the recent past, but not producing code that can be merged without review.\n\nFrontier AI lab wars: OpenAI pulls models from SpaceX / Cursor. \nWith SpaceX now a frontier model and rival to OpenAI and Anthropic, OpenAI has pulled its GPT models from Cursor. This isn’t an option for Anthropic which is dependent on the SpaceX compute they rent to serve Claude.\n\nHR tech startup’s one-dev-per-project approach. \nA full-remote HR startup with 70 engineers has a single engineer run each project, and says the approach works well. Will this approach be adopted elsewhere, especially at other full-remote startups?\n\nIndustry Pulse.\n Meta moved over to Slack for better agent interoperability, layoffs at Uber and PagerDuty, Anthropic upsets users by calling a rate limit decrease an “increase”, token usage explodes on OpenRouter, AI drives surging demand for Apple’s Mac Mini & Mac Studio, and more.\n\n1. New trend: moving to open models at tech companies\n\nUpdate: a week after publishing this article, Ara Krahzian at Ramp \nhas confirmed\n that AI spend in August, has, indeed, declined at the top 1% of businesses by 10%, based on Ramp data. I’d wager those companies are not spending fewer tokens, but they are optimizing cost, in ways outlined below.\n\nIn May, I \ncovered an emerging trend\n of companies \nwanting\n to cut back their AI spending, starting with engineering departments. Different approaches were being tried:\n\n Read more",
           "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-tech-companies-move-to",
           "published_at": "2026-09-03T17:00:14+00:00",
           "hosts": [
@@ -66119,6 +66119,64 @@
       "links": {
         "podcast": "https://deepmind.com/podcast",
         "youtube": "https://www.youtube.com/watch?v=O_EWbnkjXdk"
+      }
+    },
+    {
+      "id": "fa330221d3ed1cf73b96",
+      "first_seen_at": "2026-09-09T19:17:22+00:00",
+      "status": "skipped",
+      "title": "Amjad Masad, CEO of Replit, shares the story of how he hacked into his university's database.",
+      "source_title": "Amjad Masad, CEO of Replit, shares the story of how he hacked into his university's database.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-09T18:00:19+00:00",
+      "appearances": [
+        {
+          "id": "f3f542c4d110d22f5a4d",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:2zWC1i3rie4",
+          "title": "Amjad Masad, CEO of Replit, shares the story of how he hacked into his university's database.",
+          "description": "Amjad Masad grew up in Amman, Jordan, learning to code on borrowed computers at internet cafes.\n\nHe later moved to the US, worked as a founding engineer at Codecademy and a software engineer at Facebook, before co-founding Replit in 2016 - an online platform that lets anyone write, run, and deploy code directly from a browser, with no setup required.",
+          "url": "https://www.youtube.com/shorts/2zWC1i3rie4",
+          "published_at": "2026-09-09T18:00:19+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/2zWC1i3rie4"
+      }
+    },
+    {
+      "id": "94389185d2452ad69c42",
+      "first_seen_at": "2026-09-09T19:17:22+00:00",
+      "status": "skipped",
+      "title": "Apple Announced iPhone 18 Pro and Pro Max #apple",
+      "source_title": "Apple Announced iPhone 18 Pro and Pro Max #apple",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-09T18:23:33+00:00",
+      "appearances": [
+        {
+          "id": "670d35f0f03c2ce6b681",
+          "kind": "youtube",
+          "source": "Joanna Stern",
+          "family": "joanna stern",
+          "guid": "yt:video:dseA4iPaqC4",
+          "title": "Apple Announced iPhone 18 Pro and Pro Max #apple",
+          "description": "iPhone 18 Pro! Everything you need to know. Stay tuned for my hands-on impressions soon.",
+          "url": "https://www.youtube.com/shorts/dseA4iPaqC4",
+          "published_at": "2026-09-09T18:23:33+00:00",
+          "hosts": [
+            "Joanna Stern"
+          ]
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/dseA4iPaqC4"
       }
     }
   ]
