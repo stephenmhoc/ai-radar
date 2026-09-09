@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Where Does a Robot Think – On-Device vs Datacenter Inference — SemiAnalysis</title>
+      <link>https://newsletter.semianalysis.com/p/where-does-a-robot-think-on-device</link>
+      <guid isPermaLink="false">ai-radar:b0dc9dfb46b210b8687f</guid>
+      <pubDate>Wed, 09 Sep 2026 20:53:35 +0000</pubDate>
+      <source url="https://newsletter.semianalysis.com/feed">SemiAnalysis</source>
+      <description>The article explores the emerging frontier of physical AI, specifically in robotics, contrasting it with traditional LLMs. It emphasizes that unlike LLMs where hardware adapts to the model, robotics requires models to fit hardware constraints due to strict latency requirements and high unit costs. Frontier robot models are currently much smaller than LLMs, typically ranging from 5 to 14 billion parameters. The field is divided on whether to run inference on-board the robot or offload it to datacenters, with larger builders like NVIDIA and Google DeepMind leaning towards cloud-based heavy cognition. The article details how hierarchical robot models, with separate planning and action layers, allow the compute-intensive planning layer to be moved to datacenters, while the fast action layer remains local. It also explains why frontier robot models are FLOPs-hungry and how edge silicon struggles to keep up, necessitating off-device processing for generalist robots. Optimizing local compute for safety and high-frequency control loops, alongside robust network interfacing, becomes crucial when shipping robot models off-device.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · SemiAnalysis&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.semianalysis.com/p/where-does-a-robot-think-on-device"&gt;Where Does a Robot Think – On-Device vs Datacenter Inference&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Google DeepMind: The Podcast — Can AI help us better predict the weather? — Google DeepMind: The Podcast</title>
       <link>https://deepmind.com/podcast</link>
       <guid isPermaLink="false">ai-radar:32be62cf40da54a2b35e</guid>
