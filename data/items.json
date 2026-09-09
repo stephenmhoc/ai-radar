@@ -65963,6 +65963,36 @@
       "links": {
         "newsletter": "https://www.interconnects.ai/p/when-will-average-people-feel-ais"
       }
+    },
+    {
+      "id": "07b3318253b35b5d0738",
+      "first_seen_at": "2026-09-09T12:17:18+00:00",
+      "status": "skipped",
+      "title": "Apple iPhone Event Drinking Game! #apple",
+      "source_title": "Apple iPhone Event Drinking Game! #apple",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-09T11:00:22+00:00",
+      "appearances": [
+        {
+          "id": "daf7b2290882e1db6ffe",
+          "kind": "youtube",
+          "source": "Joanna Stern",
+          "family": "joanna stern",
+          "guid": "yt:video:JNSL44yjKqQ",
+          "title": "Apple iPhone Event Drinking Game! #apple",
+          "description": "Apple’s big, new iPhone event is almost here, so we made an Apple Event Drinking Game. Don’t worry, we mean water or coffee. There are way too many squares on this board for anything stronger. Subscribe to our newsletter to get the board: thenewthings.com/subscribe, and stay tuned for lots more video today from Apple Park.",
+          "url": "https://www.youtube.com/shorts/JNSL44yjKqQ",
+          "published_at": "2026-09-09T11:00:22+00:00",
+          "hosts": [
+            "Joanna Stern"
+          ]
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/JNSL44yjKqQ"
+      }
     }
   ]
 }
