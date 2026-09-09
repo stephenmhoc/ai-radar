@@ -66255,7 +66255,7 @@
           "family": "joanna stern",
           "guid": "yt:video:lyCy9N_RUpY",
           "title": "First look at iPhone Duo #apple #duo",
-          "description": "Got my hands on the iPhone Duo. So far, the internal screen is really impressive, but stay tuned for the full phone review.",
+          "description": "Got my hands on the iPhone Duo. So far, the internal screen is really impressive, but stay tuned for my longer hands-on video soon!",
           "url": "https://www.youtube.com/shorts/lyCy9N_RUpY",
           "published_at": "2026-09-09T20:49:47+00:00",
           "hosts": [
@@ -66295,6 +66295,90 @@
       ],
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/where-does-a-robot-think-on-device"
+      }
+    },
+    {
+      "id": "4158539dffead7eb43bb",
+      "first_seen_at": "2026-09-09T22:17:19+00:00",
+      "status": "skipped",
+      "title": "GPT-6 Astra turned London into a game",
+      "source_title": "GPT-6 Astra turned London into a game",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-09T21:39:53+00:00",
+      "appearances": [
+        {
+          "id": "b1ff707ec935ed90fb0b",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:cmN6XVuLEd4",
+          "title": "GPT-6 Astra turned London into a game",
+          "description": "",
+          "url": "https://www.youtube.com/shorts/cmN6XVuLEd4",
+          "published_at": "2026-09-09T21:39:53+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/cmN6XVuLEd4"
+      }
+    },
+    {
+      "id": "30c179a9809c25d25ca3",
+      "first_seen_at": "2026-09-09T22:17:35+00:00",
+      "status": "published",
+      "title": "OpenAI Announces GPT-6 Astra Powering ChatGPT Work with Agentic Capabilities",
+      "source_title": "ChatGPT Work, now powered by GPT-6 Astra",
+      "short_summary": "OpenAI announced that ChatGPT Work is now powered by GPT-6 Astra, described as their best model for professional work. The update enables ChatGPT to understand project goals better, pull information from connected apps, and perform actions like clicking and typing in desktop apps and browsers to handle busywork.",
+      "long_summary": "OpenAI has updated ChatGPT Work with GPT-6 Astra, framing it as their most advanced model for professional tasks. According to the announcement, Astra improves ChatGPT's ability to understand user intent and gather necessary information from connected applications and the computer. It is designed to help create polished reports, presentations, and analyses faster, with more natural writing that better fits user templates. Furthermore, with permission, ChatGPT Work can now use desktop apps and browsers similarly to a human—clicking, typing, and navigating screens to perform tasks like filling out forms or updating records. This capability extends even to apps without direct ChatGPT integrations. The update is available to all paid ChatGPT plans.",
+      "reason": "This is a major product and model announcement from OpenAI, a top-tier target organization, introducing GPT-6 Astra and significant new agentic capabilities for desktop automation.",
+      "published_at": "2026-09-09T21:54:53+00:00",
+      "appearances": [
+        {
+          "id": "f6e3c8615b82fc7e5885",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:kuGjypoJKwk",
+          "title": "ChatGPT Work, now powered by GPT-6 Astra",
+          "description": "ChatGPT Work is now powered by GPT-6 Astra—our best model for professional work.\n\nBring it your next big project. With Astra, ChatGPT Work better understands what you’re trying to do and pulls together the information you need from your connected apps and computer. It helps you create polished reports, presentations, and analyses faster—with more natural writing, a closer fit to your templates and style, and less cleanup.\n\nThen hand over the busywork. With your permission, ChatGPT Work can use your desktop apps and browser much like you do—clicking, typing, and moving between screens to fill out forms, update records and trackers, and schedule meetings. Astra makes it better and faster at these tasks, even in apps that don’t have a ChatGPT integration.\n\nChatGPT Work with GPT-6 Astra is available to all paid ChatGPT plans in the desktop app and on chatgpt.com.\n\nLearn more in our blog: https://openai.com/index/gpt-6-astra-next-generation-work/",
+          "url": "https://www.youtube.com/watch?v=kuGjypoJKwk",
+          "published_at": "2026-09-09T21:54:53+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=kuGjypoJKwk"
+      }
+    },
+    {
+      "id": "980b77da990374ae69fc",
+      "first_seen_at": "2026-09-09T22:17:42+00:00",
+      "status": "published",
+      "title": "Computer-Use Agents and the Future of the Agentic Internet",
+      "source_title": "Computer-Use Agents and the Future of the Agentic Internet |Episode #371|",
+      "short_summary": "This episode explores computer-use agents, MCP, agent harnesses, and agent-to-agent interactions. It discusses how these tools automate tasks, challenges in enterprise environments, and the evolving relationship between models and agent harnesses, with a focus on agentic commerce.",
+      "long_summary": "This episode features Demetrios Brinkmann, Head of Development experience at The Agentic AI Foundation and founder of the MLOps community, discussing computer-use agents with hosts Daniel Whitenack and Chris Benson. The conversation explores how AI agents are becoming more capable of using computers and interacting with software on behalf of users. Key topics include MCP, agent harnesses, and agent-to-agent interactions, along with prognostication on emerging possibilities like agentic commerce. They also discuss the current use of these tools for automating everyday tasks, the challenges of integrating computer-use agents into enterprise environments, and the evolving relationship between models and agent harnesses.",
+      "reason": "The item discusses frontier models, agent systems, and AI-native software, which are core topics for AI Radar. The guest, Demetrios Brinkmann, is a founder of the MLOps community and Head of Development experience at The Agentic AI Foundation, providing firsthand expertise on these subjects.",
+      "published_at": "2026-09-09T22:00:15+00:00",
+      "appearances": [
+        {
+          "id": "2ce98727ed2bcea653fa",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:edJyuAfIybQ",
+          "title": "Computer-Use Agents and the Future of the Agentic Internet |Episode #371|",
+          "description": "Longtime followers of Practical AI know that multi-repeat guest and friend Demetrios Brinkmann combines brilliant insight and playful banter into one fun-filled show, and this conversion with Chris was no different. They had a blast!\n\nAs AI agents become more capable of using computers, interacting with software, and taking action on behalf of users, what does that mean for the way we work and interact with the internet? Chris and Demetrios explore computer-use agents, MCP, agent harnesses, agent-to-agent interactions, and prognosticate the emerging possibilities around agentic commerce. They also discuss how these tools are already being used to automate everyday tasks, the challenges of bringing computer-use agents into enterprise environments, and how the relationship between models and agent harnesses is evolving.\n\nIn fact, they had so much fun that their conversation continued long after the show was over, but we didn’t get that here. 🤷‍♂️\n\nFEATURING:\n\nGuest - Demetrios Brinkmann (Head of Development experience and a member of the non-technical staff at The Agentic AI Foundation & the founder of the MLOps community)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast)\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast)\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://us06web.zoom.us/webinar/register/WN_tMivXvPXRJ6pi5526S5etw#/registration\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/\n\nCHAPTERS:\n0:00 Welcome to Practical AI podcast!\n0:28 Guest Introduction and Background\n4:04 The Evolution of MLOps and Agentic AI\n8:57 Sponsor: Midwest AI Summit\n10:27 Innovations in Computer Use and Automation\n20:47 Future of Agentic Interoperability\n24:23 The Pressure of Consumer Expectations\n26:45 Bridging the Gap: AI Adoption for the Masses\n29:18 Transforming Work with AI: Personal vs. Enterprise Use\n33:42 Navigating the Challenges of AI Harnesses\n41:05 The Future of Shopping: Agents vs. Traditional E-commerce\n54:30 See you next time!",
+          "url": "https://www.youtube.com/watch?v=edJyuAfIybQ",
+          "published_at": "2026-09-09T22:00:15+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=edJyuAfIybQ"
       }
     }
   ]
