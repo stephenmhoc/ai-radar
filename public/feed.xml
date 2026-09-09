@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Google DeepMind: The Podcast — Can AI help us better predict the weather? — Google DeepMind: The Podcast</title>
+      <link>https://deepmind.com/podcast</link>
+      <guid isPermaLink="false">ai-radar:32be62cf40da54a2b35e</guid>
+      <pubDate>Wed, 09 Sep 2026 16:08:26 +0000</pubDate>
+      <source url="https://feeds.simplecast.com/JT6pbPkg">Google DeepMind: The Podcast</source>
+      <description>In this podcast episode, Professor Hannah Fry interviews Peter Battaglia, Senior Director of Research at Google DeepMind. They explore how artificial intelligence is being applied to global weather forecasting. The discussion highlights the use of machine learning models such as GraphCast and WeatherNext 3. These models are shown to provide critical early warnings for severe weather events like Hurricane Melissa and to predict renewable energy supply and agricultural impacts. The conversation also touches on the challenges of weather forecasting and how AI builds upon traditional numerical physics models.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Google DeepMind: The Podcast&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://deepmind.com/podcast"&gt;Can AI help us better predict the weather?&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Google DeepMind: The Podcast&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=O_EWbnkjXdk"&gt;Can AI help us better predict the weather?&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Building Codex with Tibo Sottiaux — The Pragmatic Engineer</title>
+      <link>https://newsletter.pragmaticengineer.com/p/building-codex-with-tibo-sottiaux</link>
+      <guid isPermaLink="false">ai-radar:9ca02aebbae30bbf20f8</guid>
+      <pubDate>Wed, 09 Sep 2026 15:57:24 +0000</pubDate>
+      <source url="https://newsletter.pragmaticengineer.com/feed">The Pragmatic Engineer</source>
+      <description>Tibo Sottiaux, one of the engineers who created Codex and now leads OpenAI&amp;#x27;s Core Products &amp;amp; Platform, discusses the building and iteration of Codex. The conversation covers why the Codex CLI is written in Rust and open-sourced, how its harness and models have evolved, and its support for models from multiple providers. Sottiaux also details how OpenAI uses Codex throughout the software development lifecycle, including code reviews, maintenance, and system rearchitecture. He touches on how AI is lowering the cost of changing code, the merger of ChatGPT and Codex, and his personal use of these tools. The discussion also reveals that Google had a &amp;quot;ChatGPT-like&amp;quot; project a year before OpenAI, and that Tibo was drawn to OpenAI because only 20 people worked on ChatGPT.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · The Pragmatic Engineer&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.pragmaticengineer.com/p/building-codex-with-tibo-sottiaux"&gt;Building Codex with Tibo Sottiaux&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Inside the Race to Measure Frontier Intelligence — a16z</title>
       <link>https://www.youtube.com/watch?v=WO9c9qxDxzU</link>
       <guid isPermaLink="false">ai-radar:7da620263e696d16efed</guid>
