@@ -65845,6 +65845,36 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-openai-reports-navier-stokes"
       }
+    },
+    {
+      "id": "c92fcb4dffd0247d131c",
+      "first_seen_at": "2026-09-09T08:17:21+00:00",
+      "status": "published",
+      "title": "Mati Staniszewski on ElevenLabs, Voice AI & Building the Communication Layer for AI",
+      "source_title": "Mati Staniszewski on ElevenLabs, Voice AI & Building the Communication Layer for AI",
+      "short_summary": "Mati Staniszewski, co-founder of ElevenLabs, discusses building frontier speech technology, combining audio research with product deployment, and their Palantir-inspired operating model. He explains how ElevenLabs focuses on voice as a primary interface for AI and aims to amplify human potential.",
+      "long_summary": "Mati Staniszewski, co-founder of ElevenLabs, discusses the company's origins in addressing poorly dubbed content and its focus on building frontier speech technology. He explains ElevenLabs' approach of combining audio research with product deployment and how its specialization in voice provides a competitive advantage. Staniszewski details the Palantir-inspired operating model, which features small autonomous teams, a flat organization, and forward-deployed engineers. He emphasizes using AI to amplify human potential, including helping people who have lost their voices, and believes voice will become a primary way people interact with AI. Staniszewski also states his commitment to building ElevenLabs independently despite acquisition offers.",
+      "reason": "The item is a substantial interview with a co-founder of ElevenLabs, a company developing frontier models in speech technology, which is a key area of AI development. The discussion covers technical aspects, product deployment, company strategy, and the future of AI interfaces.",
+      "published_at": "2026-09-09T08:00:00+00:00",
+      "appearances": [
+        {
+          "id": "3c8dbb6dc79d111a9054",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "f22d28be-a93e-11f1-9476-b7d871e971a0",
+          "title": "Mati Staniszewski on ElevenLabs, Voice AI & Building the Communication Layer for AI",
+          "description": "Mati Staniszewski is the co-founder of ElevenLabs, an AI audio company he started in 2022 with his longtime friend Piotr Dąbkowski. He explains how a frustration with poorly dubbed content in Poland led them to build frontier speech technology, why ElevenLabs combines audio research with product deployment and how its focus on voice shapes where the company chooses to compete. Mati also describes the Palantir-inspired operating model behind ElevenLabs: small autonomous teams, a flat organization and forward deployed engineers who work directly with customers and feed what they learn back into the product. He discusses using AI to amplify human potential, helping people who have lost their voices speak again, why imperfections can make AI voices feel more human and his belief that voice will become one of the primary ways people interact with AI. After turning down multiple acquisition offers, Mati says he and Piotr are committed to building ElevenLabs independently and pursuing what they see as a rare opportunity to reshape how humans communicate with technology.\n\nShow notes: https://www.davidenra.com/mati-staniszewski\n\nMade possible by\n\nRamp: https://ramp.com\n\nDeel: https://deel.com/senra\n\nAppLovin: https://applovin.com/senra\n\nChapters\n\n(00:00:00) Building an AI-Native Company Before ChatGPT\n\n(00:02:59) Why ElevenLabs Started With Audio & Dubbing\n\n(00:12:37) Research + Product Deployment: How ElevenLabs Is Built\n\n(00:16:15) Focus as a Competitive Advantage\n\n(00:18:47) Building an Ecosystem Around Voice\n\n(00:22:25) The Communication Platform & Deutsche Telekom\n\n(00:28:29) Forward Deployed Engineers & Lessons From Palantir\n\n(00:33:41) Flat Organizations, Transparency & AI-Native Management\n\n(00:37:19) Small Teams & Putting Engineers Everywhere\n\n(00:43:00) Where ElevenLabs Is Growing Fastest\n\n(00:44:38) Taste, Art & Science in AI\n\n(00:48:23) Using AI to Amplify Human Potential\n\n(00:55:19) Becoming an Entrepreneur & Building With Piotr\n\n(00:56:49) Why Mati Won't Sell ElevenLabs\n\n(01:04:01) Voice as the Interface for AI\n\n(01:06:49) Turning Conferences Into a Business Tool\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidenra.com/mati-staniszewski⁠",
+          "published_at": "2026-09-09T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidenra.com/mati-staniszewski⁠"
+      }
     }
   ]
 }
