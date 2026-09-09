@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Who Grades the AI Models? | Ben Horowitz &amp; Rayan Krishnan — The a16z Show</title>
+      <link>https://a16z.simplecast.com/episodes/who-grades-the-ai-models-ben-horowitz-rayan-krishnan-uPW5nl18</link>
+      <guid isPermaLink="false">ai-radar:69cd744f2828b8ec5880</guid>
+      <pubDate>Wed, 09 Sep 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.simplecast.com/JGE3yC0V">The a16z Show</source>
+      <description>The a16z Show features Erik Torenberg, Ben Horowitz, and Jennifer Li in conversation with Rayan Krishnan, founder and CEO of Vals. The discussion centers on the challenge of evaluating AI models as public benchmarks become saturated and models optimize for tests. Krishnan advocates for independent, continuously evolving evaluations, explaining why self-reported model scores can be misleading. They detail how VALS evaluates models before release and the complexities of testing increasingly agentic systems over extended periods. The conversation also covers the importance of evaluations for enterprises assessing AI ROI, the potential for token spend to rival employee salaries, and how evaluations could provide a shared language for various AI applications, from model routing to policy.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · The a16z Show&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://a16z.simplecast.com/episodes/who-grades-the-ai-models-ben-horowitz-rayan-krishnan-uPW5nl18"&gt;Who Grades the AI Models? | Ben Horowitz &amp;amp; Rayan Krishnan&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Mati Staniszewski on ElevenLabs, Voice AI &amp; Building the Communication Layer for AI — David Senra</title>
       <link>https://www.davidenra.com/mati-staniszewski⁠</link>
       <guid isPermaLink="false">ai-radar:c92fcb4dffd0247d131c</guid>

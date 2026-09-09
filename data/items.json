@@ -65875,6 +65875,64 @@
       "links": {
         "podcast": "https://www.davidenra.com/mati-staniszewski⁠"
       }
+    },
+    {
+      "id": "69cd744f2828b8ec5880",
+      "first_seen_at": "2026-09-09T10:17:22+00:00",
+      "status": "published",
+      "title": "Who Grades the AI Models? | Ben Horowitz & Rayan Krishnan",
+      "source_title": "Who Grades the AI Models? | Ben Horowitz & Rayan Krishnan",
+      "short_summary": "This podcast discusses the increasing difficulty of measuring AI model improvement, advocating for independent, continuously evolving evaluations. It explores why self-reported scores can be misleading and how evaluations are becoming critical for enterprises to understand AI ROI.",
+      "long_summary": "The a16z Show features Erik Torenberg, Ben Horowitz, and Jennifer Li in conversation with Rayan Krishnan, founder and CEO of Vals. The discussion centers on the challenge of evaluating AI models as public benchmarks become saturated and models optimize for tests. Krishnan advocates for independent, continuously evolving evaluations, explaining why self-reported model scores can be misleading. They detail how VALS evaluates models before release and the complexities of testing increasingly agentic systems over extended periods. The conversation also covers the importance of evaluations for enterprises assessing AI ROI, the potential for token spend to rival employee salaries, and how evaluations could provide a shared language for various AI applications, from model routing to policy.",
+      "reason": "The podcast discusses frontier model evaluations, a key area of interest for AI Radar, with a relevant guest (Rayan Krishnan, CEO of Vals) and a prominent venture capitalist (Ben Horowitz).",
+      "published_at": "2026-09-09T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "efd5cc854f3d5063d32f",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "3f9d6ac8-7abc-4364-926d-900b2880fcb1",
+          "title": "Who Grades the AI Models? | Ben Horowitz & Rayan Krishnan",
+          "description": "a16z’s Erik Torenberg, Ben Horowitz, and Jennifer Li sit down with Vals founder and CEO Rayan Krishnan to discuss one of AI’s increasingly difficult problems: how do you actually measure whether a model is getting better?\n\nAs public benchmarks saturate and models get better at optimizing for the tests themselves, Rayan makes the case for independent, continuously evolving evaluations. They unpack why self-reported model scores can be misleading, how VALS evaluates models in the hours before a release, and why measuring increasingly agentic systems means testing work that can unfold over hours, days, or even weeks.\n\nThey also explore why evals are becoming critical for enterprises trying to understand the ROI of AI, what happens if token spend begins to rival employee salaries, and how evaluations could eventually provide a shared language for everything from model routing and recursive self-improvement to AI policy and international coordination.\n\nResources:\n\nFollow Rayan Krishnan on X: \nhttps://x.com/RayanKrishnan\n\nFollow Ben Horowitz on X:\nhttps://x.com/bhorowitz\n\nFollow Jennifer Li on X: \nhttps://x.com/JenniferHli\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/who-grades-the-ai-models-ben-horowitz-rayan-krishnan-uPW5nl18",
+          "published_at": "2026-09-09T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/who-grades-the-ai-models-ben-horowitz-rayan-krishnan-uPW5nl18"
+      }
+    },
+    {
+      "id": "e9e7831575370199ae59",
+      "first_seen_at": "2026-09-09T10:17:22+00:00",
+      "status": "deferred",
+      "title": "OpenAI Does Math, Reward-Hacking, Meta Launches Personal Agent",
+      "source_title": "OpenAI Does Math, Reward-Hacking, Meta Launches Personal Agent",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-09T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "86b11a7e6b25425049ca",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=19929",
+          "title": "OpenAI Does Math, Reward-Hacking, Meta Launches Personal Agent",
+          "description": "OpenAI solving one of the most famous math problems is extremely impressive, and of little impact to most people's lives; Meta's Muse agent launch has the potential to be the exact opposite.",
+          "url": "https://stratechery.com/2026/openai-does-math-reward-hacking-meta-launches-personal-agent/",
+          "published_at": "2026-09-09T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/openai-does-math-reward-hacking-meta-launches-personal-agent/"
+      }
     }
   ]
 }
