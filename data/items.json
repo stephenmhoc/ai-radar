@@ -65993,6 +65993,62 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/JNSL44yjKqQ"
       }
+    },
+    {
+      "id": "7da620263e696d16efed",
+      "first_seen_at": "2026-09-09T15:17:22+00:00",
+      "status": "published",
+      "title": "Inside the Race to Measure Frontier Intelligence",
+      "source_title": "Inside the Race to Measure Frontier Intelligence",
+      "short_summary": "This discussion with Vals founder Rayan Krishnan explores the challenges of measuring AI model progress as public benchmarks become less effective. It covers the need for independent, continuously evolving evaluations and their role in understanding AI ROI and policy.",
+      "long_summary": "This discussion features Vals founder and CEO Rayan Krishnan, who addresses the increasing difficulty of measuring AI model improvement. He argues for independent, continuously evolving evaluations as public benchmarks saturate and models optimize for tests. The conversation covers why self-reported model scores can be misleading and how Vals evaluates models pre-release. It also explores the importance of evaluations for enterprises to understand AI's return on investment, the implications of token spend rivaling employee salaries, and how evaluations could provide a shared language for model routing, recursive self-improvement, AI policy, and international coordination. The discussion also touches on the geopolitics of evaluations and whose values become embedded.",
+      "reason": "The item discusses frontier models, research, and evaluations, which are core topics for AI Radar. The speaker, Rayan Krishnan, offers firsthand expertise as the founder and CEO of Vals, a company focused on AI evaluation.",
+      "published_at": "2026-09-09T14:30:03+00:00",
+      "appearances": [
+        {
+          "id": "95960595cd8a3cdb60c3",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:WO9c9qxDxzU",
+          "title": "Inside the Race to Measure Frontier Intelligence",
+          "description": "a16z’s Erik Torenberg, Ben Horowitz, and Jennifer Li sit down with Vals founder and CEO Rayan Krishnan to discuss one of AI’s increasingly difficult problems: how do you actually measure whether a model is getting better?\n\nAs public benchmarks saturate and models get better at optimizing for the tests themselves, Rayan makes the case for independent, continuously evolving evaluations. They unpack why self-reported model scores can be misleading, how VALS evaluates models in the hours before a release, and why measuring increasingly agentic systems means testing work that can unfold over hours, days, or even weeks.\n\nThey also explore why evals are becoming critical for enterprises trying to understand the ROI of AI, what happens if token spend begins to rival employee salaries, and how evaluations could eventually provide a shared language for everything from model routing and recursive self-improvement to AI policy and international coordination.\n\nTimestamps:\n00:00 - Intro\n00:55 - Why Vals Exists: When Public Benchmarks Stopped Working\n02:52 - The Llama 4 Disaster: Public Scores vs Private Reality\n04:05 - Inside the 6-Hour Pre-Release Testing Window\n06:00 - The Limits of Evaluation: Making Fuzzy Evals Explicit\n10:00 - The Recursive Self-Improvement Index\n13:13 - Beyond Capability: Cost, Latency & Keeping Benchmarks Fresh\n17:52 - When Token Spend Starts to Eclipse Salary Spend\n19:19 - Private Repos vs Public Benchmarks: The Real Performance Gap\n22:40 - How Vals Uses Vals: Token Maxing the Coding Tools\n24:48 - Policy: What Should the Government Actually Do?\n28:32 - Alignment, Reward Hacking & Models Gaming the Test\n33:30 - The Geopolitics of Evals: Whose Values Get Embedded?\n37:14 - What the Benchmarking Landscape Looks Like Next\n\nResources:\nFollow Rayan Krishnan on X: https://x.com/RayanKrishnan\nFollow Ben Horowitz on X: https://x.com/bhorowitz\nFollow Jennifer Li on X: https://x.com/JenniferHli\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=WO9c9qxDxzU",
+          "published_at": "2026-09-09T14:30:03+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=WO9c9qxDxzU"
+      }
+    },
+    {
+      "id": "a4cb3713113d2cc264bf",
+      "first_seen_at": "2026-09-09T15:17:22+00:00",
+      "status": "skipped",
+      "title": "Paul Tudor Jones’ Warning on Tech Stocks",
+      "source_title": "Paul Tudor Jones’ Warning on Tech Stocks",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-09T14:34:26+00:00",
+      "appearances": [
+        {
+          "id": "f394a0aeff8c0a9cf493",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:mIA3lkh6SQU",
+          "title": "Paul Tudor Jones’ Warning on Tech Stocks",
+          "description": "PTJ says the 2000 bear market was the easiest he’s ever seen. The reason: a never-ending cascade of selling after IPO unlocks. Now, he’s watching for a similar setup.\n\n#PaulTudorJones #StockMarket #TechStocks #Investing #Trading #Markets #InvestLikeTheBest #YouTubeShorts\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/mIA3lkh6SQU",
+          "published_at": "2026-09-09T14:34:26+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/mIA3lkh6SQU"
+      }
     }
   ]
 }
