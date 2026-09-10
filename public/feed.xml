@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>The Reason 30 Years of Cybersecurity Has Failed - and What Actually Fixes It | Trent Telford, Qanap — Eye on AI</title>
+      <link>https://www.youtube.com/watch?v=96P7z8R-WJs</link>
+      <guid isPermaLink="false">ai-radar:239095f3bcff1fe45ac7</guid>
+      <pubDate>Thu, 10 Sep 2026 13:54:29 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLacDrP-7Ys6IsnPRN0ToTfjH8gQ4s6mL9">Eye on AI</source>
+      <description>Trent Telford, Chairman, CEO &amp;amp; Founder of Qanapi, explains why 30 years of cybersecurity has failed due to its focus on protecting the &amp;#x27;wall&amp;#x27; rather than the data itself. He argues that AI frontier models exacerbate this problem by making walls easier to breach. Qanapi&amp;#x27;s solution involves encrypting data at a granular level (words, paragraphs, database cells) with unique keys tied to verified identities and conditional policies, ensuring that even exfiltrated files remain unreadable. This approach enables enterprises to safely send data to public LLMs like Claude or ChatGPT by encrypting sensitive fields before transmission. The discussion also touches on drone security in battlefield environments, the post-quantum encryption mandate, and why Qanapi&amp;#x27;s business has grown rapidly as companies recognize the existential risk of adopting AI without addressing data security.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Eye on AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=96P7z8R-WJs"&gt;The Reason 30 Years of Cybersecurity Has Failed - and What Actually Fixes It | Trent Telford, Qanap&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Coinbase CEO Brian Armstrong on Agentic Finance, AI, Crypto, and New Limit — No Priors</title>
       <link>https://feeds.megaphone.fm/nopriors</link>
       <guid isPermaLink="false">ai-radar:b5ec717c9c35279f3df7</guid>
