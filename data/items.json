@@ -66772,6 +66772,36 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=qg_54P-oPgI"
       }
+    },
+    {
+      "id": "cf4bab58a6deec5a2f42",
+      "first_seen_at": "2026-09-10T17:17:19+00:00",
+      "status": "deferred",
+      "title": "The Pulse #191: a new trend of CPU shortages",
+      "source_title": "The Pulse #191: a new trend of CPU shortages",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-10T17:13:44+00:00",
+      "appearances": [
+        {
+          "id": "471b0a2a60ae8593c61d",
+          "kind": "newsletter",
+          "source": "The Pragmatic Engineer",
+          "family": "the pragmatic engineer",
+          "guid": "https://newsletter.pragmaticengineer.com/p/the-pulse-191-a-new-trend-of-cpu",
+          "title": "The Pulse #191: a new trend of CPU shortages",
+          "description": "The Pulse is a series covering events, insights, and trends within Big Tech and startups.\n\nToday, we cover:\n\nNew trend of CPU shortages: \nafter a GPU shortage and memory shortage driven by AI companies, we’re now experienceding a CPU shortage, thanks to AI agents using a lot more CPU with tool usage. If you will need more compute in the future: secure it now…\n\n Read more",
+          "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-191-a-new-trend-of-cpu",
+          "published_at": "2026-09-10T17:13:44+00:00",
+          "hosts": [
+            "Gergely Orosz"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-191-a-new-trend-of-cpu"
+      }
     }
   ]
 }
