@@ -66375,9 +66375,25 @@
           "url": "https://www.youtube.com/watch?v=edJyuAfIybQ",
           "published_at": "2026-09-09T22:00:15+00:00",
           "hosts": []
+        },
+        {
+          "id": "a472660c6f4b1889f326",
+          "kind": "podcast",
+          "source": "Practical AI",
+          "family": "practical ai",
+          "guid": "8a1c70d7-502d-40f8-b16e-341761a7f41b",
+          "title": "Computer-Use Agents and the Future of the Agentic Internet",
+          "description": "Longtime followers of Practical AI know that multi-repeat guest and friend Demetrios Brinkmann combines brilliant insight and playful banter into one fun-filled show, and this conversion with Chris was no different. They had a blast!\n\nAs AI agents become more capable of using computers, interacting with software, and taking action on behalf of users, what does that mean for the way we work and interact with the internet? Chris and Demetrios explore computer-use agents, MCP, agent harnesses, agent-to-agent interactions, and prognosticate the emerging possibilities around agentic commerce. They also discuss how these tools are already being used to automate everyday tasks, the challenges of bringing computer-use agents into enterprise environments, and how the relationship between models and agent harnesses is evolving.\n\nIn fact, they had so much fun that their conversation continued long after the show was over, but we didn’t get that here. 🤷‍♂️\n\nFeaturing:\n\nDemetrios Brinkmann – \nLinkedIn\n\nChris Benson – \nWebsite\n, \nLinkedIn\n, \nBluesky\n, \nGitHub\n, \nX\n\nLinks:\n\nAgentic AI Foundation\n\nMLOps Community\n\nAGNTCon + MCPCon\n – the Agentic AI Foundation’s flagship conference\n\nSponsors:\n\nMidwest AI Summit:\n Join AI practitioners on October 15 in Indianapolis for practical sessions, hands-on discussions, and real-world AI solutions. Use code PracticalAI20 to save 20% on your registration. \nhttps://midwestaisummit.com/#tickets\n\nResources and Events:\n\nRegister for \nupcoming webinars here\n!\n\nPrior \nWebinars from our partner Prediction Guard\n\nMidwest AI Summit 2026",
+          "url": "https://share.transistor.fm/s/72586f97",
+          "published_at": "2026-09-10T09:00:00+00:00",
+          "hosts": [
+            "Chris Benson",
+            "Daniel Whitenack"
+          ]
         }
       ],
       "links": {
+        "podcast": "https://share.transistor.fm/s/72586f97",
         "youtube": "https://www.youtube.com/watch?v=edJyuAfIybQ"
       }
     },
