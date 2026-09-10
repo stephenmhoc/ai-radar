@@ -66457,6 +66457,108 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=VNzl-q0EGfg"
       }
+    },
+    {
+      "id": "b5ec717c9c35279f3df7",
+      "first_seen_at": "2026-09-10T10:17:21+00:00",
+      "status": "published",
+      "title": "Coinbase CEO Brian Armstrong on Agentic Finance, AI, Crypto, and New Limit",
+      "source_title": "Coinbase’s Everything Exchange: Agentic Finance, Stablecoins, and Tokenization with CEO Brian Armstrong",
+      "short_summary": "Coinbase CEO Brian Armstrong discusses the intersections of AI, crypto, and biotechnology, detailing Coinbase's vision for agentic finance and its evolution into an 'Everything Exchange.' He also introduces his new venture, New Limit, focused on longevity through epigenetic reprogramming.",
+      "long_summary": "In this episode, Coinbase co-founder and CEO Brian Armstrong joins Elad Gil to discuss the intersections of artificial intelligence, crypto rails, and biotechnology. Armstrong details Coinbase’s vision for agentic finance and how the company is becoming an 'Everything Exchange,' encompassing tokenized real-world stocks, stablecoin payment adoption, and prediction markets. The conversation also covers AI's role inside Coinbase and its impact on productivity. Additionally, Armstrong introduces his new venture, New Limit, a company founded to tackle longevity through epigenetic reprogramming, outlining its initial therapeutic programs and roadmap toward clinical trials.",
+      "reason": "The item features a substantial interview with Brian Armstrong, CEO of Coinbase, discussing the intersections of AI, crypto, and biotechnology, including 'AI Inside Coinbase' and 'Agentic Commerce,' which aligns with consequential work on important AI companies, products, and agent systems.",
+      "published_at": "2026-09-10T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "5f1cae202f257d50f8cb",
+          "kind": "podcast",
+          "source": "No Priors",
+          "family": "no priors",
+          "guid": "2ecd3b38-aca0-11f1-b6c4-13e4bbce7d30",
+          "title": "Coinbase’s Everything Exchange: Agentic Finance, Stablecoins, and Tokenization with CEO Brian Armstrong",
+          "description": "From the tokenization of real-world assets to funding research on anti-aging therapeutics, Coinbase co-founder and CEO Brian Armstrong is focused on solving meta-problems for the benefit of society. Brian joins Elad Gil this episode to discuss the intersections of artificial intelligence, crypto rails, and biotechnology. He details Coinbase’s vision for agentic finance, as well as how Coinbase is becoming the ‘Everything Exchange’, which includes tokenized real-world stocks, stablecoin payment adoption, and prediction markets. Brian also introduces his new venture, New Limit, a company founded to tackle longevity through epigenetic reprogramming, and outlines initial therapeutic programs and the roadmap toward clinical trials.  \n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @brian_armstrong | @Coinbase\n\nChapters:\n\n00:00 – Cold Open Trailer\n\n00:45 – Brian Armstrong Introduction\n\n01:13 – Coinbase and the Everything Exchange\n\n05:52 – Agentic Commerce\n\n10:00 – AI and Crypto\n\n10:49 – AI Inside Coinbase\n\n15:39 – Productivity and Company Size\n\n17:26 – The Everything Exchange and Tokenization\n\n20:53 – Prediction Markets\n\n23:15 – Introducing New Limit\n\n34:17 – Looking Forward Five Years\n\n40:24 – Special Economic Zones\n\n44:26 – Conclusion",
+          "url": "https://feeds.megaphone.fm/nopriors",
+          "published_at": "2026-09-10T10:00:00+00:00",
+          "hosts": [
+            "Sarah Guo",
+            "Elad Gil"
+          ]
+        },
+        {
+          "id": "f00d4355c2d69d0964c8",
+          "kind": "youtube",
+          "source": "No Priors — YouTube",
+          "family": "no priors",
+          "guid": "yt:video:uLDK4l_-gUE",
+          "title": "Coinbase’s Everything Exchange: Agentic Finance, Stablecoins & Tokenization with CEO Brian Armstrong",
+          "description": "From the tokenization of real-world assets to funding research on anti-aging therapeutics, Coinbase co-founder and CEO Brian Armstrong is focused on solving meta-problems for the benefit of society. Brian joins Elad Gil this episode to discuss the intersections of artificial intelligence, crypto rails, and biotechnology. He details Coinbase’s vision for agentic finance, as well as how Coinbase is becoming the ‘Everything Exchange’, which includes tokenized real-world stocks, stablecoin payment adoption, and prediction markets. Brian also introduces his new venture, New Limit, a company founded to tackle longevity through epigenetic reprogramming, and outlines initial therapeutic programs and the roadmap toward clinical trials. \n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @brian_armstrong | @Coinbase\n\nChapters:\n00:00 – Cold Open Trailer\n00:45 – Brian Armstrong Introduction\n01:13 – Coinbase and the Everything Exchange\n05:52 – Agentic Commerce\n10:00 – AI and Crypto\n10:49 – AI Inside Coinbase\n15:39 – Productivity and Company Size\n17:26 – The Everything Exchange and Tokenization\n20:53 – Prediction Markets\n23:15 – Introducing New Limit\n34:17 – Looking Forward Five Years\n40:24 – Special Economic Zones\n44:26 – Conclusion",
+          "url": "https://www.youtube.com/watch?v=uLDK4l_-gUE",
+          "published_at": "2026-09-10T10:00:16+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/nopriors",
+        "youtube": "https://www.youtube.com/watch?v=uLDK4l_-gUE"
+      }
+    },
+    {
+      "id": "529dd1e7e41582c71cc6",
+      "first_seen_at": "2026-09-10T10:17:23+00:00",
+      "status": "published",
+      "title": "How AI Is Rewriting the Power Law of Venture Capital",
+      "source_title": "How AI Is Rewriting the Power Law of Venture Capital",
+      "short_summary": "Aram Verdiyan, Jen Kha, and David George discuss how AI is changing technology investing, emphasizing AI's potential to compound advantages for large companies and its broad economic applications. They explore venture economics, distinguishing real AI traction, and future opportunities in robotics and physical infrastructure.",
+      "long_summary": "Aram Verdiyan of Accolade Partners, along with a16z's Jen Kha and David George, discuss how AI is reshaping the power law of technology investing. The conversation highlights AI's potential to allow the largest companies to compound advantages in unprecedented ways, impacting how investors construct portfolios. They explore AI's broader economic reach beyond traditional software, extending into labor, healthcare, transportation, and services. David George explains how capital can reinforce an AI company's advantage through compute acquisition, while Aram Verdiyan advocates for treating AI as a core investment allocation. The discussion also covers the evolving economics of venture and growth investing, methods for identifying genuine AI traction amidst hype, AI's implications for legacy software and private equity, and significant future opportunities in robotics, autonomy, healthcare, energy, and physical infrastructure.",
+      "reason": "The podcast features a substantive discussion on the economics, business strategy, and policy forces that materially shape AI development and adoption, with a focus on AI's impact on venture capital and investment strategies.",
+      "published_at": "2026-09-10T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "f9a1372322f408bd27d4",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "781f4d11-3ef1-471d-9680-36696e7d10e5",
+          "title": "How AI Is Rewriting the Power Law of Venture Capital",
+          "description": "a16z’s Jen Kha and David George sit down with Accolade Partners’ Aram Verdiyan to discuss how AI is changing the power law of technology investing, why the largest companies can compound advantages in ways that weren’t possible before, and what that means for how investors construct portfolios.\n\nThey explore why AI may be much bigger than traditional software, with applications reaching into labor, healthcare, transportation, services, and other major parts of the economy. David explains why capital itself can now reinforce an AI company’s advantage by buying more compute, while Aram makes the case that AI should increasingly be treated as a core allocation rather than a satellite position.\n\nThe conversation also gets into the changing economics of venture and growth investing, how to distinguish real AI traction from early hype, what AI means for legacy software and private equity, and why some of the largest opportunities may still be ahead in robotics, autonomy, healthcare, energy, and physical infrastructure.\n\nResources:\n\nFollow Aram Verdiyan on X: \nhttps://x.com/aramverdi\n\nFollow Jen Kha on X: \nhttps://x.com/jkhamehl\n\nFollow David George on X:\nhttps://x.com/DavidGeorge83\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/aram-x-jen-x-dg-draft-dXGKJks2",
+          "published_at": "2026-09-10T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/aram-x-jen-x-dg-draft-dXGKJks2"
+      }
+    },
+    {
+      "id": "af878fc279dc05317399",
+      "first_seen_at": "2026-09-10T10:17:23+00:00",
+      "status": "deferred",
+      "title": "The iPhone Duo, The Intelligent Personal Hub, Apple Watch Audio Intelligence",
+      "source_title": "The iPhone Duo, The Intelligent Personal Hub, Apple Watch Audio Intelligence",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-10T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "bfb011f02f8eeb2ea0cf",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=19953",
+          "title": "The iPhone Duo, The Intelligent Personal Hub, Apple Watch Audio Intelligence",
+          "description": "Apple once again demonstrated the power of integrating hardware and software, but it's biggest AI blindspot might be its belief in the primacy of apps.",
+          "url": "https://stratechery.com/2026/the-iphone-duo-the-intelligent-personal-hub-apple-watch-audio-intelligence/",
+          "published_at": "2026-09-10T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/the-iphone-duo-the-intelligent-personal-hub-apple-watch-audio-intelligence/"
+      }
     }
   ]
 }
