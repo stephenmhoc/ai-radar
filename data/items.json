@@ -66802,6 +66802,34 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-191-a-new-trend-of-cpu"
       }
+    },
+    {
+      "id": "feddc3821cff2ae2d95f",
+      "first_seen_at": "2026-09-10T18:17:21+00:00",
+      "status": "skipped",
+      "title": "In Harmony",
+      "source_title": "In Harmony",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes describe a promotional video for ChatGPT Work, which is not a substantial interview, technical discussion, or original analysis. It appears to be a brief promotional clip, which is explicitly excluded.",
+      "published_at": "2026-09-10T17:29:32+00:00",
+      "appearances": [
+        {
+          "id": "42266fbde78f90588ab6",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:PbfXbDbCthA",
+          "title": "In Harmony",
+          "description": "Work directed by you. Move projects forward and turn ideas into action with ChatGPT Work.",
+          "url": "https://www.youtube.com/watch?v=PbfXbDbCthA",
+          "published_at": "2026-09-10T17:29:32+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=PbfXbDbCthA"
+      }
     }
   ]
 }
