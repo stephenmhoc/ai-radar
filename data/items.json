@@ -66830,6 +66830,105 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=PbfXbDbCthA"
       }
+    },
+    {
+      "id": "39a9f54ac7a55f6e5a24",
+      "first_seen_at": "2026-09-10T20:17:23+00:00",
+      "status": "published",
+      "title": "OpenAI: Introducing the Agents API",
+      "source_title": "Introducing the Agents API",
+      "short_summary": "OpenAI introduces the Agents API, a hosted version of the Codex harness. It allows building agents that investigate production incidents, connect to tools, follow runbooks, and deliver reports with evidence and next steps.",
+      "long_summary": "OpenAI has launched the Agents API, which provides a hosted version of the Codex harness for applications. This API enables developers to create agents capable of investigating production incidents. These agents can connect to various tools via MCP, follow predefined runbooks, and generate shareable reports. The reports include evidence and suggested next steps, streamlining incident management and response processes.",
+      "reason": "The item is a demonstration from OpenAI, a target organization, introducing a new API for agent development, which is a consequential AI product.",
+      "published_at": "2026-09-10T19:26:05+00:00",
+      "appearances": [
+        {
+          "id": "b40766ead8523dcd1a48",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:2YHa1vhnmK0",
+          "title": "Introducing the Agents API",
+          "description": "The Agents API brings a hosted version of the Codex harness to your applications. See how to build an agent that investigates production incidents, connects to tools through MCP, follows a runbook, and delivers a shareable report with evidence and suggested next steps.\n\nLearn more: https://developers.openai.com/api/docs/guides/agents-api/overview",
+          "url": "https://www.youtube.com/watch?v=2YHa1vhnmK0",
+          "published_at": "2026-09-10T19:26:05+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=2YHa1vhnmK0"
+      }
+    },
+    {
+      "id": "1a0cfbe61af5a265a091",
+      "first_seen_at": "2026-09-10T20:17:23+00:00",
+      "status": "skipped",
+      "title": "🤖 What happens when AI agents can use computers, interact with software, and take action for us?",
+      "source_title": "🤖 What happens when AI agents can use computers, interact with software, and take action for us?",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-10T19:29:15+00:00",
+      "appearances": [
+        {
+          "id": "6165052739c69e46c5f0",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:a3Eszbvxr_E",
+          "title": "🤖 What happens when AI agents can use computers, interact with software, and take action for us?",
+          "description": "Demetrios Brinkmann joins us to dig into computer-use agents, MCP, agent harnesses, agent-to-agent interactions, and the future of agentic commerce.\n\nFull episode linked below!",
+          "url": "https://www.youtube.com/shorts/a3Eszbvxr_E",
+          "published_at": "2026-09-10T19:29:15+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/a3Eszbvxr_E"
+      }
+    },
+    {
+      "id": "9345538ebeab6bd9d363",
+      "first_seen_at": "2026-09-10T20:17:25+00:00",
+      "status": "published",
+      "title": "Nathan Goes to China #3: US-China Relations, the Art of the AI Deal & the Road to Pax Robotica",
+      "source_title": "Nathan Goes to China #3: US-China Relations, the Art of the AI Deal & the Road to Pax Robotica",
+      "short_summary": "Nathan delivers an assessment of Chinese AI capabilities and constraints, analyzing export controls and outlining a framework for cooperative \"Pax Robotica.\" He argues for joint compute initiatives, safety auditor standards, and conventions on autonomous weapons to prevent an adversarial AI race.",
+      "long_summary": "In this solo finale, Nathan assesses Chinese AI capabilities and constraints ahead of US-China bilateral AI talks. He audits the impact of export controls and analyzes the perspective from Beijing. Nathan outlines an actionable framework for a cooperative \"Pax Robotica,\" advocating for joint compute initiatives, safety auditor standards, and conventions on autonomous weapons to keep tech trees entangled. He warns that an adversarial zero-sum race risks training frontier AI systems for conflict rather than shared benefit.",
+      "reason": "The item provides a substantive analysis of AI policy, international relations, and the strategic landscape of AI development between the US and China, which falls under the criteria of \"the economics, business strategy, and policy forces that materially shape AI development and adoption.\"",
+      "published_at": "2026-09-10T20:15:43+00:00",
+      "appearances": [
+        {
+          "id": "2b2ff5cc6b37497316c7",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "7f52a21c-ad51-11f1-875b-f7b9d565dc5d",
+          "title": "Nathan Goes to China #3: US-China Relations, the Art of the AI Deal & the Road to Pax Robotica",
+          "description": "In this solo finale to his three-part series following two weeks in China, Nathan delivers a net assessment of Chinese AI capabilities and constraints ahead of dedicated US-China bilateral AI talks. He audits the impact of export controls, analyzes the perspective from Beijing, and outlines an actionable framework for a cooperative Pax Robotica. Nathan argues for joint compute initiatives, safety auditor standards, and conventions on autonomous weapons to keep tech trees entangled. Ultimately, he warns that pursuing an adversarial zero-sum race risks training frontier AI systems for conflict rather than the shared benefit of humanity.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/nathan-goes-to-china-3-us-china-relations-the-art-of-the-ai-deal-the-road-to-pax-robotica/\nSponsors:\n\nDeepgram Flux TTS: Deepgram Flux TTS is a streaming text-to-speech model built for voice agents with natural tone, context awareness, and interruption handling. Try it free until September 12 at https://deepgram.com/keep-talking\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(06:11) Episode intro and recap\n\n(08:56) The Pax Machina goal\n\n(12:32) The Anthropic worldview (Part 1)\n\n(16:50) Sponsors: Deepgram Flux TTS | Claude\n\n(18:55) The Anthropic worldview (Part 2)\n\n(18:56) Net assessment of China\n\n(32:26) China's eternal 1991\n\n(44:03) History of Chinese AI\n\n(54:34) China's domestic constraints\n\n(01:07:09) Century of humiliation narrative\n\n(01:27:01) Signs of Chinese cooperation\n\n(01:42:38) American state capacity lessons\n\n(02:05:39) Evaluating AI export controls\n\n(02:27:25) Hyperstitioning a summit deal\n\n(02:44:28) Preserving mutual legibility\n\n(03:01:12) Autonomous weapons convention\n\n(03:09:33) Positive sum AI competition\n\n(03:12:31) Episode Outro\n\n(03:15:05) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\n\nWebsite: https://www.cognitiverevolution.ai\n\nTwitter (Podcast): https://x.com/cogrev_podcast\n\nTwitter (Nathan): https://x.com/labenz\n\nLinkedIn: https://linkedin.com/in/nathanlabenz/\n\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\n\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\n\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.cognitiverevolution.ai/nathan-goes-to-china-3-us-china-relations-the-art-of-the-ai-deal-the-road-to-pax-robotica/",
+          "published_at": "2026-09-10T20:15:44+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        },
+        {
+          "id": "741355dd514c16e96bb1",
+          "kind": "youtube",
+          "source": "The Cognitive Revolution — YouTube",
+          "family": "the cognitive revolution",
+          "guid": "yt:video:Btq_ztX0R9M",
+          "title": "Nathan Goes to China #3: US-China Relations, the Art of the AI Deal & the Road to Pax Robotica",
+          "description": "In this solo finale to his three-part series following two weeks in China, Nathan delivers a net assessment of Chinese AI capabilities and constraints ahead of dedicated US-China bilateral AI talks. He audits the impact of export controls, analyzes the perspective from Beijing, and outlines an actionable framework for a cooperative Pax Robotica. Nathan argues for joint compute initiatives, safety auditor standards, and conventions on autonomous weapons to keep tech trees entangled. Ultimately, he warns that pursuing an adversarial zero-sum race risks training frontier AI systems for conflict rather than the shared benefit of humanity.\n\nFor full show notes, links, and references, read the episode page:\nhttps://www.cognitiverevolution.ai/nathan-goes-to-china-3-us-china-relations-the-art-of-the-ai-deal-the-road-to-pax-robotica/\n\nSPONSORS:\nDeepgram Flux TTS: Deepgram Flux TTS is a streaming text-to-speech model built for voice agents with natural tone, context awareness, and interruption handling. Try it free until September 12 at https://deepgram.com/keeptalking?utm_source=cognitiverevolution&utm_medium=audio&utm_campaign=flux_tts_launch&utm_content=shownotes\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nCHAPTERS:\n(00:00) About the Episode\n(06:11) Episode intro and recap\n(08:56) The Pax Machina goal\n(12:32) The Anthropic worldview (Part 1)\n(16:50) Sponsors: Deepgram Flux TTS | Claude\n(18:55) The Anthropic worldview (Part 2)\n(18:56) Net assessment of China\n(32:26) China's eternal 1991\n(44:03) History of Chinese AI\n(54:34) China's domestic constraints\n(01:07:09) Century of humiliation narrative\n(01:27:01) Signs of Chinese cooperation\n(01:42:38) American state capacity lessons\n(02:05:39) Evaluating AI export controls\n(02:27:25) Hyperstitioning a summit deal\n(02:44:28) Preserving mutual legibility\n(03:01:12) Autonomous weapons convention\n(03:09:33) Positive sum AI competition\n(03:12:31) Episode Outro\n(03:15:05) Outro\n\nPRODUCED BY:\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\nWebsite: https://www.cognitiverevolution.ai\nTwitter (Podcast): https://x.com/cogrev_podcast\nTwitter (Nathan): https://x.com/labenz\nLinkedIn: https://linkedin.com/in/nathanlabenz/\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.youtube.com/watch?v=Btq_ztX0R9M",
+          "published_at": "2026-09-10T20:15:43+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/nathan-goes-to-china-3-us-china-relations-the-art-of-the-ai-deal-the-road-to-pax-robotica/",
+        "youtube": "https://www.youtube.com/watch?v=Btq_ztX0R9M"
+      }
     }
   ]
 }
