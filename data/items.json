@@ -66411,6 +66411,36 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-not-much-happened-today-d3b"
       }
+    },
+    {
+      "id": "8b31c348c2c44a09805d",
+      "first_seen_at": "2026-09-10T07:17:25+00:00",
+      "status": "skipped",
+      "title": "I Tested Apple's New FOLDABLE iPhone",
+      "source_title": "I Tested Apple's New FOLDABLE iPhone",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The content focuses on a foldable iPhone and does not discuss AI, AI infrastructure, or any of the specified frontier AI organizations or individuals.",
+      "published_at": "2026-09-10T02:50:34+00:00",
+      "appearances": [
+        {
+          "id": "9cf9f525fb2afb3fdc7a",
+          "kind": "youtube",
+          "source": "Joanna Stern",
+          "family": "joanna stern",
+          "guid": "yt:video:VNzl-q0EGfg",
+          "title": "I Tested Apple's New FOLDABLE iPhone",
+          "description": "How big is Apple’s new iPhone Duo folding phone? Is there really no crease in the screen? How does multitasking work? Does it feel heavy? Is it bigger or smaller than a kitchen sponge? What about a Pop-Tart? I have answers to all these very important questions—and more—in our first look video. \n\nA big thanks to Mercury for sponsoring this video and the New Things. More about Mercury Spend here: https://Mercury.com/spend-management \n\nMercury is a fintech company, not an FDIC-insured bank. Banking services provided through Choice Financial Group and Column N.A., Members FDIC. The IO Card is issued by Patriot Bank, N.A., Member FDIC, pursuant to a license from Mastercard International Incorporated.\n\nChapters: \n\n[00:00 - 00:33] Intro to the iPhone Duo \n[00:36 - 1:10] Hardware: Size comparisons \n[1:10 - 1:41] Crease-free inner screen\n[1:41 - 2:13] Matte screen! And hinges! \n[2:15 - 3:05] Buttons and cameras \n[3:06 - 3:17] Confirmed: It’s a phone! \n[3:17 - 4:30] Sponsor: Mercury \n[4:34 - 5:06] Software and multitasking \n[5:10 - 6:14] Battery life and final thoughts \n[5:58 - 6:14] - Hot dogs \n\n📬 Our videos are free here, but support our work by subscribing to the New Things. You’ll love the newsletters! https://thenewthings.com/subscribe. \n📙 Order Joanna’s new book at https://joannastern.com \n💼 Want to sponsor our stuff? Email joanna.partnerships@smoothmedia.co \n▶️ Subscribe here so you don’t miss future videos https://www.youtube.com/c/joannastern \n \nWho is Joanna Stern? \nEmmy winner. Pulitzer finalist. Professional asker of uncomfortable questions. New York Times bestselling author. Joanna spent 12 years at The Wall Street Journal making videos and writing columns before founding New Things. Before that, she helped start The Verge and worked at ABC News. She believes technology should work for humans—and that journalism should be fun. She is working on both. She also is the author of the new book I AM NOT A ROBOT: My Year Using AI to Do (Almost) Everything. As NBC News' Chief Technology Analyst, her reporting and The New Things content regularly appears across NBC's broadcasts and platforms. For Joanna’s full resume, see LinkedIn. \n\nYou can find me on Instagram here: https://www.instagram.com/joannastern \nOr on X here: https://x.com/JoannaStern \nOr on LinkedIn here: linkedin.com/in/joannastern",
+          "url": "https://www.youtube.com/watch?v=VNzl-q0EGfg",
+          "published_at": "2026-09-10T02:50:34+00:00",
+          "hosts": [
+            "Joanna Stern"
+          ]
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=VNzl-q0EGfg"
+      }
     }
   ]
 }
