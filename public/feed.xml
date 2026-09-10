@@ -6,6 +6,30 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Discovering new antibiotics with ChatGPT — OpenAI</title>
+      <link>https://www.youtube.com/watch?v=0XLGisanEAs</link>
+      <guid isPermaLink="false">ai-radar:48f58ef7e047e292ba85</guid>
+      <pubDate>Thu, 10 Sep 2026 15:59:55 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">OpenAI</source>
+      <description>The de la Fuente Lab is leveraging ChatGPT and Codex in their research to discover new molecules that could help fight antibiotic-resistant bacteria. Modern medicine relies heavily on effective antibiotics for various medical procedures and illnesses, but antimicrobial resistance (AMR) is a significant and increasing global health concern. Approximately 5 million people die annually from bacterial AMR, a number projected to double by 2050. Dr. César de la Fuente and his team utilize ChatGPT and Codex to analyze the genetic code of both living and extinct organisms, such as woolly mammoths and those found in snake venom. This approach helps them identify promising antibiotic molecules, significantly accelerating a process that previously took five to six years down to a matter of hours.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · OpenAI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=0XLGisanEAs"&gt;Discovering new antibiotics with ChatGPT&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>One resignation turned the embers of AI fear into a wildfire — Interconnects</title>
+      <link>https://www.interconnects.ai/p/one-resignation-turned-the-embers</link>
+      <guid isPermaLink="false">ai-radar:c3f386bd714661c371f1</guid>
+      <pubDate>Thu, 10 Sep 2026 15:28:52 +0000</pubDate>
+      <source url="https://www.interconnects.ai/feed">Interconnects</source>
+      <description>The article examines how a single AI researcher&amp;#x27;s resignation, citing safety risks, ignited a widespread discussion about AI&amp;#x27;s potential for mass extinction. It attributes this to a shift in public perception, where the &amp;quot;ground has dried out&amp;quot; for AI risk discussions due to recent breakthroughs and incidents. The author notes that fear is a powerful motivator, making extreme views of risk more accessible to the masses. The piece also critiques the discourse around existential risk, suggesting that many discussions conflate different types of risks and that the probability of complete extinction is very low. It highlights the author&amp;#x27;s alternative view of &amp;quot;Lossy self-improvement,&amp;quot; arguing that AI&amp;#x27;s progress, while significant, still faces human bottlenecks and limitations in areas like intuition and creativity. The article concludes by emphasizing the need for transparency from AI labs and accountability for unintentional crimes to ensure responsible development.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Interconnects&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.interconnects.ai/p/one-resignation-turned-the-embers"&gt;One resignation turned the embers of AI fear into a wildfire&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>OpenAI: Data agent in ChatGPT Work — OpenAI</title>
+      <link>https://www.youtube.com/watch?v=MSiAd36bGeQ</link>
+      <guid isPermaLink="false">ai-radar:573d5b7822ae097b3b51</guid>
+      <pubDate>Thu, 10 Sep 2026 15:07:22 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">OpenAI</source>
+      <description>OpenAI is launching a new Data agent within ChatGPT Work, designed to empower users to leverage their company&amp;#x27;s data effectively. This agent allows for the conversion of data into actionable insights, interactive dashboards, and direct actions simply by asking questions. To utilize this feature, users need to add the Data Plugin in ChatGPT Work. Once the plugin is integrated, users can connect it to their existing data sources and relevant context. This setup facilitates a conversational approach to data analysis and utilization.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · OpenAI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=MSiAd36bGeQ"&gt;Data agent in ChatGPT Work&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Behind-The-Meter Power For Datacenters: Part 1 — SemiAnalysis</title>
       <link>https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the</link>
       <guid isPermaLink="false">ai-radar:40fa52203d6ffdc559e4</guid>
