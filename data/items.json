@@ -67289,6 +67289,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=KjQXbqFKGw0"
       }
+    },
+    {
+      "id": "5b1a17828a7f32d38e3f",
+      "first_seen_at": "2026-09-11T20:17:18+00:00",
+      "status": "skipped",
+      "title": "Mass Magnetics: USA-made magnetics for robotics and defense",
+      "source_title": "Mass Magnetics: USA-made magnetics for robotics and defense",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-11T19:06:46+00:00",
+      "appearances": [
+        {
+          "id": "652fcc96715a2124ef79",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:hkfCJip_HXQ",
+          "title": "Mass Magnetics: USA-made magnetics for robotics and defense",
+          "description": "Magnets are becoming critical to the future of robotics, defense, and other major US industries.\n\nBut 90% of rare earth magnet material is conventionally thrown away.\n\nThe team at Mass Magnetics are recycling magnets from old EV motors into new ones, with the goal of making American magnets at scale.",
+          "url": "https://www.youtube.com/shorts/hkfCJip_HXQ",
+          "published_at": "2026-09-11T19:06:46+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/hkfCJip_HXQ"
+      }
     }
   ]
 }
