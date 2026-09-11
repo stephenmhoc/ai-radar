@@ -66957,6 +66957,37 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/0NUm552iB3U"
       }
+    },
+    {
+      "id": "7ba4f82b1c6b92a9cdd6",
+      "first_seen_at": "2026-09-11T08:17:19+00:00",
+      "status": "deferred",
+      "title": "The Ezra Klein Show: The A.I. Revolt Is Here",
+      "source_title": "The Ezra Klein Show: The A.I. Revolt Is Here",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-11T08:00:02+00:00",
+      "appearances": [
+        {
+          "id": "6ec555891464f09221eb",
+          "kind": "podcast",
+          "source": "Hard Fork",
+          "family": "hard fork",
+          "guid": "https://www.nytimes.com/2026/09/11/podcasts/hardfork-ezra-klein-jasmine-sun.html",
+          "title": "The Ezra Klein Show: The A.I. Revolt Is Here",
+          "description": "The A.I. giants weren’t prepared for this.",
+          "url": "https://www.nytimes.com/2026/09/11/podcasts/hardfork-ezra-klein-jasmine-sun.html",
+          "published_at": "2026-09-11T08:00:02+00:00",
+          "hosts": [
+            "Kevin Roose",
+            "Casey Newton"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.nytimes.com/2026/09/11/podcasts/hardfork-ezra-klein-jasmine-sun.html"
+      }
     }
   ]
 }
