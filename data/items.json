@@ -67317,6 +67317,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/hkfCJip_HXQ"
       }
+    },
+    {
+      "id": "9a89d3bc209410500bed",
+      "first_seen_at": "2026-09-11T21:17:18+00:00",
+      "status": "skipped",
+      "title": "GPT-6 Astra added unexpected details",
+      "source_title": "GPT-6 Astra added unexpected details",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-11T21:00:04+00:00",
+      "appearances": [
+        {
+          "id": "e2938d3882cae20a6493",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:ZlvkQYZo3ZE",
+          "title": "GPT-6 Astra added unexpected details",
+          "description": "",
+          "url": "https://www.youtube.com/shorts/ZlvkQYZo3ZE",
+          "published_at": "2026-09-11T21:00:04+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/ZlvkQYZo3ZE"
+      }
     }
   ]
 }
