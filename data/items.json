@@ -67074,6 +67074,34 @@
       "links": {
         "newsletter": "https://www.interconnects.ai/p/open-source-ai-reading-list"
       }
+    },
+    {
+      "id": "f2ebc40d55936899a0b2",
+      "first_seen_at": "2026-09-11T15:17:18+00:00",
+      "status": "skipped",
+      "title": "GPT-6 Astra handles the editing busywork",
+      "source_title": "GPT-6 Astra handles the editing busywork",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-11T15:00:24+00:00",
+      "appearances": [
+        {
+          "id": "5d50d13f1f654ded7ecf",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:4bGb2OjU5tA",
+          "title": "GPT-6 Astra handles the editing busywork",
+          "description": "",
+          "url": "https://www.youtube.com/shorts/4bGb2OjU5tA",
+          "published_at": "2026-09-11T15:00:24+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/4bGb2OjU5tA"
+      }
     }
   ]
 }
