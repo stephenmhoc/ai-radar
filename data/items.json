@@ -67016,6 +67016,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=TXGXuWfWFIE"
       }
+    },
+    {
+      "id": "24eaf39c1b978e2f0620",
+      "first_seen_at": "2026-09-11T10:17:20+00:00",
+      "status": "skipped",
+      "title": "What It Takes to Build a Startup | Andrew Chen & Matt Perault",
+      "source_title": "What It Takes to Build a Startup | Andrew Chen & Matt Perault",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The podcast discusses general startup building and policy, not specifically AI. Neither Andrew Chen nor Matt Perault are on the list of target individuals, nor do they appear to be current or recent technical members, founders, executives, or senior research/engineering/product/infrastructure leaders at a frontier AI organization. The content does not focus on frontier models, AI infrastructure, important AI companies, or Physical AI.",
+      "published_at": "2026-09-11T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "0ea950ebf40b67cb2c81",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "1b259b80-c059-4058-b28c-29b3e1f2a14e",
+          "title": "What It Takes to Build a Startup | Andrew Chen & Matt Perault",
+          "description": "a16z’s Matt Perault sits down with General Partner and Speedrun lead Andrew Chen on the \na16z AI Policy Brief\n to explore what “Little Tech” actually looks like at the earliest stages, and why the realities of building a two- or three-person startup are often missing from policy debates.\n\nAndrew takes us inside Speedrun, where founders are often starting companies from kitchen tables, working with tiny teams, and trying to determine in a matter of months whether their idea can become a viable business. He explains why these founders rarely have the time or resources to engage with policymakers, even as regulation can have an outsized impact on whether and where they build.\n\nMatt and Andrew also discuss how regulatory burdens accumulate for young companies, why startups can choose where to put down roots, the role of ecosystems like Tech Week, and what policymakers can do to hear directly from the founders who may otherwise be absent from the conversation.\n\nThis episode originally appeared on the a16z AI Policy Brief.\n\nResources:\n\nFollow Andrew Chen on X:\nhttps://x.com/andrewchen\n\nFollow Matt Perault on X:\nhttps://x.com/MattPerault\n\nLearn more about a16z Speedrun:\nhttps://speedrun.a16z.com\n\nListen to more from the \na16z AI Policy Brief\n: \nhttps://a16zpolicy.substack.com/\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/what-it-takes-to-build-a-startup-andrew-chen-matt-perault-ihdfyK_8",
+          "published_at": "2026-09-11T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/what-it-takes-to-build-a-startup-andrew-chen-matt-perault-ihdfyK_8"
+      }
     }
   ]
 }
