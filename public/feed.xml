@@ -6,6 +6,30 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Nvidia's Backstop Universe – Heads I Win, Tails Who Loses? — SemiAnalysis</title>
+      <link>https://newsletter.semianalysis.com/p/nvidias-backstop-universe-heads-i</link>
+      <guid isPermaLink="false">ai-radar:24097012e5f13ebbf066</guid>
+      <pubDate>Fri, 11 Sep 2026 17:04:52 +0000</pubDate>
+      <source url="https://newsletter.semianalysis.com/feed">SemiAnalysis</source>
+      <description>The article from SemiAnalysis examines Nvidia&amp;#x27;s substantial off-balance sheet guarantees, which have grown to $530 billion, dwarfing its on-balance sheet liabilities. These commitments include supply and capacity agreements, guarantees for datacenter leases (like SB Energy&amp;#x27;s PORTS-Pike campus for OpenAI), AI cloud agreements, and datacenter leases Nvidia expects to reassign. The analysis explores Nvidia&amp;#x27;s ability to support these obligations given its strong cash generation and balance sheet, estimating its capacity to grow these commitments significantly. Nvidia&amp;#x27;s strategy involves creating alternative credit anchors for Neoclouds and Neolabs, enabling them to raise capital without relying on Gigascalers. This mechanism allows Nvidia to sell GPUs at full margin while providing revenue floors or lease guarantees, effectively de-risking investments for non-investment-grade operators. The article also details new programs like residual value guarantees under capital partnerships, which aim to mobilize third-party capital for AI cluster buildouts with limited Nvidia support.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · SemiAnalysis&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.semianalysis.com/p/nvidias-backstop-universe-heads-i"&gt;Nvidia’s Backstop Universe – Heads I Win, Tails Who Loses?&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Stratechery — 2026.37: Duo Threats — Stratechery</title>
+      <link>https://stratechery.com/2026/duo-threats/</link>
+      <guid isPermaLink="false">ai-radar:37187daf74459e4aba66</guid>
+      <pubDate>Fri, 11 Sep 2026 17:00:00 +0000</pubDate>
+      <source url="https://stratechery.com/feed/">Stratechery</source>
+      <description>This edition of Stratechery&amp;#x27;s newsletter features a discussion contrasting OpenAI&amp;#x27;s Navier-Stokes breakthrough with Meta&amp;#x27;s Muse agent, highlighting the technical impressiveness of OpenAI&amp;#x27;s work versus Meta&amp;#x27;s focus on accessible hardware and software for agents. It also includes Ben Thompson&amp;#x27;s take on Apple&amp;#x27;s iPhone event, specifically the iPhone Duo, and the company&amp;#x27;s approach to integrating hardware and software. The newsletter touches on Apple&amp;#x27;s potential AI blindspot regarding the primacy of apps. Additionally, it mentions a discussion on agents and forklifts, and a segment on Astra and AGI, Meta&amp;#x27;s Muse, and Anthropic.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Stratechery&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://stratechery.com/2026/duo-threats/"&gt;2026.37: Duo Threats&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>AI researchers debate how close we are to recursive self-improvement — Dwarkesh Podcast</title>
+      <link>https://www.dwarkesh.com/p/john-beren-charlie</link>
+      <guid isPermaLink="false">ai-radar:35d39de72a90e7ef20e7</guid>
+      <pubDate>Fri, 11 Sep 2026 16:28:11 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/69345.rss">Dwarkesh Podcast</source>
+      <description>This episode features AI researchers John Schulman, Beren Millidge, and Charlie O’Neill discussing the current state and future of AI. Key topics include a steelmanning of the case against recursive self-improvement and an exploration of what drives progress in Chinese AI labs. The conversation also delves into how automated AI researchers might be trained and whether long-horizon reinforcement learning could lead to AGI. Other points of discussion include the sim-to-real gap, the extent to which data explains AI progress, and the effectiveness of reinforcement learning. The researchers also touch on &amp;quot;Move 37&amp;quot; and entropy collapse, concluding with rapid-fire timelines for AI development.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Dwarkesh Podcast&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.dwarkesh.com/p/john-beren-charlie"&gt;AI researchers debate how close we are to recursive self-improvement&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Dwarkesh Podcast&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=PrSf7IOYu-I"&gt;AI researchers debate how close we are to recursive self-improvement&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Open-Source AI &amp; Open Models Reading List — Interconnects</title>
       <link>https://www.interconnects.ai/p/open-source-ai-reading-list</link>
       <guid isPermaLink="false">ai-radar:1f45f28f7bdea9eb3307</guid>
