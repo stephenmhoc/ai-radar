@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Vinoo Ganesh on Best Practices for Forward Deployed Engineers — Latent Space</title>
+      <link>https://www.latent.space/p/forward-deployed-engineer-best-practices</link>
+      <guid isPermaLink="false">ai-radar:2f4e77528ec25133be3b</guid>
+      <pubDate>Sat, 12 Sep 2026 15:01:19 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>Drawing on his background leading Palantir&amp;#x27;s Project Frontline and building FDE teams at Citadel and Kepler, Vinoo Ganesh analyzes how AI labs and startups frequently misunderstand the forward deployed engineering role. While many organizations conflate FDEs with sales engineers or outsourced consultants, Ganesh argues that the role should function as an extension of the product team. True FDEs embed directly with customers to solve undocumented &amp;quot;last-mile&amp;quot; workflow challenges that cannot be inferred from discovery calls. By observing customer realities and learning an organization&amp;#x27;s unwritten operational models, FDEs capture the feedback required to turn bespoke customer solutions into generalized platform capabilities.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/forward-deployed-engineer-best-practices"&gt;The Rise of the Forward Deployed Engineer — and How To Do the Job Right&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>DeepSeek v4.1-Flash: 763B-P8B-D16B novel causal Encoder–Decoder architecture with vision marks the Return of the Whale — Latent Space</title>
       <link>https://www.latent.space/p/ainews-deepseek-v41-flash-763b-p8b</link>
       <guid isPermaLink="false">ai-radar:faf40f884251ef102b59</guid>
