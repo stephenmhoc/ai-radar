@@ -67376,6 +67376,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-deepseek-v41-flash-763b-p8b"
       }
+    },
+    {
+      "id": "75a73ac767e9c98a6024",
+      "first_seen_at": "2026-09-12T08:17:20+00:00",
+      "status": "skipped",
+      "title": "How Larry Ellison Built His Empire",
+      "source_title": "How Larry Ellison Built His Empire",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The video focuses on Larry Ellison's business empire and personal drive, with AI infrastructure mentioned only as a current expansion area. The content does not feature a qualifying person or offer substantial, firsthand expertise on AI from a target organization or individual.",
+      "published_at": "2026-09-12T08:00:26+00:00",
+      "appearances": [
+        {
+          "id": "211662eb8c1ccc26648b",
+          "kind": "youtube",
+          "source": "Bloomberg Originals",
+          "family": "bloomberg originals",
+          "guid": "yt:video:GG6ITxfEE6g",
+          "title": "How Larry Ellison Built His Empire",
+          "description": "Larry Ellison built an empire on database software, but that was just the beginning. Now he's expanding into artificial intelligence infrastructure and media, placing his biggest bets yet. Bloomberg Originals speaks with Ellison's former business partner and a childhood friend to unpack what drives the 82-year old billionaire, and why he doesn't seem to be slowing down. \n\n#Oracle #LarryEllison #Profile #Documentary \n\n--------\n\nLike this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1\n\nGet unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals\nBloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. \n\nSubscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.\n\nVisit our partner channel Bloomberg News for global news and insight in an instant.",
+          "url": "https://www.youtube.com/watch?v=GG6ITxfEE6g",
+          "published_at": "2026-09-12T08:00:26+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=GG6ITxfEE6g"
+      }
     }
   ]
 }
