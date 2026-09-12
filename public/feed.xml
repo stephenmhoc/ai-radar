@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>DeepSeek v4.1-Flash: 763B-P8B-D16B novel causal Encoder–Decoder architecture with vision marks the Return of the Whale — Latent Space</title>
+      <link>https://www.latent.space/p/ainews-deepseek-v41-flash-763b-p8b</link>
+      <guid isPermaLink="false">ai-radar:faf40f884251ef102b59</guid>
+      <pubDate>Sat, 12 Sep 2026 05:56:05 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>DeepSeek has released v4.1-Flash, a 763B parameter model featuring a novel causal encoder-decoder architecture with 8B active parameters for input and 16B for output, along with vision capabilities. This model is designed for extreme inference efficiency and low cost, utilizing techniques like KV cache compression and a local sliding-window branch plus sparse retrieval branch. Independent evaluations show it performs strongly on cost-adjusted intelligence, long context, and automation, surpassing previous DeepSeek versions and competing favorably with other frontier models like GLM-5.3-Flash and Kimi K3, despite being significantly cheaper. The architecture is noted for its hybrid design and focus on inference, with a striking ~890 bytes/token KV size. The model also demonstrates surprising ease of running on local hardware due to offload and SSD streaming capabilities.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-deepseek-v41-flash-763b-p8b"&gt;[AINews] DeepSeek v4.1-Flash: 763B-P8B-D16B novel causal Encoder–Decoder architecture with vision marks the Return of the Whale&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>OpenAI: GPT-Live-1 is now in the API — OpenAI</title>
       <link>https://www.youtube.com/watch?v=OSaP6bJoU44</link>
       <guid isPermaLink="false">ai-radar:84e87fe8fd8c8eadb083</guid>
