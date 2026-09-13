@@ -67562,6 +67562,36 @@
         "podcast": "https://www.cognitiverevolution.ai/ai-am-highlights-astra-as-agi-openai-s-pause-mythos-mozilla-human-agency-vs-technocapitalism/",
         "youtube": "https://www.youtube.com/watch?v=wqQ5kIwe1nQ"
       }
+    },
+    {
+      "id": "258f466672211beed9c8",
+      "first_seen_at": "2026-09-13T08:17:21+00:00",
+      "status": "skipped",
+      "title": "Luca Ferrari on Building Bending Spoons",
+      "source_title": "Luca Ferrari on Building Bending Spoons: Extreme Ownership, Talent Science & Relentless Simplification",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The discussion focuses primarily on software business operations, talent acquisition, and company management, with AI being only an incidental topic rather than the central focus of frontier AI research or infrastructure.",
+      "published_at": "2026-09-13T08:00:00+00:00",
+      "appearances": [
+        {
+          "id": "d46a9e6d62b9b3428d65",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "2fca5144-af14-11f1-a7e2-dfa14381c3c1",
+          "title": "Luca Ferrari on Building Bending Spoons: Extreme Ownership, Talent Science & Relentless Simplification",
+          "description": "Luca Ferrari is a co-founder of Bending Spoons, the technology company he built with his partners by rethinking how software businesses should hire, operate and allocate capital. He explains why Bending Spoons aspires to build “the best company there ever was,” why it favors raw talent and drive over experience and how a centralized talent team uses testing and more than 100 signals to identify exceptional people early. Luca describes the company’s culture of extreme ownership and relentless simplification, including why employees are given more work than they can possibly complete, why teams rotate across businesses and why Bending Spoons eliminated traditional job titles. He also details the proprietary operating system and AI tools that allow small teams to run acquired products such as Evernote, why Bending Spoons buys businesses to hold and transform rather than sell and how operational excellence gives it an advantage in acquisitions. Luca closes by discussing going public, his approach to negotiation and capital allocation and why he believes logic and rationality are more reliable than blindly following data.\n\nShow notes: https://davidsenra.com/episode/luca-ferrari\n\nMade possible by\n\nRamp: https://ramp.com\n\nDeel: https://deel.com/senra\n\nAppLovin: https://applovin.com/senra\n\nChapters\n\n(00:00:00) Fanatical founders building enduring companies\n\n(00:01:23) Luca on building the best company there ever was\n\n(00:04:22) The origins of Bending Spoons\n\n(00:05:47) Talent and why experience is overrated\n\n(00:15:05) Turning hiring into a science\n\n(00:23:30) Why Bending Spoons doesn't use bonuses\n\n(00:29:26) Why everyone in the company has the same job\n\n(00:42:41) On finding great potential and saturating their capacity\n\n(00:49:50) Insisting on a culture of extreme ownership\n\n(00:59:28) Luca's principle of relentless simplification\n\n(01:05:15) Why Bending Spoons doesn't use job titles\n\n(01:10:27) The proprietary operating system behind Bending Spoons\n\n(01:17:07) Why Bending Spoons isn't private equity\n\n(01:19:32) How Bending Spoons acquired & transformed Evernote\n\n(01:28:01) How Bending Spoons uses AI\n\n(01:40:42) How Bending Spoons thinks about capital allocation\n\n(01:43:50) Why procrastination without laziness is good\n\n(01:46:46) Operational excellence is not optional\n\n(01:49:07) How Bending Spoons negotiates acquisitions\n\n(01:54:47) Logic over numbers\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://davidsenra.com/episode/luca-ferrari",
+          "published_at": "2026-09-13T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://davidsenra.com/episode/luca-ferrari"
+      }
     }
   ]
 }
