@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Long Live the Short King: Why 4-hi HBM Wins — SemiAnalysis</title>
+      <link>https://newsletter.semianalysis.com/p/long-live-the-short-king-why-4-hi</link>
+      <guid isPermaLink="false">ai-radar:1be71663bbb65a159ec7</guid>
+      <pubDate>Sun, 13 Sep 2026 18:19:39 +0000</pubDate>
+      <source url="https://newsletter.semianalysis.com/feed">SemiAnalysis</source>
+      <description>The article details how High Bandwidth Memory (HBM) has been crucial for AI, with chip designers packaging more HBM into accelerators. However, this trend is changing, with next-generation accelerators like Nvidia&amp;#x27;s Rubin Ultra moving to 8-hi stacks from 12-hi, reducing HBM per GPU. This shift is driven by both supply constraints and architectural reasons, as HBM wafers are scarce and cost is increasing. The report argues that for inference workloads, where memory bandwidth is key, 4-hi HBM offers the best cost-per-bandwidth, leading to lower cost per token. It explains that while capacity is important up to a point, beyond that, additional HBM capacity offers diminishing returns. The article concludes that hardware teams at frontier labs are increasingly seeing 4-hi HBM as the optimal configuration for many inference workloads, delivering better performance and total cost of ownership.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · SemiAnalysis&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.semianalysis.com/p/long-live-the-short-king-why-4-hi"&gt;Long Live the Short King: Why 4-hi HBM Wins&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>World Labs Co-Founder Justin Johnson on World Models, Atlas, and Robotics — The a16z Show</title>
       <link>https://a16z.simplecast.com/episodes/world-models-robotics-and-the-future-of-3d-ai-mGOuUHi0</link>
       <guid isPermaLink="false">ai-radar:e33ab2c53b020df7ace0</guid>
