@@ -67592,6 +67592,34 @@
       "links": {
         "podcast": "https://davidsenra.com/episode/luca-ferrari"
       }
+    },
+    {
+      "id": "e33ab2c53b020df7ace0",
+      "first_seen_at": "2026-09-13T10:17:27+00:00",
+      "status": "published",
+      "title": "World Labs Co-Founder Justin Johnson on World Models, Atlas, and Robotics",
+      "source_title": "World Models, Robotics, and the Future of 3D AI",
+      "short_summary": "World Labs co-founder Justin Johnson discusses Atlas, the company's world model designed to generate, reconstruct, and simulate physical environments. He outlines the thesis for world models as a horizontal intelligence layer impacting robotics, gaming, and creative tools via approaches like real-to-sim-to-real adaptation.",
+      "long_summary": "World Labs co-founder Justin Johnson joins hosts Theo Jaffee and Sofia Puccini to discuss Atlas, the company's latest world model, and the broader case for AI systems that understand the physical world. Johnson breaks down how Atlas targets three primary capabilities: generating new environments, reconstructing real spaces from images, and simulating physical interactions of objects and robots. The conversation outlines the thesis that world models will become a horizontal foundation for visual and spatial intelligence, paralleling the role large language models play in text. Johnson highlights the importance of precise spatial control and explores applications across creative tools, gaming, construction, and robotics. In particular, he details real-to-sim-to-real workflows, where photos of a physical setting can produce a simulation to adapt robots directly to that specific environment.",
+      "reason": "Features an in-depth conversation with World Labs co-founder Justin Johnson on frontier world models, 3D AI, and physical AI applications for robotics.",
+      "published_at": "2026-09-13T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "c720afea2b8d48781339",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "67fac3b8-966b-4d0f-8dd8-017b57b601df",
+          "title": "World Models, Robotics, and the Future of 3D AI",
+          "description": "World Labs co-founder Justin Johnson joins MTS hosts Theo Jaffee and Sofia Puccini to discuss Atlas, World Labs’ latest world model, and the broader case for AI systems that understand and interact with the physical world.\n\nJustin explains how Atlas approaches three core tasks: generating new worlds, reconstructing real environments from images, and simulating how objects or robots might behave within them. Underlying it is a bigger thesis: just as language models became general-purpose engines for working with text, world models could become a horizontal layer for visual and physical intelligence across industries from entertainment and gaming to construction and robotics.\n\nThey also explore how world models could change video games and creative tools, why precise spatial control matters, and the potential for “real-to-sim-to-real” robotics, where a few photos of a physical environment could eventually be enough to build a simulation and adapt a robot to that specific space.\n\nResources:\n\nFollow Justin Johnson on X: \nhttps://x.com/jcjohnss\n\nFollow Theo Jaffee on X:\nhttps://x.com/theojaffee\n\nFollow Sofia on X: \nhttps://x.com/schisofrenia\n\nFollow MTS on X:\nhttps://x.com/mtslive\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/world-models-robotics-and-the-future-of-3d-ai-mGOuUHi0",
+          "published_at": "2026-09-13T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/world-models-robotics-and-the-future-of-3d-ai-mGOuUHi0"
+      }
     }
   ]
 }

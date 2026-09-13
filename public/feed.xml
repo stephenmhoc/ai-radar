@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>World Labs Co-Founder Justin Johnson on World Models, Atlas, and Robotics — The a16z Show</title>
+      <link>https://a16z.simplecast.com/episodes/world-models-robotics-and-the-future-of-3d-ai-mGOuUHi0</link>
+      <guid isPermaLink="false">ai-radar:e33ab2c53b020df7ace0</guid>
+      <pubDate>Sun, 13 Sep 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.simplecast.com/JGE3yC0V">The a16z Show</source>
+      <description>World Labs co-founder Justin Johnson joins hosts Theo Jaffee and Sofia Puccini to discuss Atlas, the company&amp;#x27;s latest world model, and the broader case for AI systems that understand the physical world. Johnson breaks down how Atlas targets three primary capabilities: generating new environments, reconstructing real spaces from images, and simulating physical interactions of objects and robots. The conversation outlines the thesis that world models will become a horizontal foundation for visual and spatial intelligence, paralleling the role large language models play in text. Johnson highlights the importance of precise spatial control and explores applications across creative tools, gaming, construction, and robotics. In particular, he details real-to-sim-to-real workflows, where photos of a physical setting can produce a simulation to adapt robots directly to that specific environment.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · The a16z Show&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://a16z.simplecast.com/episodes/world-models-robotics-and-the-future-of-3d-ai-mGOuUHi0"&gt;World Models, Robotics, and the Future of 3D AI&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Vinoo Ganesh on Best Practices for Forward Deployed Engineers — Latent Space</title>
       <link>https://www.latent.space/p/forward-deployed-engineer-best-practices</link>
       <guid isPermaLink="false">ai-radar:2f4e77528ec25133be3b</guid>
