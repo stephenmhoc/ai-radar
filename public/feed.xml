@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>AI Snake Oil — The AI-as-Normal-Technology view of loss-of-control incidents — AI Snake Oil</title>
+      <link>https://www.normaltech.ai/p/the-ai-as-normal-technology-view</link>
+      <guid isPermaLink="false">ai-radar:30a5556c2aac98d14934</guid>
+      <pubDate>Mon, 14 Sep 2026 10:30:14 +0000</pubDate>
+      <source url="https://www.aisnakeoil.com/feed">AI Snake Oil</source>
+      <description>This extensive essay, over 13,000 words, addresses AI loss-of-control incidents at OpenAI and Anthropic, such as the OpenAI-Hugging Face incident. It synthesizes views from the AI safety community, which sees these as alignment crises, and cybersecurity practitioners, who view them as failures of basic security. The authors apply the AI as Normal Technology framework to offer a middle ground, advocating for AI companies to be liable for agent actions and for policy to clarify this responsibility. They identify three areas for investment: research into better control methods, translating existing research into usable tools, and organizational changes to ensure tool adoption. The essay also discusses the impact of improving AI capabilities on cybersecurity, particularly regarding autonomous cyber capabilities and open-weight models, and how the AI as Normal Technology framework has evolved in light of new evidence.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · AI Snake Oil&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.normaltech.ai/p/the-ai-as-normal-technology-view"&gt;The AI-as-Normal-Technology view of loss-of-control incidents&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Greg Brockman on Why OpenAI Says We’re Entering the AGI Era — The a16z Show</title>
       <link>https://a16z.simplecast.com/episodes/greg-brockman-on-why-openai-says-were-entering-the-agi-era-deKod42i</link>
       <guid isPermaLink="false">ai-radar:c40d6bd6d5bd6c13bbd5</guid>
