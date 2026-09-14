@@ -67681,6 +67681,34 @@
       "links": {
         "podcast": "https://www.acquired.fm/episodes/home-depot"
       }
+    },
+    {
+      "id": "df1cb5c818eb5c487d88",
+      "first_seen_at": "2026-09-14T07:17:20+00:00",
+      "status": "skipped",
+      "title": "Home Depot: The best-performing stock in the S&P 500 since IPO (Audio)",
+      "source_title": "Home Depot: The best-performing stock in the S&P 500 since IPO (Audio)",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The content is about the founding and history of Home Depot, a retail company, and does not discuss AI, AI-related companies, or individuals from the target list in a substantive way. The mention of Anthropic as a sponsor is incidental and does not qualify the item.",
+      "published_at": "2026-09-14T03:45:30+00:00",
+      "appearances": [
+        {
+          "id": "766078e3cec4047acfc8",
+          "kind": "youtube",
+          "source": "Acquired — YouTube",
+          "family": "acquired",
+          "guid": "yt:video:6Kq5e49MD6U",
+          "title": "Home Depot: The best-performing stock in the S&P 500 since IPO (Audio)",
+          "description": "Home Depot's founding story is like an Avengers movie… if the Avengers got fired, went broke, and stacked empty paint cans ten feet high to look legitimate. After being unceremoniously fired from their previous hardware chain at ages 48 and 35, Bernie Marcus and Arthur Blank took the words of their New York banker Ken Langone (who had also just accidentally caused their firings) to heart: they'd just been \"kicked in the ass with a golden horseshoe.” They proceeded to author the greatest compounding story in American retail history, helped by some legendary cameos along the way from Sol Price, Jamie Dimon, and Ross Perot (to name a few). And the ending is as good as any superhero film: from its 1981 IPO to today, Home Depot has been the single highest-returning equity in the entire US stock market — higher than Apple, Microsoft, Berkshire Hathaway, and everything else!\n\n*Sponsors:*\n\nMany thanks to our fantastic Fall '26 Season partners:\n\n- Sierra: https://link.acquired.fm/sierra\n- WorkOS: https://link.acquired.fm/workos\n- Anthropic: https://link.acquired.fm/claude\n- Sentry: https://link.acquired.fm/sentry\n\n*Links:*\n\n- Sign up for email updates, get our takeaways and research photos from each episode, and vote on future topics: https://www.acquired.fm/email\n- The Official Acquired Meetup on Sept 17th with our friends at Sentry. Join us!: https://acquired.fm/meetup\n- The Acquired Home Depot Companion PDF: https://library.acquired.fm/episodes/home-depot.pdf\n- Our Visual Artifacts page for Home Depot: https://www.acquired.fm/artifacts/home-depot\n- Built from Scratch by Bernie Marcus and Arthur Blank: https://a.co/d/0d81p0yp\n- Kick Up Some Dust by Bernie Marcus: https://www.amazon.com/dp/0063259923?ref_=cm_sw_r_ffobk_cp_ud_dp_AAM79TH9S230EHF4MN3B&bestFormat=true\n- The Board Wore Chicken Suits by Joe Nocera, The New York Times: https://www.nytimes.com/2006/05/27/business/27nocera.html\n- Frank Blake on Invest Like the Best: https://colossus.com/episode/blake-investing-in-your-people/\n- Ken Langone's interview with Arvind Navaratnam: https://worldlypartners.com/in-conversation/ken-langone/\n- Worldly Partners' Multi-Decade Home Depot Study: https://worldlypartners.com/businesshistory\n- All episode sources: https://www.acquired.fm/episodes/home-depot#sources\n\n*Carve Outs:*\n\n- Silo Season 3: https://tv.apple.com/us/show/silo/umc.cmc.3yksgc857px0k0rqe5zd4jice\n- Tires Season 3: https://www.imdb.com/title/tt31491435/\n- Ratio 8 Coffee Maker: https://link.acquired.fm/4iNsnAo\n- Trade Coffee: https://link.acquired.fm/4gDhPCJ\n- Quarterback: https://www.imdb.com/title/tt26777035/\n- Comedian: https://www.imdb.com/title/tt0328962/?ref_=nv_sr_srsg_4_tt_4_nm_4_in_0_q_comedian\n\n*More Acquired:*\n\n- Get email updates and vote on future episodes! https://www.acquired.fm/email\n- Join the Slack http://acquired.fm/slack\n- Check out the latest swag in the ACQ Merch Store! https://www.acquired.fm/store\n\n00:00:00 Start\n00:00:43 Intro\n00:05:32 Bernie Marcus's Early Career and meeting Arthur Blank (1972)\n00:15:58 Ken Langone & Handy Dan (1970s)\n00:33:08 Ken Buys Handy Dan, Bernie & Arthur Fired\n00:43:55 Ross Perot Almost Buys Home Depot\n00:51:20 Pat Farrah & The HomeCo Interlude\n01:05:03 First Stores & Early Model (1979)\n01:14:16 Home Depot Goes Public & Expands (1981)\n01:24:35 Home Depot's Unique Operating System\n01:46:01 Arthur Blank Takes CEO & Early Cracks (1997)\n01:56:07 The Bob Nardelli Era (2000-2007)\n02:12:09 Nardelli's Public Downfall & Firing (2006-2007)\n02:24:24 Frank Blake's Turnaround: Crisis & Culture (2007)\n02:42:30 E-commerce & Distribution Revolution\n02:59:57 Home Depot Today: Pro & DIY (2024)\n03:12:04 Analysis: The Paradox of Specialness\n03:16:18 7 Powers: Home Depot's Competitive Advantages\n03:19:17 Quintessence: Why It Got So Big\n03:26:27 Carve-Outs + Outro\n\n_Note: Acquired hosts and guests may hold assets discussed in this episode. This podcast is not investment advice, and is intended for informational and entertainment purposes only. You should do your own research and make your own independent decisions when considering any financial transactions._",
+          "url": "https://www.youtube.com/watch?v=6Kq5e49MD6U",
+          "published_at": "2026-09-14T03:45:30+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=6Kq5e49MD6U"
+      }
     }
   ]
 }
