@@ -6,6 +6,30 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Why you should work on AI for AI Research — Richard Socher of Recursive — Latent Space</title>
+      <link>https://www.latent.space/p/recursive</link>
+      <guid isPermaLink="false">ai-radar:ca56827f4668a9a281de</guid>
+      <pubDate>Mon, 14 Sep 2026 16:04:16 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/1084089.rss">Latent Space</source>
+      <description>Richard Socher, founder of Recursive, discusses his vision for the &amp;quot;Eureka Machine,&amp;quot; a superintelligence designed to automate invention and accelerate AI research across various fields. He shares Recursive&amp;#x27;s early results, including an AI research system that outperformed humans and agents on optimization tasks and discovered improvements in NVIDIA GPU kernels. Socher believes this automation could compress years of AI research into weeks. The conversation also delves into critical questions surrounding advanced AI, such as reward hacking, the effectiveness of Anthropic-style constitutions, AI regulation, and the geopolitical implications of open-source models. Socher reflects on the research that influenced GPT and his framework for understanding the upper bounds of intelligence.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/recursive"&gt;Why you should work on AI for AI Research — Richard Socher of Recursive&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/recursive"&gt;Why you should work on AI for AI Research — Richard Socher of Recursive&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>OpenAI: Detecting wildfires with ChatGPT — OpenAI</title>
+      <link>https://www.youtube.com/watch?v=PSnJBfa183Y</link>
+      <guid isPermaLink="false">ai-radar:068b48d9ddac916b5505</guid>
+      <pubDate>Mon, 14 Sep 2026 15:57:33 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">OpenAI</source>
+      <description>Ryan Honary created SensoRy AI, a wildfire detection system that identifies fires at their ignition point. The system uses sensors to monitor remote terrain for heat, smoke, flame, and plume activity. When a potential fire is detected, ChatGPT processes complex sensor data into clear alerts for firefighters and residents. Honary tested his initial prototype in a garage and later deployed a sensor network above Laguna Beach. He uses ChatGPT hands-free while working in the field and developed a walkie-talkie that allows firefighters to ask the sensors questions about potential fires through ChatGPT. His goal is to help firefighters respond quicker and enhance community safety from wildfires.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · OpenAI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=PSnJBfa183Y"&gt;Detecting wildfires with ChatGPT&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Recursive Self-Improvement: from Auto Research to Superintelligence — Richard Socher — Latent Space</title>
+      <link>https://www.youtube.com/watch?v=eDFXtSg3zB8</link>
+      <guid isPermaLink="false">ai-radar:e5f264e10dc18b2ddaa9</guid>
+      <pubDate>Mon, 14 Sep 2026 15:45:28 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLWEAb1SXhjlfkEF_PxzYHonU_v5LPMI8L">Latent Space</source>
+      <description>Richard Socher, founder of Recursive, You.com, and AIX Ventures, discusses his vision for recursive self-improvement in AI, focusing on the &amp;quot;Eureka Machine&amp;quot; concept. This superintelligence aims to automate AI research, accelerate invention, and tackle major scientific problems. Socher shares early results from Recursive, including an AI research system that reportedly outperformed humans in optimization tasks and discovered improvements in NVIDIA GPU kernels. The conversation also delves into critical topics such as AI safety, reward hacking, the effectiveness of Anthropic-style constitutions, AI regulation, and the geopolitical implications of open-source models. Socher reflects on the potential for AI systems to eventually choose their own goals and the theoretical upper bounds of intelligence.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=eDFXtSg3zB8"&gt;Recursive Self-Improvement: from Auto Research to Superintelligence — Richard Socher, Recursive&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>The Hidden Algorithm That Decides Which Software AI Will Recommend | Tim Sanders, G2 — Eye on AI</title>
       <link>https://www.youtube.com/watch?v=sJuIzmZMpd8</link>
       <guid isPermaLink="false">ai-radar:05887733fd024f88adf3</guid>
