@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>A Brain Too Big to Carry: On-Device vs. Datacenter Inference for Robots — SemiAnalysis</title>
+      <link>https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device</link>
+      <guid isPermaLink="false">ai-radar:a57a4a3bd5ea189a4f56</guid>
+      <pubDate>Mon, 14 Sep 2026 16:37:25 +0000</pubDate>
+      <source url="https://newsletter.semianalysis.com/feed">SemiAnalysis</source>
+      <description>The article examines the &amp;quot;embodiment problem&amp;quot; in robotics, where hardware constraints dictate model design, unlike LLMs. Key challenges include real-time control loops requiring low latency and the high upfront cost of on-robot compute. Frontier robot models are currently smaller than LLMs, with sizes determined by data availability and hardware fit rather than optimal quality. The piece discusses the potential for scaling laws in robotics, but notes data and network constraints. It details how different layers of a robot model (planning, action, servo) have varying frequency requirements, impacting which can be offloaded to a datacenter. The supply chain for silicon and memory also favors datacenter GPUs over dedicated robot chips, influencing the total cost of ownership and scalability of different inference approaches.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · SemiAnalysis&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device"&gt;A Brain Too Big to Carry — On-Device vs Datacenter Inference&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Why you should work on AI for AI Research — Richard Socher of Recursive — Latent Space</title>
       <link>https://www.latent.space/p/recursive</link>
       <guid isPermaLink="false">ai-radar:ca56827f4668a9a281de</guid>
