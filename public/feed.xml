@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>SemiAnalysis: Vera Rubin NVL72 Agentic Inference: 67x better Performance per Dollar — SemiAnalysis</title>
+      <link>https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference</link>
+      <guid isPermaLink="false">ai-radar:c83b9a0a831d92e30fc8</guid>
+      <pubDate>Mon, 14 Sep 2026 22:08:56 +0000</pubDate>
+      <source url="https://newsletter.semianalysis.com/feed">SemiAnalysis</source>
+      <description>SemiAnalysis presents verified agentic inference results for NVIDIA&amp;#x27;s Vera Rubin NVL72 platform, measured on their AgentX benchmark. The Rubin platform, which includes the Rubin GPU and Vera CPU, is designed for agentic workloads characterized by multi-turn interactions, long contexts, high prefix reuse, and sub-agent bursts. Even with pre-release software, Rubin NVL72 demonstrates up to 67x better total throughput per TCO compared to GB300 Dynamo TRTLLM, and up to 7x better token throughput per megawatt than Blackwell. The report highlights that Rubin can generate over 2x more profit per gigawatt than the Blackwell platform. The AgentX benchmark, used for evaluation, is widely reproduced and supported by major cloud providers and AI labs, ensuring its relevance for real-world inference providers. The analysis also details improvements in P90 interactivity and end-to-end latency, making Rubin a substantial upgrade for inference providers seeking cost-effective and high-performance solutions.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · SemiAnalysis&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference"&gt;Vera Rubin NVL72 Agentic Inference: 67x better Performance per Dollar&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>1 Million Drone Deliveries a Day by 2028 | Keller Cliffton, Zipline — Relentless</title>
       <link>https://podcasters.spotify.com/pod/show/ti-morse/episodes/1-Million-Drone-Deliveries-a-Day-by-2028--Keller-Cliffton--Zipline-e3orhie</link>
       <guid isPermaLink="false">ai-radar:5c453be89b6a9c4b4efa</guid>
