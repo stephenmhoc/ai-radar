@@ -67737,6 +67737,64 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=uA5PiAXKGis"
       }
+    },
+    {
+      "id": "c40d6bd6d5bd6c13bbd5",
+      "first_seen_at": "2026-09-14T10:17:21+00:00",
+      "status": "published",
+      "title": "Greg Brockman on Why OpenAI Says We’re Entering the AGI Era",
+      "source_title": "Greg Brockman on Why OpenAI Says We’re Entering the AGI Era",
+      "short_summary": "OpenAI co-founder and President Greg Brockman discusses why AI has entered a new phase, the path to AGI, and the safety challenges. He explains the importance of computer use for agents, including models that can work coherently for 24 hours and interact with software through human interfaces.",
+      "long_summary": "OpenAI co-founder and President Greg Brockman discusses why AI has entered a new phase, what OpenAI’s latest models reveal about the path to AGI, and the safety and security challenges that come with increasingly capable systems. Greg explains why computer use represents such an important step for agents, including models that can work coherently for 24 hours and interact with software through the same interfaces humans use. He also shares how OpenAI deployed 10,000 agents to tackle the Navier-Stokes problem, and why advances in mathematical reasoning could translate into new approaches to science, software, and cybersecurity. The discussion also covers the “defender’s window” for cybersecurity, how AI could reshape work and entrepreneurship, and what the AI assistant of the future might actually look like: persistent, proactive, personalized, and capable of doing work on your behalf rather than waiting for another prompt.",
+      "reason": "The item is a podcast interview with Greg Brockman, President and co-founder of OpenAI, a target organization. The discussion covers frontier models, agent systems, and AI's strategic impact.",
+      "published_at": "2026-09-14T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "8e9f6fd6eec52cd6cc89",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "5114c6d7-ce69-45f1-945f-d37ea476b349",
+          "title": "Greg Brockman on Why OpenAI Says We’re Entering the AGI Era",
+          "description": "Ben Horowitz and Erik Torenberg sit down with OpenAI co-founder and President Greg Brockman to discuss why he believes AI has entered a new phase, what OpenAI’s latest models reveal about the path to AGI, and the safety and security challenges that come with increasingly capable systems.\n\nGreg explains why computer use represents such an important step for agents, including models that can work coherently for 24 hours and interact with software through the same interfaces humans use. He also shares how OpenAI deployed 10,000 agents to tackle the Navier-Stokes problem, and why advances in mathematical reasoning could translate into new approaches to science, software, and cybersecurity.\n\nBen, Erik, and Greg also dig into the “defender’s window” for cybersecurity, how AI could reshape work and entrepreneurship, and what the AI assistant of the future might actually look like: persistent, proactive, personalized, and capable of doing work on your behalf rather than waiting for another prompt.\n\nResources:\n\nFollow Greg Brockman on X:\nhttps://x.com/gdb\n\nFollow Ben Horowitz on X:\nhttps://x.com/bhorowitz\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/greg-brockman-on-why-openai-says-were-entering-the-agi-era-deKod42i",
+          "published_at": "2026-09-14T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/greg-brockman-on-why-openai-says-were-entering-the-agi-era-deKod42i"
+      }
+    },
+    {
+      "id": "a6f56db49f4f0f7a9536",
+      "first_seen_at": "2026-09-14T10:17:21+00:00",
+      "status": "deferred",
+      "title": "Pacing the Frontier, AI’s Digital Limits, AI Commissars",
+      "source_title": "Pacing the Frontier, AI’s Digital Limits, AI Commissars",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-14T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "a803f0c4102799992d17",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=19995",
+          "title": "Pacing the Frontier, AI’s Digital Limits, AI Commissars",
+          "description": "Dario Amodei wants to pace the frontier; it's an unrealistic proposal that seems mostly geared to political control of AI.",
+          "url": "https://stratechery.com/2026/pacing-the-frontier-ais-digital-limits-ai-commissars/",
+          "published_at": "2026-09-14T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/pacing-the-frontier-ais-digital-limits-ai-commissars/"
+      }
     }
   ]
 }
