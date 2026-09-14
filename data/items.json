@@ -67826,6 +67826,62 @@
       "links": {
         "newsletter": "https://www.normaltech.ai/p/the-ai-as-normal-technology-view"
       }
+    },
+    {
+      "id": "5d662c861b07773010ab",
+      "first_seen_at": "2026-09-14T15:17:23+00:00",
+      "status": "published",
+      "title": "Greg Brockman Says AGI Has Arrived",
+      "source_title": "Greg Brockman Says AGI Has Arrived",
+      "short_summary": "OpenAI co-founder and President Greg Brockman discusses why he believes AI has entered a new phase, what OpenAI’s latest models reveal about the path to AGI, and the safety and security challenges that come with increasingly capable systems. He shares insights on computer use for agents and advances in mathematical reasoning.",
+      "long_summary": "OpenAI co-founder and President Greg Brockman discusses why he believes AI has entered a new phase, what OpenAI’s latest models reveal about the path to AGI, and the safety and security challenges that come with increasingly capable systems. Greg explains why computer use represents an important step for agents, including models that can work coherently for 24 hours and interact with software through human interfaces. He also shares how OpenAI deployed 10,000 agents to tackle the Navier-Stokes problem, and why advances in mathematical reasoning could translate into new approaches to science, software, and cybersecurity. The discussion also covers the “defender’s window” for cybersecurity, how AI could reshape work and entrepreneurship, and the future of AI assistants as persistent, proactive, personalized, and capable of doing work on your behalf.",
+      "reason": "The item is a substantial interview with Greg Brockman, President and co-founder of OpenAI, a frontier AI organization. The discussion covers frontier models, AGI, safety, and AI-native software.",
+      "published_at": "2026-09-14T14:30:28+00:00",
+      "appearances": [
+        {
+          "id": "dbe4598f60d28e57fc0f",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:IJn8cagMW18",
+          "title": "Greg Brockman Says AGI Has Arrived",
+          "description": "Ben Horowitz and Erik Torenberg sit down with OpenAI co-founder and President Greg Brockman to discuss why he believes AI has entered a new phase, what OpenAI’s latest models reveal about the path to AGI, and the safety and security challenges that come with increasingly capable systems.\n\nGreg explains why computer use represents such an important step for agents, including models that can work coherently for 24 hours and interact with software through the same interfaces humans use. He also shares how OpenAI deployed 10,000 agents to tackle the Navier-Stokes problem, and why advances in mathematical reasoning could translate into new approaches to science, software, and cybersecurity.\n\nBen, Erik, and Greg also dig into the “defender’s window” for cybersecurity, how AI could reshape work and entrepreneurship, and what the AI assistant of the future might actually look like: persistent, proactive, personalized, and capable of doing work on your behalf rather than waiting for another prompt.\n\nTimestamps:\n00:00 - Intro\n00:51 - Could You Have Predicted Today's AI 10 Years Ago?\n04:14 - Cyber Hacking, Reward Hacking & Building Safety Into Architecture\n08:42 - The Hugging Face Incident & Why the Defender's Window Is Open\n18:28 - Astra & Why Greg Says We're Now in the AGI Era\n24:25 - The Future of Employment as AI Progresses\n29:39 - Why AI Sentiment Is Higher in Asia Than the West\n38:14 - What's Still Jagged: What Astra Needs to Approximate AGI\n43:25 - How Greg Prioritizes His Time\n47:32 - What's Next: The AGI Era & Deep Co-Design\n\nResources:\nFollow Greg Brockman on X: https://x.com/gdb\nFollow Ben Horowitz on X: https://x.com/bhorowitz\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=IJn8cagMW18",
+          "published_at": "2026-09-14T14:30:28+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=IJn8cagMW18"
+      }
+    },
+    {
+      "id": "05887733fd024f88adf3",
+      "first_seen_at": "2026-09-14T15:17:26+00:00",
+      "status": "published",
+      "title": "The Hidden Algorithm That Decides Which Software AI Will Recommend | Tim Sanders, G2",
+      "source_title": "The Hidden Algorithm That Decides Which Software AI Will Recommend | Tim Sanders, G2",
+      "short_summary": "Tim Sanders, Chief Innovation Officer of G2, discusses how AI models like ChatGPT and Gemini recommend software, emphasizing a hidden \"validation layer\" that prioritizes verified third-party signals over vendor-generated content. He explains the shift in B2B software buyer behavior towards AI prompts and the implications for organic traffic and marketing strategies.",
+      "long_summary": "Tim Sanders, Chief Innovation Officer of G2 and executive fellow at Harvard's AI Institute, explains how AI models like ChatGPT and Gemini decide which software to recommend. He reveals a hidden \"validation layer\" process for commercial intent queries that filters out vendor-generated content, instead weighting verified third-party signals such as authoritative lists (41%), awards (18%), and online reviews (16%). Sanders notes that click-through rates on AI citations average 0.1-0.3%, while those attached to actual purchase recommendations jump to 1-7%, with G2 receiving significant traffic from ChatGPT and Perplexity due to its reviews appearing in the recommendation layer. The conversation highlights a structural shift where half of all B2B software buyers now start with an AI prompt, impacting organic website traffic. Sanders also provides a data-backed assessment of Claude versus ChatGPT and Gemini for research use cases, and predicts that within three years, AI agents will autonomously purchase software for businesses.",
+      "reason": "The item features an interview with Tim Sanders, Chief Innovation Officer of G2, discussing how frontier models like ChatGPT and Gemini recommend software, the underlying algorithms, and the impact on business strategy and AI-native software. This falls under the criteria for consequential work on frontier models, AI companies, products, and the economics/business strategy shaping AI development.",
+      "published_at": "2026-09-14T14:48:43+00:00",
+      "appearances": [
+        {
+          "id": "fbc376c272242ad8cf2c",
+          "kind": "youtube",
+          "source": "Eye on AI — YouTube",
+          "family": "eye on ai",
+          "guid": "yt:video:sJuIzmZMpd8",
+          "title": "The Hidden Algorithm That Decides Which Software AI Will Recommend | Tim Sanders, G2",
+          "description": "Most companies trying to show up in AI search results are solving the wrong problem. Being cited by an AI and being recommended by an AI are completely different things, and the gap between them is where most marketing budgets are currently disappearing.\n\nIn this episode, Craig Smith sits down with Tim Sanders, Chief Innovation Officer of G2 and executive fellow at Harvard's AI Institute, to explain how AI models actually decide which software to recommend, and why the answer has nothing to do with the content on your website. Sanders reveals that ChatGPT and Gemini apply a hidden \"validation layer\" process to commercial intent queries that actively filters out vendor-generated content and instead weights verified third-party signals: 41% of the recommendation weight comes from appearance on authoritative lists, 18% from awards and accreditation, and 16% from online reviews, none of which can be faked or purchased directly. He explains why click-through rates on AI citations average between 0.1% and 0.3%, while citations attached to actual purchase recommendations jump to 1-7%, and why G2 received one million human visitors from ChatGPT and Perplexity last year precisely because its reviews appear in the recommendation layer, not just the explanatory content. \n\nThe conversation covers the structural shift in how software buyers behave - half of all B2B software buyers now start with an AI prompt rather than a Google search, up from 29% a year ago - and why most companies' organic traffic is on a path toward zero. Sanders also delivers a sharp data-backed assessment of where Claude stands relative to ChatGPT and Gemini on the research use case, and closes with a prediction: within three years, AI agents will write the prompts, find the software, and purchase it on behalf of businesses, with minimal human checkpoints.\n\nKey Topics Covered:\n● How ChatGPT and Gemini apply a hidden \"validation layer\" to purchase recommendations, and why 41% of what drives a software recommendation is verified third-party authority signals that vendors cannot generate themselves\n● Why click-through rates on AI citations average 0.1-0.3% while citations attached to actual recommendations generate 1-7% click-through, and why most AEO firms are optimizing for the wrong metric\n● Why half of all B2B software buyers now start their research with an AI prompt rather than a Google search, and what that trajectory means for organic website traffic\n● Why more than 1 in 4 enterprise employees is using their personal ChatGPT account rather than the corporate tool, because it has their memory and none of the guardrails\n● A data-backed assessment of Claude vs. ChatGPT on the research use case: ChatGPT does live retrieval 100% of the time; Claude does it less than 40% of the time, and G2's citation data shows ChatGPT and Gemini commanding 81% of market share on software research\n● How G2's MCP connector works: AI agents can now access G2's verified reviews and buyer intent data headlessly, without the user needing to prompt it, making G2 the easiest trust signal to consume at inference\n\nAs the SEO industry learned a decade ago that understanding Google's algorithm was the most important thing in digital marketing, this conversation makes the same case for AI's validation layer, and reveals that the companies with the most genuine third-party trust signals already built have a structural advantage that no amount of content generation, website optimization, or AEO spending can replicate overnight.\n\nSubscribe to Eye on A.I. for weekly conversations with the people building and deploying the future of AI. \n\nCraig Smith on X: https://x.com/craigss \nEYE on A.I. on X: https://x.com/EyeOn_AI \n\nConnect with Tim Sander\nLinkedIn: https://www.linkedin.com/in/sanderssays \n\nTimestamps\n00:00 How AI is changing software discovery\n04:49 G2’s evolution into an AI trust layer\n09:36 The top sources influencing software recommendations\n14:34 Why buyers are moving from Google to AI\n15:54 How AI decides which software to recommend\n21:37 ChatGPT vs. Claude for software research\n25:59 How AEO is changing online traffic\n30:45 How MCP connects AI with G2 data\n35:31 The future of agents buying software\n38:08 Keeping AI reviews trustworthy\n43:26 The fastest-growing AI software categories\n50:18 How software vendors can win in AI search\n54:08 Why traditional search traffic isn’t coming back\n56:27 The future of SaaS and agentic AI",
+          "url": "https://www.youtube.com/watch?v=sJuIzmZMpd8",
+          "published_at": "2026-09-14T14:48:43+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=sJuIzmZMpd8"
+      }
     }
   ]
 }
