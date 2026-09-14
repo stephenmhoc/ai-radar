@@ -67650,6 +67650,37 @@
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/long-live-the-short-king-why-4-hi"
       }
+    },
+    {
+      "id": "2d23f3c45782e4f5e75c",
+      "first_seen_at": "2026-09-14T04:18:27+00:00",
+      "status": "skipped",
+      "title": "Acquired — Home Depot",
+      "source_title": "Home Depot | Acquired",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The content describes the history of Home Depot, a home-improvement retailer, and does not relate to AI, frontier models, AI infrastructure, or any of the target organizations or individuals.",
+      "published_at": "2026-09-14T05:00:00+00:00",
+      "appearances": [
+        {
+          "id": "c44c40f2e28b88cebb3a",
+          "kind": "podcast",
+          "source": "Acquired",
+          "family": "acquired",
+          "guid": "https://www.acquired.fm/episodes/home-depot",
+          "title": "Home Depot | Acquired",
+          "description": "Fired from a hardware chain, Bernie Marcus and Arthur Blank teamed with financier Ken Langone to pioneer the big-box, do-it-yourself home-improvement store — building Home Depot into the world's largest home-improvement retailer and the best-performing S&P 500 stock since its 1981 IPO.",
+          "url": "https://www.acquired.fm/episodes/home-depot",
+          "published_at": "2026-09-14T05:00:00+00:00",
+          "hosts": [
+            "Ben Gilbert",
+            "David Rosenthal"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.acquired.fm/episodes/home-depot"
+      }
     }
   ]
 }
