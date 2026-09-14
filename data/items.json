@@ -67709,6 +67709,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=6Kq5e49MD6U"
       }
+    },
+    {
+      "id": "8883c65654bed1cd280e",
+      "first_seen_at": "2026-09-14T09:17:22+00:00",
+      "status": "published",
+      "title": "OpenAI: How Fyxer built an AI executive assistant people trust",
+      "source_title": "How Fyxer built an AI executive assistant people trust",
+      "short_summary": "Fyxer built an AI executive assistant using OpenAI models, achieving high customer retention and revenue growth. The system combines OpenAI models with insights from executive assistant workflows, breaking complex tasks into specialized models that learn user context, intent, and tone.",
+      "long_summary": "Fyxer developed an AI executive assistant by integrating OpenAI models with insights derived from over 500,000 hours of executive assistant workflows. This approach allows Fyxer to break down complex tasks into numerous specialized models, each designed to learn a user's specific context, intent, and tone. The company reports that 53% of its AI-generated email drafts are accepted without edits, and more than 90% of customers continue to use Fyxer after 90 days. This led to significant growth, with annual recurring revenue increasing from $1 million to $32 million in 2025. Fyxer utilizes fine-tuning, evaluation, and real-world feedback to continuously improve its AI, aiming to help users focus on more meaningful work.",
+      "reason": "The item is a demonstration and explanation from OpenAI, a target organization, detailing how a company built an AI executive assistant using OpenAI models, fine-tuning, and evaluation. This falls under consequential work about important AI companies, products, and AI-native software/engineering practice.",
+      "published_at": "2026-09-14T09:00:55+00:00",
+      "appearances": [
+        {
+          "id": "3e803cf8f6081fb529b3",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:uA5PiAXKGis",
+          "title": "How Fyxer built an AI executive assistant people trust",
+          "description": "See how Fyxer built an AI executive assistant that follows the thread across emails, meetings and everyday work. By combining OpenAI models with insights from more than 500,000 hours of executive assistant workflows, Fyxer breaks complex tasks into dozens of specialised models that learn each user’s context, intent and tone. Today, 53% of its AI-generated email drafts are accepted without edits, more than 90% of customers are still paying and using Fyxer after 90 days, and the company grew from $1 million to $32 million in annual recurring revenue in 2025. Hear how Fyxer uses fine-tuning, evaluation and real-world feedback to build AI that helps people spend more time on the work they love.\n\nRead the full customer story here - www.openai.com/index/fyxer",
+          "url": "https://www.youtube.com/watch?v=uA5PiAXKGis",
+          "published_at": "2026-09-14T09:00:55+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=uA5PiAXKGis"
+      }
     }
   ]
 }

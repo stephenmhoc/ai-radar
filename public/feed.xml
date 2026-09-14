@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>OpenAI: How Fyxer built an AI executive assistant people trust — OpenAI</title>
+      <link>https://www.youtube.com/watch?v=uA5PiAXKGis</link>
+      <guid isPermaLink="false">ai-radar:8883c65654bed1cd280e</guid>
+      <pubDate>Mon, 14 Sep 2026 09:00:55 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">OpenAI</source>
+      <description>Fyxer developed an AI executive assistant by integrating OpenAI models with insights derived from over 500,000 hours of executive assistant workflows. This approach allows Fyxer to break down complex tasks into numerous specialized models, each designed to learn a user&amp;#x27;s specific context, intent, and tone. The company reports that 53% of its AI-generated email drafts are accepted without edits, and more than 90% of customers continue to use Fyxer after 90 days. This led to significant growth, with annual recurring revenue increasing from $1 million to $32 million in 2025. Fyxer utilizes fine-tuning, evaluation, and real-world feedback to continuously improve its AI, aiming to help users focus on more meaningful work.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · OpenAI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=uA5PiAXKGis"&gt;How Fyxer built an AI executive assistant people trust&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Long Live the Short King: Why 4-hi HBM Wins — SemiAnalysis</title>
       <link>https://newsletter.semianalysis.com/p/long-live-the-short-king-why-4-hi</link>
       <guid isPermaLink="false">ai-radar:1be71663bbb65a159ec7</guid>
