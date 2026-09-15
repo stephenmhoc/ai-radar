@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>AEF-1 Standard Emerges for Third Party Evaluators; XAI, OpenAI, and Anthropic Cosign — Latent Space</title>
+      <link>https://www.latent.space/p/ainews-aef-1-standard-emerges-for</link>
+      <guid isPermaLink="false">ai-radar:4edde7f53f957a3fb9e4</guid>
+      <pubDate>Tue, 15 Sep 2026 04:50:36 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>The AI Evaluator Forum (AEF), formed in December 2025, has published AEF-1, a proposed baseline for independent third-party AI evaluations. This standard covers access, conflicts of interest, funding, recusal, and transparency. Anthropic is unilaterally committing to embedded third-party evaluators, with Dario Amodei outlining plans for employee-like access to verify safety practices and assess training pipelines. A significant debate has emerged regarding whether labs should &amp;#x27;pace capability progress&amp;#x27; or focus on &amp;#x27;specific mitigations and containment,&amp;#x27; with figures like Bilal Chughtai advocating for pacing and others emphasizing control and governance. The newsletter also highlights the hardening discipline of harness engineering for AI agents, new desktop coding agents, and the increasing importance of orchestration choices over raw model quality. DeepSeek-V4.1-Flash is noted for its cost-performance, and new multimodal features and robotics foundation models are discussed.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-aef-1-standard-emerges-for"&gt;[AINews] AEF-1 standard emerges for Third Party Evaluators, as Xai, OpenAI, and Anthropic all cosign&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>SemiAnalysis: Vera Rubin NVL72 Agentic Inference: 67x better Performance per Dollar — SemiAnalysis</title>
       <link>https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference</link>
       <guid isPermaLink="false">ai-radar:c83b9a0a831d92e30fc8</guid>
