@@ -68215,10 +68215,23 @@
           "url": "https://feeds.megaphone.fm/trainingdata",
           "published_at": "2026-09-15T09:00:00+00:00",
           "hosts": []
+        },
+        {
+          "id": "a75ca86592eadd10b6ed",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:NE4CLThMPGU",
+          "title": "Box's Aaron Levie: On Reinventing Yourself in the AI Age and Enterprise Diffusion",
+          "description": "Starting a company is hard. Reinventing your company for AI as a public company with quarterly earnings results is even harder. Aaron Levie has pulled off the transition with Box and offers hard-won advice for founders. The cofounder and CEO of Box argues the value isn't only in the model; it's in the bridge from a model's raw capability to the actual workflow inside a bank, a law firm, or a pharma company. That's the case for the application layer, and Box is building it: an agent harness tuned so tightly to its own file system, permissions, and search that it beats handing the raw API to Claude or ChatGPT on both accuracy and latency. Aaron explains why token subsidies from the labs can't last, why you want a model-agnostic company routing your tokens rather than the one selling them, and why coding diffused fast while the rest of knowledge work won't. (There's no \"give us your GitHub\" for a sales rep.) His prediction: within five years, 90% of enterprise tokens go to work no human user ever initiated.",
+          "url": "https://www.youtube.com/watch?v=NE4CLThMPGU",
+          "published_at": "2026-09-15T12:00:34+00:00",
+          "hosts": []
         }
       ],
       "links": {
-        "podcast": "https://feeds.megaphone.fm/trainingdata"
+        "podcast": "https://feeds.megaphone.fm/trainingdata",
+        "youtube": "https://www.youtube.com/watch?v=NE4CLThMPGU"
       }
     },
     {
