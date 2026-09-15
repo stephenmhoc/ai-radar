@@ -68349,6 +68349,49 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/openai-software-factory"
       }
+    },
+    {
+      "id": "418c89ebde3bab244e49",
+      "first_seen_at": "2026-09-15T19:17:21+00:00",
+      "status": "published",
+      "title": "The Balance of AI Power: Anton Leicht on Politics, Pacing Deals, and Muddling Through Well",
+      "source_title": "The Balance of AI Power: Anton Leicht on Politics, Pacing Deals, and Muddling Through Well",
+      "short_summary": "Anton Leicht discusses preserving political and institutional power as AI advances, covering strategic trade-offs of frontier training pauses, industry self-regulation hurdles, and how middle powers can leverage data center capacity and semiconductors for model access. He emphasizes preventing monopolization of control by private labs or single governments.",
+      "long_summary": "Anton Leicht, a fellow at the Carnegie Endowment for International Peace, joins Nathan Labenz to discuss how political and institutional power can be preserved amidst AI advancements. The conversation explores the strategic trade-offs associated with frontier training pauses and the challenges facing industry self-regulation. Leicht also addresses how middle powers can utilize data center capacity and semiconductor leverage to gain model access. A key emphasis is placed on preventing permanent disempowerment and the monopolization of control by private labs or single governments, which is deemed as critical as addressing catastrophic model risks. The discussion also touches on AI and the nation-state, oversight, US policy, data center buildout, and geopolitical friction over Taiwan.",
+      "reason": "The item discusses the economics, business strategy, and policy forces that materially shape AI development and adoption, specifically focusing on the balance of power, regulation, and geopolitical implications of AI.",
+      "published_at": "2026-09-15T18:52:29+00:00",
+      "appearances": [
+        {
+          "id": "58c0f30bfd49daf006e1",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "ae0a64d0-b127-11f1-8704-5fb85e3ad0ae",
+          "title": "The Balance of AI Power: Anton Leicht on Politics, Pacing Deals, and Muddling Through Well",
+          "description": "Anton Leicht, a fellow at the Carnegie Endowment for International Peace and author of Threading the Needle, joins Nathan Labenz to explore how political and institutional power can be preserved as artificial intelligence advances. They discuss the strategic trade-offs of frontier training pauses, the hurdles facing industry self-regulation, and how middle powers can trade data center capacity and semiconductor leverage for model access. Ultimately, Leicht emphasizes that preventing permanent disempowerment and the monopolization of control by private labs or single governments is just as critical as addressing catastrophic model risks.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/the-balance-of-ai-power-anton-leicht-on-politics-pacing-deals-and-muddling-through-well/\nSponsors:\n\nMercury Command: Mercury Command brings powerful conversational AI directly into your banking, providing real-time natural language access to your finances without exposing data to third-party tools. Learn more and apply online in minutes at https://mercury.com\n\nAthena: Athena matches you with a dedicated, top 1% executive assistant to handle your inbox, calendar, and daily workflows so you can save an average of 15 hours a week. Get matched with your EA today at https://athena.com/cognitive\n\nOutSystems: OutSystems is the leading agentic systems platform that enables enterprises to engineer, orchestrate, and govern AI applications on a single unified platform. Learn more and see how it works at https://outsystems.com/tcr\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(04:46) Sponsor: Mercury Command\n\n(06:33) Assessing current AI dangers\n\n(13:17) Feasibility of AI pauses (Part 1)\n\n(21:33) Sponsors: Athena | OutSystems\n\n(25:05) Feasibility of AI pauses (Part 2)\n\n(31:01) AI and the nation-state (Part 1)\n\n(35:11) Sponsor: Claude\n\n(36:46) AI and the nation-state (Part 2)\n\n(46:17) Oversight and US policy\n\n(01:05:49) Data center buildout reality\n\n(01:11:55) Europe and middle powers\n\n(01:36:05) Geopolitical friction over Taiwan\n\n(01:43:46) Lightning round and outlook\n\n(02:05:25) Episode Outro\n\n(02:08:54) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing",
+          "url": "https://www.cognitiverevolution.ai/the-balance-of-ai-power-anton-leicht-on-politics-pacing-deals-and-muddling-through-well/",
+          "published_at": "2026-09-15T18:52:30+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        },
+        {
+          "id": "4b760dc3c832578c68bd",
+          "kind": "youtube",
+          "source": "The Cognitive Revolution — YouTube",
+          "family": "the cognitive revolution",
+          "guid": "yt:video:rdEn9cpMScA",
+          "title": "The Balance of AI Power: Anton Leicht on Politics, Pacing Deals, and Muddling Through Well",
+          "description": "Anton Leicht, a fellow at the Carnegie Endowment for International Peace and author of Threading the Needle, joins Nathan Labenz to explore how political and institutional power can be preserved as artificial intelligence advances. They discuss the strategic trade-offs of frontier training pauses, the hurdles facing industry self-regulation, and how middle powers can trade data center capacity and semiconductor leverage for model access. Ultimately, Leicht emphasizes that preventing permanent disempowerment and the monopolization of control by private labs or single governments is just as critical as addressing catastrophic model risks.\n\nFor full show notes, links, and references, read the episode page:\nhttps://www.cognitiverevolution.ai/the-balance-of-ai-power-anton-leicht-on-politics-pacing-deals-and-muddling-through-well/\n\nSPONSORS:\nMercury Command: Mercury Command brings powerful conversational AI directly into your banking, providing real-time natural language access to your finances without exposing data to third-party tools. Learn more and apply online in minutes at https://mercury.com/?utm_source=cognitive_rev&utm_medium=sponsored_podcast&utm_campaign=26q2_brand_campaign\n\nAthena: Athena matches you with a dedicated, top 1% executive assistant to handle your inbox, calendar, and daily workflows so you can save an average of 15 hours a week. Get matched with your EA today at https://athena.com/cognitive\n\nOutSystems: OutSystems is the leading agentic systems platform that enables enterprises to engineer, orchestrate, and govern AI applications on a single unified platform. Learn more and see how it works at https://outsystems.com/tcr\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nCHAPTERS:\n(00:00) About the Episode\n(04:46) Sponsor: Mercury Command\n(06:33) Assessing current AI dangers\n(13:17) Feasibility of AI pauses (Part 1)\n(21:33) Sponsors: Athena | OutSystems\n(25:05) Feasibility of AI pauses (Part 2)\n(31:01) AI and the nation-state (Part 1)\n(35:11) Sponsor: Claude\n(36:46) AI and the nation-state (Part 2)\n(46:17) Oversight and US policy\n(01:05:49) Data center buildout reality\n(01:11:55) Europe and middle powers\n(01:36:05) Geopolitical friction over Taiwan\n(01:43:46) Lightning round and outlook\n(02:05:25) Episode Outro\n(02:08:54) Outro\n\nPRODUCED BY:\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\nWebsite: https://www.cognitiverevolution.ai\nTwitter (Podcast): https://x.com/cogrev_podcast\nTwitter (Nathan): https://x.com/labenz\nLinkedIn: https://linkedin.com/in/nathanlabenz/\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.youtube.com/watch?v=rdEn9cpMScA",
+          "published_at": "2026-09-15T18:52:29+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/the-balance-of-ai-power-anton-leicht-on-politics-pacing-deals-and-muddling-through-well/",
+        "youtube": "https://www.youtube.com/watch?v=rdEn9cpMScA"
+      }
     }
   ]
 }
