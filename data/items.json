@@ -68192,6 +68192,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-aef-1-standard-emerges-for"
       }
+    },
+    {
+      "id": "3c3159d48073043b82cb",
+      "first_seen_at": "2026-09-15T09:17:21+00:00",
+      "status": "published",
+      "title": "Box's Aaron Levie: On Reinventing Yourself in the AI Age and Enterprise Diffusion",
+      "source_title": "Box's Aaron Levie: On Reinventing Yourself in the AI Age and Enterprise Diffusion",
+      "short_summary": "Aaron Levie, CEO of Box, discusses reinventing a public company for AI, focusing on the application layer's value over raw models. He explains why model-agnostic routing is crucial and predicts that within five years, 90% of enterprise tokens will be AI-initiated.",
+      "long_summary": "Aaron Levie, cofounder and CEO of Box, shares insights on transitioning a public company into the AI era. He argues that the true value in AI lies in bridging a model's capabilities to specific workflows within enterprises, rather than solely in the models themselves. Box is developing an agent harness integrated with its file system, permissions, and search, which Levie claims outperforms raw API access to models like Claude or ChatGPT in accuracy and latency. He discusses the unsustainability of token subsidies from AI labs and advocates for model-agnostic companies to route tokens. Levie also differentiates the diffusion of coding from other knowledge work and predicts that within five years, 90% of enterprise tokens will be initiated by AI, not human users.",
+      "reason": "The item features an interview with Aaron Levie, CEO of Box, discussing the strategic and technical aspects of AI adoption and integration within an enterprise context, which aligns with the criteria for important AI companies, products, and business strategy.",
+      "published_at": "2026-09-15T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "28406f96d9633c6fb61b",
+          "kind": "podcast",
+          "source": "Training Data",
+          "family": "training data",
+          "guid": "d2e9aa74-b080-11f1-8007-f31e2b6b4e53",
+          "title": "Box's Aaron Levie: On Reinventing Yourself in the AI Age and Enterprise Diffusion",
+          "description": "Starting a company is hard. Reinventing your company for AI as a public company with quarterly earnings results is even harder. Aaron Levie has pulled off the transition with Box and offers hard-won advice for founders. The cofounder and CEO of Box argues the value isn't only in the model; it's in the bridge from a model's raw capability to the actual workflow inside a bank, a law firm, or a pharma company. That's the case for the application layer, and Box is building it: an agent harness tuned so tightly to its own file system, permissions, and search that it beats handing the raw API to Claude or ChatGPT on both accuracy and latency. Aaron explains why token subsidies from the labs can't last, why you want a model-agnostic company routing your tokens rather than the one selling them, and why coding diffused fast while the rest of knowledge work won't. (There's no \"give us your GitHub\" for a sales rep.) His prediction: within five years, 90% of enterprise tokens go to work no human user ever initiated.",
+          "url": "https://feeds.megaphone.fm/trainingdata",
+          "published_at": "2026-09-15T09:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/trainingdata"
+      }
     }
   ]
 }
