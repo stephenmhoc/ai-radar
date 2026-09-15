@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Latent Space: Can Skills Learned in Games Transfer to Real-World Work? — Latent Space</title>
+      <link>https://www.latent.space/p/good-start-labs</link>
+      <guid isPermaLink="false">ai-radar:0cf4272ad535831eab98</guid>
+      <pubDate>Tue, 15 Sep 2026 20:11:54 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>Good Start Labs, co-founded by Alex Duffy and Tyler Marques, is exploring how games can serve as training material for AI models. The company, spun out of Every with $3.6 million in funding, was inspired by a 2025 Twitch stream showing frontier models playing Diplomacy, where different models exhibited distinct behaviors. Duffy noted that training AI models on games like Diplomacy improved performance on customer support benchmarks, and training on 1830: The Game of Railroads and Robber Barons improved financial research tasks. The design of the learning environment and the harness are crucial for determining what skills models learn and whether they transfer. Good Start Labs sells data and learning environments to frontier labs, providing trajectories of agents playing games and custom data for specific game publishers. While evidence supports that goal-directed execution and reasoning transfer, the breadth and reliability of this transfer remain open questions.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/good-start-labs"&gt;Can Skills Learned in Games Transfer to Real-World Work?&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>The Balance of AI Power: Anton Leicht on Politics, Pacing Deals, and Muddling Through Well — The Cognitive Revolution</title>
       <link>https://www.cognitiverevolution.ai/the-balance-of-ai-power-anton-leicht-on-politics-pacing-deals-and-muddling-through-well/</link>
       <guid isPermaLink="false">ai-radar:418c89ebde3bab244e49</guid>
