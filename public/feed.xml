@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>SemiAnalysis: Everyone Says Datacenter Moratoriums Are Killing the US Buildout. We disagree — SemiAnalysis</title>
+      <link>https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums</link>
+      <guid isPermaLink="false">ai-radar:b3f3cd71b8fcd909273d</guid>
+      <pubDate>Tue, 15 Sep 2026 20:54:41 +0000</pubDate>
+      <source url="https://newsletter.semianalysis.com/feed">SemiAnalysis</source>
+      <description>SemiAnalysis challenges the narrative that datacenter moratoriums are significantly hindering the US buildout. They forecast a substantial increase in datacenter IT capacity, projecting +38GW by 2027, more than double that of 2026. Their methodology involves tracking over 6,000 datacenters using real-time and historical satellite imagery. The analysis indicates that only about 2.3 GW of planned capacity is genuinely delayed due to local moratoriums and New York&amp;#x27;s executive order. They emphasize that simply counting moratoriums is a poor proxy for actual affected capacity, as many restrictions have loopholes or do not apply to projects already under construction or fully permitted. The report details how a project-by-project, parcel-level analysis is necessary to determine the true impact of moratoriums, which often freeze new applications rather than revoke existing approvals.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · SemiAnalysis&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums"&gt;Everyone Says Datacenter Moratoriums Are Killing the US Buildout. We disagree&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>LLMs as The New Website Visitors — Practical AI</title>
+      <link>https://www.youtube.com/watch?v=FmI32JIVJAQ</link>
+      <guid isPermaLink="false">ai-radar:29f4140d5214aa7d5ebc</guid>
+      <pubDate>Tue, 15 Sep 2026 20:53:32 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UC9tpZnMLKv5vbZIGuIIPmNg">Practical AI</source>
+      <description>The conversation delves into the complexities of measuring visibility within AI search and answer engines. It highlights the need to track various signals such as citations, mentions, and share of voice. The discussion acknowledges that AI systems introduce more uncertainty and non-determinism compared to traditional search methods. Consequently, measuring AI visibility requires more than just running prompts and observing numerical changes. The speakers propose a rigorous framework for experimentation and measurement to address these challenges. The episode features Liam Dunne and Ben Moore, co-founders of Discovered Labs, alongside hosts Daniel Whitenack and Chris Benson.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Practical AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=FmI32JIVJAQ"&gt;LLMs as The New Website Visitors&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Latent Space: Can Skills Learned in Games Transfer to Real-World Work? — Latent Space</title>
       <link>https://www.latent.space/p/good-start-labs</link>
       <guid isPermaLink="false">ai-radar:0cf4272ad535831eab98</guid>
