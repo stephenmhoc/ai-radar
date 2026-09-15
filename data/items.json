@@ -68220,6 +68220,64 @@
       "links": {
         "podcast": "https://feeds.megaphone.fm/trainingdata"
       }
+    },
+    {
+      "id": "94e2fa50a275c872fa5e",
+      "first_seen_at": "2026-09-15T10:17:21+00:00",
+      "status": "skipped",
+      "title": "The Age of Body Futurism | Ruby Justice Thelot",
+      "source_title": "The Age of Body Futurism | Ruby Justice Thelot",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The podcast discusses internet culture, wellness, and body optimization, which are not directly related to frontier AI organizations, models, infrastructure, or the other qualifying topics for AI Radar. No target individuals or organizations are featured in a qualifying capacity.",
+      "published_at": "2026-09-15T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "f646d1d62a7a416ec8b2",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "3346a500-eb7e-4419-a483-6859c9709058",
+          "title": "The Age of Body Futurism | Ruby Justice Thelot",
+          "description": "Elena Burger sits down with academic and cyber ethnographer Ruby Justice Thelot to explore the increasingly blurry line between internet culture and the real world, and how to tell the difference between a trend that’s actually changing behavior and one that simply feels enormous online.\n\nThey use today’s wellness and optimization culture as a case study, from peptides and GLP-1s to protein maxxing, wearables, microplastics, and the quantified self. Ruby explains her concept of “paracontent,” where the conversation around a phenomenon can become much larger than the phenomenon itself, and what social media data can tell us about how these trends move from niche communities into the mainstream.\n\nThey also trace the much longer history of body optimization, from changing ideals of thinness to the rise of the quantified self, and ask what comes next as technology gives people increasingly granular ways to measure and modify themselves. Ruby’s prediction: rather than everyone optimizing toward the same ideal, we may see increasingly individualized and sometimes extreme forms of “body futurism.”\n\nResources:\n\nFollow Ruby Justice Thelot on X: \nhttps://x.com/being_on_line\n\nFollow Elena Burger on X:\nhttps://x.com/VirtualElena\n\nRead Ruby’s piece “Enshittification” Isn’t Real: \nhttps://www.a16z.news/p/enshittification-isnt-real\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/the-age-of-body-futurism-ruby-justice-thelot-ZnUXyeWf",
+          "published_at": "2026-09-15T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/the-age-of-body-futurism-ruby-justice-thelot-ZnUXyeWf"
+      }
+    },
+    {
+      "id": "9db12bb12a517db0a1e7",
+      "first_seen_at": "2026-09-15T10:17:21+00:00",
+      "status": "deferred",
+      "title": "OpenAI Ads, Amazon Ads in ChatGPT, Walmart to Accept Apple Pay",
+      "source_title": "OpenAI Ads, Amazon Ads in ChatGPT, Walmart to Accept Apple Pay",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-15T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "e8195a46443559832dd8",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20003",
+          "title": "OpenAI Ads, Amazon Ads in ChatGPT, Walmart to Accept Apple Pay",
+          "description": "ChatGPT ads are working, and solve Amazon's biggest problem with chatbots. Then, Walmart finally gives in to Apple Pay, because fighting the status quo is hard.",
+          "url": "https://stratechery.com/2026/openai-ads-amazon-ads-in-chatgpt-walmart-to-accept-apple-pay/",
+          "published_at": "2026-09-15T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/openai-ads-amazon-ads-in-chatgpt-walmart-to-accept-apple-pay/"
+      }
     }
   ]
 }
