@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Inside OpenAI’s agentic software factory — The Pragmatic Engineer</title>
+      <link>https://newsletter.pragmaticengineer.com/p/openai-software-factory</link>
+      <guid isPermaLink="false">ai-radar:117dfae80aae13db0e51</guid>
+      <pubDate>Tue, 15 Sep 2026 15:41:25 +0000</pubDate>
+      <source url="https://newsletter.pragmaticengineer.com/feed">The Pragmatic Engineer</source>
+      <description>OpenAI&amp;#x27;s internal Codex and ChatGPT Work tools have become the backbone of the company&amp;#x27;s operations, with nearly all employees, including non-engineers, using them weekly. This widespread adoption, driven by features like goal-setting and long-running tasks, has led to a significant increase in productivity and a shift in engineering practices. The article highlights the decline of traditional IDE usage and the rethinking of pull requests and code reviews, which are now being handled by agentic systems. OpenAI&amp;#x27;s infrastructure faces massive load increases, with a 10x surge in pull requests per engineer in six months, exposing bottlenecks across the build-test-deploy pipeline. The company is addressing these scaling challenges while also embedding domain experts into engineering teams to enhance the quality of agent-generated outputs.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · The Pragmatic Engineer&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.pragmaticengineer.com/p/openai-software-factory"&gt;Inside OpenAI’s agentic software factory&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Box's Aaron Levie: On Reinventing Yourself in the AI Age and Enterprise Diffusion — Training Data</title>
       <link>https://feeds.megaphone.fm/trainingdata</link>
       <guid isPermaLink="false">ai-radar:3c3159d48073043b82cb</guid>
