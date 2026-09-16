@@ -68656,6 +68656,92 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=mlWX7RltfDE"
       }
+    },
+    {
+      "id": "e84b6f13f1bcbbafe33e",
+      "first_seen_at": "2026-09-16T15:17:23+00:00",
+      "status": "published",
+      "title": "Why the Next Generation of Enterprise Software Looks Nothing Like Salesforce",
+      "source_title": "Why the Next Generation of Enterprise Software Looks Nothing Like Salesforce",
+      "short_summary": "Lightfield co-founder and CEO Keith Peiris discusses rethinking CRM for an AI-native world. He explains Lightfield's \"business world model\" and how AI can reason about a company and its customers by making sense of fragmented data.",
+      "long_summary": "Lightfield co-founder and CEO Keith Peiris discusses rethinking CRM for an AI-native world. He explains Lightfield's \"business world model\" and how AI can reason about a company and its customers by making sense of fragmented data across emails, calls, and other systems. The conversation covers the pivot from Tome to Lightfield, the architectural choices that enable Lightfield's approach, and the challenges of cracking the CRM market. Peiris also touches on AI-era pricing, outcome-based models, and the company culture at Lightfield, where everyone is a generalist. He shares lessons learned from making a hard pivot in the enterprise software space.",
+      "reason": "The item features a founder and CEO discussing an AI-native product, Lightfield, which aims to rethink CRM using AI to make sense of fragmented company data. This aligns with the criteria for important AI companies, products, and AI-native software.",
+      "published_at": "2026-09-16T14:30:12+00:00",
+      "appearances": [
+        {
+          "id": "def561a04d738ac72072",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:K5yGLO8c6T0",
+          "title": "Why the Next Generation of Enterprise Software Looks Nothing Like Salesforce",
+          "description": "a16z’s Alex Rampell and Joe Schmidt sit down with Lightfield co-founder and CEO Keith Peiris to discuss what it takes to rethink the CRM for an AI-native world, and the unusual pivot that got him there.\n\nKeith previously built Tome to 25 million users, but eventually walked away from the product after concluding that the underlying technology couldn’t capture enough context about a presenter, their audience, and the relationship between them. Starting again, his team followed customers from AI presentations into sales workflows and eventually found a harder problem: making sense of the fragmented and often conflicting data spread across a company’s emails, calls, CRM, and other systems.\n\nThey unpack Lightfield’s idea of a “business world model,” why Keith believes intelligence can replace much of the rigid schema behind traditional software, and what changes when AI has enough context to reason about a company and its customers. They also get into building for greenfield versus brownfield markets, AI-era pricing, running a company where everyone is a generalist, and Keith’s lessons from making a hard pivot.\n\nTimestamps:\n00:00 - Intro\n00:52 - From Tome to Lightfield: The Pivot Story\n02:28 - Why Not Just Wait for the Technology to Get Better?\n07:29 - Knowing You're Onto Something With the New Product\n09:15 - CRM as a Repository: What's Actually Broken Today\n11:18 - The Architecture Choices That Make Lightfield Work\n18:48 - Greenfield vs Brownfield: Cracking the CRM Market\n25:27 - Skeuomorphic vs Natural Language: The Product Trade-Off\n30:56 - Pricing in the AI Era & Outcome-Based Models\n36:22 - Company Culture, Velocity & Shipping Speed at Lightfield\n40:02 - What Worries Keith Most Right Now\n\nResources:\nFollow Keith Peiris on LinkedIn: https://www.linkedin.com/in/keithpeiris\nFollow Alex Rampell on X: https://x.com/arampell\nFollow Joe Schmidt on X: https://x.com/joeschmidtiv\nLearn more about Lightfield: https://lightfield.app\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=K5yGLO8c6T0",
+          "published_at": "2026-09-16T14:30:12+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=K5yGLO8c6T0"
+      }
+    },
+    {
+      "id": "e7df894acf59c43d0b4a",
+      "first_seen_at": "2026-09-16T15:17:24+00:00",
+      "status": "skipped",
+      "title": "iPhone 18 Pro Review: Is It Really the Longest-Lasting iPhone?",
+      "source_title": "iPhone 18 Pro Review: Is It Really the Longest-Lasting iPhone?",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The content is a review of the iPhone 18 Pro's battery life, which is not related to AI Radar's focus areas. Although the author has a book about AI, this specific video does not discuss AI.",
+      "published_at": "2026-09-16T14:47:13+00:00",
+      "appearances": [
+        {
+          "id": "f6f59a36b4381adc9012",
+          "kind": "youtube",
+          "source": "Joanna Stern",
+          "family": "joanna stern",
+          "guid": "yt:video:YNqYEMuoQAI",
+          "title": "iPhone 18 Pro Review: Is It Really the Longest-Lasting iPhone?",
+          "description": "Apple says the iPhone 18 Pro Max has the best battery life of any iPhone yet, with considerable gains over last year’s 17 Pro Max. But does it really? I came up with a new battery test, involving a pickle and poking, to find out just how much longer it lasts—and whether that difference is actually worth upgrading for.\n\nAnd for anyone who wants to recreate this extremely serious scientific experiment at home, here’s the $13 auto clicker I used. https://www.amazon.com/dp/B0FX3RGKZF?ref=ppx_yo2ov_dt_b_fed_asin_title And, of course: pokethepickle.org.\n\nChapters: \n\n00:00 iPhone 18 Pro review \n00:32 iPhone 18 Pro + Pro Max specs\n00:58 Apple’s battery life claims \n01:10 A new battery test: Poke the Pickle \n02:17 Battery results\n02:38 Comparing to Apple’s claims\n03:29 Final thoughts + what to buy \n04:27 Act now! Pokethepickle.org\n\n📬 Our videos are free here, but support our work by subscribing to the New Things. You’ll love the newsletters! https://thenewthings.com/subscribe. \n📙 Order Joanna’s new book at https://joannastern.com \n💼 Want to sponsor our stuff? Email joanna.partnerships@smoothmedia.co \n▶️ Subscribe here so you don’t miss future videos https://www.youtube.com/c/joannastern \n \nWho is Joanna Stern? \nEmmy winner. Pulitzer finalist. Professional asker of uncomfortable questions. New York Times bestselling author. Joanna spent 12 years at The Wall Street Journal making videos and writing columns before founding New Things. Before that, she helped start The Verge and worked at ABC News. She believes technology should work for humans—and that journalism should be fun. She is working on both. She also is the author of the new book I AM NOT A ROBOT: My Year Using AI to Do (Almost) Everything. As NBC News' Chief Technology Analyst, her reporting and The New Things content regularly appears across NBC's broadcasts and platforms. For Joanna’s full resume, see LinkedIn. \n\nYou can find me on Instagram here: https://www.instagram.com/joannastern \nOr on X here: https://x.com/JoannaStern \nOr on LinkedIn here: linkedin.com/in/joannastern",
+          "url": "https://www.youtube.com/watch?v=YNqYEMuoQAI",
+          "published_at": "2026-09-16T14:47:13+00:00",
+          "hosts": [
+            "Joanna Stern"
+          ]
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=YNqYEMuoQAI"
+      }
+    },
+    {
+      "id": "1eeed5bc8ace791433d7",
+      "first_seen_at": "2026-09-16T15:17:24+00:00",
+      "status": "skipped",
+      "title": "Brian Chesky’s 11-Star Experience",
+      "source_title": "Brian Chesky’s 11-Star Experience",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-16T14:49:40+00:00",
+      "appearances": [
+        {
+          "id": "8e7cf14fc86b65728d1f",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:cYW-9CCd_3g",
+          "title": "Brian Chesky’s 11-Star Experience",
+          "description": "Brian Chesky explains Airbnb’s famous “11-star experience” exercise: imagine an experience so extraordinary that it becomes absurd, then work backward until you find something incredible that can actually scale.\n\n#BrianChesky #Airbnb #ProductDesign #StartupAdvice #CustomerExperience #Founders #Entrepreneurship\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/cYW-9CCd_3g",
+          "published_at": "2026-09-16T14:49:40+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/cYW-9CCd_3g"
+      }
     }
   ]
 }
