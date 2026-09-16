@@ -68481,6 +68481,34 @@
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums"
       }
+    },
+    {
+      "id": "87f2287f429f6e3d3fff",
+      "first_seen_at": "2026-09-16T00:17:19+00:00",
+      "status": "skipped",
+      "title": "Stay on top of the pack with ChatGPT Work.",
+      "source_title": "Stay on top of the pack with ChatGPT Work.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-15T23:31:15+00:00",
+      "appearances": [
+        {
+          "id": "8a5c0743990fb938291a",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:DhAsqpjliYw",
+          "title": "Stay on top of the pack with ChatGPT Work.",
+          "description": "Included in ChatGPT Plus and Pro.",
+          "url": "https://www.youtube.com/shorts/DhAsqpjliYw",
+          "published_at": "2026-09-15T23:31:15+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/DhAsqpjliYw"
+      }
     }
   ]
 }
