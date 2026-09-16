@@ -68628,6 +68628,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-jev-a-system-one-model-that"
       }
+    },
+    {
+      "id": "480a03c80b696674ccaa",
+      "first_seen_at": "2026-09-16T13:17:21+00:00",
+      "status": "skipped",
+      "title": "Sequoia Legend Michael Moritz: Steve Jobs, Being an Outsider, and Investing in the Age of AI",
+      "source_title": "Sequoia Legend Michael Moritz: Steve Jobs, Being an Outsider, and Investing in the Age of AI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The interview is with Michael Moritz, a venture capitalist, not a current or recent technical member, founder, executive, or senior leader from a target AI organization. While AI is mentioned in the title and hashtags, the publisher notes indicate it is only a small part of a broad conversation about exceptional people, leadership, and Moritz's life, not a central subject of the interview.",
+      "published_at": "2026-09-16T12:00:16+00:00",
+      "appearances": [
+        {
+          "id": "3b37bf9c7606303bfd33",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:mlWX7RltfDE",
+          "title": "Sequoia Legend Michael Moritz: Steve Jobs, Being an Outsider, and Investing in the Age of AI",
+          "description": "Michael Moritz joins Patrick O’Shaughnessy for a wide-ranging conversation about the forces that shape exceptional people. Moritz reflects on growing up in a family of Jewish refugees from Nazi Germany, the outsider mentality that followed him throughout his life, and why he spent so much time studying the childhoods and backgrounds of founders. He shares the questions he used to understand people, what he learned from decades around extraordinary leaders, and why complete obsession often comes with a cost.\n\nTIMESTAMPS\n0:00 Intro\n0:53 Family History & Identity\n7:03 Survival & Outsider Instinct\n18:53 Studying Exceptional People\n33:50 Self-Doubt & Success\n41:17 Steve Jobs & Obsession\n52:50 Joining Sequoia\n1:03:22 Leadership & Alex Ferguson\n1:08:25 Elon Musk & AI\n1:17:12 Becoming Who You Are\n\n#MichaelMoritz #SequoiaCapital #InvestLikeTheBest #SteveJobs #ElonMusk #VentureCapital #AI\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/watch?v=mlWX7RltfDE",
+          "published_at": "2026-09-16T12:00:16+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=mlWX7RltfDE"
+      }
     }
   ]
 }
