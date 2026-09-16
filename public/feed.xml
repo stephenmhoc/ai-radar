@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Underwriting Superintelligence: Backing Agents you can Sue — Rune Kvist, AIUC — Latent Space</title>
+      <link>https://www.latent.space/p/aiuc</link>
+      <guid isPermaLink="false">ai-radar:c971d769d630067772bf</guid>
+      <pubDate>Wed, 16 Sep 2026 18:07:45 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/1084089.rss">Latent Space</source>
+      <description>Rune Kvist, co-founder of AIUC (Artificial Intelligence Underwriting Company), announces a $40M Series A round and discusses AIUC-1, an emerging standard for AI agent security, safety, and reliability. Kvist, previously Anthropic&amp;#x27;s first product hire, argues that trust, liability, and risk will be the primary constraints on AI adoption, rather than capability. The conversation delves into how AI agents are stress-tested for issues like jailbreaks, hallucinations, and data leaks, and why standards and insurance are becoming critical infrastructure for AI. Topics also include the growing trust gap between governments and frontier labs, AI-enabled cyber and biological risks, and the implications of AI failures, such as a $20 coding agent causing $200M in damage. The discussion also touches on the need for AI standards to update frequently and the role of insurance in bringing trust to enterprise AI deployment.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/aiuc"&gt;Underwriting Superintelligence: Backing Agents you can Sue — Rune Kvist, AIUC&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/aiuc"&gt;Underwriting Superintelligence: Backing Agents you can Sue — Rune Kvist, AIUC&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>The Watchdogs of AGI: Rune Kvist of AI Underwriting Company — Latent Space</title>
+      <link>https://www.youtube.com/watch?v=Sc2_LfWgHb4</link>
+      <guid isPermaLink="false">ai-radar:67df0bfe23c243cdc8e6</guid>
+      <pubDate>Wed, 16 Sep 2026 18:01:13 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLWEAb1SXhjlfkEF_PxzYHonU_v5LPMI8L">Latent Space</source>
+      <description>Rune Kvist, cofounder of AI Underwriting Company (AIUC) and an early Anthropic product hire, discusses AIUC&amp;#x27;s recent $40M Series A funding round. The conversation focuses on AIUC&amp;#x27;s mission to build standards, testing, and insurance infrastructure to enable the deployment of frontier AI, addressing the constraint of trust in AI adoption. Kvist explains AIUC-1, a standard for AI agent security, safety, and reliability, and how agents are stress-tested for issues like jailbreaks, hallucinations, and data leaks. The discussion also covers the growing trust gap between governments and frontier labs, AI-enabled risks, and the role of standards and insurance in managing AI liability, including the implications for robotics and potential certification for AI engineers.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=Sc2_LfWgHb4"&gt;The Watchdogs of AGI — Rune Kvist of AI Underwriting Company&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Why the Next Generation of Enterprise Software Looks Nothing Like Salesforce — a16z</title>
       <link>https://www.youtube.com/watch?v=K5yGLO8c6T0</link>
       <guid isPermaLink="false">ai-radar:e84b6f13f1bcbbafe33e</guid>
