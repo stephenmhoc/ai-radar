@@ -68873,6 +68873,174 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=iZE2r-Vx5b8"
       }
+    },
+    {
+      "id": "469159ccef73ba83ccf8",
+      "first_seen_at": "2026-09-16T23:17:21+00:00",
+      "status": "skipped",
+      "title": "OpenAI — Create a Coloring Page with ChatGPT | OpenAI Academy",
+      "source_title": "Create a Coloring Page with ChatGPT | OpenAI Academy",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief tutorial on using ChatGPT to create a coloring page, which is a routine promotional piece and does not offer substantial technical or strategic content, nor does it feature a qualifying person in a substantive interview or talk.",
+      "published_at": "2026-09-16T22:29:27+00:00",
+      "appearances": [
+        {
+          "id": "ed0aa6e9fa3738214c1c",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:4gYJxduFN3c",
+          "title": "Create a Coloring Page with ChatGPT | OpenAI Academy",
+          "description": "Let’s use ChatGPT to make something fun. In this quick tutorial, you’ll learn how to create an original black-and-white coloring page using a simple description.\n\nSee how details such as thick outlines, no shading, and plenty of open space can produce a coloring-friendly image—and how a follow-up request can change one part without starting over.\n\nFor a simple creative project, request original ideas rather than famous characters or copies of someone else’s artwork.\n\n#ChatGPTImages #ColoringPage #CreativeAI #AITutorial",
+          "url": "https://www.youtube.com/watch?v=4gYJxduFN3c",
+          "published_at": "2026-09-16T22:29:27+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=4gYJxduFN3c"
+      }
+    },
+    {
+      "id": "d172c24b3c5b027b870b",
+      "first_seen_at": "2026-09-16T23:17:23+00:00",
+      "status": "skipped",
+      "title": "OpenAI — ChatGPT Privacy: What Not to Share and When to Double-Check | OpenAI Academy",
+      "source_title": "ChatGPT Privacy: What Not to Share and When to Double-Check | OpenAI Academy",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief tutorial from OpenAI Academy, which is a promotional or educational piece rather than a substantial interview, technical work, or original analysis. It lacks the depth required for inclusion.",
+      "published_at": "2026-09-16T22:29:31+00:00",
+      "appearances": [
+        {
+          "id": "6634007f628b2455d76e",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:dfAZbuAQxi8",
+          "title": "ChatGPT Privacy: What Not to Share and When to Double-Check | OpenAI Academy",
+          "description": "Share only what ChatGPT needs to answer your question. In this quick tutorial, you’ll learn how to protect personal information and recognize when an AI-generated answer needs to be checked.\n\nSee how to ask about a utility bill without sharing a name, address, phone number, account number, barcode, or other private details.\n\nChatGPT can help you understand information, get organized, and prepare better questions—but it is not a doctor, banker, lawyer, or official source. You remain in charge.\n\n#AIPrivacy #OnlineSafety #ChatGPTForBeginners #AITutorial",
+          "url": "https://www.youtube.com/watch?v=dfAZbuAQxi8",
+          "published_at": "2026-09-16T22:29:31+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=dfAZbuAQxi8"
+      }
+    },
+    {
+      "id": "90ad07b1c771d8bb279a",
+      "first_seen_at": "2026-09-16T23:17:24+00:00",
+      "status": "skipped",
+      "title": "How to Spot Scam Messages with ChatGPT | OpenAI Academy",
+      "source_title": "How to Spot Scam Messages with ChatGPT | OpenAI Academy",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief tutorial from OpenAI, which is a target organization. However, it is a short promotional/tutorial clip rather than a substantial interview, talk, demonstration, or explainer with durable substance, as required for YouTube content.",
+      "published_at": "2026-09-16T22:29:36+00:00",
+      "appearances": [
+        {
+          "id": "fbe8343103e8bc835dc5",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:WY_PHjGilVs",
+          "title": "How to Spot Scam Messages with ChatGPT | OpenAI Academy",
+          "description": "Suspicious email or text? ChatGPT can serve as a second set of eyes. In this quick tutorial, you’ll learn how to identify common warning signs such as urgent language, unfamiliar links, unusual requests, and demands for money.\n\nNever click a suspicious link or call a number included in the message. Verify the claim independently through an official app, website, phone number, or someone you trust.\n\nChatGPT can help you notice warning signs, but it cannot guarantee that a message is safe.\n\n#ScamAwareness #OnlineSafety #ChatGPT #AITutorial",
+          "url": "https://www.youtube.com/watch?v=WY_PHjGilVs",
+          "published_at": "2026-09-16T22:29:36+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=WY_PHjGilVs"
+      }
+    },
+    {
+      "id": "0e0652a565dc4cc578be",
+      "first_seen_at": "2026-09-16T23:17:25+00:00",
+      "status": "skipped",
+      "title": "Use ChatGPT to Organize Everyday Tasks | OpenAI Academy",
+      "source_title": "Use ChatGPT to Organize Everyday Tasks | OpenAI Academy",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a tutorial on using ChatGPT for everyday tasks, which is a routine application of an existing model. It does not feature a substantial interview or conversation with a qualifying person, nor does it present consequential technical or strategic work in the specified areas. It is a brief promotional/tutorial clip rather than a substantive talk or explainer.",
+      "published_at": "2026-09-16T22:29:39+00:00",
+      "appearances": [
+        {
+          "id": "57648df21f8c17332101",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:gKyEzP_jhZc",
+          "title": "Use ChatGPT to Organize Everyday Tasks | OpenAI Academy",
+          "description": "Turn a busy idea into a simple, manageable plan. In this quick tutorial, you’ll learn how ChatGPT can help organize household tasks, errands, trips, events, and other everyday projects.\n\nWatch how a plan for preparing for visiting family becomes a short checklist organized by day. You can use the same approach to request a list, schedule, or step-by-step plan that works for you.\n\nRemember to verify important costs, dates, instructions, and anything involving health or safety.\n\n#ChatGPT #ChatGPTForBeginners #AITutorial #ProductivityTips",
+          "url": "https://www.youtube.com/watch?v=gKyEzP_jhZc",
+          "published_at": "2026-09-16T22:29:39+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=gKyEzP_jhZc"
+      }
+    },
+    {
+      "id": "b7481f8486bc9e3c30c5",
+      "first_seen_at": "2026-09-16T23:17:27+00:00",
+      "status": "skipped",
+      "title": "OpenAI — How to Ask ChatGPT Better Questions | OpenAI Academy",
+      "source_title": "How to Ask ChatGPT Better Questions | OpenAI Academy",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief tutorial on using ChatGPT, which is a routine promotional piece and does not offer substantial technical or strategic content, original reporting, or durable analysis.",
+      "published_at": "2026-09-16T22:29:43+00:00",
+      "appearances": [
+        {
+          "id": "e26dc310d9d05ff1481f",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:P-8sCH6syag",
+          "title": "How to Ask ChatGPT Better Questions | OpenAI Academy",
+          "description": "A few helpful details can make a big difference. In this quick tutorial, you’ll learn how to tell ChatGPT what you need, who it’s for, and what kind of answer would be most useful.\n\nSee how a general dinner question becomes a practical meal plan with simple recipes and an organized shopping list—and how easy it is to adjust the answer without starting over.\n\nYou don’t need to share private information to get a useful response. Leave out details such as your full name, address, and account numbers.\n\n#ChatGPT #ChatGPTForBeginners #AITutorial",
+          "url": "https://www.youtube.com/watch?v=P-8sCH6syag",
+          "published_at": "2026-09-16T22:29:43+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=P-8sCH6syag"
+      }
+    },
+    {
+      "id": "11c3ddb6c3f0cdabc3f3",
+      "first_seen_at": "2026-09-16T23:17:28+00:00",
+      "status": "skipped",
+      "title": "Meet ChatGPT: Ask Your First Question | OpenAI Academy",
+      "source_title": "Meet ChatGPT: Ask Your First Question | OpenAI Academy",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief tutorial for beginners on how to use ChatGPT, which is a promotional or highlight clip and lacks durable substance for AI Radar.",
+      "published_at": "2026-09-16T22:29:47+00:00",
+      "appearances": [
+        {
+          "id": "2a0fac0a5f095eb6727d",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:4UTn7oWvSJc",
+          "title": "Meet ChatGPT: Ask Your First Question | OpenAI Academy",
+          "description": "New to ChatGPT? Start here. In this quick tutorial, you’ll learn how to type or speak a question, review the answer, and ask a follow-up to make it simpler or more useful.\n\nThere’s no need to find the perfect words—just start with one question and continue the conversation.\n\nChatGPT can make mistakes or use outdated information. Always double-check important guidance about health, money, deadlines, government forms, or safety with a trusted professional or official source.\n\n#ChatGPT #ChatGPTForBeginners #AITutorial",
+          "url": "https://www.youtube.com/watch?v=4UTn7oWvSJc",
+          "published_at": "2026-09-16T22:29:47+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=4UTn7oWvSJc"
+      }
     }
   ]
 }
