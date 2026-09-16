@@ -68539,6 +68539,34 @@
       "links": {
         "podcast": "https://colossus.com/episode/the-outsider/"
       }
+    },
+    {
+      "id": "9720bb15419c24acc146",
+      "first_seen_at": "2026-09-16T10:17:30+00:00",
+      "status": "published",
+      "title": "Keith Peiris on Lightfield and Building the AI-Native CRM",
+      "source_title": "The AI-Native CRM",
+      "short_summary": "Lightfield CEO Keith Peiris discusses rethinking CRM for an AI-native world, moving beyond rigid schemas with a \"business world model\" that synthesizes fragmented company data.",
+      "long_summary": "a16z’s Alex Rampell and Joe Schmidt interview Lightfield co-founder and CEO Keith Peiris about building an AI-native CRM. Peiris explains his pivot from Tome, realizing existing tech lacked sufficient context. Lightfield aims to create a \"business world model\" that uses intelligence to replace traditional software schemas, making sense of fragmented data across systems like emails and calls. The conversation covers AI-era pricing, building for different market types, and the implications of AI having deep context about a company and its customers.",
+      "reason": "The episode features a founder building an AI-native product in a major category (CRM) and discusses technical and strategic aspects of applying AI to business software, including replacing rigid schemas with intelligence.",
+      "published_at": "2026-09-16T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "73887969367205585471",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "277d8505-7c23-4f94-ac79-c48f1f9b89eb",
+          "title": "The AI-Native CRM",
+          "description": "a16z’s Alex Rampell and Joe Schmidt sit down with Lightfield co-founder and CEO Keith Peiris to discuss what it takes to rethink the CRM for an AI-native world, and the unusual pivot that got him there.\n\nKeith previously built Tome to 25 million users, but eventually walked away from the product after concluding that the underlying technology couldn’t capture enough context about a presenter, their audience, and the relationship between them. Starting again, his team followed customers from AI presentations into sales workflows and eventually found a harder problem: making sense of the fragmented and often conflicting data spread across a company’s emails, calls, CRM, and other systems.\n\nThey unpack Lightfield’s idea of a “business world model,” why Keith believes intelligence can replace much of the rigid schema behind traditional software, and what changes when AI has enough context to reason about a company and its customers. They also get into building for greenfield versus brownfield markets, AI-era pricing, running a company where everyone is a generalist, and Keith’s lessons from making a hard pivot.\n\nResources:\n\nFollow Keith Peiris on LinkedIn:\nhttps://www.linkedin.com/in/keithpeiris\n\nFollow Alex Rampell on X:\nhttps://x.com/arampell\n\nFollow Joe Schmidt on X: \nhttps://x.com/joeschmidtiv\n\nLearn more about Lightfield:\nhttps://lightfield.app\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/the-ai-native-crm-PM_eRvpt",
+          "published_at": "2026-09-16T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/the-ai-native-crm-PM_eRvpt"
+      }
     }
   ]
 }
