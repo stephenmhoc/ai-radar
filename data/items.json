@@ -68845,6 +68845,34 @@
         "podcast": "https://www.latent.space/p/aiuc",
         "newsletter": "https://www.latent.space/p/aiuc"
       }
+    },
+    {
+      "id": "da86a452fe4f8b258200",
+      "first_seen_at": "2026-09-16T19:17:22+00:00",
+      "status": "skipped",
+      "title": "Assess Usage and Value of ChatGPT Work",
+      "source_title": "Assess Usage and Value of ChatGPT Work",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional video from OpenAI about the ChatGPT Admin Console, which is not a substantial interview, talk, or demonstration with durable substance. It does not offer original reporting, analysis, research, or interviews.",
+      "published_at": "2026-09-16T19:03:38+00:00",
+      "appearances": [
+        {
+          "id": "b5859ae7d480004d4ce1",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:iZE2r-Vx5b8",
+          "title": "Assess Usage and Value of ChatGPT Work",
+          "description": "See how insights in the ChatGPT Admin Console help you understand AI adoption, usage, and spend across your organization. Explore team use cases, review Codex contributions, and identify where to focus training and expand access. Then use the ChatGPT Admin plugin to turn those analytics into a leadership deck and share it in Slack.",
+          "url": "https://www.youtube.com/watch?v=iZE2r-Vx5b8",
+          "published_at": "2026-09-16T19:03:38+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=iZE2r-Vx5b8"
+      }
     }
   ]
 }
