@@ -69352,7 +69352,7 @@
           "family": "practical ai",
           "guid": "yt:video:KWEu2zJlTYs",
           "title": "AI Search, LLM Visibility, Citations, Query Fan-Out & the Future of Search |Episode 372|",
-          "description": "AI search is changing how people discover information and how brands need to think about visibility. We talk about the shift from traditional SEO to AI search, what happens behind the scenes when an LLM generates an answer, and why retrieval and citations don't always tell the whole story. They dig into AI visibility, Reddit strategy, query fan-out, representation in model weights, and consensus. They also look ahead to a world where AI agents don't just discover websites, but interact with them and take actions on behalf of users.\n\nFEATURING:\n\nGuest - Liam Dunne (Co-founder of Discovered Labs)\nGuest - Ben Moore (Co-founder of Discovered Labs)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast)\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast)\n\nLINKS:\n\n- What AI models know about 1,000 B2B SaaS brands before web search: https://discoveredlabs.com/research/ai-model-brand-recall-study\n- Discovered Labs: https://discoveredlabs.com/\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://us06web.zoom.us/webinar/register/WN_tMivXvPXRJ6pi5526S5etw#/registration\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nCHAPTERS:\n\n0:00 Welcome to Practical AI Podcast!\n0:27 Introduction to AI Visibility and Search Optimization\n2:59 Understanding AEO and SEO: The New Landscape\n5:44 Changing Buyer Behavior in the Age of AI\n8:45 Technical Insights: Measuring AI Visibility\n11:40 Mechanics of AI Systems: How Brands Appear\n14:39 Sponsor: Midwest AI Summit\n16:13 The Human Element: Marketing in an AI-Driven World\n26:38 The Role of Reddit in AI Retrieval\n30:23 Understanding Retrieval and Citation Dynamics\n35:54 Strategizing for AI Visibility\n41:25 The Future of AI Agents and Brand Perception\n51:51 See you next time!\n\nListen more at https://practicalai.show/",
+          "description": "AI search is changing how people discover information and how brands need to think about visibility. We talk about the shift from traditional SEO to AI search, what happens behind the scenes when an LLM generates an answer, and why retrieval and citations don't always tell the whole story. They dig into AI visibility, Reddit strategy, query fan-out, representation in model weights, and consensus. They also look ahead to a world where AI agents don't just discover websites, but interact with them and take actions on behalf of users.\n\nFEATURING:\n\nGuest - Liam Dunne (Co-founder of Discovered Labs): https://www.linkedin.com/in/liamdunne05/\nGuest - Ben Moore (Co-founder of Discovered Labs): https://www.linkedin.com/in/benkarlmoore/\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast)\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast)\n\nLINKS:\n\n- What AI models know about 1,000 B2B SaaS brands before web search: https://discoveredlabs.com/research/ai-model-brand-recall-study\n- Discovered Labs: https://discoveredlabs.com/\n\nSPONSORS:\n- Midwest AI Summit: Join AI practitioners on October 15 in Indianapolis for practical sessions, hands-on discussions, and real-world AI solutions. Use code PracticalAI20 to save 20% on your registration. https://midwestaisummit.com/#tickets\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nCHAPTERS:\n\n0:00 Welcome to Practical AI Podcast!\n0:27 Introduction to AI Visibility and Search Optimization\n2:59 Understanding AEO and SEO: The New Landscape\n5:44 Changing Buyer Behavior in the Age of AI\n8:45 Technical Insights: Measuring AI Visibility\n11:40 Mechanics of AI Systems: How Brands Appear\n14:39 Sponsor: Midwest AI Summit\n16:13 The Human Element: Marketing in an AI-Driven World\n26:38 The Role of Reddit in AI Retrieval\n30:23 Understanding Retrieval and Citation Dynamics\n35:54 Strategizing for AI Visibility\n41:25 The Future of AI Agents and Brand Perception\n51:51 See you next time!\n\nListen more at https://practicalai.show/",
           "url": "https://www.youtube.com/watch?v=KWEu2zJlTYs",
           "published_at": "2026-09-17T14:05:43+00:00",
           "hosts": []
@@ -69502,6 +69502,34 @@
       ],
       "links": {
         "youtube": "https://www.youtube.com/watch?v=s495saGYWFg"
+      }
+    },
+    {
+      "id": "f1a0be9703ae288b1a0d",
+      "first_seen_at": "2026-09-17T20:17:22+00:00",
+      "status": "skipped",
+      "title": "ChatGPT for Word is now available",
+      "source_title": "ChatGPT for Word is now available",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional video for a product integration, lacking the substantive interview, talk, or demonstration required for inclusion.",
+      "published_at": "2026-09-17T19:12:10+00:00",
+      "appearances": [
+        {
+          "id": "9c1c73d3ada94f47e0c6",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:lxVMdEpe0RQ",
+          "title": "ChatGPT for Word is now available",
+          "description": "Procrastination has met its match. ChatGPT is now in Word.\n\nYou can add ChatGPT to Microsoft Word to turn rough notes into first drafts, fix formatting issues, proofread, and get suggested edits—all without leaving your document.\n\nChatGPT for Word (and Powerpoint + Excel) are available across all plans, including Free, with usage limits. \n\nFor Business and Enterprise plans, we’re also offering a two-week free preview of GPT-5.6 Sol in Word, September 17–30, with no impact on usage limits.\n\nhttps://chatgpt.com/apps/word/",
+          "url": "https://www.youtube.com/watch?v=lxVMdEpe0RQ",
+          "published_at": "2026-09-17T19:12:10+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=lxVMdEpe0RQ"
       }
     }
   ]
