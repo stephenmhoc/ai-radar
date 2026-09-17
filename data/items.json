@@ -69143,6 +69143,37 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-reality-checks-on-ai-news"
       }
+    },
+    {
+      "id": "70462b7c32af3561daf5",
+      "first_seen_at": "2026-09-17T09:17:21+00:00",
+      "status": "skipped",
+      "title": "How to get discovered in AI search",
+      "source_title": "How to get discovered in AI search",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item discusses AI search and LLMs but does not feature any individuals from the target list of frontier AI organizations, nor does it present sufficiently deep technical or strategic content from other experts to qualify.",
+      "published_at": "2026-09-17T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "7f00a7678dffcdf02c87",
+          "kind": "podcast",
+          "source": "Practical AI",
+          "family": "practical ai",
+          "guid": "feacf9a3-586b-4106-8da3-aab51f1c2765",
+          "title": "How to get discovered in AI search",
+          "description": "AI search is changing how people discover information and how brands need to think about visibility. Daniel and Chris talk with Liam Dunne and Ben Moore, co-founders of Discovered Labs, about the shift from traditional SEO to AI search, what happens behind the scenes when an LLM generates an answer, and why retrieval and citations don't always tell the whole story. They dig into AI visibility, Reddit strategy, query fan-out, representation in model weights, and consensus. They also look ahead to a world where AI agents don't just discover websites, but interact with them and take actions on behalf of users.\n\nFeaturing: \n\nLiam Dunne – \nLinkedIn\n\nBen Moore – \nLinkedIn\n\nDaniel Whitenack – \nWebsite\n, \nGitHub\n, \nX\n\nChris Benson – \nWebsite\n, \nLinkedIn\n, \nBluesky\n, \nGitHub\n, \nX\n\nSponsors:\n\nMidwest AI Summit:\n Join AI practitioners on October 15 in Indianapolis for practical sessions, hands-on discussions, and real-world AI solutions. Use code PracticalAI20 to save 20% on your registration. \nhttps://midwestaisummit.com/#tickets\n\nFramer: \nThe enterprise-grade website builder that lets your team ship faster. Get 30% off at \nframer.com/practicalai\n\nResources and Events:\n\nRegister for \nupcoming webinars here\n!\n\nPrior \nWebinars from our partner Prediction Guard\n\nMidwest AI Summit 2026",
+          "url": "https://share.transistor.fm/s/66185604",
+          "published_at": "2026-09-17T09:00:00+00:00",
+          "hosts": [
+            "Chris Benson",
+            "Daniel Whitenack"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/66185604"
+      }
     }
   ]
 }
