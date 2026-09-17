@@ -69084,6 +69084,34 @@
         "podcast": "https://lexfridman.com/andrew-scull/?utm_source=rss&utm_medium=rss&utm_campaign=andrew-scull",
         "youtube": "https://www.youtube.com/watch?v=s7d2d8FhevU"
       }
+    },
+    {
+      "id": "2b4fbf461720bab230af",
+      "first_seen_at": "2026-09-17T03:18:28+00:00",
+      "status": "skipped",
+      "title": "Reimagining IT with ChatGPT",
+      "source_title": "Reimagining IT with ChatGPT",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional video about OpenAI's internal use of ChatGPT, lacking the substantial interview, talk, demonstration, or explainer required for inclusion.",
+      "published_at": "2026-09-17T02:11:53+00:00",
+      "appearances": [
+        {
+          "id": "38d875a3dbb47a2f5da3",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:Q_MEaNdMpZw",
+          "title": "Reimagining IT with ChatGPT",
+          "description": "Go behind the scenes to see how Open AI's IT team uses ChatGPT to deliver business outcomes.",
+          "url": "https://www.youtube.com/watch?v=Q_MEaNdMpZw",
+          "published_at": "2026-09-17T02:11:53+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=Q_MEaNdMpZw"
+      }
     }
   ]
 }
