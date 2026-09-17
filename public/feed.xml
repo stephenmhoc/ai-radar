@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Y Combinator: Startups Are Moving From Bits to Atoms — Y Combinator</title>
+      <link>https://www.youtube.com/watch?v=yslXlV2BP_Y</link>
+      <guid isPermaLink="false">ai-radar:d2eacc9f9451c170038f</guid>
+      <pubDate>Thu, 17 Sep 2026 17:58:14 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCcefcZRL2oaA_uBNeo5UOWg">Y Combinator</source>
+      <description>Y Combinator partners discuss how artificial intelligence is enabling smaller teams to tackle ambitious problems, leading to a notable shift from bits to atoms. They examine the return of hard tech across sectors like defense and manufacturing, alongside the reality that AI compute has become a physical infrastructure challenge. The discussion explores why robotics may be approaching its own ChatGPT moment and why the field will require specialized models. Additionally, they assess the boom in data and reinforcement learning environments while observing how software is evolving into a harness. Finally, the partners analyze why startups are reaching meaningful revenue faster than ever and why knowing what to build has become more critical than simply knowing how to build it.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Y Combinator&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=yslXlV2BP_Y"&gt;Startups Are Moving From Bits to Atoms&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>How Real-Time AI Video Is Changing How Creators Work — a16z</title>
+      <link>https://www.youtube.com/watch?v=SDbRJXQrYGY</link>
+      <guid isPermaLink="false">ai-radar:a34050db26eb5aa661eb</guid>
+      <pubDate>Thu, 17 Sep 2026 17:33:45 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UC9cn0TuPq4dnbTY-CBsm8XA">a16z</source>
+      <description>a16z General Partner Jennifer Li interviews fal co-founder Gorkem Yurtseven and Head of Engineering Batuhan Taskaya about the implications of real-time generative video. The discussion focuses on fal&amp;#x27;s H3 Max, a post-trained version of MiniMax&amp;#x27;s open-weight video model, and how combining model post-training with systems and hardware optimization significantly reduced generation time while maintaining quality. This speed has enabled experiments with continuous video, including streams that can remember previous scenes and respond to new directions. They also explore the next challenges, such as achieving greater control over camera movement, lighting, characters, motion, and lip sync, and what these capabilities mean for professional creative workflows where predictable tools are essential.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · a16z&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=SDbRJXQrYGY"&gt;How Real-Time AI Video Is Changing How Creators Work&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Noam Brown on Multi-Agent Systems, Navier-Stokes, and AI Alignment — Dwarkesh Podcast</title>
       <link>https://www.youtube.com/watch?v=6AgOfiZOWiY</link>
       <guid isPermaLink="false">ai-radar:7760167120e5f082f2c0</guid>
