@@ -69290,6 +69290,77 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=k7wPdCNfljQ"
       }
+    },
+    {
+      "id": "dd4f63f1577b699e967b",
+      "first_seen_at": "2026-09-17T14:17:25+00:00",
+      "status": "published",
+      "title": "No Code Is Code: Zapier CEO Wade Foster on Headless Tools, Zapier MCP & Automation Bench",
+      "source_title": "No Code Is Code: Zapier CEO Wade Foster on Headless Tools, Zapier MCP & Automation Bench",
+      "short_summary": "Zapier CEO Wade Foster discusses headless AI tools, Zapier MCP, and automation benchmarking. He argues for reserving AI reasoning for specific steps in agentic systems and covers frontier model performance on enterprise tasks and internal AI transformation.",
+      "long_summary": "Zapier CEO Wade Foster joins Nathan to explore the shift toward headless AI tools and how Zapier MCP integrates workflows and context into users' daily drivers. Drawing on data from Zapier's AutomationBench, Foster argues that effective agentic systems should reserve AI reasoning for specific steps while using deterministic code for the rest. The discussion also covers why seat-based software pricing is fading and how frontier models perform on realistic enterprise tasks. They delve into what practical AI transformation looks like inside organizations, including managing tokens and slop. The conversation provides insights into benchmarking automation models and navigating market competition.",
+      "reason": "The item features an interview with the CEO of Zapier, a company focused on automation and AI-enabled workflows, discussing consequential topics like agentic systems, frontier model performance, and AI transformation within organizations. This aligns with the criteria for important AI companies, products, and AI-native software/engineering practice.",
+      "published_at": "2026-09-17T13:27:46+00:00",
+      "appearances": [
+        {
+          "id": "23fc7533855658498376",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "a2dce1e2-b298-11f1-b490-0beb49bd41bf",
+          "title": "No Code Is Code: Zapier CEO Wade Foster on Headless Tools, Zapier MCP & Automation Bench",
+          "description": "Zapier CEO Wade Foster joins Nathan to explore the shift toward headless AI tools and how Zapier MCP brings workflows and context directly into users' daily drivers. Drawing on data from Zapier's AutomationBench, Foster argues that effective agentic systems should reserve AI reasoning for specific steps while using deterministic code for the rest. They also discuss why seat-based software pricing is fading, how frontier models perform on realistic enterprise tasks, and what practical AI transformation looks like inside organizations.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/no-code-is-code-zapier-ceo-wade-foster-on-headless-tools-zapier-mcp-automation-bench/\nSponsors:\n\nMercury Command: Mercury Command brings powerful conversational AI directly into your banking, providing real-time natural language access to your finances without exposing data to third-party tools. Learn more and apply online in minutes at https://mercury.com\n\nAthena: Athena matches you with a dedicated, top 1% executive assistant to handle your inbox, calendar, and daily workflows so you can save an average of 15 hours a week. Get matched with your EA today at https://athena.com/cognitive\n\nOutSystems: OutSystems is the leading agentic systems platform that enables enterprises to engineer, orchestrate, and govern AI applications on a single unified platform. Learn more and see how it works at https://outsystems.com/tcr\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(03:33) Sponsor: Mercury Command\n\n(05:21) Daily drivers and MCP\n\n(10:20) Benchmarking automation models\n\n(18:01) Replacing no-code with code (Part 1)\n\n(19:31) Sponsors: Athena | OutSystems\n\n(23:02) Replacing no-code with code (Part 2)\n\n(30:34) Navigating market competition (Part 1)\n\n(34:01) Sponsor: Claude\n\n(35:36) Navigating market competition (Part 2)\n\n(39:30) Passive workflow discovery\n\n(46:09) Internal AI transformation\n\n(55:46) Managing tokens and slop\n\n(01:03:37) Episode Outro\n\n(01:05:59) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing",
+          "url": "https://www.cognitiverevolution.ai/no-code-is-code-zapier-ceo-wade-foster-on-headless-tools-zapier-mcp-automation-bench/",
+          "published_at": "2026-09-17T13:27:47+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        },
+        {
+          "id": "2e895e4495c5cb3f2151",
+          "kind": "youtube",
+          "source": "The Cognitive Revolution — YouTube",
+          "family": "the cognitive revolution",
+          "guid": "yt:video:2ayx_3mHPgU",
+          "title": "No Code Is Code: Zapier CEO Wade Foster on Headless Tools, Zapier MCP & Automation Bench",
+          "description": "Zapier CEO Wade Foster joins Nathan to explore the shift toward headless AI tools and how Zapier MCP brings workflows and context directly into users' daily drivers. Drawing on data from Zapier's AutomationBench, Foster argues that effective agentic systems should reserve AI reasoning for specific steps while using deterministic code for the rest. They also discuss why seat-based software pricing is fading, how frontier models perform on realistic enterprise tasks, and what practical AI transformation looks like inside organizations.\n\nFor full show notes, links, and references, read the episode page:\nhttps://www.cognitiverevolution.ai/no-code-is-code-zapier-ceo-wade-foster-on-headless-tools-zapier-mcp-automation-bench/\n\nSPONSORS:\nMercury Command: Mercury Command brings powerful conversational AI directly into your banking, providing real-time natural language access to your finances without exposing data to third-party tools. Learn more and apply online in minutes at https://mercury.com/?utm_source=cognitive_rev&utm_medium=sponsored_podcast&utm_campaign=26q2_brand_campaign\n\nAthena: Athena matches you with a dedicated, top 1% executive assistant to handle your inbox, calendar, and daily workflows so you can save an average of 15 hours a week. Get matched with your EA today at https://athena.com/cognitive\n\nOutSystems: OutSystems is the leading agentic systems platform that enables enterprises to engineer, orchestrate, and govern AI applications on a single unified platform. Learn more and see how it works at https://outsystems.com/tcr\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nCHAPTERS:\n(00:00) About the Episode\n(03:33) Sponsor: Mercury Command\n(05:21) Daily drivers and MCP\n(10:20) Benchmarking automation models\n(18:01) Replacing no-code with code (Part 1)\n(19:31) Sponsors: Athena | OutSystems\n(23:02) Replacing no-code with code (Part 2)\n(30:34) Navigating market competition (Part 1)\n(34:01) Sponsor: Claude\n(35:36) Navigating market competition (Part 2)\n(39:30) Passive workflow discovery\n(46:09) Internal AI transformation\n(55:46) Managing tokens and slop\n(01:03:37) Episode Outro\n(01:05:59) Outro\n\nPRODUCED BY:\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\nWebsite: https://www.cognitiverevolution.ai\nTwitter (Podcast): https://x.com/cogrev_podcast\nTwitter (Nathan): https://x.com/labenz\nLinkedIn: https://linkedin.com/in/nathanlabenz/\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.youtube.com/watch?v=2ayx_3mHPgU",
+          "published_at": "2026-09-17T13:27:46+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/no-code-is-code-zapier-ceo-wade-foster-on-headless-tools-zapier-mcp-automation-bench/",
+        "youtube": "https://www.youtube.com/watch?v=2ayx_3mHPgU"
+      }
+    },
+    {
+      "id": "1dc2f4398b6effe1a69b",
+      "first_seen_at": "2026-09-17T14:17:27+00:00",
+      "status": "published",
+      "title": "AI Search, LLM Visibility, Citations, Query Fan-Out & the Future of Search |Episode 372|",
+      "source_title": "AI Search, LLM Visibility, Citations, Query Fan-Out & the Future of Search |Episode 372|",
+      "short_summary": "This episode discusses the shift from traditional SEO to AI search, examining how LLMs generate answers, the role of retrieval and citations, and strategies for AI visibility. It also explores the future of AI agents interacting with websites and taking actions for users.",
+      "long_summary": "This episode of Practical AI explores the evolving landscape of AI search and its impact on information discovery and brand visibility. It delves into the transition from traditional SEO to AI search, detailing the mechanisms behind LLM-generated answers and the significance of retrieval and citations. The discussion covers AI visibility, Reddit strategy, query fan-out, representation in model weights, and consensus. The hosts and guests also look ahead to a future where AI agents will not only discover but also interact with websites and perform actions on behalf of users.",
+      "reason": "The item discusses frontier models, AI-native software, and the economics and business strategy of AI development, specifically in the context of AI search and LLMs.",
+      "published_at": "2026-09-17T14:05:43+00:00",
+      "appearances": [
+        {
+          "id": "6fede14e45abdc95c302",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:KWEu2zJlTYs",
+          "title": "AI Search, LLM Visibility, Citations, Query Fan-Out & the Future of Search |Episode 372|",
+          "description": "AI search is changing how people discover information and how brands need to think about visibility. We talk about the shift from traditional SEO to AI search, what happens behind the scenes when an LLM generates an answer, and why retrieval and citations don't always tell the whole story. They dig into AI visibility, Reddit strategy, query fan-out, representation in model weights, and consensus. They also look ahead to a world where AI agents don't just discover websites, but interact with them and take actions on behalf of users.\n\nFEATURING:\n\nGuest - Liam Dunne (Co-founder of Discovered Labs)\nGuest - Ben Moore (Co-founder of Discovered Labs)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast)\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast)\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://us06web.zoom.us/webinar/register/WN_tMivXvPXRJ6pi5526S5etw#/registration\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nCHAPTERS:\n\n0:00 Welcome to Practical AI Podcast!\n0:27 Introduction to AI Visibility and Search Optimization\n2:59 Understanding AEO and SEO: The New Landscape\n5:44 Changing Buyer Behavior in the Age of AI\n8:45 Technical Insights: Measuring AI Visibility\n11:40 Mechanics of AI Systems: How Brands Appear\n14:39 Sponsor: Midwest AI Summit\n16:13 The Human Element: Marketing in an AI-Driven World\n26:38 The Role of Reddit in AI Retrieval\n30:23 Understanding Retrieval and Citation Dynamics\n35:54 Strategizing for AI Visibility\n41:25 The Future of AI Agents and Brand Perception\n51:51 See you next time!\n\nListen more at https://practicalai.show/",
+          "url": "https://www.youtube.com/watch?v=KWEu2zJlTYs",
+          "published_at": "2026-09-17T14:05:43+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=KWEu2zJlTYs"
+      }
     }
   ]
 }
