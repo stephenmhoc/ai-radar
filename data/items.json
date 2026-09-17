@@ -69174,6 +69174,64 @@
       "links": {
         "podcast": "https://share.transistor.fm/s/66185604"
       }
+    },
+    {
+      "id": "69d4dc70900e48c228cc",
+      "first_seen_at": "2026-09-17T10:17:22+00:00",
+      "status": "published",
+      "title": "The Next Frontier of AI Video Is Control",
+      "source_title": "The Next Frontier of AI Video Is Control",
+      "short_summary": "Fal co-founder Gorkem Yurtseven and Head of Engineering Batuhan Taskaya discuss real-time generative video. They detail the technical work behind H3 Max, fal’s post-trained version of MiniMax’s open-weight video model, and how combining model post-training with systems and hardware optimization significantly reduced generation time while maintaining quality.",
+      "long_summary": "A16z General Partner Jennifer Li interviews fal co-founder Gorkem Yurtseven and Head of Engineering Batuhan Taskaya about the implications of real-time generative video. They explain the technical advancements behind H3 Max, fal’s post-trained version of MiniMax’s open-weight video model. The discussion covers how combining model post-training with systems and hardware optimization led to significant reductions in generation time while preserving quality. This speed has enabled experiments with continuous video, including streams that can remember previous scenes and respond to new directions. The conversation also explores the next challenge: moving beyond speed to control aspects like camera movement, lighting, characters, motion, and lip sync, and what these capabilities mean for professional creative workflows requiring predictable tools.",
+      "reason": "The item features an interview with technical founders discussing frontier models, specifically a post-trained open-weight video model, and AI infrastructure related to real-time generation and optimization.",
+      "published_at": "2026-09-17T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "b9b254e00336b9296067",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "360e9305-a300-4381-a4ee-640fd8833922",
+          "title": "The Next Frontier of AI Video Is Control",
+          "description": "a16z General Partner Jennifer Li sits down with fal co-founder Gorkem Yurtseven and Head of Engineering Batuhan Taskaya to discuss what changes when generative video becomes fast enough to run in real time.\n\nThey unpack the technical work behind H3 Max, fal’s post-trained version of MiniMax’s open-weight video model, and how combining model post-training with systems and hardware optimization significantly reduced generation time while maintaining quality. That speed has enabled experiments with continuous video, including streams that can remember previous scenes and respond to new directions while they’re running.\n\nThey also discuss why the next challenge may be less about speed and more about control, from camera movement and lighting to characters, motion, and lip sync. And they explore what those capabilities could mean for professional creative workflows, where artists and studios need predictable tools rather than simply generating a video from a prompt.\n\nResources:\n\nFollow Gorkem Yurtseven on X: \nhttps://x.com/gorkem\n\nFollow Batuhan Taskaya on X: \nhttps://x.com/isidentical\n\nLearn more about fal:\nhttps://fal.ai\n\nFollow Jennifer Li on X: \nhttps://x.com/JenniferHli\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/the-next-frontier-of-ai-video-is-control-RmfmPBwf",
+          "published_at": "2026-09-17T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/the-next-frontier-of-ai-video-is-control-RmfmPBwf"
+      }
+    },
+    {
+      "id": "be07a79ab0d42e007556",
+      "first_seen_at": "2026-09-17T10:17:22+00:00",
+      "status": "deferred",
+      "title": "An Interview with Joanna Stern About the iPhone Duo and AI for Normal People",
+      "source_title": "An Interview with Joanna Stern About the iPhone Duo and AI for Normal People",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-17T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "bab54c03d1add1949217",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20030",
+          "title": "An Interview with Joanna Stern About the iPhone Duo and AI for Normal People",
+          "description": "An Interview with Joanna Stern About the iPhone Duo and AI for Normal People",
+          "url": "https://stratechery.com/2026/an-interview-with-joanna-stern-about-the-iphone-duo-and-ai-for-normal-people/",
+          "published_at": "2026-09-17T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/an-interview-with-joanna-stern-about-the-iphone-duo-and-ai-for-normal-people/"
+      }
     }
   ]
 }
