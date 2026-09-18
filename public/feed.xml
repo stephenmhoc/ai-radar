@@ -6,12 +6,28 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>The Overhang — One Useful Thing</title>
+      <link>https://www.oneusefulthing.org/p/the-overhang</link>
+      <guid isPermaLink="false">ai-radar:b8375535305c6e20fa9b</guid>
+      <pubDate>Fri, 18 Sep 2026 17:54:32 +0000</pubDate>
+      <source url="https://www.oneusefulthing.org/feed">One Useful Thing</source>
+      <description>The article addresses the rapid pace of AI development, noting that current models like GPT-6 Astra and Fable 5.1 are already capable of transformative impact, performing weeks of human work when properly guided. It provides examples such as turning a text adventure game into a 3D action game and reconstructing a library in 3D. The author emphasizes that the current capabilities of existing models are often not well understood or fully utilized, creating a &amp;quot;capability overhang.&amp;quot; The piece also outlines four human advantages—deep knowledge, wide knowledge, taste, and agency—that are crucial for effectively working with AI to enhance human efforts rather than merely replacing them. It suggests that these advantages help individuals navigate the &amp;quot;jagged frontier&amp;quot; of AI capabilities and adapt to inevitable changes.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · One Useful Thing&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.oneusefulthing.org/p/the-overhang"&gt;The Overhang&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Stratechery: Doomforce — Stratechery</title>
       <link>https://stratechery.com/2026/doomforce/</link>
       <guid isPermaLink="false">ai-radar:279680dd37ac6149adea</guid>
       <pubDate>Fri, 18 Sep 2026 17:00:00 +0000</pubDate>
       <source url="https://stratechery.com/feed/">Stratechery</source>
       <description>This edition of the Stratechery newsletter features discussions on various AI-related topics. It addresses the ongoing debates around AI doom, with a focus on the pushback against viewpoints that lack dissent. The newsletter also explores the limited potential for a pacing deal with China to slow down AI development, considering the CCP&amp;#x27;s past successes in controlling technology. Another key topic is Salesforce&amp;#x27;s strategy, which involves integrating with Anthropic and OpenAI chatbots as the preferred user interface for its customers, moving away from its previous commitment to AgentForce. The newsletter also mentions an article discussing AI anxiety and its recent absurdity.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Stratechery&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://stratechery.com/2026/doomforce/"&gt;2026.38: Doomforce&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Manufacturing 50,000 Humanoid Robots Next Year | Bernt Børnich, 1X — Relentless</title>
+      <link>https://podcasters.spotify.com/pod/show/ti-morse/episodes/Manufacturing-50-000-Humanoid-Robots-Next-Year--Bernt-Brnich--1X-e3p1si7</link>
+      <guid isPermaLink="false">ai-radar:7a2195796c05844e971d</guid>
+      <pubDate>Fri, 18 Sep 2026 16:59:09 +0000</pubDate>
+      <source url="https://anchor.fm/s/e402cdc8/podcast/rss">Relentless</source>
+      <description>Bernt Børnich, the founder and CEO of 1X, a California-based humanoid robotics company, was interviewed on the podcast &amp;quot;Relentless.&amp;quot; The discussion focused on 1X&amp;#x27;s plans for manufacturing and shipping its humanoid robot. After years of developing NEO, its first home robot, 1X is preparing for large-scale production. The company aims to manufacture and ship 50,000 units of NEO in 2027.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Relentless&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://podcasters.spotify.com/pod/show/ti-morse/episodes/Manufacturing-50-000-Humanoid-Robots-Next-Year--Bernt-Brnich--1X-e3p1si7"&gt;Manufacturing 50,000 Humanoid Robots Next Year | Bernt Børnich, 1X&lt;/a&gt;</description>
     </item>
     <item>
       <title>Engrams Embedding Entendre: Codesign for Efficient DRAM/SSD Offloading — SemiAnalysis</title>
