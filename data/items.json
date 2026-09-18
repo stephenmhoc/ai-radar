@@ -69947,6 +69947,34 @@
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/engrams-embedding-entendre-codesign"
       }
+    },
+    {
+      "id": "5f9de3960c9f1ab6d31c",
+      "first_seen_at": "2026-09-18T16:17:18+00:00",
+      "status": "skipped",
+      "title": "What Bodybuilding Taught Brian Chesky About Success",
+      "source_title": "What Bodybuilding Taught Brian Chesky About Success",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-18T15:30:09+00:00",
+      "appearances": [
+        {
+          "id": "1feb80de43ff66a82488",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:eURc55MsNPc",
+          "title": "What Bodybuilding Taught Brian Chesky About Success",
+          "description": "Before founding Airbnb, Brian Chesky competed in bodybuilding at the national level.\n\nHe says it taught him two lasting lessons: if you can change your body, you can change your life — and meaningful progress doesn’t happen in a day. It comes from discipline, consistency, and getting a little better over time.\n\n#BrianChesky #Airbnb #Bodybuilding #Discipline #Consistency #PersonalGrowth #StartupAdvice #Founders #Entrepreneurship #InvestLikeTheBest\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/eURc55MsNPc",
+          "published_at": "2026-09-18T15:30:09+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/eURc55MsNPc"
+      }
     }
   ]
 }
