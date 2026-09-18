@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Engrams Embedding Entendre: Codesign for Efficient DRAM/SSD Offloading — SemiAnalysis</title>
+      <link>https://newsletter.semianalysis.com/p/engrams-embedding-entendre-codesign</link>
+      <guid isPermaLink="false">ai-radar:c899a073ee85cc8b9e5a</guid>
+      <pubDate>Fri, 18 Sep 2026 14:34:20 +0000</pubDate>
+      <source url="https://newsletter.semianalysis.com/feed">SemiAnalysis</source>
+      <description>The article details Engram, a model architecture optimization that uses learned multi-token lookups to reduce the need for HBM capacity by retrieving vectors directly. This design is naturally codesigned for parameter offloading, allowing Engram tables to reside outside HBM in host DRAM or even SSDs. The analysis includes performance benchmarks of DeepSeek-V4.1-Flash with Engram offloading on various NVIDIA GPU SKUs and AMD&amp;#x27;s MI355X, showing NVIDIA&amp;#x27;s significant performance and cost-per-dollar advantage. It also examines the benefits of offloading Engram to DRAM, which can improve performance and reduce communication overhead by enabling lower tensor parallelism. While SSD offloading is explored, the benchmarks suggest it is not yet viable for production serving due to performance and cost trade-offs. The report also discusses the impact of removing Engram on model performance and the interplay between memory features and expert selection.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · SemiAnalysis&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.semianalysis.com/p/engrams-embedding-entendre-codesign"&gt;Engrams Embedding Entendre: Codesign for Efficient DRAM/SSD Offloading&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>OpenAI: Use ChatGPT Work to ground analysis in your semantic layer — OpenAI</title>
       <link>https://www.youtube.com/watch?v=bbNTY8O0GTY</link>
       <guid isPermaLink="false">ai-radar:3b0de3cdd96d43091511</guid>
