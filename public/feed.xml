@@ -6,6 +6,30 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>OpenAI: Use ChatGPT Work to ground analysis in your semantic layer — OpenAI</title>
+      <link>https://www.youtube.com/watch?v=bbNTY8O0GTY</link>
+      <guid isPermaLink="false">ai-radar:3b0de3cdd96d43091511</guid>
+      <pubDate>Fri, 18 Sep 2026 13:28:31 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">OpenAI</source>
+      <description>This clip from OpenAI features their data team discussing the use of a semantic layer to ground analysis in a business&amp;#x27;s semantic understanding. They detail how this layer integrates key entities, metric definitions, filters, and addresses known pitfalls. The team emphasizes the critical role of expert review in this process. Furthermore, they point out the benefits of reusing existing semantic work and the necessity of ongoing investment to maintain this foundational layer for data analysis.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · OpenAI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=bbNTY8O0GTY"&gt;Use ChatGPT Work to ground analysis in your semantic layer&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>OpenAI — Use ChatGPT Work to tailor dashboards for every stakeholder — OpenAI</title>
+      <link>https://www.youtube.com/watch?v=Wb8MhkpQpX8</link>
+      <guid isPermaLink="false">ai-radar:a321bf77d19b7ba40e30</guid>
+      <pubDate>Fri, 18 Sep 2026 13:27:02 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">OpenAI</source>
+      <description>This OpenAI video showcases a demonstration of ChatGPT Work. The demonstration illustrates how the tool can be utilized to customize dashboards to suit the specific decision-making needs of different stakeholders. It highlights the ability to adapt dashboard labels and chart types, explore key performance indicators (KPIs), and delve into compute demand. The demo uses synthetic data to illustrate methods for tailoring dashboards and examining the details behind business performance.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · OpenAI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=Wb8MhkpQpX8"&gt;Use ChatGPT Work to tailor dashboards for every stakeholder&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>OpenAI: Meet the Data Agent in ChatGPT Work — OpenAI</title>
+      <link>https://www.youtube.com/watch?v=VMgEQ7ym9WU</link>
+      <guid isPermaLink="false">ai-radar:493abc8c49f18c5fdd1c</guid>
+      <pubDate>Fri, 18 Sep 2026 13:24:22 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">OpenAI</source>
+      <description>OpenAI presents the Data agent within ChatGPT Work, a tool aimed at transforming business questions into actionable next steps. This agent can analyze company data, facilitate the creation of interactive dashboards, and monitor changes in data. Its functionality is intended to establish a shared context, ensuring consistent answers across an organization. The video demonstrates how to leverage these capabilities for data solutions.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · OpenAI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=VMgEQ7ym9WU"&gt;Meet the Data Agent in ChatGPT Work&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Why Diffusion Will Win AI Inference with Inception Co-Founder and CEO Stefano Ermon — No Priors</title>
       <link>https://feeds.megaphone.fm/nopriors</link>
       <guid isPermaLink="false">ai-radar:6c0001c179babbc77ff1</guid>
