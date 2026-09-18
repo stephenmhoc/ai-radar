@@ -70065,6 +70065,62 @@
       "links": {
         "newsletter": "https://www.oneusefulthing.org/p/the-overhang"
       }
+    },
+    {
+      "id": "8737658600e3c6e46776",
+      "first_seen_at": "2026-09-18T20:17:25+00:00",
+      "status": "published",
+      "title": "Databricks CEO: Stop Scaring People About AI",
+      "source_title": "Databricks CEO: Stop Scaring People About AI",
+      "short_summary": "Databricks CEO Ali Ghodsi discusses AI risk, recursive self-improvement, cybersecurity, and enterprise adoption challenges. He argues current models can automate more work, but lack organizational context, and debates pacing frontier AI and the threat of AI-powered cyberattacks.",
+      "long_summary": "Databricks co-founder and CEO Ali Ghodsi joins a16z General Partners Martin Casado and Sarah Wang to discuss AI risk, recursive self-improvement, cybersecurity, and what hinders enterprise AI adoption. Ghodsi argues that current models are capable of automating more work than companies utilize, but they lack the necessary organizational context and institutional knowledge. He suggests building an organizational \"ontology\" could bridge this gap, citing Databricks' internal experience.\n\nThe conversation also covers the debate around pacing frontier AI development and what constitutes meaningful recursive self-improvement. Ghodsi distinguishes speculative superintelligence risk from the more immediate threat of AI-powered cyberattacks. They conclude by exploring how enterprises manage increasing AI usage and costs, the shift towards multiple models and harnesses, and the emerging impact of agents on infrastructure.",
+      "reason": "The item is a substantial interview with the CEO of Databricks, a company building consequential AI infrastructure, discussing frontier models, AI infrastructure, and enterprise adoption, which aligns with AI Radar's scope.",
+      "published_at": "2026-09-18T19:25:08+00:00",
+      "appearances": [
+        {
+          "id": "b389ac404edb07c378c0",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:GzEtpAKYRvE",
+          "title": "Databricks CEO: Stop Scaring People About AI",
+          "description": "Databricks co-founder and CEO Ali Ghodsi joins a16z General Partners Martin Casado and Sarah Wang for a conversation about AI risk, recursive self-improvement, cybersecurity, and what’s actually holding back enterprise adoption.\n\nAli argues that today’s models are already capable enough to automate far more work than most companies are using them for. The bigger problem is context: models haven’t been in every meeting, don’t understand how decisions actually get made, and lack the institutional knowledge that experienced employees accumulate over years. He explains why building an organizational “ontology” could help close that gap and what Databricks has learned from doing it internally.\n\nThey also debate the current conversation around pacing frontier AI, what would constitute meaningful recursive self-improvement, and why Ali distinguishes speculative superintelligence risk from the much more immediate challenge of AI-powered cyberattacks. They close with how enterprises are managing exploding AI usage and costs, the shift toward multiple models and harnesses, and why agents are beginning to reshape infrastructure itself.\n\nTimestamps:\n00:00 - Intro\n00:48 - Pacing the Frontier: Where Ali Lands in the AI Debate\n16:01 - The Black Box Test: Is RSI Actually Happening?\n20:17 - Why We Haven't Seen the AI Cyber Apocalypse Yet\n31:27 - The 4D Chess Problem: Doom Talk vs IPO Allocations\n33:33 - Industry Self-Policing vs Federal Involvement\n41:49 - The Enterprise Use Cases Surprising Even Ali\n44:36 - How Enterprises Actually Operationalize AI in the Next 12 Months\n45:24 - Defining Ontology (Beyond the Palantir Version)\n50:55 - The Finance Anecdote: Real AI Value in the Boardroom\n\nResources:\nFollow Ali Ghodsi on X: https://x.com/alighodsi\nFollow Sarah Wang on X: https://x.com/sarahdingwang\nFollow Martin Casado on X: https://x.com/martin_casado\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=GzEtpAKYRvE",
+          "published_at": "2026-09-18T19:25:08+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=GzEtpAKYRvE"
+      }
+    },
+    {
+      "id": "20ecd8a1036cbd7f321c",
+      "first_seen_at": "2026-09-18T20:17:26+00:00",
+      "status": "skipped",
+      "title": "Practical AI — Relevancy, Consensus, Consistency with AI search",
+      "source_title": "Relevancy, Consensus, Consistency with AI search",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item features guests who are not from the target organizations, and the content focuses on AI visibility and brand influence rather than frontier models, infrastructure, or other qualifying technical or strategic areas.",
+      "published_at": "2026-09-18T20:12:49+00:00",
+      "appearances": [
+        {
+          "id": "968d3147d50e139f77c7",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:9MEZnkKCIDA",
+          "title": "Relevancy, Consensus, Consistency with AI search",
+          "description": "In this conversation, Liam breaks down a simple framework for approaching AI visibility: relevancy, consensus, and consistency. He explains how clear ICP and messaging create the foundation, why third-party mentions and communities like Reddit matter, where channels like YouTube and social media fit in, and why consistently reinforcing what your company should be known for can influence how AI systems understand your brand.\n\nFEATURING:\n\nGuest - Liam Dunne (Co-founder of Discovered Labs): https://www.linkedin.com/in/liamdunne05/\nGuest - Ben Moore (Co-founder of Discovered Labs): https://www.linkedin.com/in/benkarlmoore/\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast): https://www.linkedin.com/in/danielwhitenack/\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast): https://www.linkedin.com/in/chrisbenson/\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
+          "url": "https://www.youtube.com/watch?v=9MEZnkKCIDA",
+          "published_at": "2026-09-18T20:12:49+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=9MEZnkKCIDA"
+      }
     }
   ]
 }
