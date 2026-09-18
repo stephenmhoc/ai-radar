@@ -69587,6 +69587,50 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=eVUYCiRLgB4"
       }
+    },
+    {
+      "id": "6c0001c179babbc77ff1",
+      "first_seen_at": "2026-09-18T10:17:47+00:00",
+      "status": "published",
+      "title": "Why Diffusion Will Win AI Inference with Inception Co-Founder and CEO Stefano Ermon",
+      "source_title": "Why Diffusion Will Win AI Inference with Inception Co-Founder and CEO Stefano Ermon",
+      "short_summary": "Stanford professor and Inception co-founder Stefano Ermon discusses applying diffusion architecture beyond images to discrete text and code generation. He explains how parallel token generation in diffusion models offers superior inference scaling and hardware utilization compared to autoregressive LLMs.",
+      "long_summary": "Stanford professor, diffusion pioneer, and Inception co-founder and CEO Stefano Ermon discusses his company's approach to generative AI. He explains how Inception is applying diffusion architecture beyond images and video into discrete text and code generation. Ermon details the limitations of autoregressive LLMs and highlights why parallel token generation in diffusion models offers superior inference scaling and hardware utilization on standard GPUs. He also shares insights into Inception’s Mercury models, real-world voice agent applications, the software stack for serving diffusion-based models at scale, and the role of academia in AI innovation.",
+      "reason": "The item features a substantial interview with Stefano Ermon, co-founder and CEO of Inception, discussing frontier models, AI infrastructure, and important AI companies. His expertise as a Stanford professor and diffusion pioneer provides firsthand expertise and durable analysis on these topics.",
+      "published_at": "2026-09-18T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "1902b9b51235c488df5b",
+          "kind": "podcast",
+          "source": "No Priors",
+          "family": "no priors",
+          "guid": "51c4092c-b309-11f1-8603-fb8d30e1277f",
+          "title": "Why Diffusion Will Win AI Inference with Inception Co-Founder and CEO Stefano Ermon",
+          "description": "As generative AI hits hardware and latency bottlenecks, Stanford professor, diffusion pioneer, and Inception co-founder and CEO Stefano Ermon is betting on a radical new architecture. Stefano joins Sarah Guo to talk about Inception, and how his team is applying diffusion architecture beyond images and video into discrete text and code generation. Stefano explains the limitations of autoregressive LLMs, as well as why parallel token generation in diffusion models offers superior inference scaling and hardware utilization on standard GPUs. He also shares details about Inception’s Mercury models, real-world voice agent applications, the software stack required to serve diffusion-based models at scale, academia’s role at the frontier of AI innovations, and why the next era of AI competition will be defined by efficiency. \n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @StefanoErmon | @_inception_ai\n\nChapters:\n\n00:00 – Stefano Ermon Introduction\n\n00:35 – Research Background\n\n02:54 – Starting Inception\n\n05:59 – Why Diffusion Beats Autoregressive\n\n11:10 – Discrete vs. Continuous Modalities\n\n13:19 – Inception Today\n\n16:45 – Where Speed Wins\n\n17:31 – Inception Customer Base\n\n18:49 – Interaction with Hardware Landscape\n\n19:34 – Inception and the Broader Industry\n\n21:41 – Data Compression and Structure\n\n24:45 – Controllability of Diffusion Modeles\n\n27:25 – Emergent Capabilities at Scale\n\n29:02 – Future Workload Split Between Diffusion vs. Traditional\n\n30:03 – Adoption Challenges\n\n31:44 – Hiring and Team Organization\n\n32:50 – Recursive Self Improvement\n\n34:02 – Resource Allocation\n\n35:10 – Impact of Academia\n\n38:13 – Conclusion",
+          "url": "https://feeds.megaphone.fm/nopriors",
+          "published_at": "2026-09-18T10:00:00+00:00",
+          "hosts": [
+            "Sarah Guo",
+            "Elad Gil"
+          ]
+        },
+        {
+          "id": "653cc9a886e10d92e21f",
+          "kind": "youtube",
+          "source": "No Priors — YouTube",
+          "family": "no priors",
+          "guid": "yt:video:N1rjtDs8blY",
+          "title": "Why Diffusion Will Win AI Inference with Inception Co-Founder and CEO Stefano Ermon",
+          "description": "As generative AI hits hardware and latency bottlenecks, Stanford professor, diffusion pioneer, and Inception co-founder and CEO Stefano Ermon is betting on a radical new architecture. Stefano joins Sarah Guo to talk about Inception, and how his team is applying diffusion architecture beyond images and video into discrete text and code generation. Stefano explains the limitations of autoregressive LLMs, as well as why parallel token generation in diffusion models offers superior inference scaling and hardware utilization on standard GPUs. He also shares details about Inception’s Mercury models, real-world voice agent applications, the software stack required to serve diffusion-based models at scale, academia’s role at the frontier of AI innovations, and why the next era of AI competition will be defined by efficiency. \n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @StefanoErmon | @_inception_ai\n\nChapters:\n00:00 – Stefano Ermon Introduction\n00:35 – Research Background\n02:54 – Starting Inception\n05:59 – Why Diffusion Beats Autoregressive\n11:10 – Discrete vs. Continuous Modalities\n13:19 – Inception Today\n16:45 – Where Speed Wins\n17:31 – Inception Customer Base\n18:49 – Interaction with Hardware Landscape\n19:34 – Inception and the Broader Industry\n21:41 – Data Compression and Structure\n24:45 – Controllability of Diffusion Modeles\n27:25 – Emergent Capabilities at Scale\n29:02 – Future Workload Split Between Diffusion vs. Traditional\n30:03 – Adoption Challenges\n31:44 – Hiring and Team Organization\n32:50 – Recursive Self Improvement\n34:02 – Resource Allocation\n35:10 – Impact of Academia\n38:13 – Conclusion",
+          "url": "https://www.youtube.com/watch?v=N1rjtDs8blY",
+          "published_at": "2026-09-18T10:00:10+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/nopriors",
+        "youtube": "https://www.youtube.com/watch?v=N1rjtDs8blY"
+      }
     }
   ]
 }

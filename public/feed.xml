@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Why Diffusion Will Win AI Inference with Inception Co-Founder and CEO Stefano Ermon — No Priors</title>
+      <link>https://feeds.megaphone.fm/nopriors</link>
+      <guid isPermaLink="false">ai-radar:6c0001c179babbc77ff1</guid>
+      <pubDate>Fri, 18 Sep 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.megaphone.fm/nopriors">No Priors</source>
+      <description>Stanford professor, diffusion pioneer, and Inception co-founder and CEO Stefano Ermon discusses his company&amp;#x27;s approach to generative AI. He explains how Inception is applying diffusion architecture beyond images and video into discrete text and code generation. Ermon details the limitations of autoregressive LLMs and highlights why parallel token generation in diffusion models offers superior inference scaling and hardware utilization on standard GPUs. He also shares insights into Inception’s Mercury models, real-world voice agent applications, the software stack for serving diffusion-based models at scale, and the role of academia in AI innovation.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · No Priors&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://feeds.megaphone.fm/nopriors"&gt;Why Diffusion Will Win AI Inference with Inception Co-Founder and CEO Stefano Ermon&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · No Priors&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=N1rjtDs8blY"&gt;Why Diffusion Will Win AI Inference with Inception Co-Founder and CEO Stefano Ermon&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>OpenAI Announces Astra for Law Powered by GPT-6 Astra — OpenAI</title>
       <link>https://www.youtube.com/watch?v=YeeGHCixr7o</link>
       <guid isPermaLink="false">ai-radar:7e2bbb74ef6a8dcd4d8c</guid>
