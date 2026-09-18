@@ -70121,6 +70121,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=9MEZnkKCIDA"
       }
+    },
+    {
+      "id": "5e0658cb58047b0de995",
+      "first_seen_at": "2026-09-18T22:17:27+00:00",
+      "status": "published",
+      "title": "Databricks CEO Ali Ghodsi on AI Pacing, Cyber Risk, and Enterprise Adoption",
+      "source_title": "Databricks CEO on AI Pacing, Cyber Risk, and the Enterprise",
+      "short_summary": "Databricks co-founder and CEO Ali Ghodsi discusses enterprise AI adoption bottlenecks, arguing that a lack of organizational context limits deployment. He also examines frontier pacing, recursive self-improvement, AI-driven cybersecurity risks, and how agent architectures are reshaping enterprise infrastructure.",
+      "long_summary": "Databricks co-founder and CEO Ali Ghodsi joins a16z General Partners Martin Casado and Sarah Wang to discuss the practical hurdles facing enterprise AI adoption and frontier pacing. Ghodsi contends that modern models possess sufficient capability for broad automation but are constrained by an absence of institutional context, unrecorded meeting insights, and decision-making history. He explains how developing an internal organizational ontology can address this context deficit based on Databricks' operational experience. The discussion also addresses debates on pacing frontier models, the criteria for meaningful recursive self-improvement, and why Ghodsi views immediate AI cyberattacks as more urgent than speculative superintelligence risks. Additionally, the conversation details enterprise cost management strategies, the shift toward multi-model systems, and the ways agent systems are actively restructuring infrastructure.",
+      "reason": "Features a substantive interview with Databricks CEO Ali Ghodsi providing durable analysis on AI enterprise adoption, infrastructure shifts driven by agents, multi-model architectures, and AI safety and cyber risks.",
+      "published_at": "2026-09-18T21:37:54+00:00",
+      "appearances": [
+        {
+          "id": "aa76549929876fff4a6f",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "25f3d896-f1a0-4870-b8fd-a2ff22d160c7",
+          "title": "Databricks CEO on AI Pacing, Cyber Risk, and the Enterprise",
+          "description": "Databricks co-founder and CEO Ali Ghodsi joins a16z General Partners Martin Casado and Sarah Wang for a conversation about AI risk, recursive self-improvement, cybersecurity, and what’s actually holding back enterprise adoption.\n\nAli argues that today’s models are already capable enough to automate far more work than most companies are using them for. The bigger problem is context: models haven’t been in every meeting, don’t understand how decisions actually get made, and lack the institutional knowledge that experienced employees accumulate over years. He explains why building an organizational “ontology” could help close that gap and what Databricks has learned from doing it internally.\n\nThey also debate the current conversation around pacing frontier AI, what would constitute meaningful recursive self-improvement, and why Ali distinguishes speculative superintelligence risk from the much more immediate challenge of AI-powered cyberattacks. They close with how enterprises are managing exploding AI usage and costs, the shift toward multiple models and harnesses, and why agents are beginning to reshape infrastructure itself.\n\nResources:\n\nFollow Ali Ghodsi on X: \nhttps://x.com/alighodsi\n\nFollow Sarah Wang on X:\nhttps://x.com/sarahdingwang\n\nFollow Martin Casado on X: \nhttps://x.com/martin_casado\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/databricks-ceo-on-ai-pacing-cyber-risk-and-the-enterprise-QM1oJt1I",
+          "published_at": "2026-09-18T21:37:54+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/databricks-ceo-on-ai-pacing-cyber-risk-and-the-enterprise-QM1oJt1I"
+      }
     }
   ]
 }
