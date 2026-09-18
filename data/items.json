@@ -69610,8 +69610,8 @@
           "url": "https://feeds.megaphone.fm/nopriors",
           "published_at": "2026-09-18T10:00:00+00:00",
           "hosts": [
-            "Sarah Guo",
-            "Elad Gil"
+            "Elad Gil",
+            "Sarah Guo"
           ]
         },
         {
@@ -69630,6 +69630,37 @@
       "links": {
         "podcast": "https://feeds.megaphone.fm/nopriors",
         "youtube": "https://www.youtube.com/watch?v=N1rjtDs8blY"
+      }
+    },
+    {
+      "id": "21e423f67c424ffe993a",
+      "first_seen_at": "2026-09-18T11:17:45+00:00",
+      "status": "deferred",
+      "title": "A.I. Safety Goes Mainstream + a ‘Hard Fork’ Exit AMA",
+      "source_title": "A.I. Safety Goes Mainstream + a ‘Hard Fork’ Exit AMA",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-18T11:00:03+00:00",
+      "appearances": [
+        {
+          "id": "047d23f67ec3970b27f0",
+          "kind": "podcast",
+          "source": "Hard Fork",
+          "family": "hard fork",
+          "guid": "https://www.nytimes.com/2026/09/18/podcasts/ai-safety-final-ama.html",
+          "title": "A.I. Safety Goes Mainstream + a ‘Hard Fork’ Exit AMA",
+          "description": "“It has been one of the fastest, most sudden shifts I’ve experienced.”",
+          "url": "https://www.nytimes.com/2026/09/18/podcasts/ai-safety-final-ama.html",
+          "published_at": "2026-09-18T11:00:03+00:00",
+          "hosts": [
+            "Kevin Roose",
+            "Casey Newton"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.nytimes.com/2026/09/18/podcasts/ai-safety-final-ama.html"
       }
     }
   ]
