@@ -69975,6 +69975,36 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/eURc55MsNPc"
       }
+    },
+    {
+      "id": "279680dd37ac6149adea",
+      "first_seen_at": "2026-09-18T17:17:22+00:00",
+      "status": "published",
+      "title": "Stratechery: Doomforce",
+      "source_title": "2026.38: Doomforce",
+      "short_summary": "This Stratechery newsletter includes discussions on AI doom debates, the limited potential for a pacing deal with China on AI development, and Salesforce's integration with Anthropic and OpenAI chatbots.",
+      "long_summary": "This edition of the Stratechery newsletter features discussions on various AI-related topics. It addresses the ongoing debates around AI doom, with a focus on the pushback against viewpoints that lack dissent. The newsletter also explores the limited potential for a pacing deal with China to slow down AI development, considering the CCP's past successes in controlling technology. Another key topic is Salesforce's strategy, which involves integrating with Anthropic and OpenAI chatbots as the preferred user interface for its customers, moving away from its previous commitment to AgentForce. The newsletter also mentions an article discussing AI anxiety and its recent absurdity.",
+      "reason": "The newsletter includes substantive discussions on frontier models (Anthropic, OpenAI), AI policy (pacing deal with China), and AI-native software/engineering practice (Salesforce's integration of AI chatbots).",
+      "published_at": "2026-09-18T17:00:00+00:00",
+      "appearances": [
+        {
+          "id": "2a12808b5edf12174bfc",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20037",
+          "title": "2026.38: Doomforce",
+          "description": "(Photo by Benjamin Fanjoy/Getty Images)\n\nWelcome back to This Week in Stratechery!\n\nAs a reminder, each week, every Friday, we’re sending out this overview of content in the Stratechery bundle; \nhighlighted links are free for everyone\n. Additionally, you have complete control over what we send to you. If you don’t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in \nyour delivery settings\n.\n\nOn that note, here were a few of our favorites this week.\n\nThe View From Anywhere But San Francisco\n. It is exciting to talk about AI because there are so many unknowns; it is incredibly frustrating to talk about AI doom…because there are so many unknowns. Indeed, that’s the pushback I had \non Stratechery\n and \nSharp Tech\n to the debates of the last week: viewpoints that don’t harbor dissent inevitably lead to bad outcomes. The best read on the matter, however, was Andrew’s Sharp Text article \nSome of All Fears\n, that had a simple request: let’s actually solve real problems when they are, in fact, real. \n—\nBen Thompson\n\nThe Limited Potential for a Pacing Deal. \nAfter a week of speculation over whether China would ever agree to a deal with the U.S. to slow down AI development, Bill and I discussed that question at length \non this week’s episode of Sharp China\n, as well as why the CCP’s past successes controlling technology (they did in fact \nnail jello to the wall\n) may inform its apparent confidence in its ability to manage AI risk. At the end, I also found it interesting to learn that rising discontent across Chinese social media is not necessarily a reflection of the limits of that aforementioned censorship, but possibly a window into how the Party manages social malaise.  \n—\nAS\n\nThe Salesforce Zag.\n We didn’t get a chance to discuss this on Sharp Tech this week (we had too much existential dread to address), but I loved \nWednesday’s Update\n on Dreamforce and Salesforce’s integration with Anthropic. In what appears to be a climbdown from \nhis colorful commitment to AgentForce in 2024\n, CEO Marc Benioff is now going the opposite direction from other enterprise AI players and leaning into Anthropic and OpenAI chatbots as the preferred UI of his customers. Rather than fight the AI tide, Salesforce will swim with it and charge a premium for it (with the caveat that these particular currents may lead to a world in which the SaaS beachhead is eroded for everyone). \n—\nAndrew Sharp\n\nStratechery Articles and Updates\n\nPacing the Frontier, AI’s Digital Limits, AI Commissars\n— Dario Amodei wants to pace the frontier; it’s an unrealistic proposal that seems mostly geared to political control of AI.\n\nOpenAI Ads, Amazon Ads in ChatGPT, Walmart to Accept Apple Pay\n— ChatGPT ads are working, and solve Amazon’s biggest problem with chatbots. Then, Walmart finally gives in to Apple Pay, because fighting the status quo is hard.\n\nSalesforce AI Force, Agents as UI, The Race to Headless\n— Salesforce is abandoning UI as a moat, which is a very smart move because it’s disappearing for everyone.\n\nAn Interview with Joanna Stern About the iPhone Duo and AI for Normal People\n\nSharp Text by Andrew Sharp\n\nSome of All Fears\n— AI anxiety is rational, but the conversation over the past 10 days has been absurd and irresponsible.\n\nDithering with Ben Thompson and Daring Fireball’s John Gruber\n\nFootball and the Frontier\n\niPhone 18 Pro\n\nAsianometry with Jon Yu\n\nSilicon Valley’s Got That Energy (But No Compute)\n\nExxon’s Office Fling\n\nSharp China with Andrew Sharp and Sinocism’s Bill Bishop\n\nThe Limited Potential for a Pacing Deal; MSS on PRC AI Risks; Distillation and Data Security; The Party’s Approach to Social Media\n\nGreatest of All Talk\n\nSearching for the 2026 Protagonists, The Six Most Confusing Teams This Season, Surveying the Southwest Division\n\nSharp Tech with Andrew Sharp and Ben Thompson\n\nDoom Debates Go Mainstream, AI Religion and the Economic Future, Several Vectors of the China Question\n\nThis week’s Stratechery video is on \nWrite Things Down\n.",
+          "url": "https://stratechery.com/2026/doomforce/",
+          "published_at": "2026-09-18T17:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/doomforce/"
+      }
     }
   ]
 }
