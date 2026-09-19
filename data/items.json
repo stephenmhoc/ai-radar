@@ -70180,6 +70180,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-here-are-6-clones-of-jev-in"
       }
+    },
+    {
+      "id": "732a54adc8b3eff596f0",
+      "first_seen_at": "2026-09-19T10:17:20+00:00",
+      "status": "published",
+      "title": "What Makes a Consumer AI Product Stick? | Josh Elman",
+      "source_title": "What Makes a Consumer AI Product Stick? | Josh Elman",
+      "short_summary": "a16z Partner Josh Elman discusses consumer AI, focusing on what makes products stick. He emphasizes starting with a narrow wedge, earning trust, and the potential for AI agents to make technology more social, exploring personal AI agents and the future of shopping and entertainment.",
+      "long_summary": "a16z Partner Josh Elman joins Ollie Forsyth to discuss the next wave of consumer AI and what separates a product people try once from one that becomes part of their everyday lives. Elman argues that while getting attention is easier, getting consumers to stick is harder than ever. He explains his criteria for consumer products, highlighting the importance of starting with a narrow wedge and earning the right to expand. Trust becomes increasingly important as AI agents gain access to personal lives. The conversation also explores personal AI agents, the future of shopping and entertainment, and how AI could make technology more social, including agents that help people spend more time together in the real world.",
+      "reason": "The item features a partner from a prominent venture capital firm discussing the strategic and product aspects of consumer AI, which falls under the 'important AI companies, products, agent systems, and AI-native software or engineering practice' criterion.",
+      "published_at": "2026-09-19T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "40f4a5405ae15cb2989f",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "382b7a08-2528-42bf-89a3-0977d83fffff",
+          "title": "What Makes a Consumer AI Product Stick? | Josh Elman",
+          "description": "a16z Partner Josh Elman joins Ollie Forsyth on \nNew Economies\n to discuss the next wave of consumer AI and what separates a product people try once from one that becomes part of their everyday lives.\n\nJosh argues that getting attention has actually become easier, but getting consumers to stick is harder than ever. He explains what he looks for in consumer products, why the best ones start with a narrow wedge and earn the right to do more, and why trust becomes increasingly important as AI agents gain access to more of our personal lives.\n\nThey also explore personal AI agents, the future of shopping and entertainment, why we haven’t seen another major social network emerge, and how AI could make technology more social rather than less, including agents that help people spend more time together in the real world.\n\nThis conversation originally appeared on the\n New Economies \npodcast.\n\nResources:\n\nFollow Josh Elman on X:\nhttps://x.com/jelman\n\nFollow New Economies: \nhttps://www.youtube.com/@NEWECONOMIESPOD\n\nNew Economies Substack: \nhttps://www.neweconomies.co/\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/what-makes-a-consumer-ai-product-stick-josh-elman-xHQUEG_W",
+          "published_at": "2026-09-19T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/what-makes-a-consumer-ai-product-stick-josh-elman-xHQUEG_W"
+      }
     }
   ]
 }
