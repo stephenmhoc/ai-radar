@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Why I still haven’t bought into true RSI — Interconnects</title>
+      <link>https://www.interconnects.ai/p/where-i-stand-on-rsi</link>
+      <guid isPermaLink="false">ai-radar:0b683b01944b54802b5d</guid>
+      <pubDate>Sat, 19 Sep 2026 15:42:20 +0000</pubDate>
+      <source url="https://www.interconnects.ai/feed">Interconnects</source>
+      <description>The author discusses their perspective on recursive self-improvement (RSI) in AI, arguing that current trends suggest a &amp;quot;lossy self-improvement&amp;quot; rather than a rapid, unpredictable acceleration towards superintelligence. They note that frontier AI labs like OpenAI and Anthropic are using thousands of concurrent agents, which increases anxiety about AI progress and risks. However, the author believes that automatable research is too narrow, diminishing returns of AI agents are real, and resource bottlenecks limit progress. The article also references discussions on AI timelines from a podcast, where experts predict varying timelines for AI reaching human-level capabilities in specific tasks. The author concludes that the hardest exponential to overcome is peak intelligence, and while inference-time compute will scale, true RSI leading to dramatic acceleration is not yet evident, making increased discussion of extinction risk misplaced.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Interconnects&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.interconnects.ai/p/where-i-stand-on-rsi"&gt;Why I still haven’t bought into true RSI&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>What Makes a Consumer AI Product Stick? | Josh Elman — The a16z Show</title>
       <link>https://a16z.simplecast.com/episodes/what-makes-a-consumer-ai-product-stick-josh-elman-xHQUEG_W</link>
       <guid isPermaLink="false">ai-radar:732a54adc8b3eff596f0</guid>
