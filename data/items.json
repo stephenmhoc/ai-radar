@@ -70339,6 +70339,36 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/nas-grandmaster-caz-steve-stoute-ben-horowitz-on-paying-hip-hops-pioneers-their-due-0OiuXVpk"
       }
+    },
+    {
+      "id": "6293a9784fdbaf910196",
+      "first_seen_at": "2026-09-20T13:17:22+00:00",
+      "status": "skipped",
+      "title": "90 minutes of unfiltered product advice from Snap and Discord’s product chief | Peter Sellis",
+      "source_title": "90 minutes of unfiltered product advice from Snap and Discord’s product chief | Peter Sellis",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest and core discussion focus on general consumer product management and growth lessons from Snap and Discord; AI is only incidental to the episode.",
+      "published_at": "2026-09-20T12:32:17+00:00",
+      "appearances": [
+        {
+          "id": "ae5281ca65b3a002cd72",
+          "kind": "podcast",
+          "source": "Lenny's Podcast",
+          "family": "lenny's podcast",
+          "guid": "substack:post:213758597",
+          "title": "90 minutes of unfiltered product advice from Snap and Discord’s product chief | Peter Sellis",
+          "description": "Peter Sellis\n was the first product manager at Snapchat, where he spent seven years building one of the most beloved consumer products in history. He went on to serve as Head of Product at Discord, where he helped drive some of the fastest user growth the platform had seen. Having left his role at Discord, he gets to be especially real and unfiltered — nothing to promote, no PR, no comms team.\n\nIn our in-depth conversation, we discuss:\n\n1. Why Peter designs teams like . . . terrorist organizations\n\n2. What it was really like to manage Nikita Bier\n\n3. Why the median PM is so bad\n\n4. Why Snapchat’s ads business never reached its potential\n\n5. Why growth almost always comes from the core product\n\n6. Peter’s three “oxymorons” of great product management\n\n—\n\nBrought to you by:\n\nWorkOS\n—Make your app enterprise-ready, with SSO, SCIM, RBAC, and more\n\nMercury\n—Radically different banking, now with Command\n\n—\n\nEpisode transcript: \nhttps://www.lennysnewsletter.com/p/90-minutes-of-unfiltered-product\n\n—\n\nArchive of all Lenny's Podcast transcripts: \nhttps://www.dropbox.com/scl/fo/yxi4s2w998p1gvtpu4193/AMdNPR8AOw0lMklwtnC0TrQ?rlkey=j06x0nipoti519e0xgm23zsn9&st=ahz0fj11&dl=0\n\n—\n\nWhere to find Peter Sellis:\n\n• X: \nhttps://x.com/petersellis\n\n• LinkedIn: \nhttps://www.linkedin.com/in/disgruntled\n\n• Website: \nhttps://pjs.lol\n\n—\n\nWhere to find Lenny:\n\n• Newsletter: \nhttps://www.lennysnewsletter.com\n\n• X: \nhttps://twitter.com/lennysan\n\n• LinkedIn: \nhttps://www.linkedin.com/in/lennyrachitsky/\n\n—\n\nIn this episode, we cover:\n\n(00:00) Introduction\n\n(02:48) Why Peter avoided podcasts until now\n\n(05:44) Designing teams like terrorist organizations\n\n(10:35) Cult versus terrorist org: the key distinction\n\n(11:19) Managing Nikita Bier\n\n(12:56) Building orgs that handle spiky talent\n\n(15:16) Why the median PM is probably bad\n\n(18:28) Is the PM profession getting better?\n\n(20:49) Snap’s three ads monetization challenges\n\n(25:03) Snap’s underrated product track record\n\n(27:57) Systems thinking\n\n(32:19) Instagram copying Snapchat’s worst features\n\n(33:32) Software moats\n\n(35:27) Taste, museum curators, and the art of saying no\n\n(40:05) OpenAI, ads, and the trust auction mechanism\n\n(46:25) Counterintuitive lesson: ride your best people hard\n\n(50:13) Why collaboration is often overrated\n\n(50:50) Growth lives in the core product\n\n(57:50) When to bet on something genuinely new\n\n(01:02:18) SpaceX and sunsetting the Falcon 9\n\n(01:07:01) Ambition as a learnable muscle\n\n(01:10:26) Long-term greedy: the ads philosophy\n\n(01:13:36) The Core Product Value framework\n\n(01:16:33) The three oxymorons of a great PM\n\n(01:20:29) Contrarian corner\n\n(01:26:00) Lightning round and final thoughts\n\n—\n\nReferences: \nhttps://www.lennysnewsletter.com/p/90-minutes-of-unfiltered-product\n\n—\n\nProduction and marketing by \nhttps://penname.co/\n. For inquiries about sponsoring the podcast, email \npodcast@lennyrachitsky.com\n.\n\n—\n\nLenny may be an investor in the companies discussed.\n\nTo hear more, visit \nwww.lennysnewsletter.com",
+          "url": "https://www.lennysnewsletter.com/p/90-minutes-of-unfiltered-product",
+          "published_at": "2026-09-20T12:32:17+00:00",
+          "hosts": [
+            "Lenny Rachitsky"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.lennysnewsletter.com/p/90-minutes-of-unfiltered-product"
+      }
     }
   ]
 }
