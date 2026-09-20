@@ -70369,6 +70369,34 @@
       "links": {
         "podcast": "https://www.lennysnewsletter.com/p/90-minutes-of-unfiltered-product"
       }
+    },
+    {
+      "id": "03e6fcbfe0b89cfae293",
+      "first_seen_at": "2026-09-20T15:17:22+00:00",
+      "status": "skipped",
+      "title": "Why the People Who Built Hip-Hop Ended Up With Nothing",
+      "source_title": "Why the People Who Built Hip-Hop Ended Up With Nothing",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The content focuses on the Paid in Full Foundation and hip-hop history, with no relevance to artificial intelligence.",
+      "published_at": "2026-09-20T14:30:23+00:00",
+      "appearances": [
+        {
+          "id": "13dd2e9a198972be25c4",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:ZO6VyDvysxY",
+          "title": "Why the People Who Built Hip-Hop Ended Up With Nothing",
+          "description": "Ben Horowitz and Erik Torenberg sit down with Nas, Grandmaster Caz, and Steve Stoute for a conversation about the Paid in Full Foundation and its mission to recognize and support the pioneers who built hip-hop.\n\nBen, Nas, and Steve share how the foundation began, why simply giving artists money wasn’t enough, and how the Hip Hop Grandmaster Awards became a way to pair financial support with the recognition many foundational artists never received. Caz brings the perspective of one of those pioneers, reflecting on his role in hip-hop’s earliest history and what receiving the award has meant for his life and legacy.\n\nThey also discuss the enormous cultural and commercial impact of hip-hop beyond music, from language and fashion to some of the world’s biggest brands, why so many of its pioneers captured so little of that value, and what happens when generations of hip-hop finally come together in the same room.\n\nTimestamps:\n00:00 - Intro\n01:00 - Meet the Paid In Full Foundation\n01:43 - The Origin Story: $5M in Value, $10 for the Album\n09:49 - Grandmaster Caz & the Rhymes That Became Rapper's Delight\n17:16 - What This Foundation Actually Does for Its Honorees\n25:08 - Celebrating the Legends: Melle Mel, Roxanne, D.O.C.\n33:05 - The Quincy Jones Award & Annual Tradition\n40:05 - Grandmaster Caz: \"Hip Hop Don't Have Social Security\"\n45:21 - Tommy Hilfiger, the Culture & Who Owes Back\n50:48 - How Ben, Steve & Nas Became Friends for Life\n56:15 - PaidInFullFoundation.org: How to Get Involved\n\nResources:\nLearn more about the Paid in Full Foundation: https://paidinfullfoundation.org\nFollow Nas on X: https://x.com/Nas\nFollow Steve Stoute: https://www.linkedin.com/in/stevestoute/\nFollow Ben Horowitz on X: https://x.com/bhorowitz\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=ZO6VyDvysxY",
+          "published_at": "2026-09-20T14:30:23+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=ZO6VyDvysxY"
+      }
     }
   ]
 }
