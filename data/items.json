@@ -70281,6 +70281,36 @@
         "podcast": "https://www.cognitiverevolution.ai/ai-am-highlights-zvi-on-pacing-trump-xi-astra-better-behaved-than-fable-a-new-llm-pain-axis/",
         "youtube": "https://www.youtube.com/watch?v=UkBooMFYtT0"
       }
+    },
+    {
+      "id": "7596e75281b30ce75b4d",
+      "first_seen_at": "2026-09-20T08:17:20+00:00",
+      "status": "skipped",
+      "title": "Building One of the Fastest Growing CPG Company in History | Peter Rahal of David Protein, Medici Brands & RXBAR",
+      "source_title": "Building One of the Fastest Growing CPG Company in History | Peter Rahal of David Protein, Medici Brands & RXBAR",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode focuses entirely on consumer packaged goods (CPG), protein bar businesses, and general company building, with no relevance to artificial intelligence.",
+      "published_at": "2026-09-20T08:00:00+00:00",
+      "appearances": [
+        {
+          "id": "6d2067d34fbc4fa3697f",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "c4a6781c-b499-11f1-8aa9-2faed89cc513",
+          "title": "Building One of the Fastest Growing CPG Company in History | Peter Rahal of David Protein, Medici Brands & RXBAR",
+          "description": "Peter Rahal is the co-founder of RXBAR, David Protein, and Medici Brands. After selling RXBAR for $600 million, he tried investing and quickly discovered he was miserable watching other people run companies. He explains why he returned to protein bars, why founders must deeply understand their products and how he plans to build the most important food company of the 21st century. Peter describes the intelligence, beauty and discipline behind David's brand, how growing up with dyslexia shaped his competitive drive and why he channels anger and resentment into company building. He also details his approach to hiring former founders, building a culture of truth seeking and humility and treating the organization itself as a product. Peter walks through the acquisition of his critical ingredient supplier, Epogee, the supply agreements that protected his business and what he would change about communicating the decision to other entrepreneurs. He shares why he chose Greenoaks as an investor, why speed matters more than maximizing a fundraising valuation and how he is building a decentralized organization where leaders master their products, confront problems and earn their autonomy.\n\nMade possible by\n\nRamp: https://ramp.com\n\nAppLovin: https://applovin.com/senra\n\nDeel: https://deel.com/senra\n\nChapters\n\n(00:00:00) Life after selling RXBAR for $600 million\n\n(00:07:29) Going all in and burning the boats\n\n(00:11:48) Building the most important food company of the 21st century\n\n(00:13:49) How a brand is like a human being\n\n(00:21:07) Why Peter always chooses the hard path\n\n(00:28:17) From zero to $300 million in two years\n\n(00:29:59) Why Peter started selling frozen cod\n\n(00:32:51) The organization is the product\n\n(00:36:56) Why he recruits former founders\n\n(00:41:15) Buying his supplier and victimizing his competitors\n\n(00:51:56) How Neil Mehta and Greenoaks earned a spot on the cap table\n\n(00:55:47) How Peter fundraises\n\n(01:00:31) Running a business is like a river\n\n(01:04:16) Why the company is named Medici\n\n(01:06:28) Bureaucracy is not inevitable\n\n(01:11:48) Why Peter has 25 direct reports\n\n(01:16:06) Peter's principle of reactionary leadership support\n\n(01:17:45) On divine discontent and loving the fight\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/peter-rahal",
+          "published_at": "2026-09-20T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/peter-rahal"
+      }
     }
   ]
 }
