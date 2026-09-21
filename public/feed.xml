@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Latent Space: Diogo Almeida on Jev, System One Models, and Reinforcement Learning for Calibrated Decisions — Latent Space</title>
+      <link>https://www.latent.space/p/jev</link>
+      <guid isPermaLink="false">ai-radar:76159559ee9ad591283d</guid>
+      <pubDate>Mon, 21 Sep 2026 22:13:49 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/1084089.rss">Latent Space</source>
+      <description>In this episode, TypeSafe AI CEO Diogo Almeida, a coauthor of the InstructGPT paper from OpenAI&amp;#x27;s early post-training team, explores why autoregressive chat models are misaligned with software integration. Almeida introduces Jev, which is built around Reinforcement Learning for Calibrated Decisions (RLCD) rather than human feedback or verifiable rubrics. He argues that standard RLHF promotes hallucinations, sycophancy, and mode collapse, whereas RLCD targets epistemically honest probabilities for System One tasks. The discussion covers why TypeSafe views itself as a data lab rather than a model lab, prioritizing tasks and data over massive compute. Almeida also examines key architectural topics including the KV cache, structured state over massive prompts, coding agents, computer use, and how AI should cleanly integrate into software control flow.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/jev"&gt;Jev: System One models for Prod, not God — with Diogo Almeida, CEO, TypeSafe AI&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/jev"&gt;Jev: System One models for Prod, not God — with Diogo Almeida, CEO, TypeSafe AI&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Diogo Almeida on TypeSafe's Jev, System One Models, and Moving Beyond Chat — Latent Space</title>
+      <link>https://www.youtube.com/watch?v=cFx9Z3ZXca0</link>
+      <guid isPermaLink="false">ai-radar:adc1ae9753760d017fd9</guid>
+      <pubDate>Mon, 21 Sep 2026 22:10:40 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLWEAb1SXhjlfkEF_PxzYHonU_v5LPMI8L">Latent Space</source>
+      <description>In this interview on Latent Space, TypeSafe co-founder and CEO Diogo Almeida explains the philosophy behind Jev and machine-native System One models engineered for programmatic reliability, code, and intelligence per dollar. Drawing on his experience helping build instruction-following models at OpenAI, Almeida analyzes the failure modes of RLHF—such as mode collapse, poor calibration, and problematic refusals when models are embedded as software dependencies—contrasting them with RLCD and RLVR. He outlines why TypeSafe operates as a data lab rather than a model lab, arguing that the right task and data matter more than simply scaling compute, and why he would decline to pre-train a model from scratch even with a billion dollars. Almeida also details how developers can replace massive prompts and system messages with structured state and small decomposed decisions, and shares his view on how Jev reshapes coding agents and multi-agent software architectures beyond the KV cache.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=cFx9Z3ZXca0"&gt;Why We Made Jev — Diogo Almeida, TypeSafe Co-founder &amp;amp; CEO&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>SemiAnalysis on Computation and Data Movement for MoE Inference — SemiAnalysis</title>
       <link>https://newsletter.semianalysis.com/p/computation-and-data-movement-for</link>
       <guid isPermaLink="false">ai-radar:16d501092d666af46297</guid>
