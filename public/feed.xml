@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Frontier Overhangs — Stratechery</title>
+      <link>https://stratechery.com/2026/frontier-overhangs/</link>
+      <guid isPermaLink="false">ai-radar:dd3b69335d4ce06c723d</guid>
+      <pubDate>Mon, 21 Sep 2026 10:00:00 +0000</pubDate>
+      <source url="https://stratechery.com/feed/">Stratechery</source>
+      <description>The article explores the &amp;quot;frontier overhangs&amp;quot; impacting AI labs, specifically focusing on the capability and product overhangs. It critiques the &amp;quot;Pacing the Frontier&amp;quot; philosophy, suggesting it addresses problems faced by frontier labs due to rapid model improvements. The author notes a shift in the importance of model company harnesses, citing Microsoft&amp;#x27;s multi-model harness as evidence that harnesses and models can be separate. This modularization indicates that pure capability no longer directly translates into a moat, as customers are willing to prioritize factors like data retention over cutting-edge performance. Furthermore, the article suggests that current model capabilities are &amp;quot;good enough&amp;quot; to build compelling products, even if not state-of-the-art, as demonstrated by Meta&amp;#x27;s Muse. This implies that product stickiness can now be achieved with models that are not necessarily the most advanced, challenging the economic imperative for frontier labs to own end-user touchpoints solely through superior capabilities.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Stratechery&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://stratechery.com/2026/frontier-overhangs/"&gt;Frontier Overhangs&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>AI:AM Highlights: Zvi on Pacing &amp; Trump-Xi, Astra better behaved than Fable? + a new LLM Pain Axis?? — The Cognitive Revolution</title>
       <link>https://www.cognitiverevolution.ai/ai-am-highlights-zvi-on-pacing-trump-xi-astra-better-behaved-than-fable-a-new-llm-pain-axis/</link>
       <guid isPermaLink="false">ai-radar:6c7664edf94fcca92852</guid>
