@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>The current balance of power in open models — Interconnects</title>
+      <link>https://www.interconnects.ai/p/the-current-balance-of-power-in-open</link>
+      <guid isPermaLink="false">ai-radar:3a9c6769581fbe5ade18</guid>
+      <pubDate>Mon, 21 Sep 2026 11:56:56 +0000</pubDate>
+      <source url="https://www.interconnects.ai/feed">Interconnects</source>
+      <description>The article provides a state of the union on open models, distinguishing between open-weight and open-source models. It notes that Chinese AI companies have become leaders in open-weight models since April 2025, surpassing American counterparts in Hugging Face downloads and popular capability benchmarks like the Artificial Analysis Intelligence Index. Chinese open-weight models are estimated to be 2-5 months behind the closed American frontier, while American open-weight models lag by 6-9 months. The author attributes China&amp;#x27;s success to faster model releases and a narrower focus on tasks, and observes a growing trend of American startups and companies using Chinese models. Academic research also shows a shift, with Chinese open-weight models now mentioned in over 40% of papers on arXiv, compared to 30% for U.S. models.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Interconnects&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.interconnects.ai/p/the-current-balance-of-power-in-open"&gt;The current balance of power in open models&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Frontier Overhangs — Stratechery</title>
       <link>https://stratechery.com/2026/frontier-overhangs/</link>
       <guid isPermaLink="false">ai-radar:dd3b69335d4ce06c723d</guid>
