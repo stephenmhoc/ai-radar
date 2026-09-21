@@ -70528,6 +70528,34 @@
       "links": {
         "newsletter": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence"
       }
+    },
+    {
+      "id": "e5228abb6bbb005e3326",
+      "first_seen_at": "2026-09-21T17:17:25+00:00",
+      "status": "skipped",
+      "title": "Box’s First Look at GPT-6 Astra",
+      "source_title": "“It Blew Me Away” | Box’s First Look at GPT-6 Astra",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a brief promotional customer testimonial clip rather than a substantial technical talk or in-depth interview, and the notes lack sufficient detail to support a full summary.",
+      "published_at": "2026-09-21T16:13:36+00:00",
+      "appearances": [
+        {
+          "id": "306ba4ca55af17402b24",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:QFxDF30qf_4",
+          "title": "“It Blew Me Away” | Box’s First Look at GPT-6 Astra",
+          "description": "A 20% incentive, counted twice, could throw off an entire cost analysis. Astra caught it. Yashodha Bhavnani (Box) gave GPT-6 Astra profit, cost, and tax-incentive files to work through. It recognized that one incentive was already included, and knew to leave it alone.\n\nHer first impression? “It blew me away.”\n\nWatch Yash in convo with Romain Huet, as they talk about what makes Astra different and what it means for customers working with their most complex content. \n\nSpoiler alert: Astra excels.",
+          "url": "https://www.youtube.com/watch?v=QFxDF30qf_4",
+          "published_at": "2026-09-21T16:13:36+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=QFxDF30qf_4"
+      }
     }
   ]
 }
