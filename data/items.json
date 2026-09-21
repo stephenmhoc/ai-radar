@@ -70728,6 +70728,120 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=4swQ0YknTLs"
       }
+    },
+    {
+      "id": "71602e635cb49c76313c",
+      "first_seen_at": "2026-09-21T20:17:23+00:00",
+      "status": "skipped",
+      "title": "How to Dominate Manufacturing in the US | Chris Power, Hadrian",
+      "source_title": "How to Dominate Manufacturing in the US | Chris Power, Hadrian",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The provided notes focus exclusively on Hadrian as a manufacturing startup and do not mention or describe any AI, physical AI, or frontier technology focus.",
+      "published_at": "2026-09-21T18:41:36+00:00",
+      "appearances": [
+        {
+          "id": "032ad51e7039a56e017c",
+          "kind": "podcast",
+          "source": "Relentless",
+          "family": "relentless",
+          "guid": "03c8f12f-db09-47db-b175-cdd79d1b05fe",
+          "title": "How to Dominate Manufacturing in the US | Chris Power, Hadrian",
+          "description": "Chris is the Founder and CEO of Hadrian, one of the fastest growing manufacturing startups in the United States. Hadrian has opened six factories since it was founded in 2020 with the latest being 2.2 million square feet.",
+          "url": "https://podcasters.spotify.com/pod/show/ti-morse/episodes/How-to-Dominate-Manufacturing-in-the-US--Chris-Power--Hadrian-e3p6ihl",
+          "published_at": "2026-09-21T18:41:36+00:00",
+          "hosts": [
+            "Ti Morse"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://podcasters.spotify.com/pod/show/ti-morse/episodes/How-to-Dominate-Manufacturing-in-the-US--Chris-Power--Hadrian-e3p6ihl"
+      }
+    },
+    {
+      "id": "1d838e57b9ca71e0578a",
+      "first_seen_at": "2026-09-21T20:17:26+00:00",
+      "status": "skipped",
+      "title": "A Staff Engineer Collaborator: Notion’s First Look at GPT-6 Astra",
+      "source_title": "“A Staff Engineer Collaborator” | Notion’s First Look at GPT-6 Astra",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional clip and customer testimonial rather than a substantive technical talk, interview, or detailed explainer.",
+      "published_at": "2026-09-21T19:17:35+00:00",
+      "appearances": [
+        {
+          "id": "e1aa7717fa7825e6c116",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:dtNlpZI86Dk",
+          "title": "“A Staff Engineer Collaborator” | Notion’s First Look at GPT-6 Astra",
+          "description": "Don’t sleep on Astra. Quinn Johnson started working with GPT-6 Astra differently in Codex: he shared the goal, added context, and let it tackle the problem his team had been working on. On a cache-reuse audit, Astra connected patterns the Notion team had overlooked, then explained the issue clearly. \n\nThe Notion issue was sneaky: older messages were being regenerated using what the agent knew, subtly changing the prompt history and breaking cache reuse. \n\nEverything could still appear to work while becoming quietly slower and more expensive at scale. 🚀 Astra finding that hidden pattern made it a meaningful engineering win.",
+          "url": "https://www.youtube.com/watch?v=dtNlpZI86Dk",
+          "published_at": "2026-09-21T19:17:35+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=dtNlpZI86Dk"
+      }
+    },
+    {
+      "id": "9b039870c33a47b49025",
+      "first_seen_at": "2026-09-21T20:17:28+00:00",
+      "status": "skipped",
+      "title": "One Prompt. A Feature Built and Tested. | Ramp × GPT-6 Astra",
+      "source_title": "One Prompt. A Feature Built and Tested. | Ramp × GPT-6 Astra",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a brief promotional showcase clip rather than a substantial technical interview, talk, or comprehensive demonstration.",
+      "published_at": "2026-09-21T19:22:03+00:00",
+      "appearances": [
+        {
+          "id": "90ac12a9f9618e8dca69",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:p7TjXroM4ak",
+          "title": "One Prompt. A Feature Built and Tested. | Ramp × GPT-6 Astra",
+          "description": "Veeral gave GPT-6 Astra a one-line feature request: add routing controls for individual API keys. Astra found the right settings, made the changes, and used computer use to check its own work. It verified the mobile experience without being asked.\n\nAbout 12 minutes of implementing. \n\nAnother 15 for validating.\n\nVeeral told Romain Huet that was the shift: give Astra a high-level goal, let it make progress, and come back to changes you can review. \n\nWe're making moves. This is why Astra is the next generation in intelligence at work.",
+          "url": "https://www.youtube.com/watch?v=p7TjXroM4ak",
+          "published_at": "2026-09-21T19:22:03+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=p7TjXroM4ak"
+      }
+    },
+    {
+      "id": "063463b37410dae2a120",
+      "first_seen_at": "2026-09-21T20:17:30+00:00",
+      "status": "skipped",
+      "title": "Figma Gave GPT-6 Astra a Moonshot",
+      "source_title": "Figma Gave GPT-6 Astra a Moonshot. Here's what happened.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This item is a brief promotional showcase or product teaser rather than an in-depth technical talk, substantial explainer, or complete interview.",
+      "published_at": "2026-09-21T19:25:46+00:00",
+      "appearances": [
+        {
+          "id": "f9b27745b6d278d5db74",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:rRm3Vnb7UPY",
+          "title": "Figma Gave GPT-6 Astra a Moonshot. Here's what happened.",
+          "description": "John gave GPT-6 Astra a moonshot: design the flight-control experience for a new personal aircraft.\n\nThe gap between generating an interface and designing a system is massive, and AI models have always fallen short.\n\nUntil now.\n\nAstra reasoned through the audience, jobs to be done, pilot-versus-passenger tradeoffs, and critical interface states. Then it connected that thinking to a real design system via the Figma MCP Server to create a polished, on-brand prototype of the concept.",
+          "url": "https://www.youtube.com/watch?v=rRm3Vnb7UPY",
+          "published_at": "2026-09-21T19:25:46+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=rRm3Vnb7UPY"
+      }
     }
   ]
 }
