@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>SemiAnalysis on Computation and Data Movement for MoE Inference — SemiAnalysis</title>
+      <link>https://newsletter.semianalysis.com/p/computation-and-data-movement-for</link>
+      <guid isPermaLink="false">ai-radar:16d501092d666af46297</guid>
+      <pubDate>Mon, 21 Sep 2026 18:14:15 +0000</pubDate>
+      <source url="https://newsletter.semianalysis.com/feed">SemiAnalysis</source>
+      <description>SemiAnalysis examines how Mixture of Experts (MoE) models alter the structural and economic demands of frontier AI inference serving. The analysis distinguishes four operating regimes with differing arithmetic intensities and network requirements: prefill, midfill, decode attention, and decode experts. Rather than treating these regimes as a uniform workload on aggregated servers, modern inference architectures increasingly disaggregate stages across specialized worker pools coordinated by cluster schedulers. The piece details how multi-turn agentic workflows repeatedly cycle through context extension and generation loops, driving large KV-cache state transfers between workers. To maintain high throughput and low latency, inference clusters organize reusable context into immutable blobs managed across scale-out memory pools and high-bandwidth datacenter networks.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · SemiAnalysis&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.semianalysis.com/p/computation-and-data-movement-for"&gt;Computation and Data Movement for Inference&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Inside Ukraine's Drone War with Maj. Phoenix of Lasar's Group — Eye on AI</title>
+      <link>https://www.youtube.com/watch?v=44z95oa8IIs</link>
+      <guid isPermaLink="false">ai-radar:06242cc35b437c0f44e6</guid>
+      <pubDate>Mon, 21 Sep 2026 18:01:03 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLacDrP-7Ys6IsnPRN0ToTfjH8gQ4s6mL9">Eye on AI</source>
+      <description>In this interview with Eye on AI, Major Yuri (Phoenix) of Ukraine&amp;#x27;s National Guard drone unit Lasar&amp;#x27;s Group details the tactical and technological development of wartime drones. Founded in 2022, Lasar&amp;#x27;s Group pioneered mounting Starlink terminals on heavy bombers to circumvent radio jamming and developed an arsenal spanning FPVs, interceptors, and reconnaissance aircraft. Phoenix provides a firsthand assessment of drone autonomy, explaining that drones are still primarily flown manually because full autonomy is not yet sufficient for complex battlefield environments. However, AI is actively deployed for terminal guidance during the last mile, utilizing targeting modules on hardware like Raspberry Pis after communications drop. He also outlines the shift toward fiber-optic controls, navigating without GNSS, and rapid battlefield-driven R&amp;amp;D cycles.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Eye on AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=44z95oa8IIs"&gt;Inside Ukraine&amp;#x27;s Drone War: Maj. &amp;quot;Phoenix&amp;quot; of Lasar&amp;#x27;s Group&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>The current balance of power in open models — Interconnects</title>
       <link>https://www.interconnects.ai/p/the-current-balance-of-power-in-open</link>
       <guid isPermaLink="false">ai-radar:3a9c6769581fbe5ade18</guid>
