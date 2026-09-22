@@ -71227,6 +71227,34 @@
         "podcast": "https://www.latent.space/p/john-platt",
         "newsletter": "https://www.latent.space/p/john-platt"
       }
+    },
+    {
+      "id": "9ac7977ff4cada133152",
+      "first_seen_at": "2026-09-22T22:17:19+00:00",
+      "status": "skipped",
+      "title": "Why Ben Horowitz bet on a founder with zero commercial experience | Ali Ghodsi, Databricks",
+      "source_title": "Why Ben Horowitz bet on a founder with zero commercial experience | Ali Ghodsi, Databricks",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-22T21:27:20+00:00",
+      "appearances": [
+        {
+          "id": "cee0e2639c1a50e3048e",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:Zbp_0bKXWPw",
+          "title": "Why Ben Horowitz bet on a founder with zero commercial experience | Ali Ghodsi, Databricks",
+          "description": "Databricks had $1.5M in revenue and a board interviewing outside CEOs. Ali Ghodsi on why a16z picked him anyway, and the trial run nobody told him about.",
+          "url": "https://www.youtube.com/shorts/Zbp_0bKXWPw",
+          "published_at": "2026-09-22T21:27:20+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/Zbp_0bKXWPw"
+      }
     }
   ]
 }
