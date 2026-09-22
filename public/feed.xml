@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>John Platt on AI for Science, Google's ERA, and Climate Change — Latent Space</title>
+      <link>https://www.latent.space/p/john-platt</link>
+      <guid isPermaLink="false">ai-radar:7e2ebec521b0c8f47e18</guid>
+      <pubDate>Tue, 22 Sep 2026 21:07:39 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/1084089.rss">Latent Space</source>
+      <description>John Platt, a Google DeepMind researcher, discusses Google&amp;#x27;s Empirical Research Assistance (ERA), an AI system designed to automate solutions for scientific problems by identifying &amp;quot;scoreable tasks.&amp;quot; ERA, which uses Gemini and Monte Carlo Tree Search-like methods, has been instrumental in solving numerous outstanding problems, including those related to climate change. Platt highlights ERA&amp;#x27;s application in reducing the effects of airplane contrails, which contribute significantly to global warming. He also touches on the challenges of modeling climate and the importance of careful machine learning science to avoid overfitting. The discussion covers the co-evolution of science and AI, with Platt sharing insights from his extensive career at Google.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/john-platt"&gt;🔬 An Oscar, Two Asteroids, and the Algorithm in Your sklearn: John Platt on AI for Science&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/john-platt"&gt;🔬 An Oscar, Two Asteroids, and the Algorithm in Your sklearn: John Platt on AI for Science&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>How AI will change Windows operating systems — The Pragmatic Engineer</title>
       <link>https://newsletter.pragmaticengineer.com/p/windows-and-ai</link>
       <guid isPermaLink="false">ai-radar:a896215694d6019b5d24</guid>
