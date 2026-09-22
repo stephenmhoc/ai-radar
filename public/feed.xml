@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>How AI will change Windows operating systems — The Pragmatic Engineer</title>
+      <link>https://newsletter.pragmaticengineer.com/p/windows-and-ai</link>
+      <guid isPermaLink="false">ai-radar:a896215694d6019b5d24</guid>
+      <pubDate>Tue, 22 Sep 2026 17:17:31 +0000</pubDate>
+      <source url="https://newsletter.pragmaticengineer.com/feed">The Pragmatic Engineer</source>
+      <description>Microsoft is integrating AI into Windows, focusing on agentic tools and developer experience. Key initiatives include agent identification via Entra ID, allowing agents to act as distinct users, and an On Device Agent Registry (ODR) for agents to discover and register tools. The company is also developing Microsoft Execution Containers (MXC) for isolating agentic tools in sandboxes, using containment policies to manage access and ensure safety. Windows is betting on local models with WindowsML, a new hardware abstraction layer for running AI models across various processors, and plans to ship Small Language Models (SLMs) without requiring an NPU. Microsoft is also addressing developer criticisms, improving the OS&amp;#x27;s friendliness, and leveraging Windows Subsystem for Linux (WSL) to attract developers. These changes are part of a strategy to regain developer market share, which has seen a decline compared to macOS and Linux.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · The Pragmatic Engineer&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.pragmaticengineer.com/p/windows-and-ai"&gt;How will AI change operating systems? Part 2: Windows&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Debating RSI, the US-China Gap, and Jaggedness with JS Denain of Epoch AI — Interconnects</title>
       <link>https://www.interconnects.ai/p/debating-rsi-the-us-china-gap-and</link>
       <guid isPermaLink="false">ai-radar:e0fa75b57c65f77eaff2</guid>
