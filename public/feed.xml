@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>AINews: Xiaomi MiMo-V2.6-Pro 1T-A42B, the new top Open Weights model, trained for $3M — Latent Space</title>
+      <link>https://www.latent.space/p/ainews-xiaomi-mimo-v26-pro-1t-a42b</link>
+      <guid isPermaLink="false">ai-radar:1155487f41f255c9e480</guid>
+      <pubDate>Tue, 22 Sep 2026 06:30:56 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>Xiaomi has released MiMo-V2.6-Pro, an open-weights, natively omnimodal model, which Artificial Analysis ranks as the top open-weights model on its Intelligence Index. The MiMo-V2.6 series includes Pro and Flash versions, with Pro-UltraSpeed offering 20x faster output. Xiaomi also made news for its transparency in publishing RL training runs and internal metrics. The technical report details scaling RL compute along three axes: larger batches, more tasks/richer environments, and more grader compute. All tooling, including environments and training recipes, will be open-sourced, with 7k+ task datasets yet to be released. The RL stack is noted for its cost-effectiveness, with a run costing $2.6M over 130 hours and 75B tokens, suggesting post-training/RL is becoming a cheaper route to frontier-adjacent gains.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-xiaomi-mimo-v26-pro-1t-a42b"&gt;[AINews] Xiaomi MiMo-V2.6-Pro 1T-A42B: the new top Open Weights model, trained for $3M&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Latent Space: Diogo Almeida on Jev, System One Models, and Reinforcement Learning for Calibrated Decisions — Latent Space</title>
       <link>https://www.latent.space/p/jev</link>
       <guid isPermaLink="false">ai-radar:76159559ee9ad591283d</guid>
