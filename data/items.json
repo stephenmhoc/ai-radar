@@ -71152,6 +71152,34 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/windows-and-ai"
       }
+    },
+    {
+      "id": "c9460306c4d8164bffca",
+      "first_seen_at": "2026-09-22T20:17:22+00:00",
+      "status": "skipped",
+      "title": "Scaling Multi-Agent Systems in the Enterprise",
+      "source_title": "Scaling Multi-Agent Systems in the Enterprise",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item features a guest from VMware Tanzu and hosts from Prediction Guard and Lockheed Martin. None of these individuals or organizations are on the target list, and the content does not offer unusually strong firsthand expertise, original reporting, or durable analysis from a target organization or individual.",
+      "published_at": "2026-09-22T19:21:35+00:00",
+      "appearances": [
+        {
+          "id": "bd0eb055ddfe28cd674d",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:s89q8-IK1w8",
+          "title": "Scaling Multi-Agent Systems in the Enterprise",
+          "description": "How do you deploy and secure multi-agent systems in the enterprise? We explore agent buildpacks, `agents.md`, MCP gateways, approved LLMs, and secure runtimes—and how platform engineering can help enterprises scale AI agents.\n\nFEATURING:\n\nGuest - Nick Kuhn (Product Marketing Engineer at VMware Tanzu)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast): https://www.linkedin.com/in/danielwhitenack/\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast): https://www.linkedin.com/in/chrisbenson/\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
+          "url": "https://www.youtube.com/watch?v=s89q8-IK1w8",
+          "published_at": "2026-09-22T19:21:35+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=s89q8-IK1w8"
+      }
     }
   ]
 }
