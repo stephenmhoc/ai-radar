@@ -70978,6 +70978,36 @@
       "links": {
         "podcast": "https://feeds.megaphone.fm/CLS2859450455"
       }
+    },
+    {
+      "id": "4036068050797aeceef1",
+      "first_seen_at": "2026-09-22T10:17:18+00:00",
+      "status": "deferred",
+      "title": "Amazon Blocks Muse, Amazon’s Moat, Aggregator v Aggregator",
+      "source_title": "Amazon Blocks Muse, Amazon’s Moat, Aggregator v Aggregator",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-22T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "2037f7427cb056b388cf",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20078",
+          "title": "Amazon Blocks Muse, Amazon’s Moat, Aggregator v Aggregator",
+          "description": "Amazon predictably blocked Muse, but there is room for a deal based on the reality that Amazon's physical world investments are an AI moat.",
+          "url": "https://stratechery.com/2026/amazon-blocks-muse-amazons-moat-aggregator-v-aggregator/",
+          "published_at": "2026-09-22T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/amazon-blocks-muse-amazons-moat-aggregator-v-aggregator/"
+      }
     }
   ]
 }
