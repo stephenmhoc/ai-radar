@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Bio-security is an AI Arms Race - Eric Nguyen (CEO, Radical Numerics) — Latent Space</title>
+      <link>https://www.latent.space/p/bio-security-is-an-ai-arms-race-eric</link>
+      <guid isPermaLink="false">ai-radar:1392db74e8fb46972ce8</guid>
+      <pubDate>Wed, 23 Sep 2026 13:27:18 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/1084089.rss">Latent Space</source>
+      <description>Eric Nguyen, co-founder and CEO of Radical Numerics, discusses bio-security in the context of AI. He explains how Genomic Language Models (GLMs), which he helped develop, can generate entire bacteriophage genomes that were synthesized into functional viruses. Nguyen highlights that long-context models have enabled GLMs to build genomes from scratch, despite the long sequences and small alphabet of DNA. Radical Numerics aims to scale GLMs to address a wide range of biological problems, extending beyond DNA generation to RNA and protein. Nguyen also describes how GLMs can &amp;quot;think&amp;quot; in DNA, demonstrating chain-of-thought reasoning by extrapolating functional relationships between sequences. He argues that while these capabilities enable sophisticated biological intelligence, they also pose greater dangers, and defense is currently losing this battle, advocating for pushing the frontier harder.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/bio-security-is-an-ai-arms-race-eric"&gt;🔬Bio-security is an AI Arms Race - Eric Nguyen (CEO, Radical Numerics)&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/bio-security-is-an-ai-arms-race-eric"&gt;🔬Bio-security is an AI Arms Race - Eric Nguyen (CEO, Radical Numerics)&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Amjad Masad on Rethinking College for the AI Era — The a16z Show</title>
       <link>https://a16z.simplecast.com/episodes/amjad-masad-on-rethinking-college-for-the-ai-era-sOmuMQGQ</link>
       <guid isPermaLink="false">ai-radar:f8d0ee5354ed18ceb1fc</guid>
