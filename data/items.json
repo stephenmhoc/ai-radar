@@ -71342,6 +71342,64 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=coyHcx1An_s"
       }
+    },
+    {
+      "id": "f8d0ee5354ed18ceb1fc",
+      "first_seen_at": "2026-09-23T10:17:22+00:00",
+      "status": "published",
+      "title": "Amjad Masad on Rethinking College for the AI Era",
+      "source_title": "Amjad Masad on Rethinking College for the AI Era",
+      "short_summary": "Replit founder and CEO Amjad Masad discusses how education should adapt for a generation growing up with AI, advocating for project-based learning and intellectual freedom over traditional metrics. He also explores the balance between ambition and collaboration.",
+      "long_summary": "Replit founder and CEO Amjad Masad and Horowitz and Andreessen Academy co-founder and CEO Gagan Biyani discuss the future of education in the AI era. Masad argues that young people's willingness to question assumptions is valuable, suggesting education should foster this through project-based learning and intellectual exploration, rather than focusing on grades. They also consider whether young founders are professionalizing too early and how Masad's curiosity led him from chess to AI research. The conversation concludes by addressing the importance of trust, judgment, and developing as a person, balancing contrarian ambition with the ability to collaborate effectively.",
+      "reason": "Amjad Masad, CEO of Replit, a target organization, is a central speaker in this podcast, discussing consequential topics related to AI and education.",
+      "published_at": "2026-09-23T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "de5a2a499eb9171e8e94",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "ad703a5b-581f-4220-a4aa-55ad60535ace",
+          "title": "Amjad Masad on Rethinking College for the AI Era",
+          "description": "Erik Torenberg sits down with Replit founder and CEO Amjad Masad and Horowitz and Andreessen Academy co-founder and CEO Gagan Biyani to ask what education should look like for a generation growing up with AI.\n\nAmjad argues that one of the most valuable things young people bring to society is their willingness to question deeply held assumptions. They discuss how education could create more room for that instinct through project-based learning, intellectual side quests, and giving students the freedom to follow an idea deeply rather than optimizing around grades and credentials.\n\nThey also explore whether young founders are being pushed to professionalize too early, why Amjad thinks starting a company can sometimes be a form of “premature optimization,” and how curiosity led him from learning chess to experimenting with AI that can conduct machine-learning research.\n\nFinally, they discuss trust, judgment, and what it means to develop as a person, not just a builder, including why being contrarian and ambitious still needs to be balanced with the ability to work with other people.\n\nResources:\n\nFollow Amjad Masad on X:\nhttps://x.com/amasad\n\nFollow Gagan Biyani on X:\nhttps://x.com/gaganbiyani\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/amjad-masad-on-rethinking-college-for-the-ai-era-sOmuMQGQ",
+          "published_at": "2026-09-23T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/amjad-masad-on-rethinking-college-for-the-ai-era-sOmuMQGQ"
+      }
+    },
+    {
+      "id": "ebedeceea2cbd53a29fd",
+      "first_seen_at": "2026-09-23T10:17:22+00:00",
+      "status": "deferred",
+      "title": "More on Muse, Amazon, and Walmart; Muse and Expedia; Whither Google?",
+      "source_title": "More on Muse, Amazon, and Walmart; Muse and Expedia; Whither Google?",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-23T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "c814ed3fe1e3128adc54",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20085",
+          "title": "More on Muse, Amazon, and Walmart; Muse and Expedia; Whither Google?",
+          "description": "Meta needs Walmart to wait out Amazon; Expedia seeks to keep its middleware position; meanwhile, where is Google?",
+          "url": "https://stratechery.com/2026/more-on-muse-amazon-and-walmart-muse-and-expedia-whither-google/",
+          "published_at": "2026-09-23T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/more-on-muse-amazon-and-walmart-muse-and-expedia-whither-google/"
+      }
     }
   ]
 }
