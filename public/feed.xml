@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Claude Opus 5.5, the new default model for AINews — Latent Space</title>
+      <link>https://www.latent.space/p/ainews-claude-opus-55-the-new-default</link>
+      <guid isPermaLink="false">ai-radar:12af1c910a3c83ed33c0</guid>
+      <pubDate>Wed, 23 Sep 2026 06:41:41 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>Anthropic launched Claude Opus 5.5, described as the first model in its new Claude 5.5 family, performing like &amp;quot;Claude Fable 5.1 for most tasks, and costs 40% less to run than Opus 5.&amp;quot; OpenAI simultaneously released GPT-6 Sol and Luna. Opus 5.5 reportedly beats Fable or challenges Astra on most benchmarks, with both labs crediting efficiency work for API price cuts. The model also features significant writing improvements, putting important information upfront and following user writing rules. The newsletter confirms migrating its AINews section to Opus 5.5 due to the notable difference in quality. The update also covers pricing, token economics, benchmarks, system card details, safety posture, and new capabilities in vision and code generation.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-claude-opus-55-the-new-default"&gt;[AINews] Claude Opus 5.5, the new default model for AINews — and everybody cuts prices 40-50%&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>John Platt on AI for Science, Google's ERA, and Climate Change — Latent Space</title>
       <link>https://www.latent.space/p/john-platt</link>
       <guid isPermaLink="false">ai-radar:7e2ebec521b0c8f47e18</guid>
