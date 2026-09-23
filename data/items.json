@@ -71757,6 +71757,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/N42VxP0D49Q"
       }
+    },
+    {
+      "id": "5eff501df72b0eb28408",
+      "first_seen_at": "2026-09-23T20:17:19+00:00",
+      "status": "skipped",
+      "title": "Databricks CEO Ali Ghodsi built in 2 days what his team took 9 months to ship",
+      "source_title": "Databricks CEO Ali Ghodsi built in 2 days what his team took 9 months to ship",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-23T20:00:02+00:00",
+      "appearances": [
+        {
+          "id": "7d95df78d0379fb2334a",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:6-LTGpBLlb4",
+          "title": "Databricks CEO Ali Ghodsi built in 2 days what his team took 9 months to ship",
+          "description": "Ali Ghodsi built a connector in two days. His team was taking three quarters. What he learned about where the time actually goes, and how they got to seven connectors a quarter.",
+          "url": "https://www.youtube.com/shorts/6-LTGpBLlb4",
+          "published_at": "2026-09-23T20:00:02+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/6-LTGpBLlb4"
+      }
     }
   ]
 }
