@@ -71314,6 +71314,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-claude-opus-55-the-new-default"
       }
+    },
+    {
+      "id": "b84c23ace9c6d839bc7f",
+      "first_seen_at": "2026-09-23T08:17:22+00:00",
+      "status": "skipped",
+      "title": "The Strategy Behind Lectric’s eBike Success | Quantum Marketing",
+      "source_title": "The Strategy Behind Lectric’s eBike Success | Quantum Marketing",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The content is about eBikes and marketing strategy, not AI. It does not feature any individuals or organizations from the target list, nor does it discuss any of the specified AI-related topics.",
+      "published_at": "2026-09-23T08:00:37+00:00",
+      "appearances": [
+        {
+          "id": "d82d4d02389f03a6b8fe",
+          "kind": "youtube",
+          "source": "Bloomberg Originals",
+          "family": "bloomberg originals",
+          "guid": "yt:video:coyHcx1An_s",
+          "title": "The Strategy Behind Lectric’s eBike Success | Quantum Marketing",
+          "description": "Lectric eBikes built an integrated marketing system around a simple idea: new technology reaches the mainstream when barriers to adoption are meaningfully reduced. In this episode, Raja Rajamannar sits down with co-founders Levi Conlow and Robby Deziel to discuss how direct customer relationships, influencer marketing and community engagement can bring a nascent product category to a broader audience. \n\n#eBikes #Business #Marketing \n\n--------\nLike this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1\n\nGet unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals\nBloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. \n\nSubscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.\n\nVisit our partner channel Bloomberg News for global news and insight in an instant.",
+          "url": "https://www.youtube.com/watch?v=coyHcx1An_s",
+          "published_at": "2026-09-23T08:00:37+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=coyHcx1An_s"
+      }
     }
   ]
 }
