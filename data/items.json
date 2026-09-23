@@ -71255,6 +71255,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/Zbp_0bKXWPw"
       }
+    },
+    {
+      "id": "5631ad2d402f34db30d6",
+      "first_seen_at": "2026-09-23T00:17:19+00:00",
+      "status": "skipped",
+      "title": "Drone swarm defense",
+      "source_title": "Drone swarm defense",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-22T23:17:02+00:00",
+      "appearances": [
+        {
+          "id": "5b26a1dd214c00353e0e",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:5_ZkERt5siI",
+          "title": "Drone swarm defense",
+          "description": "Attack drones are reshaping modern warfare, but many countries still lack an effective way to defend their airspace.\n\nEarendil Robotics is building autonomous interceptors, along with the software and training needed to stand up that capability from scratch. Their systems can take off, transit, and intercept targets on their own, reducing months of pilot training to a few clicks.\n\nThe goal is air defense that’s affordable enough to deploy in large numbers and simple enough to operate at scale.",
+          "url": "https://www.youtube.com/shorts/5_ZkERt5siI",
+          "published_at": "2026-09-22T23:17:02+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/5_ZkERt5siI"
+      }
     }
   ]
 }
