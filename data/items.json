@@ -71475,6 +71475,118 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/YTZOo7Bpxlk"
       }
+    },
+    {
+      "id": "3f7f63ad0ec33b3ef3fc",
+      "first_seen_at": "2026-09-23T16:17:24+00:00",
+      "status": "published",
+      "title": "Replit CEO Amjad Masad on What Young People Should Learn in the AI Era",
+      "source_title": "Replit CEO Amjad Masad on What Young People Should Learn in the AI Era",
+      "short_summary": "Replit founder and CEO Amjad Masad discusses education for a generation growing up with AI, emphasizing project-based learning and intellectual freedom. He explores why young founders might professionalize too early and how curiosity led him to AI research, alongside the importance of balancing ambition with collaboration.",
+      "long_summary": "Replit founder and CEO Amjad Masad and Horowitz and Andreessen Academy co-founder Gagan Biyani discuss the future of education for young people in the AI era. Masad argues for the value of young people questioning assumptions and advocates for education that fosters this instinct through project-based learning and intellectual side quests, allowing students freedom to explore ideas deeply rather than focusing solely on grades. They also consider whether young founders are professionalizing prematurely and how starting a company can be a \"premature optimization.\" Masad shares his personal journey from learning chess to experimenting with AI for machine-learning research, driven by curiosity. The conversation concludes by addressing trust, judgment, and developing as a person, not just a builder, highlighting the need to balance contrarian ambition with the ability to collaborate.",
+      "reason": "The item features a substantial interview with Amjad Masad, CEO of Replit, a target organization. The discussion covers AI's impact on education, entrepreneurship, and personal development, aligning with the criteria for consequential work related to important AI companies and their leaders.",
+      "published_at": "2026-09-23T14:30:06+00:00",
+      "appearances": [
+        {
+          "id": "3bf350f244a2681e58e0",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:Q8yFrGwIftE",
+          "title": "Replit CEO Amjad Masad on What Young People Should Learn in the AI Era",
+          "description": "Erik Torenberg sits down with Replit founder and CEO Amjad Masad and Horowitz and Andreessen Academy co-founder and CEO Gagan Biyani to ask what education should look like for a generation growing up with AI.\n\nAmjad argues that one of the most valuable things young people bring to society is their willingness to question deeply held assumptions. They discuss how education could create more room for that instinct through project-based learning, intellectual side quests, and giving students the freedom to follow an idea deeply rather than optimizing around grades and credentials.\n\nThey also explore whether young founders are being pushed to professionalize too early, why Amjad thinks starting a company can sometimes be a form of “premature optimization,” and how curiosity led him from learning chess to experimenting with AI that can conduct machine-learning research.\n\nFinally, they discuss trust, judgment, and what it means to develop as a person, not just a builder, including why being contrarian and ambitious still needs to be balanced with the ability to work with other people.\n\nTimestamps:\n00:00 - Intro\n01:04 - \"The City and the Stars\": Why Young People Should Be Heretics\n05:36 - Designing Your Ideal 18-to-22 Experience in 2026\n11:20 - Why Curiosity-Driven Learning Actually Works\n14:46 - The Counter-Critique: Are Kids Professionalizing Too Soon?\n19:40 - The Entrepreneur & the Intellectual: Balancing Both\n24:02 - Learning to Follow vs Learning to Lead\n35:40 - Discernment & Meta Retard Maxing: When to Trust Elders\n36:38 - Beyond Skills: How Do You Actually Become a Good Person?\n44:02 - What Amjad Looks for in Young Talent\n\nResources:\nFollow Amjad Masad on X: https://x.com/amasad\nFollow Gagan Biyani on X: https://x.com/gaganbiyani\nLearn more about HAA: https://www.a16z.news/p/introducing-the-horowitz-andreessen\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=Q8yFrGwIftE",
+          "published_at": "2026-09-23T14:30:06+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=Q8yFrGwIftE"
+      }
+    },
+    {
+      "id": "274022d14ad77a41be97",
+      "first_seen_at": "2026-09-23T16:17:26+00:00",
+      "status": "published",
+      "title": "Google DeepMind: Create your own voices with Gemini 3.8 text-to-speech",
+      "source_title": "Create your own voices with Gemini 3.8 text-to-speech",
+      "short_summary": "Google DeepMind introduces Gemini 3.8 text-to-speech, allowing users to create new vocal personas with natural language prompts or recreate existing voices from 30-second audio samples. The system includes consent verification, SynthID watermarking, and C2PA credentials.",
+      "long_summary": "Google DeepMind's Gemini 3.8 text-to-speech technology enables users to design entirely new vocal personas for various applications like gaming, audiobooks, or podcasts. This can be done using natural language prompts to direct performance with nuanced acting cues, pacing, back-channeling, and dialect shifts. Alternatively, users can recreate consistent adult vocal profiles from a 30-second audio sample, provided they have the rights to use the voice. The system incorporates built-in consent verification, SynthID watermarking, and C2PA credentials to protect both developers and vocal talent. Users can learn more and start using the latest Gemini Audio models today.",
+      "reason": "The item is a demonstration/explainer from Google DeepMind, a target organization, about a frontier model (Gemini 3.8 text-to-speech) and its capabilities, which aligns with the criteria for consequential, technically substantive work.",
+      "published_at": "2026-09-23T15:23:38+00:00",
+      "appearances": [
+        {
+          "id": "2075f4f3d39fad2bfcec",
+          "kind": "youtube",
+          "source": "Google DeepMind",
+          "family": "google deepmind",
+          "guid": "yt:video:FL6mI_Br-mc",
+          "title": "Create your own voices with Gemini 3.8 text-to-speech",
+          "description": "Design entirely new vocal personas from scratch for gaming, immersive audiobooks, or dual-speaker podcasts using natural language prompts - directing every performance line by line with nuanced acting cues, pacing, back channeling, and dialect shifts. \n\nOr, recreate consistent adult vocal profiles from just a 30-second audio sample of your voice or a voice you have the rights to use, backed by built-in consent verification, SynthID watermarking, and C2PA credentials to protect both developers and their vocal talent. \n\nLearn more and start using the our latest Gemini Audio models today: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/\n\n___\n\nSubscribe to our channel https://www.youtube.com/@googledeepmind \nFind us on X https://x.com/GoogleDeepMind\nFollow us on Instagram https://instagram.com/googledeepmind \nAdd us on Linkedin https://www.linkedin.com/company/deepmind/",
+          "url": "https://www.youtube.com/watch?v=FL6mI_Br-mc",
+          "published_at": "2026-09-23T15:23:38+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=FL6mI_Br-mc"
+      }
+    },
+    {
+      "id": "5c8fd7adfa89edbd3120",
+      "first_seen_at": "2026-09-23T16:17:26+00:00",
+      "status": "skipped",
+      "title": "Brian Chesky: People Managers Won’t Survive AI",
+      "source_title": "Brian Chesky: People Managers Won’t Survive AI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-23T15:30:26+00:00",
+      "appearances": [
+        {
+          "id": "58308bffd68aeb5813ab",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:nxNl-X-UWzA",
+          "title": "Brian Chesky: People Managers Won’t Survive AI",
+          "description": "#BrianChesky #Airbnb #Management #Leadership #AI #FutureOfWork #FounderMode #CEOAdvice #StartupAdvice #InvestLikeTheBest\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/nxNl-X-UWzA",
+          "published_at": "2026-09-23T15:30:26+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/nxNl-X-UWzA"
+      }
+    },
+    {
+      "id": "8c614eb34c005b1ce189",
+      "first_seen_at": "2026-09-23T16:17:26+00:00",
+      "status": "skipped",
+      "title": "Excited for Nick's talk at Midwest AI Summit happening on 15th October in Indianapolis.",
+      "source_title": "Excited for Nick's talk at Midwest AI Summit happening on 15th October in Indianapolis.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-23T16:00:26+00:00",
+      "appearances": [
+        {
+          "id": "f716c816260e914548fd",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:aR8F0cghok8",
+          "title": "Excited for Nick's talk at Midwest AI Summit happening on 15th October in Indianapolis.",
+          "description": "🎟️ Register here and get 20% off with code PRACTICALAI20: https://midwestaisummit.com/#tickets\n\nOur recent guest Nick Kuhn shared how platform concepts can be applied to deploying agents, from using AGENTS.md to define an agent to pushing it to a platform where it can run and scale.\n\nNick will be taking the stage at the Midwest AI Summit to explore “Zero-Code Agents: What If Deploying AI Looked Like Deploying Any Other App?” He will demonstrate how a plain-text AGENTS.md definition can become a running agent with a single push, while making the case for treating agents as first-class platform workloads.",
+          "url": "https://www.youtube.com/shorts/aR8F0cghok8",
+          "published_at": "2026-09-23T16:00:26+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/aR8F0cghok8"
+      }
     }
   ]
 }
