@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>AI Agents, AGENTS.md, Platform Engineering, MCP, Security &amp; Enterprise Deployment |Episode 373| — Practical AI</title>
+      <link>https://www.youtube.com/watch?v=Pr9O6MYJCRs</link>
+      <guid isPermaLink="false">ai-radar:bc5dfbcf40f4d8c6efc6</guid>
+      <pubDate>Wed, 23 Sep 2026 22:25:15 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UC9tpZnMLKv5vbZIGuIIPmNg">Practical AI</source>
+      <description>This episode of Practical AI features Nick Kuhn, Product Marketing Engineer at VMware Tanzu, discussing the deployment of AI agents in enterprise settings. The conversation explores the challenges and considerations when moving AI agents beyond prototypes into environments where security, compliance, scalability, and reliability are critical. Topics include agent build packs, MCP gateways, shared memory, identity, and sandboxing. The discussion also draws parallels between platform engineering and enterprise AI adoption, offering practical advice for organizations. The episode looks at the future implications of AI for enterprise teams and software development.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Practical AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=Pr9O6MYJCRs"&gt;AI Agents, AGENTS.md, Platform Engineering, MCP, Security &amp;amp; Enterprise Deployment |Episode 373|&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns — SemiAnalysis</title>
       <link>https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard</link>
       <guid isPermaLink="false">ai-radar:245ccfc22a15422e7482</guid>

@@ -71815,6 +71815,34 @@
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard"
       }
+    },
+    {
+      "id": "bc5dfbcf40f4d8c6efc6",
+      "first_seen_at": "2026-09-23T23:17:24+00:00",
+      "status": "published",
+      "title": "AI Agents, AGENTS.md, Platform Engineering, MCP, Security & Enterprise Deployment |Episode 373|",
+      "source_title": "AI Agents, AGENTS.md, Platform Engineering, MCP, Security & Enterprise Deployment |Episode 373|",
+      "short_summary": "This episode discusses deploying AI agents in enterprise environments, focusing on security, compliance, scalability, and reliability. It covers agent build packs, MCP gateways, shared memory, identity, and sandboxing, offering practical advice for organizations adopting agents.",
+      "long_summary": "This episode of Practical AI features Nick Kuhn, Product Marketing Engineer at VMware Tanzu, discussing the deployment of AI agents in enterprise settings. The conversation explores the challenges and considerations when moving AI agents beyond prototypes into environments where security, compliance, scalability, and reliability are critical. Topics include agent build packs, MCP gateways, shared memory, identity, and sandboxing. The discussion also draws parallels between platform engineering and enterprise AI adoption, offering practical advice for organizations. The episode looks at the future implications of AI for enterprise teams and software development.",
+      "reason": "The item discusses consequential AI companies, products, agent systems, and AI-native software or engineering practice, specifically focusing on the deployment of AI agents in enterprise environments, security, and platform engineering. The guest, Nick Kuhn from VMware Tanzu, provides firsthand expertise on these topics.",
+      "published_at": "2026-09-23T22:25:15+00:00",
+      "appearances": [
+        {
+          "id": "07be59a792b8859a1c8a",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:Pr9O6MYJCRs",
+          "title": "AI Agents, AGENTS.md, Platform Engineering, MCP, Security & Enterprise Deployment |Episode 373|",
+          "description": "AI agents are moving beyond laptops and prototypes and into enterprise environments where security, compliance, scalability, and reliability matter. We discuss what changes (and what doesn’t) when deploying agents alongside traditional applications. They explore agent build packs, MCP gateways, shared memory, identity, sandboxing, and what enterprises can learn from years of platform engineering. Nick also shares practical advice for organizations adopting agents today and looks at what the future of AI could mean for enterprise teams and software development.\n\nFEATURING:\n\nGuest - Nick Kuhn (Product Marketing Engineer at VMware Tanzu): https://www.linkedin.com/in/nick-kuhn-aa72a39/\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast): https://www.linkedin.com/in/danielwhitenack/\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast): https://www.linkedin.com/in/chrisbenson/\n\nSPONSORS:\n\n- Midwest AI Summit: Join AI practitioners on October 15 in Indianapolis for practical sessions, hands-on discussions, and real-world AI solutions. Use code PracticalAI20 to save 20% on your registration. https://midwestaisummit.com/#tickets\n- Prediction Guard: A self-hosted AI control plane for running agents in high impact environments. predictionguard.com/practicalai\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/\n\nCHAPTERS:\n\n0:11 Welcome to the Practical AI Podcast!\n1:20 Understanding Enterprise Environments\n5:12 Path to Production in Enterprises\n9:34 Agents vs. Traditional Applications\n13:23 Sponsor: Prediction Guard\n15:15 The Multi-Agentic World\n17:24 Deploying Agents in Enterprises\n23:15 MCP Gateway Explained\n25:45 Understanding Agents and Their Identity\n29:28 Sponsor: Midwest AI Summit\n30:57 Exploring AI Deployment in Real-World Environments\n34:52 Bridging Old and New Teams\n38:57 Security Considerations in AI\n43:18 Future Predictions for AI and Enterprises\n46:52 See you next time!",
+          "url": "https://www.youtube.com/watch?v=Pr9O6MYJCRs",
+          "published_at": "2026-09-23T22:25:15+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=Pr9O6MYJCRs"
+      }
     }
   ]
 }
