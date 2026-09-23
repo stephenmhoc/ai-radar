@@ -71645,6 +71645,34 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/design-engineering-with-maggie-appleton"
       }
+    },
+    {
+      "id": "ec612530307d6a520ac2",
+      "first_seen_at": "2026-09-23T18:17:22+00:00",
+      "status": "skipped",
+      "title": "Get Stuff Done with ChatGPT Voice",
+      "source_title": "Get Stuff Done with ChatGPT Voice",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional video about ChatGPT Voice features, lacking the substantial interview, talk, demonstration, or explainer content required for inclusion.",
+      "published_at": "2026-09-23T17:11:13+00:00",
+      "appearances": [
+        {
+          "id": "70551fb982ade1aafe21",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:96ogPwN9ykM",
+          "title": "Get Stuff Done with ChatGPT Voice",
+          "description": "We heard you loud and clear. \n\nChatGPT Voice can now:\n- Use plugins like your email, calendar, and Slack.\n\n- Be powered by GPT-6 Astra, Sol, and Luna.\n\n- Be used in ChatGPT Work on web and mobile, so you can create docs, decks, sites, and spreadsheets or tackle complex tasks in the browser, just by talking.\n\nRolling out globally today in the latest version of the app.",
+          "url": "https://www.youtube.com/watch?v=96ogPwN9ykM",
+          "published_at": "2026-09-23T17:11:13+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=96ogPwN9ykM"
+      }
     }
   ]
 }
