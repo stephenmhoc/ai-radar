@@ -71171,7 +71171,7 @@
           "family": "practical ai",
           "guid": "yt:video:s89q8-IK1w8",
           "title": "Scaling Multi-Agent Systems in the Enterprise",
-          "description": "How do you deploy and secure multi-agent systems in the enterprise? We explore agent buildpacks, `agents.md`, MCP gateways, approved LLMs, and secure runtimes—and how platform engineering can help enterprises scale AI agents.\n\nFEATURING:\n\nGuest - Nick Kuhn (Product Marketing Engineer at VMware Tanzu)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast): https://www.linkedin.com/in/danielwhitenack/\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast): https://www.linkedin.com/in/chrisbenson/\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
+          "description": "How do you deploy and secure multi-agent systems in the enterprise? We explore agent buildpacks, `agents.md`, MCP gateways, approved LLMs, and secure runtimes—and how platform engineering can help enterprises scale AI agents.\n\nFull episode releasing on Thursday!\n\nFEATURING:\n\nGuest - Nick Kuhn (Product Marketing Engineer at VMware Tanzu)\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast): https://www.linkedin.com/in/danielwhitenack/\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast): https://www.linkedin.com/in/chrisbenson/\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
           "url": "https://www.youtube.com/watch?v=s89q8-IK1w8",
           "published_at": "2026-09-22T19:21:35+00:00",
           "hosts": []
@@ -71446,6 +71446,34 @@
       "links": {
         "podcast": "https://www.latent.space/p/bio-security-is-an-ai-arms-race-eric",
         "newsletter": "https://www.latent.space/p/bio-security-is-an-ai-arms-race-eric"
+      }
+    },
+    {
+      "id": "90d5f52726895c57f1db",
+      "first_seen_at": "2026-09-23T15:17:37+00:00",
+      "status": "skipped",
+      "title": "\"80% of references are bullsh*t\" — Databricks' Ali Ghodsi on exec hiring",
+      "source_title": "\"80% of references are bullsh*t\" — Databricks' Ali Ghodsi on exec hiring",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-23T15:00:38+00:00",
+      "appearances": [
+        {
+          "id": "17948ae860e8c23fd5a3",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:YTZOo7Bpxlk",
+          "title": "\"80% of references are bullsh*t\" — Databricks' Ali Ghodsi on exec hiring",
+          "description": "A good exec search takes 6 to 12 months. Ali Ghodsi on why people settle, why the signals were always there, and why backdoor references beat front doors.",
+          "url": "https://www.youtube.com/shorts/YTZOo7Bpxlk",
+          "published_at": "2026-09-23T15:00:38+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/YTZOo7Bpxlk"
       }
     }
   ]
