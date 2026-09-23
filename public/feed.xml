@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns — SemiAnalysis</title>
+      <link>https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard</link>
+      <guid isPermaLink="false">ai-radar:245ccfc22a15422e7482</guid>
+      <pubDate>Wed, 23 Sep 2026 21:20:29 +0000</pubDate>
+      <source url="https://newsletter.semianalysis.com/feed">SemiAnalysis</source>
+      <description>SemiAnalysis has released ClusterMAX 3.0, an updated rating system for GPU cloud providers, expanding its coverage to 323 providers and reviewing 77 in depth. The report evaluates providers across ten categories, including compute, networking, storage, orchestration, UI, monitoring, and support. Nebius has joined CoreWeave in the Platinum tier, while Google Cloud and Oracle are in Gold. The report also introduces a &amp;quot;Participation Ribbon&amp;quot; tier for providers doing the bare minimum. The analysis includes key trends such as financing, Blackwell and Grace-Blackwell deployments, and security, with an appendix offering individual comments on each provider.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · SemiAnalysis&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard"&gt;ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Anthropic — Inside Anthropic's molecular biology lab — Anthropic</title>
       <link>https://www.youtube.com/watch?v=DdCEmlAydcw</link>
       <guid isPermaLink="false">ai-radar:93879a743b6611285a5d</guid>
