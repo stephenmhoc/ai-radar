@@ -71673,6 +71673,90 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=96ogPwN9ykM"
       }
+    },
+    {
+      "id": "93879a743b6611285a5d",
+      "first_seen_at": "2026-09-23T19:17:29+00:00",
+      "status": "published",
+      "title": "Anthropic — Inside Anthropic's molecular biology lab",
+      "source_title": "Inside Anthropic's molecular biology lab",
+      "short_summary": "Anthropic introduces a new molecular biology research group and lab. Claude helps scientists identify unusual proteins by analyzing DNA datasets and flagging promising candidates for testing.",
+      "long_summary": "Anthropic has established a new molecular biology research group and lab. The team's focus is on discovering unusual proteins, a task now aided by Claude. Claude processes extensive DNA datasets, identifying interesting or uncharacterized proteins and presenting promising ideas to the scientists. The team then conducts bench tests on the most viable candidates. In an initial research program, Claude successfully identified a novel enzyme system that features CRISPR-like repeats.",
+      "reason": "The item is a video from Anthropic, a target organization, detailing a new molecular biology research group and lab where their AI model, Claude, is used for scientific discovery, which constitutes consequential work on AI companies and products.",
+      "published_at": "2026-09-23T18:01:32+00:00",
+      "appearances": [
+        {
+          "id": "e7d464a9528159767b90",
+          "kind": "youtube",
+          "source": "Anthropic",
+          "family": "anthropic",
+          "guid": "yt:video:DdCEmlAydcw",
+          "title": "Inside Anthropic's molecular biology lab",
+          "description": "Some of the biggest discoveries in biology started with someone noticing something strange in one of the many molecular machines found in nature. We’re introducing a new molecular biology research group and lab at Anthropic to see if Claude can help scientists notice more of them.\n\nThe team has spent their careers hunting for unusual proteins, from tracing how CRISPR systems evolved to finding new enzymes for cell and gene therapies. Now, they do that work with Claude. It combs through huge datasets of DNA, flags interesting or uncharacterized proteins, and brings the team its most promising ideas. Then the scientists take the best ones to the bench and test them.\n\nIn one of the team’s first research programs, Claude discovered a novel enzyme system with CRISPR-like repeats. Read how it happened on our blog: https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+          "url": "https://www.youtube.com/watch?v=DdCEmlAydcw",
+          "published_at": "2026-09-23T18:01:32+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=DdCEmlAydcw"
+      }
+    },
+    {
+      "id": "6779a9e85e2c938c1068",
+      "first_seen_at": "2026-09-23T19:17:29+00:00",
+      "status": "skipped",
+      "title": "Today’s forecast? Nothing but 80s, baby.",
+      "source_title": "Today’s forecast? Nothing but 80s, baby.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-23T18:48:52+00:00",
+      "appearances": [
+        {
+          "id": "81b3efb30df5f1f831c3",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:rmDu2sSBIrw",
+          "title": "Today’s forecast? Nothing but 80s, baby.",
+          "description": "Create your own with ChatGPT Images.",
+          "url": "https://www.youtube.com/shorts/rmDu2sSBIrw",
+          "published_at": "2026-09-23T18:48:52+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/rmDu2sSBIrw"
+      }
+    },
+    {
+      "id": "66d97d4cda9a10d018f1",
+      "first_seen_at": "2026-09-23T19:17:29+00:00",
+      "status": "skipped",
+      "title": "Who The Academy is made for",
+      "source_title": "Who The Academy is made for",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-23T19:00:17+00:00",
+      "appearances": [
+        {
+          "id": "073f6898f2d75ca3259b",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:N42VxP0D49Q",
+          "title": "Who The Academy is made for",
+          "description": "The internet made it possible to know anything. AI makes it possible to do anything.\n\nThis is built for the people who want to do exactly that.\n\nApplications for the founding class are now open.",
+          "url": "https://www.youtube.com/shorts/N42VxP0D49Q",
+          "published_at": "2026-09-23T19:00:17+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/N42VxP0D49Q"
+      }
     }
   ]
 }
