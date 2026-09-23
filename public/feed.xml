@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Design Engineering with Maggie Appleton — The Pragmatic Engineer</title>
+      <link>https://newsletter.pragmaticengineer.com/p/design-engineering-with-maggie-appleton</link>
+      <guid isPermaLink="false">ai-radar:c409492e3eebd2d0a0b0</guid>
+      <pubDate>Wed, 23 Sep 2026 17:07:22 +0000</pubDate>
+      <source url="https://newsletter.pragmaticengineer.com/feed">The Pragmatic Engineer</source>
+      <description>Maggie Appleton, a staff research engineer at GitHub Next, explores how software engineers might collaborate with AI. She discusses the evolving role of designers and design engineers, emphasizing the importance of understanding engineering constraints for better collaboration. Appleton highlights her process of starting projects with pens and notebooks, and how she uses &amp;quot;jigs&amp;quot;—interactive prototypes—to gain control over AI agents. The conversation also delves into the challenges of planning with AI agents when too much text is involved and introduces the concept of &amp;quot;capability gaslighting,&amp;quot; where frontier models impress users before failing. Appleton suggests that new types of artifacts are needed for more effective human-agent collaboration and advises engineers to use AI agents as tutors for learning design principles.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · The Pragmatic Engineer&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.pragmaticengineer.com/p/design-engineering-with-maggie-appleton"&gt;Design Engineering with Maggie Appleton&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Google DeepMind: Create your own voices with Gemini 3.8 text-to-speech — Google DeepMind</title>
       <link>https://www.youtube.com/watch?v=FL6mI_Br-mc</link>
       <guid isPermaLink="false">ai-radar:274022d14ad77a41be97</guid>
