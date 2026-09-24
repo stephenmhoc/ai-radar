@@ -72154,6 +72154,62 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-end-of-coding-by-hand"
       }
+    },
+    {
+      "id": "ec9ad5bb6cdd9da4ae7d",
+      "first_seen_at": "2026-09-24T21:17:18+00:00",
+      "status": "skipped",
+      "title": "What happens when AI agents move from prototypes into the enterprise? #podcast #vmware #agents",
+      "source_title": "What happens when AI agents move from prototypes into the enterprise? #podcast #vmware #agents",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-24T21:00:10+00:00",
+      "appearances": [
+        {
+          "id": "babf09aefc8bcdcbbe58",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:sdWR-ek6uM8",
+          "title": "What happens when AI agents move from prototypes into the enterprise? #podcast #vmware #agents",
+          "description": "Nick Kuhn from @vmware Tanzu Platform joins us to discuss deploying agents alongside traditional applications, and what platform engineering can teach us about security, identity, scalability, and reliability.\n\nFull episode linked!",
+          "url": "https://www.youtube.com/shorts/sdWR-ek6uM8",
+          "published_at": "2026-09-24T21:00:10+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/sdWR-ek6uM8"
+      }
+    },
+    {
+      "id": "6ab42f9fa3586fac9a21",
+      "first_seen_at": "2026-09-24T21:17:18+00:00",
+      "status": "skipped",
+      "title": "Autonomous construction on Earth and beyond",
+      "source_title": "Autonomous construction on Earth and beyond",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-24T21:00:29+00:00",
+      "appearances": [
+        {
+          "id": "02604fed9838b436901f",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:iGY7httJjQA",
+          "title": "Autonomous construction on Earth and beyond",
+          "description": "A lot of construction work is still done by hand simply because the machines to automate it don’t exist. That’s become a bottleneck for building things like solar farms, data centers, and other critical infrastructure.\n\nCosmic Robotics is building those machines. Their robots have already installed 11,000 solar panels, and they just signed a major contract with the largest construction company in the country.\n\nThey’re building the construction robots we’ll need on Earth today, and eventually on the Moon and Mars.",
+          "url": "https://www.youtube.com/shorts/iGY7httJjQA",
+          "published_at": "2026-09-24T21:00:29+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/iGY7httJjQA"
+      }
     }
   ]
 }
