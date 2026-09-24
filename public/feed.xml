@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>The Technology for Fully Autonomous Attack Is Already Here | Alex Liannyi, NORDA Dynamics — Eye on AI</title>
+      <link>https://www.youtube.com/watch?v=uO0pgAyJhQ0</link>
+      <guid isPermaLink="false">ai-radar:56250a71858e157984ea</guid>
+      <pubDate>Thu, 24 Sep 2026 15:03:25 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLacDrP-7Ys6IsnPRN0ToTfjH8gQ4s6mL9">Eye on AI</source>
+      <description>Alex Liannyi, CTO of NORDA Dynamics, provides a ground-level account of autonomous drone guidance. NORDA builds avionics and targeting modules for Ukrainian drone manufacturers, addressing critical problems like GPS denial and the radio horizon. Their terminal guidance module takes over up to one kilometer from the target, allowing autonomous approach. Liannyi confirms that the technology for fully autonomous attack is &amp;quot;very close,&amp;quot; but military requirements for hit verification keep humans in the loop. He highlights that NORDA&amp;#x27;s system runs on a Raspberry Pi Zero, demonstrating that good engineering can overcome chip limitations for real-time computer vision in combat. The conversation underscores that autonomous warfare technology is advancing rapidly, independent of policy discussions.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Eye on AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=uO0pgAyJhQ0"&gt;The Technology for Fully Autonomous Attack Is Already Here | Alex Liannyi, NORDA Dynamics&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Mark Zuckerberg on Muse, New Audio-Only Glasses and Killer AI — Joanna Stern</title>
       <link>https://www.youtube.com/watch?v=2cg56uF4hlc</link>
       <guid isPermaLink="false">ai-radar:07b87edbebfbb3846e17</guid>

@@ -72037,6 +72037,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/lsWynLSM95g"
       }
+    },
+    {
+      "id": "56250a71858e157984ea",
+      "first_seen_at": "2026-09-24T16:17:58+00:00",
+      "status": "published",
+      "title": "The Technology for Fully Autonomous Attack Is Already Here | Alex Liannyi, NORDA Dynamics",
+      "source_title": "The Technology for Fully Autonomous Attack Is Already Here | Alex Liannyi, NORDA Dynamics",
+      "short_summary": "Alex Liannyi, CTO of NORDA Dynamics, discusses autonomous drone guidance in combat. He details how NORDA's avionics and targeting modules address GPS denial and radio horizon issues, running on a Raspberry Pi Zero.",
+      "long_summary": "Alex Liannyi, CTO of NORDA Dynamics, provides a ground-level account of autonomous drone guidance. NORDA builds avionics and targeting modules for Ukrainian drone manufacturers, addressing critical problems like GPS denial and the radio horizon. Their terminal guidance module takes over up to one kilometer from the target, allowing autonomous approach. Liannyi confirms that the technology for fully autonomous attack is \"very close,\" but military requirements for hit verification keep humans in the loop. He highlights that NORDA's system runs on a Raspberry Pi Zero, demonstrating that good engineering can overcome chip limitations for real-time computer vision in combat. The conversation underscores that autonomous warfare technology is advancing rapidly, independent of policy discussions.",
+      "reason": "The item features an interview with a technical leader (CTO of NORDA Dynamics) discussing consequential, technically substantive work on AI-enabled robots/drones, specifically focusing on frontier models, infrastructure, and engineering practice in a real-world application.",
+      "published_at": "2026-09-24T15:03:25+00:00",
+      "appearances": [
+        {
+          "id": "90568a0491884fdbcb87",
+          "kind": "youtube",
+          "source": "Eye on AI — YouTube",
+          "family": "eye on ai",
+          "guid": "yt:video:uO0pgAyJhQ0",
+          "title": "The Technology for Fully Autonomous Attack Is Already Here | Alex Liannyi, NORDA Dynamics",
+          "description": "The AI systems guiding Ukrainian combat drones aren't running on expensive Nvidia chips. They're running on a Raspberry Pi Zero - a $15 hobby computer - and that tells you everything about how this war is being fought.\n\nIn this episode, Craig Smith sits down with Alex Liannoy, CTO of NORDA Dynamics, for one of the most technically specific conversations in the series: a ground-level account of what autonomous drone guidance actually looks like from inside the team building it. NORDA doesn't manufacture drones; it builds the avionics and targeting modules that other Ukrainian drone manufacturers integrate, solving the two most critical problems in modern drone warfare: GPS denial, which Russian jamming has made pervasive across the front line, and the radio horizon, which causes pilots to lose connection with their drone in the final 300 to 400 meters before the target, precisely when guidance matters most. NORDA’s terminal guidance module takes over at up to one kilometer from the target, allowing the drone to complete its approach autonomously while the human pilot's earlier lock-on defines the destination. \n\nThe conversation addresses the question of full autonomy directly: Alex confirms that the technology is \"very close,\" but argues that the military requirement to prove you hit your intended target - not international humanitarian law - is the most practical reason humans remain in the loop, because monitoring to verify the hit gives you enough connection to control the drone anyway. The episode closes with a finding that should change how anyone thinks about AI hardware requirements: NORDA’s system runs on a Raspberry Pi Zero, a chip less powerful than Raspberry Pi 4, which engineers mocked them for using, and both run real-time computer vision guidance in active combat, because good engineering, Alex argues, consistently overcomes chip limitations.\n\nKey Topics Covered:\n● The two fundamental problems in drone warfare: GPS denial from jamming, and the radio horizon that causes pilots to lose connection in the final 300-400 meters before ground level, and how NORDA’s terminal guidance module solves the second\n● Why a Raspberry Pi Zero - a $15 hobby-level computer - runs real-time computer vision for combat drone guidance, and why good engineering on cheap commodity hardware consistently beats poor engineering on expensive Jetson-class chips\n● The current state of drone autonomy: target detection AI that notifies pilots of candidate targets exists and is deployed, one pilot can already control 32 drones simultaneously, and the technology for fully autonomous attack is \"very close\"\n● Why the military requirement to prove a hit is the most practical argument for keeping humans in the loop: if you can monitor the drone to verify the outcome, you have enough connection to control it\n● The threshold Craig identifies as the critical next step: the moment a state decides the human approval happens at drone launch rather than at target acquisition, and why that step changes everything about the ethics and scale of autonomous warfare\n● Ukraine's drone manufacturing ecosystem: hundreds of manufacturers currently operating, NORDA collaborating with approximately 40, each specializing in different parts of the production and technology stack\n\nAs the global debate about autonomous weapons remains largely theoretical in policy circles, this conversation from inside an active front-line avionics company makes clear that the technology is not waiting for the policy, and that the engineering decisions being made in Ukrainian garages and offices right now will define what autonomous warfare looks like for the next generation.\n\nSubscribe to Eye on A.I. for weekly conversations with the people building and deploying the future of AI. \n\nCraig Smith on X: https://x.com/craigss \nEYE on A.I. on X: https://x.com/EyeOn_AI \n\nConnect with Alex Liannyi\nLinkedin: https://www.linkedin.com/in/alex-liannyi-8966b863/\n\nTimestamps",
+          "url": "https://www.youtube.com/watch?v=uO0pgAyJhQ0",
+          "published_at": "2026-09-24T15:03:25+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=uO0pgAyJhQ0"
+      }
     }
   ]
 }
