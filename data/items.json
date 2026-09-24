@@ -72009,6 +72009,34 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/an-interview-with-colossus-eic-jeremy-stern-about-profiling-mark-zuckerberg/"
       }
+    },
+    {
+      "id": "55efcf416fed7617c213",
+      "first_seen_at": "2026-09-24T15:17:20+00:00",
+      "status": "skipped",
+      "title": "\"It'll take humanity a decade to absorb AI\" | Databricks CEO Ali Ghodsi",
+      "source_title": "\"It'll take humanity a decade to absorb AI\" | Databricks CEO Ali Ghodsi",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-24T15:00:06+00:00",
+      "appearances": [
+        {
+          "id": "dfebb9593c093f0d0679",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:lsWynLSM95g",
+          "title": "\"It'll take humanity a decade to absorb AI\" | Databricks CEO Ali Ghodsi",
+          "description": "The models are ready. The organizations aren't. Ali Ghodsi on why diffusing AI means re-engineering the processes of every company on the planet, and why that takes a decade at least.",
+          "url": "https://www.youtube.com/shorts/lsWynLSM95g",
+          "published_at": "2026-09-24T15:00:06+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/lsWynLSM95g"
+      }
     }
   ]
 }
