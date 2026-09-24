@@ -71843,6 +71843,36 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=Pr9O6MYJCRs"
       }
+    },
+    {
+      "id": "07b87edbebfbb3846e17",
+      "first_seen_at": "2026-09-24T01:17:22+00:00",
+      "status": "published",
+      "title": "Mark Zuckerberg on Muse, New Audio-Only Glasses and Killer AI",
+      "source_title": "Mark Zuckerberg on Muse, New Audio-Only Glasses and Killer AI",
+      "short_summary": "Mark Zuckerberg discusses Meta's new audio-only Ray-Ban glasses, VR glasses, and the Muse AI agent's new voice-and-video mode. The conversation also covers the metaverse, privacy, and the existential threat of AI.",
+      "long_summary": "Mark Zuckerberg, CEO of Meta, is interviewed about the company's new products and AI developments. The discussion covers Meta's new audio-only Ray-Ban glasses, updated VR glasses, and the Muse AI agent, specifically its new voice-and-video mode. Zuckerberg also addresses broader topics such as the metaverse, privacy concerns, and the potential existential threat posed by AI. The interview provides insights into Meta's future bets in technology and AI, including the integration of AI with new hardware and user experiences.",
+      "reason": "The item features a substantial interview with Mark Zuckerberg, CEO of Meta, a target frontier AI organization, discussing AI-related products and strategic topics.",
+      "published_at": "2026-09-24T00:04:40+00:00",
+      "appearances": [
+        {
+          "id": "e763f03ad90ec2a62936",
+          "kind": "youtube",
+          "source": "Joanna Stern",
+          "family": "joanna stern",
+          "guid": "yt:video:2cg56uF4hlc",
+          "title": "Mark Zuckerberg on Muse, New Audio-Only Glasses and Killer AI",
+          "description": "Meta has new audio-only Ray-Ban glasses, new VR glasses that no longer look like a nerd helmet and a new voice-and-video mode for its Muse AI agent. I sat down with Mark Zuckerberg at Meta’s headquarters ahead of the company’s Connect conference to talk about all of it. And yes, we also get into the metaverse, privacy, “pervert glasses,” recording indicator lights—and whether AI is going to kill us.\n\nThanks to Mercury for sponsoring this video. Head to Mercury.com to find out more. \n\nChapters: \n\n00:00 Zuckerberg on AI slowdown and AI existential threat \n04:53 TK: Zuckerberg’s old Dell Inspiron and the future of computers \n08:32 Meta VR Glasses \n11:00 Holograms! \n14:04 Meta Ray Ban Audio glasses \n14:55 Hearing aid support \n16:19 Mercury ad \n17:19 Zuckerberg’s response to pervert glasses \n20:11 A shift in privacy \n24:23 Muse AI + new voice \n26:23 Meeting Agrippa \n29:02 Muse privacy and trusting Meta \n33:15 AI + kids \n35:33 Meta’s big future bet \n\n📬 Our videos are free here, but support our work by subscribing to the New Things. You’ll love the newsletters! https://thenewthings.com/subscribe. \n📙 Order Joanna’s new book at https://joannastern.com \n💼 Want to sponsor our stuff? Email joanna.partnerships@smoothmedia.co \n▶️ Subscribe here so you don’t miss future videos https://www.youtube.com/c/joannastern \n \nWho is Joanna Stern? \nEmmy winner. Pulitzer finalist. Professional asker of uncomfortable questions. New York Times bestselling author. Joanna spent 12 years at The Wall Street Journal making videos and writing columns before founding New Things. Before that, she helped start The Verge and worked at ABC News. She believes technology should work for humans—and that journalism should be fun. She is working on both. She also is the author of the new book I AM NOT A ROBOT: My Year Using AI to Do (Almost) Everything. As NBC News' Chief Technology Analyst, her reporting and The New Things content regularly appears across NBC's broadcasts and platforms. For Joanna’s full resume, see LinkedIn. \n\nYou can find me on Instagram here: https://www.instagram.com/joannastern \nOr on X here: https://x.com/JoannaStern \nOr on LinkedIn here: linkedin.com/in/joannastern",
+          "url": "https://www.youtube.com/watch?v=2cg56uF4hlc",
+          "published_at": "2026-09-24T00:04:40+00:00",
+          "hosts": [
+            "Joanna Stern"
+          ]
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=2cg56uF4hlc"
+      }
     }
   ]
 }
