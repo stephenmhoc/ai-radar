@@ -71904,6 +71904,37 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-meta-connect-2026-muse-glasses"
       }
+    },
+    {
+      "id": "99b48af9d24e6303040b",
+      "first_seen_at": "2026-09-24T09:17:24+00:00",
+      "status": "skipped",
+      "title": "Practical AI: From AGENTS.md to Enterprise Deployment",
+      "source_title": "From AGENTS.md to Enterprise Deployment",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest and organization are not on the priority roster, and the episode covers general enterprise application deployment and platform engineering rather than frontier research or consequential AI infrastructure.",
+      "published_at": "2026-09-24T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "164651d0af0013e908bb",
+          "kind": "podcast",
+          "source": "Practical AI",
+          "family": "practical ai",
+          "guid": "2dbddf03-71ae-48d0-b902-a03f383621ac",
+          "title": "From AGENTS.md to Enterprise Deployment",
+          "description": "AI agents are moving beyond laptops and prototypes and into enterprise environments where security, compliance, scalability, and reliability matter. Nick Kuhn from VMware Tanzu Platform joins Daniel and Chris to discuss what changes (and what doesn’t) when deploying agents alongside traditional applications. They explore agent build packs, MCP gateways, shared memory, identity, sandboxing, and what enterprises can learn from years of platform engineering. Nick also shares practical advice for organizations adopting agents today and looks at what the future of AI could mean for enterprise teams and software development.\n\nFeaturing: \n\nNick Kuhn – \nLinkedIn\n\nDaniel Whitenack – \nWebsite\n, \nGitHub\n, \nX\n\nChris Benson – \nWebsite\n, \nLinkedIn\n, \nBluesky\n, \nGitHub\n, \nX\n\nSponsors:\n\nMidwest AI Summit:\n Join AI practitioners on October 15 in Indianapolis for practical sessions, hands-on discussions, and real-world AI solutions. Use code PracticalAI20 to save 20% on your registration. \nhttps://midwestaisummit.com/#tickets\n\nPrediction Guard: \nA self-hosted AI control plane for running agents in high impact environments. \npredictionguard.com/practicalai\n\nResources and Events:\n\nRegister for \nupcoming webinars here\n!\n\nPrior \nWebinars from our partner Prediction Guard\n\nMidwest AI Summit 2026",
+          "url": "https://share.transistor.fm/s/74934e48",
+          "published_at": "2026-09-24T09:00:00+00:00",
+          "hosts": [
+            "Chris Benson",
+            "Daniel Whitenack"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/74934e48"
+      }
     }
   ]
 }
