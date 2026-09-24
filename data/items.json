@@ -71935,6 +71935,80 @@
       "links": {
         "podcast": "https://share.transistor.fm/s/74934e48"
       }
+    },
+    {
+      "id": "a40f61b1f85eeef9ceb6",
+      "first_seen_at": "2026-09-24T10:17:26+00:00",
+      "status": "skipped",
+      "title": "Michael Lee on AI Incumbents and Sequence Holdings",
+      "source_title": "Re-Founding Incumbents for the AI Era with Sequence Holdings Co-Founder and CEO Michael Lee",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Michael Lee and Sequence Holdings fall outside the target organization roster, and the interview focuses on private equity holding company structures and legacy enterprise acquisitions rather than frontier AI research, technical leadership, or foundational AI infrastructure.",
+      "published_at": "2026-09-24T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "2eee35d0cb8fde384e84",
+          "kind": "podcast",
+          "source": "No Priors",
+          "family": "no priors",
+          "guid": "e2eb4b88-b7c1-11f1-a5c5-4b2557d321bc",
+          "title": "Re-Founding Incumbents for the AI Era with Sequence Holdings Co-Founder and CEO Michael Lee",
+          "description": "Can AI transform legacy incumbents rather than replacing them? Sequence Holdings co-founder and CEO Michael Lee joins Sarah Guo to discuss how holding company structures and engineering integrations are reshaping market leaders from the inside out. Michael details Sequence’s $7.7 billion take-private transaction of Baldwin alongside Dell Family Office (DFO), and shares his thesis on why traditional consulting models and software sales fall short for real enterprise AI transformations. They also talk about why permanent holding company structures are good for long-term compounding, real-world results from applying frontier engineering to BankSouth, and Michael’s lessons from his time in public investing, private equity, and operating at the intersection of market incumbents and AI.\n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @mjlee_2014 | @seqholdings\n\nChapters:\n\n00:34 – Michael Lee Introduction\n\n01:03 – Sequence Holdings and Baldwin\n\n01:54 – Idea for Sequence\n\n04:36 – Incumbents in the AI Era\n\n06:32 – Why a Holding Company\n\n11:21 – Recruiting Top Engineers\n\n13:08 – Investing in BankSouth\n\n17:46 – Why an Insurance Brokerage\n\n20:17 – Atlas Platform Explained\n\n23:53 – Traditional Private Equity Limitations\n\n27:23 – What Sequence Looks For in Management Teams\n\n31:04 – Accomplishments at BankSouth\n\n34:45 – Founder Lessons\n\n36:08 – Story of Dell Partnership\n\n37:10 – Career and Investment Approach\n\n40:00 – Value of Exceptional People\n\n42:23 – Conclusion",
+          "url": "https://feeds.megaphone.fm/nopriors",
+          "published_at": "2026-09-24T10:00:00+00:00",
+          "hosts": [
+            "Sarah Guo",
+            "Elad Gil"
+          ]
+        },
+        {
+          "id": "76fcfc2585c897d2cfc7",
+          "kind": "youtube",
+          "source": "No Priors — YouTube",
+          "family": "no priors",
+          "guid": "yt:video:TCpRwJBQvW0",
+          "title": "Re-Founding Incumbents for the AI Era with Sequence Holdings Co-Founder and CEO Michael Lee",
+          "description": "Can AI transform legacy incumbents rather than replacing them? Sequence Holdings co-founder and CEO Michael Lee joins Sarah Guo to discuss how holding company structures and engineering integrations are reshaping market leaders from the inside out. Michael details Sequence’s $7.7 billion take-private transaction of Baldwin alongside Dell Family Office (DFO), and shares his thesis on why traditional consulting models and software sales fall short for real enterprise AI transformations. They also talk about why permanent holding company structures are good for long-term compounding, real-world results from applying frontier engineering to BankSouth, and Michael’s lessons from his time in public investing, private equity, and operating at the intersection of market incumbents and AI.\n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @mjlee_2014 | @seqholdings\n\nChapters:\n00:34 – Michael Lee Introduction\n01:03 – Sequence Holdings and Baldwin\n01:54 – Idea for Sequence\n04:36 – Incumbents in the AI Era\n06:32 – Why a Holding Company\n11:21 – Recruiting Top Engineers\n13:08 – Investing in BankSouth\n17:46 – Why an Insurance Brokerage\n20:17 – Atlas Platform Explained\n23:53 – Traditional Private Equity Limitations\n27:23 – What Sequence Looks For in Management Teams\n31:04 – Accomplishments at BankSouth\n34:45 – Founder Lessons\n36:08 – Story of Dell Partnership\n37:10 – Career and Investment Approach\n40:00 – Value of Exceptional People\n42:23 – Conclusion",
+          "url": "https://www.youtube.com/watch?v=TCpRwJBQvW0",
+          "published_at": "2026-09-24T10:00:05+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/nopriors",
+        "youtube": "https://www.youtube.com/watch?v=TCpRwJBQvW0"
+      }
+    },
+    {
+      "id": "db66a8ddd397db8c3876",
+      "first_seen_at": "2026-09-24T10:17:26+00:00",
+      "status": "deferred",
+      "title": "An Interview with Colossus EIC Jeremy Stern About Profiling Mark Zuckerberg",
+      "source_title": "An Interview with Colossus EIC Jeremy Stern About Profiling Mark Zuckerberg",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-24T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "69212af9b66d1de12c4a",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20097",
+          "title": "An Interview with Colossus EIC Jeremy Stern About Profiling Mark Zuckerberg",
+          "description": "An interview with Colossus EIC Jeremy Stern about profiling Mark Zuckerberg and other prominent tech figures.",
+          "url": "https://stratechery.com/2026/an-interview-with-colossus-eic-jeremy-stern-about-profiling-mark-zuckerberg/",
+          "published_at": "2026-09-24T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/an-interview-with-colossus-eic-jeremy-stern-about-profiling-mark-zuckerberg/"
+      }
     }
   ]
 }
