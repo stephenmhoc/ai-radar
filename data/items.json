@@ -72375,6 +72375,34 @@
       "links": {
         "podcast": "https://www.nytimes.com/2026/09/25/podcasts/hardfork-ezra-klein-jensen-huang.html"
       }
+    },
+    {
+      "id": "aa2ada6b0b247ed40f53",
+      "first_seen_at": "2026-09-25T14:17:21+00:00",
+      "status": "skipped",
+      "title": "The Reputation Graph of Silicon Valley | Introducing Cosign",
+      "source_title": "The Reputation Graph of Silicon Valley | Introducing Cosign",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode focuses on introducing Cosign, a professional reputation and networking product; AI is only mentioned incidentally.",
+      "published_at": "2026-09-25T14:00:00+00:00",
+      "appearances": [
+        {
+          "id": "b4f702c379927d1a931e",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "c61919bb-5988-4aef-825f-ae983752f1fe",
+          "title": "The Reputation Graph of Silicon Valley | Introducing Cosign",
+          "description": "a16z’s Erik Torenberg sits down with Josh Elman, Olivia Moore, and David Booth to introduce Cosign, a new product built around professional reputation and the people, companies, and products you’re willing to put your name behind.\n\nThey unpack a simple idea at the heart of Silicon Valley: some of the most valuable professional signals aren’t credentials, but who believes in you. From the mentor who shaped your career to the colleague you’d work with anywhere or the young builder you think everyone should be watching, Cosign is an attempt to make those signals more visible and durable.\n\nThey also discuss why human endorsements may become more valuable as AI makes outreach and information abundant, what existing professional networks get right and miss, and how making reputation more legible could help talented people get discovered earlier, find collaborators, and carry the work they’ve done behind the scenes into whatever they do next.\n\nResources:\n\nFollow Josh Elman on X:\nhttps://x.com/joshelman\n\nFollow Olivia Moore on X: \nhttps://x.com/omooretweets\n\nFollow David Booth on X: \nhttps://x.com/david__booth\n\nFollow Cosign: \nhttps://x.com/cosign_build\n\nRead more about Cosign: \nhttps://www.a16z.news/how-silicon-valley-knows-its-people\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/the-reputation-graph-of-silicon-valley-introducing-cosign-qLcU00IT",
+          "published_at": "2026-09-25T14:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/the-reputation-graph-of-silicon-valley-introducing-cosign-qLcU00IT"
+      }
     }
   ]
 }
