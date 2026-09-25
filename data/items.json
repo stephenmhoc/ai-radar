@@ -72519,6 +72519,77 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/begun-the-aggregator-wars-have/"
       }
+    },
+    {
+      "id": "10960fdb69a1d07142fd",
+      "first_seen_at": "2026-09-25T19:17:24+00:00",
+      "status": "published",
+      "title": "Zero to One in AI Safety: Halcyon's Mike McCormick on Launching 30 New Orgs & the Founder Bottleneck",
+      "source_title": "Zero to One in AI Safety: Halcyon's Mike McCormick on Launching 30 New Orgs & the Founder Bottleneck",
+      "short_summary": "Mike McCormick, founder and CEO of Halcyon, discusses the bottleneck in AI safety, biosecurity, and cybersecurity as a shortage of experienced founders. He shares how Halcyon supports new organizations by funding leaders, highlighting the urgent need for independent capacity in interpretability, technical verification, and resilient governance.",
+      "long_summary": "Mike McCormick, founder and CEO of Halcyon, discusses the primary bottleneck in AI safety, biosecurity, and cybersecurity, identifying it as a shortage of experienced founders rather than a lack of capital. He explains how Halcyon's venture and nonprofit arms have supported approximately 30 new organizations, including Goodfire, AIUC, and Transluce, often by funding leaders before they have chosen a specific project. McCormick emphasizes the urgent need to build independent capacity in interpretability, technical verification, and resilient governance, given critical timelines potentially unfolding over the next one to four years. The conversation underscores the necessity of pairing technical safety solutions with enforceable standards, commercial incentives, and capable institutions to effectively manage catastrophic risks.",
+      "reason": "The item features an interview with Mike McCormick, founder and CEO of Halcyon, discussing consequential work in AI safety, including technical verification, interpretability, and governance, which aligns with AI Radar's focus on frontier models, research, evaluations, and safety.",
+      "published_at": "2026-09-25T18:13:30+00:00",
+      "appearances": [
+        {
+          "id": "57c80d4c2aeb0fa02548",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "2bbef93a-b8f4-11f1-9db7-0f2243e59980",
+          "title": "Zero to One in AI Safety: Halcyon's Mike McCormick on Launching 30 New Orgs & the Founder Bottleneck",
+          "description": "Mike McCormick, founder and CEO of Halcyon, discusses why the primary bottleneck in AI safety, biosecurity, and cybersecurity is a shortage of experienced founders rather than a lack of capital. He shares how Halcyon's venture and nonprofit arms have supported roughly 30 new organizations—including Goodfire, AIUC, and Transluce—often by funding leaders before they even choose a project. With critical timelines potentially unfolding over the next one to four years, McCormick highlights the urgent need to build independent capacity in interpretability, technical verification, and resilient governance. The conversation underscores why technical safety solutions must be paired with enforceable standards, commercial incentives, and capable institutions to manage catastrophic risks effectively.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/zero-to-one-in-ai-safety-halcyon-s-mike-mccormick-on-launching-30-new-orgs-the-founder-bottleneck/\nSponsors:\n\nElevenLabs: ElevenLabs lets you deploy enterprise-ready conversational AI agents that talk, type, and take action in over 70 languages. Schedule your demo today at https://elevenlabs.io/tcr\n\nOutSystems: OutSystems is the leading agentic systems platform, empowering enterprises to build, coordinate, and govern AI agents and mission-critical applications securely. Learn more and start building your agentic future at https://outsystems.com/tcr\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(03:54) Introducing Halcyon\n\n(06:09) AI safety portfolio stories (Part 1)\n\n(19:07) Sponsors: ElevenLabs | OutSystems\n\n(21:57) AI safety portfolio stories (Part 2)\n\n(22:42) Halcyon's core thesis\n\n(34:14) Funding vs joining orgs (Part 1)\n\n(34:19) Sponsor: Claude\n\n(35:54) Funding vs joining orgs (Part 2)\n\n(47:03) Mission preservation governance\n\n(01:00:21) Neglected safety areas\n\n(01:09:09) Evaluating AI consciousness\n\n(01:19:36) Institutional coordination mechanisms\n\n(01:35:59) Transitioning into AI safety\n\n(01:46:11) Episode Outro\n\n(01:48:08) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\n\nWebsite: https://www.cognitiverevolution.ai\n\nTwitter (Podcast): https://x.com/cogrev_podcast\n\nTwitter (Nathan): https://x.com/labenz\n\nLinkedIn: https://linkedin.com/in/nathanlabenz/\n\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\n\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\n\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.cognitiverevolution.ai/zero-to-one-in-ai-safety-halcyon-s-mike-mccormick-on-launching-30-new-orgs-the-founder-bottleneck/",
+          "published_at": "2026-09-25T18:13:31+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        },
+        {
+          "id": "564e5f6edc73d167f8fe",
+          "kind": "youtube",
+          "source": "The Cognitive Revolution — YouTube",
+          "family": "the cognitive revolution",
+          "guid": "yt:video:HRZ82qpKcOs",
+          "title": "Zero to One in AI Safety: Halcyon's Mike McCormick on Launching 30 New Orgs & the Founder Bottleneck",
+          "description": "Mike McCormick, founder and CEO of Halcyon, discusses why the primary bottleneck in AI safety, biosecurity, and cybersecurity is a shortage of experienced founders rather than a lack of capital. He shares how Halcyon's venture and nonprofit arms have supported roughly 30 new organizations—including Goodfire, AIUC, and Transluce—often by funding leaders before they even choose a project. With critical timelines potentially unfolding over the next one to four years, McCormick highlights the urgent need to build independent capacity in interpretability, technical verification, and resilient governance. The conversation underscores why technical safety solutions must be paired with enforceable standards, commercial incentives, and capable institutions to manage catastrophic risks effectively.\n\nFor full show notes, links, and references, read the episode page:\nhttps://www.cognitiverevolution.ai/zero-to-one-in-ai-safety-halcyon-s-mike-mccormick-on-launching-30-new-orgs-the-founder-bottleneck/\n\nSPONSORS:\nElevenLabs: ElevenLabs lets you deploy enterprise-ready conversational AI agents that talk, type, and take action in over 70 languages. Schedule your demo today at https://elevenlabs.io/tcr\n\nOutSystems: OutSystems is the leading agentic systems platform, empowering enterprises to build, coordinate, and govern AI agents and mission-critical applications securely. Learn more and start building your agentic future at https://outsystems.com/tcr\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nCHAPTERS:\n(00:00) About the Episode\n(03:54) Introducing Halcyon\n(06:09) AI safety portfolio stories (Part 1)\n(19:07) Sponsors: ElevenLabs | OutSystems\n(21:57) AI safety portfolio stories (Part 2)\n(22:42) Halcyon's core thesis\n(34:14) Funding vs joining orgs (Part 1)\n(34:19) Sponsor: Claude\n(35:54) Funding vs joining orgs (Part 2)\n(47:03) Mission preservation governance\n(01:00:21) Neglected safety areas\n(01:09:09) Evaluating AI consciousness\n(01:19:36) Institutional coordination mechanisms\n(01:35:59) Transitioning into AI safety\n(01:46:11) Episode Outro\n(01:48:08) Outro\n\nPRODUCED BY:\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\nWebsite: https://www.cognitiverevolution.ai\nTwitter (Podcast): https://x.com/cogrev_podcast\nTwitter (Nathan): https://x.com/labenz\nLinkedIn: https://linkedin.com/in/nathanlabenz/\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.youtube.com/watch?v=HRZ82qpKcOs",
+          "published_at": "2026-09-25T18:13:30+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/zero-to-one-in-ai-safety-halcyon-s-mike-mccormick-on-launching-30-new-orgs-the-founder-bottleneck/",
+        "youtube": "https://www.youtube.com/watch?v=HRZ82qpKcOs"
+      }
+    },
+    {
+      "id": "dea2dfcbb7a9c6fa4f1d",
+      "first_seen_at": "2026-09-25T19:17:24+00:00",
+      "status": "skipped",
+      "title": "Rocket cargo delivery anywhere on Earth in minutes",
+      "source_title": "Rocket cargo delivery anywhere on Earth in minutes",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-25T18:36:54+00:00",
+      "appearances": [
+        {
+          "id": "8ce520109b1c556c801a",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:j7Ee8hMme3c",
+          "title": "Rocket cargo delivery anywhere on Earth in minutes",
+          "description": "Hop Aero is building rockets that can deliver cargo anywhere on Earth in minutes.\n\nThey’re starting with military logistics and other time-sensitive payloads, including temperature-controlled materials with short shelf lives, where getting something there much faster can materially change the outcome.\n\nThey’ve already built and successfully hot-fired a new rocket engine, and signed $1.37B in commercial LOIs.",
+          "url": "https://www.youtube.com/shorts/j7Ee8hMme3c",
+          "published_at": "2026-09-25T18:36:54+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/j7Ee8hMme3c"
+      }
     }
   ]
 }
