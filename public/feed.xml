@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Anastasis Germanidis on Runway’s Evolution from Video Generation to World Models and Robotics — Latent Space</title>
+      <link>https://www.youtube.com/watch?v=fGRd5gYhztg</link>
+      <guid isPermaLink="false">ai-radar:067908a101a5bcf1d9f3</guid>
+      <pubDate>Fri, 25 Sep 2026 01:40:15 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLWEAb1SXhjlfkEF_PxzYHonU_v5LPMI8L">Latent Space</source>
+      <description>Runway co-founder Anastasis Germanidis joins Latent Space to examine the company&amp;#x27;s progression from early generative video tools to frontier world models and simulation. He discusses the engineering milestones from Gen-1 through Gen-4.5, including an early 1,000-A100 cluster bet, Runway&amp;#x27;s role in Stable Diffusion, and how the team scaled Gen-3 tenfold following OpenAI&amp;#x27;s Sora launch. Germanidis explains how scaling video prediction allows models to learn physics and serve as simulators and World Action Models for robotics. Additionally, he explores Interface World Models that generate software pixels directly without code, the potential for a neural operating system, and the convergence of video agents and omni models.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=fGRd5gYhztg"&gt;Runway’s Bet Beyond Video: World Models, Robotics, and the Neural OS — Anastasis Germanidis&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Runway Leadership on GWM Worlds 2, WorldPrompt, and Real-Time World Models — Latent Space</title>
+      <link>https://www.latent.space/p/runway</link>
+      <guid isPermaLink="false">ai-radar:43d0b0fef3e8af7e8fb0</guid>
+      <pubDate>Fri, 25 Sep 2026 01:30:00 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/1084089.rss">Latent Space</source>
+      <description>In this deep dive featuring interviews with Runway CTO Kamil Sindi, Principal Research Scientist Robin Kahlow, and co-founder and co-CEO Anastasis Germanidis, Latent Space examines Runway&amp;#x27;s GWM Worlds 2 research preview. The system streams real-time interactive worlds in continuous 720p video at 24 fps alongside 48 kHz audio. A central innovation is WorldPrompt, an input format functioning as a control layer for characters, cameras, and environments using timestamped events. Architecturally, Runway adapts foundational bidirectional diffusion models into causal autoregressive models that generate frame by frame, followed by distillation methods such as reducing denoising steps from roughly 50 down to four. The leaders highlight primary engineering hurdles, including error accumulation as generated frames feed back into the model and managing context history to prevent GPU memory exhaustion.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/runway"&gt;Runway’s WorldPrompt and the Engineering of Real-Time Worlds&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/runway"&gt;Runway’s WorldPrompt and the Engineering of Real-Time Worlds&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>The Technology for Fully Autonomous Attack Is Already Here | Alex Liannyi, NORDA Dynamics — Eye on AI</title>
       <link>https://www.youtube.com/watch?v=uO0pgAyJhQ0</link>
       <guid isPermaLink="false">ai-radar:56250a71858e157984ea</guid>
