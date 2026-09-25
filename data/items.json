@@ -72316,6 +72316,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-the-future-of-latent-space"
       }
+    },
+    {
+      "id": "e0066961f35270cdb804",
+      "first_seen_at": "2026-09-25T09:17:21+00:00",
+      "status": "skipped",
+      "title": "Why Brazil Can’t Hide From Its Debt",
+      "source_title": "Why Brazil Can’t Hide From Its Debt",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This video is about Brazil's national debt and economic outlook ahead of an election, with no relevance to artificial intelligence.",
+      "published_at": "2026-09-25T08:00:26+00:00",
+      "appearances": [
+        {
+          "id": "3933465d970526266878",
+          "kind": "youtube",
+          "source": "Bloomberg Originals",
+          "family": "bloomberg originals",
+          "guid": "yt:video:UgYnjB2es2s",
+          "title": "Why Brazil Can’t Hide From Its Debt",
+          "description": "As Brazil heads into an election, its debt problems are becoming harder to ignore. Consumers and businesses are struggling with sky-high borrowing costs as the country’s deteriorating fiscal outlook alarms investors. \n\nPresident Luiz Inácio Lula da Silva has rolled out measures aimed at easing the pressure on families and businesses while his main rival, Flávio Bolsonaro, has promised tighter spending controls, albeit with few details. Whoever wins the presidency is likely to face difficult choices over how to bring the country’s debt to heel. \n\n00:00 Introduction \n01:34 Consumers \n03:55 Online gambling\n05:04 Businesses \n06:21 Government\n08:21 What’s next \n\n#Brazil #Debt #Economy \n\n--------\nLike this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1\n\nGet unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals\nBloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. \n\nSubscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.\n\nVisit our partner channel Bloomberg News for global news and insight in an instant.",
+          "url": "https://www.youtube.com/watch?v=UgYnjB2es2s",
+          "published_at": "2026-09-25T08:00:26+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=UgYnjB2es2s"
+      }
     }
   ]
 }
