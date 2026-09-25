@@ -72344,6 +72344,37 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=UgYnjB2es2s"
       }
+    },
+    {
+      "id": "c3fceeacff9343c7483d",
+      "first_seen_at": "2026-09-25T11:17:18+00:00",
+      "status": "deferred",
+      "title": "The Ezra Klein Show: Jensen Huang Thinks A.I. Alarmism Has Gone Too Far",
+      "source_title": "The Ezra Klein Show: Jensen Huang Thinks A.I. Alarmism Has Gone Too Far",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-25T11:00:03+00:00",
+      "appearances": [
+        {
+          "id": "3caf2af0226fd7f22930",
+          "kind": "podcast",
+          "source": "Hard Fork",
+          "family": "hard fork",
+          "guid": "https://www.nytimes.com/2026/09/25/podcasts/hardfork-ezra-klein-jensen-huang.html",
+          "title": "The Ezra Klein Show: Jensen Huang Thinks A.I. Alarmism Has Gone Too Far",
+          "description": "Ezra Klein interviews the Nvidia chief executive Jensen Huang.",
+          "url": "https://www.nytimes.com/2026/09/25/podcasts/hardfork-ezra-klein-jensen-huang.html",
+          "published_at": "2026-09-25T11:00:03+00:00",
+          "hosts": [
+            "Kevin Roose",
+            "Casey Newton"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.nytimes.com/2026/09/25/podcasts/hardfork-ezra-klein-jensen-huang.html"
+      }
     }
   ]
 }
