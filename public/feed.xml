@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Latent Space: OpenRouter's Alex Atallah and AMP's Anjney Midha on Scaling Inference Routing — Latent Space</title>
+      <link>https://www.latent.space/p/openrouter</link>
+      <guid isPermaLink="false">ai-radar:a444ecfe2ea66c1d36f4</guid>
+      <pubDate>Fri, 25 Sep 2026 23:14:41 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/1084089.rss">Latent Space</source>
+      <description>In an interview on Latent Space, OpenRouter co-founder and CEO Alex Atallah and AMP&amp;#x27;s Anjney Midha trace OpenRouter&amp;#x27;s growth from early open-weight models to processing over 10 trillion tokens per day. The discussion examines why OpenRouter bet early on a multi-model ecosystem rather than a single dominant model, and how labs spending billions on training often struggle with distribution. Atallah details OpenRouter&amp;#x27;s focus on serving as a neutral inference marketplace and routing layer, contrasting its mission with LM Arena. He also reflects on early Mixture of Models experiments, why model fusion initially failed in 2024 before working better later, and how the platform&amp;#x27;s leaderboard tracks real-time shifts in AI usage. Finally, Midha and Atallah explain the strategic fit behind Stripe&amp;#x27;s acquisition of OpenRouter, focusing on the need for fraud infrastructure to combat token-level abuse and emerging agentic attacks against AI token flows.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/openrouter"&gt;OpenRouter: from Seed to Stripe — with OpenRouter’s Alex Atallah &amp;amp; AMP’s Anjney Midha&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/openrouter"&gt;OpenRouter: from Seed to Stripe — with OpenRouter’s Alex Atallah &amp;amp; AMP’s Anjney Midha&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Zero to One in AI Safety: Halcyon's Mike McCormick on Launching 30 New Orgs &amp; the Founder Bottleneck — The Cognitive Revolution</title>
       <link>https://www.cognitiverevolution.ai/zero-to-one-in-ai-safety-halcyon-s-mike-mccormick-on-launching-30-new-orgs-the-founder-bottleneck/</link>
       <guid isPermaLink="false">ai-radar:10960fdb69a1d07142fd</guid>
