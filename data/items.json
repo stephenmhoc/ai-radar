@@ -72489,6 +72489,36 @@
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/the-chinese-ai-infrastructure-boom"
       }
+    },
+    {
+      "id": "07c71d8f0ebeceec30f9",
+      "first_seen_at": "2026-09-25T17:17:22+00:00",
+      "status": "skipped",
+      "title": "Begun, the Aggregator Wars Have",
+      "source_title": "2026.39: Begun, the Aggregator Wars Have",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a weekly newsletter link roundup summarizing various posts and bundle updates across Stratechery, rather than a standalone piece of deep analysis, original reporting, or a qualifying interview.",
+      "published_at": "2026-09-25T17:00:00+00:00",
+      "appearances": [
+        {
+          "id": "bad2d117f0bdb87316c3",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20104",
+          "title": "2026.39: Begun, the Aggregator Wars Have",
+          "description": "Welcome back to This Week in Stratechery!\n\nAs a reminder, each week, every Friday, we’re sending out this overview of content in the Stratechery bundle; \nhighlighted links are free for everyone\n. Additionally, you have complete control over what we send to you. If you don’t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in \nyour delivery settings\n.\n\nOn that note, here were a few of our favorites this week.\n\nMeta vs. Amazon.\n One of the best agent use cases is taking care of mundane things that are necessary but annoying. One of the best utilities Amazon provides is reliably delivering mundane things that are necessary and mundane. That means Muse is better if it can use Amazon, but that’s a problem for Amazon because Muse doesn’t see ads. \nAs I explained on Tuesday\n, that’s why Amazon blocked Meta’s new agent, and they can get away from it because their differentiation is rooted in the physical world. To bridge that moat Meta will need help from one specific company: \nWalmart\n.\n\nGM Bends the Knee to CarPlay.\n Three years ago on Sharp Tech we had a few weeks’ worth of \nlively discussion of GM’s controversial decision to abandon Apple CarPlay\n in favor of its own smartphone software (which would afford it access to proprietary data). I wasn’t sure it would be a problem, whereas Ben was incensed at GM’s myopia. Three years later now … Well, Ben was right, GM has announced it is re-integrating CarPlay after three years of customer and dealership backlash, and I was chuckling throughout \nTuesday’s Dithering laying out how and why this outcome was inevitable\n. \n—\nAndrew Sharp\n\nProfiling the Profiler.\n This week’s Stratechery Interview was with a writer I wasn’t familiar with and a body of work I’d never seen before. If you, like me, are a Colossus neophyte, then \nBen’s conversation with Jeremy Stern\n is a good place to start. They discussed Stern’s journey to tech and business writing, why Ben considers him “the best profile writer working today,” and, in addition to quick hit takeaways from profiles of Scott Wu, Shyam Sankar, Josh Kushner, Neil Mehta, and Jake Sullivan, \nStern’s recent profile of Mark Zuckerberg\n. Come for a great conversation, and stay for a behind-the-scenes discussion of Zuckerberg that appears to be much truer to life than that new \nSocial Network\n sequel. \n—\nAS\n\nStratechery Articles and Updates\n\nFrontier Overhangs\n— Pacing the frontier may be sincere, but it would also be strategically useful for the frontier labs to have time to reduce overhangs caused by model advancement.\n\nAmazon Blocks Muse, Amazon’s Moat, Aggregator v Aggregator\n— Amazon predictably blocked Muse, but there is room for a deal based on the reality that Amazon’s physical world investments are an AI moat.\n\nMore on Muse, Amazon, and Walmart; Muse and Expedia; Whither Google?\n— Meta needs Walmart to wait out Amazon; Expedia seeks to keep its middleware position; meanwhile, where is Google?\n\nAn Interview with Colossus EIC Jeremy Stern About Profiling Mark Zuckerberg\n— An interview with Colossus EIC Jeremy Stern about profiling Mark Zuckerberg and other prominent tech figures.\n\nSharp Text by Andrew Sharp\n\nToo Many Stadiums with Roofs\n — \nOn the new Washington Commanders stadium and a modern epidemic.\n\nDithering with Ben Thompson and Daring Fireball’s John Gruber\n\nGM and CarPlay\n\nMuse Delivery Vehicles\n\nAsianometry with Jon Yu\n\nIntel’s Optane Memory: A Promise Unfulfilled\n\nHigh Bandwidth Flash Is Coming\n\nSharp China with Andrew Sharp and Sinocism’s Bill Bishop\n\nXi Jinping Comes to Washington; US-China Agenda, Questions and Expectations; The September Politburo Meeting\n\nGreatest of All Talk\n\nBreakouts, Breakdowns and Bouncebacks, The Jalen Duren Hostage Crisis, Surveying the Central Division\n\nSharp Tech with Andrew Sharp and Ben Thompson\n\nThree Weeks of Meta Momentum, The Ultimate Muse Upside, A King Kong vs. Godzilla Aggregator War\n\nThis week’s Sharp Tech video is on why Anthropic or OpenAI can’t unilaterally slow down.",
+          "url": "https://stratechery.com/2026/begun-the-aggregator-wars-have/",
+          "published_at": "2026-09-25T17:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/begun-the-aggregator-wars-have/"
+      }
     }
   ]
 }
