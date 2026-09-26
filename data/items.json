@@ -72794,6 +72794,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=Jv5B5CEaPJI"
       }
+    },
+    {
+      "id": "0eacc4854bc04065569d",
+      "first_seen_at": "2026-09-26T17:17:26+00:00",
+      "status": "skipped",
+      "title": "Why AI’s Next Breakthroughs Could Come from Outside the Big Labs",
+      "source_title": "Why AI’s Next Breakthroughs Could Come from Outside the Big Labs",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The panel features general tech executives and venture capitalists (Aaron Levie, Martin Casado, Steven Sinofsky) rather than leaders from target frontier AI organizations or deeply technical AI infrastructure specialists, focusing primarily on high-level safety discourse and regulatory debate.",
+      "published_at": "2026-09-26T14:30:10+00:00",
+      "appearances": [
+        {
+          "id": "de1e54f2ef7df21a2117",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:TLJNJDf2XGo",
+          "title": "Why AI’s Next Breakthroughs Could Come from Outside the Big Labs",
+          "description": "Erik Torenberg sits down with Box CEO Aaron Levie, and a16z’s Martin Casado, and Steven Sinofsky to debate how the AI industry should think about safety, security, and regulation as increasingly capable agents move into the real world.\n\nThey argue that much of today’s conversation is happening before we have clearly defined the risks we’re trying to regulate. Drawing on earlier waves of computing, from computer viruses and the early internet to aviation and automobiles, they ask what AI can learn from industries that developed safety standards only after understanding how their technologies actually failed.\n\nThe conversation then gets concrete: agents don’t get tired, can operate at enormous scale, and can probe systems in ways human employees never could. That could require rethinking permissions, authentication, operating systems, and the security stack itself. They also discuss why AI innovation may increasingly move beyond the frontier labs and into the software built around the models.\n\nTimestamps:\n00:00 - Intro\n00:50 - Pacing the Frontier: Reacting to the AI Safety Discourse\n03:50 - Species Extinction Talk: Do Labs Actually Believe Their Own Rhetoric?\n06:49 - The Nationalization Question & Whose Job Safety Really Is\n11:32 - David Sacks vs Government: \"You're Asking Us to Regulate What?\"\n12:08 - 2028 as the AI Election\n28:39 - Why Cybersecurity Has Historically Rejected Practical Solutions\n32:30 - The Craziest Covert Channel Ever Seen\n48:38 - LLMs as Decision Engines vs Chatbots\n53:01 - Why the Labs Haven't Built This: The Being vs Tool Mindset\n\nResources:\nFollow Aaron Levie on X: https://x.com/levie\nFollow Martin Casado on X: https://x.com/martin_casado\nFollow Steven Sinofsky on X: https://x.com/stevesi\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=TLJNJDf2XGo",
+          "published_at": "2026-09-26T14:30:10+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=TLJNJDf2XGo"
+      }
     }
   ]
 }
