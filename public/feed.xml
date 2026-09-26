@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Y Combinator: How General-Purpose LLMs Enable Robot-Use Agents — Y Combinator</title>
+      <link>https://www.youtube.com/watch?v=Jv5B5CEaPJI</link>
+      <guid isPermaLink="false">ai-radar:f5e36197fa9c0f6f71fa</guid>
+      <pubDate>Sat, 26 Sep 2026 14:00:37 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCcefcZRL2oaA_uBNeo5UOWg">Y Combinator</source>
+      <description>In this episode of Y Combinator&amp;#x27;s Decoded, the founders of robotics startups Waddle Labs and RoboCurve discuss the emerging paradigm of robot-use agents. Drawing on recent research and ideas highlighting how coding agents generalize beyond software, the conversation examines using general-purpose models to write policies and control distinct robotic hardware with minimal robot-specific training. The discussion explores code-as-policies, vision-language-action models, and the balance between in-context learning and model training. They also cover the engineering harnesses, evaluations, and skill-abstraction methods required to deploy these agent systems effectively in the physical world.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Y Combinator&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=Jv5B5CEaPJI"&gt;New LLMs Are Unlocking Robot-Use Agents&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>How Do You Secure a World of AI Agents? — The a16z Show</title>
       <link>https://a16z.simplecast.com/episodes/aaron-levie-steven-sinofsky-martin-casado-how-do-you-secure-a-world-of-ai-agents-v8Q401cc</link>
       <guid isPermaLink="false">ai-radar:79fc947744c309c914e2</guid>
