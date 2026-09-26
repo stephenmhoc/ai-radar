@@ -72665,6 +72665,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=dCX4PE2HxMs"
       }
+    },
+    {
+      "id": "79fc947744c309c914e2",
+      "first_seen_at": "2026-09-26T10:17:23+00:00",
+      "status": "published",
+      "title": "How Do You Secure a World of AI Agents?",
+      "source_title": "Aaron Levie, Steven Sinofsky & Martin Casado: How Do You Secure a World of AI Agents?",
+      "short_summary": "Box CEO Aaron Levie, a16z's Martin Casado, and Steven Sinofsky discuss AI safety, security, and regulation. They argue for defining risks before regulating and consider how AI agents' capabilities necessitate rethinking security infrastructure, including permissions and authentication.",
+      "long_summary": "Box CEO Aaron Levie, a16z's Martin Casado, and Steven Sinofsky debate how the AI industry should approach safety, security, and regulation for increasingly capable AI agents. They suggest that current conversations often precede a clear definition of the risks being regulated. Drawing parallels with past technological developments like computer viruses and early internet, as well as aviation and automobiles, they explore how industries developed safety standards after understanding failure modes. The discussion highlights that AI agents, operating at scale and without fatigue, can probe systems in ways human employees cannot. This necessitates a reevaluation of permissions, authentication, operating systems, and the entire security stack. They also consider how AI innovation might increasingly shift from frontier labs to the software built around the models.",
+      "reason": "The podcast features a discussion with a prominent CEO and venture capitalists on the critical topic of AI safety, security, and regulation, which are core areas of interest for AI Radar. The conversation delves into the technical and strategic implications of AI agents, aligning with the criteria for consequential work on important AI companies, products, and the economics/business strategy shaping AI.",
+      "published_at": "2026-09-26T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "859a41e90fb5daf13d70",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "38112b09-8b96-41b6-8d9e-b8fb3f25061d",
+          "title": "Aaron Levie, Steven Sinofsky & Martin Casado: How Do You Secure a World of AI Agents?",
+          "description": "Erik Torenberg sits down with Box CEO Aaron Levie, and a16z’s Martin Casado, and Steven Sinofsky to debate how the AI industry should think about safety, security, and regulation as increasingly capable agents move into the real world.\n\nThey argue that much of today’s conversation is happening before we have clearly defined the risks we’re trying to regulate. Drawing on earlier waves of computing, from computer viruses and the early internet to aviation and automobiles, they ask what AI can learn from industries that developed safety standards only after understanding how their technologies actually failed.\n\nThe conversation then gets concrete: agents don’t get tired, can operate at enormous scale, and can probe systems in ways human employees never could. That could require rethinking permissions, authentication, operating systems, and the security stack itself. They also discuss why AI innovation may increasingly move beyond the frontier labs and into the software built around the models.\n\nResources:\n\nFollow Aaron Levie on X:\nhttps://x.com/levie\n\nFollow Martin Casado on X:\nhttps://x.com/martin_casado\n\nFollow Steven Sinofsky on X:\nhttps://x.com/stevesi\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/aaron-levie-steven-sinofsky-martin-casado-how-do-you-secure-a-world-of-ai-agents-v8Q401cc",
+          "published_at": "2026-09-26T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/aaron-levie-steven-sinofsky-martin-casado-how-do-you-secure-a-world-of-ai-agents-v8Q401cc"
+      }
     }
   ]
 }
