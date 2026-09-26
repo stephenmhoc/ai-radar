@@ -72637,6 +72637,34 @@
         "podcast": "https://www.latent.space/p/openrouter",
         "newsletter": "https://www.latent.space/p/openrouter"
       }
+    },
+    {
+      "id": "9019e027eb613117797d",
+      "first_seen_at": "2026-09-26T01:17:26+00:00",
+      "status": "published",
+      "title": "Alex Atallah and Anjney Midha on OpenRouter, Inference Marketplaces, and Token Fraud",
+      "source_title": "The $10 Trillion Token Economy — Alex Atallah, OpenRouter & Anjney Midha, AMP",
+      "short_summary": "OpenRouter co-founder Alex Atallah and a16z's Anjney Midha discuss building a neutral inference routing layer handling trillions of tokens daily. They analyze model distribution challenges, inference marketplace dynamics, model fusion, and the rise of autonomous agent fraud as OpenRouter joins Stripe.",
+      "long_summary": "In this interview, OpenRouter co-founder and CEO Alex Atallah and a16z partner Anjney Midha examine the infrastructure requirements of a multi-model AI ecosystem. Atallah outlines how OpenRouter grew from the initial open-model wave of Llama and Mistral into a critical routing layer for over 10 million developers, illustrating why model labs often struggle with distribution despite massive training budgets. He explains OpenRouter's technical product choices, including experiments with mixture-of-models and model fusion, as well as how auto-routing supported its growth to more than 10 trillion tokens daily. The discussion also covers how OpenRouter's leaderboard functions as a real-time map of developer model adoption. Finally, Midha and Atallah detail OpenRouter's acquisition by Stripe, highlighting why inference gateways are becoming primary targets for token fraud and how autonomous agents present emerging security challenges across the AI economy.",
+      "reason": "Features an in-depth interview with OpenRouter co-founder Alex Atallah addressing inference infrastructure, model routing architectures, and the economics of the token ecosystem.",
+      "published_at": "2026-09-25T23:01:42+00:00",
+      "appearances": [
+        {
+          "id": "d07fab310f15481d9433",
+          "kind": "youtube",
+          "source": "Latent Space — YouTube",
+          "family": "latent space",
+          "guid": "yt:video:dCX4PE2HxMs",
+          "title": "The $10 Trillion Token Economy — Alex Atallah, OpenRouter & Anjney Midha, AMP",
+          "description": "From the earliest days of open-weight models to becoming the neutral routing layer for more than 10 million developers, OpenRouter is one of the clearest bets that the future of AI will be multi-model. In this episode, OpenRouter co-founder & CEO Alex Atallah and a16z’s Anjney Midha join swyx to unpack how OpenRouter emerged from the first wave of Llama, Alpaca, Mistral, and Midjourney, why model diversity mattered before it was consensus, and how a company dismissed as “just a wrapper” became critical infrastructure for the AI ecosystem.\n\nWe go deep on the product and distribution lessons behind OpenRouter: why model labs can spend billions training a checkpoint and still struggle to get it into developers’ hands, how Mistral helped prove the value of a competitive inference marketplace, why OpenRouter chose focus over expanding into fine-tuning, memory, and other adjacent products, and how its rankings became a real-time map of how AI usage was changing. Alex also explains OpenRouter’s early experiments with model fusion, why they deleted the first version and brought it back years later, and how the platform grew to more than 10 trillion tokens per day.\n\nFinally, Anjney explains why Stripe and OpenRouter fit together, why token fraud may become one of the defining security problems of the AI economy, and why the next wave of fraud won’t just come from humans — but from autonomous agents attacking increasingly valuable token flows.\n\nWe discuss:\n• Why OpenRouter bet early that no single AI model would win everything \n• Alpaca, Llama, and the moment open models became impossible to ignore \n• Why Discord’s early AI deployments exposed the limitations of closed models \n• Why model labs can spend billions on training and still fail at distribution \n• How OpenRouter became the neutral distribution layer for model developers \n• Why VCs dismissed OpenRouter as “just a marketplace” or “just a wrapper” \n• The Mistral price war and the first real proof of an inference marketplace \n• How Midjourney scaled through Discord and what it taught the AI ecosystem \n• Why crypto infrastructure became a dress rehearsal for generative AI \n• OpenRouter vs. LM Arena and why their missions are fundamentally different \n• Why focus became one of OpenRouter’s biggest strategic advantages \n• Anthropic’s early focus on AI pair programming and coding \n• The OpenRouter products that were prototyped but never launched \n• MOM, OpenRouter’s early Mixture of Models experiment \n• Why model fusion failed in 2024 — and why it works much better now \n• How OpenRouter’s leaderboard became a live map of the AI industry \n• OpenClaw, auto-routing, and the rise of new agent architectures \n• How OpenRouter reached 10+ trillion tokens per day \n• Why inference gateways are increasingly becoming targets for fraud \n• Why Stripe’s fraud infrastructure is strategically important to OpenRouter \n• The coming rise of agentic fraud and attacks on the token economy \n• What changes — and what stays the same — as OpenRouter joins Stripe\n\n—\n\nAlex Atallah \n• X: https://x.com/alexatallah \n• Website: https://alexatallah.com\n\nAnjney Midha \n• X: https://x.com/AnjneyMidha \n• a16z: https://a16z.com/author/anjney-midha/\n\nTimestamps \n00:00:00 Hook \n00:01:58 Introduction \n00:04:10 Alpaca, Llama, and the Multi-Model Bet \n00:08:02 Discord, Open Models, and OpenRouter’s Origins \n00:16:26 Why “One Model Wins” Was the Wrong Bet \n00:19:25 Why Model Labs Struggle With Distribution \n00:25:02 “Just a Wrapper”: Why VCs Misunderstood OpenRouter \n00:29:56 Bootstrapping OpenRouter Through Community \n00:38:14 Crypto, Midjourney, and the Early Generative AI Ecosystem \n00:45:36 Mistral and the Birth of the Inference Marketplace \n00:49:08 OpenRouter vs. LM Arena \n00:54:06 Focus, Anthropic, and Roads Not Taken \n01:01:32 Mixture of Models and Model Fusion \n01:04:42 Sonnet, OpenClaw, and OpenRouter’s Explosive Growth \n01:11:01 Why Stripe Acquired OpenRouter \n01:14:43 Fraud and the Emerging Token Economy \n01:19:45 The Coming Wave of Agentic Fraud \n01:21:05 What’s Next for OpenRouter at Stripe\n\nSponsorship and business inquiries: business@latent.space",
+          "url": "https://www.youtube.com/watch?v=dCX4PE2HxMs",
+          "published_at": "2026-09-25T23:01:42+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=dCX4PE2HxMs"
+      }
     }
   ]
 }
