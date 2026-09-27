@@ -72822,6 +72822,36 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=TLJNJDf2XGo"
       }
+    },
+    {
+      "id": "ea34e22afdf7e408dae3",
+      "first_seen_at": "2026-09-27T08:17:21+00:00",
+      "status": "skipped",
+      "title": "Building the Streetwear Empire Kith | Ronnie Fieg",
+      "source_title": "Building the Streetwear Empire Kith | Ronnie Fieg",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This episode focuses on streetwear fashion, retail, and the brand Kith with Ronnie Fieg, containing no relevance to artificial intelligence or target organizations.",
+      "published_at": "2026-09-27T08:00:00+00:00",
+      "appearances": [
+        {
+          "id": "8d817c2481f915b289f3",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "9eb76400-b9f2-11f1-be95-7768896ad95f",
+          "title": "Building the Streetwear Empire Kith | Ronnie Fieg",
+          "description": "Ronnie Fieg is the founder, CEO and creative director of Kith. At 13, he turned down an envelope of cash at his bar mitzvah to ask his cousin for a job, then spent 15 years working his way up from stock boy to buyer at David Z. He explains how growing up in Queens and working on 8th Street shaped his taste, how his first ASICS Gel-Lyte III collaboration landed on the front of The Wall Street Journal’s Pursuits section and why he still designs every product for himself first. Ronnie describes why Kith refuses to wholesale or license, why he opens new physical stores as online sales grow and why he believes luxury should mean how much people love what they buy. He also details how a failed white chocolate bread idea became Kith Treats, how he prices product so customers get more than they pay for and what he felt seeing all 1,800 of his shoe designs laid out in chronological order. Ronnie shares how an obsession with padel led to Kith Ivy, why he is expanding into hospitality with Ronnie’s and why growing up before the internet forced him to develop his own point of view.\n\nShow notes: https://davidsenra.com/episode/ronnie-fieg\n\nMade possible by\n\nRamp: https://ramp.com\n\nAppLovin: https://applovin.com/senra\n\nDeel: https://deel.com/senra\n\nChapters\n\n(00:00:00) You can’t work backwards from money\n\n(00:04:43) “Keep the envelope. I want a job.”\n\n(00:10:25) Why the CEO is also the fit model\n\n(00:18:43) The childhood shoe that launched his career\n\n(00:20:52) The Wall Street Journal, a line down the block and a visit from Adidas\n\n(00:26:48) Get rid of the crap\n\n(00:31:09) What luxury should actually mean\n\n(00:32:40) Why Kith doesn’t wholesale or license\n\n(00:38:24) Building the opposite of an arrogant sneaker shop\n\n(00:40:39) The Italian crook who registered Kith’s trademark\n\n(00:52:02) How a $20 deli experiment became Kith Treats\n\n(00:55:11) Serve your customers, don’t chase new ones\n\n(00:59:35) Always give people more than they pay for\n\n(01:02:41) Seeing 15 years of work laid out on the floor\n\n(01:12:00) Growing up before the algorithm\n\n(01:25:46) How a padel obsession created Kith Ivy\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://davidsenra.com/episode/ronnie-fieg",
+          "published_at": "2026-09-27T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://davidsenra.com/episode/ronnie-fieg"
+      }
     }
   ]
 }
