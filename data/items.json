@@ -72852,6 +72852,34 @@
       "links": {
         "podcast": "https://davidsenra.com/episode/ronnie-fieg"
       }
+    },
+    {
+      "id": "7b65737f6f89c225cfe6",
+      "first_seen_at": "2026-09-27T10:17:21+00:00",
+      "status": "skipped",
+      "title": "Building a Team at AI Speed | Harvey’s Maggie Landers",
+      "source_title": "Building a Team at AI Speed | Harvey’s Maggie Landers",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The podcast features Maggie Landers from Harvey, a company not on the target list. The discussion focuses on team building and company culture at 'AI speed,' which is too general to qualify as a consequential topic in AI Radar without more specific technical or strategic details related to frontier AI development or infrastructure.",
+      "published_at": "2026-09-27T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "7e8f9716b20af8014e5e",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "154dab55-ef4d-40f9-9c51-5ed30abafc26",
+          "title": "Building a Team at AI Speed | Harvey’s Maggie Landers",
+          "description": "a16z’s Katie Kirsch sits down with Harvey VP of Talent Maggie Landers to discuss what happens inside a company growing at AI speed, and how you preserve culture while adding more than 1,000 employees in a year.\n\nMaggie explains why Harvey prioritizes progress over perfection, how its values of simplicity, decisiveness, and “job’s not finished” shape the way people work, and why moving quickly requires giving employees significant trust and autonomy. For people accustomed to being the “A student,” that can mean learning to experiment, make mistakes, and course-correct quickly.\n\nThey also get into how Harvey identifies people who can thrive in that environment, what changes when most of your company is relatively new, the role its founders play in maintaining culture, and why judgment becomes increasingly important when employees are given the freedom to move fast.\n\nResources:\n\nFollow Maggie Landers on LinkedIn:\n linkedin.com/in/maggiecohenlanders\n\nFollow Katie Kirsch on X: \nhttps://x.com/katiekirsch\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/building-a-team-at-ai-speed-harveys-maggie-landers-1mxeFqtp",
+          "published_at": "2026-09-27T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/building-a-team-at-ai-speed-harveys-maggie-landers-1mxeFqtp"
+      }
     }
   ]
 }
