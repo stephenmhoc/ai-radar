@@ -73255,6 +73255,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=6wNqpZdHE_s"
       }
+    },
+    {
+      "id": "1652865c0e3ce426f837",
+      "first_seen_at": "2026-09-28T21:17:26+00:00",
+      "status": "skipped",
+      "title": "Robotic factories that build robots",
+      "source_title": "Robotic factories that build robots",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-28T20:56:45+00:00",
+      "appearances": [
+        {
+          "id": "8154ec77c49d44910ed2",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:aNWKngrCrw4",
+          "title": "Robotic factories that build robots",
+          "description": "Tensr is building robotic factories that build robots.\n\nTheir 12,000-square-foot factory is already making humanoids, end effectors, and even robots for the International Space Station.\n\nEvery order becomes training data for the factory to manufacture the next one better.",
+          "url": "https://www.youtube.com/shorts/aNWKngrCrw4",
+          "published_at": "2026-09-28T20:56:45+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/aNWKngrCrw4"
+      }
     }
   ]
 }
