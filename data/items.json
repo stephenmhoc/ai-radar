@@ -73171,6 +73171,34 @@
       "links": {
         "newsletter": "https://importai.substack.com/p/import-ai-474-platonic-mindspace"
       }
+    },
+    {
+      "id": "dac8f480013e82847023",
+      "first_seen_at": "2026-09-28T14:17:24+00:00",
+      "status": "skipped",
+      "title": "OpenAI: The Defender's Window: Cyber Security Keynote",
+      "source_title": "The Defender's Window: Cyber security keynote",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes consist of only a single sentence and do not provide sufficient technical or substantive detail to support a grounded summary without inventing content.",
+      "published_at": "2026-09-28T13:29:06+00:00",
+      "appearances": [
+        {
+          "id": "bac4b9f38ee23275cf04",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:3jDhHA9JGUE",
+          "title": "The Defender's Window: Cyber security keynote",
+          "description": "OpenAI's security experts explain why every organization needs a cyber defence factory, and how to build it with Daybreak.",
+          "url": "https://www.youtube.com/watch?v=3jDhHA9JGUE",
+          "published_at": "2026-09-28T13:29:06+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=3jDhHA9JGUE"
+      }
     }
   ]
 }
