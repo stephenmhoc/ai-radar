@@ -6,6 +6,30 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>AI existential risk probabilities are (still) too unreliable to inform policy — AI Snake Oil</title>
+      <link>https://www.normaltech.ai/p/p-doom</link>
+      <guid isPermaLink="false">ai-radar:231c6425f96f15079afa</guid>
+      <pubDate>Mon, 28 Sep 2026 11:13:47 +0000</pubDate>
+      <source url="https://www.aisnakeoil.com/feed">AI Snake Oil</source>
+      <description>This essay, a repost from two years prior, contends that probability estimates of AI existential risk (p(doom)) are insufficiently rigorous to guide public policy. The authors, Arvind Narayanan and Sayash Kapoor, assert that these forecasts lack a validated model or method, unlike other quantitative predictions. They argue that inductive probability estimation is unreliable due to the absence of a suitable reference class for AI x-risk, and deductive estimation fails because there&amp;#x27;s no reliable theory for modeling technological progress and governance in this context. Consequently, many forecasts are subjective probabilities, which are essentially guesses. The authors aim to highlight this unreliability for policymakers, advocating for a broader conception of AI safety beyond existential risk and superintelligence.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · AI Snake Oil&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.normaltech.ai/p/p-doom"&gt;AI existential risk probabilities are (still) too unreliable to inform policy&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Apps, Agents, and Aggregation — Stratechery</title>
+      <link>https://stratechery.com/2026/apps-agents-and-aggregation/</link>
+      <guid isPermaLink="false">ai-radar:d44b8dbdd6acdf4f5089</guid>
+      <pubDate>Mon, 28 Sep 2026 10:25:37 +0000</pubDate>
+      <source url="https://stratechery.com/feed/">Stratechery</source>
+      <description>The article draws a parallel between Steve Jobs&amp;#x27; iPhone introduction and the current shift in how users interact with AI. It posits that messaging and natural interfaces will become the primary way to communicate with AI, and that AI will operate computers, making pre-built UI obsolete. The author discusses the concept of AI agents having access to a computer, citing Meta&amp;#x27;s Muse as an example that provides users with a virtual machine. This setup enables agents to perform tasks across various applications, leading to the creation of customized, disposable user interfaces. The piece suggests that while discovery was key for websites, inspiration will be crucial for agents, as they abstract away individual apps and services to get things done for the user.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Stratechery&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://stratechery.com/2026/apps-agents-and-aggregation/"&gt;Apps, Agents, and Aggregation&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>AI Can Write Code. Why Isn’t Software Better? — The a16z Show</title>
+      <link>https://a16z.simplecast.com/episodes/ai-can-write-code-why-isnt-software-better-je38wEkC</link>
+      <guid isPermaLink="false">ai-radar:84e533b256b624187785</guid>
+      <pubDate>Mon, 28 Sep 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.simplecast.com/JGE3yC0V">The a16z Show</source>
+      <description>Diogo Almeida, founder of TypeSafe AI, joins a16z&amp;#x27;s Ben Horowitz and Martin Casado to explore why software hasn&amp;#x27;t improved more despite AI&amp;#x27;s coding capabilities. Almeida suggests that while coding agents can speed up software writing, the resulting software still functions traditionally. TypeSafe AI&amp;#x27;s approach with Jev involves embedding intelligence directly into software, allowing programs to reason about intent and make probabilistic decisions, moving beyond simple text generation. The discussion covers the importance of reliability for programmable AI, the potential for a new era of probabilistic software, and how established SaaS companies might benefit. Almeida&amp;#x27;s goal is to create technology that reliably understands and executes user intent.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · The a16z Show&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://a16z.simplecast.com/episodes/ai-can-write-code-why-isnt-software-better-je38wEkC"&gt;AI Can Write Code. Why Isn’t Software Better?&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Y Combinator: How General-Purpose LLMs Enable Robot-Use Agents — Y Combinator</title>
       <link>https://www.youtube.com/watch?v=Jv5B5CEaPJI</link>
       <guid isPermaLink="false">ai-radar:f5e36197fa9c0f6f71fa</guid>
