@@ -73083,6 +73083,36 @@
       "links": {
         "newsletter": "https://www.normaltech.ai/p/p-doom"
       }
+    },
+    {
+      "id": "681d8a96dcb36e01e649",
+      "first_seen_at": "2026-09-28T12:17:23+00:00",
+      "status": "published",
+      "title": "Noah Shinn - Building Instinct: The Personal Agent",
+      "source_title": "Noah Shinn - Building Instinct: The Personal Agent - [Invest Like the Best, EP.493]",
+      "short_summary": "Noah Shinn, founder of Instinct, discusses his personal agent that handles online tasks. He covers user trust, the take rate model, and the future impact of agents on various industries, including the need for compute.",
+      "long_summary": "Noah Shinn, founder of Instinct, discusses his personal agent that users interact with via text, call, or email. He explains how users are employing Instinct, the trusted network for agent coordination, and the process of building user trust for sensitive actions like credit card use. Shinn also details Instinct's take rate model, its growth without marketing, and why he avoids an ad-based model. He touches on how agents will reorder the internet, the need for compute, and the future of software interfaces.",
+      "reason": "The podcast features an interview with Noah Shinn, founder of Instinct, an AI-native company building personal agent systems. The discussion covers the product, its business model, user trust, and the broader implications of agents for various industries and AI infrastructure (compute).",
+      "published_at": "2026-09-28T12:05:00+00:00",
+      "appearances": [
+        {
+          "id": "bb2b6c3caad84c087925",
+          "kind": "podcast",
+          "source": "Invest Like the Best",
+          "family": "invest like the best",
+          "guid": "72db537c-bb24-11f1-805d-739c8a3d8d83",
+          "title": "Noah Shinn - Building Instinct: The Personal Agent - [Invest Like the Best, EP.493]",
+          "description": "My guest today is Noah Shinn. Noah is the founder of Instinct, a personal assistant that you text, call, or email the same way you would a person. It has its own phone and its own computer, and it can do almost anything on your behalf that you would do yourself online. Instinct is about a year old, still invite-only, and growing roughly 10% day over day without any marketing spend.\n\nWe discuss the surprising ways people are already using Instinct, the trusted network that lets two people's agents coordinate directly, and what Noah has learned about how long it takes users to trust an agent with their credit card, inbox, and calendar. He explains why he refuses to build an ad model and why he believes a personal agent should never influence users against their own interests.\n\nWe also cover the take rate model behind the more than $1 billion a year now flowing through the platform, how travel and food delivery businesses should prepare for a world of agents, why he spends 40% of his time thinking about compute, and why he believes all of software will eventually collapse into one simple interface.\n\nPlease enjoy my conversation with Noah Shinn.\n\nFor the full show notes, transcript, and links to mentioned content, check out the episode page ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠here⁠⁠⁠⁠⁠. \n\n-----\n\nBecome a Colossus member to get our quarterly print magazine and private audio experience, including exclusive profiles and early access to select episodes. Subscribe at ⁠colossus.com/subscribe⁠.\n\n-----\n\n⁠Ramp’s⁠ mission is to help companies manage their spend in a way that reduces expenses and frees up time for teams to work on more valuable projects. Go to⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠ ⁠ramp.com/invest⁠⁠ to sign up for free and get a $250 welcome bonus.\n\n-----\n\nTrusted by thousands of businesses, ⁠Vanta⁠ continuously monitors your security posture and streamlines audits so you can win enterprise deals and build customer trust without the traditional overhead. Invest Like the Best listeners get a special offer of $1,000 off Vanta when you go to ⁠vanta.com/invest⁠. \n\n-----\n\nWorkOS⁠ is the infrastructure B2B and AI-native companies use to sell to enterprise. It covers everything enterprise security requires: SSO, SCIM, RBAC, Audit Logs, AI governance, and more. Trusted by 2,000+ fast-growing companies, including OpenAI, Anthropic, Cursor, and Vercel.\n\n-----\n\nRogo is the AI platform for finance. They're building agents for Wall Street that are trained to understand how bankers and investors actually do work: from diligence and modeling, to turning analysis into deliverables. To learn more, visit rogo.ai/invest.\n\n-----\n\n⁠Ridgeline⁠ has built a complete, real-time, modern operating system for investment managers. It handles trading, portfolio management, compliance, customer reporting, and much more through an all-in-one real-time cloud platform. Visit⁠ ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠ridgeline.ai⁠.\n\n-----\n\nTimestamps:\n\n(00:00:00) The Most Exciting Software Race Ever\n\n(00:00:49) What Instinct Is\n\n(00:04:11) The Wildest Things Users Have Done With Instinct\n\n(00:07:15) The Instinct to Instinct Trusted Network\n\n(00:13:24) How Agents Will Reorder the Internet\n\n(00:14:44) Reinventing Restaurant Reservations\n\n(00:17:23) Travel and $1 Billion in Transaction Volume\n\n(00:21:00) How Users Learn to Trust an Agent\n\n(00:23:25) Keeping Sensitive Data Safe\n\n(00:26:08) Alignment and the Business Model\n\n(00:31:07) Take Rates and the Payments Stack\n\n(00:34:52) When Incumbents Push Back on Agents\n\n(00:40:46) How Businesses Should Prepare for Agents\n\n(00:44:43) Designing for Understandability\n\n(00:48:15) Taste Versus Data\n\n(00:50:03) Invite-Only Growth at 10% a Day\n\n(00:54:46) How Far Ahead to Buy Compute\n\n(00:56:58) The Cost to Serve Each User\n\n(00:59:24) How Much Compute Proactive Agents Will Need\n\n(01:02:30) Thoughts on Muse\n\n(01:03:59) Mistakes and Staying Proactive\n\n(01:05:34) The Future of Security\n\n(01:08:32) Where the Interface Goes Next\n\n(01:12:35) Agents That Pursue Goals\n\n(01:14:35) Personality and the Movie Her\n\n(01:16:27) Why It's Called Instinct\n\n(01:17:34) Allies, Enemies, and Distribution Channels\n\n(01:18:43) Raising Capital\n\n(01:20:34) The Kindest Thing",
+          "url": "https://colossus.com/episode/instinct-the-personal-agent/",
+          "published_at": "2026-09-28T12:05:00+00:00",
+          "hosts": [
+            "Patrick O'Shaughnessy"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://colossus.com/episode/instinct-the-personal-agent/"
+      }
     }
   ]
 }
