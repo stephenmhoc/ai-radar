@@ -73227,6 +73227,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=Ut3LOjKNJaE"
       }
+    },
+    {
+      "id": "a16aa13dcd5fddf92a56",
+      "first_seen_at": "2026-09-28T20:17:26+00:00",
+      "status": "published",
+      "title": "OpenAI Developer Experience Team: Building Projects with Astra",
+      "source_title": "GPT-6 Astra in practice: Turning ideas into projects",
+      "short_summary": "Members of OpenAI's Developer Experience team demonstrate how they use Astra to transform loosely defined concepts into working software and hardware projects.",
+      "long_summary": "Members of OpenAI's Developer Experience team showcase various projects built using Astra. The demonstrations include a YouTube thumbnail generator, visual learning tools, and dedicated music workflows. The team also highlights work on a hardware prototype alongside a tactical RPG. Across these examples, team members explain how Astra assists them in turning early ideas into functional builds, navigating complex software environments, and resolving technical details throughout the development process.",
+      "reason": "Features technical members of OpenAI demonstrating practical engineering workflows and project development using Astra.",
+      "published_at": "2026-09-28T18:05:42+00:00",
+      "appearances": [
+        {
+          "id": "5679d24d10967e542c2b",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:6wNqpZdHE_s",
+          "title": "GPT-6 Astra in practice: Turning ideas into projects",
+          "description": "See what members of the OpenAI Developer Experience team are building with Astra, from a YouTube thumbnail generator and visual learning tools to music workflows, a hardware prototype, and a tactical RPG. The team shares how Astra helps them turn loosely defined ideas into working projects, navigate complex software, and work through the details along the way.",
+          "url": "https://www.youtube.com/watch?v=6wNqpZdHE_s",
+          "published_at": "2026-09-28T18:05:42+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=6wNqpZdHE_s"
+      }
     }
   ]
 }
