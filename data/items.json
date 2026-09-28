@@ -72966,6 +72966,34 @@
         "podcast": "https://www.lennysnewsletter.com/p/the-grief-loneliness-and-burnout",
         "youtube": "https://www.youtube.com/watch?v=5-96FyJFiCA"
       }
+    },
+    {
+      "id": "c4a898e8f9b3e530b9a1",
+      "first_seen_at": "2026-09-28T04:18:19+00:00",
+      "status": "skipped",
+      "title": "The Danger of Concentrating AI Power",
+      "source_title": "The Danger of Concentrating AI Power",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-28T04:00:17+00:00",
+      "appearances": [
+        {
+          "id": "f0089a504bc8e35ec4ab",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:z3ZpENEh6hM",
+          "title": "The Danger of Concentrating AI Power",
+          "description": "The biggest danger of AI may not be the technology itself.\n\nIt may be allowing a small group to control it—and make decisions for everyone else.\n\n#SamAltman #OpenAI #ArtificialIntelligence #AISafety #AIGovernance #AGI #HumanAgency #FutureOfAI\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/z3ZpENEh6hM",
+          "published_at": "2026-09-28T04:00:17+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/z3ZpENEh6hM"
+      }
     }
   ]
 }
