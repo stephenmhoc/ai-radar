@@ -73199,6 +73199,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=3jDhHA9JGUE"
       }
+    },
+    {
+      "id": "cadd714f56e1b59fe9f0",
+      "first_seen_at": "2026-09-28T18:17:28+00:00",
+      "status": "skipped",
+      "title": "a16z: How Jev Turns AI Into Software That Gets Things Done",
+      "source_title": "How Jev Turns AI Into Software That Gets Things Done",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speaker and company are not on the target roster, and the episode is a promotional discussion for an early-stage startup rather than an interview with a qualifying frontier AI leader or builder of consequential AI infrastructure.",
+      "published_at": "2026-09-28T14:30:07+00:00",
+      "appearances": [
+        {
+          "id": "781a6d85612ba6382dc7",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:Ut3LOjKNJaE",
+          "title": "How Jev Turns AI Into Software That Gets Things Done",
+          "description": "a16z’s Ben Horowitz and Martin Casado sit down with TypeSafe AI founder Diogo Almeida to ask a simple question: AI has become remarkably capable, so where is all the automation?\n\nDiogo argues that coding agents may help us write software faster, but the software they produce still largely works the way software always has. TypeSafe is taking a different approach with Jev: putting intelligence inside software itself, so developers can build programs that reason about intent and make probabilistic decisions rather than simply generate text for a human to interpret.\n\nThey discuss why reliability is the key to making AI genuinely programmable, how this could open a new era of probabilistic software, and why established SaaS companies may be particularly well positioned to benefit. Ultimately, Diogo’s goal is straightforward: technology that can reliably “do what I mean.”\n\nTimestamps:\n00:00 - Intro\n00:50 - Meet Diogo and Type Safe\n04:07 - Smart software, not just faster code\n15:46 - Where's all the automation?\n22:00 - Is it just a data problem?\n30:21 - SaaS apocalypse, reversed\n34:58 - New capabilities, not more code\n38:27 - Apps vs the guts of systems\n41:08 - Reliability and \"do what I mean\"\n\nResources:\nFollow Diogo Almeida: https://x.com/CompleteSkeptic\nLearn more about TypeSafe AI: https://typesafe.ai/\nFollow TypeSafe AI: https://x.com/typesafeai\nFollow Ben Horowitz on X: https://x.com/bhorowitz\nFollow Martin Casado on X: https://x.com/martin_casado\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=Ut3LOjKNJaE",
+          "published_at": "2026-09-28T14:30:07+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=Ut3LOjKNJaE"
+      }
     }
   ]
 }
