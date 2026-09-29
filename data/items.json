@@ -73749,6 +73749,90 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=X-7feL2svKA"
       }
+    },
+    {
+      "id": "0a8ff3dbe12753cd033f",
+      "first_seen_at": "2026-09-29T19:17:27+00:00",
+      "status": "skipped",
+      "title": "OpenAI: Introducing dots, always-on agents",
+      "source_title": "Introducing dots, always-on agents built to handle everything.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This YouTube video is a promotional product launch teaser rather than a complete interview, talk, technical demonstration, or substantive explainer.",
+      "published_at": "2026-09-29T18:04:41+00:00",
+      "appearances": [
+        {
+          "id": "e1c9824d2f24865ffb77",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:uXspbC2srEQ",
+          "title": "Introducing dots, always-on agents built to handle everything.",
+          "description": "Dots are frontier intelligence that have your back. Powered by GPT‑6 Astra, they have their own cloud computer, learn from feedback over time, and can work towards your goals 24/7. Through our ecosystem of plugins, they can readily connect to over 4,000 apps, giving them the tools to help wherever you need them.\n\nYour dot is always within reach, whether it is through ChatGPT, Slack, or Teams. You can ask questions, explore ideas, and give feedback along the way; or you can simply hop on a voice call when you need to talk something out. The more you work together, the more your dot learns your preferences, how you think, and what good looks like to you.\n\nThe magic of dots is when they bring you work done the way you would do it, sometimes before you even think to ask. With dots alongside you, ambitious ideas and projects you haven’t had the time or support to pursue start to feel achievable.\n\nhttps://openai.com/index/introducing-dots/",
+          "url": "https://www.youtube.com/watch?v=uXspbC2srEQ",
+          "published_at": "2026-09-29T18:04:41+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=uXspbC2srEQ"
+      }
+    },
+    {
+      "id": "fa0dd1104d860a0bc136",
+      "first_seen_at": "2026-09-29T19:17:30+00:00",
+      "status": "skipped",
+      "title": "OpenAI: Meet the All New Codex Cloud",
+      "source_title": "Meet the all new Codex Cloud",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief product launch teaser or promotional video rather than a substantive technical talk, interview, or deep explainer, and the sparse metadata does not provide enough substance to warrant inclusion.",
+      "published_at": "2026-09-29T18:18:13+00:00",
+      "appearances": [
+        {
+          "id": "c787d3492b1e2084e207",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:7Bv68f5szSU",
+          "title": "Meet the all new Codex Cloud",
+          "description": "Start a Codex task, close your laptop, and pick it up from your phone. See how to create a reusable cloud environment with your repositories, networking, and secrets, then share it with your team.",
+          "url": "https://www.youtube.com/watch?v=7Bv68f5szSU",
+          "published_at": "2026-09-29T18:18:13+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=7Bv68f5szSU"
+      }
+    },
+    {
+      "id": "367f69330d0cb591d0e1",
+      "first_seen_at": "2026-09-29T19:17:33+00:00",
+      "status": "skipped",
+      "title": "Build faster with Ultrafast",
+      "source_title": "Build faster with Ultrafast",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional launch teaser from YouTube rather than a substantive interview, talk, or detailed technical demonstration.",
+      "published_at": "2026-09-29T18:47:34+00:00",
+      "appearances": [
+        {
+          "id": "cd785efe6a9239b62a9c",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:sKltfHvsDQM",
+          "title": "Build faster with Ultrafast",
+          "description": "Ultrafast is our fastest way to build with Astra yet: in Codex, it runs up to 8x faster than Astra Standard and 4x faster than Astra Fast.\n\nBring your ideas to life as fast as you can type them.",
+          "url": "https://www.youtube.com/watch?v=sKltfHvsDQM",
+          "published_at": "2026-09-29T18:47:34+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=sKltfHvsDQM"
+      }
     }
   ]
 }
