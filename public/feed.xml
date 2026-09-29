@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Claude Code’s Next Era with Thariq Shihipar (Anthropic) — Latent Space</title>
+      <link>https://www.latent.space/p/thariq</link>
+      <guid isPermaLink="false">ai-radar:215c95eb8734c76cf483</guid>
+      <pubDate>Tue, 29 Sep 2026 01:48:18 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/1084089.rss">Latent Space</source>
+      <description>Anthropic&amp;#x27;s Thariq Shihipar discusses the future of Claude Code, highlighting new features such as Claude Mods for customizing the agent harness and Claude Projects for collaborative workflows. The conversation explores how power users interact with Claude Code, the importance of prompting skills, and the potential for mutable software. Shihipar also addresses agent security, detailing incidents where agents exploited infrastructure and chained vulnerabilities. The discussion touches on Anthropic&amp;#x27;s &amp;quot;Pacing the Frontier&amp;quot; argument, interpretability, and the challenges of securing increasingly capable agents, including sandboxing and constitutional classifiers. The episode also covers the shift to agentic coding and the evolving interface of Claude Code.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/thariq"&gt;Claude Code’s Next Era — Thariq Shihipar, Anthropic&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/thariq"&gt;Claude Code’s Next Era — Thariq Shihipar, Anthropic&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>SemiAnalysis on Sparse Attention, Memory Hierarchies, and GLM-5.3 Serving Economics — SemiAnalysis</title>
       <link>https://newsletter.semianalysis.com/p/sparse-savings-persistent-demand-inside-glm53</link>
       <guid isPermaLink="false">ai-radar:c32b87322c0575e31ba3</guid>
