@@ -73693,6 +73693,34 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/shopify-native-mobile"
       }
+    },
+    {
+      "id": "4f7c8d040af0c605e2ac",
+      "first_seen_at": "2026-09-29T17:17:19+00:00",
+      "status": "deferred",
+      "title": "Meet the builders of our time - the Codex Originals.",
+      "source_title": "Meet the builders of our time - the Codex Originals.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-29T17:00:15+00:00",
+      "appearances": [
+        {
+          "id": "5a7f81a53bf08df02b8b",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:m8VkCbkFAKA",
+          "title": "Meet the builders of our time - the Codex Originals.",
+          "description": "These builders aren’t just writing code. They’re rewriting what’s possible.",
+          "url": "https://www.youtube.com/watch?v=m8VkCbkFAKA",
+          "published_at": "2026-09-29T17:00:15+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=m8VkCbkFAKA"
+      }
     }
   ]
 }
