@@ -73579,6 +73579,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=zoohZ1BiHs0"
       }
+    },
+    {
+      "id": "022075d519d9e4d0ae94",
+      "first_seen_at": "2026-09-29T11:17:23+00:00",
+      "status": "skipped",
+      "title": "The Defender's Window at Enterprise Scale with Standard Chartered",
+      "source_title": "The Defender's Window at enterprise scale with Standard Chartered",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes provide only a single promotional sentence about an enterprise case study, offering insufficient detail to support a substantive summary without extrapolation.",
+      "published_at": "2026-09-29T10:01:43+00:00",
+      "appearances": [
+        {
+          "id": "9d715e1167f9178ba849",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:a75xDflRooI",
+          "title": "The Defender's Window at enterprise scale with Standard Chartered",
+          "description": "Matt Weaver, Head of Applied AI Architects at OpenAI, and Reuben Athaide, Head of Innovation, Applications & Assurance at Standard Chartered, discuss how the global bank is using OpenAI Daybreak to stay ahead of attackers.",
+          "url": "https://www.youtube.com/watch?v=a75xDflRooI",
+          "published_at": "2026-09-29T10:01:43+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=a75xDflRooI"
+      }
     }
   ]
 }
