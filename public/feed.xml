@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Why AI Developers Are Turning to World Models — Practical AI</title>
+      <link>https://www.youtube.com/watch?v=X-7feL2svKA</link>
+      <guid isPermaLink="false">ai-radar:977417a56545b52f7845</guid>
+      <pubDate>Tue, 29 Sep 2026 17:33:16 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UC9tpZnMLKv5vbZIGuIIPmNg">Practical AI</source>
+      <description>The clip explores how NVIDIA Cosmos can assist in simulating and evaluating policies for self-driving cars and robots. This capability allows for testing more iterations in a simulated environment before deployment in the real world. The discussion also delves into world models as a foundational element for policy models and their contribution to the advancement of physical AI. The segment features Ming-Yu Liu, Vice President of Cosmos Lab at NVIDIA.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Practical AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=X-7feL2svKA"&gt;Why AI Developers Are Turning to World Models&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Why has Shopify dropped React Native? — The Pragmatic Engineer</title>
       <link>https://newsletter.pragmaticengineer.com/p/shopify-native-mobile</link>
       <guid isPermaLink="false">ai-radar:d4e7e55090723a289cff</guid>

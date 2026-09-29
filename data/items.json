@@ -73721,6 +73721,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=m8VkCbkFAKA"
       }
+    },
+    {
+      "id": "977417a56545b52f7845",
+      "first_seen_at": "2026-09-29T18:17:25+00:00",
+      "status": "published",
+      "title": "Why AI Developers Are Turning to World Models",
+      "source_title": "Why AI Developers Are Turning to World Models",
+      "short_summary": "This clip features Ming-Yu Liu, Vice President of Cosmos Lab at NVIDIA, discussing how NVIDIA Cosmos can simulate and evaluate policies for self-driving cars and robots. The discussion covers world models as a foundation for policy models and their role in advancing physical AI.",
+      "long_summary": "The clip explores how NVIDIA Cosmos can assist in simulating and evaluating policies for self-driving cars and robots. This capability allows for testing more iterations in a simulated environment before deployment in the real world. The discussion also delves into world models as a foundational element for policy models and their contribution to the advancement of physical AI. The segment features Ming-Yu Liu, Vice President of Cosmos Lab at NVIDIA.",
+      "reason": "The item features a current technical leader from NVIDIA, Ming-Yu Liu, discussing NVIDIA Cosmos and its role in physical AI, which aligns with the criteria for substantial interviews with technical members of frontier AI organizations and consequential work on physical AI.",
+      "published_at": "2026-09-29T17:33:16+00:00",
+      "appearances": [
+        {
+          "id": "b0058017a30f63d388c2",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:X-7feL2svKA",
+          "title": "Why AI Developers Are Turning to World Models",
+          "description": "How do world models fit into physical AI?\n\nThis clip explores how NVIDIA Cosmos can help simulate and evaluate policies for self-driving cars and robots making it possible to test more iterations before moving to the real world.\n\nThey also discuss world models as a foundation for policy models and their role in advancing physical AI.\n\nFEATURING:\n\nGuest - Ming-Yu Liu (Vice President of Cosmos Lab @NVIDIA): https://www.linkedin.com/in/mingyuliu/\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast): https://www.linkedin.com/in/danielwhitenack/\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast): https://www.linkedin.com/in/chrisbenson/\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
+          "url": "https://www.youtube.com/watch?v=X-7feL2svKA",
+          "published_at": "2026-09-29T17:33:16+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=X-7feL2svKA"
+      }
     }
   ]
 }
