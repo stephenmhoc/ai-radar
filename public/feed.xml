@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>OpenAI's Ari Weinstein and Nikunj Handa on Computer Use Agents and New API Primitives — Latent Space</title>
+      <link>https://www.latent.space/p/devday-2026</link>
+      <guid isPermaLink="false">ai-radar:bc04ac59f340ec0de0c9</guid>
+      <pubDate>Wed, 30 Sep 2026 22:23:40 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/1084089.rss">Latent Space</source>
+      <description>Following OpenAI DevDay, Latent Space interviews Ari Weinstein, who leads Computer Use product and engineering at OpenAI, and Nikunj Handa from OpenAI&amp;#x27;s API team. Weinstein discusses how computer use has evolved to self-debug and recover from failures by combining screenshots, accessibility trees, the DOM, Playwright, and generated JavaScript. He also covers Dots, OpenAI&amp;#x27;s assistant that assigns agents dedicated cloud computers, as well as the path toward superhuman software operation and closing the loop between coding and testing. Handa explains OpenAI&amp;#x27;s updated developer stack, detailing async function calling, mid-turn steering via WebSockets, and UltraFast inference. He also details the rapid development of the Decisions API, longer prompt caching, cache pre-warming, and context compaction for long-running agent threads.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/devday-2026"&gt;Why Dwarkesh is Wrong about Computer Use + How OpenAI shipped its Jev competitor in 1 Week&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/devday-2026"&gt;Why Dwarkesh is Wrong about Computer Use + How OpenAI shipped its Jev competitor in 1 Week&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Latent Space: Ari Weinstein and Nikunj Handa on OpenAI’s Computer Use and Agent APIs — Latent Space</title>
       <link>https://www.youtube.com/watch?v=z9OkBD2-MDU</link>
       <guid isPermaLink="false">ai-radar:fa98b5b6f694eede3f11</guid>
