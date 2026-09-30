@@ -73980,6 +73980,64 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/the-1-trillion-ai-buildout-state-of-markets-tkJj_Zp1"
       }
+    },
+    {
+      "id": "62a204835989d8a85a5f",
+      "first_seen_at": "2026-09-30T13:17:24+00:00",
+      "status": "skipped",
+      "title": "Why Current AI Cannot Be Conscious | Dr. Christof Koch",
+      "source_title": "Why Current AI Cannot Be Conscious | Dr. Christof Koch",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The conversation focuses primarily on the neuroscience and philosophy of consciousness, integrated information theory, and near-death experiences rather than substantive technical AI engineering, frontier models, or AI infrastructure.",
+      "published_at": "2026-09-30T12:52:11+00:00",
+      "appearances": [
+        {
+          "id": "0d12d09f0babe20f0f6e",
+          "kind": "youtube",
+          "source": "Eye on AI — YouTube",
+          "family": "eye on ai",
+          "guid": "yt:video:li1Ib1pOMcQ",
+          "title": "Why Current AI Cannot Be Conscious | Dr. Christof Koch",
+          "description": "Christof Koch is one of the founders of the modern science of consciousness. He trained as a physicist. He was a professor at Caltech from 1986 to 2013. For 14 years he worked with Francis Crick, the Nobel laureate who co-discovered the structure of DNA. Together they started the search for the neural correlates of consciousness, the specific brain activity that goes with each conscious experience. Koch then spent more than a decade as chief scientist and president of the Allen Institute for Brain Science in Seattle, where he is now a Meritorious Investigator. He is chief scientist of the Tiny Blue Dot Foundation and a leading proponent of integrated information theory.\n\nHe is also the rare hard scientist who says his own experience changed his metaphysics. In this conversation he describes a near-death experience and, years later, a mystical one. After them he came to believe that everything is ultimately mental and that the physical world grows out of consciousness, not the reverse. His latest book, Then I Am Myself the World, is about that shift.\n\nWe talk about the device his company, Intrinsic Powers, is building to detect awareness in patients who can't respond. Roughly a quarter of patients thought to be unresponsive show signs of awareness. We cover what psychedelics and near-death experiences reveal about the self, what split-brain patients tell us, and why he thinks today's AI can simulate a mind without having one. He also takes on quantum theories of consciousness. And we end with what he thinks happens when he dies.\n\nChapters\n00:00 Cold open\n01:06 A device to detect consciousness in unresponsive patients\n07:16 Fourteen years with Francis Crick\n12:46 Two experiences that changed his mind\n18:27 Psychedelics and the loss of self\n25:00 Split brains, and twins who share one\n28:47 Where consciousness lives in the brain\n31:25 Integrated information theory\n35:49 Can AI be conscious?\n41:38 Quantum effects and microtubules\n47:29 What's next\n48:10 What happens when you die\n\nMore on consciousness from Eye on AI\n• Philip Goff: How modern science got consciousness wrong from the start. https://aneyeonai.libsyn.com/how-modern-science-got-consciousness-wrong-from-the-start-philip-goff\n• Terry Sejnowski: Is ChatGPT conscious? https://aneyeonai.libsyn.com/is-chatgpt-conscious-a-pioneer-of-ai-explains-dr-terry-sejnowski\n• Stuart Hameroff: Why AI will never fully replicate human consciousness. https://aneyeonai.libsyn.com/211-stuart-hameroff-exploring-ai-consciousness-and-quantum-states\n• Karl Friston: How the free energy principle could rewrite AI. https://aneyeonai.libsyn.com/302-karl-friston-how-the-free-energy-principle-could-rewrite-ai",
+          "url": "https://www.youtube.com/watch?v=li1Ib1pOMcQ",
+          "published_at": "2026-09-30T12:52:11+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=li1Ib1pOMcQ"
+      }
+    },
+    {
+      "id": "b65eef9e1d6e5a8433c4",
+      "first_seen_at": "2026-09-30T13:17:24+00:00",
+      "status": "skipped",
+      "title": "200K SUBS!",
+      "source_title": "200K SUBS!",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-30T13:00:25+00:00",
+      "appearances": [
+        {
+          "id": "f80b11d2bf8b85fd3944",
+          "kind": "youtube",
+          "source": "Joanna Stern",
+          "family": "joanna stern",
+          "guid": "yt:video:67da3wrmnyA",
+          "title": "200K SUBS!",
+          "description": "Guys! We hit 200,000 subscribers! Thank you so much for all your support in building this channel and this community. We’re just getting started.\n\nAnd if you want even more New Things, subscribe to the newsletter: thenewthings.com/subscribe",
+          "url": "https://www.youtube.com/shorts/67da3wrmnyA",
+          "published_at": "2026-09-30T13:00:25+00:00",
+          "hosts": [
+            "Joanna Stern"
+          ]
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/67da3wrmnyA"
+      }
     }
   ]
 }
