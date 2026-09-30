@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Dan Shipper Interviews Sam Altman on OpenAI's Always-On Agent Dot and Product Strategy — AI &amp; I</title>
+      <link>https://feeds.transistor.fm/how-do-you-use-chatgpt</link>
+      <guid isPermaLink="false">ai-radar:e5c1c6d98449718021fc</guid>
+      <pubDate>Wed, 30 Sep 2026 20:05:56 +0000</pubDate>
+      <source url="https://feeds.transistor.fm/how-do-you-use-chatgpt">AI &amp; I</source>
+      <description>Dan Shipper speaks with OpenAI CEO Sam Altman at OpenAI&amp;#x27;s DevDay about personal workflows, product bets, and developer shifts. Altman describes how OpenAI&amp;#x27;s new always-on agent, Dot, triages early morning issues to protect his creative time and builds feature variations from his ideas. The discussion addresses OpenAI&amp;#x27;s platform strategy supporting small-team companies, the dynamics behind claims that OpenAI replaces startups, and why AI has not replaced developers. Altman also details OpenAI&amp;#x27;s collaborative live documents for humans and agents, what bring-your-own-subscription models mean for app developers, and his focus on prompting on Ultrafast to drive down the cost of speed.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · AI &amp;amp; I&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://feeds.transistor.fm/how-do-you-use-chatgpt"&gt;How Sam Altman Uses Dots to Take Back His Time&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Sam Altman on Always-On AI Agents, Small Teams, and Model Speed — AI &amp; I</title>
+      <link>https://www.youtube.com/watch?v=jZh55CQwSh8</link>
+      <guid isPermaLink="false">ai-radar:e10a5b27356762c67f88</guid>
+      <pubDate>Wed, 30 Sep 2026 20:01:20 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL">AI &amp; I</source>
+      <description>In an interview with Dan Shipper at OpenAI DevDay, OpenAI CEO Sam Altman details how he integrates AI into his daily workflow and executive management. He describes relying on Dot, an always-on agent that triages urgent issues to protect his creative focus and rapidly builds feature prototypes for review. The discussion covers why AI has not yet replaced software developers, OpenAI&amp;#x27;s platform bet on small-team organizations, and the development of live documents built collaboratively by humans and agents. Altman also discusses the business dynamics around app ecosystems and startups, as well as his reliance on Ultrafast prompting and the push to make inference speed as cheap as intelligence.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · AI &amp;amp; I&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=jZh55CQwSh8"&gt;How Sam Altman Actually Uses AI to Run OpenAI and His Life&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Why AI Developers Are Turning to World Models — Practical AI</title>
       <link>https://www.youtube.com/watch?v=X-7feL2svKA</link>
       <guid isPermaLink="false">ai-radar:977417a56545b52f7845</guid>

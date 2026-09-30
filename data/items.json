@@ -74152,6 +74152,64 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/BAILrDM2wUI"
       }
+    },
+    {
+      "id": "e10a5b27356762c67f88",
+      "first_seen_at": "2026-09-30T20:17:31+00:00",
+      "status": "published",
+      "title": "Sam Altman on Always-On AI Agents, Small Teams, and Model Speed",
+      "source_title": "How Sam Altman Actually Uses AI to Run OpenAI and His Life",
+      "short_summary": "In an interview at OpenAI DevDay, CEO Sam Altman discusses how he uses 'Dot,' an always-on agent, to triage issues and build features. He also explores why AI has not replaced developers and OpenAI's bet on small-team companies.",
+      "long_summary": "In an interview with Dan Shipper at OpenAI DevDay, OpenAI CEO Sam Altman details how he integrates AI into his daily workflow and executive management. He describes relying on Dot, an always-on agent that triages urgent issues to protect his creative focus and rapidly builds feature prototypes for review. The discussion covers why AI has not yet replaced software developers, OpenAI's platform bet on small-team organizations, and the development of live documents built collaboratively by humans and agents. Altman also discusses the business dynamics around app ecosystems and startups, as well as his reliance on Ultrafast prompting and the push to make inference speed as cheap as intelligence.",
+      "reason": "Substantive interview with OpenAI CEO Sam Altman discussing agent systems, developer tooling, and platform strategy.",
+      "published_at": "2026-09-30T20:01:20+00:00",
+      "appearances": [
+        {
+          "id": "4180e4df66c396008e2b",
+          "kind": "youtube",
+          "source": "AI & I — YouTube",
+          "family": "ai & i",
+          "guid": "yt:video:jZh55CQwSh8",
+          "title": "How Sam Altman Actually Uses AI to Run OpenAI and His Life",
+          "description": "Sam Altman's Dot, OpenAI's new always-on agent, gave him back the most productive part of his day.\n\nThe OpenAI CEO would lose his early mornings—his window of \"maximum creativity\"—to whatever fire needed putting out. Now, his Dot triages those issues and flags only what's truly urgent. It's also gotten him building again: In spare moments, he gives his Dot ideas for a feature, and his Dot builds five or six versions for him to review.\n\nOn the first episode of The Every Podcast (formerly AI & I), Dan Shipper interviews Altman at OpenAI's DevDay. They discuss how Altman uses his Dot to protect his time, why he only prompts on Ultrafast, and his belief that AI will spark a new Renaissance.\n\nIf you found this episode interesting, please like, subscribe, comment, and share!\n\nTo hear more from Dan Shipper:\n• Subscribe to Every: https://every.to/subscribe \n• Follow him on X: https://twitter.com/danshipper\n\n00:00:00 Introduction\n00:00:55 Why AI hasn’t replaced developers\n00:04:45 OpenAI’s platform bet on the rise of small-team companies\n00:05:45 Why the AI era is more “Renaissance” than “Industrial Revolution”\n00:07:40 How Sam’s Dot, OpenAI’s always-on AI agent, gave him back his mornings\n00:12:00 Sam’s process for building new features with his Dot\n00:16:00 Inside OpenAI’s “live documents” that agents and humans can build together\n00:20:55 What bring-your-own-subscription changes for app developers\n00:24:00 Why “OpenAI just killed X startup” never comes true\n00:27:55 Sam’s life on Ultrafast and the push to make speed as cheap as intelligence\n\nLinks to resources mentioned in the episode:\n• Sam Altman on X: https://x.com/sama \n• Codex: https://openai.com/codex \n• Space: https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt \n• Every's Vibe Check on Dots: https://every.to/vibe-check/vibe-check-dots-always-on-agents-in-chatgpt?utm_source=podcast\n• Every's Vibe Check on OpenAI DevDay 2026: https://every.to/vibe-check/vibe-check-openai-devday-2026?utm_source=podcast",
+          "url": "https://www.youtube.com/watch?v=jZh55CQwSh8",
+          "published_at": "2026-09-30T20:01:20+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=jZh55CQwSh8"
+      }
+    },
+    {
+      "id": "e5c1c6d98449718021fc",
+      "first_seen_at": "2026-09-30T20:17:35+00:00",
+      "status": "published",
+      "title": "Dan Shipper Interviews Sam Altman on OpenAI's Always-On Agent Dot and Product Strategy",
+      "source_title": "How Sam Altman Uses Dots to Take Back His Time",
+      "short_summary": "In an interview at OpenAI's DevDay, Sam Altman discusses using OpenAI's always-on agent Dot to protect his time, building software with agents, and why speed must become as cheap as intelligence.",
+      "long_summary": "Dan Shipper speaks with OpenAI CEO Sam Altman at OpenAI's DevDay about personal workflows, product bets, and developer shifts. Altman describes how OpenAI's new always-on agent, Dot, triages early morning issues to protect his creative time and builds feature variations from his ideas. The discussion addresses OpenAI's platform strategy supporting small-team companies, the dynamics behind claims that OpenAI replaces startups, and why AI has not replaced developers. Altman also details OpenAI's collaborative live documents for humans and agents, what bring-your-own-subscription models mean for app developers, and his focus on prompting on Ultrafast to drive down the cost of speed.",
+      "reason": "Substantial interview with OpenAI CEO Sam Altman covering OpenAI's agent technology Dot, platform strategy, and developer tools.",
+      "published_at": "2026-09-30T20:05:56+00:00",
+      "appearances": [
+        {
+          "id": "dc5dbed1844323f4a58c",
+          "kind": "podcast",
+          "source": "AI & I",
+          "family": "ai & i",
+          "guid": "flightcast:01M3SP9F8QKB4V4J9RPKX41XFM",
+          "title": "How Sam Altman Uses Dots to Take Back His Time",
+          "description": "Sam Altman's Dot, OpenAI's new always-on agent, gave him back the most productive part of his day.\n\nThe OpenAI CEO would lose his early mornings—his window of \"maximum creativity\"—to whatever fire needed putting out. Now, his Dot triages those issues and flags only what's truly urgent. It's also gotten him building again: In spare moments, he gives his Dot ideas for a feature, and his Dot builds five or six versions for him to review.\n\nOn the first episode of The Every Podcast (formerly AI & I), Dan Shipper interviews Altman at OpenAI's DevDay. They discuss how Altman uses his Dot to protect his time, why he only prompts on Ultrafast, and his belief that AI will spark a new Renaissance.\n\nIf you found this episode interesting, please like, subscribe, comment, and share!\n\nTo hear more from Dan Shipper:\n\n• Subscribe to Every: https://every.to/subscribe \n\n• Follow him on X: https://twitter.com/danshipper\n\nChapters:\n\n00:00:00 Introduction\n\n00:00:55 Why AI hasn’t replaced developers\n\n00:04:45 OpenAI’s platform bet on the rise of small-team companies\n\n00:05:45 Why the AI era is more “Renaissance” than “Industrial Revolution”\n\n00:07:40 How Sam’s Dot, OpenAI’s always-on AI agent, gave him back his mornings\n\n00:12:00 Sam’s process for building new features with his Dot\n\n00:16:00 Inside OpenAI’s “live documents” that agents and humans can build together\n\n00:20:55 What bring-your-own-subscription changes for app developers\n\n00:24:00 Why “OpenAI just killed X startup” never comes true\n\n00:27:55 Sam’s life on Ultrafast and the push to make speed as cheap as intelligence\n\nLinks to resources mentioned in the episode:\n\n• Sam Altman on X: https://x.com/sama \n\n• Codex: https://openai.com/codex \n\n• Space: https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt \n\n• Every's Vibe Check on Dots: https://every.to/vibe-check/vibe-check-dots-always-on-agents-in-chatgpt?utm_source=podcast\n\n• Every's Vibe Check on OpenAI DevDay 2026: https://every.to/vibe-check/vibe-check-openai-devday-2026?utm_source=podcast",
+          "url": "https://feeds.transistor.fm/how-do-you-use-chatgpt",
+          "published_at": "2026-09-30T20:05:56+00:00",
+          "hosts": [
+            "Dan Shipper"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.transistor.fm/how-do-you-use-chatgpt"
+      }
     }
   ]
 }
