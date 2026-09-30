@@ -151,6 +151,38 @@ class GitTransactionTests(unittest.TestCase):
             scheduled_cycle.publish_ahead_commits()
         self.assertEqual(run.call_count, 2)
 
+    def test_transient_fetch_failure_is_retried(self) -> None:
+        with (
+            mock.patch.object(
+                scheduled_cycle.subprocess,
+                "run",
+                side_effect=[
+                    subprocess.CompletedProcess([], 1),
+                    subprocess.CompletedProcess([], 0),
+                ],
+            ) as run,
+            mock.patch.object(scheduled_cycle.time, "sleep"),
+        ):
+            scheduled_cycle.fetch_with_retry(root=pathlib.Path("/tmp"))
+        self.assertEqual(run.call_count, 2)
+
+    def test_persistent_fetch_failure_raises_after_all_attempts(self) -> None:
+        with (
+            mock.patch.object(
+                scheduled_cycle.subprocess,
+                "run",
+                side_effect=[
+                    subprocess.CompletedProcess([], 128),
+                    subprocess.CompletedProcess([], 128),
+                    subprocess.CompletedProcess([], 128),
+                ],
+            ) as run,
+            mock.patch.object(scheduled_cycle.time, "sleep"),
+        ):
+            with self.assertRaises(subprocess.CalledProcessError):
+                scheduled_cycle.fetch_with_retry(root=pathlib.Path("/tmp"))
+        self.assertEqual(run.call_count, 3)
+
     def test_existing_ahead_commit_is_pushed_without_new_generated_diff(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = pathlib.Path(directory)

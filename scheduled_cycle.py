@@ -17,6 +17,7 @@ ROOT = pathlib.Path(__file__).resolve().parent
 LOCK_PATH = pathlib.Path("/tmp/ai-radar-publication.lock")
 HEARTBEAT_PATH = ROOT / "var/scheduler-heartbeat.json"
 PUSH_ATTEMPTS = 3
+FETCH_ATTEMPTS = 3
 
 
 class DegradedCycleError(RuntimeError):
@@ -97,8 +98,34 @@ def ahead_behind(*, root: pathlib.Path = ROOT) -> tuple[int, int]:
     return int(ahead), int(behind)
 
 
+def fetch_with_retry(*, root: pathlib.Path = ROOT) -> None:
+    # Mirror the push retry in publish_ahead_commits: a transient SSH/network
+    # blip must not kill the whole cycle. stderr is deliberately not captured
+    # so the failure detail stays visible in the container logs. Do not add
+    # error classification here: a real transient (2026-09-29) presented as
+    # "Permission denied (publickey)", so failing fast on auth-looking errors
+    # would not have helped.
+    last_error: subprocess.CalledProcessError | None = None
+    for attempt in range(1, FETCH_ATTEMPTS + 1):
+        result = subprocess.run(
+            ["git", "fetch", "origin", "main"],
+            cwd=root,
+            check=False,
+            text=True,
+        )
+        if result.returncode == 0:
+            return
+        last_error = subprocess.CalledProcessError(result.returncode, result.args)
+        if attempt < FETCH_ATTEMPTS:
+            delay = 2**attempt
+            print(f"warning: Git fetch failed; retrying in {delay}s", file=sys.stderr)
+            time.sleep(delay)
+    assert last_error is not None
+    raise last_error
+
+
 def reconcile_with_remote(*, root: pathlib.Path = ROOT) -> tuple[int, int]:
-    command("git", "fetch", "origin", "main", root=root)
+    fetch_with_retry(root=root)
     ahead, behind = ahead_behind(root=root)
     if behind and ahead:
         result = subprocess.run(
