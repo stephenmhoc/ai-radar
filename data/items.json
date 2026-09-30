@@ -73740,7 +73740,7 @@
           "family": "practical ai",
           "guid": "yt:video:X-7feL2svKA",
           "title": "Why AI Developers Are Turning to World Models",
-          "description": "How do world models fit into physical AI?\n\nThis clip explores how NVIDIA Cosmos can help simulate and evaluate policies for self-driving cars and robots making it possible to test more iterations before moving to the real world.\n\nThey also discuss world models as a foundation for policy models and their role in advancing physical AI.\n\nFEATURING:\n\nGuest - Ming-Yu Liu (Vice President of Cosmos Lab @NVIDIA): https://www.linkedin.com/in/mingyuliu/\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast): https://www.linkedin.com/in/danielwhitenack/\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast): https://www.linkedin.com/in/chrisbenson/\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
+          "description": "How do world models fit into physical AI?\n\nThis clip explores how NVIDIA Cosmos can help simulate and evaluate policies for self-driving cars and robots making it possible to test more iterations before moving to the real world.\n\nThey also discuss world models as a foundation for policy models and their role in advancing physical AI.\n\nWatch the full episode: https://www.youtube.com/watch?v=W1DSS-Sz3Fo\n\nFEATURING:\n\nGuest - Ming-Yu Liu (Vice President of Cosmos Lab @NVIDIA): https://www.linkedin.com/in/mingyuliu/\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast): https://www.linkedin.com/in/danielwhitenack/\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast): https://www.linkedin.com/in/chrisbenson/\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
           "url": "https://www.youtube.com/watch?v=X-7feL2svKA",
           "published_at": "2026-09-29T17:33:16+00:00",
           "hosts": []
@@ -74265,6 +74265,64 @@
       ],
       "links": {
         "youtube": "https://www.youtube.com/watch?v=z9OkBD2-MDU"
+      }
+    },
+    {
+      "id": "7c0ec2ed66bb135fe46b",
+      "first_seen_at": "2026-09-30T22:17:28+00:00",
+      "status": "skipped",
+      "title": "AI, Infrastructure, and the Next Investment Cycle",
+      "source_title": "AI, Infrastructure, and the Next Investment Cycle",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are venture capital investors presenting broad market commentary rather than technical leaders, operators, or primary researchers from qualifying frontier AI organizations, and the discussion does not meet the threshold for durable firsthand technical expertise or original reporting.",
+      "published_at": "2026-09-30T14:30:38+00:00",
+      "appearances": [
+        {
+          "id": "708392df6cfda828f0e6",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:lr3hNhA0IfQ",
+          "title": "AI, Infrastructure, and the Next Investment Cycle",
+          "description": "a16z’s David George, Sarah Wang, Alex Immerman, and Santiago Rodriguez unpack 25 key charts from the latest State of Markets presentation, from the scale of the AI infrastructure buildout to what adoption looks like inside companies today.\n\nThey examine why rising markets have so far been supported by earnings rather than multiple expansion, why hyperscaler CapEx is approaching $1 trillion annually, and why demand for compute continues to outrun supply. They also look at the downstream effects of that spending across chips, power, construction, and physical infrastructure. State of Markets\n\nThen they move up the stack: OpenAI and Anthropic’s revenue growth, the gap between AI deployment and measurable enterprise impact, the rise of agents, falling inference costs, and what all of this means for SaaS. They close with where the team is spending time next, including consumer agents, robotics, autonomy, AI and biology, personal health, defense, and the continued diffusion of AI across the enterprise. State of Markets\n\nTimestamps:\n00:00 - Intro\n00:59 - Is it a bubble?\n06:28 - The $780B hyperscaler CapEx race\n13:15 - The new age of atoms\n18:21 - Only 2% of enterprise AI is truly tracked\n20:28 - Power users spend 20x the median\n31:34 - Amazon blocks Muse, Instacart opens up\n36:14 - The SaaS bifurcation\n42:23 - Stripe's Renaissance data\n48:43 - Robotics, autonomy, bio: what's next\n\nResources:\nFollow David George on X: https://x.com/DavidGeorge83\nFollow Sarah Wang on X: https://x.com/sarahdingwang\nFollow Alex Immerman on X: https://x.com/aleximm \nFollow Santiago Rodriguez on X: https://x.com/santiago__rdz \nRead David’s piece ‘There are only two paths left for software’: https://a16z.com/there-are-only-two-paths-left-for-software/\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=lr3hNhA0IfQ",
+          "published_at": "2026-09-30T14:30:38+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=lr3hNhA0IfQ"
+      }
+    },
+    {
+      "id": "0bf12782b62a8c4dfc1c",
+      "first_seen_at": "2026-09-30T22:17:32+00:00",
+      "status": "skipped",
+      "title": "Why Elon Outcompetes Everyone with Casey Handmer",
+      "source_title": "Why Elon Outcompetes Everyone | Casey Handmer, Terraform Industries",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is not a covered frontier AI leader, and the brief publisher notes focus primarily on space and Elon Musk rather than substantive AI developments, providing insufficient detail to support a summary.",
+      "published_at": "2026-09-30T20:20:47+00:00",
+      "appearances": [
+        {
+          "id": "686fe562a46b72939d4a",
+          "kind": "podcast",
+          "source": "Relentless",
+          "family": "relentless",
+          "guid": "fdbe1fdd-cf1f-4e5c-9a35-7443288a68a3",
+          "title": "Why Elon Outcompetes Everyone | Casey Handmer, Terraform Industries",
+          "description": "Casey is the Founder of Terraform Industries. He's written a bunch of great essays on Elon's Mass Driver, Starship, the economics of space compute, Starmind, and how Elon operates",
+          "url": "https://podcasters.spotify.com/pod/show/ti-morse/episodes/Why-Elon-Outcompetes-Everyone--Casey-Handmer--Terraform-Industries-e3plbv6",
+          "published_at": "2026-09-30T20:20:47+00:00",
+          "hosts": [
+            "Ti Morse"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://podcasters.spotify.com/pod/show/ti-morse/episodes/Why-Elon-Outcompetes-Everyone--Casey-Handmer--Terraform-Industries-e3plbv6"
       }
     }
   ]
