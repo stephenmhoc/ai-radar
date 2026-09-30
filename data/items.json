@@ -73864,6 +73864,64 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-openai-devday-2026-dots-61"
       }
+    },
+    {
+      "id": "ef284e30c20c16c07901",
+      "first_seen_at": "2026-09-30T08:17:24+00:00",
+      "status": "skipped",
+      "title": "Bringing AI to the Real Economy | Alexander Taubman",
+      "source_title": "Bringing AI to the Real Economy | Alexander Taubman",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest and company are not on the frontier AI target roster, and the content focuses primarily on private equity buyouts, capital allocation, and operational acquisition strategies rather than technical AI development or core infrastructure.",
+      "published_at": "2026-09-30T08:00:00+00:00",
+      "appearances": [
+        {
+          "id": "e451a05e896f8bd24a3c",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "57d2fe40-bc73-11f1-823e-d7309e0e304b",
+          "title": "Bringing AI to the Real Economy | Alexander Taubman",
+          "description": "Alexander Taubman is the co-founder and CEO of Long Lake, a company that buys established service businesses and uses AI to improve how they operate. He explains Long Lake’s $6.3 billion deal for American Express Global Business Travel, why deploying AI in the real economy is difficult and why he sees productivity gains creating more jobs as businesses grow. Alex describes how Nexus, Long Lake’s AI platform, connects models to business data and workflows, why its engineers work alongside employees in the field and why he wants to own businesses rather than sell software. He shares how his grandfather’s idea of “threshold resistance” applies to AI adoption, what he learned at Goldman Sachs and Oaktree and how investing in founder-owned businesses through Taubman Capital prepared him to build Long Lake. Alex also discusses the influence of Danaher, Henry Singleton and John Malone, why he values partners who make him more ambitious and why Long Lake plans to hold its businesses for decades. Including Amex GBT, he expects more than $4 billion in combined revenue the following year and explains why he believes long-term compounding could eventually build a trillion-dollar company.\n\nShow notes: https://www.davidsenra.com/episode/alexander-taubman\n\nMade possible by\n\nRamp: https://ramp.com\n\nAppLovin: https://applovin.com/senra\n\nDeel: https://deel.com/senra\n\nChapters\n\n(00:00:00) The $6.3 billion Amex GBT deal\n\n(00:01:21) Bringing AI to the real economy\n\n(00:06:17) Why greater productivity can mean more jobs\n\n(00:11:29) A prepared mind and a tight acquisition filter\n\n(00:16:01) Nexus and the AI platform behind Long Lake\n\n(00:17:32) Put the engineers where the work happens\n\n(00:20:36) Why own the businesses instead of selling software?\n\n(00:22:28) Build tools people want to use\n\n(00:25:24) A high bar for talent, acquisitions and technology\n\n(00:28:03) What his grandfather taught him about removing friction\n\n(00:36:40) Learning capital allocation at Goldman Sachs and Oaktree\n\n(00:41:01) Buying founder-owned businesses with permanent capital\n\n(00:44:35) How the Long Lake team came together\n\n(00:47:26) The best partners make you more ambitious\n\n(00:49:28) More than $4 billion in projected revenue\n\n(00:53:32) Why going public could expand Long Lake’s ambition\n\n(00:54:23) Henry Singleton and staying flexible\n\n(00:55:57) John Malone and the businesses that will endure\n\n(00:57:57) Why Long Lake doesn’t plan to sell\n\n(01:00:13) Could Long Lake become a trillion-dollar company?\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/alexander-taubman",
+          "published_at": "2026-09-30T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/alexander-taubman"
+      }
+    },
+    {
+      "id": "33fc3b7bc12303c455c9",
+      "first_seen_at": "2026-09-30T08:17:26+00:00",
+      "status": "skipped",
+      "title": "How Airbnb Hopes to Build Brand Loyalty",
+      "source_title": "How Airbnb Hopes to Build Brand Loyalty | Quantum Marketing",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The content focuses on Airbnb's marketing and brand loyalty strategy with Chief Experience Officer Hiroki Asai, containing no substantive discussion of artificial intelligence or frontier AI topics.",
+      "published_at": "2026-09-30T08:00:10+00:00",
+      "appearances": [
+        {
+          "id": "1e597aad36b6e0fba7bb",
+          "kind": "youtube",
+          "source": "Bloomberg Originals",
+          "family": "bloomberg originals",
+          "guid": "yt:video:KiB3YHyDcbs",
+          "title": "How Airbnb Hopes to Build Brand Loyalty | Quantum Marketing",
+          "description": "In this episode, host Raja Rajamannar sits down with Airbnb Chief Experience Officer Hiroki Asai to discuss the company’s evolving marketing strategy, from immersive, hyperlocal host-led activities to on-demand travel services designed to help guests engage more deeply with the culture and character of a destination.\n\n--------\nLike this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1\n\nGet unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals\nBloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. \n\nSubscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.\n\nVisit our partner channel Bloomberg News for global news and insight in an instant.",
+          "url": "https://www.youtube.com/watch?v=KiB3YHyDcbs",
+          "published_at": "2026-09-30T08:00:10+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=KiB3YHyDcbs"
+      }
     }
   ]
 }
