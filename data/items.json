@@ -73952,6 +73952,34 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/openai-dev-day-dot-and-openais-product-transition-sign-in-with-chatgpt/"
       }
+    },
+    {
+      "id": "07ae7282cb779cb046db",
+      "first_seen_at": "2026-09-30T11:17:26+00:00",
+      "status": "skipped",
+      "title": "The a16z Show: The $1 Trillion AI Buildout | State of Markets",
+      "source_title": "The $1 Trillion AI Buildout | State of Markets",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode consists of a16z investors discussing their State of Markets presentation rather than featuring technical leaders, executives from target organizations, or operators providing firsthand technical expertise or original reporting.",
+      "published_at": "2026-09-30T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "8fa50d682cd067825e7d",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "1ca256e1-d9aa-4b53-8086-97b5540ccd33",
+          "title": "The $1 Trillion AI Buildout | State of Markets",
+          "description": "a16z’s David George, Sarah Wang, Alex Immerman, and Santiago Rodriguez unpack 25 key charts from the latest State of Markets presentation, from the scale of the AI infrastructure buildout to what adoption looks like inside companies today.\n\nThey examine why rising markets have so far been supported by earnings rather than multiple expansion, why hyperscaler CapEx is approaching $1 trillion annually, and why demand for compute continues to outrun supply. They also look at the downstream effects of that spending across chips, power, construction, and physical infrastructure. State of Markets\n\nThen they move up the stack: OpenAI and Anthropic’s revenue growth, the gap between AI deployment and measurable enterprise impact, the rise of agents, falling inference costs, and what all of this means for SaaS. They close with where the team is spending time next, including consumer agents, robotics, autonomy, AI and biology, personal health, defense, and the continued diffusion of AI across the enterprise. State of Markets\n\nResources:\n\nFollow David George on X:\nhttps://x.com/DavidGeorge83\n\nFollow Sarah Wang on X:\nhttps://x.com/sarahdingwang\n\nFollow Alex Immerman on X: \nhttps://x.com/aleximm\n\nFollow Santiago Rodriguez on X: \nhttps://x.com/santiago__rdz\n\nRead David’s piece ‘There are only two paths left for software’: \nhttps://a16z.com/there-are-only-two-paths-left-for-software/\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/the-1-trillion-ai-buildout-state-of-markets-tkJj_Zp1",
+          "published_at": "2026-09-30T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/the-1-trillion-ai-buildout-state-of-markets-tkJj_Zp1"
+      }
     }
   ]
 }
