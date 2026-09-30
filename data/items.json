@@ -74038,6 +74038,62 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/67da3wrmnyA"
       }
+    },
+    {
+      "id": "4601fe991c29b41869ff",
+      "first_seen_at": "2026-09-30T16:17:26+00:00",
+      "status": "skipped",
+      "title": "Paul Tudor Jones on a World Without Work",
+      "source_title": "Paul Tudor Jones on a World Without Work",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-30T15:45:19+00:00",
+      "appearances": [
+        {
+          "id": "2b86f693dee7a9bed2cb",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:6eKThSAULz8",
+          "title": "Paul Tudor Jones on a World Without Work",
+          "description": "If AI replaces work, what happens to human purpose? Paul Tudor Jones explains why he used to despair about that question — and why he’s become more optimistic.\n\n#PaulTudorJones #AI #FutureOfWork #ArtificialIntelligence #InvestLikeTheBest #Technology #Careers #YouTubeShorts\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/6eKThSAULz8",
+          "published_at": "2026-09-30T15:45:19+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/6eKThSAULz8"
+      }
+    },
+    {
+      "id": "42324b7bb8bc1e1cd6e1",
+      "first_seen_at": "2026-09-30T16:17:26+00:00",
+      "status": "skipped",
+      "title": "Airbnb’s Bet on Experience-Driven Marketing",
+      "source_title": "Airbnb’s Bet on Experience-Driven Marketing",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-30T16:00:25+00:00",
+      "appearances": [
+        {
+          "id": "35a5c26240561fc409bc",
+          "kind": "youtube",
+          "source": "Bloomberg Originals",
+          "family": "bloomberg originals",
+          "guid": "yt:video:3AVxLvX5aTU",
+          "title": "Airbnb’s Bet on Experience-Driven Marketing",
+          "description": "In this episode, host Raja Rajamannar sits down with Airbnb Chief Experience Officer Hiroki Asai to discuss the company’s evolving marketing strategy, from immersive, hyperlocal host-led activities to on-demand travel services designed to help guests engage more deeply with the culture and character of a destination.\n\n--------\nLike this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1\n\nGet unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals\nBloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. \n\nSubscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.\n\nVisit our partner channel Bloomberg News for global news and insight in an instant.",
+          "url": "https://www.youtube.com/shorts/3AVxLvX5aTU",
+          "published_at": "2026-09-30T16:00:25+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/3AVxLvX5aTU"
+      }
     }
   ]
 }
