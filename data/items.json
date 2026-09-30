@@ -73922,6 +73922,36 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=KiB3YHyDcbs"
       }
+    },
+    {
+      "id": "9f70fee7a956aa3a339d",
+      "first_seen_at": "2026-09-30T10:17:26+00:00",
+      "status": "deferred",
+      "title": "OpenAI Dev Day, Dot and OpenAI’s Product Transition, Sign In With ChatGPT",
+      "source_title": "OpenAI Dev Day, Dot and OpenAI’s Product Transition, Sign In With ChatGPT",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-09-30T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "b2766c3c486b528c2904",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20166",
+          "title": "OpenAI Dev Day, Dot and OpenAI’s Product Transition, Sign In With ChatGPT",
+          "description": "OpenAI's Dev Day showcased a product that is, frankly, pretty confusing. However, there is more vision here than it might seem.",
+          "url": "https://stratechery.com/2026/openai-dev-day-dot-and-openais-product-transition-sign-in-with-chatgpt/",
+          "published_at": "2026-09-30T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/openai-dev-day-dot-and-openais-product-transition-sign-in-with-chatgpt/"
+      }
     }
   ]
 }
