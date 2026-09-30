@@ -74210,6 +74210,62 @@
       "links": {
         "podcast": "https://feeds.transistor.fm/how-do-you-use-chatgpt"
       }
+    },
+    {
+      "id": "8ef69df1bb7f62cff7b1",
+      "first_seen_at": "2026-09-30T21:17:34+00:00",
+      "status": "published",
+      "title": "Ming-Yu Liu on Open Models, World Models, and Physical AI at NVIDIA Cosmos",
+      "source_title": "Open Models, Physical AI, World Models, Robotics, NVIDIA Cosmos & AI Agents |Episode 374|",
+      "short_summary": "Ming-Yu Liu, Vice President of Cosmos Lab at NVIDIA, discusses how open models, world models, and simulation are shaping physical AI and robotics. He examines why open models drive innovation and how world models help AI understand the physical world.",
+      "long_summary": "In this episode of Practical AI, hosts Daniel Whitenack and Chris Benson interview Ming-Yu Liu, Vice President of Cosmos Lab at NVIDIA. Liu discusses the evolving physical AI landscape as artificial intelligence expands into robots, vehicles, and other physical systems. The conversation examines why open models are essential for robotics and commercial innovation, as well as the fundamental role of world models. Liu details the distinction between rule-based and learned simulation and explains how world models are used to test policies. Additionally, the discussion touches on multi-agent physical systems, upcoming technical challenges, and how practitioners can get started with open models.",
+      "reason": "Substantial interview with Ming-Yu Liu, Vice President of Cosmos Lab at NVIDIA, discussing physical AI, world models, and robotics.",
+      "published_at": "2026-09-30T21:00:21+00:00",
+      "appearances": [
+        {
+          "id": "f4d5dfe79e0918090815",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:W1DSS-Sz3Fo",
+          "title": "Open Models, Physical AI, World Models, Robotics, NVIDIA Cosmos & AI Agents |Episode 374|",
+          "description": "As AI moves beyond the cloud and into robots, vehicles, and other physical systems, new approaches to models, simulation, and inference are emerging. Dan and Chris are joined by Ming - Yu Liu, who shares his perspective on open models, world models, and the future of physical AI. They explore why open models matter for innovation, how world models can help AI understand and simulate the physical world, and what it could take to build increasingly capable physical AI systems.\n\nFEATURING:\nGuest - Ming-Yu Liu (Vice President of Cosmos Lab at @NVIDIA ): https://www.linkedin.com/in/mingyuliu/\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast): https://www.linkedin.com/in/danielwhitenack/\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast): https://www.linkedin.com/in/chrisbenson/\n\nLINKS:\n\nNVIDIA Cosmos: https://www.nvidia.com/en-us/ai/cosmos/\n\nSPONSORS:\n\nMidwest AI Summit: Join AI practitioners on October 15 in Indianapolis for practical sessions, hands-on discussions, and real-world AI solutions. Use code PracticalAI20 to save 20% on your registration. https://midwestaisummit.com/#tickets\nPrediction Guard: A self-hosted AI control plane for running agents in high impact environments. predictionguard.com/practicalai\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/\n\nCHAPTERS: \n\n0:00 Welcome to Practical AI Podcast!\n0:58 Introduction and Open Models in AI Ecosystem\n3:59 Commercial Innovation with Open Models\n7:11 The Physical AI Landscape\n9:44 Why Robots Need Open Models\n13:29 Sponsor: Prediction Guard\n15:02 What Are World Models?\n21:53 Simulation: Rules vs. Learning\n26:03 Using World Models to Test Policies\n32:20 Sponsor: Midwest AI Summit\n34:11 Multi-Agent Physical Systems\n37:58 Challenges on the Road Ahead\n41:06 How to Get Started with Open Models\n44:46 See You Next Time!",
+          "url": "https://www.youtube.com/watch?v=W1DSS-Sz3Fo",
+          "published_at": "2026-09-30T21:00:21+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=W1DSS-Sz3Fo"
+      }
+    },
+    {
+      "id": "fa98b5b6f694eede3f11",
+      "first_seen_at": "2026-09-30T21:17:53+00:00",
+      "status": "published",
+      "title": "Latent Space: Ari Weinstein and Nikunj Handa on OpenAI’s Computer Use and Agent APIs",
+      "source_title": "Inside OpenAI DevDay: Superhuman Computer Use, Decisions API, and the AI Cloud — Ari & Nikunj",
+      "short_summary": "OpenAI's Ari Weinstein and Nikunj Handa discuss advancements in Computer Use, the new Decisions API, and the emerging agent infrastructure stack unveiled at DevDay.",
+      "long_summary": "In an interview recorded following OpenAI DevDay, Ari Weinstein (Head of Product & Engineering, Computer Use) and Nikunj Handa (Head of Product, API) break down OpenAI’s latest agent capabilities and developer infrastructure. Weinstein details how Computer Use has advanced to combine screenshots, accessibility trees, the DOM, Playwright, and generated code, enabling agents to self-debug and operate software faster than humans alongside dedicated cloud environments called Dots. Handa discusses updates to OpenAI's developer stack, including the Decisions API, async tool calling, mid-turn steering via WebSockets, UltraFast inference, prompt caching, and context compaction. Together, they examine how these primitives support long-running agents and OpenAI's push toward building an AI cloud.",
+      "reason": "Substantive technical interview with OpenAI product leaders Ari Weinstein and Nikunj Handa covering Computer Use, agent systems, and API infrastructure.",
+      "published_at": "2026-09-30T21:00:31+00:00",
+      "appearances": [
+        {
+          "id": "0749ad720eb942dfba07",
+          "kind": "youtube",
+          "source": "Latent Space — YouTube",
+          "family": "latent space",
+          "guid": "yt:video:z9OkBD2-MDU",
+          "title": "Inside OpenAI DevDay: Superhuman Computer Use, Decisions API, and the AI Cloud — Ari & Nikunj",
+          "description": "From giving AI agents their own cloud computers to making Computer Use faster than humans at real-world tasks, OpenAI is pushing agents much closer to actually operating software end-to-end. In this episode, recorded immediately after OpenAI DevDay, Ari Weinstein, who leads product and engineering for Computer Use, joins swyx and Vibhu to unpack Dots, GPT-6.1, the Agents API, App Shots, and the rapid improvements that have made Computer Use dramatically faster, cheaper, and more reliable.\n\nAri explains why Computer Use is now “180 degrees different” from where it was months ago, how agents are learning to debug and recover from failures, why combining screenshots with accessibility data, the DOM, Playwright, and generated code changes the speed equation, and why the next frontier is making agents literally superhuman at using software.\n\nIn the second half, Nikunj from OpenAI’s API team breaks down the new developer stack: async tool calling, mid-turn steering, WebSockets, UltraFast inference, the Decisions API, prompt caching, pre-warming, compaction, and the Agents API. He also shares the unusually fast story behind Decisions API, how OpenAI’s inference teams are using coding agents to optimize their own systems, and the bigger question of whether OpenAI is effectively building an “AI cloud” with higher-level primitives for agents, memory, compute, and state.\n\nWe discuss:\n• Why OpenAI thinks Computer Use has changed dramatically in just the last few months \n• Dots and what changes when every agent gets its own Linux computer \n• Why Computer Use can now complete some tasks faster than the average human \n• The path from human-level to “literally superhuman” software operation \n• Why modern Computer Use agents are much better at debugging and recovering from failure \n• How screenshots, accessibility trees, the DOM, Playwright, and generated JavaScript work together \n• App Shots and why they give models much richer context than ordinary screenshots \n• Why Computer Use can close the loop between writing software and testing it \n• Trust, permissions, and safety when agents can make payments or operate third-party websites \n• Async function calling and why models no longer need to stop reasoning while tools run \n• Mid-turn steering, WebSockets, and the architecture behind more responsive agents \n• UltraFast inference and how OpenAI is pushing frontier models toward much lower latency \n• The rapid internal story behind Decisions API \n• Why Decisions API is more than just structured outputs at low latency \n• GPT Live, fast tool calling, and real-time computer control \n• How OpenAI is using Decisions API internally for support classification and other workflows \n• Longer prompt caching, cache pre-warming, and building cache-aware applications \n• Server-side compaction vs manual compaction for long-running agent threads \n• What should live inside an Agents API versus inside a developer’s own harness \n• OpenAI as an “AI cloud” and the search for higher-level primitives beyond raw model APIs\nSponsorship and business inquiries: business@latent.space\n\n—\n\nAri Weinstein \n• Head of Product & Engineering, Computer Use at OpenAI\n\nNikunj Handa\n• Head of Product, API at OpenAI\n\nTimestamps\n\n00:00:00 Hook \n00:01:12 OpenAI DevDay: Dots, GPT-6.1, Agents API, and Decisions API \n00:04:04 Dots and Personal Cloud Computers \n00:06:11 Why Computer Use Is “180 Degrees Different” \n00:07:16 From Sky to Self-Debugging Computer Use Agents \n00:10:36 How Computer Use Sees and Operates Software \n00:13:21 From Faster Than Humans to Superhuman Computer Use \n00:17:15 Agents API: Trust, Permissions, and Safety \n00:18:43 Computer Use for Coding, Testing, and QA \n00:20:26 GPT-6 APIs, Async Tool Calling, and UltraFast Inference \n00:24:33 The Rapid Story Behind Decisions API \n00:26:44 What Decisions API Is and How It Works \n00:31:36 What OpenAI Is Building With the New APIs \n00:33:35 Prompt Caching, Pre-Warming, and API Performance \n00:36:32 Context Compaction for Long-Running Agents \n00:38:25 Memory, Higher-Level APIs, and the AI Cloud",
+          "url": "https://www.youtube.com/watch?v=z9OkBD2-MDU",
+          "published_at": "2026-09-30T21:00:31+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=z9OkBD2-MDU"
+      }
     }
   ]
 }

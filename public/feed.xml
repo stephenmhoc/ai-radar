@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Latent Space: Ari Weinstein and Nikunj Handa on OpenAI’s Computer Use and Agent APIs — Latent Space</title>
+      <link>https://www.youtube.com/watch?v=z9OkBD2-MDU</link>
+      <guid isPermaLink="false">ai-radar:fa98b5b6f694eede3f11</guid>
+      <pubDate>Wed, 30 Sep 2026 21:00:31 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLWEAb1SXhjlfkEF_PxzYHonU_v5LPMI8L">Latent Space</source>
+      <description>In an interview recorded following OpenAI DevDay, Ari Weinstein (Head of Product &amp;amp; Engineering, Computer Use) and Nikunj Handa (Head of Product, API) break down OpenAI’s latest agent capabilities and developer infrastructure. Weinstein details how Computer Use has advanced to combine screenshots, accessibility trees, the DOM, Playwright, and generated code, enabling agents to self-debug and operate software faster than humans alongside dedicated cloud environments called Dots. Handa discusses updates to OpenAI&amp;#x27;s developer stack, including the Decisions API, async tool calling, mid-turn steering via WebSockets, UltraFast inference, prompt caching, and context compaction. Together, they examine how these primitives support long-running agents and OpenAI&amp;#x27;s push toward building an AI cloud.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=z9OkBD2-MDU"&gt;Inside OpenAI DevDay: Superhuman Computer Use, Decisions API, and the AI Cloud — Ari &amp;amp; Nikunj&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Ming-Yu Liu on Open Models, World Models, and Physical AI at NVIDIA Cosmos — Practical AI</title>
+      <link>https://www.youtube.com/watch?v=W1DSS-Sz3Fo</link>
+      <guid isPermaLink="false">ai-radar:8ef69df1bb7f62cff7b1</guid>
+      <pubDate>Wed, 30 Sep 2026 21:00:21 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UC9tpZnMLKv5vbZIGuIIPmNg">Practical AI</source>
+      <description>In this episode of Practical AI, hosts Daniel Whitenack and Chris Benson interview Ming-Yu Liu, Vice President of Cosmos Lab at NVIDIA. Liu discusses the evolving physical AI landscape as artificial intelligence expands into robots, vehicles, and other physical systems. The conversation examines why open models are essential for robotics and commercial innovation, as well as the fundamental role of world models. Liu details the distinction between rule-based and learned simulation and explains how world models are used to test policies. Additionally, the discussion touches on multi-agent physical systems, upcoming technical challenges, and how practitioners can get started with open models.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Practical AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=W1DSS-Sz3Fo"&gt;Open Models, Physical AI, World Models, Robotics, NVIDIA Cosmos &amp;amp; AI Agents |Episode 374|&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Dan Shipper Interviews Sam Altman on OpenAI's Always-On Agent Dot and Product Strategy — AI &amp; I</title>
       <link>https://feeds.transistor.fm/how-do-you-use-chatgpt</link>
       <guid isPermaLink="false">ai-radar:e5c1c6d98449718021fc</guid>
