@@ -74124,6 +74124,34 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/distributed-databases-with-peter"
       }
+    },
+    {
+      "id": "6c69393598ba5d460039",
+      "first_seen_at": "2026-09-30T19:17:28+00:00",
+      "status": "skipped",
+      "title": "Ben Horowitz on a Great Product",
+      "source_title": "Ben Horowitz on a Great Product",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-09-30T18:00:21+00:00",
+      "appearances": [
+        {
+          "id": "1637f3e476ea5e48c77d",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:BAILrDM2wUI",
+          "title": "Ben Horowitz on a Great Product",
+          "description": "In The Hard Thing About Hard Things (2014), Ben Horowitz writes that the primary thing a technology startup must do is build a product at least ten times better at something than the prevailing way of doing it, and that two or three times better won’t get people to switch fast enough or in large enough numbers to matter.\n\nVideo Source: lecture at UC Berkeley’s College of Engineering, 2009.",
+          "url": "https://www.youtube.com/shorts/BAILrDM2wUI",
+          "published_at": "2026-09-30T18:00:21+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/BAILrDM2wUI"
+      }
     }
   ]
 }
