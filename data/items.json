@@ -74433,6 +74433,36 @@
       "links": {
         "podcast": "https://share.transistor.fm/s/217445d3"
       }
+    },
+    {
+      "id": "c390aa111e3e7d65bfee",
+      "first_seen_at": "2026-10-01T10:17:18+00:00",
+      "status": "deferred",
+      "title": "An Interview with Jason Del Rey About Muse, Amazon, and Walmart",
+      "source_title": "An Interview with Jason Del Rey About Muse, Amazon, and Walmart",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-10-01T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "9b85e3dc094932d30503",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20173",
+          "title": "An Interview with Jason Del Rey About Muse, Amazon, and Walmart",
+          "description": "An interview with Jason Del Rey about Amazon versus Meta, which is a continuation of the oldest battle in retail between Amazon and Walmart.",
+          "url": "https://stratechery.com/2026/an-interview-with-jason-del-rey-about-muse-amazon-and-walmart/",
+          "published_at": "2026-10-01T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/an-interview-with-jason-del-rey-about-muse-amazon-and-walmart/"
+      }
     }
   ]
 }
