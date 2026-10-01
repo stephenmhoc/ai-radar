@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Practical AI: Ming-Yu Liu on Open Models, World Models, and Physical AI at NVIDIA — Practical AI</title>
+      <link>https://share.transistor.fm/s/217445d3</link>
+      <guid isPermaLink="false">ai-radar:7469e907ecbfccbf8884</guid>
+      <pubDate>Thu, 01 Oct 2026 09:00:00 +0000</pubDate>
+      <source url="https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm">Practical AI</source>
+      <description>Ming-Yu Liu, Vice President of Cosmos Lab at NVIDIA, joins Practical AI hosts Daniel Whitenack and Chris Benson to examine the shift of artificial intelligence into robots, vehicles, and physical systems. The discussion addresses emerging approaches to model design, simulation, and inference for physical AI. Liu shares insights on the role of open models in driving innovation and explains how world models enable AI to understand and simulate physical environments. The episode also highlights what technical steps are necessary to build increasingly capable physical AI systems.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Practical AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://share.transistor.fm/s/217445d3"&gt;Open models and the future of Physical AI with NVIDIA&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>OpenAI's Ari Weinstein and Nikunj Handa on Computer Use Agents and New API Primitives — Latent Space</title>
       <link>https://www.latent.space/p/devday-2026</link>
       <guid isPermaLink="false">ai-radar:bc04ac59f340ec0de0c9</guid>

@@ -74402,6 +74402,37 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-gemini-4-argon-gdms-answer"
       }
+    },
+    {
+      "id": "7469e907ecbfccbf8884",
+      "first_seen_at": "2026-10-01T09:17:25+00:00",
+      "status": "published",
+      "title": "Practical AI: Ming-Yu Liu on Open Models, World Models, and Physical AI at NVIDIA",
+      "source_title": "Open models and the future of Physical AI with NVIDIA",
+      "short_summary": "Ming-Yu Liu, VP of Cosmos Lab at NVIDIA, discusses open models, world models, and physical AI. The conversation explores how world models simulate the physical world and what is required to build capable physical systems.",
+      "long_summary": "Ming-Yu Liu, Vice President of Cosmos Lab at NVIDIA, joins Practical AI hosts Daniel Whitenack and Chris Benson to examine the shift of artificial intelligence into robots, vehicles, and physical systems. The discussion addresses emerging approaches to model design, simulation, and inference for physical AI. Liu shares insights on the role of open models in driving innovation and explains how world models enable AI to understand and simulate physical environments. The episode also highlights what technical steps are necessary to build increasingly capable physical AI systems.",
+      "reason": "Substantive interview with Ming-Yu Liu, Vice President of Cosmos Lab at NVIDIA, discussing physical AI, simulation, and world models.",
+      "published_at": "2026-10-01T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "8821a31677c3fb220595",
+          "kind": "podcast",
+          "source": "Practical AI",
+          "family": "practical ai",
+          "guid": "b836fa1b-9246-43d5-8cbb-cf1446760a6d",
+          "title": "Open models and the future of Physical AI with NVIDIA",
+          "description": "As AI moves beyond the cloud and into robots, vehicles, and other physical systems, new approaches to models, simulation, and inference are emerging. Daniel and Chris are joined by Ming-Yu Liu, Vice President of Cosmos Lab at NVIDIA, who shares his perspective on open models, world models, and the future of physical AI. They explore why open models matter for innovation, how world models can help AI understand and simulate the physical world, and what it could take to build increasingly capable physical AI systems.\n\nFeaturing: \n\nMing-Yu Liu – \nLinkedIn\n\nDaniel Whitenack – \nWebsite\n, \nGitHub\n, \nX\n\nChris Benson – \nWebsite\n, \nLinkedIn\n, \nBluesky\n, \nGitHub\n, \nX\n\nLinks:\n\nNVIDIA Cosmos\n\nSponsors:\n\nMidwest AI Summit:\n Join AI practitioners on October 15 in Indianapolis for practical sessions, hands-on discussions, and real-world AI solutions. Use code PracticalAI20 to save 20% on your registration. \nhttps://midwestaisummit.com/#tickets\n\nPrediction Guard: \nA self-hosted AI control plane for running agents in high impact environments. \npredictionguard.com/practicalai\n\nResources and Events:\n\nRegister for \nupcoming webinars here\n!\n\nPrior \nWebinars from our partner Prediction Guard\n\nMidwest AI Summit 2026",
+          "url": "https://share.transistor.fm/s/217445d3",
+          "published_at": "2026-10-01T09:00:00+00:00",
+          "hosts": [
+            "Chris Benson",
+            "Daniel Whitenack"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/217445d3"
+      }
     }
   ]
 }
