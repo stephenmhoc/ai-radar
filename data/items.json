@@ -74567,6 +74567,133 @@
         "podcast": "https://www.cognitiverevolution.ai/ai-am-was-trump-xi-anything-what-counts-as-utopia-aws-gpus-cost-3x-ai-diagnoses-rare-diseases/",
         "youtube": "https://www.youtube.com/watch?v=4Sc8dSezPa4"
       }
+    },
+    {
+      "id": "37d6aafe4b0b476df27f",
+      "first_seen_at": "2026-10-01T16:17:24+00:00",
+      "status": "skipped",
+      "title": "Dwarkesh Podcast: Si Sheppard on How Spanish Soldiers Toppled Two Empires",
+      "source_title": "How did a few hundred Spanish soldiers topple two empires? – Si Sheppard",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode is an interview with a military historian discussing the Spanish conquest of the Aztec and Inca empires. Artificial intelligence is only mentioned in passing as a high-level historical analogy in the host's episode description.",
+      "published_at": "2026-10-01T15:28:28+00:00",
+      "appearances": [
+        {
+          "id": "950d129a683c2e1a81be",
+          "kind": "podcast",
+          "source": "Dwarkesh Podcast",
+          "family": "dwarkesh podcast",
+          "guid": "substack:post:218345956",
+          "title": "Si Sheppard – How did a few hundred Spanish soldiers topple two empires?",
+          "description": "New episode with military historian \nSi Sheppard\n.\n\nThe conquests of the Aztec and Inca empires might be the most shocking events in human history.\n\nHernan Cortés and some hundreds of Conquistadors landed on a new continent they knew basically nothing about, and within 2 and a half years, conquered the 6 million strong Aztec empire.\n\nThen, a decade later, Francisco Pizarro did the same thing to an Incan Empire of some 10 million inhabitants.\n\nIn both cases, the Conquistadors consistently beat native armies while being literally 100x (or even in some cases 1000x) outnumbered - and in many cases, did so without taking a single casualty.\n\nAnd they did this with 99% of their military forces being made up of the very natives they were trying to subjugate.\n\nWe often forget how wild human history is. People talk about AI takeover as if it would be some crazy, unprecedented sci-fi outcome. But this would not be the first time an alien force whose motives the defenders barely understand use more advanced technology and diplomatic cunning to outmaneuver and then take over a much larger and long established existing order.\n\nWatch on \nYouTube\n; read the \ntranscript\n.\n\nSponsors\n\n* \nJane Street\n’s intern projects are even more ambitious than I realized. One intern spent his summer researching LLM memorization, figuring out how to quantify and reduce it. This matters because, when Jane Street tests their models on historical data, they need to know that performance reflects predictive power, not just memorized outcomes. Another intern spent his time developing a new activation checkpointing scheme: his custom version ended up outperforming PyTorch’s native one. If you want to read about more 2026 intern projects or apply for Jane Street’s 2027 internships, go to\njanestreet.com/dwarkesh\n\n* \nGrok Bot\n can tackle the tasks you’ve been meaning to handle but just haven’t gotten around to. For example, SpaceXAI recently gave Grok Bot access to their procurement contracts, vendor spend, and usage data: it ended up identifying over $100,000 in potential savings for them. I decided to try this on my own spend, and Grok Bot found over $5,000 of savings for me, even though I run a pretty small team. Try it out yourself at\nx.ai/bot\n\n* \nAntithesis\n solves one of the biggest problems with traditional software testing: to test for a bug, you first have to be able to imagine it. Antithesis runs your system through thousands of parallel histories and steers your tests for you, injecting faults and generally trying to make everything as adversarial as possible. That way, your software gets tested against scenarios you’d never imagine but that could still arise in the real world. Learn more at\n antithesis.com/dwarkesh\n\nTimestamps\n\n(00:00:00) – Cortés’s conquest of the Aztecs\n\n(00:22:39) – Pizarro’s conquest of the Inca\n\n(00:26:59) – Explaining Conquistador military superiority\n\n(00:34:39) – Could the natives have beat the Conquistadors?\n\n(00:48:56) – The Aztecs and Incas did not get to learn from each other\n\n(00:56:11) – Why Spain still lost in the long run\n\n(01:07:47) – Why didn’t the Aztecs/Incas adapt better to European warfare?\n\n(01:14:16) – Conquistador motivation\n\n(01:26:22) – Why Mughal India also couldn’t play the Europeans off each other\n\n(01:33:42) – Diplomacy was just as important as technology\n\nThis is a public episode. If you would like to discuss this with other subscribers or get access to bonus episodes, visit \nwww.dwarkesh.com",
+          "url": "https://www.dwarkesh.com/p/si-sheppard",
+          "published_at": "2026-10-01T15:28:28+00:00",
+          "hosts": [
+            "Dwarkesh Patel"
+          ]
+        },
+        {
+          "id": "b6bb18a947148734f840",
+          "kind": "youtube",
+          "source": "Dwarkesh Podcast — YouTube",
+          "family": "dwarkesh podcast",
+          "guid": "yt:video:LwQQ7nBCGSs",
+          "title": "How did a few hundred Spanish soldiers topple two empires? – Si Sheppard",
+          "description": "New episode with military historian Si Sheppard.\n\nThe conquests of the Aztec and Inca empires might be the most shocking events in human history. Hernan Cortés and some hundreds of Conquistadors landed on a new continent they knew basically nothing about, and within 2 and a half years, conquered the 6 million strong Aztec empire.\n\nThen, a decade later, Francisco Pizarro did the same thing to an Incan Empire of some 10 million inhabitants.\n\nIn both cases, the Conquistadors consistently beat native armies while being literally 100x (or even in some cases 1000x) outnumbered - and in many cases, did so without taking a single casualty.\n\nAnd they did this with 99% of their military forces being made up of the very natives they were trying to subjugate.\n\nWe often forget how wild human history is. People talk about AI takeover as if it would be some crazy, unprecedented sci-fi outcome. But this would not be the first time an alien force whose motives the defenders barely understand use more advanced technology and diplomatic cunning to outmaneuver and then take over a much larger and long established existing order.\n\n𝐄𝐏𝐈𝐒𝐎𝐃𝐄 𝐋𝐈𝐍𝐊𝐒\n* Transcript: https://www.dwarkesh.com/p/si-sheppard\n* Apple Podcasts: \n* Spotify: https://open.spotify.com/episode/1fN4B8vugGzaJPcj2yQ2fq?si=WPdtkqugT3mKFDefrh3-KQ\n\n𝐒𝐏𝐎𝐍𝐒𝐎𝐑𝐒\n* Jane Street’s intern projects are even more ambitious than I realized. One intern spent his summer researching LLM memorization, figuring out how to quantify and reduce it. This matters because, when Jane Street tests their models on historical data, they need to know that performance reflects predictive power, not just memorized outcomes. Another intern spent his time developing a new activation checkpointing scheme: his custom version ended up outperforming PyTorch’s native one. If you want to read about more 2026 intern projects or apply for Jane Street’s 2027 internships, go to https://janestreet.com/dwarkesh\n\n* Grok Bot can tackle the tasks you’ve been meaning to handle but just haven’t gotten around to. For example, SpaceXAI recently gave Grok Bot access to their procurement contracts, vendor spend, and usage data: it ended up identifying over $100,000 in potential savings for them. I decided to try this on my own spend, and Grok Bot found over $5,000 of savings for me, even though I run a pretty small team. Try it out yourself at https://x.ai/bot\n\n* Antithesis solves one of the biggest problems with traditional software testing: to test for a bug, you first have to be able to imagine it. Antithesis runs your system through thousands of parallel histories and steers your tests for you, injecting faults and generally trying to make everything as adversarial as possible. That way, your software gets tested against scenarios you’d never imagine but that could still arise in the real world. Learn more at https://antithesis.com/dwarkesh\n\nTo sponsor a future episode, visit https://dwarkesh.com/advertise.\n\n𝐓𝐈𝐌𝐄𝐒𝐓𝐀𝐌𝐏𝐒\n00:00:00 – Cortés’s conquest of the Aztecs\n00:22:39 – Pizarro’s conquest of the Inca\n00:26:59 – Explaining Conquistador military superiority\n00:34:39 – Could the natives have beat the Conquistadors?\n00:48:56 – The Aztecs and Incas did not learn from each other\n00:56:11 – Why Spain still lost in the long run\n01:07:47 – Why didn’t the Aztecs/Incas adapt better to European warfare?\n01:14:16 – Conquistador motivation\n01:26:22 – Why Mughal India also couldn't play the Europeans off each other\n01:33:42 – Diplomacy was just as important as technology",
+          "url": "https://www.youtube.com/watch?v=LwQQ7nBCGSs",
+          "published_at": "2026-10-01T16:00:01+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://www.dwarkesh.com/p/si-sheppard",
+        "youtube": "https://www.youtube.com/watch?v=LwQQ7nBCGSs"
+      }
+    },
+    {
+      "id": "48c70afab865a20f3cdd",
+      "first_seen_at": "2026-10-01T16:17:27+00:00",
+      "status": "skipped",
+      "title": "Rebuilding the Internet for Privacy | Barrett Lyon on DoxxNet",
+      "source_title": "Rebuilding the Internet for Privacy | Barrett Lyon on DoxxNet",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode focuses primarily on internet networking, privacy, and peer-to-peer mesh architecture; AI is only mentioned incidentally regarding local inference and tracking analysis.",
+      "published_at": "2026-10-01T16:00:00+00:00",
+      "appearances": [
+        {
+          "id": "4ed6586f372aa3f60c90",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "9e5471b6-66ff-4a53-bf5b-2cef5a8aa425",
+          "title": "Rebuilding the Internet for Privacy | Barrett Lyon on DoxxNet",
+          "description": "a16z’s Joel de la Garza sits down with DoxxNet founder Barrett Lyon to discuss what it would take to rebuild the internet around privacy, direct communication, and less dependence on centralized intermediaries.\n\nBarrett explains why he thinks traditional VPNs only solve part of the problem and how DoxxNet is building a parallel mesh network where users can communicate peer-to-peer, transfer large files, make calls, and message without routing those interactions through a central application server. He also explains why the company owns its infrastructure and runs its AI systems locally rather than relying on third-party inference providers. doxxnet_assembly\n\nThey also get into the growing amount of tracking embedded across the internet, what happens when that data can be analyzed by increasingly capable AI, and why Barrett believes the underlying protocols of the internet are due for another wave of experimentation. Along the way, he shares lessons from decades of building internet infrastructure, from fighting early DDoS attacks to mapping the internet and building global networks.\n\nResources:\n\nLearn more about DoxxNet:\nhttps://doxx.net\n\nFollow Barrett Lyon on X: https://x.com/BarrettLyon\n\nFollow Joel de la Garza on LinkedIn: \nlinkedin.com/in/3448827723723234\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/rebuilding-the-internet-for-privacy-barrett-lyon-on-doxxnet-_F1_edMA",
+          "published_at": "2026-10-01T16:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/rebuilding-the-internet-for-privacy-barrett-lyon-on-doxxnet-_F1_edMA"
+      }
+    },
+    {
+      "id": "6b39bf8f55debb8eea67",
+      "first_seen_at": "2026-10-01T16:17:32+00:00",
+      "status": "skipped",
+      "title": "Why One Internet Pioneer Thinks the Original Model Broke",
+      "source_title": "Why One Internet Pioneer Thinks the Original Model Broke",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The discussion focuses primarily on internet protocols, decentralized mesh networking, and privacy; AI is only an incidental topic.",
+      "published_at": "2026-10-01T16:00:34+00:00",
+      "appearances": [
+        {
+          "id": "e9cbc2dfda049e2a47ba",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:bmDrbHOh7Bo",
+          "title": "Why One Internet Pioneer Thinks the Original Model Broke",
+          "description": "a16z’s Joel de la Garza sits down with DoxxNet founder Barrett Lyon to discuss what it would take to rebuild the internet around privacy, direct communication, and less dependence on centralized intermediaries.\n\nBarrett explains why he thinks traditional VPNs only solve part of the problem and how DoxxNet is building a parallel mesh network where users can communicate peer-to-peer, transfer large files, make calls, and message without routing those interactions through a central application server. He also explains why the company owns its infrastructure and runs its AI systems locally rather than relying on third-party inference providers. doxxnet_assembly\n\nThey also get into the growing amount of tracking embedded across the internet, what happens when that data can be analyzed by increasingly capable AI, and why Barrett believes the underlying protocols of the internet are due for another wave of experimentation. Along the way, he shares lessons from decades of building internet infrastructure, from fighting early DDoS attacks to mapping the internet and building global networks.\n\nTimestamps:\n00:00 - Intro\n00:51 - Barrett's engine failure over Oakland\n07:08 - What Doxxnet actually is\n10:11 - When censorship comes home to the US\n12:59 - Why VPNs don't cut it\n17:56 - The FBI's trojan messaging app\n22:05 - Running a network with AI, no sysadmin\n25:03 - The data center misinformation campaign\n28:40 - Ad trackers know you better than your spouse\n32:35 - Prolexic, Russian hackers, and MoMA\n\nResources:\nLearn more about DoxxNet: https://doxx.net\nFollow Barrett Lyon on X: https://x.com/BarrettLyon\nFollow Joel de la Garza on LinkedIn: https://www.linkedin.com/in/3448827723723234/\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=bmDrbHOh7Bo",
+          "published_at": "2026-10-01T16:00:34+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=bmDrbHOh7Bo"
+      }
+    },
+    {
+      "id": "d006f77e262c4bf1e10c",
+      "first_seen_at": "2026-10-01T16:17:32+00:00",
+      "status": "skipped",
+      "title": "What happens when humanoid robots become part of everyday life? @NVIDIA",
+      "source_title": "What happens when humanoid robots become part of everyday life? @NVIDIA",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-01T16:03:34+00:00",
+      "appearances": [
+        {
+          "id": "8e3b878205b9c3d24467",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:ZDzoH0HoZak",
+          "title": "What happens when humanoid robots become part of everyday life? @NVIDIA",
+          "description": "In this clip, Ming-Yu Liu, Vice President of Cosmos Lab at NVIDIA, shares why humanoid robots could become one of the most exciting forms of physical AI and why making that future possible requires powerful computing to process visual input, understand instructions, and continuously self-correct. \nMing-Yu joins Daniel and Chris on the latest episode of Practical AI to explore open models, world models, and what it will take to bring increasingly capable AI into the physical world.\n\nRelated episode linked!",
+          "url": "https://www.youtube.com/shorts/ZDzoH0HoZak",
+          "published_at": "2026-10-01T16:03:34+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/ZDzoH0HoZak"
+      }
     }
   ]
 }
