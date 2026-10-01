@@ -74824,6 +74824,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=fHEIw5CcN5U"
       }
+    },
+    {
+      "id": "34dae067754d080abec5",
+      "first_seen_at": "2026-10-01T20:17:19+00:00",
+      "status": "skipped",
+      "title": "Good Product, Less Features.",
+      "source_title": "Good Product, Less Features.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-01T19:30:31+00:00",
+      "appearances": [
+        {
+          "id": "f55cee91b82f2692ef25",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:nCjCIR9TRAM",
+          "title": "Good Product, Less Features.",
+          "description": "Tom Preston-Werner co-founded GitHub in 2008, while still working at Powerset, the search startup Microsoft bought that year. \n\nThis is his case against adding features. \n\nSource: Startup School 2012",
+          "url": "https://www.youtube.com/shorts/nCjCIR9TRAM",
+          "published_at": "2026-10-01T19:30:31+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/nCjCIR9TRAM"
+      }
     }
   ]
 }
