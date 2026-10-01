@@ -74796,6 +74796,34 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-firebases-global-outage"
       }
+    },
+    {
+      "id": "bbaf4cc51057c7d08fdc",
+      "first_seen_at": "2026-10-01T19:17:23+00:00",
+      "status": "published",
+      "title": "OpenAI — The dots demo, take two | OpenAI DevDay 2026",
+      "source_title": "The dots demo, take two | OpenAI DevDay 2026",
+      "short_summary": "OpenAI introduces \"dots,\" always-on AI agents designed to understand user preferences and automate tasks. The demo showcases dots planning trips, analyzing user feedback, and managing Slack communications.",
+      "long_summary": "OpenAI has unveiled \"dots,\" which are described as always-on AI agents. These agents are designed to learn what is important to the user and to handle various tasks, thereby taking work off the user's plate. The demonstration highlights several applications for dots, including planning a trip, making sense of user feedback, and catching up on Slack messages. This presentation was part of OpenAI DevDay 2026.",
+      "reason": "The item is a demonstration from OpenAI, a target organization, showcasing a new AI agent product. This aligns with the criteria for important AI companies, products, and agent systems.",
+      "published_at": "2026-10-01T17:20:52+00:00",
+      "appearances": [
+        {
+          "id": "7d966daf84d9b347fa9d",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:fHEIw5CcN5U",
+          "title": "The dots demo, take two | OpenAI DevDay 2026",
+          "description": "Meet dots, always-on AI agents that get to know what matters to you and take work off your plate.\n\nSee dots in action, from planning a trip to making sense of user feedback and catching up on Slack.\n\nhttps://openai.com/index/introducing-dots/",
+          "url": "https://www.youtube.com/watch?v=fHEIw5CcN5U",
+          "published_at": "2026-10-01T17:20:52+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=fHEIw5CcN5U"
+      }
     }
   ]
 }
