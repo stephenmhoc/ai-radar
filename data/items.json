@@ -75009,8 +75009,8 @@
           "url": "https://feeds.megaphone.fm/nopriors",
           "published_at": "2026-10-02T10:00:00+00:00",
           "hosts": [
-            "Sarah Guo",
-            "Elad Gil"
+            "Elad Gil",
+            "Sarah Guo"
           ]
         },
         {
@@ -75057,6 +75057,37 @@
       ],
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/why-ai-agents-can-beat-the-incumbents-fcyhpbT6"
+      }
+    },
+    {
+      "id": "59a2b199d3cddeaf8b41",
+      "first_seen_at": "2026-10-02T11:17:19+00:00",
+      "status": "deferred",
+      "title": "A.I. Agents: Cute, Cuddly and Maybe Catastrophically Dangerous?",
+      "source_title": "A.I. Agents: Cute, Cuddly and Maybe Catastrophically Dangerous?",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-10-02T11:00:03+00:00",
+      "appearances": [
+        {
+          "id": "03a2b7781790646b014a",
+          "kind": "podcast",
+          "source": "Hard Fork",
+          "family": "hard fork",
+          "guid": "https://www.nytimes.com/2026/10/02/podcasts/hardfork-regulation-agents-muse.html",
+          "title": "A.I. Agents: Cute, Cuddly and Maybe Catastrophically Dangerous?",
+          "description": "“It’s going to be gnarly for a little while.”",
+          "url": "https://www.nytimes.com/2026/10/02/podcasts/hardfork-regulation-agents-muse.html",
+          "published_at": "2026-10-02T11:00:03+00:00",
+          "hosts": [
+            "Kevin Roose",
+            "Casey Newton"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.nytimes.com/2026/10/02/podcasts/hardfork-regulation-agents-muse.html"
       }
     }
   ]
