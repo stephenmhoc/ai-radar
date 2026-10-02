@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Walter Goodwin on Fractile's AI Inference Chips and Frontier Model Architectures — No Priors</title>
+      <link>https://feeds.megaphone.fm/nopriors</link>
+      <guid isPermaLink="false">ai-radar:754c6d948e7da7c01ff8</guid>
+      <pubDate>Fri, 02 Oct 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.megaphone.fm/nopriors">No Priors</source>
+      <description>Walter Goodwin, founder and CEO of full-stack AI chip startup Fractile, joins Sarah Guo on No Priors to discuss his strategy in the evolving AI hardware market alongside incumbents like NVIDIA, Broadcom, and AMD. Goodwin outlines Fractile&amp;#x27;s full-stack team structure and the primary technical bets the company is making in response to shifts in frontier model architectures. The conversation covers workload predictions, bottlenecks between architectural intent and hardware output, and approaches to accelerating trial cycles. Goodwin also examines the challenge of compressing the gap between chip design cycles and their payoff periods. In addition, he analyzes what is needed to deliver a generational leap in AI inference to capture market value at scale, as well as the broader future of AI chip players.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · No Priors&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://feeds.megaphone.fm/nopriors"&gt;The Future of Frontier Model Architectures with Walter Goodwin, Fractile Founder and CEO&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · No Priors&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=OpeCP4wCxkA"&gt;The Future of Frontier Model Architectures with Walter Goodwin, Founder &amp;amp; CEO of Fractile&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Alex Zhang on Recursive Language Models, Agent Swarms, and GPU Kernels — Latent Space</title>
       <link>https://www.latent.space/p/rlm</link>
       <guid isPermaLink="false">ai-radar:d3b2585b801461a97890</guid>
