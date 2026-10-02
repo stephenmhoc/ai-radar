@@ -75120,6 +75120,90 @@
       "links": {
         "newsletter": "https://www.latent.space/p/airbnb"
       }
+    },
+    {
+      "id": "a53811aa135e7322a64c",
+      "first_seen_at": "2026-10-02T15:17:29+00:00",
+      "status": "skipped",
+      "title": "What If We Stopped Using GPUs? | YC Paper Club",
+      "source_title": "What If We Stopped Using GPUs? | YC Paper Club",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Does not feature qualifying personnel from the target frontier AI organizations, and the publisher notes do not establish that the speakers provide firsthand expertise or original reporting rather than a general paper discussion.",
+      "published_at": "2026-10-02T14:00:19+00:00",
+      "appearances": [
+        {
+          "id": "3cea46a912ff5d29b03a",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:xc2FTBGRSJo",
+          "title": "What If We Stopped Using GPUs? | YC Paper Club",
+          "description": "This week's Paper Club is all about alternative compute. We cover the case for abandoning backprop and the gradient-free optimizer being built to replace it, how the propagation of light can be programmed to run a diffusion model, where neuromorphic computing really stands in 2026, and how human brain cells on a chip learned to play Doom.\n\nSign up for the next Paper Club, where we'll discuss AI Safety: https://events.ycombinator.com/yc-paperclub-oct7\n\nChapters:\n00:10 - Why we need a new kind of compute\n08:08 - Training without gradients\n15:06 - Computing with light\n39:00 - Computing with analog circuits\n1:04:24 - Computing with living neurons\n1:19:32 - Can any of this scale?\n\nApply to Y Combinator: https://www.ycombinator.com/apply\nWork at a startup: https://www.ycombinator.com/jobs",
+          "url": "https://www.youtube.com/watch?v=xc2FTBGRSJo",
+          "published_at": "2026-10-02T14:00:19+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=xc2FTBGRSJo"
+      }
+    },
+    {
+      "id": "243aab27f9bf8104f1dc",
+      "first_seen_at": "2026-10-02T15:17:35+00:00",
+      "status": "skipped",
+      "title": "Why Building an AI Agent Is Easier Than Deploying One",
+      "source_title": "Why Building an AI Agent Is Easier Than Deploying One",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest and company are not on the target roster, and this podcast episode is primarily investor promotional content for an early-stage portfolio startup rather than durable analysis from a recognized frontier leader.",
+      "published_at": "2026-10-02T14:30:40+00:00",
+      "appearances": [
+        {
+          "id": "b262cd87b1f23f51e30a",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:OTQ-lFsq7zA",
+          "title": "Why Building an AI Agent Is Easier Than Deploying One",
+          "description": "a16z’s Seema Amble and Elena Burger sit down with Lio co-founder and CEO Vladimir Keil to ask where AI-native startups have an advantage when incumbent software companies already own the customer, the data, and the system of record.\n\nTheir answer comes down to the work that happens outside those systems. In procurement, a final price in an ERP can hide hundreds of emails, spreadsheets, supplier conversations, engineering analyses, and decisions across legal, finance, and operations. Vlad explains how Lio uses multi-agent systems to take on more of that end-to-end work, from sourcing and RFQs to negotiation, shipment tracking, and invoices.\n\nThey also discuss how enterprises learn to trust agents with increasingly consequential decisions, why the last 20% of an internal AI build can require most of the effort, and what happens when both buyers and suppliers have agents working on their behalf.\n\nTimestamps:\n00:00 - Intro\n00:58 - Why AI startups still beat incumbents\n04:19 - The hidden work behind an $8K line item\n06:18 - Retrieval, process, policy, principal\n09:27 - The incumbent's internal conflict\n14:48 - What procurement actually looks like\n21:13 - Procurement at Boeing-scale\n28:03 - A bolt order, end-to-end\n37:57 - What a durable vertical AI company looks like\n44:46 - When both sides deploy agents\n\nResources:\nFollow Vladimir Keil on X: https://x.com/askvladi?lang=en \nFollow Vladimir Keil on LinkedIn: https://www.linkedin.com/in/vladimir-keil/\nFollow Seema Amble on X: https://x.com/seema_amble \nLearn more about Lio: https://www.lio.ai/ \nSeema Amble’s “Investing in Lio” article: https://a16z.com/announcement/investing-in-lio/\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=OTQ-lFsq7zA",
+          "published_at": "2026-10-02T14:30:40+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=OTQ-lFsq7zA"
+      }
+    },
+    {
+      "id": "25b90238d2676093bba5",
+      "first_seen_at": "2026-10-02T15:17:35+00:00",
+      "status": "skipped",
+      "title": "Brian Chesky on the Best Startup Advice He Ever Got",
+      "source_title": "Brian Chesky on the Best Startup Advice He Ever Got",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-02T15:00:28+00:00",
+      "appearances": [
+        {
+          "id": "d4b236ed55aa580d0547",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:4HeyrawOpkI",
+          "title": "Brian Chesky on the Best Startup Advice He Ever Got",
+          "description": "Brian Chesky shares one of the most important pieces of advice he got from Paul Graham: it’s better to have 100 people love your product than a million people sort of like it.\n\nHis takeaway is to make the problem as small as possible, get incredibly close to the customer, and create something a small group truly loves before trying to scale.\n\n #BrianChesky #PaulGraham #Airbnb #YCombinator #StartupAdvice #ProductMarketFit #Founders #Entrepreneurship #Startups #InvestLikeTheBest\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/4HeyrawOpkI",
+          "published_at": "2026-10-02T15:00:28+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/4HeyrawOpkI"
+      }
     }
   ]
 }
