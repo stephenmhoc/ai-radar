@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Alex Zhang on Recursive Language Models, Agent Harnesses, and GPU Kernels — Latent Space</title>
+      <link>https://www.youtube.com/watch?v=kog7mwsDqnk</link>
+      <guid isPermaLink="false">ai-radar:998d5047182cc1038497</guid>
+      <pubDate>Fri, 02 Oct 2026 00:15:36 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLWEAb1SXhjlfkEF_PxzYHonU_v5LPMI8L">Latent Space</source>
+      <description>In an in-depth interview on Latent Space, MIT researcher Alex Zhang explores how system harnesses and recursive architectures can unlock latent capabilities in existing models. He explains Recursive Language Models (RLMs), focusing on context offloading, programmatic subagent calls, shared memory, and persistent subagents such as Prime Agent. The conversation details why modern coding agents like Claude Code and Codex share core structural similarities and how proper harness design drives compositional generalization across tasks. Zhang also discusses AI-written GPU kernels and KernelBench, contrasting human domain expertise with brute-force search. Furthermore, the discussion touches on massive multi-agent swarms, comparing approaches from OpenAI and Kimi, as well as speculative programmatic tool calling, open-ended research at Sakana AI, and capability overhang.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=kog7mwsDqnk"&gt;Recursive Language Models — Alex Zhang, MIT PhD&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>OpenAI — The dots demo, take two | OpenAI DevDay 2026 — OpenAI</title>
       <link>https://www.youtube.com/watch?v=fHEIw5CcN5U</link>
       <guid isPermaLink="false">ai-radar:bbaf4cc51057c7d08fdc</guid>

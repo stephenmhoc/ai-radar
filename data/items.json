@@ -74852,6 +74852,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/nCjCIR9TRAM"
       }
+    },
+    {
+      "id": "998d5047182cc1038497",
+      "first_seen_at": "2026-10-02T00:17:26+00:00",
+      "status": "published",
+      "title": "Alex Zhang on Recursive Language Models, Agent Harnesses, and GPU Kernels",
+      "source_title": "Recursive Language Models — Alex Zhang, MIT PhD",
+      "short_summary": "MIT researcher Alex Zhang discusses Recursive Language Models, agent harness architectures, and GPU kernels. He explains how harness design unlocks capability overhang in frontier models and examines large-scale multi-agent swarms.",
+      "long_summary": "In an in-depth interview on Latent Space, MIT researcher Alex Zhang explores how system harnesses and recursive architectures can unlock latent capabilities in existing models. He explains Recursive Language Models (RLMs), focusing on context offloading, programmatic subagent calls, shared memory, and persistent subagents such as Prime Agent. The conversation details why modern coding agents like Claude Code and Codex share core structural similarities and how proper harness design drives compositional generalization across tasks. Zhang also discusses AI-written GPU kernels and KernelBench, contrasting human domain expertise with brute-force search. Furthermore, the discussion touches on massive multi-agent swarms, comparing approaches from OpenAI and Kimi, as well as speculative programmatic tool calling, open-ended research at Sakana AI, and capability overhang.",
+      "reason": "Substantive technical interview with MIT researcher Alex Zhang covering Recursive Language Models, agent harness design, GPU kernel generation, and massive multi-agent systems.",
+      "published_at": "2026-10-02T00:15:36+00:00",
+      "appearances": [
+        {
+          "id": "678ccfaf8df2a0bab14a",
+          "kind": "youtube",
+          "source": "Latent Space — YouTube",
+          "family": "latent space",
+          "guid": "yt:video:kog7mwsDqnk",
+          "title": "Recursive Language Models — Alex Zhang, MIT PhD",
+          "description": "From GPU kernels and KernelBench to Recursive Language Models, agent harnesses, and massive multi-agent swarms, Alex Zhang is exploring how much capability we’re leaving on the table by wrapping increasingly powerful models in primitive systems. In this episode, the MIT researcher behind RLMs joins swyx to unpack why Claude Code, Codex, and most coding agents are more similar than they look, why better harness design could unlock capabilities already latent in today’s models, and what happens when you can throw 10,000 agents and tens of millions of dollars at a single problem.\n\nWe go deep on GPU Mode and AI-written kernels, research taste and why academics should take bets industry labs won’t, GEV and alternatives to the standard autoregressive language model, and the idea of harnesses as compositional generalizers. Alex explains RLMs, context offloading, programmatic subagent calling, Prime Agent, persistent subagents, and why the “language model” of the future may actually be an invisible swarm of agents underneath a simple interface. We also discuss OpenAI’s massive agent experiments, Kimi swarms, open-ended research at Sakana AI, speculative programmatic tool calling, capability overhang, Neuralese, and where Alex thinks the next big research opportunities may lie.\n\nWe discuss:\n• Why AI-generated GPU kernels still leave substantial room for human expertise\n• How one expert insight can potentially replace enormous amounts of brute-force token search\n• Why PhD students should take research bets that initially look trivial, weird, or pointless\n• What SWE-bench, RLMs, ReAct, and Quiet-STaR reveal about research taste\n• GEV and why a language model does not have to mean an autoregressive text-to-text decoder\n• Why Claude Code, Codex, Pi, and many modern agent harnesses are structurally very similar\n• How harness design can improve compositional generalization across tasks and domains\n• RLMs: context offloading, code execution, recursive subagents, and shared memory\n• Prime Agent, continual harnesses, and persistent agent-to-agent communication\n• Why the model you query in the future may secretly be an entire swarm or scaffold\n• OpenAI’s 10,000-agent experiment, 130B output tokens, and ~$40M-equivalent problem solving\n• Why much of an agent swarm may be wasted search — and why convergence is still hard\n• Kimi versus OpenAI’s approach to multi-agent systems\n• Open-endedness, Sakana AI, and the problem of finding hidden gems in enormous amounts of generated work\n• Why current frontier models may already have a large capability overhang\n• Speculative programmatic tool calling and overlapping tool execution with generation\n• Whether English, code, or an entirely new “Neuralese” constrains how models reason\n• AI for science, fast-moving benchmarks, and how Alex chooses what research problems to bet on\n\nSponsorship and business inquiries: business@latent.space\n\n—\n\nAlex Zhang\n• Website: alexzhang13.github.io\n• X: @a1zhang\n\nTimestamps\n00:00:00 Hook \n00:01:56 Introduction \n00:02:45 GPU Mode, KernelBench, and AI-Written Kernels \n00:09:34 Human Expertise vs. Brute-Force AI Search \n00:15:16 Research Taste and Taking Big Bets \n00:21:24 GEV and Rethinking the Language Model \n00:30:59 Video Game Agents and the Harness Problem \n00:32:57 Why Claude Code, Codex, and Pi Are So Similar \n00:38:38 Harnesses as Compositional Generalizers \n00:46:20 RLMs Explained \n00:53:57 Prime Agent and Persistent Subagents \n00:59:37 RLMs in the Wild \n01:02:26 OpenAI Swarms and the Future of Language Models \n01:09:22 Open-Endedness and Sakana AI \n01:17:48 Kimi vs. OpenAI Agent Swarms \n01:22:02 Capability Overhang and Speculative Tool Calling \n01:30:15 Neuralese, Future Research, and AI for Science",
+          "url": "https://www.youtube.com/watch?v=kog7mwsDqnk",
+          "published_at": "2026-10-02T00:15:36+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=kog7mwsDqnk"
+      }
     }
   ]
 }
