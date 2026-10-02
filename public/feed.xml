@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Airbnb CTO Ahmad Al-Dahle on Inside-Out AI and Deploying Customized Models — Latent Space</title>
+      <link>https://www.latent.space/p/airbnb</link>
+      <guid isPermaLink="false">ai-radar:38a890822034d9078d8b</guid>
+      <pubDate>Fri, 02 Oct 2026 14:04:49 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>Ahmad Al-Dahle, former head of generative AI at Meta and current CTO of Airbnb, outlines how Airbnb is restructuring into an AI-native company. Internally, 60% of Airbnb&amp;#x27;s code is now AI-authored, and product teams bypass traditional document handoffs to work directly on prototypes. The company resolves roughly 50% of customer support tickets autonomously using synthetic-data-tested agents while escalating safety-critical cases to humans. Airbnb relies on an organizational context graph called Everest to reuse architecture patterns across projects, accelerating initiatives like airport pickups from months to weeks. As a multi-model organization, Airbnb deploys over 10 customized models, performing its own post-training and reinforcement learning on open models for specialized tasks while using frontier models for coding. Al-Dahle also highlights the development of containerized asynchronous agents to automate on-call triaging and marketplace operations.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/airbnb"&gt;Inside-Out AI: Rebuilding Airbnb Behind the Scenes and Across the Guest Experience&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Walter Goodwin on Fractile's AI Inference Chips and Frontier Model Architectures — No Priors</title>
       <link>https://feeds.megaphone.fm/nopriors</link>
       <guid isPermaLink="false">ai-radar:754c6d948e7da7c01ff8</guid>
