@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Alex Zhang on Recursive Language Models, Agent Swarms, and GPU Kernels — Latent Space</title>
+      <link>https://www.latent.space/p/rlm</link>
+      <guid isPermaLink="false">ai-radar:d3b2585b801461a97890</guid>
+      <pubDate>Fri, 02 Oct 2026 00:28:04 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/1084089.rss">Latent Space</source>
+      <description>In this episode, MIT researcher Alex Zhang discusses his research spanning GPU kernels, KernelBench, and Recursive Language Models (RLMs). He examines how harness design, code execution, and programmatic subagents allow models to solve complex tasks beyond basic autoregressive generation. The conversation details context offloading, persistent subagents in Prime Agent, and why the language models of the future may operate as invisible agent swarms. Zhang also reflects on multi-agent experiments at OpenAI and Kimi, open-ended research, speculative programmatic tool calling, and the community work behind GPU Mode.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/rlm"&gt;Academia is for Ambition — Alex Zhang, MIT&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/rlm"&gt;Academia is for Ambition — Alex Zhang, MIT&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Alex Zhang on Recursive Language Models, Agent Harnesses, and GPU Kernels — Latent Space</title>
       <link>https://www.youtube.com/watch?v=kog7mwsDqnk</link>
       <guid isPermaLink="false">ai-radar:998d5047182cc1038497</guid>
