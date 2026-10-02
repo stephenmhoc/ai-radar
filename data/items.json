@@ -75139,7 +75139,7 @@
           "family": "y combinator",
           "guid": "yt:video:xc2FTBGRSJo",
           "title": "What If We Stopped Using GPUs? | YC Paper Club",
-          "description": "This week's Paper Club is all about alternative compute. We cover the case for abandoning backprop and the gradient-free optimizer being built to replace it, how the propagation of light can be programmed to run a diffusion model, where neuromorphic computing really stands in 2026, and how human brain cells on a chip learned to play Doom.\n\nSign up for the next Paper Club, where we'll discuss AI Safety: https://events.ycombinator.com/yc-paperclub-oct7\n\nChapters:\n00:10 - Why we need a new kind of compute\n08:08 - Training without gradients\n15:06 - Computing with light\n39:00 - Computing with analog circuits\n1:04:24 - Computing with living neurons\n1:19:32 - Can any of this scale?\n\nApply to Y Combinator: https://www.ycombinator.com/apply\nWork at a startup: https://www.ycombinator.com/jobs",
+          "description": "This week's Paper Club is all about alternative compute. We cover the case for abandoning backprop and the gradient-free optimizer being built to replace it, how the propagation of light can be programmed to run a diffusion model, where neuromorphic computing really stands in 2026, and how human brain cells on a chip learned to play Doom.\n\nSign up for the next Paper Club, where we'll discuss AI Safety: https://events.ycombinator.com/yc-paperclub-oct7\n\nChapters:\n00:00 — Intro\n00:07 — Francois Chaubard: Why Alternative Compute?\n03:38 — Beyond Backpropagation\n08:08 — Zero-Order Optimization and SOMA\n15:06 — Ilker Oguz: Computing With Light\n19:27 — Why Optical Computing Isn’t Everywhere Yet\n22:23 — Building a Diffusion Model With Light\n30:03 — Optical Computing Q&A\n39:00 — Alok Vasudev: What Is Neuromorphic Computing?\n45:23 — What the Brain Can Teach Us About Chips\n49:35 — Where Neuromorphic Computing Stands Today\n54:24 — Neuromorphic Computing Q&A\n1:04:24 — Sean Cole: Teaching Brain Cells to Play Doom\n1:07:48 — Training Biological Neurons With Reinforcement Learning\n1:12:28 — How Brain Cells Learn From Feedback\n1:15:40 — Biological Computing Q&A\n\nApply to Y Combinator: https://www.ycombinator.com/apply\nWork at a startup: https://www.ycombinator.com/jobs",
           "url": "https://www.youtube.com/watch?v=xc2FTBGRSJo",
           "published_at": "2026-10-02T14:00:19+00:00",
           "hosts": []
@@ -75203,6 +75203,34 @@
       ],
       "links": {
         "youtube": "https://www.youtube.com/shorts/4HeyrawOpkI"
+      }
+    },
+    {
+      "id": "6d02897de1f970fe4a21",
+      "first_seen_at": "2026-10-02T16:17:25+00:00",
+      "status": "published",
+      "title": "Practical AI: Ming-Yu Liu on Multi-Agent Physical AI Ecosystems",
+      "source_title": "The Future Could Be a World of Specialized AI Agents",
+      "short_summary": "Ming-Yu Liu discusses the future of physical AI, examining how ecosystems of specialized robots, autonomous vehicles, and digital agents could collaborate across industries like manufacturing, supply chains, and agriculture.",
+      "long_summary": "In this episode of Practical AI, guest Ming-Yu Liu explores the evolution of physical AI from single robots to integrated ecosystems of intelligent machines. The discussion centers on why operating in the physical world may demand a multi-agent architecture where specialized agents handle distinct tasks and collaborate to achieve broader objectives. Liu examines applications across factory logistics, robotic assembly, autonomous transportation, supply chains, and farms. Overall, the conversation addresses how physical AI can transition from isolated systems into coordinated, intelligent environments.",
+      "reason": "Substantive interview with researcher Ming-Yu Liu focused on physical AI, autonomous systems, and multi-agent coordination in industrial automation.",
+      "published_at": "2026-10-02T15:57:56+00:00",
+      "appearances": [
+        {
+          "id": "4502215d4fce361d7657",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:yNdnk05IJLo",
+          "title": "The Future Could Be a World of Specialized AI Agents",
+          "description": "What happens when physical AI goes from one robot to an entire ecosystem of intelligent machines?\n\nMing-Yu Liu, explores a future where digital agents, robots, autonomous vehicles, and specialized machines work together across factories, supply chains, farms, and cities.\n\nHe explains why the physical world may require a multi-agent approach, with specialized agents handling different tasks and collaborating to complete larger goals. From factory logistics to robotic assembly and autonomous transportation, the conversation highlights how physical AI could move beyond individual systems toward coordinated, intelligent environments.\n\nFEATURING:\n\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast): https://www.linkedin.com/in/danielwhitenack/\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast): https://www.linkedin.com/in/chrisbenson/\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
+          "url": "https://www.youtube.com/watch?v=yNdnk05IJLo",
+          "published_at": "2026-10-02T15:57:56+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=yNdnk05IJLo"
       }
     }
   ]

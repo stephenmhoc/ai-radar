@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Practical AI: Ming-Yu Liu on Multi-Agent Physical AI Ecosystems — Practical AI</title>
+      <link>https://www.youtube.com/watch?v=yNdnk05IJLo</link>
+      <guid isPermaLink="false">ai-radar:6d02897de1f970fe4a21</guid>
+      <pubDate>Fri, 02 Oct 2026 15:57:56 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UC9tpZnMLKv5vbZIGuIIPmNg">Practical AI</source>
+      <description>In this episode of Practical AI, guest Ming-Yu Liu explores the evolution of physical AI from single robots to integrated ecosystems of intelligent machines. The discussion centers on why operating in the physical world may demand a multi-agent architecture where specialized agents handle distinct tasks and collaborate to achieve broader objectives. Liu examines applications across factory logistics, robotic assembly, autonomous transportation, supply chains, and farms. Overall, the conversation addresses how physical AI can transition from isolated systems into coordinated, intelligent environments.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Practical AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=yNdnk05IJLo"&gt;The Future Could Be a World of Specialized AI Agents&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Airbnb CTO Ahmad Al-Dahle on Inside-Out AI and Deploying Customized Models — Latent Space</title>
       <link>https://www.latent.space/p/airbnb</link>
       <guid isPermaLink="false">ai-radar:38a890822034d9078d8b</guid>
