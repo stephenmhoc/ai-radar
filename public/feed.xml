@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Why Specialized AI Could Beat The God Model — a16z</title>
+      <link>https://www.youtube.com/watch?v=ekK8urKHPMQ</link>
+      <guid isPermaLink="false">ai-radar:6a39349a9703678f243c</guid>
+      <pubDate>Sat, 03 Oct 2026 14:30:34 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UC9cn0TuPq4dnbTY-CBsm8XA">a16z</source>
+      <description>Replit CEO Amjad Masad and OpenRouter&amp;#x27;s Alex Atallah discuss the future of AI, advocating for an ecosystem of specialized models rather than a single &amp;#x27;god model.&amp;#x27; Alex Atallah explains OpenRouter&amp;#x27;s focus on &amp;#x27;neurodiversity,&amp;#x27; using different models combined based on the task. Amjad Masad highlights the enterprise need to own AI capabilities, moving away from dependence on a single model provider. They explore how teams of specialized agents can replace general-purpose agents, and why smaller models can be more cost-effective, safer, and easier to control. The conversation also covers agent-to-agent communication, AI security, and the need for an independence layer across models, clouds, and data for future companies.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · a16z&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=ekK8urKHPMQ"&gt;Why Specialized AI Could Beat The God Model&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Keerthana Gopalakrishnan on Gemini Robotics 2, Cross-Embodiment, and Humanoids — The Cognitive Revolution</title>
       <link>https://www.cognitiverevolution.ai/one-brain-any-body-google-deepmind-s-keerthana-on-gemini-robotics-2-cross-embodiment-humanoids/</link>
       <guid isPermaLink="false">ai-radar:e2531ddbf724e951fd6a</guid>
