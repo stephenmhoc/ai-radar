@@ -75377,6 +75377,49 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/beyond-the-god-model-alex-atallah-amjad-masad-OPhKxfHE"
       }
+    },
+    {
+      "id": "e2531ddbf724e951fd6a",
+      "first_seen_at": "2026-10-03T13:17:25+00:00",
+      "status": "published",
+      "title": "Keerthana Gopalakrishnan on Gemini Robotics 2, Cross-Embodiment, and Humanoids",
+      "source_title": "One Brain, Any Body: Google DeepMind's Keerthana on Gemini Robotics 2, Cross-Embodiment & Humanoids",
+      "short_summary": "Google DeepMind's Keerthana Gopalakrishnan discusses Gemini Robotics 2, whole-body intelligence, and generalist humanoid robots. She explains how DeepMind combines reasoning models like Gemini Robotics ER 2 with vision-language-action execution while navigating challenges in multi-fingered manipulation, latency, and physical safety.",
+      "long_summary": "Keerthana Gopalakrishnan, Research Lead for Gemini Robotics at Google DeepMind, discusses the release of Gemini Robotics 2 and the pursuit of generalist humanoid robots. She details how DeepMind pairs reasoning models like Gemini Robotics ER 2 with vision-language-action execution to enable whole-body intelligence. The discussion highlights why multi-fingered manipulation and cross-embodiment continue to present harder bottlenecks than bipedal locomotion. Gopalakrishnan also addresses the practical realities of deploying physical AI in human spaces, including trade-offs across inference latency, sensor failures, and operational safety. Additional topics include simulation, generalization versus task mastery, robotic hand design, robotics training data, and managing robot fleets.",
+      "reason": "Substantial interview with Keerthana Gopalakrishnan, Research Lead for Gemini Robotics at Google DeepMind, covering Gemini Robotics 2 and physical AI.",
+      "published_at": "2026-10-03T13:00:00+00:00",
+      "appearances": [
+        {
+          "id": "ad088e63d8e78b28902d",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "0852a10c-bd6a-11f1-b201-2389e652e164",
+          "title": "One Brain, Any Body: Google DeepMind's Keerthana on Gemini Robotics 2, Cross-Embodiment & Humanoids",
+          "description": "Keerthana Gopalakrishnan, Research Lead for Gemini Robotics at Google DeepMind, returns to discuss the release of Gemini Robotics 2, whole-body intelligence, and the pursuit of generalist humanoid robots. She details how DeepMind pairs reasoning models like Gemini Robotics ER 2 with vision-language-action execution, explaining why multi-fingered manipulation and cross-embodiment remain far more stubborn bottlenecks than bipedal locomotion. Together, they examine the real-world stakes of bringing physical AI into human environments, addressing crucial trade-offs across inference latency, sensor failures, and operational safety where errors carry immediate physical consequences.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/one-brain-any-body-google-deepmind-s-keerthana-on-gemini-robotics-2-cross-embodiment-humanoids/\nSponsors:\n\nAthena: Athena matches you with a dedicated, top 1% executive assistant to handle your inbox, calendar, and daily workflows so you can save an average of 15 hours a week. Get matched with your EA today at https://athena.com/cognitive\n\nParallel: Parallel provides enterprise-grade web search APIs for AI agents, offering the optimal balance of quality, speed, and cost. Get started for free at https://parallel.ai/tcr\n\nDeepgram Flux TTS: Deepgram Flux TTS is a streaming text-to-speech model built for voice agents with natural tone, context awareness, and interruption handling. Try it free until September 12 at https://deepgram.com/keep-talking\n\nOutSystems: OutSystems is the leading agentic systems platform, helping enterprises build, modernize, and operate mission-critical applications at the speed of AI. Learn more and start owning your agentic future at https://outsystems.com/tcr\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(04:22) Humanoid Olympics and simulation\n\n(11:11) Generalization versus task mastery\n\n(21:22) Gemini Robotics 2 architecture (Part 1)\n\n(21:28) Sponsors: Athena | Parallel\n\n(24:19) Gemini Robotics 2 architecture (Part 2) (Part 1)\n\n(36:02) Sponsors: Deepgram Flux TTS | OutSystems | Claude\n\n(40:00) Gemini Robotics 2 architecture (Part 2) (Part 2)\n\n(48:28) Whole body humanoid control\n\n(57:03) Progress in robotic hands\n\n(01:03:26) Safety and robot interaction\n\n(01:12:11) Future of robotics data\n\n(01:18:47) Interacting with robot fleets\n\n(01:26:56) Episode Outro\n\n(01:30:05) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing",
+          "url": "https://www.cognitiverevolution.ai/one-brain-any-body-google-deepmind-s-keerthana-on-gemini-robotics-2-cross-embodiment-humanoids/",
+          "published_at": "2026-10-03T13:00:00+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        },
+        {
+          "id": "5bf2b27441fc9307c826",
+          "kind": "youtube",
+          "source": "The Cognitive Revolution — YouTube",
+          "family": "the cognitive revolution",
+          "guid": "yt:video:CVcyli4i5g0",
+          "title": "One Brain, Any Body: Google DeepMind's Keerthana on Gemini Robotics 2, Cross-Embodiment & Humanoids",
+          "description": "Keerthana Gopalakrishnan, Research Lead for Gemini Robotics at Google DeepMind, returns to discuss the release of Gemini Robotics 2, whole-body intelligence, and the pursuit of generalist humanoid robots. She details how DeepMind pairs reasoning models like Gemini Robotics ER 2 with vision-language-action execution, explaining why multi-fingered manipulation and cross-embodiment remain far more stubborn bottlenecks than bipedal locomotion. Together, they examine the real-world stakes of bringing physical AI into human environments, addressing crucial trade-offs across inference latency, sensor failures, and operational safety where errors carry immediate physical consequences.\n\nFor full show notes, links, and references, read the episode page:\nhttps://www.cognitiverevolution.ai/one-brain-any-body-google-deepmind-s-keerthana-on-gemini-robotics-2-cross-embodiment-humanoids/\n\nSPONSORS:\nAthena: Athena matches you with a dedicated, top 1% executive assistant to handle your inbox, calendar, and daily workflows so you can save an average of 15 hours a week. Get matched with your EA today at https://athena.com/cognitive\n\nParallel: Parallel provides enterprise-grade web search APIs for AI agents, offering the optimal balance of quality, speed, and cost. Get started for free at https://parallel.ai/tcr\n\nDeepgram Flux TTS: Deepgram Flux TTS is a streaming text-to-speech model built for voice agents with natural tone, context awareness, and interruption handling. Try it free until September 12 at https://deepgram.com/keeptalking?utm_source=cognitiverevolution&utm_medium=audio&utm_campaign=flux_tts_launch&utm_content=shownotes\n\nOutSystems: OutSystems is the leading agentic systems platform, helping enterprises build, modernize, and operate mission-critical applications at the speed of AI. Learn more and start owning your agentic future at https://outsystems.com/tcr\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nCHAPTERS:\n(00:00) About the Episode\n(04:22) Humanoid Olympics and simulation\n(11:11) Generalization versus task mastery\n(21:22) Gemini Robotics 2 architecture (Part 1)\n(21:28) Sponsors: Athena | Parallel\n(24:19) Gemini Robotics 2 architecture (Part 2) (Part 1)\n(36:02) Sponsors: Deepgram Flux TTS | OutSystems | Claude\n(40:00) Gemini Robotics 2 architecture (Part 2) (Part 2)\n(48:28) Whole body humanoid control\n(57:03) Progress in robotic hands\n(01:03:26) Safety and robot interaction\n(01:12:11) Future of robotics data\n(01:18:47) Interacting with robot fleets\n(01:26:56) Episode Outro\n(01:30:05) Outro\n\nPRODUCED BY:\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\nWebsite: https://www.cognitiverevolution.ai\nTwitter (Podcast): https://x.com/cogrev_podcast\nTwitter (Nathan): https://x.com/labenz\nLinkedIn: https://linkedin.com/in/nathanlabenz/\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.youtube.com/watch?v=CVcyli4i5g0",
+          "published_at": "2026-10-03T13:00:34+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/one-brain-any-body-google-deepmind-s-keerthana-on-gemini-robotics-2-cross-embodiment-humanoids/",
+        "youtube": "https://www.youtube.com/watch?v=CVcyli4i5g0"
+      }
     }
   ]
 }
