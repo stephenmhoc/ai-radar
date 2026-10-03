@@ -4,6 +4,7 @@ import contextlib
 import datetime as dt
 import fcntl
 import json
+import os
 import pathlib
 import subprocess
 import sys
@@ -18,6 +19,18 @@ LOCK_PATH = pathlib.Path("/tmp/ai-radar-publication.lock")
 HEARTBEAT_PATH = ROOT / "var/scheduler-heartbeat.json"
 PUSH_ATTEMPTS = 3
 FETCH_ATTEMPTS = 3
+DEFAULT_YOUTUBE_ERROR_TOLERANCE = 10
+
+
+def youtube_error_tolerance_from_env() -> int:
+    raw = os.environ.get("AI_RADAR_YOUTUBE_ERROR_TOLERANCE", str(DEFAULT_YOUTUBE_ERROR_TOLERANCE))
+    try:
+        value = int(raw)
+    except ValueError as exc:
+        raise ValueError("AI_RADAR_YOUTUBE_ERROR_TOLERANCE must be an integer") from exc
+    if value < 0:
+        raise ValueError("AI_RADAR_YOUTUBE_ERROR_TOLERANCE must not be negative")
+    return value
 
 
 class DegradedCycleError(RuntimeError):
@@ -195,7 +208,13 @@ def _run_locked_cycle(reporter: ErrorReporter) -> int:
         lookback_days = radar.lookback_days_from_env()
         stats = radar.run_cycle(settings, lookback_days=lookback_days, reporter=reporter)
         radar.print_stats(stats)
-        degraded = stats["source_errors"] > 0 or stats["llm_errors"] > 0
+        youtube_errors = stats.get("youtube_source_errors", 0)
+        other_errors = stats["source_errors"] - youtube_errors
+        degraded = (
+            stats["llm_errors"] > 0
+            or other_errors > 0
+            or youtube_errors > youtube_error_tolerance_from_env()
+        )
 
         phase = "tests"
         command(sys.executable, "scripts/verify.py")
@@ -229,6 +248,7 @@ def _run_locked_cycle(reporter: ErrorReporter) -> int:
         if degraded:
             raise DegradedCycleError(
                 f"cycle completed with source_errors={stats['source_errors']} "
+                f"(youtube={youtube_errors}, other={other_errors}) "
                 f"and llm_errors={stats['llm_errors']}"
             )
         return 0

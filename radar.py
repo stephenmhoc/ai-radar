@@ -67,6 +67,8 @@ MAX_FEED_BYTES = 16 * 1024 * 1024
 MAX_REDIRECTS = 5
 MAX_APPEARANCE_DESCRIPTION_CHARS = 24_000
 YOUTUBE_RETRY_DELAY_SECONDS = 60
+YOUTUBE_RETRY_ATTEMPTS = 3
+YOUTUBE_RETRY_BACKOFF_FACTOR = 2.0
 YOUTUBE_OUTAGE_MIN_SOURCES = 3
 ITEM_FIELDS = frozenset(
     {
@@ -920,22 +922,37 @@ def run_cycle(
         process_entries(source, entries)
 
     if youtube_retry_candidates:
-        print(
-            f"warning: retrying {len(youtube_retry_candidates)} YouTube source(s) "
-            f"after {YOUTUBE_RETRY_DELAY_SECONDS}s",
-            file=sys.stderr,
-        )
-        time.sleep(YOUTUBE_RETRY_DELAY_SECONDS)
-        for source, _initial_error in youtube_retry_candidates:
-            try:
-                entries = parse_feed(fetch_bytes(source.feed_url, user_agent=settings.user_agent), source)
-            except Exception as exc:  # noqa: BLE001 - report only after the delayed retry
-                source_failures.append(SourceFailure(source, exc, "fetch"))
-                print(f"warning: YouTube source retry failed: {source.name}: {exc}", file=sys.stderr)
-                continue
-            youtube_retry_recoveries += 1
-            print(f"YouTube source recovered after retry: {source.name}")
-            process_entries(source, entries)
+        # YouTube's feed endpoint intermittently 404s; retry the stragglers a
+        # few times with backoff before counting them as failures.
+        remaining = list(youtube_retry_candidates)
+        delay = YOUTUBE_RETRY_DELAY_SECONDS
+        for attempt in range(2, YOUTUBE_RETRY_ATTEMPTS + 1):
+            print(
+                f"warning: retrying {len(remaining)} YouTube source(s) "
+                f"(attempt {attempt}/{YOUTUBE_RETRY_ATTEMPTS}) after {delay}s",
+                file=sys.stderr,
+            )
+            time.sleep(delay)
+            still_failing: list[tuple[Source, BaseException]] = []
+            for source, _initial_error in remaining:
+                try:
+                    entries = parse_feed(fetch_bytes(source.feed_url, user_agent=settings.user_agent), source)
+                except Exception as exc:  # noqa: BLE001 - report only after the final retry
+                    still_failing.append((source, exc))
+                    print(
+                        f"warning: YouTube source retry failed (attempt {attempt}): {source.name}: {exc}",
+                        file=sys.stderr,
+                    )
+                    continue
+                youtube_retry_recoveries += 1
+                print(f"YouTube source recovered after retry: {source.name}")
+                process_entries(source, entries)
+            remaining = still_failing
+            if not remaining:
+                break
+            delay = int(delay * YOUTUBE_RETRY_BACKOFF_FACTOR)
+        for source, exc in remaining:
+            source_failures.append(SourceFailure(source, exc, "fetch"))
 
     report_source_failures(
         settings, source_failures, reporter,
@@ -1003,6 +1020,7 @@ def run_cycle(
     stats = {
         "sources": len(settings.sources),
         "source_errors": len(source_failures),
+        "youtube_source_errors": sum(1 for f in source_failures if f.source.kind == "youtube"),
         "youtube_retry_attempts": len(youtube_retry_candidates),
         "youtube_retry_recoveries": youtube_retry_recoveries,
         "new_appearances": len(collected),

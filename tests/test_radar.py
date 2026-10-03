@@ -902,8 +902,9 @@ class CycleTests(unittest.TestCase):
         self.assertEqual(stats["source_errors"], 4)
         self.assertEqual(stats["youtube_retry_attempts"], 4)
         self.assertEqual(stats["youtube_retry_recoveries"], 0)
-        self.assertEqual(fetch.call_count, 8)
-        sleep.assert_called_once_with(radar.YOUTUBE_RETRY_DELAY_SECONDS)
+        self.assertEqual(fetch.call_count, 12)
+        self.assertEqual(sleep.call_count, radar.YOUTUBE_RETRY_ATTEMPTS - 1)
+        sleep.assert_any_call(radar.YOUTUBE_RETRY_DELAY_SECONDS)
         self.assertEqual(len(reporter.exceptions), 1)
         event = reporter.exceptions[0]
         self.assertEqual(event["fingerprint"], ["ai-radar", "source", "youtube-rss-outage"])
