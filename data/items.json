@@ -75349,6 +75349,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-not-much-happened-today-cee"
       }
+    },
+    {
+      "id": "7f6e137ea425e9d358e5",
+      "first_seen_at": "2026-10-03T10:17:24+00:00",
+      "status": "published",
+      "title": "The a16z Show: Beyond the God Model with Alex Atallah and Amjad Masad",
+      "source_title": "Beyond the God Model | Alex Atallah & Amjad Masad",
+      "short_summary": "Replit CEO Amjad Masad and OpenRouter's Alex Atallah discuss why the AI landscape is shifting from monolithic models to ecosystems of specialized models. They examine model routing, teams of agents, and why enterprises require an independence layer across models, clouds, and data.",
+      "long_summary": "Erik Torenberg hosts OpenRouter’s Alex Atallah and Replit founder and CEO Amjad Masad to discuss why the future of AI is moving away from single all-purpose models toward an ecosystem of specialized models working together. Atallah details OpenRouter's focus on neurodiversity, routing and combining models trained in different ways depending on the specific job. Masad highlights the enterprise perspective, emphasizing that companies need to own their AI capabilities rather than rely completely on a single model provider. The discussion explores the transition from general-purpose agents to specialized agent teams, as well as the safety, cost, and control advantages of smaller models. Additionally, they discuss how routing and model fusion can achieve frontier-level performance at reduced cost, alongside key considerations for agent-to-agent communication, AI security, and multi-cloud independence.",
+      "reason": "Features Replit founder and CEO Amjad Masad, a designated target roster leader, discussing model routing, specialized agent architectures, and AI infrastructure alongside OpenRouter's Alex Atallah.",
+      "published_at": "2026-10-03T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "4cbc345f54efabda7df6",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "29e0b258-c055-4a45-87d7-271d5e50ea29",
+          "title": "Beyond the God Model | Alex Atallah & Amjad Masad",
+          "description": "A16z’s Erik Torenberg sits down with OpenRouter’s Alex Atallah and Replit founder and CEO Amjad Masad to discuss why the future of AI may look less like one all-purpose model and more like an ecosystem of specialized models working together.\n\nAlex explains why OpenRouter is betting on “neurodiversity”: different models trained in different ways, routed and combined based on the job at hand. Amjad makes a similar case from inside the enterprise, where companies increasingly need to own their AI capabilities rather than depend entirely on a single model provider. \n\nThey explore what happens when general-purpose agents give way to teams of specialized agents, why smaller models can sometimes be cheaper, safer, and easier to control, and how routing and model fusion could deliver frontier-level performance at lower cost. They also get into agent-to-agent communication, AI security, and why the next generation of companies may need an independence layer across models, clouds, and data.\n\nResources:\n\nFollow Alex Atallah on X: \nhttps://x.com/alexatallah\n\nFollow Amjad Masad on X:\nhttps://x.com/amasad\n\nLearn more about OpenRouter:\nhttps://openrouter.ai\n\nLearn more about Replit:\nhttps://replit.com\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/beyond-the-god-model-alex-atallah-amjad-masad-OPhKxfHE",
+          "published_at": "2026-10-03T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/beyond-the-god-model-alex-atallah-amjad-masad-OPhKxfHE"
+      }
     }
   ]
 }

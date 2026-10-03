@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>The a16z Show: Beyond the God Model with Alex Atallah and Amjad Masad — The a16z Show</title>
+      <link>https://a16z.simplecast.com/episodes/beyond-the-god-model-alex-atallah-amjad-masad-OPhKxfHE</link>
+      <guid isPermaLink="false">ai-radar:7f6e137ea425e9d358e5</guid>
+      <pubDate>Sat, 03 Oct 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.simplecast.com/JGE3yC0V">The a16z Show</source>
+      <description>Erik Torenberg hosts OpenRouter’s Alex Atallah and Replit founder and CEO Amjad Masad to discuss why the future of AI is moving away from single all-purpose models toward an ecosystem of specialized models working together. Atallah details OpenRouter&amp;#x27;s focus on neurodiversity, routing and combining models trained in different ways depending on the specific job. Masad highlights the enterprise perspective, emphasizing that companies need to own their AI capabilities rather than rely completely on a single model provider. The discussion explores the transition from general-purpose agents to specialized agent teams, as well as the safety, cost, and control advantages of smaller models. Additionally, they discuss how routing and model fusion can achieve frontier-level performance at reduced cost, alongside key considerations for agent-to-agent communication, AI security, and multi-cloud independence.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · The a16z Show&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://a16z.simplecast.com/episodes/beyond-the-god-model-alex-atallah-amjad-masad-OPhKxfHE"&gt;Beyond the God Model | Alex Atallah &amp;amp; Amjad Masad&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Practical AI: Ming-Yu Liu on Multi-Agent Physical AI Ecosystems — Practical AI</title>
       <link>https://www.youtube.com/watch?v=yNdnk05IJLo</link>
       <guid isPermaLink="false">ai-radar:6d02897de1f970fe4a21</guid>
