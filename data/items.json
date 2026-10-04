@@ -75448,6 +75448,36 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=ekK8urKHPMQ"
       }
+    },
+    {
+      "id": "fcc5a5ab1a9faeb949f6",
+      "first_seen_at": "2026-10-04T08:17:26+00:00",
+      "status": "skipped",
+      "title": "How Mark Zuckerberg, Palmer Luckey, Josh Kushner & Scott Wu Think | Jeremy Stern",
+      "source_title": "How Mark Zuckerberg, Palmer Luckey, Josh Kushner & Scott Wu Think | Jeremy Stern",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is journalist and profile writer Jeremy Stern rather than a qualifying frontier AI leader, and the episode covers general biographical profiles with only incidental discussion of AI.",
+      "published_at": "2026-10-04T08:00:00+00:00",
+      "appearances": [
+        {
+          "id": "86051a5696fa5a5c159d",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "a6d4431a-bfb5-11f1-a1b5-ff88724036a5",
+          "title": "How Mark Zuckerberg, Palmer Luckey, Josh Kushner & Scott Wu Think | Jeremy Stern",
+          "description": "Jeremy Stern is the editor-in-chief of Colossus, where he writes long-form profiles of leading entrepreneurs and investors. He goes behind the scenes of his reporting on Mark Zuckerberg, explaining how months of interviews revealed Zuckerberg’s fascination with Augustus, relentless competitive drive and commitment to building Meta for decades. Jeremy discusses why Meta’s distribution and infrastructure could give it an advantage in AI and why some founders seem incapable of walking away. He explains how a question about defense technology became his first profile, on Palmer Luckey, and why he brings the craft of fiction and poetry to writing about business. Jeremy also describes Scott Wu’s combination of mathematical genius, natural leadership and authenticity, and how Josh Kushner’s family history shaped his exploration of Thrive Capital and the American dream. The conversation closes with the story of Jeremy’s Russian professor, whose belief that people have an obligation to their gifts changed his life and helped shape how he sees the people he writes about.\n\nShow notes: https://www.davidsenra.com/episode/jeremy-stern\n\nMade possible by\n\nRamp: https://ramp.com\n\nDeel: https://deel.com/senra\n\nAppLovin: https://applovin.com/senra\n\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/jeremy-stern",
+          "published_at": "2026-10-04T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/jeremy-stern"
+      }
     }
   ]
 }
