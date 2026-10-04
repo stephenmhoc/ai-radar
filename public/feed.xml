@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Tibo Sottiaux on OpenAI Dots, Personal Agents, and Shipping at OpenAI — Lenny's Podcast</title>
+      <link>https://www.lennysnewsletter.com/p/openais-head-of-chatgpt-were-entering</link>
+      <guid isPermaLink="false">ai-radar:a1ff52ad6cb8de4b6565</guid>
+      <pubDate>Sun, 04 Oct 2026 12:30:30 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/10845.rss">Lenny's Podcast</source>
+      <description>In an interview recorded at DevDay, Tibo Sottiaux, who leads ChatGPT and Codex at OpenAI, discusses the launch of Dots, OpenAI&amp;#x27;s personal AI assistant platform. He explains why he expects most online actions to be handled by agents in the future and argues that loops, graphs, and fine-tuning agent workflows represent a passing phase. Sottiaux details the structure and research behind Dots, covering multi-device connections, guardrails, and plugin discovery alongside revenue sharing. He also describes how teams build, test, and ship products within OpenAI, sharing how his own agent flagged a production outage minutes before launch. Finally, the discussion addresses shifting skill values in the AI era and OpenAI&amp;#x27;s approach to alignment and safety.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Lenny&amp;#x27;s Podcast&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.lennysnewsletter.com/p/openais-head-of-chatgpt-were-entering"&gt;OpenAI’s Head of ChatGPT: We’re entering a new era of AI (again) | Tibo Sottiaux&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Lenny&amp;#x27;s Podcast&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=MM-C3JqCXBk"&gt;OpenAI’s Head of ChatGPT: We’re entering a new era of AI (again) | Tibo Sottiaux&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Why Specialized AI Could Beat The God Model — a16z</title>
       <link>https://www.youtube.com/watch?v=ekK8urKHPMQ</link>
       <guid isPermaLink="false">ai-radar:6a39349a9703678f243c</guid>
