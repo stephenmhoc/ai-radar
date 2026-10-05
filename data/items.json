@@ -75665,6 +75665,34 @@
       "links": {
         "newsletter": "https://importai.substack.com/p/import-ai-475-swarm-scaling-google"
       }
+    },
+    {
+      "id": "595f8032f0def11f651c",
+      "first_seen_at": "2026-10-05T14:17:22+00:00",
+      "status": "skipped",
+      "title": "How Brian Chesky Wants to Reinvent Airbnb",
+      "source_title": "How Brian Chesky Wants to Reinvent Airbnb",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-05T13:15:29+00:00",
+      "appearances": [
+        {
+          "id": "d3cfaca9940de3587f97",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:9yfJ5CnR20I",
+          "title": "How Brian Chesky Wants to Reinvent Airbnb",
+          "description": "Brian Chesky says the next chapter of Airbnb is about changing its “atomic unit” from a home to a person.\n\nHis vision is to build around identity, preferences, services, experiences, and eventually dozens of different offerings — while figuring out how Airbnb can disrupt itself before AI or another company does it first.\n\n#BrianChesky #Airbnb #BusinessStrategy #FounderMode #AI #Startups #Entrepreneurship #ProductStrategy #FutureOfTravel #InvestLikeTheBest\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/9yfJ5CnR20I",
+          "published_at": "2026-10-05T13:15:29+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/9yfJ5CnR20I"
+      }
     }
   ]
 }
