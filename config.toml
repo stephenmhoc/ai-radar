@@ -12,7 +12,7 @@ timeout_seconds = 120
 max_attempts = 4
 retry_backoff_seconds = 2.0
 max_retry_sleep_seconds = 60.0
-max_output_tokens = 1200
+max_output_tokens = 2400
 
 [site]
 title = "AI Radar"

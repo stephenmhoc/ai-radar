@@ -502,3 +502,8 @@ The public site remains online but stops receiving updates. Recovery requires:
 
 No SQLite restore is required. The committed JSON archive is the publication
 state, and Git history provides its recovery path.
+
+Production editorial requests allow up to 2,400 output tokens to accommodate
+routed model responses without truncation. Summary prose limits and strict
+validation are unchanged; truncated responses still fail rather than publishing
+partial content. This ceiling is not a requested summary length.

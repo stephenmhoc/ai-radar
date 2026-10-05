@@ -163,3 +163,8 @@ summaries. Dependabot covers Python, Docker, and GitHub Actions dependencies.
 
 Secrets remain only in `/opt/ai-radar/.env` and `/opt/ai-radar/secrets/`; neither
 path is part of this public repository.
+
+Production editorial requests allow up to 2,400 output tokens to accommodate
+routed model responses without truncation. Summary prose limits and strict
+validation are unchanged; truncated responses still fail rather than publishing
+partial content. This ceiling is not a requested summary length.
