@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Anthropic Subscriptions Offer 5x+ More Value Than OpenAI — SemiAnalysis</title>
+      <link>https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x</link>
+      <guid isPermaLink="false">ai-radar:28c4e5b32712c9e72cde</guid>
+      <pubDate>Mon, 05 Oct 2026 20:01:09 +0000</pubDate>
+      <source url="https://newsletter.semianalysis.com/feed">SemiAnalysis</source>
+      <description>SemiAnalysis provides a detailed comparison of subscription plans from Anthropic and OpenAI, focusing on how to accurately measure the API-equivalent value of these plans. The article explains that subscription plans are heavily subsidized and can significantly impact AI lab financials. It outlines a methodology for calculating the true value of subscriptions by running experiments to isolate token types and track usage meters. The analysis reveals that for mid-tier models, Anthropic&amp;#x27;s Claude plan offers approximately five times more API-equivalent value than OpenAI&amp;#x27;s comparable plan. OpenAI recently halved the value of its $200 plan and introduced a new $500 tier, which offers only 21% more Astra than the old $200 plan. The report also notes that providers can silently change subscription limits, a phenomenon detected by their methodology.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · SemiAnalysis&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x"&gt;Anthropic Subscriptions Offer 5x+ More Value Than OpenAI&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy — Import AI</title>
       <link>https://importai.substack.com/p/import-ai-475-swarm-scaling-google</link>
       <guid isPermaLink="false">ai-radar:77e2d4d7c19ed0fa3749</guid>
