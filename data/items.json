@@ -75693,6 +75693,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/9yfJ5CnR20I"
       }
+    },
+    {
+      "id": "82da0c2464d87dfed895",
+      "first_seen_at": "2026-10-05T19:17:26+00:00",
+      "status": "skipped",
+      "title": "Meet the New Codex CLI",
+      "source_title": "Meet the New Codex CLI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a promotional video about a product update, not a substantial interview, talk, or demonstration with durable substance. It lacks the depth required for inclusion.",
+      "published_at": "2026-10-05T18:29:08+00:00",
+      "appearances": [
+        {
+          "id": "cd3f741f636fe90f9347",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:PUBc2G0Tj5E",
+          "title": "Meet the New Codex CLI",
+          "description": "Take a look at the latest Codex CLI updates and the refreshed terminal experience. Follow a walkthrough of the new interface and ways to work with Codex.",
+          "url": "https://www.youtube.com/watch?v=PUBc2G0Tj5E",
+          "published_at": "2026-10-05T18:29:08+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=PUBc2G0Tj5E"
+      }
     }
   ]
 }
