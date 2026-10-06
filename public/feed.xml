@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Amin Vahdat on Google's AI Infrastructure, TPUs, and Co-Design — Training Data</title>
+      <link>https://feeds.megaphone.fm/trainingdata</link>
+      <guid isPermaLink="false">ai-radar:f1572a4fc852bdf535e5</guid>
+      <pubDate>Tue, 06 Oct 2026 09:00:00 +0000</pubDate>
+      <source url="https://feeds.megaphone.fm/trainingdata">Training Data</source>
+      <description>Google&amp;#x27;s Chief Technologist for AI Infrastructure Amin Vahdat examines the engineering challenges of managing clusters at 100,000-accelerator scale, where failures occur multiple times per hour. Rather than focusing on theoretical FLOPS, he advocates for &amp;quot;goodput,&amp;quot; measuring the useful work delivered through real-world faults. Vahdat details the rationale behind splitting Google&amp;#x27;s TPU line into 8i and 8t models, while explaining why core TPU primitives have persisted since v1. He highlights Google&amp;#x27;s close co-design process with DeepMind, which allows teams to intercept chip designs mid-flight before tape-out. Additionally, the conversation explores how long-horizon agents drive unexpected demand for CPUs and storage alongside accelerators, the role of optical circuit switching in rerouting traffic, and the power constraints shaping gigawatt-scale data center planning.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Training Data&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://feeds.megaphone.fm/trainingdata"&gt;Google&amp;#x27;s AI Infrastructure Chief, Amin Vahdat, on the Physics &amp;amp; Economics of Frontier AI&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Latent Space Newsletter: Reflection Beam, OpenAI vs. Anthropic, and AI Research — Latent Space</title>
       <link>https://www.latent.space/p/ainews-reflection-beam-501b-a23b</link>
       <guid isPermaLink="false">ai-radar:cdfa6ab3384e05aad823</guid>

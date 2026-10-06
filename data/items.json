@@ -75840,6 +75840,34 @@
       "links": {
         "podcast": "http://colossus.com/episode/reading-and-writing-the-brain/"
       }
+    },
+    {
+      "id": "f1572a4fc852bdf535e5",
+      "first_seen_at": "2026-10-06T09:17:32+00:00",
+      "status": "published",
+      "title": "Amin Vahdat on Google's AI Infrastructure, TPUs, and Co-Design",
+      "source_title": "Google's AI Infrastructure Chief, Amin Vahdat, on the Physics & Economics of Frontier AI",
+      "short_summary": "Google Chief Technologist for AI Infrastructure Amin Vahdat discusses designing systems at 100,000-accelerator scale, prioritizing actual delivered workload over raw FLOPS. He covers splitting the TPU line into 8i and 8t, co-designing chips with DeepMind, optical circuit switching, and data center demand from long-horizon agents.",
+      "long_summary": "Google's Chief Technologist for AI Infrastructure Amin Vahdat examines the engineering challenges of managing clusters at 100,000-accelerator scale, where failures occur multiple times per hour. Rather than focusing on theoretical FLOPS, he advocates for \"goodput,\" measuring the useful work delivered through real-world faults. Vahdat details the rationale behind splitting Google's TPU line into 8i and 8t models, while explaining why core TPU primitives have persisted since v1. He highlights Google's close co-design process with DeepMind, which allows teams to intercept chip designs mid-flight before tape-out. Additionally, the conversation explores how long-horizon agents drive unexpected demand for CPUs and storage alongside accelerators, the role of optical circuit switching in rerouting traffic, and the power constraints shaping gigawatt-scale data center planning.",
+      "reason": "Substantial interview with Google's Chief Technologist for AI Infrastructure on TPU architectures, DeepMind co-design, and large-scale AI data center engineering.",
+      "published_at": "2026-10-06T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "2ef7a593304eb794bffa",
+          "kind": "podcast",
+          "source": "Training Data",
+          "family": "training data",
+          "guid": "28c38604-c0da-11f1-8b1e-33a0102fe4b6",
+          "title": "Google's AI Infrastructure Chief, Amin Vahdat, on the Physics & Economics of Frontier AI",
+          "description": "At 100,000-accelerator scale, something fails multiple times an hour, which is why Google's Chief Technologist for AI Infrastructure Amin Vahdat thinks FLOPS is a vanity metric. The metric that matters is what he calls goodput: the useful work a workload actually delivers through real failures. Amin walks through the calculus that split the TPU line into 8i and 8t for the first time, why the TPU's core primitives haven't changed since v1, and how Google and DeepMind co-design in the same rooms, intercepting chip architectures mid-flight before tape-out. He explains why long-horizon agents are sending demand for CPUs and storage through the roof alongside accelerators, how optical circuit switches reroute light to a spare rack in milliseconds, and why Google would rather wait on a utility than build its own gigawatt. We also cover orbital data centers and the multi-megawatt rack of 2036.\n\nHosted by Sonya Huang, Sequoia Capital\n\n0:00 – Introduction\n\n1:47 – What makes a data center an AI data center\n\n5:30 – Goodput, not FLOPS: holding yourself accountable when something fails every hour\n\n11:52 – Doubling token capacity every six months, and where the gains actually come from\n\n15:32 – The TPU bet: from a contrarian call in 2013 to splitting 8i and 8t\n\n23:30 – The case for and against co-design\n\n26:11 – Shoulder to shoulder with DeepMind: intercepting chips mid-flight\n\n34:16 – Long-horizon agents change the shape of the data center\n\n37:50 – Optical circuit switching and the state of networking\n\n42:35 – Power is the binding constraint: utilities, gigawatts, and sizing a data center\n\n49:23 – Training vs. serving clusters, seven-year-old TPUs, and open standards\n\n58:29 – Orbital data centers and the supercomputer of 2036",
+          "url": "https://feeds.megaphone.fm/trainingdata",
+          "published_at": "2026-10-06T09:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/trainingdata"
+      }
     }
   ]
 }
