@@ -75863,10 +75863,23 @@
           "url": "https://feeds.megaphone.fm/trainingdata",
           "published_at": "2026-10-06T09:00:00+00:00",
           "hosts": []
+        },
+        {
+          "id": "481b365de737c4ef71a2",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:bGph8GwB3Sk",
+          "title": "Google's AI Infrastructure Chief, Amin Vahdat, on the Physics & Economics of Frontier AI",
+          "description": "At 100,000-accelerator scale, something fails multiple times an hour, which is why Google's Chief Technologist for AI Infrastructure Amin Vahdat thinks FLOPS is a vanity metric. The metric that matters is what he calls goodput: the useful work a workload actually delivers through real failures. Amin walks through the calculus that split the TPU line into 8i and 8t for the first time, why the TPU's core primitives haven't changed since v1, and how Google and DeepMind co-design in the same rooms, intercepting chip architectures mid-flight before tape-out. He explains why long-horizon agents are sending demand for CPUs and storage through the roof alongside accelerators, how optical circuit switches reroute light to a spare rack in milliseconds, and why Google would rather wait on a utility than build its own gigawatt. We also cover orbital data centers and the multi-megawatt rack of 2036.\n\nHosted by Sonya Huang, Sequoia Capital\n\n0:00 – Introduction\n1:47 – What makes a data center an AI data center\n5:30 – Goodput, not FLOPS: holding yourself accountable when something fails every hour\n11:52 – Doubling token capacity every six months, and where the gains actually come from\n15:32 – The TPU bet: from a contrarian call in 2013 to splitting 8i and 8t\n23:30 – The case for and against co-design\n26:11 – Shoulder to shoulder with DeepMind: intercepting chips mid-flight\n34:16 – Long-horizon agents change the shape of the data center\n37:50 – Optical circuit switching and the state of networking\n42:35 – Power is the binding constraint: utilities, gigawatts, and sizing a data center\n49:23 – Training vs. serving clusters, seven-year-old TPUs, and open standards\n58:29 – Orbital data centers and the supercomputer of 2036",
+          "url": "https://www.youtube.com/watch?v=bGph8GwB3Sk",
+          "published_at": "2026-10-06T12:00:27+00:00",
+          "hosts": []
         }
       ],
       "links": {
-        "podcast": "https://feeds.megaphone.fm/trainingdata"
+        "podcast": "https://feeds.megaphone.fm/trainingdata",
+        "youtube": "https://www.youtube.com/watch?v=bGph8GwB3Sk"
       }
     },
     {
@@ -75925,6 +75938,34 @@
       ],
       "links": {
         "newsletter": "https://stratechery.com/2026/game-decompilation-is-this-legal-a-well-trodden-path/"
+      }
+    },
+    {
+      "id": "404a8aceeed50457841a",
+      "first_seen_at": "2026-10-06T12:17:29+00:00",
+      "status": "published",
+      "title": "Why Every AI Lab Will Become a Biotech Company | Andrew Huberman",
+      "source_title": "Why Every AI Lab Will Become a Biotech Company | Andrew Huberman",
+      "short_summary": "Andrew Huberman discusses the physiological secrets of high performers, optimizing sleep, and the public health space. He explores neurotechnology, why AI giants could become biotech companies, and the ethical realities of genetic engineering, including the implications of reading and writing to the brain non-invasively.",
+      "long_summary": "Patrick O'Shaughnessy interviews neuroscientist Andrew Huberman, who shares insights into managing energy, optimizing sleep, and the current state of public health and longevity. Huberman discusses the wild frontier of neurotechnology, including the massive implications of non-invasively reading and writing to the brain. He also explores why AI giants are actually biotech companies and the ethical realities of genetic engineering. The conversation covers topics from daily focus optimization to the future of human-computer interaction.",
+      "reason": "The discussion directly addresses the intersection of AI and biotech, specifically exploring why AI companies could become biotech companies and the implications of neurotechnology, which aligns with the 'important AI companies' and 'Physical AI' criteria.",
+      "published_at": "2026-10-06T12:00:06+00:00",
+      "appearances": [
+        {
+          "id": "f9afc52dd87d62c115e3",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:_QSX3BF9UX0",
+          "title": "Why Every AI Lab Will Become a Biotech Company | Andrew Huberman",
+          "description": "Patrick O'Shaughnessy sits down with neuroscientist and podcaster Andrew Huberman. They dive deep into the physiological secrets of high performers, exploring how founders can manage their energy, downshift after stressful days, and optimize sleep using science-backed tools like non-sleep deep rest (NSDR) and physiological sighs. Huberman also shares his candid thoughts on the current \"theatrics\" of the public health and longevity space. Finally, they explore the wild frontier of neurotechnology, discussing the massive implications of reading and writing to the brain non-invasively, why AI giants are actually biotech companies, and the ethical realities of genetic engineering. Whether you want to optimize your daily focus or understand the cyborg future of human-computer interaction, this episode delivers.\n\nTimestamps:\n0:00 Intro\n1:00 Building Energy for High Performance\n7:00 How to Fall Asleep\n18:10 What’s Gone Wrong With Health Optimization\n24:10 AI Companies Could Become Biotech Companies\n30:45 Implantable Devices\n33:45 Memory\n42:50 Controlling Your Brain\n59:00 Genetic Engineering\n1:11:05 The Key to Meaningful Success\n\n#AndrewHuberman #Neuroscience #Biohacking #SleepOptimization #Neurotech #Longevity #HealthAndWellness #InvestLikeTheBest #MentalPerformance #ArtificialIntelligence\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/watch?v=_QSX3BF9UX0",
+          "published_at": "2026-10-06T12:00:06+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=_QSX3BF9UX0"
       }
     }
   ]
