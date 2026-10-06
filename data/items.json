@@ -75751,6 +75751,34 @@
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x"
       }
+    },
+    {
+      "id": "dd592e228a1ad2891e96",
+      "first_seen_at": "2026-10-06T06:20:32+00:00",
+      "status": "skipped",
+      "title": "Building a custom website to stay on top of business with ChatGPT",
+      "source_title": "Building a custom website to stay on top of business with ChatGPT",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-06T00:36:28+00:00",
+      "appearances": [
+        {
+          "id": "5d3a342fd100e6897b0e",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:q0_JXcrx3jk",
+          "title": "Building a custom website to stay on top of business with ChatGPT",
+          "description": "This furniture shop is popular. So popular that it's tough to keep track of all of the inbound requests. ChatGPT can fix that. Victor Nunez Rodriguez visited Philadelphia Table Company in Philly to help him build a tool to stay on top of it all.\n\nDo you have something you wish existed? Drop your idea below or send us a DM and we'll come build it with you next.",
+          "url": "https://www.youtube.com/shorts/q0_JXcrx3jk",
+          "published_at": "2026-10-06T00:36:28+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/q0_JXcrx3jk"
+      }
     }
   ]
 }
