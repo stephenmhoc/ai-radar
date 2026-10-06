@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Latent Space Newsletter: Reflection Beam, OpenAI vs. Anthropic, and AI Research — Latent Space</title>
+      <link>https://www.latent.space/p/ainews-reflection-beam-501b-a23b</link>
+      <guid isPermaLink="false">ai-radar:cdfa6ab3384e05aad823</guid>
+      <pubDate>Tue, 06 Oct 2026 06:28:43 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>The Latent Space newsletter discusses the launch of Reflection&amp;#x27;s Beam, a 501B-total / 23B-active MoE model for coding, agentic, and scientific work, trained from scratch with full weights under Apache 2.0. It also features a detailed comparison of subscription value between Anthropic and OpenAI, with SemiAnalysis finding Claude subscriptions deliver significantly more API-equivalent value. The newsletter further delves into advancements in agent harnesses, RL environments, and developer tooling, including Hugging Face&amp;#x27;s multi-harness RL and Cognition&amp;#x27;s Devin &amp;quot;Dreaming&amp;quot; for agent memory. Finally, it covers various AI research topics such as verification over sampling, context management, self-improving harnesses, and optimization techniques like Dust and LOOM.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-reflection-beam-501b-a23b"&gt;[AINews] Reflection Beam - 501B-A23B American Open Model&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Anthropic Subscriptions Offer 5x+ More Value Than OpenAI — SemiAnalysis</title>
       <link>https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x</link>
       <guid isPermaLink="false">ai-radar:28c4e5b32712c9e72cde</guid>
