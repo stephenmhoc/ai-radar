@@ -75868,6 +75868,64 @@
       "links": {
         "podcast": "https://feeds.megaphone.fm/trainingdata"
       }
+    },
+    {
+      "id": "b6b0859a2cf96dd3f949",
+      "first_seen_at": "2026-10-06T10:17:34+00:00",
+      "status": "published",
+      "title": "Kevin Mandia on Autonomous AI Defense and Cybersecurity in the Agentic Era",
+      "source_title": "Building Defense for the Agentic Era: Kevin Mandia",
+      "short_summary": "Kevin Mandia joins David George to discuss cybersecurity as attackers operate at machine speed. He explains why AI necessitates autonomous defense, how Armadin uses AI to continuously uncover vulnerabilities, and how security stacks must evolve as humans leave the detect-and-respond loop.",
+      "long_summary": "In this episode of The a16z Show, a16z General Partner David George interviews Armadin founder and CEO Kevin Mandia about cybersecurity in the agentic era. Mandia explains that AI fundamentally alters attack economics by enabling adversaries to probe thousands of vulnerability paths simultaneously at machine speed. To keep pace, defense must transition toward autonomous systems because humans can no longer remain directly inside the detect-and-respond loop. Mandia breaks down Armadin's approach of continuously attacking customer environments with AI to find exploitable weaknesses before adversaries do, highlighting that the platform discovered more than 90 zero-days in production this year. He also shares his outlook on how autonomous AI capabilities will reshape the entire enterprise security stack over the next several years.",
+      "reason": "Features a substantive interview with veteran security founder Kevin Mandia on AI agent security, the economics of machine-speed attacks, and autonomous AI defense.",
+      "published_at": "2026-10-06T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "182c0a3f5f66e9b25a48",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "d110348a-bd35-4a71-a50f-90bf45a1db0b",
+          "title": "Building Defense for the Agentic Era: Kevin Mandia",
+          "description": "a16z General Partner David George sits down with Armadin founder and CEO Kevin Mandia to discuss what happens to cybersecurity when attackers can operate at machine speed.\n\nAfter 30 years in security and building Mandiant, Kevin says AI convinced him to get back on the field. He explains how AI changes the economics of cyberattacks, allowing attackers to probe thousands of paths simultaneously, and why that means defense will ultimately need to become autonomous too. \n\nThey also unpack Armadin’s approach: continuously attacking customers’ systems with AI to find exploitable vulnerabilities before adversaries do, then building toward autonomous defenses that can respond in real time. Kevin shares what Armadin has learned from finding more than 90 zero-days in production environments this year, why humans can’t remain in the detect-and-respond loop, and how the entire security stack could change over the next few years.\n\nResources:\n\nLearn more about Kevin Mandia and Armadin:\nhttps://www.armadin.com/team-members/kevin-mandia\n\nFollow David George on X:\nhttps://x.com/DavidGeorge83\n\nLearn more about Armadin:\nhttps://www.armadin.com/\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/building-defense-for-the-agentic-era-kevin-mandia-4ylPD1X6",
+          "published_at": "2026-10-06T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/building-defense-for-the-agentic-era-kevin-mandia-4ylPD1X6"
+      }
+    },
+    {
+      "id": "17945bdb591955e9d6fd",
+      "first_seen_at": "2026-10-06T10:17:34+00:00",
+      "status": "deferred",
+      "title": "Game Decompilation, Is This Legal?, A Well-Trodden Path",
+      "source_title": "Game Decompilation, Is This Legal?, A Well-Trodden Path",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-10-06T10:07:36+00:00",
+      "appearances": [
+        {
+          "id": "8cbd2cde70afc28d2db4",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20236",
+          "title": "Game Decompilation, Is This Legal?, A Well-Trodden Path",
+          "description": "Games are being decompiled, but the real risk to gaming is new games and increased personalization.",
+          "url": "https://stratechery.com/2026/game-decompilation-is-this-legal-a-well-trodden-path/",
+          "published_at": "2026-10-06T10:07:36+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/game-decompilation-is-this-legal-a-well-trodden-path/"
+      }
     }
   ]
 }
