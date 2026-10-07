@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>OpenAI: Production Monitoring with Codex: Grafana, Kubernetes, &amp; Security — OpenAI</title>
+      <link>https://www.youtube.com/watch?v=DmCaBWv5yG8</link>
+      <guid isPermaLink="false">ai-radar:e70730c38cef36b9a644</guid>
+      <pubDate>Wed, 07 Oct 2026 14:57:47 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A">OpenAI</source>
+      <description>In this technical demonstration from OpenAI, cohosts Tony Loehr and Anke Hao present three practical production-monitoring scenarios utilizing Codex. The walkthrough begins with diagnosing an escalating checkout failure using Grafana telemetry. They then investigate an unstable Kubernetes rollout responsible for causing out-of-memory restarts. Additionally, the presentation explores how a Codex Security finding connects overall service availability to an unconfigured resource limit. Throughout these examples, the hosts illustrate how telemetry, release history, and source code support engineering investigations. Finally, they demonstrate the workflow engineers use to review proposed remediation changes and verify the operational outcome.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · OpenAI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=DmCaBWv5yG8"&gt;Production Monitoring with Codex: Grafana, Kubernetes, &amp;amp; Security&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Stacklok Founders Joe Beda and Craig McLuckie on Building Cloud-Native AI Agent Infrastructure — Latent Space</title>
       <link>https://www.latent.space/p/stacklok</link>
       <guid isPermaLink="false">ai-radar:3cfd90bc39e4478fbaef</guid>

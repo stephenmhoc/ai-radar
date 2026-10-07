@@ -76431,6 +76431,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/stacklok"
       }
+    },
+    {
+      "id": "e70730c38cef36b9a644",
+      "first_seen_at": "2026-10-07T15:17:39+00:00",
+      "status": "published",
+      "title": "OpenAI: Production Monitoring with Codex: Grafana, Kubernetes, & Security",
+      "source_title": "Production Monitoring with Codex: Grafana, Kubernetes, & Security",
+      "short_summary": "Cohosts Tony Loehr and Anke Hao present three practical production-monitoring demonstrations using Codex. The session covers investigating checkout errors in Grafana, troubleshooting Kubernetes out-of-memory restarts, and analyzing Codex Security findings related to missing resource limits.",
+      "long_summary": "In this technical demonstration from OpenAI, cohosts Tony Loehr and Anke Hao present three practical production-monitoring scenarios utilizing Codex. The walkthrough begins with diagnosing an escalating checkout failure using Grafana telemetry. They then investigate an unstable Kubernetes rollout responsible for causing out-of-memory restarts. Additionally, the presentation explores how a Codex Security finding connects overall service availability to an unconfigured resource limit. Throughout these examples, the hosts illustrate how telemetry, release history, and source code support engineering investigations. Finally, they demonstrate the workflow engineers use to review proposed remediation changes and verify the operational outcome.",
+      "reason": "Substantive technical demonstration from OpenAI illustrating practical AI-assisted systems engineering and production monitoring using Codex.",
+      "published_at": "2026-10-07T14:57:47+00:00",
+      "appearances": [
+        {
+          "id": "d9f4781ddfbb4e25028c",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:DmCaBWv5yG8",
+          "title": "Production Monitoring with Codex: Grafana, Kubernetes, & Security",
+          "description": "It’s 3 a.m. and checkout errors are climbing. What do you check first?\n\nJoin cohosts Tony Loehr and Anke Hao for three practical production-monitoring demos with Codex. Follow a checkout failure in Grafana, investigate a Kubernetes rollout that causes out-of-memory restarts, and explore how a Codex Security finding connects service availability to a missing resource limit.\n\nSee how telemetry, release history, and code support an investigation; learn how engineers review a proposed change and check the result.",
+          "url": "https://www.youtube.com/watch?v=DmCaBWv5yG8",
+          "published_at": "2026-10-07T14:57:47+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=DmCaBWv5yG8"
+      }
     }
   ]
 }
