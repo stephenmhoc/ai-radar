@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>The State of the Tech Industry in 2026 — The Pragmatic Engineer</title>
+      <link>https://newsletter.pragmaticengineer.com/p/the-state-of-the-tech-industry-in</link>
+      <guid isPermaLink="false">ai-radar:59a3c615caa5993ae0bf</guid>
+      <pubDate>Tue, 06 Oct 2026 16:25:03 +0000</pubDate>
+      <source url="https://newsletter.pragmaticengineer.com/feed">The Pragmatic Engineer</source>
+      <description>This article summarizes a keynote delivered at the LDX3 engineering leadership conference, attended by over 2,000 engineering leaders. The keynote, informed by visits to OpenAI and Anthropic, and data from GitHub, Factory AI, and Linear, provides a snapshot of the tech industry in 2026. Key trends include the unprecedented speed of change driven by AI, with engineers largely ceasing to write code by hand and increasingly working with multiple parallel agents. The article highlights the rapid rise of agent-generated pull requests and issues on platforms like GitHub and Linear, and the mainstream adoption of agent skills. It also discusses the fading of the traditional Integrated Development Environment (IDE) as coding tools evolve into conversation and monitoring interfaces for agents.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · The Pragmatic Engineer&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.pragmaticengineer.com/p/the-state-of-the-tech-industry-in"&gt;The state of the tech industry in 2026&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>The Cyber Risk Discourse is Broken — Interconnects</title>
+      <link>https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken</link>
+      <guid isPermaLink="false">ai-radar:eb1656b05f2952e1e625</guid>
+      <pubDate>Tue, 06 Oct 2026 14:22:41 +0000</pubDate>
+      <source url="https://www.interconnects.ai/feed">Interconnects</source>
+      <description>The article argues that current discussions on the cyber risks of open models are flawed, potentially leading to policies that harm American AI competitiveness and increase long-term cyber risk. It categorizes the debate into three views: open-weight models pose untenable risk, open-weight models are necessary for defense, and Chinese companies continue to release open-weight models with strong cyber capabilities. The author criticizes the &amp;quot;open-weights are dangerous&amp;quot; crowd, specifically Anthropic&amp;#x27;s report on GLM-5.3, for failing to engage with broader questions about the implications of banning open models or China&amp;#x27;s risk assessments. The piece suggests that closed models have been the cause of most existing cyber attacks, challenging the notion that open models are inherently more dangerous. It also explores China&amp;#x27;s AI risk posture, noting their focus on political stability and techno-optimism, and questions the differing approaches to safety testing between Western and Chinese labs. The author concludes that the fear-mongering around open-weight models may be based on falsifiable predictions, and that the world would likely be fine even if a model like Claude Mythos were accidentally released as open-weight.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Interconnects&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken"&gt;The Cyber Risk Discourse is Broken&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Why Every AI Lab Will Become a Biotech Company | Andrew Huberman — Invest Like the Best</title>
       <link>https://www.youtube.com/watch?v=_QSX3BF9UX0</link>
       <guid isPermaLink="false">ai-radar:404a8aceeed50457841a</guid>
