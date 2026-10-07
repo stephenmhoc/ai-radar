@@ -76631,6 +76631,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=ZcDFZzsp3_Y"
       }
+    },
+    {
+      "id": "c0356304c911edc722e0",
+      "first_seen_at": "2026-10-07T21:17:29+00:00",
+      "status": "skipped",
+      "title": "Narrative Intelligence, Leadership, Storytelling, Human Advantage, Entrepreneurship |Episode 375|",
+      "source_title": "Narrative Intelligence, Leadership, Storytelling, Human Advantage, Entrepreneurship |Episode 375|",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode focuses on leadership, storytelling, and personal development rather than substantive technical AI research, infrastructure, or strategy, and the guest is not from a target organization.",
+      "published_at": "2026-10-07T21:15:15+00:00",
+      "appearances": [
+        {
+          "id": "fea65f55053cfeee4a48",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:qe1Tu52ccLQ",
+          "title": "Narrative Intelligence, Leadership, Storytelling, Human Advantage, Entrepreneurship |Episode 375|",
+          "description": "As AI reshapes how we work, create, and think about our roles, staying adaptable means understanding not just the technology, but our own stories and identities. Reed Frerichs joins Daniel and Chris to explore narrative intelligence, storytelling, leadership, and personal growth in an AI-driven world. They discuss how entrepreneurs and leaders can use AI tools to navigate changing roles, embrace uncertainty, and develop emotional intelligence along with Reed's “own, author, act” framework.\n\nFEATURING:\n\nGuest - Reed Frerichs (Host of Inner Story & Founder of startups; The Lesson and Everspace): https://www.linkedin.com/in/reedfrerichs/\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast): https://www.linkedin.com/in/danielwhitenack/\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast): https://www.linkedin.com/in/chrisbenson/\n\nLINKS:\n\nInner Story Series (YouTube): https://www.youtube.com/@innerstorypodcast\nInner Story Series (Spotify): https://open.spotify.com/show/1PIsCXwRVISEUQLWodAS1N?si=bd89802063164d5f&nd=1&dlsi=c74c843c4d554c93\nInner Story Essays (Substack): https://substack.com/@reedfrerichs\nInner Story (Website): https://www.innerstorypodcast.com/\nInner Story (Instagram): https://www.instagram.com/innerstorypod/\nEverspace: https://www.everspacestudio.com/\nThe Lesson: https://thelesson.com/\n\nSPONSORS:\n\nPrediction Guard: A self-hosted AI control plane for running agents in high impact environments. predictionguard.com/practicalai\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/\n\nCHAPTERS:\n\n0:00 Welcome to Practical AI Podcast!\n0:39 Introduction to the Journey\n2:03 Reed's Windy Path to Leadership\n5:12 The Role of Storytelling in Tech\n7:27 Understanding Narrative Intelligence\n10:17 The Hero's Journey in Personal Growth\n12:57 The Importance of Owning Your Story\n16:05 Developing Narrative Intelligence with Tools\n18:12 Aligning Personal and Company Values\n21:20 Embracing Change in the Age of AI\n25:40 Navigating Emotional Intelligence in a Rapidly Changing World\n28:20 Sponsor: Prediction Guard\n30:05 Exploring Identity and Self-Perception\n31:19 Creativity and the Human Element in the Age of AI\n36:15 Bridging the Gap: Engaging Those Left Behind\n39:57 Envisioning a Future of Storytelling and Connection\n41:39 See you next time!",
+          "url": "https://www.youtube.com/watch?v=qe1Tu52ccLQ",
+          "published_at": "2026-10-07T21:15:15+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=qe1Tu52ccLQ"
+      }
     }
   ]
 }
