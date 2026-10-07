@@ -76256,6 +76256,34 @@
       "links": {
         "podcast": "https://www.davidsenra.com/episode/ari-emanuel"
       }
+    },
+    {
+      "id": "bfc09316bd2add9860fa",
+      "first_seen_at": "2026-10-07T09:17:24+00:00",
+      "status": "skipped",
+      "title": "Inside Athletic Brewing’s Plan to Shake Up the Beer Industry | Quantum Marketing",
+      "source_title": "Inside Athletic Brewing’s Plan to Shake Up the Beer Industry | Quantum Marketing",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The content focuses on the non-alcoholic beer industry and marketing strategies, with no mention of AI, frontier AI organizations, or related technical topics.",
+      "published_at": "2026-10-07T08:00:30+00:00",
+      "appearances": [
+        {
+          "id": "6f5ef5c04227cd3ba187",
+          "kind": "youtube",
+          "source": "Bloomberg Originals",
+          "family": "bloomberg originals",
+          "guid": "yt:video:cvv5iPwKRyQ",
+          "title": "Inside Athletic Brewing’s Plan to Shake Up the Beer Industry | Quantum Marketing",
+          "description": "Athletic Brewing helped move non-alcoholic beer from the margins to the mainstream. In this episode, Raja Rajamannar meets with Chief Executive Officer Bill Shufelt to unpack how reinventing a product by focusing on craft, wellness and participation can change consumer perceptions and create demand for an emerging category.\n\n--------\nLike this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1\n\nGet unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals\nBloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. \n\nSubscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.\n\nVisit our partner channel Bloomberg News for global news and insight in an instant.",
+          "url": "https://www.youtube.com/watch?v=cvv5iPwKRyQ",
+          "published_at": "2026-10-07T08:00:30+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=cvv5iPwKRyQ"
+      }
     }
   ]
 }
