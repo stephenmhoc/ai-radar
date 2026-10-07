@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Building Resilient Systems with Sam Newman — The Pragmatic Engineer</title>
+      <link>https://newsletter.pragmaticengineer.com/p/building-resilient-systems-with-sam</link>
+      <guid isPermaLink="false">ai-radar:703ae0cd0612706912bd</guid>
+      <pubDate>Wed, 07 Oct 2026 17:19:58 +0000</pubDate>
+      <source url="https://newsletter.pragmaticengineer.com/feed">The Pragmatic Engineer</source>
+      <description>Sam Newman, author of &amp;quot;Building Microservices,&amp;quot; discusses his views on microservices as an architecture of &amp;quot;last resort&amp;quot; and the importance of independent deployment. He introduces his new book, &amp;quot;Building Resilient Distributed Systems,&amp;quot; outlining three rules for distributed systems and the role of observability. The conversation also explores how AI is changing software development, including the concept of &amp;quot;cognitive surrender&amp;quot; to AI and the need for hedging vendor options when integrating AI. Newman emphasizes that LLMs are not world models and that their capabilities are often overestimated, leading to potential issues if not properly understood.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · The Pragmatic Engineer&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.pragmaticengineer.com/p/building-resilient-systems-with-sam"&gt;Building resilient systems with Sam Newman&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>OpenAI: Production Monitoring with Codex: Grafana, Kubernetes, &amp; Security — OpenAI</title>
       <link>https://www.youtube.com/watch?v=DmCaBWv5yG8</link>
       <guid isPermaLink="false">ai-radar:e70730c38cef36b9a644</guid>
