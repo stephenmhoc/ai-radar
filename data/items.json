@@ -76603,6 +76603,34 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/building-resilient-systems-with-sam"
       }
+    },
+    {
+      "id": "c9c691bc16c7764891f8",
+      "first_seen_at": "2026-10-07T20:17:37+00:00",
+      "status": "skipped",
+      "title": "Build custom site annotations with ChatGPT",
+      "source_title": "Build custom site annotations with ChatGPT",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional clip from OpenAI, demonstrating custom site annotations with ChatGPT. AI Radar favors complete interviews, talks, demonstrations, and explainers with durable substance over short promotional content.",
+      "published_at": "2026-10-07T19:36:26+00:00",
+      "appearances": [
+        {
+          "id": "1889552a296751af981c",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:ZcDFZzsp3_Y",
+          "title": "Build custom site annotations with ChatGPT",
+          "description": "Add custom annotation controls and suggested prompts to your website. See how these work with WebMCP to help users edit a scene and enrich expense records using context available to their agent in ChatGPT.",
+          "url": "https://www.youtube.com/watch?v=ZcDFZzsp3_Y",
+          "published_at": "2026-10-07T19:36:26+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=ZcDFZzsp3_Y"
+      }
     }
   ]
 }
