@@ -76198,6 +76198,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai"
       }
+    },
+    {
+      "id": "be259b95cb0977370c8c",
+      "first_seen_at": "2026-10-07T07:17:25+00:00",
+      "status": "skipped",
+      "title": "The Coordination Tax: Why AI Is Burning Out Your Best People | Dan O'Connell, Front",
+      "source_title": "The Coordination Tax: Why AI Is Burning Out Your Best People | Dan O'Connell, Front",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is an interview with the CEO of Front, a customer operations platform, not a frontier AI organization or a person from the target list. The discussion focuses on AI's impact on customer operations, which is not a core area for AI Radar unless it involves a target organization or person.",
+      "published_at": "2026-10-06T18:32:32+00:00",
+      "appearances": [
+        {
+          "id": "0a6e30f3f53ecd790a12",
+          "kind": "youtube",
+          "source": "Eye on AI — YouTube",
+          "family": "eye on ai",
+          "guid": "yt:video:9euD6q_k8Tk",
+          "title": "The Coordination Tax: Why AI Is Burning Out Your Best People | Dan O'Connell, Front",
+          "description": "Everyone assumes AI in customer operations means fewer people and lower costs. The data from 700 customer operations leaders says something more complicated, and more important.\n\nIn this episode, Craig Smith sits down with Dan O'Connell, CEO of Front, the $100M+ customer operations platform backed by Sequoia, for an unusually candid conversation about what's actually happening when enterprises deploy AI in customer support, customer service, and account management. O'Connell's most striking finding from a 700-respondent survey is what he calls the \"coordination tax\": for every hour of actual customer resolution work, organizations spend roughly three hours on internal coordination - handoffs, context sharing, escalation management - and more than 40% of companies don't measure this at all. AI is making this problem worse before it makes it better, because more agentic automation creates more handoffs, more context that needs to be transferred, and more oversight required at escalation points that didn't previously exist. The episode also delivers an economic reality check that most AI coverage skips.\n\nKey Topics Covered:\n● The coordination tax: for every hour of customer resolution, companies spend roughly three hours on internal coordination - handoffs, escalations, context sharing - and more than 40% don't measure this invisible overhead at all\n● Why AI-first organizations in the survey report both the highest technology satisfaction scores and the highest coordination burden, and what that paradox reveals about the current state of enterprise AI deployment\n● Why the vast majority of operators surveyed are using AI to drive net revenue retention and expansion rather than cut headcount, and what that reveals about the actual commercial logic of customer operations AI\n● How AI agents create a \"more work to do more\" paradox: more autonomous handling generates more escalations, more handoffs, and more coordination overhead, partially offsetting efficiency gains until measurement and observability are treated as first-class capabilities\n● What the survey found about AI-driven churn prediction: the most predictive combination is product usage data plus conversation content, and the most important shift is analyzing behavior across multiple contacts within the same account rather than individual interactions in isolation\n\nAs enterprises mature from AI experimentation to AI deployment at scale, this conversation surfaces the operational complexity that most AI marketing glosses over, and introduces a specific, measurable problem (the coordination tax) that will determine whether AI ROI materializes in customer operations or remains perpetually theoretical.\n\nSubscribe to Eye on A.I. for weekly conversations with the people building and deploying the future of AI. \nCraig Smith on X: https://x.com/craigss \nEYE on A.I. on X: https://x.com/EyeOn_AI \n\nConnect with Dan O'Connell\nWebsite: https://www.linkedin.com/in/droconnell \n\nTimestamps",
+          "url": "https://www.youtube.com/watch?v=9euD6q_k8Tk",
+          "published_at": "2026-10-06T18:32:32+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=9euD6q_k8Tk"
+      }
     }
   ]
 }
