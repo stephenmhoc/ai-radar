@@ -76055,6 +76055,90 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/the-state-of-the-tech-industry-in"
       }
+    },
+    {
+      "id": "e43932380470e834cdcb",
+      "first_seen_at": "2026-10-07T02:20:47+00:00",
+      "status": "published",
+      "title": "Kevin Mandia on Cyber Defense in the Agentic Era",
+      "source_title": "Building Cyber Defense for the Agentic Era",
+      "short_summary": "Kevin Mandia speaks with a16z’s David George about how AI shifts cyberattack economics and necessitates autonomous defense. He outlines Armadin's continuous AI-driven testing, findings from over 90 production zero-days, and why humans cannot remain in real-time detection loops.",
+      "long_summary": "Armadin founder and CEO Kevin Mandia joins a16z General Partner David George to examine cybersecurity dynamics as adversaries begin operating at machine speed. Mandia explains that AI alters attack economics by enabling automated adversaries to explore thousands of vulnerability paths concurrently, forcing defensive architectures to become autonomous as well. He describes Armadin’s model of continuously probing client environments with AI, noting that the company discovered more than 90 zero-days in production environments over the past year. The conversation also details why human analysts can no longer stay directly inside the detect-and-respond loop, draws lessons from the Hugging Face security incident, and maps out anticipated changes to security operations centers and the broader security stack.",
+      "reason": "Substantive, in-depth discussion with veteran cybersecurity executive Kevin Mandia on autonomous AI agent threats, automated zero-day discovery, and the transition to machine-speed defense.",
+      "published_at": "2026-10-06T14:30:37+00:00",
+      "appearances": [
+        {
+          "id": "859f1c421055f3f74e32",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:cJsHel27Z6M",
+          "title": "Building Cyber Defense for the Agentic Era",
+          "description": "a16z General Partner David George sits down with Armadin founder and CEO Kevin Mandia to discuss what happens to cybersecurity when attackers can operate at machine speed.\n\nAfter 30 years in security and building Mandiant, Kevin says AI convinced him to get back on the field. He explains how AI changes the economics of cyberattacks, allowing attackers to probe thousands of paths simultaneously, and why that means defense will ultimately need to become autonomous too. \n\nThey also unpack Armadin’s approach: continuously attacking customers’ systems with AI to find exploitable vulnerabilities before adversaries do, then building toward autonomous defenses that can respond in real time. Kevin shares what Armadin has learned from finding more than 90 zero-days in production environments this year, why humans can’t remain in the detect-and-respond loop, and how the entire security stack could change over the next few years.\n\nTimestamps:\n00:00 - Intro\n01:06 - Why Kevin came back to the field\n04:19 - What AI attacks look like today\n07:18 - Nation state vs AI drone swarms\n14:34 - Why pen testing is dead\n18:36 - Autonomous defense explained\n21:22 - The future of the SOC\n27:04 - Lessons from the Hugging Face incident\n35:44 - Building a company at AI speed\n\nResources:\nLearn more about Kevin Mandia and Armadin: https://www.armadin.com/team-members/kevin-mandia\nFollow David George on X: https://x.com/DavidGeorge83\nLearn more about Armadin: https://www.armadin.com/\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=cJsHel27Z6M",
+          "published_at": "2026-10-06T14:30:37+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=cJsHel27Z6M"
+      }
+    },
+    {
+      "id": "344b50643674153f66d9",
+      "first_seen_at": "2026-10-07T02:20:47+00:00",
+      "status": "skipped",
+      "title": "The only reason why Instagram worked early on",
+      "source_title": "The only reason why Instagram worked early on",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-06T20:00:10+00:00",
+      "appearances": [
+        {
+          "id": "3ec185a6ee0c0098439d",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:C8eNLnnCmZ0",
+          "title": "The only reason why Instagram worked early on",
+          "description": "Instagram turns 16 today. \n\nBefore Instagram, there was Burbn.\n\nSystrom named it after his taste for bourbon. It let you check in somewhere, post your plans, earn points for hanging out with friends, and share a photo.\n\nHe and Mike Krieger cut everything except photos, comments and likes, and rebuilt it in about eight weeks. Instant camera, telegram. Instagram.\n\nSource: Tim Ferriss",
+          "url": "https://www.youtube.com/shorts/C8eNLnnCmZ0",
+          "published_at": "2026-10-06T20:00:10+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/C8eNLnnCmZ0"
+      }
+    },
+    {
+      "id": "716a010db408aa4beea5",
+      "first_seen_at": "2026-10-07T02:20:58+00:00",
+      "status": "skipped",
+      "title": "OpenAI: Introducing the Decisions API",
+      "source_title": "Introducing the Decisions API",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a brief five-minute promotional launch video from OpenAI rather than a substantial interview, in-depth technical talk, or durable explainer.",
+      "published_at": "2026-10-06T21:33:36+00:00",
+      "appearances": [
+        {
+          "id": "84e5257a3c9be834b07d",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:FB6oCmrIj-Y",
+          "title": "Introducing the Decisions API",
+          "description": "Introducing the Decisions API: a fast way to turn text and images into actions in your app. Give the model an input, define a question and the possible answers, and use its choice to decide what happens next.\n\nPowered by GPT-6 Luna, the Decisions API focuses on a small set of choices to make interactions feel responsive. See how it works alongside GPT-Live-1 and a Microduck to bring voice, visual understanding, and quick decisions together.\n\nChapters:\n00:00 Introducing the Decisions API\n00:42 Classifying text and routing sales leads\n01:17 Making decisions from images\n02:05 Adding expression to voice conversations\n03:05 Guiding Lavender the robot\n05:05 What will you build?",
+          "url": "https://www.youtube.com/watch?v=FB6oCmrIj-Y",
+          "published_at": "2026-10-06T21:33:36+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=FB6oCmrIj-Y"
+      }
     }
   ]
 }

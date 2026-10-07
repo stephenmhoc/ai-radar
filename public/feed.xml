@@ -14,6 +14,14 @@
       <description>This article summarizes a keynote delivered at the LDX3 engineering leadership conference, attended by over 2,000 engineering leaders. The keynote, informed by visits to OpenAI and Anthropic, and data from GitHub, Factory AI, and Linear, provides a snapshot of the tech industry in 2026. Key trends include the unprecedented speed of change driven by AI, with engineers largely ceasing to write code by hand and increasingly working with multiple parallel agents. The article highlights the rapid rise of agent-generated pull requests and issues on platforms like GitHub and Linear, and the mainstream adoption of agent skills. It also discusses the fading of the traditional Integrated Development Environment (IDE) as coding tools evolve into conversation and monitoring interfaces for agents.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · The Pragmatic Engineer&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://newsletter.pragmaticengineer.com/p/the-state-of-the-tech-industry-in"&gt;The state of the tech industry in 2026&lt;/a&gt;</description>
     </item>
     <item>
+      <title>Kevin Mandia on Cyber Defense in the Agentic Era — a16z</title>
+      <link>https://www.youtube.com/watch?v=cJsHel27Z6M</link>
+      <guid isPermaLink="false">ai-radar:e43932380470e834cdcb</guid>
+      <pubDate>Tue, 06 Oct 2026 14:30:37 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UC9cn0TuPq4dnbTY-CBsm8XA">a16z</source>
+      <description>Armadin founder and CEO Kevin Mandia joins a16z General Partner David George to examine cybersecurity dynamics as adversaries begin operating at machine speed. Mandia explains that AI alters attack economics by enabling automated adversaries to explore thousands of vulnerability paths concurrently, forcing defensive architectures to become autonomous as well. He describes Armadin’s model of continuously probing client environments with AI, noting that the company discovered more than 90 zero-days in production environments over the past year. The conversation also details why human analysts can no longer stay directly inside the detect-and-respond loop, draws lessons from the Hugging Face security incident, and maps out anticipated changes to security operations centers and the broader security stack.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · a16z&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=cJsHel27Z6M"&gt;Building Cyber Defense for the Agentic Era&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>The Cyber Risk Discourse is Broken — Interconnects</title>
       <link>https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken</link>
       <guid isPermaLink="false">ai-radar:eb1656b05f2952e1e625</guid>
