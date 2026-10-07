@@ -76659,6 +76659,286 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=qe1Tu52ccLQ"
       }
+    },
+    {
+      "id": "65ba2e299f7e4c9f666b",
+      "first_seen_at": "2026-10-07T22:17:29+00:00",
+      "status": "skipped",
+      "title": "Stack Overflow - From Idea to Product | DevDay 2026",
+      "source_title": "Stack Overflow - From Idea to Product | DevDay 2026",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes are too brief to support the required 4-8 sentence detailed summary without hallucinating information.",
+      "published_at": "2026-10-07T21:10:48+00:00",
+      "appearances": [
+        {
+          "id": "53416d198b6f132375c2",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:3glzJZ-_qB8",
+          "title": "Stack Overflow - From Idea to Product | DevDay 2026",
+          "description": "See how small teams at Stack Overflow used Codex to build Stack Overflow for Agents and reimagine Stack Internal. Take away lessons for accelerating R&D and bringing new products to market.",
+          "url": "https://www.youtube.com/watch?v=3glzJZ-_qB8",
+          "published_at": "2026-10-07T21:10:48+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=3glzJZ-_qB8"
+      }
+    },
+    {
+      "id": "5571502e29a81d66e827",
+      "first_seen_at": "2026-10-07T22:17:35+00:00",
+      "status": "published",
+      "title": "Higgsfield: Building Agents That Provision Their Own Compute",
+      "source_title": "Higgsfield - Building Agents That Provision Their Own Compute | DevDay 2026",
+      "short_summary": "In this OpenAI DevDay session, Higgsfield examines how agents select models and provision their own compute. The presentation details tradeoffs between dedicated GPUs and hosted models, methods for maintaining predictable throughput, and scenarios where the approach can fail.",
+      "long_summary": "This OpenAI DevDay talk explores how Higgsfield develops agents capable of selecting models and provisioning their own compute. The session discusses the technical considerations surrounding when to deploy dedicated GPUs versus relying on hosted models. It addresses practical methods for delivering predictable throughput across agent workloads. Furthermore, the presentation covers the specific limitations and potential failure modes of this compute provisioning approach.",
+      "reason": "Official OpenAI DevDay session covering agent architecture, inference compute provisioning, and GPU infrastructure tradeoffs.",
+      "published_at": "2026-10-07T21:10:48+00:00",
+      "appearances": [
+        {
+          "id": "fac6110bb906d860835d",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:8804JYm81cc",
+          "title": "Higgsfield - Building Agents That Provision Their Own Compute | DevDay 2026",
+          "description": "Explore how Higgsfield agents choose models and provision their own compute. Learn when to use dedicated GPUs or hosted models, how to deliver predictable throughput, and where the approach can fail.",
+          "url": "https://www.youtube.com/watch?v=8804JYm81cc",
+          "published_at": "2026-10-07T21:10:48+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=8804JYm81cc"
+      }
+    },
+    {
+      "id": "4110ecf0bdc4ff436fc7",
+      "first_seen_at": "2026-10-07T22:17:40+00:00",
+      "status": "skipped",
+      "title": "How OpenAI Puts ChatGPT to Work | DevDay 2026",
+      "source_title": "How OpenAI Puts ChatGPT to Work | DevDay 2026",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes are too brief to confirm substantive technical depth or support a useful summary without inventing details.",
+      "published_at": "2026-10-07T21:10:48+00:00",
+      "appearances": [
+        {
+          "id": "9627b8eb6d6092fc474e",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:SXCfs7mitPo",
+          "title": "How OpenAI Puts ChatGPT to Work | DevDay 2026",
+          "description": "See how OpenAI’s teams use ChatGPT to manage launches, research competitors, and turn expertise into tools. Take practical ideas back to your own work.",
+          "url": "https://www.youtube.com/watch?v=SXCfs7mitPo",
+          "published_at": "2026-10-07T21:10:48+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=SXCfs7mitPo"
+      }
+    },
+    {
+      "id": "ce7dba8dc349cf158b07",
+      "first_seen_at": "2026-10-07T22:17:44+00:00",
+      "status": "skipped",
+      "title": "Codex Has Left The Laptop | DevDay 2026",
+      "source_title": "Codex Has Left The Laptop | DevDay 2026",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes are insufficient to support a detailed summary without inventing facts.",
+      "published_at": "2026-10-07T21:10:48+00:00",
+      "appearances": [
+        {
+          "id": "8e13c0cd40f7b19654bb",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:XkKdbPhIvbY",
+          "title": "Codex Has Left The Laptop | DevDay 2026",
+          "description": "Explore what’s new in Codex across the CLI, app, and web. Through live demos, see how to move from delegating individual tasks to letting Codex tackle entire problems and goals.",
+          "url": "https://www.youtube.com/watch?v=XkKdbPhIvbY",
+          "published_at": "2026-10-07T21:10:48+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=XkKdbPhIvbY"
+      }
+    },
+    {
+      "id": "b96b1255961b28f92804",
+      "first_seen_at": "2026-10-07T22:17:50+00:00",
+      "status": "skipped",
+      "title": "From Single Player to Multiplayer with Codex | DevDay 2026",
+      "source_title": "From Single Player to Multiplayer with Codex | DevDay 2026",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes are too brief to support a substantive summary without inventing details.",
+      "published_at": "2026-10-07T21:10:48+00:00",
+      "appearances": [
+        {
+          "id": "69421a850e7bcc2189ef",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:aDTPTwnrRyA",
+          "title": "From Single Player to Multiplayer with Codex | DevDay 2026",
+          "description": "Follow a 2am outage from the first Slack message to a reviewed fix. See how voice, Appshots, plugins, and meeting notes help a persistent personal agent investigate and keep the team informed.",
+          "url": "https://www.youtube.com/watch?v=aDTPTwnrRyA",
+          "published_at": "2026-10-07T21:10:48+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=aDTPTwnrRyA"
+      }
+    },
+    {
+      "id": "0697cef56e22e5b397ca",
+      "first_seen_at": "2026-10-07T22:17:55+00:00",
+      "status": "skipped",
+      "title": "Qodo: The Last Human Code Review",
+      "source_title": "Qodo - The Last Human Code Review | DevDay 2026",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes are too brief to support a detailed summary without hallucinating information.",
+      "published_at": "2026-10-07T21:10:48+00:00",
+      "appearances": [
+        {
+          "id": "f8fc6fc45ffc55df564c",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:bQ3-pXCpCTg",
+          "title": "Qodo - The Last Human Code Review | DevDay 2026",
+          "description": "See how Qodo uses OpenAI to review AI-generated code. Explore an adversarial reviewer that challenges coding agents’ assumptions and output, and learn when model confidence still needs human judgment.",
+          "url": "https://www.youtube.com/watch?v=bQ3-pXCpCTg",
+          "published_at": "2026-10-07T21:10:48+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=bQ3-pXCpCTg"
+      }
+    },
+    {
+      "id": "c1a5cfa0b85a3fb325b1",
+      "first_seen_at": "2026-10-07T22:18:01+00:00",
+      "status": "skipped",
+      "title": "ClawLabs: Building Open Source Together | DevDay 2026",
+      "source_title": "ClawLabs: Building Open Source Together | DevDay 2026",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes are too brief to generate a factual 4-8 sentence summary without inventing details.",
+      "published_at": "2026-10-07T21:10:48+00:00",
+      "appearances": [
+        {
+          "id": "1427daff851bab9d190c",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:wZYnJfL4c2Y",
+          "title": "ClawLabs: Building Open Source Together | DevDay 2026",
+          "description": "See how agents help small open-source teams build together. Explore workflows for sharing context across projects and working with contributors, with live demos of cloud sessions and computer use.",
+          "url": "https://www.youtube.com/watch?v=wZYnJfL4c2Y",
+          "published_at": "2026-10-07T21:10:48+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=wZYnJfL4c2Y"
+      }
+    },
+    {
+      "id": "849ec908185a466404bb",
+      "first_seen_at": "2026-10-07T22:18:16+00:00",
+      "status": "skipped",
+      "title": "Stop Overpaying for Intelligence | DevDay",
+      "source_title": "Stop Overpaying for Intelligence | DevDay 2026",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes are too brief to support a substantive, grounded summary without inventing details beyond the short teaser blurb.",
+      "published_at": "2026-10-07T21:10:51+00:00",
+      "appearances": [
+        {
+          "id": "8748de0138dab863a8d6",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:_nmlHbSB8kM",
+          "title": "Stop Overpaying for Intelligence | DevDay 2026",
+          "description": "Cut AI costs while preserving quality. Learn to measure cost per completed task, choose models and reasoning effort, and use prompt caching, Programmatic Tool Calling, and the Batch API.",
+          "url": "https://www.youtube.com/watch?v=_nmlHbSB8kM",
+          "published_at": "2026-10-07T21:10:51+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=_nmlHbSB8kM"
+      }
+    },
+    {
+      "id": "7c88c4fb598560c9a718",
+      "first_seen_at": "2026-10-07T22:18:22+00:00",
+      "status": "skipped",
+      "title": "OpenAI — Build Plugins for ChatGPT",
+      "source_title": "Build Plugins for ChatGPT",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The provided publisher notes are too brief to support a detailed summary and describe a short promotional demonstration rather than a substantive interview, technical talk, or deep explainer.",
+      "published_at": "2026-10-07T21:34:02+00:00",
+      "appearances": [
+        {
+          "id": "200ee00d62b767d4dcd2",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:LiNhqbetrbU",
+          "title": "Build Plugins for ChatGPT",
+          "description": "Explore plugin extensions through Meetings and OpenAI Developers. See how a custom interface can live beside a conversation and bring selected context into your work with ChatGPT.",
+          "url": "https://www.youtube.com/watch?v=LiNhqbetrbU",
+          "published_at": "2026-10-07T21:34:02+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=LiNhqbetrbU"
+      }
+    },
+    {
+      "id": "6cbd96074915c159d4ad",
+      "first_seen_at": "2026-10-07T22:18:28+00:00",
+      "status": "skipped",
+      "title": "OpenAI: Introducing GPT-6 in ChatGPT with Intelligent UI",
+      "source_title": "Introducing GPT-6 in ChatGPT with Intelligent UI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Excluded as a promotional product launch video and teaser rather than a substantial interview, technical explainer, or in-depth talk.",
+      "published_at": "2026-10-07T21:55:41+00:00",
+      "appearances": [
+        {
+          "id": "5a06b93831ebf37ab9c0",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:IsL4dVezs18",
+          "title": "Introducing GPT-6 in ChatGPT with Intelligent UI",
+          "description": "ChatGPT just got a lot more visual—introducing Intelligent UI.\n\nIntelligent UI allows ChatGPT to answer quickly with fully interactive user interfaces that make everyday answers more visual. It makes learning complex topics easier, and it quickly creates tools to solve a task right in the moment.\n\nOh, and also...GPT-6 is coming to ChatGPT. For everyone. GPT‑6 in ChatGPT is powered by GPT‑6 Sol for Plus, Pro, Business, and Enterprise tiers, and GPT‑6 Luna for Free and Go tiers.\n\nGPT‑6 with Intelligent UI starts rolling out globally to ChatGPT Plus, Pro, Business and Enterprise tiers today in the Chat tab. \n\nStarting tomorrow, the rollout expands to Free and Go tiers.\n\nhttps://openai.com/index/gpt-6-for-everyone/",
+          "url": "https://www.youtube.com/watch?v=IsL4dVezs18",
+          "published_at": "2026-10-07T21:55:41+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=IsL4dVezs18"
+      }
     }
   ]
 }
