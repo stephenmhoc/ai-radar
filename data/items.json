@@ -76226,6 +76226,36 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=9euD6q_k8Tk"
       }
+    },
+    {
+      "id": "ded828e8d9d6490de6fa",
+      "first_seen_at": "2026-10-07T08:17:24+00:00",
+      "status": "skipped",
+      "title": "Channeling Rage, Rolling Calls & Building an Entertainment Empire | Ari Emanuel, WME & TKO",
+      "source_title": "Channeling Rage, Rolling Calls & Building an Entertainment Empire | Ari Emanuel, WME & TKO",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The content focuses on Ari Emanuel's career in entertainment, including his involvement with UFC, WME, and TKO. It discusses business deals, personal insights, and lessons from other figures in the entertainment industry. There is no mention of AI, frontier AI organizations, or any of the qualifying topics for AI Radar.",
+      "published_at": "2026-10-07T08:00:00+00:00",
+      "appearances": [
+        {
+          "id": "ce502afa844bcaa02828",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "b2fb32e6-c20f-11f1-88e3-a75966f52347",
+          "title": "Channeling Rage, Rolling Calls & Building an Entertainment Empire | Ari Emanuel, WME & TKO",
+          "description": "Ari Emanuel is the co-founder of Endeavor, executive chair and CEO of TKO, executive chairman of WME Group, and founder of MARI. We talk about his $4.2 billion bet on the UFC, the ESPN deal that proved it right, lessons from Egon Durban and David Geffen, and how constantly making calls creates opportunities you can’t plan for. Ari also opens up about dyslexia, decades of insecurity, and learning to enjoy his life without losing the drive that built his businesses.\n\nShow notes: https://www.davidsenra.com/episode/ari-emanuel\n\nMade possible by\n\nRamp: https://ramp.com\n\nAppLovin: https://applovin.com/senra\n\nDeel: https://deel.com/senra\n\nChapters\n\n(00:00:00) The UFC negotiation that blew up\n\n(00:03:33) Meeting Egon Durban and buying IMG\n\n(00:07:30) Betting $4.2 billion on the UFC\n\n(00:15:16) Getting the ESPN deal done\n\n(00:22:58) Taking over William Morris\n\n(00:30:02) Starting Endeavor with a table and a phone\n\n(00:32:53) Why you won’t remember the extra $400 million\n\n(00:35:01) Stop telling yourself stories\n\n(00:39:21) David Geffen: Get in traffic and get hit\n\n(00:45:19) Why Ari rolls the calls\n\n(00:49:35) Building your own school of entrepreneurship\n\n(00:51:56) Learning from Elon Musk and betting on live events\n\n(00:53:58) Learning from Hollywood’s greatest agents\n\n(01:00:23) Outgrowing rage without losing ambition\n\n(01:10:10) Psychedelics, purpose, and letting go of legacy\n\n(01:18:18) How Entourage changed Ari’s life\n\n(01:22:32) Ari never had a plan B\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/ari-emanuel",
+          "published_at": "2026-10-07T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/ari-emanuel"
+      }
     }
   ]
 }
