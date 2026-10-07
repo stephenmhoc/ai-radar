@@ -76487,6 +76487,92 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/mQybmV246dc"
       }
+    },
+    {
+      "id": "0f4af9787f5d72cbbd38",
+      "first_seen_at": "2026-10-07T17:17:34+00:00",
+      "status": "skipped",
+      "title": "OutSystems CEO Woodson Martin on Enterprise Software at AI Speed",
+      "source_title": "Software That Never Breaks: OutSystems CEO Woodson on Building Enterprise-Grade Apps at AI Speed",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Woodson Martin and OutSystems are not on the target roster, and this sponsored enterprise software interview does not qualify as frontier AI research, core infrastructure, or durable analysis.",
+      "published_at": "2026-10-07T17:00:00+00:00",
+      "appearances": [
+        {
+          "id": "15101fb113f9a8110786",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "dfa41bc0-c208-11f1-a559-176e7674ab8f",
+          "title": "Software That Never Breaks: OutSystems CEO Woodson Martin on Building Enterprise-Grade Apps at ...",
+          "description": "OutSystems CEO Woodson Martin joins Nathan to discuss how enterprise software can evolve at AI speed without breaking critical operations. Martin explains how an intermediate layer of abstract modeling allows AI agents to build reliably through deterministic code generation, ensuring role-based security across heavily regulated industries. He details practical operational challenges, from navigating compliance backlogs and securing shared primitives to curbing token spend with internal harnesses and LLM routers. Finally, they explore why incumbent platforms with deep architectural trust and industry specialization hold a distinct edge over AI-native startups.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/software-that-never-breaks-outsystems-ceo-woodson-martin-on-building-enterprise-grade-apps-at-ai-speed/\nSponsors:\n\nParallel: Parallel provides enterprise-grade web search APIs for AI agents, offering the optimal balance of quality, speed, and cost. Get started for free at https://parallel.ai/tcr\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nOutSystems: OutSystems is the leading agentic systems platform, empowering enterprises to build, coordinate, and govern AI agents and mission-critical applications securely. Learn more and start building your agentic future at https://outsystems.com/tcr\n\nTasklet: Tasklet empowers your business with AI agents that connect to your tools and automate recurring workflows with no code required. Visit https://tasklet.ai and use code cog rev for $50 in free credits\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(03:11) OutSystems leadership transition\n\n(07:46) Software that never breaks\n\n(12:14) What enterprise ready means\n\n(19:43) Managing cybersecurity risks (Part 1)\n\n(19:48) Sponsors: Parallel | Claude\n\n(22:43) Managing cybersecurity risks (Part 2)\n\n(27:31) Optimizing token spend\n\n(35:32) Balancing flexibility and security (Part 1)\n\n(35:38) Sponsors: OutSystems | Tasklet\n\n(38:34) Balancing flexibility and security (Part 2)\n\n(43:01) Modernizing legacy systems\n\n(50:25) Strategic AI experimentation\n\n(54:31) Future software user experience\n\n(59:32) Specialization versus commoditization\n\n(01:03:24) Hiring in AI era\n\n(01:06:50) Episode Outro\n\n(01:09:24) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing",
+          "url": "https://www.cognitiverevolution.ai/software-that-never-breaks-outsystems-ceo-woodson-martin-on-building-enterprise-grade-apps-at-ai-speed/",
+          "published_at": "2026-10-07T17:00:00+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        },
+        {
+          "id": "f8349f1d0b8657fd4875",
+          "kind": "youtube",
+          "source": "The Cognitive Revolution — YouTube",
+          "family": "the cognitive revolution",
+          "guid": "yt:video:Y2qs-BKoMb4",
+          "title": "Software That Never Breaks: OutSystems CEO Woodson on Building Enterprise-Grade Apps at AI Speed",
+          "description": "OutSystems CEO Woodson Martin joins Nathan to discuss how enterprise software can evolve at AI speed without breaking critical operations. Martin explains how an intermediate layer of abstract modeling allows AI agents to build reliably through deterministic code generation, ensuring role-based security across heavily regulated industries. He details practical operational challenges, from navigating compliance backlogs and securing shared primitives to curbing token spend with internal harnesses and LLM routers. Finally, they explore why incumbent platforms with deep architectural trust and industry specialization hold a distinct edge over AI-native startups.\n\nFor full show notes, links, and references, read the episode page:\nhttps://www.cognitiverevolution.ai/software-that-never-breaks-outsystems-ceo-woodson-martin-on-building-enterprise-grade-apps-at-ai-speed/\n\nSPONSORS:\nParallel: Parallel provides enterprise-grade web search APIs for AI agents, offering the optimal balance of quality, speed, and cost. Get started for free at https://parallel.ai/tcr\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nOutSystems: OutSystems is the leading agentic systems platform, empowering enterprises to build, coordinate, and govern AI agents and mission-critical applications securely. Learn more and start building your agentic future at https://outsystems.com/tcr\n\nTasklet: Tasklet empowers your business with AI agents that connect to your tools and automate recurring workflows with no code required. Visit https://tasklet.ai and use code cog rev for $50 in free credits\n\nCHAPTERS:\n(00:00) About the Episode\n(03:11) OutSystems leadership transition\n(07:46) Software that never breaks\n(12:14) What enterprise ready means\n(19:43) Managing cybersecurity risks (Part 1)\n(19:48) Sponsors: Parallel | Claude\n(22:43) Managing cybersecurity risks (Part 2)\n(27:31) Optimizing token spend\n(35:32) Balancing flexibility and security (Part 1)\n(35:38) Sponsors: OutSystems | Tasklet\n(38:34) Balancing flexibility and security (Part 2)\n(43:01) Modernizing legacy systems\n(50:25) Strategic AI experimentation\n(54:31) Future software user experience\n(59:32) Specialization versus commoditization\n(01:03:24) Hiring in AI era\n(01:06:50) Episode Outro\n(01:09:24) Outro\n\nPRODUCED BY:\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\nWebsite: https://www.cognitiverevolution.ai\nTwitter (Podcast): https://x.com/cogrev_podcast\nTwitter (Nathan): https://x.com/labenz\nLinkedIn: https://linkedin.com/in/nathanlabenz/\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.youtube.com/watch?v=Y2qs-BKoMb4",
+          "published_at": "2026-10-07T17:00:26+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/software-that-never-breaks-outsystems-ceo-woodson-martin-on-building-enterprise-grade-apps-at-ai-speed/",
+        "youtube": "https://www.youtube.com/watch?v=Y2qs-BKoMb4"
+      }
+    },
+    {
+      "id": "cf18add81e3ed14fa58e",
+      "first_seen_at": "2026-10-07T17:17:40+00:00",
+      "status": "skipped",
+      "title": "Why Every Traded Personal Agents for One Company Agent",
+      "source_title": "Why Every Traded Personal Agents for One Company Agent",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are not from a target organization, and the conversation focuses on internal company tooling and workflows at Every rather than consequential AI infrastructure or frontier model research.",
+      "published_at": "2026-10-07T17:11:13+00:00",
+      "appearances": [
+        {
+          "id": "1c7c4af385b940812169",
+          "kind": "podcast",
+          "source": "AI & I",
+          "family": "ai & i",
+          "guid": "flightcast:01M4BDW19ZFPED9TQ4S5DP60PY",
+          "title": "Why Every Traded Personal Agents for One Company Agent",
+          "description": "Subscribe to Every (free for 14 days): every.to/podcast-every-offer?utm_source=podcast&utm_medium=audio&utm_campaign=companyagentepisode \nOn this week's episode of The Every Podcast, Dan Shipper sits down with Willie Williams, Every's head of platform and one of the driving forces behind the Every Agent, which launched this week. They discuss how Every went from everyone running their own OpenClaw to relying on one shared company agent—and where they think personal agents belong in everyday life. \nLinks to resources mentioned in the episode:\nWillie Williams on X: https://x.com/bigwilliestyle\nThe Every Agent: https://every.to/agent?utm_source=podcast&utm_campaign=podcast&utm_content=1006companyagent\nOpenClaw: https://openclaw.ai\nTend, Dan's open-source feed app: https://every.to/tend?utm_source=podcast&utm_campaign=podcast&utm_content=1006companyagent\nEvery’s Vibe Check on Dots: https://every.to/vibe-check/vibe-check-dots-always-on-agents-in-chatgpt?utm_source=podcast&utm_campaign=podcast&utm_content=1006companyagent\nDot from OpenAI: https://openai.com/index/introducing-dots/\n0:00 Introduction\n5:58 How OpenClaw spread through Every \n11:13 Why everyone's personal agents eventually died \n14:51 The difference between building for builders and building for operators \n16:20 Why work will run on company agents while personal agents will stay personal \n19:56 How engineering management has changed in the age of AI \n21:43 Using an AI-powered feed to see everything happening across a product launch \n23:53 Why Willie's token usage fell off a cliff \n29:05 The benefit of having separate AI coaches for each part of your life \n31:45 How Every is building its agent to surface information unprompted",
+          "url": "https://feeds.transistor.fm/how-do-you-use-chatgpt",
+          "published_at": "2026-10-07T17:11:13+00:00",
+          "hosts": [
+            "Dan Shipper"
+          ]
+        },
+        {
+          "id": "6f2ec13a89d632cad146",
+          "kind": "youtube",
+          "source": "AI & I — YouTube",
+          "family": "ai & i",
+          "guid": "yt:video:_pcy1_jU27k",
+          "title": "Why Every Traded Personal Agents for One Company Agent",
+          "description": "Subscribe to Every (free for 14 days): every.to/youtube-every-offer?utm_source=podcast&utm_medium=audio&utm_campaign=companyagentepisode \n\nOn this week's episode of The Every Podcast, Dan Shipper sits down with Willie Williams, Every's head of platform and one of the driving forces behind the Every Agent, which launched this week. They discuss how Every went from everyone running their own OpenClaw to relying on one shared company agent—and where they think personal agents belong in everyday life. \n\nLinks to resources mentioned in the episode:\n\n• Willie Williams on X: https://x.com/bigwilliestyle\n• The Every Agent: https://every.to/agent?utm_source=podcast&utm_campaign=podcast&utm_content=1006companyagent\n• OpenClaw: https://openclaw.ai\n• Tend, Dan's open-source feed app: https://every.to/tend?utm_source=podcast&utm_campaign=podcast&utm_content=1006companyagent\n• Every’s Vibe Check on Dots: https://every.to/vibe-check/vibe-check-dots-always-on-agents-in-chatgpt?utm_source=podcast&utm_campaign=podcast&utm_content=1006companyagent\n• Dot from OpenAI: https://openai.com/index/introducing-dots/\n\n0:00 Introduction\n5:58 How OpenClaw spread through Every \n11:13 Why everyone's personal agents eventually died \n14:51 The difference between building for builders and building for operators \n16:20 Why work will run on company agents while personal agents will stay personal \n19:56 How engineering management has changed in the age of AI \n21:43 Using an AI-powered feed to see everything happening across a product launch \n23:53 Why Willie's token usage fell off a cliff \n29:05 The benefit of having separate AI coaches for each part of your life \n31:45 How Every is building its agent to surface information unprompted",
+          "url": "https://www.youtube.com/watch?v=_pcy1_jU27k",
+          "published_at": "2026-10-07T17:12:09+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.transistor.fm/how-do-you-use-chatgpt",
+        "youtube": "https://www.youtube.com/watch?v=_pcy1_jU27k"
+      }
     }
   ]
 }
