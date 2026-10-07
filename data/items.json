@@ -76370,6 +76370,67 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=N5kTmoCKbe0"
       }
+    },
+    {
+      "id": "07d214d9b5fe245a30e0",
+      "first_seen_at": "2026-10-07T14:17:22+00:00",
+      "status": "skipped",
+      "title": "Finally, the year of Linux #aiagents #linux",
+      "source_title": "Finally, the year of Linux #aiagents #linux",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-07T14:00:26+00:00",
+      "appearances": [
+        {
+          "id": "b19a490e03898e87a293",
+          "kind": "youtube",
+          "source": "Joanna Stern",
+          "family": "joanna stern",
+          "guid": "yt:video:_R8wX8bq3JU",
+          "title": "Finally, the year of Linux #aiagents #linux",
+          "description": "AI agents like Meta’s Muse and OpenAI’s Dot have their own Linux computers. Yes, that Linux—the operating system every nerd has been trying to get you to install for decades.",
+          "url": "https://www.youtube.com/shorts/_R8wX8bq3JU",
+          "published_at": "2026-10-07T14:00:26+00:00",
+          "hosts": [
+            "Joanna Stern"
+          ]
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/_R8wX8bq3JU"
+      }
+    },
+    {
+      "id": "3cfd90bc39e4478fbaef",
+      "first_seen_at": "2026-10-07T14:17:32+00:00",
+      "status": "published",
+      "title": "Stacklok Founders Joe Beda and Craig McLuckie on Building Cloud-Native AI Agent Infrastructure",
+      "source_title": "Can a Cloud-Native Harness Make Agents Reliable Beyond the Desktop?",
+      "short_summary": "Kubernetes co-creators Craig McLuckie and Joe Beda discuss Stacklok's approach to shifting AI coding agents from desktop environments to cloud-native infrastructure using their open-source harness Mecatl and MCP platform ToolHive.",
+      "long_summary": "Kubernetes co-creators Craig McLuckie and Joe Beda are pivoting their startup Stacklok toward building cloud-native infrastructure for enterprise AI agents. While coding agents commonly run locally on developer desktops, Stacklok argues enterprise governance, intellectual property protection, and lifecycle management require decoupling agent workflows from local machines. To address this, Stacklok launched Mecatl, an open-source harness designed to separate the core agent loop from model providers, client interfaces, session state, and execution environments like tool calling and bash execution. The company has also developed ToolHive, an open-source system for deploying, governing, and managing Model Context Protocol (MCP) servers within Kubernetes environments, alongside an AI Gateway focused on access controls, budgets, and provider routing. Stacklok plans to monetize these open-source tools through a commercial enterprise control plane offering unified identity, authorization, auditing, and policy enforcement across multi-cloud and multi-cluster deployments.",
+      "reason": "Features an in-depth technical interview with Kubernetes co-creators Craig McLuckie and Joe Beda about engineering cloud-native infrastructure, harnesses, and MCP tooling for enterprise AI agents.",
+      "published_at": "2026-10-07T14:10:45+00:00",
+      "appearances": [
+        {
+          "id": "d8d9be03529c18e33a68",
+          "kind": "newsletter",
+          "source": "Latent Space — Newsletter",
+          "family": "latent space",
+          "guid": "https://www.latent.space/p/stacklok",
+          "title": "Can a Cloud-Native Harness Make Agents Reliable Beyond the Desktop?",
+          "description": "At a high level, coding agents have a basic architecture: an LLM calls tools in a loop, while carrying forward the required context. Since that’s \neasiest to implement locally\n, many coding agents started out as terminal tools and then desktop apps (Claude Code famously began as a CLI tool). But as the \nopen laptop meme\n illustrates, modern agent harnesses have \nfrustrating limitations if they’re not able to be managed in the cloud\n.\n\nSince 2025, both OpenAI and Anthropic have been trying to \nshift their harnesses more into the cloud\n — but with varying levels of success. The challenges include keeping sessions reliable, isolating tool execution and preserving context.\n\nThis sounds a lot like \ncontainer orchestration in the early 2010s\n, from which emerged the open source \nKubernetes\n in 2014. Kubernetes, developed by Google, became the dominant open source system for deploying and managing cloud applications at scale — it kickstarted the \n“cloud native” era of computing\n.\n\nKubernetes uses control loops to keep applications running, recover from failures, and scale when needed. \nWhat if coding agents could be managed in the same way?\n\nThat’s the bet that two Kubernetes creators, \nCraig McLuckie\n and \nJoe Beda\n, are making with \nStacklok\n.\n\nStacklok architecture; diagram via Stacklok\n\nStacklok \nraised a $17.5 million Series A\n back in 2023 from Accel, Madrona and Bain Capital. Initially focused on \nsoftware supply chain security\n, the company recently \npivoted to Kubernetes-based agentic solutions\n.\n\nMecatl: a harness built for the cloud\n\nThe most interesting product of Stacklok is Mecatl, a \n“cloud-native harness”\n begun in June as an \nopen source project on GitHub\n. At first, I thought the name was pronounced “me-cattle” — a play-on-words referencing the ‘cattle vs. pets’ concept of Kubernetes, where you treat your servers, pods and clusters like cattle rather than pets. But no, the name is actually pronounced “MEH-kah-tl” and is an \nAztec word meaning a cord or rope\n!\n\nIn any case, what does cloud-native mean in the context of a harness?\n\nIt’s primarily about \n“moving the locus of value from the desktop to the cloud,”\n said McLuckie. He’s talking about “value” from an enterprise perspective — that the code and context are often derived from local environments. “That’s where the IP sits,” Beda chimed in. “And if you want to be able to actually bring that under management, \nit’s that much more difficult when it’s sitting on a desktop.”\n\nMcLuckie added that a cloud native approach also allows Stacklok to ask some deeper questions about agentic coding.\n\n“Why is the agent loop so intricately coupled to the tool calling subsystems? Why is agent identity being reasoned about through the lens of human identity systems?”\n\nDiagram \nvia Mecatl GitHub\n\nWhen it comes to open source agent harnesses, there are already well-regarded solutions — such as \nPi\n, a “minimal agent harness”\n that projects like \nFlue have built on top of\n. We asked the Stacklok pair what makes their harness different?\n\nBeda didn’t mention Pi specifically, but he did say that in desktop-first harnesses, the loop, local execution and session state often begin inside the same process.\n\n“There are a ton of solutions in this space, but they’re all focused to essentially run on the desktop,” he said. “So even if they have pluggability, the architecture is still one process, or one set of tightly coupled processes, that are \nbuilt to run on the desktop.\n”\n\nA Kubernetes deployment of Mecatl; \nvia GitHub\n\nBut can’t enterprises use VMs, containers, or one of many different sandbox products to move their harness to the cloud?\n\nBeda says this \n“lift and shift”\n approach tends to create issues around the lifecycle of an agent or being able to quiesce it (safely pause it while it waits for human input).\n\n“Our thinking is, well, what if we \nrethought the harness from the ground up\n to actually run in the cloud?”\n\nSeparating the agent loop from execution\n\nOne of the intriguing approaches of Mecatl is that it keeps the agent loop \nindependent of the client, model provider, state store and execution environment\n.\n\n“This is an application that we know how to run in the cloud well,” said Beda, regarding the loop application. “What if we take that and we \nseparate that out from the more sensitive operations\n, like tool calling and bash, and then also separate out things like session management and memory, so that these things are no longer stored as JSONL files sitting on disk, but can natively be put into manageable systems”\n\nMecatl architecture; diagram \nvia the project GitHub\n\nA lot of you reading this will probably have very opinionated harnesses, customized for your own requirements. But Mecatl is designed to extend beyond a single-user, local harness into \ninfrastructure that enterprises can operate centrally.\n Beda likened this to how enterprises manage email.\n\n“We think, in the future, interactions that you have with an agent while you’re working for an enterprise \nbelong to that enterprise;\n and they’re going to want to manage that and govern that like they do email.”\n\nDecoupling AI agents from frontier labs\n\nOne of the main motivations of Stacklok is to \nhelp large enterprises lessen their dependency on frontier labs and hyperscalers\n, such as Codex, Claude Code and GitHub Copilot. This, suggested McLuckie, is similar to how Kubernetes helps companies reduce dependency on the big cloud providers.\n\nFor McLuckie, the term “cloud native” came to represent a way to \n“run in a cloud that is decoupled from the specifics of the cloud provider.\n So a lot of what we’re trying to do [at Stacklok] is more or less what we did in the Kubernetes time.”\n\nAfter its pivot into agent infrastructure, Stacklok built \nToolHive\n — an open-source platform for running and governing MCP servers. It initially began as a way to manage MCP servers running in Docker containers on the desktop. Then, said Beda, they expanded it into a “\nKubernetes-based gateway\n and other associated services — a registry and an operator helper for running and managing MCP servers and getting some of the input-output auth stuff right with those things.”\n\nDiagram \nvia project GitHub\n\nThe idea, as McLuckie put it, was to enable enterprises that already ran on Kubernetes to “start to \nbring agentic workloads into those environments\n.”\n\nBeda claims that many other agent tools were designed for individuals or small startup teams, which doesn’t fly for enterprise-scale companies.\n\n“We talk to larger organizations and they’re struggling with like, how do I take this thing that was built for a team of six people and deploy it for an engineering task force in the thousands or tens of thousands.”\n\nStacklok’s LLM gateway\n\nMCP was the first step. Next was \nbuilding an LLM gateway\n, or “AI Gateway” as it’s called on the Stacklok’s website, to help companies control access and costs.\n\n“Most of our customers are banks, semiconductor companies, telcos…you know, people operating in relatively regulated industries,” McLuckie said.\n\nStacklok’s “AI Gateway”\n a.k.a. LLM gateway\n\nThe AI Gateway is the one main product Stacklok hasn’t open sourced yet, but Beda says it’s “on our roadmap and we’re going to get there soon.”\n\nUnlike \nGlean’s solution\n, Stacklok’s AI Gateway does not currently choose a model based on the task. Instead, it focuses on \naccess control, budgets, reporting and provider routing.\n\n“We prefer to see the semantic-routing model choice happening in an intelligent system that’s \nhoned in the harness\n, because there’s just more context there,” McLuckie explained.\n\nThe enterprise spine\n\nSince both ToolHive (MCP platform) and Mecatl (the harness) are open source, what’s the business model for Stacklok?\n\nMcLuckie replied that ToolHive and Mecatl are both intended to be independently useful, but that the company offers things like \nconsistent identity, authorization, policy and auditing\n across the open source parts.\n\n“Our commercial product is the \nenterprise spine\n, the \ncontrol plane\n that ties them all together,” he said.\n\nFrom \na Stacklok survey\n of “520 leaders who are responsible for their organization’s use of large language models and/or AI agents.”\n\n“The open source projects are relatively easy to get up and running for a small team,” Beda added. “But once you start scaling these things out to multiple clusters, multiple clouds, [...] all sorts of new problems crop up there. And that’s what we’re focused on solving.”\n\nThe cloud native era for AI?\n\nAmazon introduced S3 and EC2 — the beginnings of the cloud era — \nin 2006\n, but at first these products were mainly used by startups and individuals. It took several years for \nenterprise solutions like Windows Azure\n to emerge, and then in 2014 \nKubernetes arrived to manage containerized applications at scale\n.\n\nWe’re starting to see that same pattern play out with agentic technology. Enterprises don’t necessarily want to allow their employees to customize an open source harness, or even use frontier lab harnesses that run on their personal computers. Stacklok — built by two kings of cloud native — aims to solve those problems by \nbringing agent harnesses fully to the cloud\n.",
+          "url": "https://www.latent.space/p/stacklok",
+          "published_at": "2026-10-07T14:10:45+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://www.latent.space/p/stacklok"
+      }
     }
   ]
 }
