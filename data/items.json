@@ -76342,6 +76342,34 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/apple-and-lg-the-house-for-everyone-else-agent-standards-and-amazon/"
       }
+    },
+    {
+      "id": "52eea6f1c5c489c0e36d",
+      "first_seen_at": "2026-10-07T13:17:26+00:00",
+      "status": "skipped",
+      "title": "R&D Part 2",
+      "source_title": "R&D Part 2",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional video, not a substantive interview, talk, demonstration, or explainer. It focuses on a racing team and only mentions OpenAI in passing.",
+      "published_at": "2026-10-07T13:01:57+00:00",
+      "appearances": [
+        {
+          "id": "73d759026b3597d8391f",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:N5kTmoCKbe0",
+          "title": "R&D Part 2",
+          "description": "You either win or you learn.\nWith a historic 18th championship on the line, ‪@chipganassiracing and ‪@OpenAI turn setbacks into insights as they race to overcome the odds. \nR&D: Part 2 out now.",
+          "url": "https://www.youtube.com/watch?v=N5kTmoCKbe0",
+          "published_at": "2026-10-07T13:01:57+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=N5kTmoCKbe0"
+      }
     }
   ]
 }
