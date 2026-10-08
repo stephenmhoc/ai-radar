@@ -77024,10 +77024,23 @@
           "url": "https://a16z.simplecast.com/episodes/building-the-cloud-for-an-agentic-world-aws-ceo-matt-garman-d18BWOHC",
           "published_at": "2026-10-08T10:00:00+00:00",
           "hosts": []
+        },
+        {
+          "id": "d8d85ee0d260087c5bd9",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:rn_afJaPldg",
+          "title": "Building the Cloud for AI Agents | AWS CEO Matt Garman",
+          "description": "a16z’s Raghu Raghuram sits down with AWS CEO Matt Garman to discuss how AI is reshaping the cloud, from the needs of AI-native startups to infrastructure increasingly designed for agents.\n\nMatt explains how AWS is adapting as agents write code and manage infrastructure, why it’s reserving scarce GPU capacity for startups, and where custom chips like Trainium and Graviton fit into the AI stack.\n\nThey also discuss Amazon's $220 billion capital investment, the shifting bottlenecks in the infrastructure buildout, what enterprises need to trust autonomous agents, and how AWS's own teams are building with agents.\n\nTimestamps:\n00:00 - Intro\n00:55 - $169B, growing 37%\n02:51 - Why startups are the lifeblood\n12:26 - Rethinking cloud for agents\n16:24 - The GPU allocation problem\n21:27 - Is the AI CapEx a bubble?\n30:22 - Clearing up data center myths\n33:07 - The Graviton and Trainium bet\n40:06 - Where enterprises are stuck on agents\n45:43 - AI risk, Hugging Face, and Continuum\n\nResources:\nFollow Matt Garman on X: https://x.com/mattsgarman \nFollow Matt Garman on LinkedIn: https://www.linkedin.com/in/mattgarman\nFollow Raghu Raghuram on X: https://x.com/RaghuRaghuram\nLearn more about AWS: https://aws.amazon.com/\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n \nFind a16z on X: https://twitter.com/a16z\n \nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n \nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n \nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n \nFollow our host: https://x.com/eriktorenberg\n \nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=rn_afJaPldg",
+          "published_at": "2026-10-08T14:30:17+00:00",
+          "hosts": []
         }
       ],
       "links": {
-        "podcast": "https://a16z.simplecast.com/episodes/building-the-cloud-for-an-agentic-world-aws-ceo-matt-garman-d18BWOHC"
+        "podcast": "https://a16z.simplecast.com/episodes/building-the-cloud-for-an-agentic-world-aws-ceo-matt-garman-d18BWOHC",
+        "youtube": "https://www.youtube.com/watch?v=rn_afJaPldg"
       }
     },
     {
