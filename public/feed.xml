@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Synthesis Superintelligence: from Semiconductors to Superconductors — Periodic Labs’ Liam Fedus and Ekin Dogus Cubuk — Latent Space</title>
+      <link>https://www.latent.space/p/periodic</link>
+      <guid isPermaLink="false">ai-radar:92a80ebd1367b54f0ac0</guid>
+      <pubDate>Thu, 08 Oct 2026 16:27:54 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/1084089.rss">Latent Space</source>
+      <description>Liam Fedus and Ekin Dogus Cubuk from Periodic Labs discuss their work on &amp;quot;synthesis superintelligence,&amp;quot; which involves AI systems that learn by experimenting with the real world. They explain that scientific discovery requires more than just intelligence, emphasizing the need for physical experiments to validate conjectures. The conversation covers how reinforcement learning changes when applied to the physical world, the challenges of reasoning under uncertainty and noise in science, and the materials discovery loop involving prediction, synthesis, and characterization. They also delve into topics like the &amp;quot;matter compiler,&amp;quot; AI-powered materials characterization, and why experiments remain the ultimate ground truth despite simulations. The discussion highlights the importance of data quality, negative results, and training models on the process of doing science, rather than just final answers, to accelerate the discovery of new materials like room-temperature superconductors.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/periodic"&gt;Synthesis Superintelligence: from Semiconductors to Superconductors — Periodic Labs’ Liam Fedus and Ekin Dogus Cubuk&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/periodic"&gt;Synthesis Superintelligence: from Semiconductors to Superconductors — Periodic Labs’ Liam Fedus and Ekin Dogus Cubuk&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>How Jeetu Patel Runs Cisco Like the World’s Largest Startup — Y Combinator</title>
       <link>https://www.youtube.com/watch?v=ofxAtQhV-xA</link>
       <guid isPermaLink="false">ai-radar:6d028382d51a86f647ee</guid>
