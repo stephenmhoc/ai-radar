@@ -77276,6 +77276,204 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-new-trend-of-building-internal"
       }
+    },
+    {
+      "id": "9e9507043df8e85c2bf0",
+      "first_seen_at": "2026-10-08T18:17:23+00:00",
+      "status": "skipped",
+      "title": "Make a game using GPT-6 with Intelligent UI",
+      "source_title": "Make a game using GPT-6 with Intelligent UI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-08T17:37:43+00:00",
+      "appearances": [
+        {
+          "id": "b63523e2dfe00d136d79",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:qmOOspYLhzg",
+          "title": "Make a game using GPT-6 with Intelligent UI",
+          "description": "GPT‑6 in ChatGPT introduces Intelligent UI, a new capability that allows ChatGPT to answer quickly with fully interactive user interfaces that make everyday answers more visual, make learning complex topics easier and that can quickly create a tool to solve a task right in the moment.\n\nGPT‑6 with Intelligent UI is rolled out globally to ChatGPT Plus, Pro, Business and Enterprise tiers in the Chat tab. Starting today, the rollout expands to Free and Go tiers. Enterprise availability depends on workplace admin settings.\n\nGPT‑6 in ChatGPT is powered by GPT‑6 Sol for Plus, Pro, Business, and Enterprise tiers, and GPT‑6 Luna for Free and Go tiers. Both are tuned for everyday conversation.\n\nThis update applies to the Chat experience in ChatGPT. The models powering Work and Codex are not changing as part of this release.",
+          "url": "https://www.youtube.com/shorts/qmOOspYLhzg",
+          "published_at": "2026-10-08T17:37:43+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/qmOOspYLhzg"
+      }
+    },
+    {
+      "id": "8ae2d713409981dd7330",
+      "first_seen_at": "2026-10-08T18:17:27+00:00",
+      "status": "skipped",
+      "title": "How Oracle Uses ChatGPT Work to Transform Recruitment",
+      "source_title": "How Oracle Uses ChatGPT Work to Transform Recruitment",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a promotional video from OpenAI about how Oracle uses ChatGPT Work. It does not feature a substantial interview or conversation with a qualifying individual from a frontier AI organization, nor does it offer original reporting or durable analysis.",
+      "published_at": "2026-10-08T17:38:00+00:00",
+      "appearances": [
+        {
+          "id": "142c1bd5290c022bfd51",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:Mm3EsJL73tM",
+          "title": "How Oracle Uses ChatGPT Work to Transform Recruitment",
+          "description": "“We’ve gone from zero to 100, not zero to 60.”\n\nJan Ackerman shares how Oracle built a talent market intelligence tool with ChatGPT Work to transform hiring preparation.\n\nStarting with a job description, it researches comparable roles, benchmarks compensation, and assesses talent pools across locations, giving hiring managers consistent data and insights.\n\nRead how Oracle is transforming work with ChatGPT Work and Codex: https://openai.com/index/oracle/",
+          "url": "https://www.youtube.com/watch?v=Mm3EsJL73tM",
+          "published_at": "2026-10-08T17:38:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=Mm3EsJL73tM"
+      }
+    },
+    {
+      "id": "47a809ab66d3430f2615",
+      "first_seen_at": "2026-10-08T18:17:27+00:00",
+      "status": "skipped",
+      "title": "Play a game against GPT-6 with Intelligent UI",
+      "source_title": "Play a game against GPT-6 with Intelligent UI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-08T17:40:12+00:00",
+      "appearances": [
+        {
+          "id": "c8104c4651fcb40cd5c9",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:BHQF1xl2ScU",
+          "title": "Play a game against GPT-6 with Intelligent UI",
+          "description": "GPT‑6 in ChatGPT introduces Intelligent UI, a new capability that allows ChatGPT to answer quickly with fully interactive user interfaces that make everyday answers more visual, make learning complex topics easier and that can quickly create a tool to solve a task right in the moment.\n\nGPT‑6 with Intelligent UI is rolled out globally to ChatGPT Plus, Pro, Business and Enterprise tiers in the Chat tab. Starting today, the rollout expands to Free and Go tiers. Enterprise availability depends on workplace admin settings.\n\nGPT‑6 in ChatGPT is powered by GPT‑6 Sol for Plus, Pro, Business, and Enterprise tiers, and GPT‑6 Luna for Free and Go tiers. Both are tuned for everyday conversation.\n\nThis update applies to the Chat experience in ChatGPT. The models powering Work and Codex are not changing as part of this release.",
+          "url": "https://www.youtube.com/shorts/BHQF1xl2ScU",
+          "published_at": "2026-10-08T17:40:12+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/BHQF1xl2ScU"
+      }
+    },
+    {
+      "id": "0a41687909674843dc7f",
+      "first_seen_at": "2026-10-08T18:17:27+00:00",
+      "status": "skipped",
+      "title": "Get a more visual answer from GPT-6 with Intelligent UI",
+      "source_title": "Get a more visual answer from GPT-6 with Intelligent UI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-08T17:41:31+00:00",
+      "appearances": [
+        {
+          "id": "0080beefde1f46287f04",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:Wv0PRPMzkJg",
+          "title": "Get a more visual answer from GPT-6 with Intelligent UI",
+          "description": "GPT‑6 in ChatGPT introduces Intelligent UI, a new capability that allows ChatGPT to answer quickly with fully interactive user interfaces that make everyday answers more visual, make learning complex topics easier and that can quickly create a tool to solve a task right in the moment.\n\nGPT‑6 with Intelligent UI is rolled out globally to ChatGPT Plus, Pro, Business and Enterprise tiers in the Chat tab. Starting today, the rollout expands to Free and Go tiers. Enterprise availability depends on workplace admin settings.\n\nGPT‑6 in ChatGPT is powered by GPT‑6 Sol for Plus, Pro, Business, and Enterprise tiers, and GPT‑6 Luna for Free and Go tiers. Both are tuned for everyday conversation.\n\nThis update applies to the Chat experience in ChatGPT. The models powering Work and Codex are not changing as part of this release.",
+          "url": "https://www.youtube.com/shorts/Wv0PRPMzkJg",
+          "published_at": "2026-10-08T17:41:31+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/Wv0PRPMzkJg"
+      }
+    },
+    {
+      "id": "49e93e334e424e62256d",
+      "first_seen_at": "2026-10-08T18:17:27+00:00",
+      "status": "skipped",
+      "title": "How Oracle Uses ChatGPT Work to Transform Recruitment",
+      "source_title": "How Oracle Uses ChatGPT Work to Transform Recruitment",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-08T17:43:05+00:00",
+      "appearances": [
+        {
+          "id": "160dab154bd133a5fd6c",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:Rs5qLAnkNcI",
+          "title": "How Oracle Uses ChatGPT Work to Transform Recruitment",
+          "description": "“We’ve gone from zero to 100, not zero to 60.”\n\nJan Ackerman shares how Oracle built a talent market intelligence tool with ChatGPT Work to transform hiring preparation.\n\nStarting with a job description, it researches comparable roles, benchmarks compensation, and assesses talent pools across locations, giving hiring managers consistent data and insights.\n\nRead how Oracle is transforming work with ChatGPT Work and Codex: https://openai.com/index/oracle/",
+          "url": "https://www.youtube.com/shorts/Rs5qLAnkNcI",
+          "published_at": "2026-10-08T17:43:05+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/Rs5qLAnkNcI"
+      }
+    },
+    {
+      "id": "5c47e7535593043b8139",
+      "first_seen_at": "2026-10-08T18:17:30+00:00",
+      "status": "published",
+      "title": "Beijing Will Not Pace the Frontier: China’s Speed-First AI Safety Regime",
+      "source_title": "Beijing Will Not Pace the Frontier: China’s Speed-First AI Safety Regime",
+      "short_summary": "SemiAnalysis reports on China's AI safety regime, finding that despite official rhetoric, Chinese frontier labs prioritize speed over safety. Only 3.6% of 857 model releases from nine leading developers included published safety results, with even fewer available at launch.",
+      "long_summary": "SemiAnalysis investigates China's approach to AI safety, contrasting official statements with the practices of its leading AI labs. While Beijing's stated position emphasizes safety and risk mitigation, including new frameworks addressing autonomous learning and recursive self-improvement, the actual implementation by frontier labs prioritizes rapid development. A systematic analysis of 857 model releases from nine major Chinese developers between 2021 and September 2026 revealed that only 3.6% included published safety results, and a mere 1.1% had these results available at the time of release. This indicates a significant gap between policy and practice, with no clear impact of policy milestones on the rate of safety disclosures. The report concludes that China's safety regime is stricter on application-layer content and process but looser on frontier-risk duties related to compute or model capability.",
+      "reason": "The article provides original reporting and analysis on AI safety practices within Chinese frontier AI organizations, which is a core area of interest for AI Radar. It specifically examines the actions of leading Chinese developers like ByteDance, Alibaba, Tencent, Baidu, DeepSeek, MoonShot, Zhipu Z.ai, MiniMax, and StepFun.",
+      "published_at": "2026-10-08T17:46:05+00:00",
+      "appearances": [
+        {
+          "id": "ad45e1b68ea05714fa91",
+          "kind": "newsletter",
+          "source": "SemiAnalysis",
+          "family": "semianalysis",
+          "guid": "https://newsletter.semianalysis.com/p/beijing-will-not-pace-the-frontier",
+          "title": "Beijing Will Not Pace the Frontier: China’s Speed-First AI Safety Regime",
+          "description": "AI safety is on fire. On 12 September 2026, Dario Amodei published an essay arguing that frontier labs must deliberately slow the pace at which they improve model capabilities. China was central to his geopolitical argument: export controls and tighter security could preserve America’s lead, creating room to slow down and leverage for a future agreement with Beijing. Within a day, Sam Altman and Elon Musk supported Dario’s call. However, President Trump scoffed. On 14 September 2026, he wrote that fears of AI destroying humanity are “a HOAX” and that “the only one that is happy about it is China.” Beijing scoffed too, with the state-run Global Times calling Dario’s essay a “Cold War playbook.”\n\nThe debate then moved onto the diplomatic calendar. On 20 September 2026, Treasury Secretary Scott Bessent and Vice Premier He Lifeng held the first US-China AI dialogue. On 23 September 2026, President Xi Jinping began his state visit to the US. The Trump-Xi summit formalized the dialogue as the “US-China Super Intelligence Dialogue,” using the name Trump had unveiled at the UN the day before Xi arrived. The summit also promised a channel for AI incidents. On 29 September 2026, Trump and six executives signed the White House Accord on Super Intelligence, a one-page voluntary pledge to self-police that Trump called “morally binding.” \n\nChina sits on both sides of the American argument. For President Trump, competition with China is a reason not to slow down. For Dario, preserving America’s lead over China is what makes slowing down possible. Nobody has asked what China is actually doing. So, we did. What do the Chinese government, frontier labs, and AI experts say and do about AI safety? And what should American labs, investors, and policymakers conclude from it?\n\nWhat Beijing Says and Actually Does\n\nBeijing’s stated position is the most safety-forward of any major AI power outside Europe. Xi Jinping told the Politburo in April 2025 that AI brings “unprecedented risks and challenges” and ordered systems for technical monitoring, risk early-warning and emergency response. At the 2026 World AI Conference in Shanghai, Xi said the world must “ensure AI always remains under human control” and that the faster AI advances, “the more promptly the measures to prevent loss of control must be improved.” China signed the Bletchley Declaration and the Paris and New Delhi statements, co-sponsored the UN resolutions, founded a World AI Cooperation Organization in Shanghai, and publishes bilingual AI Safety Governance Frameworks.\n\nThe newest text goes further. The AI Safety Governance Framework 3.0, released by TC260 under Cyberspace Administration of China (CAC) on 14 September 2026, warns that AI has shown a self-accelerating trend of autonomous learning and recursive self-improvement, and calls for “attention and vigilance” for potential AI evolution exceeding human prediction and control. The Framework 3.0 also introduces a new model-risk category, “behavior deviating from expectations,” covering models that acquire system privileges and external resources without authorization, bypass safety protections, deceive evaluators, hide their true capabilities, and refuse user instructions, illustrated with a boxed case study of models disabling shutdown scripts, sandbagging under evaluation, and breaking out of isolation into real systems. Its list of derivative risks goes further still; past behaviors already observed to a hypothetical AI that becomes self-aware, seeks power of its own, and competes with humanity for control. On paper, this is the most explicit official Chinese text yet on frontier risk, and its vocabulary overlaps strikingly with Dario’s essay Beijing denounced that same week.\n\nHowever, we think China’s real approach to AI safety is speed-based, not safety-based. Though Beijing recognizes frontier AI risks, it has been prioritizing rapid development. The Framework 3.0 opens its principles with “promoting AI innovation and development as \nthe first priority\n.” The comprehensive AI Law promised in the 2023 and 2024 legislative plans was shelved in 2025, four months after the DeepSeek moment. The State Council’s AI+ Action Plan targets 70% penetration of agents and intelligent terminals by 2027 and 90% by 2030, aiming for a rapid deployment of AI across all sectors and industries.\n\nWe think the Chinese government takes an open position on frontier models but tightens the applications and regulates outputs. Since 2025, China has issued a number of mandates, including mandatory content labeling (Sep 2025), Cybersecurity Law Article 20 (Jan 2026), the minors’ information classification rules (March 2026), MIIT’s AI ethics-review regime (March 2026), the policy-level agent rules (May 2026), the world’s first AI-companion rules (July 2026), the network-data risk assessment rules (August 2026), and MPS inspection powers (October 2026). Every one of these governs what AI says and what AI does to people. There is no set of frontier-risk duties triggered by training compute or model capability. The result is a safety regime stricter than any in the world on content and on process for public-facing services, and looser than the EU (systemic-risk duties from 10²⁵ FLOP) and California (SB 53: frontier frameworks and 15-day incident reporting from 10²⁶ operations) on the frontier.\n\nSource: SemiAnalysis\n\nThe week Framework 3.0 came out shows the pattern in real time. Framework 3.0 added two new application-layer risk categories, agents and embodied intelligence, plus an appendix on managing agent risk. On 15 September, TC260 issued four AI application security guides, with a general one and three specific ones for education, health care and broadcasting, respectively. On 18 September it opened comments on a draft Agent System Development Security Guide (due 2 October) that walks developers through identity, least privilege, tool verification and human-approval nodes. The same day the CAC published a draft State Council regulation on minors’ internet use (comments due 17 October) that bars offering minors “virtual relatives, virtual companions and other virtual intimate-relationship services” and bars livestreaming under the age of 16. Seven texts in five days. Everyone is about how an agent or an application is built, deployed, and to whom it is offered. The gap at the frontier has not moved at all.\n\nCompliance therefore tells us nothing about frontier safety. A Chinese lab can satisfy every rule on this list without ever running a dangerous-capability evaluation. Thus, to know what the labs do at the frontier, we must look at what they evaluate, what they disclose, and whether any of them change what they ship.\n\nChina’s frontier AI labs: what they do\n\nNobody in China’s AI industry is slowing down, and nobody is asking them to. The frontier labs are in a release and price war.\n\nWe conduct a systematic analysis to clearly understand what Chinese labs do about safety. We constructed an original dataset that includes all identifiable model release by the 9 leading Chinese developers from 2021 to 15 September 2026. These 9 companies include 4 hyperscalers (ByteDance, Alibaba, Tencent, Baidu) and 5 startups (DeepSeek, MoonShot, Zhipu Z.ai, MiniMax, and StepFun). The dataset includes 857 counted releases (741 product models and 116 research models), each with a first-public date, weight status, license, and source. We then check each against the developer’s model cards, release notes, and technical reports for a published safety-evaluation result that can be matched to that release. Our standard is strict: a result means a quantitative or substantive finding on harmful output, jailbreaks, toxicity, privacy, refusal, or dangerous capability, tied to the named model. Statements that a model was “safety-trained” or “evaluated” do not count. A flagship model’s result is not extrapolated to other sizes or snapshots. “Not found” is bounded to the materials checked and does not mean “not tested.” Companies also name variants at different granularity (Alibaba’s 238 releases count every Qwen size and snapshot), so per-company rates are indicative rather than a ranking.\n\nThe results are striking. Of the 857 releases, only 31—or 3.6%—have ever been accompanied by a published safety result from the developer.\n Just 9 of those—1.1% of the total—had the result available at or before the model was released. Another 16 were documented only afterwards, with a median lag of 42 days and a maximum of 349 days (DeepSeek-R1, whose verified safety appendix dates to January 2026). For the remaining 6, the results exist, but their timing or their match to the specific model could not be established. A further 10 releases carry a claim of evaluation with no figures, and 3 are known only from press or investor accounts, with no developer documentation we could retrieve. The remaining 813 releases, 94.9% of everything the 9 companies have shipped, have no safety disclosure at all.\n\nWe plot the release cadence against disclosure. The bars climb from 3 releases in Q1 2023 to 90 in Q3 2024 and 101 in Q3 2025, a thirty-fold rise in which open-weight releases (dark blue) make up more than half of every quarter since mid-2023. The two lines do not climb with them. Releases with any safety result never exceed 7 in a quarter. Releases with a result available at launch never exceed 3 and sit at zero in 9 of the 15 quarters. No policy milestone in the period (such as the 2023 Interim Measures, the Frameworks 1.0 and 2.0, or the labelling rules) leaves a mark on either line.\n\nSource: SemiAnalysis\n\nWe then break the same 857 releases down by developer, and find the trickle is not concentrated anywhere. Alibaba, the largest publisher with 238 releases, has 7 with any result and 3 at launch. Tencent has 1 in 133. ByteDance’s largely closed Doubao fleet 2 in 120. Baidu 1 in 49. \nZhipu (Z.ai) is the only developer with a result every year since 2022\n. DeepSeek documented V3 at launch and none of R1, V3.1 or the V4 family. The start-ups do better than the giants, 20 of 317 releases (6.3%) against 11 of 540 (2%), but no company does it as a matter of routine. Every 2026 frontier release, from GLM-5.2, the Kimi K2.5-K3 line, and the DeepSeek V4 family to Qwen3.7-Max, Qwen3.8-Max, and Doubao Seed 2.1, was undocumented at launch except GLM-5.3, with a capability evaluation note.\n\nSource: SemiAnalysis\n\nWe then turn to those qualified documents. We find 18 reported harmful-output or refusal results and 7 reported jailbreak-resistance results. 9 documents were concerned with code or cyber security, but 7 of those were secure-code-generation benchmarks for coding models. Only 3 touched cyber-offence or biological risk, namely: Zhipu’s GLM-5.2 responsibility note, GLM-5.3 cyber-capability note, and Moonshot’s Kimi K2 technical report. None came from the four hyperscalers.\n\nOf the nine at-launch disclosures, four are behavioral safety tests (Qwen2-72B-Instruct, MiniMax-Text-01, Seed-OSS-36B-Instruct, and DeepSeek-V3). The rest are speech-safety scores, secure-code benchmarks, and one capability evaluation. Reasoning models, the fastest-advancing category, are 93% without any published results. Moreover, no Chinese frontier text model has shipped with a dangerous-capability evaluation across the domains the IDAIS statements name. GLM-5.3’s cyber note is the closest anyone has come.\n\nChina’s Frontier AI Labs: what they say\n\nThe release census tells us what the nine labs do. We further explore what their leaders say. We compiled every public statement on AI safety by the founders, CEOs, chief scientists, and other senior figures of the nine labs between January 2023 and 21 September 2026: speeches, interviews, internal letters, posts, signatures on collective statements, and company documents such as prospectuses and release notes. We built the inventory in two independent sweeps, one from Chinese primary sources and one from English and institutional sources, then reconciled the two and verified every item against its source. In total, we have 65 items.\n\nThe picture is sparse and lopsided. Across 9 labs and almost 4 years we found 15 statements by founders, CEOs or chief scientists that engage in frontier safety. Nine of the 15 express concerns and propose something. Six of those nine come from Zhipu alone.\n\nZhipu (Z.ai) is the only lab where safety is a named strategic commitment. CEO Zhang Peng signed the IDAIS Beijing red lines in March 2024, signed the Seoul Frontier AI Safety Commitments in May 2024 (the only Chinese company to do so at the time), told the BAAI conference in June that “in AI safety, defense is always harder than attack,” and called for “super-intelligence and super-alignment” at WAIC in July. Founder Tang Jie signed the IDAIS Venice statement and the 2025 Global Call for AI Red Lines, and his internal letter of 11 July 2026 makes “ultimate safety governance” one of four strategic engines, saying that “the stronger the capability, the more robust the safety constraints must be.” In his direct response to Anthropic withholding Mythos, Tang Jie said, “the realization of superintelligence and research on super-alignment must advance in step” and that safety “is no longer an accessory but the fundamental precondition for a technology to survive and be permitted to be used.”\n\nRobin Li of Baidu had the clearest loss-of-control statement of any Chinese AI CEO. At the Zhongguancun Forum on 26 May 2023, Robin said that AI “could indeed develop in directions unfavorable to humanity” and that “preventing loss of control requires the nations with advanced AI to cooperate and set rules.” Yang Zhilin of Moonshot, acknowledged the risk. He said in June 2024 that AI safety “is something we must prepare for in advance” and floated the idea of an AI “constitution.” But Yang chose acceleration. In January 2026, he said that although “the risks of AGI/ASI may be considerable, we should not give up its development, because giving up development means giving up the pursuit of the ceiling of human civilization.”\n\nAt five of the nine labs, the founder or CEO has said nothing. Liang Wenfeng of DeepSeek has no public statement on safety or regulations in four years. Alibaba’s Eddie Wu gave a 6,000-word keynote on the road to superintelligence in September 2025 that does not contain the word safety or risk once and closed with “we are full of optimism.” Tencent’s Pony Ma and Dowson Tong speak of safety only as data protection and permission management. The CEOs of ByteDance and StepFun have said nothing, though a StepFun co-founder and ByteDance’s head of research each signed an IDAIS statement. Where safety literacy exists in these companies, it sits with the lieutenants, not the commanders. In September 2025, Alibaba’s security vice-president Xue Hui acknowledged that AI safety capability “currently lags the development of model capability” and said research must include “new risks such as AI self-replication.” A DeepSeek researcher, Chen Deli, said at Wuzhen that “in the long run the risks may be greater.”\n\nSource: SemiAnalysis\n\nWhat China’s AI experts say: a text analysis of 102 documents and 32 voices\n\nWho are the leading AI thinkers shaping China’s AI-safety discourse? What do they mean by safety? Who has the pen?\n\nWe constructed another original dataset coding 102 expert and official texts from 2023 to September 2026, with 51 from official, Party-theory and legal venues and 51 from technical and scientific venues. The sample is purposive, not random: we set quotas by venue and filled them with the most prominent texts we could find on AI safety and governance by identifiable Chinese authors or institutions, each with a verifiable source. We read two sources in full. One is every expert commentary on a major AI rule that the CAC has published since 2023, and the other is all five IDAIS consensus statements. The rest we sampled. We selected the most prominent pieces from Party journals, Legal Daily, model-law drafts, academic articles, ministers’ speeches, scientists’ talks, lab frameworks, and arXiv papers, with a rough quota for each so that no venue dominates. We then coded each text on six themes (Figure 4 below), three stances (on binding frontier rules, on a comprehensive AI law, and on development versus safety), and the author’s professional background. We then map 32 of the most influential individuals by professional background and by the channels through which they influence policy.\n\nThe short answer: China’s technical scientists and its legal-policy scholars are answering two different questions, and the state had answered one of them before either group spoke.\n\nTo elaborate, first, we find that technical scientists and legal-policy experts are talking about different things when they say 安全 (the Chinese word for both safety and security). Frontier or loss-of-control risk appears in 86% of texts by technical scientists (36 of 42), the longest bar in the figure, but in only 22% of texts by law scholars, 23% by serving officials, and 44% by public-policy scholars. In addition, frontier risk is the primary theme in 25 of technical scientists’ 42 texts, and in just one text in each of the other three groups.\n\nBy contrast, development-first and competition appears in every one of the officials’ texts, in 91% of the texts by law scholars and 89% of those by public-policy scholars, but in only 45% of the texts by technical scientists. The bottom three rows (Figure 4) show the same alignment. Legal-institutional design is universal among legal scholars and public-policy scholars (100%) and present in 43% of technical experts. Rights, ethics, and consumer harms appear in 91% of law scholars’ texts and 48% of technical ones. International governance and export controls in 91% of legal texts and 55% of technical ones.\n\nThe two camps are different people. The scientists are senior, internationally embedded, and at technical parity with their Western peers. They write frameworks, sign consensus statements, and brief officials. The lawyers and public-policy scholars sit at the Chinese Academy of Social Sciences (CASS), the China University of Political Science and Law (CUPL), Tsinghua’s School of Public Policy, and the ministries’ expert pools. They write the expert readings that accompany every CAC rule and draft the model laws the Ministry of Justice consults.\n\nThe two camps are asking different questions. Scientists ask what a frontier model can do. Their answer is loss of control and misuse. Thus, their prescriptions reach the model before it ships. They have been advocating for registration of training runs above compute thresholds, safety cases before release, and shutdown authority. The lawyers, on the other hand, ask how the state should govern an industry. Their answer is order, rights, and growth, and thus, their prescriptions attach where the industry meets the public. For example, they call for regulating services not technology, rules at the application layer, and legislation in small steps.\n\nSource: SemiAnalysis\n\nSecond, we find that only scientists ever put safety ahead of development. We sort the 102 texts by author background. We find that 42 are written by people with a technical background. Of those 42, 22 (52%) argue that safety must precede or gate development. Only five are development-first. By contrast, if we look at the non-technical group, not a single text by a legal or public-policy scholar or official takes the safety-first position. 8 of the 23 law texts are development-first outright. The rest use the balanced official formula, which is “coordinating development and safety.”\n\nThird, we find that the legal scholars are actually following the top leadership. They took its words, applied them to AI, and made them their AI doctrine. The legal scholars’ signature phrase is “failing to develop is the greatest insecurity.” The phrase in fact descends from Xi Jinping’s statement at the 2014 CICA Summit that “development is the greatest security.” Premier Li Qiang used the negative form verbatim to German business leaders in Berlin on 20 June 2023, arguing against “de-risking,” and the CCP’s official \nPeople’s Daily\n made it a headline on 5 July. Eight days later, on the day the Generative AI Measures were published, law professor Xu Ke carried it into the AI debate in a CAC-published expert reading. Law professor Zhang Linghan repeated it in 2024 and 2025. In 2025, Zhi Zhenfeng of the Chinese Academy of Social Sciences (CASS) called it “a basic consensus.” The lawyers’ other slogans have the same history. For example, Xi called for “small, fast, flexible” legislation in November 2020. Zhang Linghan applied the phrase to AI in the \nPeople’s Daily\n in May 2025.\n\nFourth, we find that every demand for binding frontier duties went nowhere, regardless of experts’ professional backgrounds. Thirteen of the 102 texts call for binding obligations on frontier developers. Six are technical, the five IDAIS consensus statements co-signed by Chinese scientists with Western counterparts and an April 2026 \nNational Science Review\n editorial by Zeng Yi, Huang Tiejun, Jiang Yugang and Poo Mu-ming. They demand (1) registration of training runs above compute thresholds, (2) safety cases submitted to regulators before release, (3) independent third-party audits, (4) shutdown of all copies of a model that crosses a red-line, and (5) legal mechanisms to enforce all of these. However, none of these has yet been adopted in any binding Chinese instrument. The other seven are by law or public-policy scholars. Most are model-law drafts, which propose binding duties into a comprehensive AI law. None of the 13 got what it asked for.\n\nThe sad truth is neither camp decides anything. The top leadership does. Figure 5 sorts the 32 most influential voices by two facts: whether they demand binding frontier rules, and whether they hold a domestic seat where rules are written. Ten demand and hold no seat. Eight hold a seat and make no such demand. Ten do neither. Only four hold a seat and demand. Zeng Yi and Zhang Linghan in their own voice, Xue Lan and Fu Ying by IDAIS signature only. Thus, the demand comes overwhelmingly from outside the rooms where rules are written. And the seat did not help those who had it. Zeng Yi sits on the national AI governance committee, and his April 2026 call for legal enforcement went nowhere. Zhou Bowen chairs TC260’s AI safety working group, the one body that could turn loss-of-control language into a mandatory standard and writes voluntary frameworks. Xue Lan chairs the governance committee, signs the IDAIS statements, and prescribes agile governance. Zhang Linghan drafts the scholars’ AI law and asks for licensing of high-risk applications, not for capability thresholds. The scientists are not heeded because they contradict a decision already made. Their answer is that the danger is in the model, and the controls must reach training, and that does not fit a decision that development comes first. China’s AI-safety debate was settled by the top leadership’s preference for development over safety, not by anything the experts said.\n\nSource: SemiAnalysis\n\nThe supply-side ecosystem exists but no power\n\nIt would be wrong to conclude that China has no frontier-safety capacity. The Shanghai AI Lab (SAIL), a state-backed lab whose director Zhou Bowen chairs TC260’s AI safety working group, published a Frontier AI Risk Management Framework in July 2025 and has revised it twice, most recently as version 2.0 at WAIC in July 2026. The SAIL framework draws red and yellow lines across five risk domains, 13 red lines in all. It calls for deployment suspension in the red zone and suggests evaluation triggers at 4× and 10× jumps in effective compute. Its Framework also treats open-weight release as the highest-risk deployment setting, asking developers to measure how cheaply safety training can be stripped by fine-tuning be",
+          "url": "https://newsletter.semianalysis.com/p/beijing-will-not-pace-the-frontier",
+          "published_at": "2026-10-08T17:46:05+00:00",
+          "hosts": [
+            "Dylan Patel"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://newsletter.semianalysis.com/p/beijing-will-not-pace-the-frontier"
+      }
+    },
+    {
+      "id": "1a85be8136dc55e02feb",
+      "first_seen_at": "2026-10-08T18:17:30+00:00",
+      "status": "skipped",
+      "title": "More visual answers from GPT-6 with Intelligent UI",
+      "source_title": "More visual answers from GPT-6 with Intelligent UI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-08T17:46:54+00:00",
+      "appearances": [
+        {
+          "id": "ea946c3cfb340bafa491",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:OgjMGn4T6Ok",
+          "title": "More visual answers from GPT-6 with Intelligent UI",
+          "description": "GPT‑6 in ChatGPT introduces Intelligent UI, a new capability that allows ChatGPT to answer quickly with fully interactive user interfaces that make everyday answers more visual, make learning complex topics easier and that can quickly create a tool to solve a task right in the moment.\n\nGPT‑6 with Intelligent UI is rolled out globally to ChatGPT Plus, Pro, Business and Enterprise tiers in the Chat tab. Starting today, the rollout expands to Free and Go tiers. Enterprise availability depends on workplace admin settings.\n\nGPT‑6 in ChatGPT is powered by GPT‑6 Sol for Plus, Pro, Business, and Enterprise tiers, and GPT‑6 Luna for Free and Go tiers. Both are tuned for everyday conversation.\n\nThis update applies to the Chat experience in ChatGPT. The models powering Work and Codex are not changing as part of this release.",
+          "url": "https://www.youtube.com/shorts/OgjMGn4T6Ok",
+          "published_at": "2026-10-08T17:46:54+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/OgjMGn4T6Ok"
+      }
     }
   ]
 }
