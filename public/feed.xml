@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>AWS CEO Matt Garman on Building the Cloud for an Agentic World — The a16z Show</title>
+      <link>https://a16z.simplecast.com/episodes/building-the-cloud-for-an-agentic-world-aws-ceo-matt-garman-d18BWOHC</link>
+      <guid isPermaLink="false">ai-radar:c768eb887d3a33ef811d</guid>
+      <pubDate>Thu, 08 Oct 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.simplecast.com/JGE3yC0V">The a16z Show</source>
+      <description>AWS CEO Matt Garman joins a16z&amp;#x27;s Raghu Raghuram to explore the profound impact of AI on cloud computing. The discussion covers how AWS is evolving to support AI-native startups and an agent-driven future, where AI agents increasingly write code and manage infrastructure. Garman details AWS&amp;#x27;s strategy for reserving GPU capacity for startups and integrating custom chips such as Trainium and Graviton into the AI stack. The conversation also touches on Amazon&amp;#x27;s substantial capital investments, emerging bottlenecks in infrastructure development, the requirements for enterprises to trust autonomous agents, and how AWS&amp;#x27;s internal teams are leveraging agents in their own operations.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · The a16z Show&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://a16z.simplecast.com/episodes/building-the-cloud-for-an-agentic-world-aws-ceo-matt-garman-d18BWOHC"&gt;Building the Cloud for an Agentic World | AWS CEO Matt Garman&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Anthropic Releases Claude Haiku 5.5, Competing with OpenAI's GPT-6 Luna — Latent Space</title>
       <link>https://www.latent.space/p/ainews-claude-haiku-55-better-than</link>
       <guid isPermaLink="false">ai-radar:28b1ab76a74bcc813ae3</guid>

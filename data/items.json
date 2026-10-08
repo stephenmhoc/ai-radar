@@ -77001,6 +77001,64 @@
       "links": {
         "podcast": "https://share.transistor.fm/s/f2fcb677"
       }
+    },
+    {
+      "id": "c768eb887d3a33ef811d",
+      "first_seen_at": "2026-10-08T10:17:26+00:00",
+      "status": "published",
+      "title": "AWS CEO Matt Garman on Building the Cloud for an Agentic World",
+      "source_title": "Building the Cloud for an Agentic World | AWS CEO Matt Garman",
+      "short_summary": "AWS CEO Matt Garman discusses how AI is transforming cloud infrastructure, focusing on the needs of AI-native startups and the increasing role of agents. He explains AWS's adaptation to agents writing code, managing infrastructure, and the strategic use of custom chips like Trainium and Graviton.",
+      "long_summary": "AWS CEO Matt Garman joins a16z's Raghu Raghuram to explore the profound impact of AI on cloud computing. The discussion covers how AWS is evolving to support AI-native startups and an agent-driven future, where AI agents increasingly write code and manage infrastructure. Garman details AWS's strategy for reserving GPU capacity for startups and integrating custom chips such as Trainium and Graviton into the AI stack. The conversation also touches on Amazon's substantial capital investments, emerging bottlenecks in infrastructure development, the requirements for enterprises to trust autonomous agents, and how AWS's internal teams are leveraging agents in their own operations.",
+      "reason": "The item features a substantial interview with Matt Garman, CEO of AWS, discussing AI infrastructure, agent systems, and the economics and business strategy of AI development within a major cloud provider.",
+      "published_at": "2026-10-08T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "33ce6be1c6306630c39f",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "362a88d2-2968-43d5-b3e4-7531e65faea0",
+          "title": "Building the Cloud for an Agentic World | AWS CEO Matt Garman",
+          "description": "a16z’s Raghu Raghuram sits down with AWS CEO Matt Garman to discuss how AI is reshaping the cloud, from the needs of AI-native startups to infrastructure increasingly designed for agents.\n\nMatt explains how AWS is adapting as agents write code and manage infrastructure, why it’s reserving scarce GPU capacity for startups, and where custom chips like Trainium and Graviton fit into the AI stack.\n\nThey also discuss Amazon's $220 billion capital investment, the shifting bottlenecks in the infrastructure buildout, what enterprises need to trust autonomous agents, and how AWS's own teams are building with agents.\n\nResources:\n\nFollow Matt Garman on X:  \nhttps://x.com/mattsgarman\n\nFollow Matt Garman on LinkedIn: \nhttps://www.linkedin.com/in/mattgarman\n\nFollow Raghu Raghuram on X:\nhttps://x.com/RaghuRaghuram\n\nLearn more about AWS:\nhttps://aws.amazon.com/\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/building-the-cloud-for-an-agentic-world-aws-ceo-matt-garman-d18BWOHC",
+          "published_at": "2026-10-08T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/building-the-cloud-for-an-agentic-world-aws-ceo-matt-garman-d18BWOHC"
+      }
+    },
+    {
+      "id": "6c5711ff4ad2a6b71ef0",
+      "first_seen_at": "2026-10-08T10:17:26+00:00",
+      "status": "deferred",
+      "title": "An Interview with Katie Harbath About Disrupting Politics at Facebook",
+      "source_title": "An Interview with Katie Harbath About Disrupting Politics at Facebook",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-10-08T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "012ef7db97656b53ff3b",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20257",
+          "title": "An Interview with Katie Harbath About Disrupting Politics at Facebook",
+          "description": "An interview with former Facebook Head of Global Elections Katie Harbath about her new book Disrupting Politics, and how things change for the company in the 2010s.",
+          "url": "https://stratechery.com/2026/an-interview-with-katie-harbath-about-disrupting-politics-at-facebook/",
+          "published_at": "2026-10-08T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/an-interview-with-katie-harbath-about-disrupting-politics-at-facebook/"
+      }
     }
   ]
 }
