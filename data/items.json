@@ -77474,6 +77474,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/OgjMGn4T6Ok"
       }
+    },
+    {
+      "id": "7897b6eaa675a3eac5b4",
+      "first_seen_at": "2026-10-08T19:17:23+00:00",
+      "status": "skipped",
+      "title": "What is the story of your company?",
+      "source_title": "What is the story of your company?",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-08T19:00:39+00:00",
+      "appearances": [
+        {
+          "id": "6e11f612564c9edbdeec",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:Mjz8Z2I0w_g",
+          "title": "What is the story of your company?",
+          "description": "Ben Horowitz, co-founder of Andreessen Horowitz, on why a company's story and its strategy are the same thing.\n\nBefore a16z, he was co-founder and CEO of Loudcloud, later renamed Opsware, which Hewlett-Packard acquired for $1.6 billion in 2007.\n\nWatch the full episode on The a16z Show.",
+          "url": "https://www.youtube.com/shorts/Mjz8Z2I0w_g",
+          "published_at": "2026-10-08T19:00:39+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/Mjz8Z2I0w_g"
+      }
     }
   ]
 }
