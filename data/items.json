@@ -77502,6 +77502,34 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/Mjz8Z2I0w_g"
       }
+    },
+    {
+      "id": "5b83e2940633d272c749",
+      "first_seen_at": "2026-10-08T22:17:26+00:00",
+      "status": "skipped",
+      "title": "Production Monitoring with Codex: Grafana, Kubernetes, & Security",
+      "source_title": "Production Monitoring with Codex: Grafana, Kubernetes, & Security",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a YouTube video from OpenAI, but the content described in the publisher notes appears to be a demonstration of production monitoring tools (Grafana, Kubernetes) using Codex, rather than a substantial interview, conversation, or deep technical discussion with a qualifying individual or about frontier AI research/development. It seems to be a practical demo of operational tools.",
+      "published_at": "2026-10-08T21:35:18+00:00",
+      "appearances": [
+        {
+          "id": "12a65c603cbdbcd00138",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:RQfg-zo4R-g",
+          "title": "Production Monitoring with Codex: Grafana, Kubernetes, & Security",
+          "description": "It’s 3 a.m. and checkout errors are climbing. What do you check first?\n\nJoin cohosts Tony Loehr and Anke Hao for three practical production-monitoring demos with Codex. Follow a checkout failure in Grafana, investigate a Kubernetes rollout that causes out-of-memory restarts, and explore how a Codex Security finding connects service availability to a missing resource limit.\n\nSee how telemetry, release history, and code support an investigation; learn how engineers review a proposed change and check the result.",
+          "url": "https://www.youtube.com/watch?v=RQfg-zo4R-g",
+          "published_at": "2026-10-08T21:35:18+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=RQfg-zo4R-g"
+      }
     }
   ]
 }
