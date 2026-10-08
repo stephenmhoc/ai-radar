@@ -77102,6 +77102,34 @@
         "podcast": "https://www.cognitiverevolution.ai/ai-am-a-level-we-shouldn-t-pass-notes-from-the-curve-tokens-vs-salaries-is-saas-cooked/",
         "youtube": "https://www.youtube.com/watch?v=g_K9pqbQJwU"
       }
+    },
+    {
+      "id": "d99c045f7f2baad3a5de",
+      "first_seen_at": "2026-10-08T12:17:27+00:00",
+      "status": "skipped",
+      "title": "Luca Ferrari: The Operating System Behind Bending Spoons",
+      "source_title": "Luca Ferrari: The Operating System Behind Bending Spoons",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The interview focuses on software company acquisitions, hiring philosophy, and organizational operations at Bending Spoons, with no focus on artificial intelligence.",
+      "published_at": "2026-10-08T12:00:11+00:00",
+      "appearances": [
+        {
+          "id": "a74f173cac775e2e3e1d",
+          "kind": "youtube",
+          "source": "Sequoia Capital",
+          "family": "sequoia capital",
+          "guid": "yt:video:hZxmbhsbvyw",
+          "title": "Luca Ferrari: The Operating System Behind Bending Spoons",
+          "description": "Luca Ferrari is co-founder and CEO of Bending Spoons, a serial acquirer of AOL, Vimeo and Evernote, Airtable, etc, that buys to hold forever, and whose only real edge is that it operates software companies better than almost anyone else.\n\nBending Spoons got 800,000 job applications last year and hired fewer than 300 people. Luca runs hiring the way a quant runs a portfolio — hundreds of signals tested against future performance — and he's blunt about what the data says. Harvard and Stanford barely predict anything. Interviews are the worst signal in the process unless they're scripted. The best candidates were politically active as teenagers and stopped in their 20s. He hires for slope over experience, which is why a 25-year-old routinely shows up to run a company Bending Spoons just bought, and why he thinks experienced hires from big tech lose motivation and struggle to adapt. He also explains why Bending Spoons has no executive team, why the burden of proof always sits with whoever wants to add complexity, and why he stayed in Milan on purpose.\n\nI called three founders whose companies Luca acquired before this interview. All three, unprompted, said the same thing: exceptionally high integrity. His answer about where that comes from is the most honest closing I've had on this show.\n\nChapters:\n0:00 – Introduction\n1:13 – The Bending Spoons model: buy to hold forever, then rebuild from the ground up\n8:07 – 800,000 applicants, fewer than 300 hires: industrializing talent density\n13:45 – Hiring like a quant trader: hundreds of signals, scripted interviews\n21:45 – Why strategy and talent trump org structure\n25:34 – Leader or manager? Head in the clouds, feet on the ground, but never both at once\n30:38 – Slope over experience: why 25-year-olds run the companies Bending Spoons buys\n41:08 – Radical candor, the 360 that found Brian's bugs, and picking one flaw a year\n47:00 – No exec team, no sacred org chart: whoever is CEO should rewrite the system\n51:27 – Question everything, add nothing: the burden of proof is on whoever adds complexity\n57:08 – Why Milan? The uncool is cool; the world needs more than one Silicon Valley\n1:01:16 – Never lie, never omit: the high-integrity code\n1:04:02 – Brian's takeaways",
+          "url": "https://www.youtube.com/watch?v=hZxmbhsbvyw",
+          "published_at": "2026-10-08T12:00:11+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=hZxmbhsbvyw"
+      }
     }
   ]
 }
