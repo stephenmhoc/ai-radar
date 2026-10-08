@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Anthropic Releases Claude Haiku 5.5, Competing with OpenAI's GPT-6 Luna — Latent Space</title>
+      <link>https://www.latent.space/p/ainews-claude-haiku-55-better-than</link>
+      <guid isPermaLink="false">ai-radar:28b1ab76a74bcc813ae3</guid>
+      <pubDate>Thu, 08 Oct 2026 07:27:51 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>Anthropic has released Claude Haiku 5.5, marking the first update to its Haiku model in approximately a year. This new version is priced identically to OpenAI&amp;#x27;s GPT-6 Luna, and Anthropic also reduced prices for Sonnet 5.5 and its subscription plans concurrently. Haiku 5.5 features a 1M-token context window and is designed for high-volume, cost-sensitive applications like summarization and database queries, often as a subagent paired with more powerful models like Opus 5.5 or Sonnet 5.5. Independent evaluations by Artificial Analysis show Haiku 5.5 with an Intelligence Index of 43, slightly surpassing GPT-6 Luna (38) and comparable to Kimi K3. However, it uses significantly more output tokens per task, approximately three times that of Luna at max effort. The launch is widely seen as a direct competitive move against OpenAI&amp;#x27;s low-cost offerings, with Anthropic also updating its SDKs and securing day-one partner rollouts with Cursor, GitHub Copilot, and Devin.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-claude-haiku-55-better-than"&gt;[AINews] Claude Haiku 5.5 — better than GPT-6 Luna at the same pricing&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Higgsfield: Building Agents That Provision Their Own Compute — OpenAI</title>
       <link>https://www.youtube.com/watch?v=8804JYm81cc</link>
       <guid isPermaLink="false">ai-radar:5571502e29a81d66e827</guid>
