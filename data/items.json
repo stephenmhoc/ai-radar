@@ -77143,6 +77143,62 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=hZxmbhsbvyw"
       }
+    },
+    {
+      "id": "6d028382d51a86f647ee",
+      "first_seen_at": "2026-10-08T16:17:26+00:00",
+      "status": "published",
+      "title": "How Jeetu Patel Runs Cisco Like the World’s Largest Startup",
+      "source_title": "How Jeetu Patel Runs Cisco Like the World’s Largest Startup",
+      "short_summary": "Cisco's President and Chief Product Officer discusses building AI infrastructure, from networking GPU clusters to securing agents, with $9.3 billion in orders. He covers bringing startup speed to 32,000 engineers and the AI data center buildout.",
+      "long_summary": "Cisco's President and Chief Product Officer, Jeetu Patel, joins Y Combinator to discuss the company's significant investment in AI infrastructure. Cisco is building AI infrastructure, including networking GPU clusters and securing agents, with its hyperscaler AI business reaching $9.3 billion in orders in two years. Patel shares insights on bringing startup speed to 32,000 engineers and why AI should unlock new ideas rather than just cut costs. He also explains why he expects to need more engineers, not fewer, and discusses the AI data center buildout, addressing whether we are overbuilding AI infrastructure. The conversation also covers building trust in AI agents and career lessons.",
+      "reason": "The item features a senior executive from Cisco discussing consequential AI infrastructure, including networking GPU clusters, securing agents, and AI data center buildout, which aligns with the criteria for AI infrastructure across inference, training, chips, systems, datacenters, power, networking, and data.",
+      "published_at": "2026-10-08T14:30:33+00:00",
+      "appearances": [
+        {
+          "id": "c10d9914113b1028a866",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:ofxAtQhV-xA",
+          "title": "How Jeetu Patel Runs Cisco Like the World’s Largest Startup",
+          "description": "Cisco is building AI infrastructure, from networking GPU clusters to securing agents, with its hyperscaler AI business reaching $9.3 billion in orders in two years. Cisco President and Chief Product Officer Jeetu Patel joins Y Combinator Managing Partner Jared Friedman to discuss bringing startup speed to 32,000 engineers, why AI should unlock new ideas rather than just cut costs, and why he expects to need more engineers, not fewer. He also explains why he doesn’t think we’re overbuilding data centers and shares career lessons on choosing learning over ego.\n\nChapters:\n00:00 — Cisco’s Bet on AI\n03:38 — Running Cisco Like a Startup\n06:45 — The Infrastructure AI Agents Need\n10:00 — Getting 32,000 Engineers to Embrace AI\n14:07 — Bringing AI to Hardware and Silicon\n17:15 — Inside the AI Data Center Buildout\n21:27 — Are We Overbuilding AI Infrastructure?\n25:10 — Building Trust in AI Agents\n28:18 — From India to Waiting Tables at Sizzler\n32:12 — Choosing Learning Over Ego\n35:31 — Ambition, Teamwork, and Compounding\n39:31 — Don’t Squander Your Opportunity\n\nApply to Y Combinator: https://www.ycombinator.com/apply\nWork at a startup: https://www.ycombinator.com/jobs",
+          "url": "https://www.youtube.com/watch?v=ofxAtQhV-xA",
+          "published_at": "2026-10-08T14:30:33+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=ofxAtQhV-xA"
+      }
+    },
+    {
+      "id": "5ecdaeed5976f00c0b21",
+      "first_seen_at": "2026-10-08T16:17:26+00:00",
+      "status": "skipped",
+      "title": "WTO Chief on Lessons Learned from Trump's Trade War",
+      "source_title": "WTO Chief on Lessons Learned from Trump's Trade War",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-08T16:00:09+00:00",
+      "appearances": [
+        {
+          "id": "97bb166b08c8d76f556e",
+          "kind": "youtube",
+          "source": "Bloomberg Originals",
+          "family": "bloomberg originals",
+          "guid": "yt:video:5ziFCiDUtAc",
+          "title": "WTO Chief on Lessons Learned from Trump's Trade War",
+          "description": "World Trade Organization Director-General Ngozi Okonjo-Iweala reflects on key lessons from Donald Trump's 2025 tariff rollout, commending member nations for adhering to international rules. \n\nFor more, watch Leaders with Francine Lacqua:\nhttps://www.bloomberg.com/btv/series/leaders-with-lacqua\n\n--------\nLike this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1\n\nGet unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals\nBloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. \n\nSubscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.\n\nVisit our partner channel Bloomberg News for global news and insight in an instant.",
+          "url": "https://www.youtube.com/shorts/5ziFCiDUtAc",
+          "published_at": "2026-10-08T16:00:09+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/5ziFCiDUtAc"
+      }
     }
   ]
 }
