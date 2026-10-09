@@ -77918,6 +77918,62 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=su-IbU71R2A"
       }
+    },
+    {
+      "id": "edffc318aad459957450",
+      "first_seen_at": "2026-10-09T20:17:24+00:00",
+      "status": "skipped",
+      "title": "Set up your dot in the ChatGPT mobile app",
+      "source_title": "Set up your dot in the ChatGPT mobile app",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional video about a feature in the ChatGPT mobile app, lacking the substantial interview, talk, demonstration, or explainer content required for inclusion.",
+      "published_at": "2026-10-09T19:13:03+00:00",
+      "appearances": [
+        {
+          "id": "ce1040bbfcf3f38b5b85",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:p5KxBTUncoE",
+          "title": "Set up your dot in the ChatGPT mobile app",
+          "description": "You can now create a dot from the ChatGPT mobile app. Set up your dot, edit the name, customize the avatar, and set your dot to be the first conversation you see when you open the ChatGPT app. \n\nLearn more about dots here: https://learn.chatgpt.com/docs/dots",
+          "url": "https://www.youtube.com/watch?v=p5KxBTUncoE",
+          "published_at": "2026-10-09T19:13:03+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=p5KxBTUncoE"
+      }
+    },
+    {
+      "id": "6cf767994be3efe15665",
+      "first_seen_at": "2026-10-09T20:17:24+00:00",
+      "status": "skipped",
+      "title": "Andrew Huberman: Stop Chasing Success. Follow Your Curiosity.",
+      "source_title": "Andrew Huberman: Stop Chasing Success. Follow Your Curiosity.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-09T19:32:12+00:00",
+      "appearances": [
+        {
+          "id": "927fe0233f1aab2ed0d6",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:MgN02to8F1I",
+          "title": "Andrew Huberman: Stop Chasing Success. Follow Your Curiosity.",
+          "description": "Success isn't about chasing someone else's definition of achievement.\n\nAndrew Huberman explains why following your genuine curiosity is the key to meaningful work, and why ignoring it in pursuit of conventional success can be a tragic mistake.\n\n#AndrewHuberman #Success #Curiosity #InvestLikeTheBest #Shorts\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/MgN02to8F1I",
+          "published_at": "2026-10-09T19:32:12+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/MgN02to8F1I"
+      }
     }
   ]
 }
