@@ -77636,7 +77636,7 @@
           "family": "no priors",
           "guid": "994123ec-c395-11f1-b01e-fff03490a570",
           "title": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
-          "description": "Is the future of frontier AI open or closed? ReflectionAI co-founder and CEO Misha Laskin joins Sarah Guo and Elad Gil to discuss the launch of Beam, the company’s 500 billion parameter open-weight reasoning model. Misha breaks down the pre-training and reinforcement learning required to produce Beam’s reasoning efficiency, the shift in enterprise compute from renting to owning intelligence, and how he believes that open models will capture the majority of global token demand. He also talks about the open model ecosystem in China and why competition with China’s models is a good thing, safety considerations around open models, and how frontier-level open models may accelerate the pace of scientific discovery.  \n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @MishaLaskin | @reflection_ai\n\nChapters:\n\n00:00 – Misha Laskin Introduction\n\n00:22 – Latest with ReflectionAI\n\n01:30 – Challenges Building an Open Model\n\n03:19 – ReflectionAI’s Agentic Shift\n\n07:00 – Resources for Model Training\n\n09:32 – Scaling Efficiency\n\n11:43 – Training Beam\n\n16:14 – Where Model Value Comes From\n\n19:18 – Beam’s Reasoning Efficiency\n\n21:58 – Monetizing Open Weight Models\n\n24:28 – Future of Open Versus Closed Tokens\n\n30:54 – Competition with Open Models\n\n34:01 – Chinese Open Source Model Ecosystem\n\n38:03 – Will Chinese Models Remain Open\n\n44:07 – Safety and Open Models\n\n52:25 – Debating Access to Powerful Tools\n\n56:39 – AI and Scientific Progress\n\n59:59 – Data Centers and Jobs\n\n01:01:32 – Beam and Scientific Research\n\n01:05:03 – Research Head Count to Compute Ratio\n\n01:10:18 – Conclusion",
+          "description": "Is the future of frontier AI open or closed? ReflectionAI co-founder and CEO Misha Laskin joins Sarah Guo and Elad Gil to discuss the launch of Beam, the company’s 500 billion parameter open-weight reasoning model. Misha breaks down the pre-training and reinforcement learning required to produce Beam’s reasoning efficiency, the shift in enterprise compute from renting to owning intelligence, and how he believes that open models will capture the majority of global token demand. He also talks about the open model ecosystem in China and why competition with China’s models is a good thing, safety considerations around open models, and how frontier-level open models may accelerate the pace of scientific discovery.  \n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @MishaLaskin | @reflection_ai\n\nChapters:\n\n00:42 – Misha Laskin Introduction\n\n00:59 – Latest with ReflectionAI\n\n02:07 – Challenges Building an Open Model\n\n03:56 – ReflectionAI’s Agentic Shift\n\n07:37 – Resources for Model Training\n\n10:09 – Scaling Efficiency\n\n12:18 – Training Beam\n\n16:51 – Where Model Value Comes From\n\n19:55 – Beam’s Reasoning Efficiency\n\n22:35 – Monetizing Open Weight Models\n\n25:03 – Future of Open Versus Closed Tokens\n\n31:29 – Competition with Open Models\n\n34:38 – Chinese Open Source Model Ecosystem\n\n38:40 – Will Chinese Models Remain Open\n\n44:44 – Safety and Open Models\n\n53:02 – Debating Access to Powerful Tools\n\n57:16 – AI and Scientific Progress\n\n01:00:36 – Data Centers and Jobs\n\n01:02:07 – Beam and Scientific Research\n\n01:05:37 – Research Head Count to Compute Ratio\n\n01:10:29 – Conclusion",
           "url": "https://feeds.megaphone.fm/nopriors",
           "published_at": "2026-10-09T10:00:00+00:00",
           "hosts": [
@@ -77861,6 +77861,34 @@
       ],
       "links": {
         "youtube": "https://www.youtube.com/watch?v=enPbh_A5F7E"
+      }
+    },
+    {
+      "id": "7f6d588dfcdf5dfe1a9a",
+      "first_seen_at": "2026-10-09T18:17:27+00:00",
+      "status": "published",
+      "title": "No Priors: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
+      "source_title": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
+      "short_summary": "Misha Laskin, co-founder and CEO of ReflectionAI, discusses the launch of Beam, their 500 billion parameter open-weight reasoning model. He covers Beam's pre-training and reinforcement learning, the shift in enterprise compute, and the future of open models, including competition with Chinese models and safety considerations.",
+      "long_summary": "Misha Laskin, co-founder and CEO of ReflectionAI, joins Sarah Guo and Elad Gil on No Priors to discuss the launch of Beam, ReflectionAI's 500 billion parameter open-weight reasoning model. Laskin details the pre-training and reinforcement learning processes that contribute to Beam's reasoning efficiency. He also explores the evolving landscape of enterprise compute, moving from renting to owning intelligence, and posits that open models will eventually dominate global token demand. The conversation further delves into the open model ecosystem in China, the benefits of competition with Chinese models, and the safety implications of open models. Laskin also touches on how frontier-level open models could accelerate scientific discovery.",
+      "reason": "The item is a substantial interview with the co-founder and CEO of ReflectionAI, Misha Laskin, discussing the launch and technical aspects of their 500 billion parameter open-weight reasoning model, Beam. This falls under 'frontier models, research, post-training, evaluations, safety, and the open-model ecosystem' and 'important AI companies, products, agent systems, and AI-native software or engineering practice'.",
+      "published_at": "2026-10-09T17:28:41+00:00",
+      "appearances": [
+        {
+          "id": "16044e5044e99b663bc6",
+          "kind": "youtube",
+          "source": "No Priors — YouTube",
+          "family": "no priors",
+          "guid": "yt:video:up4sG9RM20M",
+          "title": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
+          "description": "Is the future of frontier AI open or closed? ReflectionAI co-founder and CEO Misha Laskin joins Sarah Guo and Elad Gil to discuss the launch of Beam, the company’s 500 billion parameter open-weight reasoning model. Misha breaks down the pre-training and reinforcement learning required to produce Beam’s reasoning efficiency, the shift in enterprise compute from renting to owning intelligence, and how he believes that open models will capture the majority of global token demand. He also talks about the open model ecosystem in China and why competition with China’s models is a good thing, safety considerations around open models, and how frontier-level open models may accelerate the pace of scientific discovery. \n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @MishaLaskin | @reflection_ai\n\nChapters:\n00:42 – Misha Laskin Introduction\n00:59 – Latest with ReflectionAI\n02:07 – Challenges Building an Open Model\n03:56 – ReflectionAI’s Agentic Shift\n07:37 – Resources for Model Training\n10:09 – Scaling Efficiency\n12:18 – Training Beam\n16:51 – Where Model Value Comes From\n19:55 – Beam’s Reasoning Efficiency\n22:35 – Monetizing Open Weight Models\n25:03 – Future of Open Versus Closed Tokens\n31:29 – Competition with Open Models\n34:38 – Chinese Open Source Model Ecosystem\n38:40 – Will Chinese Models Remain Open\n44:44 – Safety and Open Models\n53:02 – Debating Access to Powerful Tools\n57:16 – AI and Scientific Progress\n01:00:36 – Data Centers and Jobs\n01:02:07 – Beam and Scientific Research\n01:05:37 – Research Head Count to Compute Ratio\n01:10:29 – Conclusion",
+          "url": "https://www.youtube.com/watch?v=up4sG9RM20M",
+          "published_at": "2026-10-09T17:28:41+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=up4sG9RM20M"
       }
     }
   ]
