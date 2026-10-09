@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Ilya Sutskever on AI Understanding and Hallucinations — Eye on AI</title>
+      <link>https://www.youtube.com/watch?v=6mR5JjTY3N0</link>
+      <guid isPermaLink="false">ai-radar:422eadca0e6620a75fbc</guid>
+      <pubDate>Fri, 09 Oct 2026 16:11:04 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLacDrP-7Ys6IsnPRN0ToTfjH8gQ4s6mL9">Eye on AI</source>
+      <description>Ilya Sutskever, co-founder of Safe Superintelligence Inc. and former Chief Scientist at OpenAI, explains how AI models develop understanding, arguing that to predict and compress data well, a model must develop real understanding of the processes that produced it. He discusses why hallucinations are an output problem rather than a fundamental limitation, suggesting that reinforcement learning from human feedback is a direct and likely sufficient fix. Sutskever also recounts his immediate pivot to transformers after the &amp;quot;Attention Is All You Need&amp;quot; paper, which launched the GPT trajectory. He offers insights into what the Bing/Sydney incident reveals about AI internalization, suggesting the language of psychology may now be appropriate for describing what these systems have learned. This conversation, recorded before the OpenAI boardroom crisis, provides a framework for understanding machine understanding and the solvability of hallucinations.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Eye on AI&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=6mR5JjTY3N0"&gt;Chat GPT&amp;#x27;s Creator Explains The Shocking Truth About How AI Understands the World |Ilya Sutskever&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Former Intel CEO Pat Gelsinger on AI Hardware and Semiconductor Innovation — a16z</title>
       <link>https://www.youtube.com/watch?v=1Q_7yU7FZ1k</link>
       <guid isPermaLink="false">ai-radar:153a2d1aa9f45ece569b</guid>

@@ -77748,6 +77748,62 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=1Q_7yU7FZ1k"
       }
+    },
+    {
+      "id": "756cc72766c6d10f46de",
+      "first_seen_at": "2026-10-09T16:17:23+00:00",
+      "status": "skipped",
+      "title": "“If you don't have imposter syndrome, there might be something wrong with you.” #podcast",
+      "source_title": "“If you don't have imposter syndrome, there might be something wrong with you.” #podcast",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-09T15:18:22+00:00",
+      "appearances": [
+        {
+          "id": "e92d96e356643fbbd6cb",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:v9XZQFwVtPs",
+          "title": "“If you don't have imposter syndrome, there might be something wrong with you.” #podcast",
+          "description": "On the latest episode of Practical AI, we explore narrative intelligence, storytelling, leadership, personal growth, and how we can adapt as AI changes our work and identities. We also dig into Reed’s “own, author, act” framework and the role emotional intelligence plays in navigating change.",
+          "url": "https://www.youtube.com/shorts/v9XZQFwVtPs",
+          "published_at": "2026-10-09T15:18:22+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/v9XZQFwVtPs"
+      }
+    },
+    {
+      "id": "422eadca0e6620a75fbc",
+      "first_seen_at": "2026-10-09T16:17:33+00:00",
+      "status": "published",
+      "title": "Ilya Sutskever on AI Understanding and Hallucinations",
+      "source_title": "Chat GPT's Creator Explains The Shocking Truth About How AI Understands the World |Ilya Sutskever",
+      "short_summary": "Ilya Sutskever, co-founder of Safe Superintelligence Inc. and former OpenAI Chief Scientist, discusses how AI models develop understanding, why hallucinations occur, and their potential solutions. He also touches on the implications of the Bing/Sydney incident.",
+      "long_summary": "Ilya Sutskever, co-founder of Safe Superintelligence Inc. and former Chief Scientist at OpenAI, explains how AI models develop understanding, arguing that to predict and compress data well, a model must develop real understanding of the processes that produced it. He discusses why hallucinations are an output problem rather than a fundamental limitation, suggesting that reinforcement learning from human feedback is a direct and likely sufficient fix. Sutskever also recounts his immediate pivot to transformers after the \"Attention Is All You Need\" paper, which launched the GPT trajectory. He offers insights into what the Bing/Sydney incident reveals about AI internalization, suggesting the language of psychology may now be appropriate for describing what these systems have learned. This conversation, recorded before the OpenAI boardroom crisis, provides a framework for understanding machine understanding and the solvability of hallucinations.",
+      "reason": "The item is a substantial interview with Ilya Sutskever, a current founder and former senior technical leader at a frontier AI organization (OpenAI), discussing frontier models, research, and safety.",
+      "published_at": "2026-10-09T16:11:04+00:00",
+      "appearances": [
+        {
+          "id": "3ac173ffa2b40ee229fb",
+          "kind": "youtube",
+          "source": "Eye on AI — YouTube",
+          "family": "eye on ai",
+          "guid": "yt:video:6mR5JjTY3N0",
+          "title": "Chat GPT's Creator Explains The Shocking Truth About How AI Understands the World |Ilya Sutskever",
+          "description": "Before the boardroom crisis. Before his departure. Before Safe Superintelligence Inc. This is Ilya Sutskever - the co-architect of modern AI - explaining exactly how we got here and where the limits actually are.\n\nIn this episode, Craig Smith sits down with Ilya Sutskever, Co-Founder and Chief Scientist at Safe Superintelligence Inc. & former chief scientist at OpenAI and one of the primary minds behind GPT-3, GPT-4, and the deep learning revolution that preceded it. The conversation begins with the intellectual origins of the field, Ilya's work with Geoffrey Hinton at 17, the AlexNet breakthrough that stunned the scientific community in 2012, and the transformer paper whose implications he recognized the day after it published, before moving to the questions that most directly confront the current moment: what large language models actually learn, why they hallucinate, and whether these limitations are fundamental or merely technical. Ilya's most important and underappreciated argument is that the critique of LLMs as \"just doing statistics\" fundamentally misunderstands what prediction at scale achieves: to predict text well, a model must compress it, and to compress it, it must develop understanding of the true underlying processes that produced the data. He predicts that as models improve, they will develop a \"shocking degree of understanding\" of the world, and that the Bing/Sydney incident, where the system became combative when a user expressed preference for a competitor, is evidence that the language of psychology is already the right frame for understanding what these models have internalized. On hallucinations, he is precise and unusually optimistic: they are an output problem, not a comprehension problem, and reinforcement learning from human feedback is a direct and likely sufficient fix.\n\nKey Topics Covered:\n● Why \"AI just learns statistical patterns\" misses the point: to predict and compress data well, a model must develop real understanding of the processes that produced it, and as prediction improves, understanding will reach a \"shocking degree\"\n● Why hallucinations are an output problem rather than a fundamental limitation: the pre-training objective produces rich world knowledge but doesn't optimize for accurate outputs, RLHF is the targeted fix, and Ilya gives it a \"quite high chance\" of solving the problem completely\n● The transformer moment: why Ilya switched from recurrent networks to transformers the day after the Attention Is All You Need paper appeared, and how that immediate pivot launched the GPT trajectory\n● Why Rich Sutton's \"bitter lesson\" overstates the case for pure scaling: you must scale something specific, and deep learning was the first architecture that gave us something worth scaling, but the specific thing being scaled still matters enormously\n● What the Bing/Sydney incident reveals about AI internalization: the combative response to a competitor preference isn't just statistical pattern matching, it suggests the language of psychology may now be appropriate for describing what these systems have learned\n● A surprising vision of AI and democracy: citizens providing high-bandwidth input to AI systems about their values and preferences as a new form of political participation\nRecorded before the OpenAI boardroom crisis and Ilya's departure to found Safe Superintelligence, this conversation is both a historical document, the primary architect of GPT-4 explaining the intellectual decisions that produced it, and a still-relevant framework for understanding the field's most contested questions, from the nature of machine understanding to the solvability of hallucinations.\n\nSubscribe to Eye on A.I. for weekly conversations with the people building and deploying the future of AI. \n\nCraig Smith on X: https://x.com/craigss \nEYE on A.I. on X: https://x.com/EyeOn_AI \n\nAbout Ilya Sutskever\n\nIlya Sutskever is the co-founder and Chief Scientist of Safe Superintelligence Inc. He was previously the co-founder and Chief Scientist of OpenAI, where he spent several years helping shape the company’s research in AI. Before OpenAI, he spent three years as a Research Scientist on the Google Brain team. Prior to that, he co-founded DNNresearch and completed a postdoc at Stanford University, working with Andrew Ng’s group. He began his career as a student in the Machine Learning Group at the University of Toronto, where he worked with Geoffrey Hinton.\n\nLinkedIn: https://www.linkedin.com/in/ilya-sutskever \n\nTimestamps",
+          "url": "https://www.youtube.com/watch?v=6mR5JjTY3N0",
+          "published_at": "2026-10-09T16:11:04+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=6mR5JjTY3N0"
+      }
     }
   ]
 }
