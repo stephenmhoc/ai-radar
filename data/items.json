@@ -77617,6 +77617,78 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=MUHjyljBPHI"
       }
+    },
+    {
+      "id": "6a147ee20236b1f82e4f",
+      "first_seen_at": "2026-10-09T10:17:39+00:00",
+      "status": "published",
+      "title": "No Priors: Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
+      "source_title": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
+      "short_summary": "Misha Laskin, co-founder and CEO of ReflectionAI, discusses the launch of Beam, a 500 billion parameter open-weight reasoning model. He covers its training, reasoning efficiency, and the future of open models, including their potential impact on scientific discovery and competition with Chinese models.",
+      "long_summary": "Misha Laskin, co-founder and CEO of ReflectionAI, joins Sarah Guo and Elad Gil on No Priors to discuss the launch of Beam, ReflectionAI's 500 billion parameter open-weight reasoning model. Laskin details the pre-training and reinforcement learning processes that contribute to Beam's reasoning efficiency. He also addresses the shift in enterprise compute towards owning intelligence and his belief that open models will dominate global token demand. The conversation further explores the open model ecosystem in China, the benefits of competition with Chinese models, and safety considerations surrounding open models. Laskin concludes by discussing how frontier-level open models could accelerate scientific discovery.",
+      "reason": "The item is a substantial interview with a co-founder and CEO of an AI company discussing the launch of a 500 billion parameter open-weight reasoning model, covering frontier models, research, and the open-model ecosystem.",
+      "published_at": "2026-10-09T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "6a62463b6f5eca7f6962",
+          "kind": "podcast",
+          "source": "No Priors",
+          "family": "no priors",
+          "guid": "994123ec-c395-11f1-b01e-fff03490a570",
+          "title": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
+          "description": "Is the future of frontier AI open or closed? ReflectionAI co-founder and CEO Misha Laskin joins Sarah Guo and Elad Gil to discuss the launch of Beam, the company’s 500 billion parameter open-weight reasoning model. Misha breaks down the pre-training and reinforcement learning required to produce Beam’s reasoning efficiency, the shift in enterprise compute from renting to owning intelligence, and how he believes that open models will capture the majority of global token demand. He also talks about the open model ecosystem in China and why competition with China’s models is a good thing, safety considerations around open models, and how frontier-level open models may accelerate the pace of scientific discovery.  \n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @MishaLaskin | @reflection_ai\n\nChapters:\n\n00:00 – Misha Laskin Introduction\n\n00:22 – Latest with ReflectionAI\n\n01:30 – Challenges Building an Open Model\n\n03:19 – ReflectionAI’s Agentic Shift\n\n07:00 – Resources for Model Training\n\n09:32 – Scaling Efficiency\n\n11:43 – Training Beam\n\n16:14 – Where Model Value Comes From\n\n19:18 – Beam’s Reasoning Efficiency\n\n21:58 – Monetizing Open Weight Models\n\n24:28 – Future of Open Versus Closed Tokens\n\n30:54 – Competition with Open Models\n\n34:01 – Chinese Open Source Model Ecosystem\n\n38:03 – Will Chinese Models Remain Open\n\n44:07 – Safety and Open Models\n\n52:25 – Debating Access to Powerful Tools\n\n56:39 – AI and Scientific Progress\n\n59:59 – Data Centers and Jobs\n\n01:01:32 – Beam and Scientific Research\n\n01:05:03 – Research Head Count to Compute Ratio\n\n01:10:18 – Conclusion",
+          "url": "https://feeds.megaphone.fm/nopriors",
+          "published_at": "2026-10-09T10:00:00+00:00",
+          "hosts": [
+            "Sarah Guo",
+            "Elad Gil"
+          ]
+        },
+        {
+          "id": "d6f6d02d277537ed6791",
+          "kind": "youtube",
+          "source": "No Priors — YouTube",
+          "family": "no priors",
+          "guid": "yt:video:lx9RjE0GekI",
+          "title": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
+          "description": "Is the future of frontier AI open or closed? ReflectionAI co-founder and CEO Misha Laskin joins Sarah Guo and Elad Gil to discuss the launch of Beam, the company’s 500 billion parameter open-weight reasoning model. Misha breaks down the pre-training and reinforcement learning required to produce Beam’s reasoning efficiency, the shift in enterprise compute from renting to owning intelligence, and how he believes that open models will capture the majority of global token demand. He also talks about the open model ecosystem in China and why competition with China’s models is a good thing, safety considerations around open models, and how frontier-level open models may accelerate the pace of scientific discovery. \nSign up for new podcasts every week. Email feedback to show@no-priors.com\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @MishaLaskin | @reflection_ai\nChapters:\n00:05 – Misha Laskin Introduction\n00:22 – Latest with ReflectionAI\n01:30 – Challenges Building an Open Model\n03:19 – ReflectionAI’s Agentic Shift\n07:00 – Resources for Model Training\n09:32 – Scaling Efficiency\n11:43 – Training Beam\n16:14 – Where Model Value Comes From\n19:18 – Beam’s Reasoning Efficiency\n21:58 – Monetizing Open Weight Models\n24:28 – Future of Open Versus Closed Tokens\n30:54 – Competition with Open Models\n34:01 – Chinese Open Source Model Ecosystem\n38:03 – Will Chinese Models Remain Open\n44:07 – Safety and Open Models\n52:25 – Debating Access to Powerful Tools\n56:39 – AI and Scientific Progress\n59:59 – Data Centers and Jobs\n01:01:32 – Beam and Scientific Research\n01:05:03 – Research Head Count to Compute Ratio\n01:10:18 – Conclusion",
+          "url": "https://www.youtube.com/watch?v=lx9RjE0GekI",
+          "published_at": "2026-10-09T10:00:17+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/nopriors",
+        "youtube": "https://www.youtube.com/watch?v=lx9RjE0GekI"
+      }
+    },
+    {
+      "id": "0f195e5dfc58f1751493",
+      "first_seen_at": "2026-10-09T10:17:53+00:00",
+      "status": "published",
+      "title": "Chips, Memory, and Power | Pat Gelsinger",
+      "source_title": "Chips, Memory, and Power | Pat Gelsinger",
+      "short_summary": "Pat Gelsinger, former Intel CEO, discusses semiconductor innovation and physical constraints in AI with a16z's Raghu Raghuram and Guido Appenzeller. They examine bottlenecks in manufacturing, memory, packaging, and power, and the potential for new memory technologies and optical networking.",
+      "long_summary": "Pat Gelsinger, former Intel CEO, joins a16z's Raghu Raghuram and Guido Appenzeller to discuss the future of semiconductor innovation and the physical limitations impacting AI development. Gelsinger draws on his experience designing Intel's 386 and 486 processors to explain how AI could transform chip design, while also highlighting that faster design alone won't resolve the industry's primary challenges. The conversation delves into bottlenecks in manufacturing, memory bandwidth, advanced packaging, and power, and explores why the current proliferation of specialized AI chips might eventually consolidate around fewer architectures. They also consider the potential of new memory technologies, the transition from copper to optical networking, and the critical role energy capacity could play as a constraint on AI growth. Finally, they revisit Gelsinger's time at VMware to contemplate what virtualization might look like in an infrastructure designed for agents rather than humans.",
+      "reason": "The podcast features Pat Gelsinger, former Intel CEO, discussing AI infrastructure, chips, memory, and power, which aligns with the criteria for consequential work on AI infrastructure and important AI companies.",
+      "published_at": "2026-10-09T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "efed32ce0ba49ae04653",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "6be2f208-f197-42c1-bd01-4b859bfc26cb",
+          "title": "Chips, Memory, and Power | Pat Gelsinger",
+          "description": "a16z's Raghu Raghuram and Guido Appenzeller sit down with Playground Global General Partner and former Intel CEO Pat Gelsinger to discuss the next wave of semiconductor innovation and the physical constraints shaping the AI buildout.\n\nDrawing on his experience designing Intel's 386 and 486 processors, Pat explains how AI could transform chip design, but also why faster design alone won't solve the industry's biggest problems. They examine the bottlenecks in manufacturing, memory bandwidth, advanced packaging, and power, and why today's explosion of specialized AI chips may eventually consolidate around a smaller number of architectures.\n\nThey also discuss the potential for new memory technologies, the shift from copper to optical networking, and why energy capacity could become a major constraint on AI growth. Finally, they revisit Pat's VMware years to ask what virtualization might look like when infrastructure is built for agents rather than humans.\n\nResources:\n\nFollow Pat Gelsinger on X:  \nhttps://x.com/PGelsinger\n\nFollow Raghu Raghuram on X:\nhttps://x.com/RaghuRaghuram\n\nFollow Guido Appenzeller: \nhttps://x.com/appenz\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/chips-memory-and-power-pat-gelsinger-uwHe_vsU",
+          "published_at": "2026-10-09T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/chips-memory-and-power-pat-gelsinger-uwHe_vsU"
+      }
     }
   ]
 }
