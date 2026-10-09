@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Former Intel CEO Pat Gelsinger on AI Hardware and Semiconductor Innovation — a16z</title>
+      <link>https://www.youtube.com/watch?v=1Q_7yU7FZ1k</link>
+      <guid isPermaLink="false">ai-radar:153a2d1aa9f45ece569b</guid>
+      <pubDate>Fri, 09 Oct 2026 14:30:19 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UC9cn0TuPq4dnbTY-CBsm8XA">a16z</source>
+      <description>Pat Gelsinger, former Intel CEO and Playground Global General Partner, discusses the future of semiconductor innovation and the physical constraints impacting AI development. Drawing on his experience designing Intel&amp;#x27;s 386 and 486 processors, Gelsinger explains how AI could revolutionize chip design, but also highlights that faster design alone won&amp;#x27;t resolve the industry&amp;#x27;s major challenges. He examines critical bottlenecks in manufacturing, memory bandwidth, advanced packaging, and power. The conversation also explores why the current proliferation of specialized AI chips might eventually consolidate around fewer architectures, the potential for new memory technologies, and the shift from copper to optical networking. Finally, Gelsinger considers how energy capacity could become a significant constraint on AI growth and what virtualization might look like for agent-based infrastructure.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · a16z&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=1Q_7yU7FZ1k"&gt;Former Intel CEO: Why This is the Best Time to Build Hardware&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>No Priors: Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin — No Priors</title>
       <link>https://feeds.megaphone.fm/nopriors</link>
       <guid isPermaLink="false">ai-radar:6a147ee20236b1f82e4f</guid>

@@ -77720,6 +77720,34 @@
       "links": {
         "podcast": "https://www.nytimes.com/2026/10/09/podcasts/hardfork-anthropic-ai-morals.html"
       }
+    },
+    {
+      "id": "153a2d1aa9f45ece569b",
+      "first_seen_at": "2026-10-09T15:17:48+00:00",
+      "status": "published",
+      "title": "Former Intel CEO Pat Gelsinger on AI Hardware and Semiconductor Innovation",
+      "source_title": "Former Intel CEO: Why This is the Best Time to Build Hardware",
+      "short_summary": "Former Intel CEO Pat Gelsinger discusses the next wave of semiconductor innovation and physical constraints shaping AI buildout. He covers how AI could transform chip design, manufacturing bottlenecks, memory bandwidth, advanced packaging, and power, and the potential for new memory technologies.",
+      "long_summary": "Pat Gelsinger, former Intel CEO and Playground Global General Partner, discusses the future of semiconductor innovation and the physical constraints impacting AI development. Drawing on his experience designing Intel's 386 and 486 processors, Gelsinger explains how AI could revolutionize chip design, but also highlights that faster design alone won't resolve the industry's major challenges. He examines critical bottlenecks in manufacturing, memory bandwidth, advanced packaging, and power. The conversation also explores why the current proliferation of specialized AI chips might eventually consolidate around fewer architectures, the potential for new memory technologies, and the shift from copper to optical networking. Finally, Gelsinger considers how energy capacity could become a significant constraint on AI growth and what virtualization might look like for agent-based infrastructure.",
+      "reason": "The item features a former CEO of a major chip manufacturer discussing AI infrastructure, including chips, systems, and power, which aligns with AI Radar's focus on consequential work in AI infrastructure.",
+      "published_at": "2026-10-09T14:30:19+00:00",
+      "appearances": [
+        {
+          "id": "8f5361ff5ce1c3222093",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:1Q_7yU7FZ1k",
+          "title": "Former Intel CEO: Why This is the Best Time to Build Hardware",
+          "description": "a16z's Raghu Raghuram and Guido Appenzeller sit down with Playground Global General Partner and former Intel CEO Pat Gelsinger to discuss the next wave of semiconductor innovation and the physical constraints shaping the AI buildout.\n\nDrawing on his experience designing Intel's 386 and 486 processors, Pat explains how AI could transform chip design, but also why faster design alone won't solve the industry's biggest problems. They examine the bottlenecks in manufacturing, memory bandwidth, advanced packaging, and power, and why today's explosion of specialized AI chips may eventually consolidate around a smaller number of architectures.\n\nThey also discuss the potential for new memory technologies, the shift from copper to optical networking, and why energy capacity could become a major constraint on AI growth. Finally, they revisit Pat's VMware years to ask what virtualization might look like when infrastructure is built for agents rather than humans.\n\nTimestamps:\n00:00 - Intro\n01:00 - From tech school to Intel at 18\n05:44 - The 486 and the birth of modern EDA\n07:23 - How AI changes chip design\n09:18 - Why silicon still takes nine months\n14:49 - Will 100 AI chips converge to a few?\n22:08 - Why HBM is a hideous memory\n25:15 - How tall can chips get?\n42:49 - Energy capacity equals economic capacity\n48:42 - A VMware for agents\n\nResources:\nFollow Pat Gelsinger on X: https://x.com/PGelsinger\nFollow Raghu Raghuram on X: https://x.com/RaghuRaghuram\nFollow Guido Appenzeller: https://x.com/appenz\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=1Q_7yU7FZ1k",
+          "published_at": "2026-10-09T14:30:19+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=1Q_7yU7FZ1k"
+      }
     }
   ]
 }
