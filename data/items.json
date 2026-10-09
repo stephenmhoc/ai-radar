@@ -77890,6 +77890,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=up4sG9RM20M"
       }
+    },
+    {
+      "id": "7d97fcc9accfc953447f",
+      "first_seen_at": "2026-10-09T19:17:24+00:00",
+      "status": "skipped",
+      "title": "AI Is Changing Your Identity at Work",
+      "source_title": "AI Is Changing Your Identity at Work",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item discusses the impact of AI on work and identity, focusing on emotional intelligence and adaptability. It does not feature individuals from target organizations or present new technical or strategic insights into frontier AI development or infrastructure.",
+      "published_at": "2026-10-09T19:03:19+00:00",
+      "appearances": [
+        {
+          "id": "eb261572c590b831fbc6",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:su-IbU71R2A",
+          "title": "AI Is Changing Your Identity at Work",
+          "description": "AI is changing how we work, how we learn, and even how we see ourselves. So how do we navigate the uncertainty that comes with it?\n\nReed Frerichs joins Daniel and Chris to discuss why emotional intelligence, self-awareness, and adaptability matter more than ever in a world of accelerating AI capabilities. They explore how to manage fear and overwhelm, rethink our identities, and learn to respond rather than react as the workplace continues to evolve.\n\nThe conversation offers a reminder that while AI changes what we can do, understanding who we are and how we work with others remains essential.\n\nFEATURING:\n\nGuest - Reed Frerichs (Host of Inner Story & Founder of startups; The Lesson and Everspace): https://www.linkedin.com/in/reedfrerichs/\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast): https://www.linkedin.com/in/danielwhitenack/\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast): https://www.linkedin.com/in/chrisbenson/\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
+          "url": "https://www.youtube.com/watch?v=su-IbU71R2A",
+          "published_at": "2026-10-09T19:03:19+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=su-IbU71R2A"
+      }
     }
   ]
 }
