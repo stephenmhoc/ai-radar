@@ -77640,8 +77640,8 @@
           "url": "https://feeds.megaphone.fm/nopriors",
           "published_at": "2026-10-09T10:00:00+00:00",
           "hosts": [
-            "Sarah Guo",
-            "Elad Gil"
+            "Elad Gil",
+            "Sarah Guo"
           ]
         },
         {
@@ -77688,6 +77688,37 @@
       ],
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/chips-memory-and-power-pat-gelsinger-uwHe_vsU"
+      }
+    },
+    {
+      "id": "10b3ff4fff787d73271f",
+      "first_seen_at": "2026-10-09T11:17:21+00:00",
+      "status": "deferred",
+      "title": "Anthropic’s Quest to Give A.I. Morals",
+      "source_title": "Anthropic’s Quest to Give A.I. Morals",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-10-09T11:01:21+00:00",
+      "appearances": [
+        {
+          "id": "499aa3c7e1ab62926167",
+          "kind": "podcast",
+          "source": "Hard Fork",
+          "family": "hard fork",
+          "guid": "https://www.nytimes.com/2026/10/09/podcasts/hardfork-anthropic-ai-morals.html",
+          "title": "Anthropic’s Quest to Give A.I. Morals",
+          "description": "“For Anthropic, it was part research and part evangelism.”",
+          "url": "https://www.nytimes.com/2026/10/09/podcasts/hardfork-anthropic-ai-morals.html",
+          "published_at": "2026-10-09T11:01:21+00:00",
+          "hosts": [
+            "Kevin Roose",
+            "Casey Newton"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.nytimes.com/2026/10/09/podcasts/hardfork-anthropic-ai-morals.html"
       }
     }
   ]
