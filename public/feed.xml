@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli (Google DeepMind) &amp; Sal Candido (Biohub) — Latent Space</title>
+      <link>https://www.latent.space/p/biohub-deepmind</link>
+      <guid isPermaLink="false">ai-radar:e29a6ecb7a6f40279206</guid>
+      <pubDate>Sat, 10 Oct 2026 00:31:26 +0000</pubDate>
+      <source url="https://api.substack.com/feed/podcast/1084089.rss">Latent Space</source>
+      <description>Pushmeet Kohli from Google DeepMind and Sal Candido from Biohub discuss the future of AI in biology, emphasizing that AlphaFold&amp;#x27;s breakthrough was only the start. They argue that simply scaling compute and data is insufficient for solving complex biological problems, highlighting the need to identify appropriate scaling laws. The conversation delves into the trade-offs between scientific intuition and general-purpose AI architectures, explaining why protein structure prediction remains an unsolved challenge. They also explore how the next generation of AI models could advance our understanding of proteins, cells, and human diseases, moving beyond individual proteins to whole biological systems. The discussion touches on the hidden knowledge within protein language models and the potential for AI to accelerate drug discovery significantly.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/biohub-deepmind"&gt;Why AlphaFold Didn&amp;#x27;t Solve Protein Folding — Pushmeet Kohli, Google DeepMind &amp;amp; Sal Candido, Biohub&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/biohub-deepmind"&gt;Why AlphaFold Didn&amp;#x27;t Solve Protein Folding — Pushmeet Kohli, Google DeepMind &amp;amp; Sal Candido, Biohub&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Nathan Lambert on AI-Driven Infrastructure Optimization Versus Superintelligence — Interconnects</title>
       <link>https://www.interconnects.ai/p/i-expect-rapid-progress-but-not-towards</link>
       <guid isPermaLink="false">ai-radar:cb21e11f58aded2370e1</guid>
