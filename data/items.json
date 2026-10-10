@@ -78184,6 +78184,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/standard-bots"
       }
+    },
+    {
+      "id": "6e07c0c991be642a64ed",
+      "first_seen_at": "2026-10-10T16:17:22+00:00",
+      "status": "skipped",
+      "title": "WTO Chief Calls Fighting Corruption Her Life's Biggest Battle",
+      "source_title": "WTO Chief Calls Fighting Corruption Her Life's Biggest Battle",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-10T16:00:16+00:00",
+      "appearances": [
+        {
+          "id": "9ba4c0e1afeaf7cdff59",
+          "kind": "youtube",
+          "source": "Bloomberg Originals",
+          "family": "bloomberg originals",
+          "guid": "yt:video:4ZfTOy5OS10",
+          "title": "WTO Chief Calls Fighting Corruption Her Life's Biggest Battle",
+          "description": "Ngozi Okonjo-Iweala speaks with Francine Lacqua about her personal fight against corruption, explaining how diverted public funds rob developing nations of critical investments. \n\nMore on this episode of Leaders\n\n--------\nLike this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1\n\nGet unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals\nBloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. \n\nSubscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.\n\nVisit our partner channel Bloomberg News for global news and insight in an instant.",
+          "url": "https://www.youtube.com/shorts/4ZfTOy5OS10",
+          "published_at": "2026-10-10T16:00:16+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/4ZfTOy5OS10"
+      }
     }
   ]
 }
