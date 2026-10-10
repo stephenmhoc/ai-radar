@@ -78212,6 +78212,65 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/4ZfTOy5OS10"
       }
+    },
+    {
+      "id": "4ff38dcafbdaad065fd9",
+      "first_seen_at": "2026-10-10T22:17:26+00:00",
+      "status": "skipped",
+      "title": "How Oracle Uses Codex to Help Business Users Get Answers",
+      "source_title": "How Oracle Uses Codex to Help Business Users Get Answers",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a brief promotional video from OpenAI about a customer use case, not a substantial interview, talk, or demonstration with durable substance. It features a customer, not a qualifying person from a target organization.",
+      "published_at": "2026-10-10T21:40:25+00:00",
+      "appearances": [
+        {
+          "id": "a4b0dc7ba764452c61f4",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:Ju-JyxDgV7g",
+          "title": "How Oracle Uses Codex to Help Business Users Get Answers",
+          "description": "Richard Lam, Group Vice President at Oracle Applications Lab, shares how his team uses Codex to help business users get answers from company data. By describing the outcome they want, users can get an analysis, a report, or an application, with Codex gathering the information from internal systems.\n\nRead the full Oracle story: https://openai.com/index/oracle/",
+          "url": "https://www.youtube.com/watch?v=Ju-JyxDgV7g",
+          "published_at": "2026-10-10T21:40:25+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=Ju-JyxDgV7g"
+      }
+    },
+    {
+      "id": "9b40dcb5de1eedb362cc",
+      "first_seen_at": "2026-10-10T22:17:26+00:00",
+      "status": "deferred",
+      "title": "[Subscriber Exclusive] NYC Subscriber Meetups!",
+      "source_title": "[Subscriber Exclusive] NYC Subscriber Meetups!",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-10-10T22:07:17+00:00",
+      "appearances": [
+        {
+          "id": "b09a478e8e27dbfbb361",
+          "kind": "newsletter",
+          "source": "Latent Space — Newsletter",
+          "family": "latent space",
+          "guid": "https://www.latent.space/p/nyc2026",
+          "title": "[Subscriber Exclusive] NYC Subscriber Meetups!",
+          "description": "If you’re seeing this you’re part of our very very light subscription/paid tier, and we genuinely appreciate you: your donations have funded our production process indefinitely and it is my sincere i…\n\n Read more",
+          "url": "https://www.latent.space/p/nyc2026",
+          "published_at": "2026-10-10T22:07:17+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://www.latent.space/p/nyc2026"
+      }
     }
   ]
 }
