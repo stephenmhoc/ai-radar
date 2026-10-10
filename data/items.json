@@ -78082,6 +78082,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-typesafejev-at-100m-arr-75b"
       }
+    },
+    {
+      "id": "2746a3cec72fb73a3d2c",
+      "first_seen_at": "2026-10-10T10:17:39+00:00",
+      "status": "published",
+      "title": "The a16z Show: Ben Horowitz on Vintage x Vintage",
+      "source_title": "What Makes a Great Entrepreneur? | Ben Horowitz on Vintage x Vintage",
+      "short_summary": "Ben Horowitz discusses entrepreneurship, venture investing, and why he believes the current AI cycle is bigger than the internet. He also explores how AI lowers barriers for builders and why underlying model infrastructure may need to be rebuilt from the ground up.",
+      "long_summary": "In the inaugural episode of Vintage x Vintage on The a16z Show, a16z co-founder Ben Horowitz joins James Norman for a conversation spanning entrepreneurship, investing, and technology. Horowitz reflects on going from Netscape to becoming a first-time CEO, the existential crises that founders inevitably confront, and lessons learned from designing a firm around entrepreneurial needs. He explains why investors should target world-class strengths rather than a lack of weaknesses, and how broadening talent recognition elevates standards. Horowitz also examines the current AI cycle, asserting his belief that it is larger than the internet. Finally, he discusses how AI alters who can become a builder and why the infrastructure supporting modern models may require a complete rebuild from scratch.",
+      "reason": "Ben Horowitz provides strategic analysis on the scale of the AI cycle, its impact on software creation, and the need to overhaul underlying AI infrastructure.",
+      "published_at": "2026-10-10T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "df7af56ab2c47bb54b09",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "622eb43c-ff90-4b57-bdc2-3289bee70e1a",
+          "title": "What Makes a Great Entrepreneur? | Ben Horowitz on Vintage x Vintage",
+          "description": "a16z co-founder and General Partner Ben Horowitz joins James Norman on the inaugural episode of \nVintage x Vintage\n for a conversation spanning entrepreneurship, investing, hip-hop, and what changes when AI makes building dramatically easier.\n\nBen reflects on going from Netscape to becoming a first-time CEO, why every founder eventually hits a “we’re fucked, it’s over” moment, and what he learned from building a16z around the needs of entrepreneurs. He explains why great investors should look for world-class strengths rather than an absence of weaknesses, and why expanding the ways we recognize talent can raise the bar rather than lower it.\n\nThey also look at the current AI cycle, why Ben believes it is bigger than the internet, how AI changes who can become a builder, and why the infrastructure beneath today’s models may need to be rebuilt from the ground up.\n\nResources:\n\nFollow Ben Horowitz on X:\nhttps://x.com/bhorowitz\n\nFollow James Norman on LinkedIn: \nhttps://www.linkedin.com/in/motown/\n\nLearn more about Paid in Full:\nhttps://paidinfullfoundation.org\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/what-makes-a-great-entrepreneur-ben-horowitz-on-vintage-x-vintage-FiiBzjgE",
+          "published_at": "2026-10-10T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/what-makes-a-great-entrepreneur-ben-horowitz-on-vintage-x-vintage-FiiBzjgE"
+      }
     }
   ]
 }
