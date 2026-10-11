@@ -78271,6 +78271,36 @@
       "links": {
         "newsletter": "https://www.latent.space/p/nyc2026"
       }
+    },
+    {
+      "id": "50b5c6b9441093602985",
+      "first_seen_at": "2026-10-11T08:17:28+00:00",
+      "status": "published",
+      "title": "Alexandr Wang on Building Muse and Rebuilding Meta's AI Lab",
+      "source_title": "Creating Muse: The Fastest-Growing AI Product Since ChatGPT | Alexandr Wang, Meta",
+      "short_summary": "Meta Chief AI Officer Alexandr Wang joins David Senra to discuss developing Muse, Meta's pivot toward personal AI agents, and restructuring the company's AI lab around small teams.",
+      "long_summary": "In this conversation with David Senra, Meta Chief AI Officer and Scale AI co-founder Alexandr Wang discusses the seven-month sprint to build Muse and Meta's decision to focus on personal AI agents over coding assistants. Wang explains how Mark Zuckerberg recruited him to Meta following setbacks with Llama 4 and why he chose to leave Scale AI after nine years. He details how Zuckerberg and Nat Friedman helped shape Muse and why having a single point of view was essential to the launch. Wang also describes his approach to reorganizing Meta's AI lab around small teams, exceptional talent, minimal bureaucracy, and maintaining over 200 direct reports. Additionally, the discussion explores viral marketing with memes and the broader impact of AI agents on human ambition.",
+      "reason": "Features an in-depth interview with Meta Chief AI Officer Alexandr Wang, an explicitly listed frontier AI leader, covering AI strategy, product development, and lab restructuring.",
+      "published_at": "2026-10-11T08:00:00+00:00",
+      "appearances": [
+        {
+          "id": "6cbc75d0d984901085fe",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "3bd67d32-c52b-11f1-8dc9-b74edd6b172f",
+          "title": "Creating Muse: The Fastest-Growing AI Product Since ChatGPT | Alexandr Wang, Meta",
+          "description": "Alexandr Wang is the chief AI officer of Meta and co-founder of Scale AI. We talk about the seven-month effort to build Muse, why Meta focused on personal AI agents instead of coding, and how Mark Zuckerberg and Nat Friedman helped shape the product. Alexandr shares how Zuckerberg recruited him after Meta's Llama 4 setback, why he left Scale after nine years, and how he's rebuilding Meta's AI lab around small teams, exceptional talent, and minimal bureaucracy. We also discuss using memes to make a product go viral, the importance of having a single point of view, and why Alexandr believes AI could give everyone the ability to pursue bigger ambitions.\n\nShow notes: https://www.davidsenra.com/episode/alexandr-wang\n\nMade possible by\n\nRamp: https://ramp.com\n\nDeel: https://deel.com/senra\n\nAppLovin: https://applovin.com/senra\n\nChapters\n\n(00:00:00) The vision behind Muse\n\n(00:01:32) Discovering the potential of personal AI agents\n\n(00:03:34) Three years of therapy in one AI session\n\n(00:05:46) Building Muse in 7 months\n\n(00:09:16) Why Meta bet on personal AI\n\n(00:16:51) Mark Zuckerberg's obsession with improving products\n\n(00:20:15) How Meta knew Muse was ready to launch\n\n(00:23:32) Why great products need a single point of view\n\n(00:25:56) Making Meta cool again with memes\n\n(00:34:38) Building trust with AI agents\n\n(00:38:43) The future of human ambition\n\n(00:45:22) The call from Mark Zuckerberg that changed everything\n\n(00:52:13) Leaving Scale AI for Meta\n\n(00:55:19) Rebuilding Meta's AI lab from scratch\n\n(00:58:13) From founder to coach\n\n(01:05:55) The future billionaires at Alexandr's 19th birthday party\n\n(01:08:04) Diamond mining vs. building skyscrapers\n\n(01:09:21) Why Alexandr has more than 200 direct reports\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/alexandr-wang",
+          "published_at": "2026-10-11T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/alexandr-wang"
+      }
     }
   ]
 }
