@@ -78329,6 +78329,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=bPSeumz6sgI"
       }
+    },
+    {
+      "id": "1c5ba8fad80df38cff5b",
+      "first_seen_at": "2026-10-11T10:17:25+00:00",
+      "status": "published",
+      "title": "Nick Bostrom: How Should We Navigate Superintelligence?",
+      "source_title": "Nick Bostrom: How Should We Navigate Superintelligence?",
+      "short_summary": "Nick Bostrom discusses superintelligence and existential risk, exploring how reinforcement learning may drive goal-seeking behavior in AI and the implications of instrumental convergence. He advocates for preserving the ability to slow frontier AI development.",
+      "long_summary": "Nick Bostrom joins Theo Jaffee and Sofia Puccini to revisit his ideas on superintelligence and existential risk, considering the current state of increasingly capable AI systems. He discusses how reinforcement learning might push models toward goal-seeking behavior and what recent agent experiments reveal about instrumental convergence. Bostrom favors maintaining the option to slow frontier AI development rather than committing to an indefinite pause. He also argues that AI risks must be balanced against potential benefits, such as advances in medicine and extended lifespans. The conversation further explores the possibility of consciousness in current models, tradeoffs of open-source AI, machine philosophy, mind uploading, and the simulation hypothesis's relevance to superintelligence.",
+      "reason": "The item features Nick Bostrom, a prominent figure in AI safety and superintelligence, discussing consequential topics related to frontier models, safety, and the strategic forces shaping AI development.",
+      "published_at": "2026-10-11T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "4426f37e6aa3f3f25da4",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "a81bc86d-fcb2-4837-9001-7f815fae8537",
+          "title": "Nick Bostrom: How Should We Navigate Superintelligence?",
+          "description": "Nick Bostrom joins Theo Jaffee and Sofia Puccini on MTS to revisit the ideas about superintelligence and existential risk that he helped bring into the mainstream, now that increasingly capable AI systems actually exist.\n\nNick discusses why reinforcement learning may be pushing models toward more goal-seeking behavior, what recent agent experiments tell us about instrumental convergence, and why he favors preserving the ability to slow frontier development rather than committing now to a broad or indefinite AI pause. He also makes the case that the risks of AI need to be weighed alongside its potential upside, from advances in medicine and longer lifespans to entirely new ways of being human. \n\nThey also get into whether today's models could already have some form of consciousness, the tradeoffs of open-source AI, whether machines can do original philosophy, mind uploading, and what the simulation hypothesis might mean for the superintelligence we create.\n\nResources:\n\nNick Bostrom / Macrostrategy Research Initiative: \nhttps://nickbostrom.com/\n\nFollow Theo Jaffee on X:\nhttps://x.com/theojaffee\n\nFollow Sofia Puccini on LinkedIn: https://www.linkedin.com/in/sofiapuccini/\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/nick-bostrom-how-should-we-navigate-superintelligence-COJSBboX",
+          "published_at": "2026-10-11T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/nick-bostrom-how-should-we-navigate-superintelligence-COJSBboX"
+      }
     }
   ]
 }
