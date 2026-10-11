@@ -78400,6 +78400,34 @@
         "podcast": "https://www.lennysnewsletter.com/p/why-every-company-now-needs-to-think",
         "youtube": "https://www.youtube.com/watch?v=3I6QYkccd3o"
       }
+    },
+    {
+      "id": "67c6eb1cb994f74d0ef4",
+      "first_seen_at": "2026-10-11T17:17:22+00:00",
+      "status": "skipped",
+      "title": "Inside the WTO Chief’s Office",
+      "source_title": "Inside the WTO Chief’s Office",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-11T16:00:10+00:00",
+      "appearances": [
+        {
+          "id": "c4709b63bcdcfe66df83",
+          "kind": "youtube",
+          "source": "Bloomberg Originals",
+          "family": "bloomberg originals",
+          "guid": "yt:video:zlSpdzQhAkE",
+          "title": "Inside the WTO Chief’s Office",
+          "description": "Ngozi Okonjo-Iweala gives Francine Lacqua a tour of her office and explains why she hung a controversial piece of artwork in her personal space after female staff objected to displaying it publicly. \n\nMore on this episode of Leaders\n\n--------\nLike this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1\n\nGet unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals\nBloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. \n\nSubscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.\n\nVisit our partner channel Bloomberg News for global news and insight in an instant.",
+          "url": "https://www.youtube.com/shorts/zlSpdzQhAkE",
+          "published_at": "2026-10-11T16:00:10+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/zlSpdzQhAkE"
+      }
     }
   ]
 }
