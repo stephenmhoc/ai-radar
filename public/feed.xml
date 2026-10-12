@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Recursive Self-Improvement and the Future of AI — a16z with MakerMaker.AI founders — a16z</title>
+      <link>https://www.youtube.com/watch?v=3Q1mdn5ZGvM</link>
+      <guid isPermaLink="false">ai-radar:034fbfb2bb621b3e663f</guid>
+      <pubDate>Mon, 12 Oct 2026 14:30:07 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UC9cn0TuPq4dnbTY-CBsm8XA">a16z</source>
+      <description>Martin Casado hosts Dhaval Adjodah and Owen He to discuss recursive self-improvement (RSI) and clarify misconceptions around the term. They explain the distinction between true RSI—where a system improves itself across models, harnesses, and the AI stack in a closed loop—versus simply using AI to automate development pieces. The founders address why RSI doesn&amp;#x27;t necessarily lead to runaway &amp;quot;takeoff&amp;quot; and emphasize the importance of measuring progress by accounting for both capability gains and resource costs. They share research findings on self-improving systems increasing performance while improving efficiency, and discuss practical challenges in proving genuine improvement, including variance, reward hacking, and distinguishing signal from noise.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · a16z&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=3Q1mdn5ZGvM"&gt;Recursive Self-Improvement and the Future of AI&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Why every company now needs to think and operate like a lab team | Josh Woodward (Google Labs, Gemini, AI Studio) — Lenny's Podcast</title>
       <link>https://www.lennysnewsletter.com/p/why-every-company-now-needs-to-think</link>
       <guid isPermaLink="false">ai-radar:c3f2e188e8b4b8b25b60</guid>

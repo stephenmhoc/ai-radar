@@ -78544,6 +78544,34 @@
       "links": {
         "newsletter": "https://importai.substack.com/p/import-ai-476-creativity-and-rsi"
       }
+    },
+    {
+      "id": "034fbfb2bb621b3e663f",
+      "first_seen_at": "2026-10-12T15:17:30+00:00",
+      "status": "published",
+      "title": "Recursive Self-Improvement and the Future of AI — a16z with MakerMaker.AI founders",
+      "source_title": "Recursive Self-Improvement and the Future of AI",
+      "short_summary": "a16z General Partner Martin Casado interviews MakerMaker.AI co-founders Dhaval Adjodah and Owen He on recursive self-improvement (RSI) in AI systems, distinguishing true closed-loop self-improvement from AI-assisted development automation.",
+      "long_summary": "Martin Casado hosts Dhaval Adjodah and Owen He to discuss recursive self-improvement (RSI) and clarify misconceptions around the term. They explain the distinction between true RSI—where a system improves itself across models, harnesses, and the AI stack in a closed loop—versus simply using AI to automate development pieces. The founders address why RSI doesn't necessarily lead to runaway \"takeoff\" and emphasize the importance of measuring progress by accounting for both capability gains and resource costs. They share research findings on self-improving systems increasing performance while improving efficiency, and discuss practical challenges in proving genuine improvement, including variance, reward hacking, and distinguishing signal from noise.",
+      "reason": "Qualifies as substantive technical discussion on frontier AI research (recursive self-improvement and post-training) featuring founders with firsthand expertise in AI development, hosted by a16z General Partner with original analysis and detailed technical exploration of the topic.",
+      "published_at": "2026-10-12T14:30:07+00:00",
+      "appearances": [
+        {
+          "id": "bebc8f32c0e789021d90",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:3Q1mdn5ZGvM",
+          "title": "Recursive Self-Improvement and the Future of AI",
+          "description": "a16z General Partner Martin Casado sits down with MakerMaker.AI co-founders Dhaval Adjodah and Owen He to unpack recursive self-improvement, or RSI, and separate the increasingly popular term from what it would actually mean for an AI system to improve itself.\n\nDhaval and Owen distinguish true RSI from simply using AI to automate pieces of AI development. Their goal is a closed loop where the system being improved is also doing the improving, across components including models, harnesses, and eventually more of the AI stack. They explain why closing that loop still doesn’t guarantee runaway “takeoff,” and why measuring real progress requires accounting for both capability gains and the resources required to achieve them.\n\nThey also share what they’re seeing in their own research, including early signs that self-improving systems can increase performance while improving efficiency. And they dig into the practical challenges of proving those gains are real, from variance and reward hacking to the enormous difficulty of distinguishing genuine improvement from noise.\n\nTimestamps:\n00:00 - Intro\n00:58 - What actually counts as RSI\n05:10 - Capability as a numerator and denominator\n06:58 - Closed loop vs takeoff\n08:32 - Humans as agents in the system\n13:39 - Why most RSI papers don't scale\n17:41 - Why they chose inference\n24:00 - \"It's not a belief, it's happening\"\n25:42 - The Viceroy of Variance\n29:39 - The garden hose company in Wisconsin\n\nResources:\nFollow Dhaval Adjodah on LinkedIn: https://www.linkedin.com/in/rand0m\nFollow Owen He on LinkedIn:https://www.linkedin.com/in/owen-he-b7b064279/\nFollow Martin Casado on X: https://x.com/martin_casado\n\nStay Updated:\nIf you enjoyed this episode, be sure to like, subscribe, and share with your friends!\n\nFind a16z on X: https://twitter.com/a16z\n\nFind a16z on LinkedIn: https://www.linkedin.com/company/a16z\n\nListen to the a16z Show on Spotify: https://open.spotify.com/show/5bC65RDvs3oxnLyqqvkUYX\n\nListen to the a16z Show on Apple Podcasts: https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711\n\nFollow our host: https://x.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see http://a16z.com/disclosures.",
+          "url": "https://www.youtube.com/watch?v=3Q1mdn5ZGvM",
+          "published_at": "2026-10-12T14:30:07+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=3Q1mdn5ZGvM"
+      }
     }
   ]
 }
