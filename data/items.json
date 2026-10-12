@@ -78600,6 +78600,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=IZXv6a78NDw"
       }
+    },
+    {
+      "id": "1660c1cec002d14bd742",
+      "first_seen_at": "2026-10-12T18:17:24+00:00",
+      "status": "skipped",
+      "title": "Andrew Huberman Says He'd Put a Chip Under His Skin",
+      "source_title": "Andrew Huberman Says He'd Put a Chip Under His Skin",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-12T17:46:15+00:00",
+      "appearances": [
+        {
+          "id": "5b5e76eb6bed5f400320",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:sucjkVOPOP8",
+          "title": "Andrew Huberman Says He'd Put a Chip Under His Skin",
+          "description": "Forget peptides. Andrew Huberman thinks implantable devices are the next frontier.\n\nHuberman shares how Neuralink's head neurosurgeon, Matt MacDougall, uses a tiny implant in his hand to unlock his front door, and explains why he'd be willing to put similar technology under his own skin.\n\n#AndrewHuberman #Neuralink #Technology #InvestLikeTheBest #Shorts\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/shorts/sucjkVOPOP8",
+          "published_at": "2026-10-12T17:46:15+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/sucjkVOPOP8"
+      }
     }
   ]
 }
