@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Anthropic's Dynamic Workflows: Claude-Orchestrated Multi-Agent Systems — Latent Space</title>
+      <link>https://www.latent.space/p/claude-dynamic-workflows</link>
+      <guid isPermaLink="false">ai-radar:35e0e6279ad1443ba1a1</guid>
+      <pubDate>Mon, 12 Oct 2026 18:18:17 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>At AI Engineer NYC 2026, Anthropic&amp;#x27;s CJ Avilla and Harrison Stall demonstrated dynamic workflows, a new multi-agent orchestration system where Claude itself determines how to divide and orchestrate work across agents. Unlike previous Claude Managed Agents requiring manual coordinator configuration, flows allow the lead agent to create execution plans and launch sub-agents autonomously. The system enables discrete, verifiable units of work across multiple phases without manual interconnection management. Developers can set session budgets and use features like &amp;quot;dreaming&amp;quot; to optimize repeated flows. Stall positioned flows as a mechanism to &amp;quot;throw test-time compute at hard problems&amp;quot; and enable general users to tackle ambitious scientific research projects.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/claude-dynamic-workflows"&gt;How Anthropic’s Dynamic Workflows Coordinate Claude Agents&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Recursive Self-Improvement and the Future of AI — a16z with MakerMaker.AI founders — a16z</title>
       <link>https://www.youtube.com/watch?v=3Q1mdn5ZGvM</link>
       <guid isPermaLink="false">ai-radar:034fbfb2bb621b3e663f</guid>
