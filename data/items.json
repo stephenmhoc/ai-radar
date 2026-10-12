@@ -78572,6 +78572,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=3Q1mdn5ZGvM"
       }
+    },
+    {
+      "id": "c88d3ca313b7e800be37",
+      "first_seen_at": "2026-10-12T17:17:30+00:00",
+      "status": "skipped",
+      "title": "Review Code with Codex Before You Merge",
+      "source_title": "Review Code with Codex Before You Merge",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a promotional video about a GitHub code review tool feature, not a substantial interview or conversation with OpenAI technical leadership. It lacks firsthand expertise, original reporting, or durable analysis of frontier AI development. The OpenAI attribution appears to be organizational rather than featuring a target person as a central speaker.",
+      "published_at": "2026-10-12T16:00:08+00:00",
+      "appearances": [
+        {
+          "id": "e8f311739c1c17cc4aa2",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:IZXv6a78NDw",
+          "title": "Review Code with Codex Before You Merge",
+          "description": "Code review is the new bottleneck. Codex brings pull requests, review feedback, and private conversations about your code into one place.\n\nSee how to find reviews across repositories, understand changes and risks, apply your team’s review guidelines, and draft comments without switching tools.\n\nGitHub code review is generally available, with GitLab support in preview.",
+          "url": "https://www.youtube.com/watch?v=IZXv6a78NDw",
+          "published_at": "2026-10-12T16:00:08+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=IZXv6a78NDw"
+      }
     }
   ]
 }
