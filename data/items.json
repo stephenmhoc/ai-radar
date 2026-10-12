@@ -78456,6 +78456,64 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=qcGtWW8uERI"
       }
+    },
+    {
+      "id": "66b68f0a3db9d8b42f90",
+      "first_seen_at": "2026-10-12T10:17:28+00:00",
+      "status": "skipped",
+      "title": "The Race to Recursive Self-Improving AI",
+      "source_title": "The Race to Recursive Self-Improving AI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "MakerMaker.AI co-founders Dhaval Adjodah and Owen He are not listed as target individuals at frontier AI organizations. While the episode discusses recursive self-improvement in AI systems, which is substantively relevant, the speakers lack the required firsthand expertise from target rosters or demonstrated exceptional standing as consequential AI infrastructure builders. The episode does not meet the threshold for inclusion based on speaker credentials alone.",
+      "published_at": "2026-10-12T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "087f5423d634726bc679",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "86a5fbd4-dc69-4a2d-8dc9-ab28e67673aa",
+          "title": "The Race to Recursive Self-Improving AI",
+          "description": "a16z General Partner Martin Casado sits down with MakerMaker.AI co-founders Dhaval Adjodah and Owen He to unpack recursive self-improvement, or RSI, and separate the increasingly popular term from what it would actually mean for an AI system to improve itself.\n\nDhaval and Owen distinguish true RSI from simply using AI to automate pieces of AI development. Their goal is a closed loop where the system being improved is also doing the improving, across components including models, harnesses, and eventually more of the AI stack. They explain why closing that loop still doesn’t guarantee runaway “takeoff,” and why measuring real progress requires accounting for both capability gains and the resources required to achieve them.\n\nThey also share what they’re seeing in their own research, including early signs that self-improving systems can increase performance while improving efficiency. And they dig into the practical challenges of proving those gains are real, from variance and reward hacking to the enormous difficulty of distinguishing genuine improvement from noise.\n\nResources:\n\nFollow Dhaval Adjodah on LinkedIn: \nhttps://www.linkedin.com/in/rand0m\n\nFollow Owen He on LinkedIn:\nhttps://www.linkedin.com/in/owen-he-b7b064279/\n\nFollow Martin Casado on X:\nhttps://x.com/martin_casado\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/the-race-to-recursive-self-improving-ai-OPuX1TcP",
+          "published_at": "2026-10-12T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/the-race-to-recursive-self-improving-ai-OPuX1TcP"
+      }
+    },
+    {
+      "id": "221eea26ada6bd3984ba",
+      "first_seen_at": "2026-10-12T10:17:28+00:00",
+      "status": "deferred",
+      "title": "Personal Day",
+      "source_title": "Personal Day",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-10-12T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "53c6cc5aa7215230b42d",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20290",
+          "title": "Personal Day",
+          "description": "Personal Day — No Update",
+          "url": "https://stratechery.com/2026/personal-day-4/",
+          "published_at": "2026-10-12T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/personal-day-4/"
+      }
     }
   ]
 }
