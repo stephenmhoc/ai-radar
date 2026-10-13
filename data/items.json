@@ -79157,6 +79157,64 @@
       "links": {
         "youtube": "https://www.youtube.com/shorts/9aDuSpVoB-Y"
       }
+    },
+    {
+      "id": "f4d2479e9911b656ae22",
+      "first_seen_at": "2026-10-13T20:17:23+00:00",
+      "status": "skipped",
+      "title": "Apple HomeView: First Look! #apple #tech",
+      "source_title": "Apple HomeView: First Look! #apple #tech",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-13T19:30:07+00:00",
+      "appearances": [
+        {
+          "id": "10720f0bad171df4bc3c",
+          "kind": "youtube",
+          "source": "Joanna Stern",
+          "family": "joanna stern",
+          "guid": "yt:video:Gw2vrX1JJ9o",
+          "title": "Apple HomeView: First Look! #apple #tech",
+          "description": "Apple is finally getting serious about the smart home. The HomeView is like an Apple Watch, except with a 7-inch touchscreen, camera and stuff for the home. Stay tuned for more testing next month!",
+          "url": "https://www.youtube.com/shorts/Gw2vrX1JJ9o",
+          "published_at": "2026-10-13T19:30:07+00:00",
+          "hosts": [
+            "Joanna Stern"
+          ]
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/Gw2vrX1JJ9o"
+      }
+    },
+    {
+      "id": "377c8fd0ed7779ae8b1e",
+      "first_seen_at": "2026-10-13T20:17:23+00:00",
+      "status": "skipped",
+      "title": "You just have to get started.",
+      "source_title": "You just have to get started.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-13T20:00:33+00:00",
+      "appearances": [
+        {
+          "id": "98c9833bee74ff918e9c",
+          "kind": "youtube",
+          "source": "a16z",
+          "family": "a16z",
+          "guid": "yt:video:_KhlazpW9d8",
+          "title": "You just have to get started.",
+          "description": "In 2017, Mark Zuckerberg returned to Harvard, the university he left in 2004 to build Facebook, to deliver the commencement address.\n\nThis is his case against the single eureka moment.\n\nSource: Harvard University",
+          "url": "https://www.youtube.com/shorts/_KhlazpW9d8",
+          "published_at": "2026-10-13T20:00:33+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/_KhlazpW9d8"
+      }
     }
   ]
 }
