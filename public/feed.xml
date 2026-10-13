@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Robots That Predict the Future: Dyna-2 &amp; Physical AI — Jason Ma on Latent Space — Latent Space</title>
+      <link>https://www.youtube.com/watch?v=BHiYomkfoGQ</link>
+      <guid isPermaLink="false">ai-radar:59d5b527e510e3878d8d</guid>
+      <pubDate>Tue, 13 Oct 2026 17:42:33 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?playlist_id=PLWEAb1SXhjlfkEF_PxzYHonU_v5LPMI8L">Latent Space</source>
+      <description>In this Latent Space interview, Dyna Robotics co-founder Jason Ma discusses Dyna-2, a world-action model combining future video prediction with robot actions trained on over one million hours of human video. The conversation covers diffusion transformers, flow matching, how robots learn new tasks from 45 minutes of demonstrations, and the robotics data bottleneck. Ma explains Dyna&amp;#x27;s full-stack approach including custom hardware, real-world deployments at Best Western and Din Tai Fung, and why synthetic data and self-generated training data could accelerate robotics progress. The episode also addresses world-action models versus vision-language-action models, agentic harnesses for multi-step workflows, and Ma&amp;#x27;s background from AlphaGo through Google DeepMind.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=BHiYomkfoGQ"&gt;Robots That Predict the Future: Dyna-2 &amp;amp; Physical AI — Jason Ma, Dyna Robotics&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Google DeepMind: Gemini 4 Argon Powers Humanoid Video-to-Sim-to-Real Pipeline — Google DeepMind</title>
       <link>https://www.youtube.com/watch?v=9PICEmtfpWU</link>
       <guid isPermaLink="false">ai-radar:56e61511dff652187568</guid>

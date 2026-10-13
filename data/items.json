@@ -79045,6 +79045,118 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=LVEfFyijQ2c"
       }
+    },
+    {
+      "id": "59d5b527e510e3878d8d",
+      "first_seen_at": "2026-10-13T18:17:30+00:00",
+      "status": "published",
+      "title": "Robots That Predict the Future: Dyna-2 & Physical AI — Jason Ma on Latent Space",
+      "source_title": "Robots That Predict the Future: Dyna-2 & Physical AI — Jason Ma, Dyna Robotics",
+      "short_summary": "Jason Ma, co-founder of Dyna Robotics, discusses Dyna-2, a world-action model trained on one million hours of human video. Topics include scaling laws for robotics, real-world deployments at Din Tai Fung, and why future prediction may unlock general-purpose robotics.",
+      "long_summary": "In this Latent Space interview, Dyna Robotics co-founder Jason Ma discusses Dyna-2, a world-action model combining future video prediction with robot actions trained on over one million hours of human video. The conversation covers diffusion transformers, flow matching, how robots learn new tasks from 45 minutes of demonstrations, and the robotics data bottleneck. Ma explains Dyna's full-stack approach including custom hardware, real-world deployments at Best Western and Din Tai Fung, and why synthetic data and self-generated training data could accelerate robotics progress. The episode also addresses world-action models versus vision-language-action models, agentic harnesses for multi-step workflows, and Ma's background from AlphaGo through Google DeepMind.",
+      "reason": "Qualifies as substantive interview with technical founder in Physical AI domain. Jason Ma has deep expertise from Google DeepMind and NVIDIA. Content covers frontier robotics research, real-world deployments, infrastructure challenges, and technical approaches to scaling physical AI systems.",
+      "published_at": "2026-10-13T17:42:33+00:00",
+      "appearances": [
+        {
+          "id": "26e493a4a81ea8fe9b2c",
+          "kind": "youtube",
+          "source": "Latent Space — YouTube",
+          "family": "latent space",
+          "guid": "yt:video:BHiYomkfoGQ",
+          "title": "Robots That Predict the Future: Dyna-2 & Physical AI — Jason Ma, Dyna Robotics",
+          "description": "From training a world-action model on over one million hours of human video to deploying robots that fold thousands of napkins daily at Din Tai Fung, Dyna Robotics is pushing physical AI beyond impressive demos and into real-world production. In this episode, Dyna Robotics co-founder and Chief Scientist Jason Ma joins swyx on-site to unpack how robots can learn new tasks from as little as 45 minutes of demonstrations, why predicting the future of the physical world may be the key to general-purpose robotics, and what it actually takes to build robots that work reliably for real customers.\n\nWe go deep on Dyna-2, Dyna's million-hour world-action model that combines future video prediction with robot actions, the scaling laws behind human-to-robot transfer, diffusion transformers and flow matching, and why synthetic environments and self-generated training data could unlock the next wave of robotics progress. Jason also explains why Dyna builds its own hardware instead of relying on off-the-shelf humanoids, how agentic harnesses enable robots to execute hour-long workflows, why dexterous hands and missing sensory data remain major bottlenecks, and what separates real commercial deployments from the graveyard of robotics startups. We also cover world-action models versus vision-language-action models, GPT-6 and coding agents in robotics, and Jason's journey from AlphaGo and Penn to NVIDIA, Google DeepMind, and founding Dyna.\n\nWe discuss:\n- Why Dyna-2 was trained on over one million hours of human video\n- World-action models: predicting future video to guide physical robot actions\n- Diffusion transformers, flow matching, and real-time robotic control\n- How robots learn new tasks with as little as 45 minutes of demonstrations\n- Why robotics has no equivalent of the internet and data remains its biggest scaling challenge\n- Human egocentric video, robot demonstrations, and cross-embodiment transfer\n- Synthetic environments, simulation, and models that generate their own training data\n- Why robots need on-device inference, model distillation, and custom hardware\n- Why Dyna chose wheeled semi-humanoids instead of traditional bipedal robots\n- The hardware bottleneck: why dexterous robot hands still overheat\n- Best Western, Din Tai Fung, and the difference between robotics pilots and scaled deployments\n- The Bitter Lesson of Robotics: scaling data instead of engineering specialized solutions\n- Agentic harnesses and robots executing multi-step, hour-long physical workflows\n- GPT-6, coding agents, and AI-generated simulation environments for robotics research\n- World-action models versus VLAs, and why vision alone may not be enough\n- Jason's journey through AlphaGo, Penn, NVIDIA, Google DeepMind, and the Eureka project\n- Dyna's research culture, deployment-first philosophy, and vision for millions of robots\n\n---\nSponsorship and business inquiries: business@latent.space\n---\n\nJason Ma\n- LinkedIn: https://www.linkedin.com/in/jason-ma-742224a2/\n- X: https://x.com/JasonMa2020\n\nDyna Robotics\n- Website: https://www.dyna.co/\n- X: https://x.com/DynaRobotics\n\nTimestamps\n00:00:00 Hook\n00:01:56 Introduction and Dyna-2's World-Action Model\n00:05:04 Diffusion Transformers, Flow Matching, and Generalist Robots\n00:10:15 The Robotics Data Bottleneck\n00:15:46 Synthetic Data and Self-Improving World Models\n00:18:47 Real-Time Inference and Model Distillation\n00:21:41 Full-Stack Robotics: Hardware and Supply Chains\n00:26:58 Why Dyna Built a Wheeled Semi-Humanoid\n00:31:31 Teaching Robots New Tasks and Evaluating Performance\n00:33:55 Autonomous Workflows and Hardware Limitations\n00:38:02 Real-World Deployments at Best Western and Din Tai Fung\n00:43:03 The Bitter Lesson of Robotics\n00:48:09 Agentic Harnesses for Physical AI\n00:51:03 GPT-6, Coding Agents, and AI-Native Robotics\n00:53:58 World-Action Models vs. VLAs\n01:01:13 From AlphaGo to Founding Dyna Robotics\n01:06:16 Dyna's Research Culture and the Future of Robotics",
+          "url": "https://www.youtube.com/watch?v=BHiYomkfoGQ",
+          "published_at": "2026-10-13T17:42:33+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=BHiYomkfoGQ"
+      }
+    },
+    {
+      "id": "ae65f8b483cac6bd9623",
+      "first_seen_at": "2026-10-13T18:17:30+00:00",
+      "status": "skipped",
+      "title": "What surprised PG about AI",
+      "source_title": "What surprised PG about AI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-13T17:55:08+00:00",
+      "appearances": [
+        {
+          "id": "f40a66cb6890882ab4ed",
+          "kind": "youtube",
+          "source": "Y Combinator",
+          "family": "y combinator",
+          "guid": "yt:video:cp7mBZJkaCs",
+          "title": "What surprised PG about AI",
+          "description": "",
+          "url": "https://www.youtube.com/shorts/cp7mBZJkaCs",
+          "published_at": "2026-10-13T17:55:08+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/cp7mBZJkaCs"
+      }
+    },
+    {
+      "id": "dda687fb6174c855a852",
+      "first_seen_at": "2026-10-13T18:17:40+00:00",
+      "status": "skipped",
+      "title": "Block on Finding and Fixing Security Risks with OpenAI",
+      "source_title": "Block on Finding and Fixing Security Risks with OpenAI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Promotional customer case study featuring Block's CISO discussing OpenAI tools, lacking a substantive interview with frontier AI leaders or durable technical depth.",
+      "published_at": "2026-10-13T17:59:33+00:00",
+      "appearances": [
+        {
+          "id": "756516d121410dc35fc3",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:N6K_pxaAh0w",
+          "title": "Block on Finding and Fixing Security Risks with OpenAI",
+          "description": "“Now you know and now you can take action before someone else knows.”\n\nA weakness in your code can be part of a much bigger attack. Seeing how those weaknesses connect gives defenders a clearer picture of where to act.\n\nBlock’s Chief Information Security Officer, James Nettesheim, shares how OpenAI’s cyber capabilities can help uncover software vulnerabilities and connect them into a path to compromise.\n\nThen comes the work that turns discovery into action: identify the affected software and its owner, propose a patch, and verify that the fix works, with a person guiding deployment.\n\nWatch James on what AI can make possible for cybersecurity teams—from vulnerability analysis and hidden security risks to patch verification and the next steps defenders can take.",
+          "url": "https://www.youtube.com/watch?v=N6K_pxaAh0w",
+          "published_at": "2026-10-13T17:59:33+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=N6K_pxaAh0w"
+      }
+    },
+    {
+      "id": "601a747450c527740e02",
+      "first_seen_at": "2026-10-13T18:17:40+00:00",
+      "status": "skipped",
+      "title": "Block on Finding and Fixing Security Risks with OpenAI",
+      "source_title": "Block on Finding and Fixing Security Risks with OpenAI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-13T18:02:20+00:00",
+      "appearances": [
+        {
+          "id": "9636857d5bbdf64cb36e",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:9aDuSpVoB-Y",
+          "title": "Block on Finding and Fixing Security Risks with OpenAI",
+          "description": "“Now you know and now you can take action before someone else knows.”\n\nA weakness in your code can be part of a much bigger attack. Seeing how those weaknesses connect gives defenders a clearer picture of where to act.\n\nBlock’s Chief Information Security Officer, James Nettesheim, shares how OpenAI’s cyber capabilities can help uncover software vulnerabilities and connect them into a path to compromise.\n\nThen comes the work that turns discovery into action: identify the affected software and its owner, propose a patch, and verify that the fix works, with a person guiding deployment.\n\nWatch James on what AI can make possible for cybersecurity teams—from vulnerability analysis and hidden security risks to patch verification and the next steps defenders can take.",
+          "url": "https://www.youtube.com/shorts/9aDuSpVoB-Y",
+          "published_at": "2026-10-13T18:02:20+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/9aDuSpVoB-Y"
+      }
     }
   ]
 }
