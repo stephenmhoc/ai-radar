@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Google DeepMind: Gemini 4 Argon Powers Humanoid Video-to-Sim-to-Real Pipeline — Google DeepMind</title>
+      <link>https://www.youtube.com/watch?v=9PICEmtfpWU</link>
+      <guid isPermaLink="false">ai-radar:56e61511dff652187568</guid>
+      <pubDate>Tue, 13 Oct 2026 15:58:20 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A">Google DeepMind</source>
+      <description>In an internal test, Google DeepMind robotics researchers instructed Gemini 4 Argon to analyze a video of a human playing cornhole. Utilizing its video understanding and advanced reasoning, Gemini 4 constructed a virtual simulation inside MuJoCo. The model then calculated the physics and whole-body control parameters necessary for physical execution. Operating with these calculations, Apptronik&amp;#x27;s Apollo 2 humanoid robot sank seven consecutive cornhole shots in the real world. Google DeepMind highlights that this Video-to-Sim-to-Real pipeline compresses weeks of manual modeling into hours, turning ordinary video into a training resource for physical AI.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Google DeepMind&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=9PICEmtfpWU"&gt;Teaching a humanoid robot to play cornhole with Gemini 4 Argon&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Google DeepMind: Gemini 4 Argon for Chemistry Patent Analysis — Google DeepMind</title>
+      <link>https://www.youtube.com/watch?v=9jQA7IgPhBE</link>
+      <guid isPermaLink="false">ai-radar:25afaa4286651305518e</guid>
+      <pubDate>Tue, 13 Oct 2026 15:58:17 +0000</pubDate>
+      <source url="https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A">Google DeepMind</source>
+      <description>Auditing chemistry literature typically requires weeks of manual, error-prone review, where a molecule&amp;#x27;s structure might sit 50 pages away from its experimental readout. To address this early research bottleneck, Isomorphic Labs researchers Brian Bender and Santosh Adhikari are leveraging Gemini 4 Argon&amp;#x27;s multimodal capabilities. The model is applied to synthesize dense scientific papers and extract complex patent data into structured reports. Completing these document audits in an afternoon instead of a month enables research teams to uncover connected insights much faster.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;YouTube · Google DeepMind&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Video:&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=9jQA7IgPhBE"&gt;Untangling 500-page chemistry patents with Gemini 4&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Can AI Break Cryptography? What the Experts Actually Think — The a16z Show</title>
       <link>https://a16z.simplecast.com/episodes/can-ai-break-cryptography-what-the-experts-actually-think-LCUGnMEC</link>
       <guid isPermaLink="false">ai-radar:c3c4f604e2c45a1ac583</guid>
