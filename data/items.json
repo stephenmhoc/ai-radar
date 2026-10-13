@@ -78689,6 +78689,34 @@
       "links": {
         "podcast": "https://colossus.com/episode/david-v-goliath/"
       }
+    },
+    {
+      "id": "f35519e7ff1e0801fa4f",
+      "first_seen_at": "2026-10-13T09:17:27+00:00",
+      "status": "published",
+      "title": "Training Data: David Silver and Lasse Espeholt on Building Superlearners at Ineffable Intelligence",
+      "source_title": "David Silver and Lasse Espeholt of Ineffable Intelligence: A Superlearner for the Age of Experience",
+      "short_summary": "David Silver and Lasse Espeholt, co-founders of Ineffable Intelligence, discuss building a \"superlearner\" agent that discovers science and mathematics through direct experience rather than pre-training, drawing on lessons from AlphaGo Zero.",
+      "long_summary": "In this Training Data podcast episode, David Silver and Lasse Espeholt explain Ineffable Intelligence's approach to building a \"superlearner\"—an agent starting with no prior knowledge that discovers science, mathematics, and language through direct experience. Silver argues that human-language reasoning represents a ceiling rather than foundation, and that alignment via chain-of-thought monitoring has reached its limits. Espeholt describes the GPU infrastructure and lineage from IMPALA and SEED RL enabling the experiment. The discussion covers removing human priors from training objectives, the role of compute, simulation-based alignment research, and monitoring agents that don't reason in English. Silver forecasts strong evidence within a year and superintelligence within three years.",
+      "reason": "Qualifies as substantial interview with David Silver, a senior technical leader from Google DeepMind, discussing frontier AI research on post-training, alignment, and superintelligence development at a new organization pursuing consequential technical work in these areas.",
+      "published_at": "2026-10-13T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "bd1e484c263809231ea2",
+          "kind": "podcast",
+          "source": "Training Data",
+          "family": "training data",
+          "guid": "d7ae4536-c437-11f1-9011-633961538ee5",
+          "title": "David Silver and Lasse Espeholt of Ineffable Intelligence: A Superlearner for the Age of Experience",
+          "description": "David Silver spent two years building AlphaGo on human data. When he removed human data altogether building AlphaGo Zero, the AI surpassed AlphaGo in under two days. He left DeepMind to run that same bet in pursuit of superintelligence. David and Lasse Espeholt, co-founders of Ineffable Intelligence, explain their plan to build a “superlearner”—an agent that starts knowing nothing and discovers science, mathematics, and language for itself by direct experience instead of through a pre-training run. Silver argues that human-language reasoning is a ceiling, not a foundation, that alignment via chain-of-thought monitoring is already reaching its limits, and that the science of how superintelligences coexist should be worked out in simulation before anything touches the real world. Espeholt describes the GPU cluster and the lineage from IMPALA and SEED RL that makes the experiment possible. Silver’s forecast: strong evidence within a year, superintelligence in three.\n\nHosted by Sonya Huang, Sequoia Capital\n\n0:00 – Introduction\n\n1:09 – What held true from Go to today, and what the LLM era changed\n\n3:35 – Why leave DeepMind to start a new lab\n\n5:58 – Why \"Ineffable\" (and the secret second reason)\n\n7:03 – Lasse's path: scaling RL at DeepMind and Google Brain\n\n9:31 – Defining a super learner and first contact\n\n12:35 – Super learners vs. LLMs that make discoveries\n\n13:59 – Day to day: the RL stack, crucibles and human-journey milestones\n\n16:13 – Don't breadcrumb the objective: simple rewards, emergent complexity\n\n21:16 – What a crucible looks like\n\n24:14 – Go: one agent is boring, two is infinite\n\n25:41 – Will agents rediscover language?\n\n27:22 – Removing human priors: AlphaGo to AlphaZero\n\n32:05 – Keeping human bias out of the crucibles\n\n33:35 – Confidence, timing and super forecasting\n\n36:24 – Is compute the driver?\n\n38:13 – The ceiling on simulation and Rich Sutton's objection\n\n43:44 – Alignment and the science of superintelligence\n\n47:45 – Monitoring agents that don't think in English\n\n51:01 – Pacing the frontier\n\n52:54 – The compute setup: Vera Rubin on GCP\n\n55:18 – Training, inference, simulation and RL scaling laws\n\n57:40 – IMPALA and SEED RL\n\n1:00:58 – 20 people and the compute-per-person ratio\n\n1:04:49 – A research-led culture\n\n1:05:47 – Predictions",
+          "url": "https://feeds.megaphone.fm/trainingdata",
+          "published_at": "2026-10-13T09:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/trainingdata"
+      }
     }
   ]
 }

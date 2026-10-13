@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Training Data: David Silver and Lasse Espeholt on Building Superlearners at Ineffable Intelligence — Training Data</title>
+      <link>https://feeds.megaphone.fm/trainingdata</link>
+      <guid isPermaLink="false">ai-radar:f35519e7ff1e0801fa4f</guid>
+      <pubDate>Tue, 13 Oct 2026 09:00:00 +0000</pubDate>
+      <source url="https://feeds.megaphone.fm/trainingdata">Training Data</source>
+      <description>In this Training Data podcast episode, David Silver and Lasse Espeholt explain Ineffable Intelligence&amp;#x27;s approach to building a &amp;quot;superlearner&amp;quot;—an agent starting with no prior knowledge that discovers science, mathematics, and language through direct experience. Silver argues that human-language reasoning represents a ceiling rather than foundation, and that alignment via chain-of-thought monitoring has reached its limits. Espeholt describes the GPU infrastructure and lineage from IMPALA and SEED RL enabling the experiment. The discussion covers removing human priors from training objectives, the role of compute, simulation-based alignment research, and monitoring agents that don&amp;#x27;t reason in English. Silver forecasts strong evidence within a year and superintelligence within three years.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · Training Data&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://feeds.megaphone.fm/trainingdata"&gt;David Silver and Lasse Espeholt of Ineffable Intelligence: A Superlearner for the Age of Experience&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>David Vélez on Nubank's AI Transformation and Global Banking Future — Invest Like the Best</title>
       <link>https://colossus.com/episode/david-v-goliath/</link>
       <guid isPermaLink="false">ai-radar:ee084b437eb7b7624e99</guid>
