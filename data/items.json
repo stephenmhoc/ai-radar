@@ -78847,6 +78847,34 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=Rs40uGRyXC8"
       }
+    },
+    {
+      "id": "d1bd175ea4b885e4ed1c",
+      "first_seen_at": "2026-10-13T15:17:36+00:00",
+      "status": "skipped",
+      "title": "Should Students Be Allowed to Use AI in School? #aiineducation #FutureOfLearning",
+      "source_title": "Should Students Be Allowed to Use AI in School? #aiineducation #FutureOfLearning",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item covers a general discussion on AI in education and does not feature qualifying frontier organizations, leaders, or substantive technical depth.",
+      "published_at": "2026-10-13T15:00:20+00:00",
+      "appearances": [
+        {
+          "id": "4d28dab86d523c7bba67",
+          "kind": "youtube",
+          "source": "Practical AI — YouTube",
+          "family": "practical ai",
+          "guid": "yt:video:J6Rv8IQM5oI",
+          "title": "Should Students Be Allowed to Use AI in School? #aiineducation #FutureOfLearning",
+          "description": "Chris and Dan shares why teachers need more flexibility to integrate AI tools into education, personalize learning, and help students develop critical thinking skills. He also proposes making the full curriculum available from day one so students can explore topics at their own pace, with teachers guiding the process rather than simply policing AI use.\n\nFEATURING:\n\nHost - Daniel Whitenack (CEO at Prediction Guard & cohost at Practical AI Podcast): https://www.linkedin.com/in/danielwhitenack/\nHost - Chris Benson (AI / Autonomy Research Engineer at Lockheed Martin & Cohost at Practical AI Podcast): https://www.linkedin.com/in/chrisbenson/\n\nSUBSCRIBE: \n\nRSS: https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm\nApple: https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?uo=4\nSpotify: https://open.spotify.com/show/1LaCr5TFAgYPK5qHjP3XDp\nX: https://x.com/PracticalAIFM\nBluesky: https://bsky.app/profile/practicalai.bsky.social\nLinkedIn: https://www.linkedin.com/company/practical-ai-podcast/\n\nUPCOMING EVENTS:\n\nPrior Webinars from our partner Prediction Guard: https://www.youtube.com/playlist?list=PLRpRdFmBfdF6boDgAD3nNaLm8Yx4KN2Vt\nRegister for upcoming webinars here: https://practicalai.show/webinars\nMidwest AI Summit 2026: https://midwestaisummit.com/\n\nListen more at https://practicalai.show/",
+          "url": "https://www.youtube.com/watch?v=J6Rv8IQM5oI",
+          "published_at": "2026-10-13T15:00:20+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=J6Rv8IQM5oI"
+      }
     }
   ]
 }
