@@ -78806,6 +78806,34 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/spacex-buys-more-spectrum-musk-and-market-structure-distributed-cellular/"
       }
+    },
+    {
+      "id": "a2855a0dd5221396a9d0",
+      "first_seen_at": "2026-10-13T12:17:27+00:00",
+      "status": "skipped",
+      "title": "How He Built the World’s Largest Digital Bank with 140 Million Customers",
+      "source_title": "How He Built the World’s Largest Digital Bank with 140 Million Customers",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The interview focuses primarily on fintech, digital banking, and company building with Nubank founder David Vélez; AI is only discussed as an incidental business tool rather than technical or frontier AI development.",
+      "published_at": "2026-10-13T12:00:06+00:00",
+      "appearances": [
+        {
+          "id": "b7289d2d57c091b91ea0",
+          "kind": "youtube",
+          "source": "Invest Like the Best — YouTube",
+          "family": "invest like the best",
+          "guid": "yt:video:Rs40uGRyXC8",
+          "title": "How He Built the World’s Largest Digital Bank with 140 Million Customers",
+          "description": "David Vélez, founder and CEO of Nubank, joins Patrick O’Shaughnessy to discuss how he built a bank serving 140 million customers and why he believes the $10 trillion banking industry is still in the earliest stages of disruption. They explore Nubank’s extraordinary growth, the advantages of digital-first banking, and how AI could fundamentally transform financial services by reducing costs and democratizing access to financial advice. David also shares his predictions for the future of cash, stablecoins, and global currencies, Nubank’s ambitious expansion into the United States and beyond, and how AI is reshaping the company’s internal operations. Finally, he reflects on the challenges of scaling a business, the differences between founders and CEOs, and what it takes to lead a company with ambitions to serve a billion people.\n\nTIMESTAMPS\n\n0:00 Intro\n1:25 Banking's $10 Trillion Disruption\n5:54 AI's Impact on Banking\n14:40 Building Moats in the AI Era\n23:29 The Future of Money\n36:01 Nubank's Global Expansion\n41:53 Lessons from Amazon and Disney\n48:24 Reinventing Nubank with AI\n59:47 Founder Mindset and Leadership\n1:13:18 Nubank's Future and Entrepreneurship\n\nPresented by Ramp:\nhttps://ramp.com/invest\n\nSponsored by Vanta, WorkOS, Rogo, and Ridgeline:\nhttps://www.vanta.com/invest\nhttps://workos.com/\nhttps://rogo.ai/invest\nhttps://www.ridgelineapps.com/\n\n******\nPatrick O'Shaughnessy is the CEO of Positive Sum. All opinions expressed by Patrick and podcast guests are solely their own and do not reflect the opinion of Positive Sum. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Positive Sum may maintain positions in the securities discussed in this podcast. To learn more, visit psum.vc",
+          "url": "https://www.youtube.com/watch?v=Rs40uGRyXC8",
+          "published_at": "2026-10-13T12:00:06+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=Rs40uGRyXC8"
+      }
     }
   ]
 }
