@@ -6,6 +6,22 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>Can AI Break Cryptography? What the Experts Actually Think — The a16z Show</title>
+      <link>https://a16z.simplecast.com/episodes/can-ai-break-cryptography-what-the-experts-actually-think-LCUGnMEC</link>
+      <guid isPermaLink="false">ai-radar:c3c4f604e2c45a1ac583</guid>
+      <pubDate>Tue, 13 Oct 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.simplecast.com/JGE3yC0V">The a16z Show</source>
+      <description>This a16z Show podcast episode examines whether AI could break cryptography protecting crypto wallets, banking, and private messages. Hosted by Liz Harkavy, the discussion features Stanford cryptographer Dan Boneh, a16z crypto General Partner Eddy Lazzarin, and Research Partner Justin Thaler. They explain how modern cryptography relies on mathematical assumptions, what OpenAI&amp;#x27;s recent results demonstrate and don&amp;#x27;t demonstrate, and how AI-driven threats differ from quantum computing risks. The panel discusses existing security practices and cryptographic alternatives that provide confidence, the importance of building adaptable systems, and how AI could ultimately help improve software security.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · The a16z Show&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://a16z.simplecast.com/episodes/can-ai-break-cryptography-what-the-experts-actually-think-LCUGnMEC"&gt;Can AI Break Cryptography? What the Experts Actually Think&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>Meta Superintelligence Labs Launches Muse Wonder Frontier Model Family — Latent Space</title>
+      <link>https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder</link>
+      <guid isPermaLink="false">ai-radar:8816c4f01cab68d1a170</guid>
+      <pubDate>Tue, 13 Oct 2026 09:37:04 +0000</pubDate>
+      <source url="https://www.latent.space/feed">Latent Space</source>
+      <description>Meta Superintelligence Labs shipped Muse Wonder (codename &amp;quot;Watermelon&amp;quot;), its second-generation model family, with a larger Wonder Full variant. Third-party evaluations from Artificial Analysis and Vals AI rank Wonder Full near frontier performance, scoring 56 on the Intelligence Index v4.3 versus Opus 5.5&amp;#x27;s 58. The models feature 1M context windows, multimodal input, and pricing at $4/$20 per million tokens. Key capabilities include Active Memory across extended periods, Active Focus for task persistence, and domain expertise in finance and legal. Wonder is available via Meta Model API and Muse Code; Wonder Full is subscriber-exclusive. Practitioner reactions are mixed, with some ranking it S-tier alongside Opus 5.5, while skeptics estimate Meta remains 3-6 months behind OpenAI and Anthropic.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder"&gt;[AINews] Meta Muse Wonder &amp;amp; Wonder Full: MSL’s Claude 5.5-tier Frontier Model&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Training Data: David Silver and Lasse Espeholt on Building Superlearners at Ineffable Intelligence — Training Data</title>
       <link>https://feeds.megaphone.fm/trainingdata</link>
       <guid isPermaLink="false">ai-radar:f35519e7ff1e0801fa4f</guid>
