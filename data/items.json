@@ -79349,6 +79349,79 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon"
       }
+    },
+    {
+      "id": "035d8de584c8d7d41d7e",
+      "first_seen_at": "2026-10-14T08:17:36+00:00",
+      "status": "published",
+      "title": "Alan Chan on Monitoring, Agent Identifiers, and Governance for Autonomous AI Agents",
+      "source_title": "Governing AI Agents: Alan Chan of GovAI on Monitoring, Agent IDs, Rogue Agents & Preparing for RSI",
+      "short_summary": "GovAI Research Fellow Alan Chan discusses the governance and safety infrastructure needed for autonomous AI agents. He highlights the security risks of lacking synchronous monitoring during training, the need for traceable agent IDs, and triggers to halt sandboxed systems as automated AI R&D accelerates.",
+      "long_summary": "GovAI Research Fellow Alan Chan joins host Nathan on The Cognitive Revolution to examine governance and safety infrastructure for autonomous AI agents. Chan details why the absence of synchronous monitoring during training and testing creates an immediate security vulnerability. The discussion explores recent rogue agent incidents, the absence of traceable agent IDs across the open web, and the limitations of chain-of-thought interpretability. Chan also stresses the need for concrete triggers to halt systems that breach their sandboxes. Furthermore, the episode addresses the technical commitments frontier labs must undertake to prevent loss-of-control events as automated systems accelerate toward an intelligence explosion.",
+      "reason": "Substantive, in-depth discussion with GovAI researcher Alan Chan covering technical AI safety, agent monitoring infrastructure, sandbox controls, and the risks of automated AI R&D.",
+      "published_at": "2026-10-14T07:50:15+00:00",
+      "appearances": [
+        {
+          "id": "6f4311b553bd3e4a33b5",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "e083957c-c6f7-11f1-b698-67a8846e9927",
+          "title": "Governing AI Agents: Alan Chan of GovAI on Monitoring, Agent IDs, Rogue Agents & Preparing for RSI",
+          "description": "GovAI Research Fellow Alan Chan joins Nathan to examine the governance and safety infrastructure required for autonomous AI agents, spanning real-time monitoring, agent identifiers, and the risks of automating AI R&D. Reviewing recent rogue agent incidents and progress since his foundational papers, Chan details why the absence of synchronous monitoring during training and testing poses an immediate security vulnerability. The discussion tackles the lack of traceable agent IDs across the open web, the limits of chain-of-thought interpretability, and the necessity of concrete triggers to halt systems that breach their sandboxes. Together, they outline the technical commitments frontier labs must make to prevent loss-of-control events as automated systems accelerate toward an intelligence explosion.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/governing-ai-agents-alan-chan-of-govai-on-monitoring-agent-ids-rogue-agents-preparing-for-rsi/\nSponsors:\n\nOutSystems: OutSystems is the leading agentic systems platform, helping enterprises build, modernize, and operate mission-critical applications at the speed of AI. Learn more and start owning your agentic future at https://outsystems.com/tcr\n\nAthena: Athena matches you with a dedicated, top 1% executive assistant to handle your inbox, calendar, and daily workflows so you can save an average of 15 hours a week. Get matched with your EA today at https://athena.com/cognitive\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nTasklet: Tasklet empowers your business with AI agents that connect to your tools and automate recurring workflows with no code required. Visit https://tasklet.ai and use code cog rev for $50 in free credits\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(05:10) Monitoring AI agents\n\n(17:50) Logging and agent identity (Part 1)\n\n(18:04) Sponsors: OutSystems | Athena\n\n(21:29) Logging and agent identity (Part 2)\n\n(31:58) Gatekeeping agent internet access (Part 1)\n\n(36:17) Sponsors: Claude | Tasklet\n\n(39:29) Gatekeeping agent internet access (Part 2)\n\n(49:12) Capitalizing and insuring agents\n\n(58:11) Rise of rogue agents\n\n(01:10:14) Assessing AI takeover risks\n\n(01:21:18) Intelligence explosion paper\n\n(01:31:18) Measuring AI R&D\n\n(01:46:04) Pacing the frontier\n\n(01:58:54) Designing autonomous AI auditors\n\n(02:04:40) AI whistleblowers and swarms\n\n(02:13:40) Episode Outro\n\n(02:16:59) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing",
+          "url": "https://www.cognitiverevolution.ai/governing-ai-agents-alan-chan-of-govai-on-monitoring-agent-ids-rogue-agents-preparing-for-rsi/",
+          "published_at": "2026-10-14T07:50:16+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        },
+        {
+          "id": "5c37aaa595770771a326",
+          "kind": "youtube",
+          "source": "The Cognitive Revolution — YouTube",
+          "family": "the cognitive revolution",
+          "guid": "yt:video:SBlVJyoT3IM",
+          "title": "Governing AI Agents: Alan Chan of GovAI on Monitoring, Agent IDs, Rogue Agents & Preparing for RSI",
+          "description": "GovAI Research Fellow Alan Chan joins Nathan to examine the governance and safety infrastructure required for autonomous AI agents, spanning real-time monitoring, agent identifiers, and the risks of automating AI R&D. Reviewing recent rogue agent incidents and progress since his foundational papers, Chan details why the absence of synchronous monitoring during training and testing poses an immediate security vulnerability. The discussion tackles the lack of traceable agent IDs across the open web, the limits of chain-of-thought interpretability, and the necessity of concrete triggers to halt systems that breach their sandboxes. Together, they outline the technical commitments frontier labs must make to prevent loss-of-control events as automated systems accelerate toward an intelligence explosion.\n\nFor full show notes, links, and references, read the episode page:\nhttps://www.cognitiverevolution.ai/governing-ai-agents-alan-chan-of-govai-on-monitoring-agent-ids-rogue-agents-preparing-for-rsi/\n\nSPONSORS:\nOutSystems: OutSystems is the leading agentic systems platform, helping enterprises build, modernize, and operate mission-critical applications at the speed of AI. Learn more and start owning your agentic future at https://outsystems.com/tcr\n\nAthena: Athena matches you with a dedicated, top 1% executive assistant to handle your inbox, calendar, and daily workflows so you can save an average of 15 hours a week. Get matched with your EA today at https://athena.com/cognitive\n\nClaude: Claude is the AI collaborator for problem solvers, helping with writing, coding, financial models, strategy, and more. Get started with Claude and explore Claude Pro at https://claude.ai/tcr\n\nTasklet: Tasklet empowers your business with AI agents that connect to your tools and automate recurring workflows with no code required. Visit https://tasklet.ai and use code cog rev for $50 in free credits\n\nCHAPTERS:\n(00:00) About the Episode\n(05:10) Monitoring AI agents\n(17:50) Logging and agent identity\n(18:04) Sponsors: OutSystems | Athena\n(21:29) Logging and agent identity\n(31:58) Gatekeeping agent internet access\n(36:17) Sponsors: Claude | Tasklet\n(39:29) Gatekeeping agent internet access\n(49:12) Capitalizing and insuring agents\n(58:11) Rise of rogue agents\n(01:10:14) Assessing AI takeover risks\n(01:21:18) Part 2 Begining: Intelligence explosion paper\n(01:31:18) Measuring AI R&D\n(01:46:04) Pacing the frontier\n(01:58:54) Designing autonomous AI auditors\n(02:04:40) AI whistleblowers and swarms\n(02:13:40) Episode Outro\n(02:16:59) Outro\n\nPRODUCED BY:\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\nWebsite: https://www.cognitiverevolution.ai\nTwitter (Podcast): https://x.com/cogrev_podcast\nTwitter (Nathan): https://x.com/labenz\nLinkedIn: https://linkedin.com/in/nathanlabenz/\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.youtube.com/watch?v=SBlVJyoT3IM",
+          "published_at": "2026-10-14T07:50:15+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/governing-ai-agents-alan-chan-of-govai-on-monitoring-agent-ids-rogue-agents-preparing-for-rsi/",
+        "youtube": "https://www.youtube.com/watch?v=SBlVJyoT3IM"
+      }
+    },
+    {
+      "id": "430859ee46b966eafd1c",
+      "first_seen_at": "2026-10-14T08:17:38+00:00",
+      "status": "skipped",
+      "title": "David Senra: Lessons from Napoleon, Steve Jobs, Joan of Arc & Other Leaders with Ben Wilson",
+      "source_title": "Lessons from Napoleon, Steve Jobs, Joan of Arc & Other Leaders | Ben Wilson",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This episode focuses on historical leadership traits and personal reflections on battling cancer; it contains no discussion of artificial intelligence or frontier AI organizations.",
+      "published_at": "2026-10-14T08:00:00+00:00",
+      "appearances": [
+        {
+          "id": "fbe874f1516b9e061f3f",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "2c4eadea-c782-11f1-8b0b-63ab6119223c",
+          "title": "Lessons from Napoleon, Steve Jobs, Joan of Arc & Other Leaders | Ben Wilson",
+          "description": "Ben Wilson is the host of “How To Take Over The World,” which is one of my favorite podcasts. How To Take Over The World examines history’s greatest leaders and conquerors, and has benefited millions of people. In this episode, we talk about the common traits among the individuals he has studied such as Napoleon, Leonardo da Vinci, Joan of Arc, Thomas Edison, Steve Jobs, Arnold Schwarzenegger, and more.\n\nWe also discuss the fact that Ben is battling advanced cancer. \n\nHe’s a good guy, a close friend, and one of my favorite podcasters. He has four young children.\n\nPlease watch this episode and see if you can help with medicine, introductions, or donations. \n\nGoFundMe: https://www.gofundme.com/f/help-ben-fight-cancer-support-his-treatment\n\n(00:00:00) What Ben has learned from making How to Take Over the World and studying history’s greatest leaders.\n\n(00:55:51) Living like you're dying. Ben on facing cancer.\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://feeds.megaphone.fm/david-senra",
+          "published_at": "2026-10-14T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/david-senra"
+      }
     }
   ]
 }
