@@ -6,6 +6,14 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>The a16z Show: Can Open Models Keep Up With the AI Frontier? with Nathan Lambert — The a16z Show</title>
+      <link>https://a16z.simplecast.com/episodes/can-open-models-keep-up-with-the-ai-frontier-nathan-lambert-WqIVvxfv</link>
+      <guid isPermaLink="false">ai-radar:c11202b71aaf4c7f14d6</guid>
+      <pubDate>Wed, 14 Oct 2026 10:00:00 +0000</pubDate>
+      <source url="https://feeds.simplecast.com/JGE3yC0V">The a16z Show</source>
+      <description>In this episode of The a16z Show, partner Lisha Li interviews AI researcher and Trillium founder Nathan Lambert about the durability of the performance gap between frontier labs and open models. Lambert argues that while OpenAI and Anthropic maintain structural advantages in compute, capital, and training paradigms, open-model labs—particularly in China—continue to follow closely behind. The conversation explores the roles of distillation versus engineering talent, compute bottlenecks, and how data, reinforcement learning environments, and post-training increasingly dictate model progress. Additionally, Lambert discusses Trillium, his nonprofit research lab aimed at studying AI research automation, demystifying recursive self-improvement, and releasing RL environments to the broader research and policy communities.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Podcast · The a16z Show&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Episode:&lt;/strong&gt; &lt;a href="https://a16z.simplecast.com/episodes/can-open-models-keep-up-with-the-ai-frontier-nathan-lambert-WqIVvxfv"&gt;Can Open Models Keep Up With the AI Frontier? | Nathan Lambert&lt;/a&gt;</description>
+    </item>
+    <item>
       <title>Alan Chan on Monitoring, Agent Identifiers, and Governance for Autonomous AI Agents — The Cognitive Revolution</title>
       <link>https://www.cognitiverevolution.ai/governing-ai-agents-alan-chan-of-govai-on-monitoring-agent-ids-rogue-agents-preparing-for-rsi/</link>
       <guid isPermaLink="false">ai-radar:035d8de584c8d7d41d7e</guid>

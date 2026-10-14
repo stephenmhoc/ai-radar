@@ -79450,6 +79450,92 @@
       "links": {
         "youtube": "https://www.youtube.com/watch?v=Gw606P4B5V0"
       }
+    },
+    {
+      "id": "188a58cd72e4bd708a6f",
+      "first_seen_at": "2026-10-14T10:17:23+00:00",
+      "status": "skipped",
+      "title": "How Oracle Uses Codex to Help Business Users Get Answers",
+      "source_title": "How Oracle Uses Codex to Help Business Users Get Answers",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "YouTube Shorts are excluded as low-context short-form clips.",
+      "published_at": "2026-10-14T09:35:27+00:00",
+      "appearances": [
+        {
+          "id": "ea8efeff2f025ef38d2b",
+          "kind": "youtube",
+          "source": "OpenAI",
+          "family": "openai",
+          "guid": "yt:video:DTcK95TAZ-k",
+          "title": "How Oracle Uses Codex to Help Business Users Get Answers",
+          "description": "Richard Lam, Group Vice President at Oracle Applications Lab, shares how his team uses Codex to help business users get answers from company data. By describing the outcome they want, users can get an analysis, a report, or an application, with Codex gathering the information from internal systems.\n\nRead the full Oracle story: https://openai.com/index/oracle/",
+          "url": "https://www.youtube.com/shorts/DTcK95TAZ-k",
+          "published_at": "2026-10-14T09:35:27+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/shorts/DTcK95TAZ-k"
+      }
+    },
+    {
+      "id": "c11202b71aaf4c7f14d6",
+      "first_seen_at": "2026-10-14T10:17:31+00:00",
+      "status": "published",
+      "title": "The a16z Show: Can Open Models Keep Up With the AI Frontier? with Nathan Lambert",
+      "source_title": "Can Open Models Keep Up With the AI Frontier? | Nathan Lambert",
+      "short_summary": "AI researcher and Trillium founder Nathan Lambert analyzes the gap between frontier AI labs and open models, post-training paradigms, and compute constraints with a16z's Lisha Li.",
+      "long_summary": "In this episode of The a16z Show, partner Lisha Li interviews AI researcher and Trillium founder Nathan Lambert about the durability of the performance gap between frontier labs and open models. Lambert argues that while OpenAI and Anthropic maintain structural advantages in compute, capital, and training paradigms, open-model labs—particularly in China—continue to follow closely behind. The conversation explores the roles of distillation versus engineering talent, compute bottlenecks, and how data, reinforcement learning environments, and post-training increasingly dictate model progress. Additionally, Lambert discusses Trillium, his nonprofit research lab aimed at studying AI research automation, demystifying recursive self-improvement, and releasing RL environments to the broader research and policy communities.",
+      "reason": "Features a substantive discussion with AI researcher Nathan Lambert on frontier model capabilities, post-training, RL environments, and the open-model ecosystem.",
+      "published_at": "2026-10-14T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "3fa6f092a0da7f209e4a",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "98652706-dd49-44e9-ada2-e00e56b2be77",
+          "title": "Can Open Models Keep Up With the AI Frontier? | Nathan Lambert",
+          "description": "a16z Partner Lisha Li sits down with AI researcher and Trillium founder Nathan Lambert to ask how durable the gap really is between frontier AI labs and open models.\n\nNathan argues that OpenAI and Anthropic have structural advantages in compute, capital, and the ability to pioneer new training paradigms, but open-model labs, particularly in China, have proven remarkably capable of following close behind. They unpack how much of that comes from distillation versus technical talent, why compute remains a major constraint, and how data, RL environments, and post-training are increasingly shaping model progress. \n\nThey also discuss Nathan’s new nonprofit research lab, Trillium, and its plans to open up parts of AI research that are increasingly difficult to study from the outside. That includes releasing RL environments and documenting how AI is actually being used to automate AI research, with the goal of demystifying recursive self-improvement and giving researchers and policymakers a clearer picture of what frontier systems can and cannot do.\n\nResources:\n\nLearn more about Trillium: \nhttps://trilliumlabs.org/\n\nFollow Nathan Lambert on X: \nhttps://x.com/natolambert\n\nNathan Lambert’s Newsletter: \nhttps://www.interconnects.ai/\n\nFollow Lisha Li on X:\nhttps://x.com/lishali88\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/can-open-models-keep-up-with-the-ai-frontier-nathan-lambert-WqIVvxfv",
+          "published_at": "2026-10-14T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/can-open-models-keep-up-with-the-ai-frontier-nathan-lambert-WqIVvxfv"
+      }
+    },
+    {
+      "id": "8121340b7f0253b3f01d",
+      "first_seen_at": "2026-10-14T10:17:31+00:00",
+      "status": "deferred",
+      "title": "Apple HomeView, The New Apple TV, The App Story",
+      "source_title": "Apple HomeView, The New Apple TV, The App Story",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-10-14T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "09df935653a28a9bfb28",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20306",
+          "title": "Apple HomeView, The New Apple TV, The App Story",
+          "description": "The Apple Homeview is official, and the question is how big is the addressable market for expensive devices based on subpar AI.",
+          "url": "https://stratechery.com/2026/apple-homeview-the-new-apple-tv-the-app-story/",
+          "published_at": "2026-10-14T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/apple-homeview-the-new-apple-tv-the-app-story/"
+      }
     }
   ]
 }
