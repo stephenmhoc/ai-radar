@@ -79422,6 +79422,34 @@
       "links": {
         "podcast": "https://feeds.megaphone.fm/david-senra"
       }
+    },
+    {
+      "id": "8c070d9ff8f00578c720",
+      "first_seen_at": "2026-10-14T09:17:28+00:00",
+      "status": "skipped",
+      "title": "How L’Oreal Is Adapting to Meet the New Beauty Era | Quantum Marketing",
+      "source_title": "How L’Oreal Is Adapting to Meet the New Beauty Era | Quantum Marketing",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The content focuses on digital marketing, beauty tech, and the influencer economy at a consumer cosmetics brand rather than substantive frontier AI development, technical infrastructure, or target organization leadership.",
+      "published_at": "2026-10-14T08:00:28+00:00",
+      "appearances": [
+        {
+          "id": "5952afb4e4c61b16c5b2",
+          "kind": "youtube",
+          "source": "Bloomberg Originals",
+          "family": "bloomberg originals",
+          "guid": "yt:video:Gw606P4B5V0",
+          "title": "How L’Oreal Is Adapting to Meet the New Beauty Era | Quantum Marketing",
+          "description": "The beauty industry has entered an age of dramatic transformation thanks to the creator economy and artificial intelligence-powered personalization. In this episode, Raja Rajamannar sits down with L'Oréal's Asmita Dubey, global chief digital and marketing officer, to unpack how the century-old brand is trying to capitalize on the influencer economy and beauty technology. \n\n--------\nLike this video? Subscribe: http://www.youtube.com/Bloomberg?sub_confirmation=1\n\nGet unlimited access to Bloomberg.com for just $1.99 your first month: https://www.bloomberg.com/subscriptions?in_source=YoutubeOriginals\nBloomberg Originals offers bold takes for curious minds on today’s biggest topics. Hosted by experts covering stories you haven’t seen and viewpoints you haven’t heard, you’ll discover cinematic, data-led shows that investigate the intersection of business and culture. Exploring every angle of climate change, technology, finance, sports and beyond, Bloomberg Originals is business as you’ve never seen it. \n\nSubscribe for business news, but not as you've known it: exclusive interviews, fascinating profiles, data-driven analysis, and the latest in tech innovation from around the world.\n\nVisit our partner channel Bloomberg News for global news and insight in an instant.",
+          "url": "https://www.youtube.com/watch?v=Gw606P4B5V0",
+          "published_at": "2026-10-14T08:00:28+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=Gw606P4B5V0"
+      }
     }
   ]
 }
