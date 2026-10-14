@@ -79536,6 +79536,96 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/apple-homeview-the-new-apple-tv-the-app-story/"
       }
+    },
+    {
+      "id": "e398eb71f41e5eafe3bb",
+      "first_seen_at": "2026-10-14T19:17:37+00:00",
+      "status": "published",
+      "title": "Cheeky Pint: Zuckerberg and Wang on Muse Wonder and Meta's $100B AI Bet",
+      "source_title": "Muse Wonder: Zuckerberg and Wang's $100B AI",
+      "short_summary": "Mark Zuckerberg and Alexandr Wang discuss Meta's Muse Wonder launch, Meta Superintelligence Labs creation, and their $100B+ infrastructure commitment. Topics include frontier model architecture, agentic commerce, and AI's future across hardware and software.",
+      "long_summary": "Mark Zuckerberg and Alexandr Wang join host John Collison on the Cheeky Pint podcast to discuss the launch of Muse Wonder and Meta's broader AI ambitions. They open up about the creation of Meta Superintelligence Labs and the decision to execute a complete talent reboot. The pair also address what it feels like to make a $100B+ CapEx commitment before knowing whether the model will work. They dive into the architecture of Muse Wonder, covering active memory, multimodal perception, and frontier coding capabilities. The conversation extends to their vision for agentic commerce and hardware form factors such as smart glasses. Zuckerberg and Wang also explain why they believe superintelligence should be in the hands of billions of people rather than concentrated among a few.",
+      "reason": "Both Mark Zuckerberg and Alexandr Wang are followed people who appear as primary guests discussing their own work, ideas, and company initiatives in substantial depth across a full-length podcast episode.",
+      "published_at": "2026-10-12T19:16:55+00:00",
+      "appearances": [
+        {
+          "id": "c821769cd3e6943d38f7",
+          "kind": "podcast",
+          "source": "Cheeky Pint",
+          "family": "cheeky pint",
+          "guid": "152b86d3-f7ab-483a-b356-c518c832b94b",
+          "title": "Muse Wonder: Zuckerberg and Wang's $100B AI",
+          "description": "As Meta scales its AI infrastructure past five gigawatts, Mark Zuckerberg (founder and CEO, Meta) and Alexandr Wang (Chief AI Officer, Meta Superintelligence Labs) join John for a pint to discuss the launch of Muse Wonder and the future of personal AI agents.\n\nIn this episode, Mark and Alex open up about the creation of Meta Superintelligence Labs (MSL), the decision to execute a complete talent reboot, and what it really feels like to make a $100B+ CapEx commitment before knowing if the model will work. They dive deep into the architecture of Muse Wonder—including active memory, multimodal perception, and frontier coding—while laying out their vision for agentic commerce, hardware form factors like smart glasses, and why superintelligence belongs in the hands of billions.\n\nTimestamps\n\n(00:00:24) Muse’s breakout use cases\n\n(00:07:28) Why the model is the product\n\n(00:14:35) Meet Muse Wonder\n\n(00:24:56) How frontier models are actually built\n\n(00:48:26) Betting $100B\n\n(01:07:21) Agentic commerce\n\n(01:19:34) OpenRouter \n\n(01:20:06) Beyond the smartphone\n\n(01:27:00) Funding\n\n(01:34:06) Why AI won’t be winner-take-all\n\n(01:40:46) Meta Superintelligence Labs (MSL)\n\n(02:08:11) Working for Mark Zuckerberg",
+          "url": "https://share.transistor.fm/s/bb7b9a51",
+          "published_at": "2026-10-12T19:16:55+00:00",
+          "hosts": [
+            "John Collison"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/bb7b9a51"
+      }
+    },
+    {
+      "id": "80d05cbcc77f7c449deb",
+      "first_seen_at": "2026-10-14T19:17:38+00:00",
+      "status": "skipped",
+      "title": "How Hugging Face’s Investor Spots Winners",
+      "source_title": "How Hugging Face’s Investor Spots Winners",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "No followed person is an actual guest, interviewee, or central speaker. The episode features Matt Hartman (Factorial Capital founder) and host Natalia Quintero discussing Hugging Face and investment strategy. While Hugging Face is mentioned and discussed, no followed person from the AI Radar list participates in the episode.",
+      "published_at": "2026-10-14T16:22:14+00:00",
+      "appearances": [
+        {
+          "id": "8de70caa74d2d93ff510",
+          "kind": "podcast",
+          "source": "AI & I",
+          "family": "ai & i",
+          "guid": "flightcast:01M4WXZJC42R6K30JBFDV56TDM",
+          "title": "How Hugging Face’s Investor Spots Winners",
+          "description": "Check out Gemini Audio: https://goo.gle/Every-Gemini-Audio\nBet on founders who understand the technology, because their first idea probably won’t be the one that sticks.\nThat’s the view of Matt Hartman, founder and managing partner of Factorial Capital. In 2016, as a partner at Betaworks, Hartman was part of the team that wrote the first check into Hugging Face, which was then a chatbot app for teenagers. Today it’s the largest hub for open-source AI, and Nvidia has agreed to buy it for about $13 billion.\nOn this week’s episode of The Every Podcast, Hartman tells Natalia Quintero how backing Hugging Face shaped his investment thesis, how Factorial grew into a “family tree” of technical founders who help him scout deals, and why vibe-coding his own app gave him a new respect for SaaS.\nSubscribe to Every (free for 14 days): https://every.to/podcast-every-offer?utm_source=podcast&utm_medium=audio&utm_campaign=matthartmanepisode\nLinks to resources mentioned in the episode:\nFactorial Capital: https://factorialcap.com\nGhost Pepper, Matt's open-source voice-to-text app: https://github.com/matthartman/ghost-pepper\nSuperpowers, Jesse Vincent's skill for Claude Code: https://github.com/obra/superpowers \nHugging Face: https://huggingface.co \nFollow Every: https://x.com/every\nFollow Natalia Quintero: https://x.com/NataliaZarina\nFollow Matt Hartman: https://x.com/MattHartman\n0:00 Introduction\n5:06 How Hugging Face went from a teen chatbot to the home of open-source AI\n9:52 The three decisions that set Hugging Face on its path\n12:49 Hartman’s approach to finding the newly technically possible\n18:10 Why Hartman backs technical founders\n21:10 How Factorial’s portfolio founders source its next deals\n27:09 Why faster iteration makes product insight the most valuable skill\n34:28 What Hartman learned building Ghost Pepper, an open-source voice-to-text app\n40:02 Hartman’s current theses, from non-language models to full-stack AI apps\n44:14 Why the best founders right now are experimenting",
+          "url": "https://feeds.transistor.fm/how-do-you-use-chatgpt",
+          "published_at": "2026-10-14T16:22:14+00:00",
+          "hosts": [
+            "Dan Shipper"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.transistor.fm/how-do-you-use-chatgpt"
+      }
+    },
+    {
+      "id": "55760f7ad083872f5be0",
+      "first_seen_at": "2026-10-14T19:17:42+00:00",
+      "status": "skipped",
+      "title": "Uber’s AI infra, from the inside",
+      "source_title": "Uber’s AI infra, from the inside",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode features Uday Kiran Medisetty, a Distinguished Engineer at Uber, not a followed person. While the content discusses AI infrastructure and tools, none of the 15 followed individuals (Sam Altman, Dario Amodei, Sundar Pichai, Mark Zuckerberg, Elon Musk, Alexandr Wang, Thibault Sottiaux, Boris Cherny, Satya Nadella, Mustafa Suleyman, Ilya Sutskever, Andrej Karpathy, Demis Hassabis, Greg Brockman, or Jensen Huang) are guests, interviewees, or authors of this newsletter item.",
+      "published_at": "2026-10-14T17:06:56+00:00",
+      "appearances": [
+        {
+          "id": "527195b7b2c6e62d7a09",
+          "kind": "newsletter",
+          "source": "The Pragmatic Engineer",
+          "family": "the pragmatic engineer",
+          "guid": "https://newsletter.pragmaticengineer.com/p/ubers-ai-infra-from-the-inside",
+          "title": "Uber’s AI infra, from the inside",
+          "description": "Stream the latest episode\n\nListen and watch now on \nYouTube\n, \nApple\n, and \nSpotify\n.\n See the episode transcript at the top of this page, and timestamps for the episode at the bottom.\n\nBrought to You by\n\n• \nturbopuffer\n – The turbopuffer engineering team is doing something really cool: they are completely redesigning their storage architecture from first principles to make search faster, cheaper, and more reliable at scale. And they’re documenting all of it! Follow along their rewrite at \nturbopuffer.com/v3\n\n• \nLinear\n – one of the big challenges for us devs is the sheer amount of code to review. \nLinear Diffs\n is a new feature to review PRs inside of Linear, with all the context in one place. It even supports stacked PRs. \nCheck it out\n\n• \nWorkOS\n – how do you deal with agents and permissions? WorkOS built \nAirlock\n, the authorization layer for AI agents. It evaluates every request against the agent’s intent and your rules and either allows it, denies it, or routes it to a human for approval. Works with Claude Code, Codex and MCP gateways. \nGive it a spin\n\nIn this episode\n\nWhat do developer tools look like inside Uber, today? They are \nvery\n different from what you would see at most places. For example, can you guess what service a system called DevPods, Code Inbox, Slate or Wisdom would be providing to engineers?\n\nDevPods, Code Inbox, Slate and Wisdom: four of the 20+ internal tools Uber engineers use,day-to-day\n\nToday’s episode is a deepdive into the day-to-day tools of devs at Uber, our tour guide being on of Uber’s longest-tenured engineers: \nUday Kiran Medisetty\n. Uday is one of the few Distinguished Engineers at the company, and leads much of the work on agentic AI, today.\n\nWith Uday, we talk through how Uber’s developer infrastructure prepared it for AI agents. We look at the systems Uber built before generative AI and the new tools that connect agents to its code, internal services, and engineering knowledge. Uday explains how engineers use background agents, why tools like Slate make development (and bugfixing!) more efficient, and how code review is changing. We also cover Uber’s approach to token costs and how it measures productivity as the engineer’s role changes.\n\nTakeaways from the conversation with Uday\n\nHere are 11 interesting learnings from today’s episode:\n\n1. Uber’s service count changed erratically:\n in 2015, when Uday joined, there were two services in total. By 2019, there were thousands. In 2026, there will be about the same number of services than in 2019, even though the business is about 10x larger than back then!\n\n2. Uber built most services in-house because off-the-shelf software could not handle its scale – or simply did not exist! \nExamples of services Uber built because it had to:\n\nuOwn\n: shows who owns a service or asset. Back in 2015, no such vendor existed.\n\nM3DB\n: Uber was emitting about 500 million metrics per second, with no vendor being able to handle this load, so they built it themselves. Observability company\n Chronosphere\n was built on top of the open sourced M3DB, and we previously covered\n how Uber built its observability platform\n.\n\nCadence\n: a durable workflow engine for multi-day flows like driver onboarding. No such system existed at the time when Uber needed it.\n Temporal\n was built on top of the open sourced Cadence framework.\n\nMorpheus\n: a system combining feature flags \nand\n experimentation, including switchback tests, with support for two- and three-sided marketplaces that Uber operates. Again, no such solution existed when Uber needed it.\n\n3. At Uber, cities are a first-class concept that go all the way down to physical infrastructure. \nAnother reason Uber had to build a lot of its custom tooling is how the concept of cities is a “basic primitive” that needs to be handled across systems like observability, feature flagging, deployments, and even service sharding. For example, in the early days, some services had their database sharded by cities. Even today, each city is pinned to a cloud region, and can fall over to another region at any time. \nWe previously covered\nhow Uber moved from bare metal to the cloud\n.\n\n4. A single AI model gateway has paid lots of dividends. \nIn 2023, Uber’s platform team made the decision that everything built with AI needs to be model- and harness-agnostic. They built Model Gateway to support switching between Anthropic, OpenAI, other vendor models, and now also supports open models they run. Having the Model Gateway in place made it easy to extend with these parts:\n\nAI Guard\n: a middleware run by the security team. It checks all requests and responses, and measures latencies (and flags overly slow models or queries)\n\nSpend tracking:\n spend is tracked per user\n\nVisibility\n: audit logs and session traces\n\n5. AIFX allows engineers to switch harnesses without losing settings. \nUber currently supports Claude Code, Codex, and OpenCode as harnesses. AIFX (short for AI Foundations) is a wrapper on top of all of these, so when an engineer changes harnesses, all their settings, skills and plugins move with them.\n\n6. Uber has a hybrid approach to AI spend: \nengineers get allocated a spend tier. When they hit the limit, their manager can sign off to spend more in that month. Basically, for the right type of work, there is no spend limit, but Uber doesn’t want engineers to carelessly burn tokens.\n\nA plugin called CostCheck works across sessions and gives tips on how to improve an engineer’s cost profile. \nUber has reduced token costs by about 50% the last few months, as we\npreviously covered.\n\n7. All PRs are still reviewed by engineers, but Uber built tools to help devs decide how much time they need to spend on each code change. \nUday admits that code review has become a big bottleneck inside the company, and Uber built Code Review to make it easier and more efficient for devs to do these reviews.\n\nBy the time a dev reviews a change, AI code review has run, screenshots and videos of the feature have been added (when applicable), and risk scores are assigned to the change.\n\n8. Uber had to declare an internal “code red” for its CI system earlier this year. \nThis was because CI jobs more than doubled in a 12-month timeframe, pushing load on CI systems overly high. To keep build speeds at bay, the team moved simple CI jobs (eg linting, build and template rules) to the “inner loop:” so agents run these commands with the \nafx validate\n command before opening a PR.\n\n9. Uber tags PRs by the type of work each of those PRs do. \nIn the past, Uber measured “PR velocity:” how long it took for a PR (or, as Uber calls it: a “diff”) to get to production. With agents, doing so makes less sense, because it’s easy to create dozens or even hundreds of PRs, and many of those PRs might have no business impact on the product.\n\n​So Uber now tags all PRs by type: feature, bugfix, maintenance, testing, or docs.\n\n​They are seeing the percentage of “feature PRs” going up, and the percentage of “maintenance PRs” going down.​\n\nI find this categorization to be a clever approach!\n\n10. The job of a software engineer inside a place like Uber is to build context. \nAs Uday reflects on how the job has changed:\n\n“The job of engineering is, in some sense: ‘how do you build the right context for the agents to produce reliable output?’\n\nYou need to get really good at context engineering.\n\nAlso, [being good at] multitasking has become a thing. Before, it would take so much time to create a PR, so you would be laser-focused on it. But now you’re constantly switching between so many things. You need to be able to verify your work and pick any code smells from the agent [to avoid] shipping regressions into production.\n\nContext engineering, ability to multitask, and ability to review and verify the outputs: these skills have become much more important now because you’re able to parallelize a lot more than before.”\n\n11. Uber’s AI tooling was seemingly built in a year: in reality, it was built on top of a decade worth of dev tooling investment. \nMinion – built in 2025 – is powered by DevPods, which Uber created in 2017. Uber’s MCP Gateway was fast to build, thanks to existing Thrift and Protobuf registries. Jaeger tracing made Slate routing and Context graph easier, and so on.\n\nIn Uday’s words:\n\n“All the things that we built to make life easier for engineers: it makes it easier for our agents as well!”\n\nThe Pragmatic Engineer deepdives relevant for this episode\n\n• \nHow Uber uses AI for development: inside look\n\n• \nScaling Uber with Thuan Pham (Uber’s first CTO)\n\n• \nInside Uber’s move to the Cloud\n\n• \nThe Platform and Program Split at Uber\n\n• \nHypergrowth startups: Uber and CloudKitchens with Charles-Axel Dein\n\n• \nHow Uber Built its Observability Platform\n\n• \nHow Uber is Measuring Engineering Productivity\n\n• \nDeveloper Experience at Uber with Gautam Korlam\n\nTimestamps\n\n00:00\n Intro\n\n02:48\n Uday’s early days at Uber\n\n05:40\n Uber’s move to microservices\n\n07:55\n Uber’s engineering team, then and now\n\n09:05\n Developer tooling before AI\n\n16:03\n DevPods\n\n19:28\n Building for AI agents\n\n29:27\n MCP gateway\n\n34:37\n Agent Skills repo\n\n38:46\n The context graph and Cortana\n\n47:54\n PRD and ERD tool\n\n50:45\n Minion\n\n54:46\n Testing and code review with Bazel, Slate, and Capri\n\n1:12:26\n Edge Gateway, Shepherd, and Wisdom\n\n1:21:33\n The changing role of engineer and measuring productivity\n\n1:30:40\n Uday’s favorite new products\n\nReferences\n\nWhere to find Uday Kiran Medisetty:\n\n• X: \nhttps://x.com/udaykiran\n\n• LinkedIn: \nhttps://www.linkedin.com/in/udaykiran\n\nMentions during the episode:\n\n• Scaling Uber with Thuan Pham (Uber’s first CTO): \nhttps://newsletter.pragmaticengineer.com/p/scaling-uber-with-thuan-pham-ubers\n\n• How Uber uses AI for development: inside look: \nhttps://newsletter.pragmaticengineer.com/p/how-uber-uses-ai-for-development\n\n• Bazel: \nhttps://opensource.google/projects/bazel\n\n• Developer Experience at Uber with Gautam Korlam: \nhttps://newsletter.pragmaticengineer.com/p/developer-experience-at-uber\n\n• Hypergrowth startups: Uber and CloudKitchens with Charles-Axel Dein: \nhttps://newsletter.pragmaticengineer.com/p/high-growth-startups-uber-and-cloudkitchens\n\n• Instinct: \nhttps://instinct.com\n\n• Muse: \nhttps://ai.meta.com/muse\n\n• Grok Bot: \nhttps://x.ai/bot\n\n—\n\nProduction and marketing by \nPen Name\n.",
+          "url": "https://newsletter.pragmaticengineer.com/p/ubers-ai-infra-from-the-inside",
+          "published_at": "2026-10-14T17:06:56+00:00",
+          "hosts": [
+            "Gergely Orosz"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://newsletter.pragmaticengineer.com/p/ubers-ai-infra-from-the-inside"
+      }
     }
   ],
   "editions": [
