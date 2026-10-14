@@ -36,6 +36,14 @@ def validate_evolution(before: dict[str, object], after: dict[str, object]) -> N
         removed_media = old_media - new_media
         if removed_media:
             errors.append(f"item {item_id} removed canonical media: {sorted(removed_media)!r}")
+    before_editions = before.get("editions", [])
+    after_editions = after.get("editions", [])
+    if after_editions[: len(before_editions)] != before_editions:  # type: ignore[index]
+        errors.append("closed daily editions were changed or removed")
+    before_through = radar.parse_utc_timestamp(before.get("editions_closed_through"))
+    after_through = radar.parse_utc_timestamp(after.get("editions_closed_through"))
+    if before_through is not None and (after_through is None or after_through < before_through):
+        errors.append("editions_closed_through moved backward")
     if errors:
         raise radar.RadarError("archive evolution validation failed: " + "; ".join(errors[:20]))
 
@@ -50,7 +58,7 @@ def main() -> int:
     except (OSError, json.JSONDecodeError, radar.RadarError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
-    print("archive evolution is append-only and summary-preserving")
+    print("archive evolution is append-only, summary-preserving, and keeps closed editions")
     return 0
 
 

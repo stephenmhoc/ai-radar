@@ -22,6 +22,7 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from difflib import SequenceMatcher
 from typing import Any
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from error_reporter import ErrorReporter
 
@@ -33,6 +34,8 @@ from radar_common import (
     Source,
     _read_bounded,
     clean_text,
+    edition_closes_at,
+    edition_date,
     is_youtube_short,
     media_identity,
     parse_timestamp,
@@ -51,9 +54,10 @@ from editorial import (
 
 from rendering import (
     GENERATED_FILES,
+    render_archive_html,
     render_feeds_html,
     render_headers,
-    render_html,
+    render_index_html,
     render_rss,
 )
 
@@ -85,6 +89,8 @@ ITEM_FIELDS = frozenset(
         "links",
     }
 )
+ARCHIVE_FIELDS = frozenset({"version", "items", "editions", "editions_closed_through"})
+EDITION_FIELDS = frozenset({"date", "closed_at", "item_ids"})
 APPEARANCE_FIELDS = frozenset(
     {
         "id",
@@ -115,6 +121,7 @@ def load_settings(config_path: pathlib.Path, archive_path: pathlib.Path) -> Sett
     app = raw.get("app", {})
     site = raw.get("site", {})
     llm = raw.get("llm", {})
+    editions = raw.get("editions", {})
     sources: list[Source] = []
 
     for feed in raw.get("feeds", []):
@@ -168,10 +175,12 @@ def load_settings(config_path: pathlib.Path, archive_path: pathlib.Path) -> Sett
         )
 
     roster: list[str] = []
-    for lab in raw.get("labs", []):
-        people = ", ".join(str(person) for person in lab.get("people", []))
-        aliases = ", ".join(str(alias) for alias in lab.get("aliases", []))
-        roster.append(f"{lab['name']} (aliases: {aliases}; people: {people})")
+    for person in raw.get("people", []):
+        aliases = ", ".join(str(alias) for alias in person.get("aliases", []))
+        known_as = f" (also known as {aliases})" if aliases else ""
+        roster.append(f"{person['name']}{known_as} — {person['role']}")
+    if not roster:
+        raise ValueError(f"{config_path} must list at least one [[people]] entry")
 
     resolved_archive = archive_path if archive_path.is_absolute() else root / archive_path
     public_value = pathlib.Path(str(app.get("public_dir", "public")))
@@ -202,6 +211,8 @@ def load_settings(config_path: pathlib.Path, archive_path: pathlib.Path) -> Sett
             max_retry_sleep_seconds=float(llm.get("max_retry_sleep_seconds", 60.0)),
             max_output_tokens=int(llm.get("max_output_tokens", 1200)),
         ),
+        edition_timezone=str(editions.get("timezone", "America/New_York")),
+        edition_hour=int(editions.get("hour", 19)),
     )
     validate_settings(settings)
     return settings
@@ -246,6 +257,12 @@ def validate_settings(settings: Settings) -> None:
         raise RadarError("llm.max_attempts must be at least one")
     if settings.llm.max_output_tokens < 1:
         raise RadarError("llm.max_output_tokens must be at least one")
+    if not 0 <= settings.edition_hour <= 23:
+        raise RadarError("editions.hour must be between 0 and 23")
+    try:
+        ZoneInfo(settings.edition_timezone)
+    except (ValueError, ZoneInfoNotFoundError) as exc:
+        raise RadarError(f"unknown editions.timezone: {settings.edition_timezone}") from exc
     names: set[str] = set()
     for source in settings.sources:
         if source.kind not in APPEARANCE_KINDS:
@@ -293,7 +310,10 @@ def validate_archive(archive: object, *, label: str = "archive") -> dict[str, in
     if archive.get("version") != ARCHIVE_VERSION or not isinstance(archive.get("items"), list):
         raise RadarError(f"unsupported archive format: {label}")
 
+    if not set(archive) <= ARCHIVE_FIELDS:
+        errors.append(f"{label} had unexpected top-level fields")
     item_ids: set[str] = set()
+    published_ids: set[str] = set()
     appearance_ids: set[str] = set()
     media_owners: dict[tuple[str, str, str], str] = {}
     status_counts: dict[str, int] = {status: 0 for status in ALLOWED_STATUSES}
@@ -317,6 +337,8 @@ def validate_archive(archive: object, *, label: str = "archive") -> dict[str, in
             errors.append(f"{prefix}.status was invalid")
         else:
             status_counts[str(status)] += 1
+        if status == "published":
+            published_ids.add(str(item_id))
         for field in ("title", "source_title", "short_summary", "long_summary", "reason"):
             if not isinstance(item.get(field), str):
                 errors.append(f"{prefix}.{field} was not text")
@@ -394,6 +416,51 @@ def validate_archive(archive: object, *, label: str = "archive") -> dict[str, in
         if status == "deferred" and (item.get("short_summary") or item.get("long_summary")):
             errors.append(f"{prefix} was deferred with a summary")
 
+    editions = archive.get("editions", [])
+    if not isinstance(editions, list):
+        errors.append("editions was not a list")
+        editions = []
+    delivered: set[str] = set()
+    previous_date = ""
+    last_closed_at: dt.datetime | None = None
+    for index, edition in enumerate(editions):
+        prefix = f"editions[{index}]"
+        if not isinstance(edition, dict) or set(edition) != EDITION_FIELDS:
+            errors.append(f"{prefix} had unexpected fields")
+            continue
+        date = edition["date"]
+        try:
+            valid_date = isinstance(date, str) and dt.date.fromisoformat(date).isoformat() == date
+        except ValueError:
+            valid_date = False
+        if not valid_date:
+            errors.append(f"{prefix}.date was invalid")
+        elif date <= previous_date:
+            errors.append(f"{prefix}.date was duplicated or out of order")
+        else:
+            previous_date = date
+        if not _valid_timestamp(edition["closed_at"]):
+            errors.append(f"{prefix}.closed_at was invalid")
+        else:
+            last_closed_at = parse_utc_timestamp(edition["closed_at"])
+        edition_items = edition["item_ids"]
+        if not isinstance(edition_items, list) or not edition_items:
+            errors.append(f"{prefix}.item_ids was empty or invalid")
+            continue
+        for item_id in edition_items:
+            if item_id not in published_ids:
+                errors.append(f"{prefix} referenced an unpublished or missing item: {item_id}")
+            elif item_id in delivered:
+                errors.append(f"{prefix} repeated an item from another edition: {item_id}")
+            delivered.add(str(item_id))
+    closed_through = archive.get("editions_closed_through")
+    if closed_through is not None and not _valid_timestamp(closed_through):
+        errors.append("editions_closed_through was invalid")
+    elif last_closed_at is not None and (
+        closed_through is None or parse_utc_timestamp(closed_through) < last_closed_at
+    ):
+        errors.append("editions_closed_through preceded the latest edition")
+
     if errors:
         shown = "; ".join(errors[:20])
         suffix = f"; and {len(errors) - 20} more" if len(errors) > 20 else ""
@@ -401,6 +468,7 @@ def validate_archive(archive: object, *, label: str = "archive") -> dict[str, in
     return {
         "items": len(archive["items"]),
         "appearances": len(appearance_ids),
+        "editions": len(editions),
         **{status: status_counts[status] for status in sorted(status_counts)},
     }
 
@@ -859,14 +927,57 @@ def report_source_failures(
                 print(f"warning: YouTube outage alert latch could not be written: {exc}", file=sys.stderr)
 
 
+def close_editions(settings: Settings, archive: dict[str, Any], now: dt.datetime) -> int:
+    """Record every closed daily edition that has newly published items.
+
+    Each published item belongs to exactly one edition, chosen by when AI Radar
+    first saw it, but never earlier than the last edition window already closed:
+    an item published late (for example a deferred item) joins the next edition
+    instead of rewriting one that RSS readers already received. Recorded
+    editions are immutable, so rendering stays deterministic.
+    """
+    editions = archive.setdefault("editions", [])
+    delivered = {item_id for edition in editions for item_id in edition["item_ids"]}
+    closed_through = parse_utc_timestamp(archive.get("editions_closed_through"))
+    open_edition = edition_date(now, settings)
+    pending: dict[dt.date, list[str]] = {}
+    for item in archive["items"]:
+        if item["status"] != "published" or item["id"] in delivered:
+            continue
+        seen_at = parse_utc_timestamp(item["first_seen_at"]) or now
+        if closed_through is not None:
+            seen_at = max(seen_at, closed_through)
+        day = edition_date(seen_at, settings)
+        if day < open_edition:
+            pending.setdefault(day, []).append(str(item["id"]))
+    recorded = {edition["date"] for edition in editions}
+    for day in sorted(pending):
+        if day.isoformat() in recorded:
+            raise RadarError(f"edition {day.isoformat()} is already closed")
+        editions.append(
+            {
+                "date": day.isoformat(),
+                "closed_at": edition_closes_at(day, settings).isoformat(),
+                "item_ids": pending[day],
+            }
+        )
+    latest_close = edition_closes_at(open_edition - dt.timedelta(days=1), settings)
+    if closed_through is None or latest_close > closed_through:
+        archive["editions_closed_through"] = latest_close.isoformat()
+    return len(pending)
+
+
 def run_cycle(
     settings: Settings,
     *,
     lookback_days: int,
     reporter: ErrorReporter | None = None,
+    now: dt.datetime | None = None,
 ) -> dict[str, int]:
     reporter = reporter or ErrorReporter(None, status="disabled")
     archive = load_archive(settings.archive_path)
+    # Close finished editions before collecting, so items found by this run join the open one.
+    editions_closed = close_editions(settings, archive, now or dt.datetime.now(dt.timezone.utc))
     # Refresh deferred records on copies so failed model calls preserve their retry trigger.
     working_archive = {
         "items": [copy.deepcopy(item) if item["status"] == "deferred" else item
@@ -967,6 +1078,7 @@ def run_cycle(
     reevaluated = 0
     llm_errors = 0
     unmatched: list[dict[str, Any]] = []
+    matched_media: dict[tuple[str, str, str], dict[str, Any]] = {}
     for candidate in collected:
         if is_youtube_short(candidate):
             unmatched.append(candidate)
@@ -979,6 +1091,25 @@ def run_cycle(
         matched += added
         if added and item.get("status") == "deferred":
             reevaluate[str(item["id"])] = item
+        identity = media_identity(candidate)
+        owner = next(
+            (value for value in item["appearances"] if media_identity(value) == identity), None
+        )
+        if owner is not None:
+            if owner is not candidate:
+                refresh_appearance(owner, candidate)
+            matched_media[identity] = owner
+    # One video can arrive from several feeds (a channel and a show playlist) and fuzzy-match
+    # an item through only one copy; the other copies enrich that appearance instead of
+    # becoming a second item that owns the same media.
+    remaining: list[dict[str, Any]] = []
+    for candidate in unmatched:
+        owner = matched_media.get(media_identity(candidate))
+        if owner is None:
+            remaining.append(candidate)
+        else:
+            refresh_appearance(owner, candidate)
+    unmatched = remaining
 
     evaluations = [(item, canonicalize_group(item["appearances"])) for item in reevaluate.values()]
     evaluations.extend((None, canonicalize_group(group)) for group in group_candidates(unmatched))
@@ -1031,6 +1162,7 @@ def run_cycle(
         "deferred": deferred,
         "reevaluated": reevaluated,
         "llm_errors": llm_errors,
+        "editions_closed": editions_closed,
     }
     return stats
 
@@ -1113,16 +1245,20 @@ def build_site(settings: Settings, archive: dict[str, Any] | None = None) -> dic
         key=lambda value: value.get("published_at") or "",
         reverse=True,
     )
+    editions = archive.get("editions", [])
     rendered = {
-        "index.html": render_html(settings, items),
+        "index.html": render_index_html(
+            settings, items, editions, archive.get("editions_closed_through")
+        ),
+        "archive.html": render_archive_html(settings, items, editions),
         "feeds.html": render_feeds_html(settings),
-        "feed.xml": render_rss(settings, items),
+        "feed.xml": render_rss(settings, items, editions),
         "_headers": render_headers(),
     }
     settings.public_dir.mkdir(parents=True, exist_ok=True)
     for name in GENERATED_FILES:
         write_text_atomic(settings.public_dir / name, rendered[name])
-    return {"items": len(items), "rss_items": len(items), "feeds": len(settings.sources)}
+    return {"items": len(items), "rss_items": len(editions), "feeds": len(settings.sources)}
 
 
 def print_stats(stats: dict[str, int]) -> None:
@@ -1154,6 +1290,10 @@ def main(argv: list[str] | None = None) -> int:
     )
     reconsider_parser.add_argument("--match", required=True, help="Unique title substring to reconsider.")
     subparsers.add_parser("build-site", help="Regenerate static HTML and RSS from the archive.")
+    subparsers.add_parser(
+        "close-editions",
+        help="Record finished daily editions without fetching feeds, then rebuild the site.",
+    )
     subparsers.add_parser("doctor", help="Validate configuration and tracked archive state.")
     args = parser.parse_args(argv)
     root = args.config.expanduser().resolve().parent
@@ -1180,6 +1320,13 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "build-site":
             print_stats(build_site(settings))
+            return 0
+        if args.command == "close-editions":
+            archive = load_archive(settings.archive_path)
+            closed = close_editions(settings, archive, dt.datetime.now(dt.timezone.utc))
+            validate_archive(archive)
+            save_archive(settings.archive_path, archive)
+            print_stats({"editions_closed": closed, **build_site(settings, archive)})
             return 0
         if args.command == "run":
             if args.lookback_days <= 0:

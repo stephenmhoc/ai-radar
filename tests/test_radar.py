@@ -89,6 +89,29 @@ def published_item(item_id: str = "item-1") -> dict[str, object]:
     }
 
 
+EASTERN = radar_common.ZoneInfo("America/New_York")
+
+
+def eastern(year: int, month: int, day: int, hour: int, minute: int = 0) -> dt.datetime:
+    return dt.datetime(year, month, day, hour, minute, tzinfo=EASTERN).astimezone(dt.timezone.utc)
+
+
+def item_seen_at(item_id: str, seen_at: dt.datetime) -> dict[str, object]:
+    item = published_item(item_id)
+    item["appearances"] = [make_appearance(guid=item_id)]
+    item["links"] = radar.source_links(item["appearances"], preferred_title=str(item["source_title"]))
+    item["first_seen_at"] = seen_at.isoformat()
+    return item
+
+
+def edition_for(*items: dict[str, object], date: str = "2026-10-14") -> dict[str, object]:
+    return {
+        "date": date,
+        "closed_at": "2026-10-14T23:00:00+00:00",
+        "item_ids": [str(item["id"]) for item in items],
+    }
+
+
 def make_settings(root: pathlib.Path, *, sources: tuple[radar_common.Source, ...] = ()) -> radar_common.Settings:
     return replace(
         radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json"),
@@ -116,15 +139,36 @@ class StaticPublisherTests(unittest.TestCase):
         feeds_text = (ROOT / "public/feeds.html").read_text(encoding="utf-8")
         rss = ET.parse(ROOT / "public/feed.xml")
 
+        editions = archive.get("editions", [])
+        delivered = {item_id for edition in editions for item_id in edition["item_ids"]}
+        shown_ids = {item["id"] for item in published if item["id"] not in delivered}
+        for edition in editions[-rendering.RECENT_EDITIONS:]:
+            shown_ids.update(edition["item_ids"])
+        shown = [item for item in published if item["id"] in shown_ids]
+
         self.assertEqual(stats["published"], len(published))
-        self.assertEqual(html_text.count('<li class="episode">'), len(published))
-        self.assertEqual(html_text.count('<ul class="source-list"'), len(published))
+        self.assertEqual(stats["editions"], len(editions))
+        self.assertEqual(delivered | {item["id"] for item in published}, {item["id"] for item in published})
+        self.assertIn('<p class="section-label">Today</p>', html_text)
+        self.assertEqual(html_text.count('<li class="episode">'), len(shown))
+        self.assertEqual(html_text.count('<ul class="source-list"'), len(shown))
         self.assertEqual(
             html_text.count('<li class="source-item">'),
-            sum(len(item["appearances"]) for item in published),
+            sum(len(item["appearances"]) for item in shown),
         )
-        self.assertEqual(len(rss.findall("./channel/item")), len(published))
-        self.assertEqual(len(rss.findall("./channel/item/source")), len(published))
+        self.assertEqual(len(rss.findall("./channel/item")), len(editions))
+        self.assertEqual(
+            sum((node.findtext("description") or "").count("<h3>") for node in rss.findall("./channel/item")),
+            len(delivered),
+        )
+        self.assertFalse(rss.findall("./channel/item/source"))
+        archive_text = (ROOT / "public/archive.html").read_text(encoding="utf-8")
+        self.assertEqual(archive_text.count('<li class="episode">'), len(delivered))
+        self.assertEqual(archive_text.count('<section class="edition" '), len(editions))
+        self.assertIn('href="/archive.html"', html_text)
+        self.assertIn('href="/archive.html"', feeds_text)
+        for forbidden in ("<img", "<script", "stylesheet", "javascript:"):
+            self.assertNotIn(forbidden, archive_text)
         self.assertTrue(
             all(
                 "<strong>Sources</strong>" in (node.findtext("description") or "")
@@ -151,11 +195,11 @@ class StaticPublisherTests(unittest.TestCase):
                 stats,
                 {
                     "items": sum(item["status"] == "published" for item in archive["items"]),
-                    "rss_items": sum(item["status"] == "published" for item in archive["items"]),
+                    "rss_items": len(archive.get("editions", [])),
                     "feeds": len(settings.sources),
                 },
             )
-            for name in ("index.html", "feeds.html", "feed.xml", "_headers"):
+            for name in rendering.GENERATED_FILES:
                 self.assertEqual(
                     (pathlib.Path(directory) / name).read_bytes(),
                     (ROOT / "public" / name).read_bytes(),
@@ -166,12 +210,64 @@ class StaticPublisherTests(unittest.TestCase):
         value = rendering.render_feeds_html(settings)
         self.assertIn("Monitored sources", value)
         self.assertIn("Podcast feeds", value)
-        self.assertIn("YouTube feeds", value)
+        self.assertNotIn("YouTube feeds", value)
         self.assertIn("Newsletter feeds", value)
         self.assertIn("--forest: #1c2b23", value)
         for source in settings.sources:
             self.assertIn(html.escape(source.name), value)
             self.assertIn(source.feed_url.replace("&", "&amp;"), value)
+
+    def test_feed_page_renders_youtube_group_only_when_configured(self) -> None:
+        settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
+        youtube = make_source(kind="youtube", name="Test Show — YouTube")
+        value = rendering.render_feeds_html(replace(settings, sources=settings.sources + (youtube,)))
+        self.assertIn("YouTube feeds", value)
+        self.assertIn("Test Show — YouTube", value)
+        self.assertEqual(value.count('<section class="feed-group">'), 3)
+        podcasts_only = rendering.render_feeds_html(replace(settings, sources=(make_source(),)))
+        self.assertEqual(podcasts_only.count('<section class="feed-group">'), 1)
+        self.assertNotIn("Newsletter feeds", podcasts_only)
+
+    def test_config_has_no_youtube_sources_and_follows_cheeky_pint(self) -> None:
+        settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
+        self.assertFalse([source for source in settings.sources if source.kind == "youtube"])
+        cheeky_pint = next(source for source in settings.sources if source.name == "Cheeky Pint")
+        self.assertEqual(cheeky_pint.kind, "podcast")
+        self.assertEqual(cheeky_pint.feed_url, "https://feeds.transistor.fm/cheeky-pint-with-john-collison")
+        self.assertEqual(cheeky_pint.hosts, ("John Collison",))
+
+    def test_config_roster_is_the_followed_people_list(self) -> None:
+        settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
+        names = [entry.split(" — ", 1)[0].split(" (also known as", 1)[0] for entry in settings.roster]
+        self.assertEqual(
+            names,
+            [
+                "Sam Altman",
+                "Dario Amodei",
+                "Sundar Pichai",
+                "Mark Zuckerberg",
+                "Elon Musk",
+                "Alexandr Wang",
+                "Thibault Sottiaux",
+                "Boris Cherny",
+                "Satya Nadella",
+                "Mustafa Suleyman",
+                "Ilya Sutskever",
+                "Andrej Karpathy",
+                "Demis Hassabis",
+                "Greg Brockman",
+                "Jensen Huang",
+            ],
+        )
+        self.assertIn("Thibault Sottiaux (also known as Tibo) — OpenAI Codex lead", settings.roster)
+        self.assertIn("Boris Cherny — Anthropic Claude Code lead", settings.roster)
+
+    def test_config_without_people_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            config = pathlib.Path(directory) / "config.toml"
+            config.write_text('[[feeds]]\nname = "Test"\nurl = "https://example.com/feed.xml"\n', encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, r"\[\[people\]\]"):
+                radar.load_settings(config, pathlib.Path("items.json"))
 
     def test_config_loads_curated_newsletters_and_shared_source_families(self) -> None:
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
@@ -264,18 +360,15 @@ class FeedAndUrlTests(unittest.TestCase):
         self.assertIn("The original video title&nbsp;↗", html_text)
         self.assertNotIn("Test Show — YouTube", html_text)
 
-        rss = ET.fromstring(rendering.render_rss(settings, [item]))
+        rss = ET.fromstring(rendering.render_rss(settings, [item], [edition_for(item)]))
         rss_item = rss.find("./channel/item")
         assert rss_item is not None
-        self.assertEqual(
-            rss_item.findtext("title"), "The editorial AI Radar headline — Test Show"
-        )
-        self.assertEqual(rss_item.findtext("link"), "https://example.com/episode-1")
-        source = rss_item.find("source")
-        assert source is not None
-        self.assertEqual(source.text, "Test Show")
-        self.assertEqual(source.attrib["url"], "https://example.com/test-show.xml")
         description = rss_item.findtext("description") or ""
+        self.assertIn(
+            '<h3><a href="https://example.com/episode-1">The editorial AI Radar headline — Test Show</a></h3>',
+            description,
+        )
+        self.assertIsNone(rss_item.find("source"))
         self.assertIn("<strong>Podcast · Test Show</strong>", description)
         self.assertIn("<strong>Episode:</strong>", description)
         self.assertIn("Building Useful AI Agents</a>", description)
@@ -300,8 +393,11 @@ class FeedAndUrlTests(unittest.TestCase):
         self.assertIn('<span class="source-kind">Newsletter</span>', html_text)
         self.assertIn("AI Letter", html_text)
         self.assertIn('<span class="source-title-label">Issue:</span>', html_text)
-        rss = ET.fromstring(rendering.render_rss(settings, [item]))
-        self.assertEqual(rss.findtext("./channel/item/link"), "https://example.com/article-1")
+        rss = ET.fromstring(rendering.render_rss(settings, [item], [edition_for(item)]))
+        self.assertIn(
+            '<h3><a href="https://example.com/article-1">',
+            rss.findtext("./channel/item/description") or "",
+        )
         self.assertIn(
             "<strong>Issue:</strong>",
             rss.findtext("./channel/item/description") or "",
@@ -327,7 +423,7 @@ class FeedAndUrlTests(unittest.TestCase):
         }
         item["long_summary"] = '<img src=x onerror="alert(1)"> Four safe sentences follow. Two. Three. Four.'
         html_text = rendering.render_html(settings, [item])
-        rss = ET.fromstring(rendering.render_rss(settings, [item]))
+        rss = ET.fromstring(rendering.render_rss(settings, [item], [edition_for(item)]))
         description = rss.findtext("./channel/item/description") or ""
         self.assertNotIn("javascript:", html_text)
         self.assertNotIn("javascript:", description)
@@ -661,9 +757,14 @@ class SummaryContractTests(unittest.TestCase):
         self.assertIn("Podcast-specific", llm.call_args.kwargs["user"])
         self.assertIn("Video-specific", llm.call_args.kwargs["user"])
         self.assertIn("Newsletter-specific", llm.call_args.kwargs["user"])
-        self.assertIn("AI infrastructure", llm.call_args.kwargs["user"])
-        self.assertIn("original reporting", llm.call_args.kwargs["user"])
         self.assertIn("reject brief promotional or highlight clips", llm.call_args.kwargs["user"])
+        self.assertIn("AI Radar follows only these people:", llm.call_args.kwargs["user"])
+        self.assertIn("- Sam Altman — OpenAI CEO", llm.call_args.kwargs["user"])
+        self.assertIn("actual guest, interviewee, central speaker", llm.call_args.kwargs["user"])
+        self.assertIn("mentioned, discussed, analyzed, or reported on", llm.call_args.kwargs["user"])
+        self.assertIn("interview with, or writing by, a followed person", llm.call_args.kwargs["user"])
+        self.assertNotIn("AI infrastructure", llm.call_args.kwargs["user"])
+        self.assertNotIn("outside the target roster", llm.call_args.kwargs["user"])
         self.assertIn("untrusted data", llm.call_args.kwargs["system"])
 
     def test_llm_request_is_strict_bounded_and_observable(self) -> None:
@@ -1125,6 +1226,188 @@ class FakeHTTPResponse(FakeBinaryResponse):
 
     def __exit__(self, *args: object) -> None:
         return None
+
+
+class DailyEditionTests(unittest.TestCase):
+    def settings(self, root: pathlib.Path) -> radar_common.Settings:
+        return make_settings(root)
+
+    def test_edition_windows_close_at_seven_pm_eastern_across_dst(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = self.settings(pathlib.Path(directory))
+        self.assertEqual(settings.edition_timezone, "America/New_York")
+        self.assertEqual(settings.edition_hour, 19)
+        self.assertEqual(radar_common.edition_date(eastern(2026, 10, 14, 18, 59), settings), dt.date(2026, 10, 14))
+        self.assertEqual(radar_common.edition_date(eastern(2026, 10, 14, 19, 0), settings), dt.date(2026, 10, 15))
+        self.assertEqual(radar_common.edition_date(eastern(2026, 10, 14, 0, 5), settings), dt.date(2026, 10, 14))
+        self.assertEqual(
+            radar_common.edition_closes_at(dt.date(2026, 10, 14), settings).isoformat(),
+            "2026-10-14T23:00:00+00:00",
+        )
+        self.assertEqual(
+            radar_common.edition_closes_at(dt.date(2026, 12, 14), settings).isoformat(),
+            "2026-12-15T00:00:00+00:00",
+        )
+
+    def test_close_editions_groups_by_day_and_leaves_the_open_window(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = self.settings(pathlib.Path(directory))
+        early = item_seen_at("early", eastern(2026, 10, 12, 20))
+        late = item_seen_at("late", eastern(2026, 10, 13, 18, 17))
+        evening = item_seen_at("evening", eastern(2026, 10, 13, 19, 17))
+        skipped = item_seen_at("skipped", eastern(2026, 10, 13, 9))
+        skipped["status"] = "skipped"
+        archive = {"version": 1, "items": [early, late, evening, skipped]}
+
+        closed = radar.close_editions(settings, archive, eastern(2026, 10, 13, 19, 17))
+        radar.validate_archive(archive)
+        self.assertEqual(closed, 1)
+        self.assertEqual(
+            archive["editions"],
+            [{"date": "2026-10-13", "closed_at": "2026-10-13T23:00:00+00:00", "item_ids": ["early", "late"]}],
+        )
+        self.assertEqual(archive["editions_closed_through"], "2026-10-13T23:00:00+00:00")
+
+        snapshot = json.dumps(archive)
+        self.assertEqual(radar.close_editions(settings, archive, eastern(2026, 10, 14, 18, 17)), 0)
+        self.assertEqual(json.dumps(archive), snapshot)
+
+        self.assertEqual(radar.close_editions(settings, archive, eastern(2026, 10, 14, 19, 17)), 1)
+        self.assertEqual(archive["editions"][-1]["item_ids"], ["evening"])
+        self.assertEqual(archive["editions_closed_through"], "2026-10-14T23:00:00+00:00")
+
+    def test_late_published_item_joins_the_next_edition_not_a_delivered_one(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = self.settings(pathlib.Path(directory))
+        first = item_seen_at("first", eastern(2026, 10, 12, 10))
+        deferred = item_seen_at("deferred", eastern(2026, 10, 11, 10))
+        deferred.update(status="deferred", short_summary="", long_summary="")
+        archive = {"version": 1, "items": [first, deferred]}
+        radar.close_editions(settings, archive, eastern(2026, 10, 12, 19, 17))
+        # Nothing is published on the 13th, then the old deferred item is published on the 14th.
+        radar.close_editions(settings, archive, eastern(2026, 10, 13, 19, 17))
+        deferred.update(status="published", short_summary=VALID_SHORT, long_summary=VALID_LONG)
+        radar.close_editions(settings, archive, eastern(2026, 10, 14, 19, 17))
+        radar.validate_archive(archive)
+        self.assertEqual(
+            [(edition["date"], edition["item_ids"]) for edition in archive["editions"]],
+            [("2026-10-12", ["first"]), ("2026-10-14", ["deferred"])],
+        )
+
+    def test_missed_runs_still_close_each_day_separately(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = self.settings(pathlib.Path(directory))
+        archive = {
+            "version": 1,
+            "items": [
+                item_seen_at("monday", eastern(2026, 10, 12, 12)),
+                item_seen_at("tuesday", eastern(2026, 10, 13, 12)),
+            ],
+        }
+        self.assertEqual(radar.close_editions(settings, archive, eastern(2026, 10, 14, 8, 17)), 2)
+        self.assertEqual([edition["date"] for edition in archive["editions"]], ["2026-10-12", "2026-10-13"])
+
+    def test_archive_validation_rejects_inconsistent_editions(self) -> None:
+        item = published_item()
+        valid = {
+            "version": 1,
+            "items": [item],
+            "editions": [edition_for(item)],
+            "editions_closed_through": "2026-10-14T23:00:00+00:00",
+        }
+        radar.validate_archive(valid)
+        cases = {
+            "unpublished or missing": {"editions": [edition_for(published_item("ghost"))]},
+            "repeated an item": {"editions": [edition_for(item), edition_for(item, date="2026-10-15")]},
+            "out of order": {"editions": [edition_for(item, date="2026-10-15"), {**edition_for(item), "item_ids": ["item-1"]}]},
+            "preceded the latest edition": {"editions_closed_through": "2026-10-13T23:00:00+00:00"},
+            "date was invalid": {"editions": [edition_for(item, date="Oct 14")]},
+            "unexpected top-level": {"extra": True},
+        }
+        for message, change in cases.items():
+            with self.subTest(message=message):
+                with self.assertRaisesRegex(radar.RadarError, message):
+                    radar.validate_archive({**valid, **change})
+
+    def test_rss_has_one_entry_per_edition_with_long_summaries(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = self.settings(pathlib.Path(directory))
+        first = item_seen_at("first", eastern(2026, 10, 13, 10))
+        second = item_seen_at("second", eastern(2026, 10, 13, 11))
+        third = item_seen_at("third", eastern(2026, 10, 14, 10))
+        third["long_summary"] = VALID_LONG + " Third item detail."
+        editions = [
+            {"date": "2026-10-13", "closed_at": "2026-10-13T23:00:00+00:00", "item_ids": ["first", "second"]},
+            {"date": "2026-10-14", "closed_at": "2026-10-14T23:00:00+00:00", "item_ids": ["third"]},
+        ]
+        rss = ET.fromstring(rendering.render_rss(settings, [third, second, first], editions))
+        entries = rss.findall("./channel/item")
+        self.assertEqual(
+            [entry.findtext("title") for entry in entries],
+            [
+                "AI Radar — Wednesday, October 14, 2026 (1 item)",
+                "AI Radar — Tuesday, October 13, 2026 (2 items)",
+            ],
+        )
+        self.assertEqual(
+            [entry.findtext("guid") for entry in entries],
+            ["ai-radar:edition:2026-10-14", "ai-radar:edition:2026-10-13"],
+        )
+        self.assertEqual(entries[0].findtext("pubDate"), "Wed, 14 Oct 2026 23:00:00 +0000")
+        self.assertEqual(entries[0].findtext("link"), "https://ai-radar.merimerimeri.com/archive.html#edition-2026-10-14")
+        self.assertIn("Third item detail.", entries[0].findtext("description") or "")
+        self.assertNotIn(VALID_SHORT, entries[0].findtext("description") or "")
+        self.assertEqual((entries[1].findtext("description") or "").count("<h3>"), 2)
+        self.assertEqual((entries[1].findtext("description") or "").count("<hr>"), 1)
+
+    def test_homepage_shows_today_then_recent_editions(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = self.settings(pathlib.Path(directory))
+        old = [item_seen_at(f"day-{day}", eastern(2026, 10, day, 10)) for day in range(1, 10)]
+        today = item_seen_at("today", eastern(2026, 10, 9, 20))
+        today["title"] = "Fresh headline for today"
+        editions = [
+            {"date": f"2026-10-{day:02d}", "closed_at": radar_common.edition_closes_at(dt.date(2026, 10, day), settings).isoformat(), "item_ids": [f"day-{day}"]}
+            for day in range(1, 10)
+        ]
+        items = [today, *reversed(old)]
+        page = rendering.render_index_html(settings, items, editions, "2026-10-09T23:00:00+00:00")
+        self.assertLess(page.index(">Today<"), page.index("Fresh headline for today"))
+        self.assertLess(page.index("Fresh headline for today"), page.index(">Recent<"))
+        self.assertIn("Since 7 p.m. EDT Friday, October 9, 2026", page)
+        self.assertIn("goes out by RSS at 7 p.m. EDT", page)
+        self.assertEqual(page.count('<section class="edition" '), rendering.RECENT_EDITIONS)
+        self.assertIn('id="edition-2026-10-09">Friday, October 9, 2026</h2>', page)
+        self.assertIn('id="edition-2026-10-03"', page)
+        self.assertNotIn('id="edition-2026-10-02"', page)
+        self.assertEqual(page.count('<li class="episode">'), 1 + rendering.RECENT_EDITIONS)
+
+        self.assertIn('<a href="/archive.html">All past days', page)
+
+        archive_page = rendering.render_archive_html(settings, items, editions)
+        self.assertEqual(archive_page.count('<section class="edition" '), len(editions))
+        self.assertEqual(archive_page.count('<li class="episode">'), len(editions))
+        self.assertNotIn("Fresh headline for today", archive_page)
+        self.assertIn('<a href="#month-2026-10">October 2026</a>', archive_page)
+        self.assertLess(archive_page.index('id="edition-2026-10-09"'), archive_page.index('id="edition-2026-10-01"'))
+        self.assertIn('href="/"', archive_page)
+        self.assertNotIn("<script", archive_page)
+
+        quiet = rendering.render_index_html(settings, list(reversed(old)), editions, "2026-10-09T23:00:00+00:00")
+        self.assertIn("Nothing new yet today. Recent days are below.", quiet)
+        self.assertEqual(quiet.count('<li class="episode">'), rendering.RECENT_EDITIONS)
+
+    def test_run_cycle_closes_editions_before_collecting(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = make_settings(pathlib.Path(directory), sources=())
+            archive = {"version": 1, "items": [item_seen_at("earlier", eastern(2026, 10, 14, 9))]}
+            radar.save_archive(settings.archive_path, archive)
+            stats = radar.run_cycle(settings, lookback_days=7, now=eastern(2026, 10, 14, 19, 17))
+            saved = radar.load_archive(settings.archive_path)
+            feed = ET.parse(settings.public_dir / "feed.xml")
+        self.assertEqual(stats["editions_closed"], 1)
+        self.assertEqual(saved["editions"][0]["item_ids"], ["earlier"])
+        self.assertEqual(len(feed.findall("./channel/item")), 1)
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ repository is public.
 ## Architecture at a glance
 
 ```text
-Podcast, YouTube, and newsletter feeds
+Podcast and newsletter feeds
           |
           v
 Homelab Docker worker -----> OpenRouter Auto Router
@@ -59,13 +59,18 @@ production branch.
 
 Important paths:
 
-- `config.toml` defines podcast, YouTube, and newsletter sources, editorial rules, public URLs, and LLM settings.
+- `config.toml` defines podcast, newsletter, and optional YouTube sources, the
+  followed-people roster, public URLs, and LLM settings. No YouTube sources are
+  currently configured.
 - `data/items.json` is the canonical database-free archive. It records seen,
   skipped, and published items and is committed to Git.
-- `public/index.html` is the generated static item archive.
-- `public/feeds.html` is the generated list of all active podcast, YouTube, and
-  newsletter feeds and shares the site's inline visual system.
-- `public/feed.xml` is the generated RSS feed.
+- `public/index.html` is the generated Today and Recent daily-edition page.
+- `public/archive.html` is the generated list of every closed daily edition,
+  newest first, with a month index; RSS entries link to its day anchors.
+- `public/feeds.html` is the generated list of all active feeds, grouped by
+  medium (a medium with no active sources is omitted), and shares the site's
+  inline visual system.
+- `public/feed.xml` is the generated RSS feed, one entry per daily edition.
 - `public/_headers` sets the RSS content type and static security headers on
   Cloudflare Pages.
 - `radar.py` orchestrates collection, matching, archive validation, and targeted
@@ -93,10 +98,23 @@ append-only unless an explicit, verified repair is required.
 
 The generated site and RSS preserve the AI Radar editorial headline and summary
 while presenting every appearance with its medium, readable source name, and
-original publisher title linked to the source item. RSS titles also name the
-primary source and expose it through the standard RSS `source` element when the
-configured feed is available. This is derived entirely from canonical archive
-and configuration state; it does not require an archive migration or model call.
+original publisher title linked to the source item.
+
+Both outputs are organized into daily editions that close at the `[editions]`
+hour, 7 p.m. America/New_York. At the start of each scheduled run,
+`close_editions` appends every newly closed edition to `data/items.json` as
+`{date, closed_at, item_ids}` and advances `editions_closed_through`. An item
+joins the edition containing the later of its `first_seen_at` and
+`editions_closed_through`, so a late publication joins the next edition instead
+of altering one already delivered; a missed day still closes as its own
+edition. The homepage shows Today (published items not yet in an edition) and
+Recent (the last seven editions). RSS has one entry per edition, with guid
+`ai-radar:edition:<date>` and `pubDate` at the close, containing each item's
+headline with its primary source, long summary, and sources. Editions are
+validated with the archive and are immutable under the archive evolution check.
+`python3 radar.py close-editions` performs the same closing step without
+fetching feeds or calling the model; it was used once to backfill editions for
+the existing archive by first-seen time.
 
 ### Summary contract
 
@@ -136,12 +154,13 @@ characters per appearance. Newsletter-only items with fewer than 400 characters
 of publisher text are deferred without a model call so paywall teasers do not
 create weak summaries or repeated validation failures.
 
-Frontier-lab interviews remain the primary editorial signal. The same structured
-decision can include unusually substantive frontier-model research, AI
-infrastructure, AI-native software and engineering, strategy, policy, and
-Physical AI work. Newsletter issues require original reporting, research,
-interviews, or durable analysis; generic link roundups and incidental AI mentions
-remain out of scope. YouTube Shorts are recognized from their canonical URL,
+The editorial decision is gated on the `[[people]]` roster in `config.toml`. An
+item qualifies only when a followed person is an actual guest, interviewee,
+central speaker, or author whose own words or ideas are a substantial share of
+it. Mentions, third-party analysis, and colleagues at the same companies do not
+qualify, and newsletter issues qualify only as an interview with, or writing by,
+a followed person.
+YouTube Shorts are recognized from their canonical URL,
 isolated from cross-medium fuzzy matching, and stored as skipped without an LLM
 call. The editorial prompt also rejects brief promotional, highlight, launch,
 quote, and social clips whose only signal is a notable company or speaker. A
@@ -219,7 +238,8 @@ changes, because those affect installed OS/Python dependencies rather than only
 bind-mounted code.
 
 The image is based on `python:3.12-slim` and adds CA certificates, Git, the
-OpenSSH client, and the Python dependencies in `requirements.txt`. It does not
+OpenSSH client, and the Python dependencies in `requirements.txt`, including
+`tzdata` so the edition timezone resolves without system zoneinfo. It does not
 run an HTTP server. `.dockerignore` keeps Git metadata, local caches, and other
 development-only files out of the image context.
 
@@ -298,6 +318,7 @@ cycle performs these phases in order:
    remote advanced, and push any commit stranded by an earlier transient push
    failure. Force pushes are never used.
 3. Tag Sentry with the freshly synchronized worktree SHA and load `radar.py`.
+   Record any daily edition that closed since the last run before collecting.
 4. Fetch all configured sources using the lookback window, bounded response
    sizes (16 MiB per feed), public-only redirect destinations, and bounded
    retries for transient failures. YouTube failures, including 404 responses,
@@ -313,7 +334,8 @@ cycle performs these phases in order:
    attempt policy; validation retries include corrective feedback before they
    count as errors.
 7. Validate and atomically save `data/items.json`; rebuild `public/index.html`,
-   `public/feeds.html`, `public/feed.xml`, and `public/_headers`.
+   `public/archive.html`, `public/feeds.html`, `public/feed.xml`, and
+   `public/_headers`.
 8. Run `scripts/verify.py`: doctor, two isolated output builds, all Python tests,
    compilation, and patch checks. Test subprocesses do not inherit production
    Sentry or OpenRouter credentials.
@@ -413,10 +435,10 @@ After pushing:
 1. Confirm local `HEAD` equals GitHub `main` with `git ls-remote`.
 2. Confirm all `CI` jobs and the `Cloudflare Pages` check completed successfully
    for that commit.
-3. Request `/`, `/feeds.html`, and `/feed.xml` and require HTTP 200.
-4. Confirm the site contains the expected short summary, the feeds page contains
-   all configured sources, and the RSS item
-   contains the expected long summary.
+3. Request `/`, `/archive.html`, `/feeds.html`, and `/feed.xml` and require HTTP 200.
+4. Confirm the site's Today or Recent section contains the expected short
+   summary, the feeds page contains all configured sources, and the RSS edition
+   entry contains the expected long summary.
 5. Confirm the homelab checkout reached the same commit and is clean.
 6. Confirm both `ai-radar` and `scheduler` containers are running and the
    Ofelia labels still describe the expected job.

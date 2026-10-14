@@ -14,6 +14,13 @@ retry_backoff_seconds = 2.0
 max_retry_sleep_seconds = 60.0
 max_output_tokens = 2400
 
+[editions]
+# The site and RSS feed are organized into daily editions. An edition closes at
+# this local hour and covers everything AI Radar published since the previous
+# close; RSS gets one entry per edition.
+timezone = "America/New_York"
+hour = 19
+
 [site]
 title = "AI Radar"
 description = "Noteworthy AI conversations and writing, summarized from publisher notes."
@@ -124,6 +131,11 @@ name = "David Senra"
 url = "https://feeds.megaphone.fm/david-senra"
 hosts = ["David Senra"]
 
+[[feeds]]
+name = "Cheeky Pint"
+url = "https://feeds.transistor.fm/cheeky-pint-with-john-collison"
+hosts = ["John Collison"]
+
 [[newsletters]]
 name = "Stratechery"
 url = "https://stratechery.com/"
@@ -172,325 +184,67 @@ url = "https://www.aisnakeoil.com/"
 feed_url = "https://www.aisnakeoil.com/feed"
 authors = ["Arvind Narayanan", "Sayash Kapoor"]
 
-[[sources]]
-kind = "youtube"
-name = "Y Combinator"
-url = "https://www.youtube.com/@ycombinator"
-external_id = "UCcefcZRL2oaA_uBNeo5UOWg"
-feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCcefcZRL2oaA_uBNeo5UOWg"
+# The people AI Radar follows. An item qualifies only when one of them is an
+# actual guest, speaker, or author; mentions of them or their companies do not.
+[[people]]
+name = "Sam Altman"
+role = "OpenAI CEO"
 
-[[sources]]
-kind = "youtube"
-name = "Sequoia Capital"
-url = "https://www.youtube.com/@sequoiacapital"
-external_id = "UCWrF0oN6unbXrWsTN7RctTw"
-feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCWrF0oN6unbXrWsTN7RctTw"
+[[people]]
+name = "Dario Amodei"
+role = "Anthropic CEO"
 
-[[sources]]
-kind = "youtube"
-name = "Bloomberg Originals"
-url = "https://www.youtube.com/@business"
-external_id = "UCUMZ7gohGI9HcU9VNsr2FJQ"
-feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCUMZ7gohGI9HcU9VNsr2FJQ"
+[[people]]
+name = "Sundar Pichai"
+role = "Google and Alphabet CEO"
 
-[[sources]]
-kind = "youtube"
-name = "Joanna Stern"
-url = "https://www.youtube.com/@JoannaStern"
-external_id = "UCi0_2sEpmT6FKn5-y6_W3cA"
-feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCi0_2sEpmT6FKn5-y6_W3cA"
-people = ["Joanna Stern"]
+[[people]]
+name = "Mark Zuckerberg"
+aliases = ["Zuck"]
+role = "Meta CEO"
 
-[[sources]]
-kind = "youtube"
-name = "OpenAI"
-url = "https://www.youtube.com/@OpenAI"
-external_id = "UCXZCJLdBC09xxGZ6gcdrc6A"
-feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A"
+[[people]]
+name = "Elon Musk"
+role = "xAI founder"
 
-[[sources]]
-kind = "youtube"
-name = "Anthropic"
-url = "https://www.youtube.com/@anthropic-ai"
-external_id = "UCrDwWp7EBBv4NwvScIpBDOA"
-feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA"
+[[people]]
+name = "Alexandr Wang"
+aliases = ["Alex Wang"]
+role = "Meta chief AI officer, leading Meta Superintelligence Labs and Muse"
 
-[[sources]]
-kind = "youtube"
-name = "Google DeepMind"
-url = "https://www.youtube.com/@GoogleDeepMind"
-external_id = "UCP7jMXSY2xbc3KCAE0MHQ-A"
-feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A"
+[[people]]
+name = "Thibault Sottiaux"
+aliases = ["Tibo"]
+role = "OpenAI Codex lead"
 
-[[sources]]
-kind = "youtube"
-name = "a16z"
-url = "https://www.youtube.com/@a16z"
-external_id = "UC9cn0TuPq4dnbTY-CBsm8XA"
-feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC9cn0TuPq4dnbTY-CBsm8XA"
+[[people]]
+name = "Boris Cherny"
+role = "Anthropic Claude Code lead"
 
-[[sources]]
-kind = "youtube"
-name = "Dwarkesh Podcast — YouTube"
-url = "https://www.youtube.com/@DwarkeshPatel"
-external_id = "UCXl4i9dYBrFOabk0xGmbkRA"
-playlist_url = "https://www.youtube.com/playlist?list=PLd7-bHaQwnthaNDpZ32TtYONGVk95-fhF"
+[[people]]
+name = "Satya Nadella"
+role = "Microsoft CEO"
 
-[[sources]]
-kind = "youtube"
-name = "Latent Space — YouTube"
-url = "https://www.youtube.com/@LatentSpacePod"
-external_id = "UCxBcwypKK-W3GHd_RZ9FZrQ"
-playlist_url = "https://www.youtube.com/playlist?list=PLWEAb1SXhjlfkEF_PxzYHonU_v5LPMI8L"
+[[people]]
+name = "Mustafa Suleyman"
+role = "Microsoft AI CEO"
 
-[[sources]]
-kind = "youtube"
-name = "Lex Fridman Podcast — YouTube"
-url = "https://www.youtube.com/@lexfridman"
-external_id = "UCSHZKyawb77ixDdsGog4iWA"
-playlist_url = "https://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4"
+[[people]]
+name = "Ilya Sutskever"
+role = "Safe Superintelligence co-founder and CEO"
 
-[[sources]]
-kind = "youtube"
-name = "The Cognitive Revolution — YouTube"
-url = "https://www.youtube.com/@CognitiveRevolutionPodcast"
-external_id = "UCjNRVMBVI30Sak_p6HRWhIA"
-playlist_url = "https://www.youtube.com/playlist?list=PLVfJCYRuaJIUNqx6puWYmw7Ug_QsTlA5k"
+[[people]]
+name = "Andrej Karpathy"
+role = "Eureka Labs founder and OpenAI co-founder"
 
-[[sources]]
-kind = "youtube"
-name = "No Priors — YouTube"
-url = "https://www.youtube.com/@NoPriorsPodcast"
-external_id = "UCSI7h9hydQ40K5MJHnCrQvw"
-playlist_url = "https://www.youtube.com/playlist?list=PLMKa0PxGwad7jf8hwwX8w5FHitXZ1L_h1"
+[[people]]
+name = "Demis Hassabis"
+role = "Google DeepMind CEO"
 
-[[sources]]
-kind = "youtube"
-name = "OpenAI Podcast — YouTube"
-url = "https://www.youtube.com/playlist?list=PLOXw6I10VTv9GAOCZjUAAkSVyW2cDXs4u"
-external_id = "UCXZCJLdBC09xxGZ6gcdrc6A"
-playlist_url = "https://www.youtube.com/playlist?list=PLOXw6I10VTv9GAOCZjUAAkSVyW2cDXs4u"
+[[people]]
+name = "Greg Brockman"
+role = "OpenAI co-founder and president"
 
-[[sources]]
-kind = "youtube"
-name = "Google DeepMind: The Podcast — YouTube"
-url = "https://www.youtube.com/playlist?list=PLqYmG7hTraZBiUr6_Qf8YTS2Oqy3OGZEj"
-external_id = "UCP7jMXSY2xbc3KCAE0MHQ-A"
-playlist_url = "https://www.youtube.com/playlist?list=PLqYmG7hTraZBiUr6_Qf8YTS2Oqy3OGZEj"
-
-[[sources]]
-kind = "youtube"
-name = "NVIDIA AI Podcast — YouTube"
-url = "https://www.youtube.com/@NVIDIA"
-external_id = "UCHuiy8bXnmK5nisYHUd1J5g"
-playlist_url = "https://www.youtube.com/playlist?list=PLZHnYvH1qtOZ9QztmZ-Ozys5uyiYGR0C4"
-
-[[sources]]
-kind = "youtube"
-name = "Training Data — YouTube"
-url = "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
-external_id = "UCWrF0oN6unbXrWsTN7RctTw"
-playlist_url = "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8"
-
-[[sources]]
-kind = "youtube"
-name = "AI + a16z — YouTube"
-url = "https://www.youtube.com/playlist?list=PLM4u6XbiXf5p-bokWYcyi8SKnMzoYW4b3"
-external_id = "UC9cn0TuPq4dnbTY-CBsm8XA"
-playlist_url = "https://www.youtube.com/playlist?list=PLM4u6XbiXf5p-bokWYcyi8SKnMzoYW4b3"
-
-[[sources]]
-kind = "youtube"
-name = "The a16z Show — YouTube"
-url = "https://www.youtube.com/playlist?list=PLM4u6XbiXf5rnUvH5NLdV_It2QLgbHBDZ"
-external_id = "UC9cn0TuPq4dnbTY-CBsm8XA"
-playlist_url = "https://www.youtube.com/playlist?list=PLM4u6XbiXf5rnUvH5NLdV_It2QLgbHBDZ"
-
-[[sources]]
-kind = "youtube"
-name = "Acquired — YouTube"
-url = "https://www.youtube.com/@AcquiredFM"
-external_id = "UCyFqFYfTW2VoIQKylJ04Rtw"
-playlist_url = "https://www.youtube.com/@AcquiredFM/videos"
-
-[[sources]]
-kind = "youtube"
-name = "Invest Like the Best — YouTube"
-url = "https://www.youtube.com/@ILTB_Podcast"
-external_id = "UCpQBb0fToph3jrDulwz1iUQ"
-playlist_url = "https://www.youtube.com/@ILTB_Podcast/videos"
-
-[[sources]]
-kind = "youtube"
-name = "Lenny's Podcast — YouTube"
-url = "https://www.youtube.com/@LennysPodcast"
-external_id = "UC6t1O76G0jYXOAoYCm153dA"
-playlist_url = "https://www.youtube.com/playlist?list=PL2fLjt2dG0N6unOOF3nHWYGcJJIQR1NKm"
-
-[[sources]]
-kind = "youtube"
-name = "Practical AI — YouTube"
-url = "https://www.youtube.com/@practicalai_show"
-external_id = "UC9tpZnMLKv5vbZIGuIIPmNg"
-playlist_url = "https://www.youtube.com/@practicalai_show/videos"
-
-[[sources]]
-kind = "youtube"
-name = "Eye on AI — YouTube"
-url = "https://www.youtube.com/@eyeonai3425"
-external_id = "UC-o9u9QL4zXzBwjvT1gmzNg"
-playlist_url = "https://www.youtube.com/playlist?list=PLacDrP-7Ys6IsnPRN0ToTfjH8gQ4s6mL9"
-
-[[sources]]
-kind = "youtube"
-name = "AI & I — YouTube"
-url = "https://www.youtube.com/@EveryInc"
-external_id = "UCjIMtrzxYc0lblGhmOgC_CA"
-playlist_url = "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL"
-
-[[sources]]
-kind = "youtube"
-name = "BG2Pod — YouTube"
-url = "https://www.youtube.com/@Bg2Pod"
-external_id = "UC-yRDvpR99LUc5l7i7jLzew"
-playlist_url = "https://www.youtube.com/@Bg2Pod/videos"
-
-[[labs]]
-name = "OpenAI"
-aliases = ["OpenAI"]
-people = [
-  "Sam Altman",
-  "Greg Brockman",
-  "Brad Lightcap",
-  "Andrej Karpathy",
-  "Ilya Sutskever",
-  "Wojciech Zaremba",
-  "Mark Chen",
-  "Jakub Pachocki",
-  "Kevin Weil",
-  "Bob McGrew",
-]
-
-[[labs]]
-name = "Anthropic"
-aliases = ["Anthropic"]
-people = [
-  "Dario Amodei",
-  "Amanda Askell",
-  "Chris Olah",
-  "Boris Cherny",
-  "Fiona Fung",
-  "Mike Krieger",
-  "Jack Clark",
-]
-
-[[labs]]
-name = "Google DeepMind"
-aliases = ["Google", "Google DeepMind", "DeepMind"]
-people = [
-  "Demis Hassabis",
-  "Shane Legg",
-  "Jeff Dean",
-  "Noam Shazeer",
-  "Oriol Vinyals",
-  "Pushmeet Kohli",
-  "Thore Graepel",
-  "Koray Kavukcuoglu",
-  "Murray Shanahan",
-  "Raia Hadsell",
-  "Logan Kilpatrick",
-  "Tulsee Doshi",
-  "Nicholas Carlini",
-  "Sergey Brin",
-]
-
-[[labs]]
-name = "Meta"
-aliases = ["Meta", "Meta AI", "FAIR", "Meta Superintelligence Labs"]
-people = [
-  "Mark Zuckerberg",
-  "Alexandr Wang",
-  "Nat Friedman",
-  "Daniel Gross",
-  "Aparna Ramani",
-  "Yann LeCun",
-  "Joelle Pineau",
-  "Soumith Chintala",
-  "Jason Weston",
-]
-
-[[labs]]
-name = "xAI"
-aliases = ["xAI", "X.ai", "Grok"]
-people = [
-  "Elon Musk",
-  "Christian Szegedy",
-  "Dan Hendrycks",
-]
-
-[[labs]]
-name = "NVIDIA"
-aliases = ["NVIDIA", "Nvidia"]
-people = [
-  "Jensen Huang",
-  "Jim Fan",
-  "Bryan Catanzaro",
-  "Bill Dally",
-  "Ian Buck",
-  "Anima Anandkumar",
-]
-
-[[labs]]
-name = "Replit"
-aliases = ["Replit"]
-people = [
-  "Amjad Masad",
-]
-
-[[labs]]
-name = "Hugging Face"
-aliases = ["Hugging Face", "HuggingFace", "huggingface"]
-people = [
-  "Clément Delangue",
-]
-
-[[labs]]
-name = "CoreWeave"
-aliases = ["CoreWeave", "Core Weave"]
-people = [
-  "Corey Sanders",
-  "Michael Intrator",
-]
-
-[[labs]]
-name = "Applied Intuition"
-aliases = ["Applied Intuition", "AppliedIntuition"]
-people = [
-  "Qasar Younis",
-  "Peter Ludwig",
-]
-
-[[labs]]
-name = "Atreides Management"
-aliases = ["Atreides", "Atreides Management"]
-people = [
-  "Gavin Baker",
-]
-
-[[labs]]
-name = "Atoms"
-aliases = ["Atoms", "Atoms.co"]
-people = [
-  "Travis Kalanick",
-]
-
-[[labs]]
-name = "Physical AI"
-aliases = ["Physical AI"]
-
-[[labs]]
-name = "Microsoft"
-aliases = ["Microsoft", "Microsoft AI"]
-people = [
-  "Satya Nadella",
-]
+[[people]]
+name = "Jensen Huang"
+role = "NVIDIA CEO"

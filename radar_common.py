@@ -10,6 +10,7 @@ import urllib.parse
 from dataclasses import dataclass
 from html.parser import HTMLParser
 from typing import Any
+from zoneinfo import ZoneInfo
 
 RETRYABLE_HTTP_CODES = frozenset({408, 409, 425, 429})
 
@@ -64,6 +65,8 @@ class Settings:
     sources: tuple[Source, ...]
     roster: tuple[str, ...]
     llm: LLMSettings
+    edition_timezone: str = "America/New_York"
+    edition_hour: int = 19
 
 
 
@@ -206,6 +209,24 @@ def parse_utc_timestamp(value: object) -> dt.datetime | None:
     if parsed.tzinfo is None:
         return parsed.replace(tzinfo=dt.timezone.utc)
     return parsed.astimezone(dt.timezone.utc)
+
+
+
+def edition_date(moment: dt.datetime, settings: Settings) -> dt.date:
+    """Return the daily edition whose window contains this instant.
+
+    An edition named for day D covers the edition hour on D-1 (inclusive) up to
+    the edition hour on D (exclusive), in the configured local timezone.
+    """
+    local = moment.astimezone(ZoneInfo(settings.edition_timezone))
+    return local.date() + dt.timedelta(days=int(local.hour >= settings.edition_hour))
+
+
+
+def edition_closes_at(day: dt.date, settings: Settings) -> dt.datetime:
+    """Return the UTC instant at which the edition named for this day closes."""
+    local = dt.datetime.combine(day, dt.time(settings.edition_hour), ZoneInfo(settings.edition_timezone))
+    return local.astimezone(dt.timezone.utc)
 
 
 

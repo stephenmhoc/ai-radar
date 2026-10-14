@@ -22,15 +22,25 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 ## Treat these contracts as intentional
 
 - `data/items.json` is canonical state and belongs in Git.
-- `public/index.html`, `public/feeds.html`, `public/feed.xml`, and
-  `public/_headers` are generated, tracked production artifacts. `rendering.py`'s
+- `public/index.html`, `public/archive.html`, `public/feeds.html`,
+  `public/feed.xml`, and `public/_headers` are generated, tracked production artifacts. `rendering.py`'s
   `GENERATED_FILES` (also exposed through `radar.py`) is the single list of them;
   the scheduled cycle stages exactly that list, so a new artifact cannot be
   rendered but left uncommitted.
 - The site uses `short_summary`; RSS uses `long_summary`.
 - The site and RSS identify each appearance by medium, source name, and original
-  publisher title. RSS item titles name the primary source and use the standard
-  `source` element when its configured feed is available.
+  publisher title. Inside an RSS edition, each item headline names its primary
+  source.
+- Publication is organized into daily editions closing at the `[editions]` hour
+  (7 p.m. America/New_York). `close_editions` records closed editions in
+  `data/items.json` (`editions`, `editions_closed_through`) at the start of each
+  run; an item joins the edition containing `max(first_seen_at,
+  editions_closed_through)`, so late publications join the next edition. Closed
+  editions are immutable and append-only. RSS has exactly one entry per closed
+  edition; the homepage shows Today (unclosed items) and Recent (the last
+  `RECENT_EDITIONS` editions), never an endless stream. `public/archive.html`
+  lists every closed edition, newest first with a month index, so past days stay
+  findable without client-side script; RSS entries link to their archive anchor.
 - A short summary is one or two sentences. Ask for no more than 55 words, accept
   up to 82 words locally, and retry anything longer with explicit feedback to
   shorten it to the 55-word target before reporting exhausted attempts.
@@ -57,15 +67,21 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   source-independent video ID; never group distinct same-medium items through
   fuzzy title matching. Use `matching_score` for both archive matching and new
   groups, and check every appearance in a group before accepting a fuzzy match.
+  Copies of one media identity collected in the same run must end with a single
+  owner even when only one copy clears the fuzzy threshold.
 - Skip YouTube Shorts locally without an LLM call and keep them out of
   cross-medium fuzzy groups. For other YouTube items, reject brief promotion,
   highlights, isolated quotes, launch teasers, and social snippets whose main
   signal is a notable model company or person rather than durable substance.
-- Frontier-lab interviews remain the highest-priority editorial signal. Also
-  admit unusually substantive AI research, infrastructure, product/engineering,
-  strategy, policy, and Physical AI work. Newsletter issues need original
-  reporting, research, interviews, or durable analysis; exclude generic
-  roundups and incidental AI mentions.
+- AI Radar follows only the people listed under `[[people]]` in `config.toml`
+  (major lab CEOs, the Muse/Codex/Claude Code leads, and a few industry-defining
+  figures). An item qualifies only when a followed person is an actual guest,
+  interviewee, central speaker, or author; mentions, third-party analysis, and
+  their colleagues do not qualify. Newsletter issues qualify only as an
+  interview with, or writing by, a followed person.
+- No YouTube sources are configured. YouTube support (identity, Shorts, outage
+  handling) stays in code so archived YouTube appearances keep rendering and
+  sources can be re-added; the YouTube contracts above and below still apply.
 - Keep source failures isolated and report them, but preserve the scheduled
   cycle's degraded/nonzero result when any source or LLM error occurred.
 - An undated feed entry can never clear the lookback cutoff, so a source counts
@@ -138,8 +154,9 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 - Preserve deterministic rendering. Re-running `build-site` with unchanged
   archive/config must not alter output.
 - Preserve `public/feeds.html` as a deterministic rendering of every active
-  podcast, YouTube, and newsletter source in `config.toml`, and keep its link
-  visually secondary in the header.
+  podcast, YouTube, and newsletter source in `config.toml`, omit a medium's
+  group when it has no active sources, and keep its link visually secondary in
+  the header.
 - Avoid broad archive rewrites when a narrow migration is sufficient. When a
   large JSON diff is necessary, compare IDs, order, statuses, links, and old/new
   semantic fields programmatically.
@@ -189,7 +206,7 @@ for a review, diagnosis, or plan. When the user authorizes release:
 4. Confirm local `HEAD` and GitHub `main` are the same SHA using `git ls-remote`.
 5. Require a successful GitHub check named `Cloudflare Pages`.
 6. Verify HTTP 200 from the site and RSS URLs and check the changed content in
-   each output, not only headers. Also verify `/feeds.html` when sources or
+   each output, not only headers. Also verify `/archive.html` and `/feeds.html` when sources or
    rendering changed.
 7. Sync and verify `/opt/ai-radar/repo` through the existing private homelab
    access when production worker behavior changed.

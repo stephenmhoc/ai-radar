@@ -79537,5 +79537,897 @@
         "newsletter": "https://stratechery.com/2026/apple-homeview-the-new-apple-tv-the-app-story/"
       }
     }
-  ]
+  ],
+  "editions": [
+    {
+      "date": "2026-06-25",
+      "closed_at": "2026-06-25T23:00:00+00:00",
+      "item_ids": [
+        "legacy-7",
+        "legacy-11",
+        "legacy-15",
+        "legacy-22",
+        "legacy-25",
+        "legacy-26",
+        "legacy-32",
+        "legacy-33",
+        "legacy-35",
+        "legacy-41",
+        "legacy-48",
+        "legacy-54",
+        "legacy-59",
+        "legacy-60",
+        "legacy-62",
+        "legacy-69",
+        "legacy-71",
+        "legacy-75",
+        "legacy-82",
+        "legacy-89",
+        "legacy-91",
+        "legacy-94",
+        "legacy-98",
+        "legacy-104",
+        "legacy-119",
+        "legacy-126",
+        "legacy-135",
+        "legacy-145",
+        "legacy-146",
+        "legacy-155",
+        "legacy-174",
+        "legacy-175",
+        "legacy-176",
+        "legacy-177",
+        "legacy-178",
+        "legacy-179",
+        "legacy-180",
+        "legacy-182",
+        "legacy-185",
+        "legacy-190",
+        "legacy-191",
+        "legacy-199",
+        "legacy-201",
+        "legacy-202",
+        "legacy-208",
+        "legacy-210",
+        "legacy-211",
+        "legacy-212",
+        "legacy-241",
+        "legacy-381",
+        "legacy-382",
+        "legacy-401",
+        "legacy-406",
+        "legacy-410",
+        "legacy-411",
+        "legacy-413",
+        "legacy-420",
+        "legacy-422",
+        "legacy-424",
+        "legacy-429"
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "closed_at": "2026-06-26T23:00:00+00:00",
+      "item_ids": [
+        "legacy-452",
+        "legacy-455",
+        "legacy-456",
+        "legacy-457",
+        "legacy-458",
+        "legacy-459",
+        "legacy-460",
+        "legacy-461",
+        "legacy-462",
+        "legacy-463",
+        "legacy-464",
+        "legacy-465",
+        "legacy-466",
+        "legacy-467",
+        "legacy-468",
+        "legacy-469",
+        "legacy-471",
+        "legacy-472",
+        "legacy-473",
+        "legacy-474",
+        "legacy-475",
+        "legacy-476",
+        "legacy-477",
+        "legacy-478",
+        "legacy-479",
+        "legacy-480",
+        "legacy-481",
+        "legacy-482",
+        "legacy-483",
+        "legacy-485",
+        "legacy-486",
+        "legacy-487",
+        "legacy-488",
+        "legacy-489",
+        "legacy-490",
+        "legacy-491",
+        "legacy-493",
+        "legacy-494",
+        "legacy-495",
+        "legacy-496",
+        "legacy-497",
+        "legacy-498",
+        "legacy-500",
+        "legacy-501",
+        "legacy-502",
+        "legacy-503",
+        "legacy-504",
+        "legacy-505",
+        "legacy-507",
+        "legacy-508",
+        "legacy-509",
+        "legacy-510",
+        "legacy-511",
+        "legacy-512",
+        "legacy-513",
+        "legacy-514",
+        "legacy-515",
+        "legacy-516",
+        "legacy-517",
+        "legacy-518",
+        "legacy-519",
+        "legacy-520",
+        "legacy-521",
+        "legacy-522",
+        "legacy-523",
+        "legacy-524",
+        "legacy-525",
+        "legacy-526",
+        "legacy-527",
+        "legacy-528",
+        "legacy-529",
+        "legacy-530",
+        "legacy-531",
+        "legacy-532",
+        "legacy-534",
+        "legacy-535",
+        "legacy-536",
+        "legacy-537",
+        "legacy-539",
+        "legacy-540",
+        "legacy-541",
+        "legacy-542",
+        "legacy-543",
+        "legacy-544",
+        "legacy-545",
+        "legacy-547",
+        "legacy-548",
+        "legacy-550",
+        "legacy-551",
+        "legacy-552",
+        "legacy-553",
+        "legacy-554",
+        "legacy-555",
+        "legacy-556",
+        "legacy-557",
+        "legacy-559",
+        "legacy-560",
+        "legacy-561",
+        "legacy-562",
+        "legacy-563",
+        "legacy-564",
+        "legacy-565",
+        "legacy-566",
+        "legacy-567",
+        "legacy-568",
+        "legacy-569",
+        "legacy-570",
+        "legacy-571",
+        "legacy-572",
+        "legacy-573",
+        "legacy-574",
+        "legacy-575",
+        "legacy-579",
+        "legacy-580",
+        "legacy-581"
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "closed_at": "2026-07-01T23:00:00+00:00",
+      "item_ids": [
+        "legacy-979",
+        "legacy-1107",
+        "legacy-1167",
+        "legacy-1281",
+        "legacy-1286",
+        "legacy-1293",
+        "legacy-1298",
+        "legacy-1299",
+        "legacy-1303",
+        "legacy-1315",
+        "legacy-1336",
+        "legacy-1354",
+        "legacy-1355",
+        "legacy-1357",
+        "legacy-1359",
+        "legacy-1360",
+        "legacy-1364"
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "closed_at": "2026-07-14T23:00:00+00:00",
+      "item_ids": [
+        "legacy-1375",
+        "legacy-1385",
+        "legacy-1389",
+        "legacy-1395",
+        "legacy-1397",
+        "legacy-1404"
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "closed_at": "2026-07-16T23:00:00+00:00",
+      "item_ids": [
+        "legacy-1408"
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "closed_at": "2026-07-17T23:00:00+00:00",
+      "item_ids": [
+        "legacy-1409",
+        "legacy-1410"
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "closed_at": "2026-07-23T23:00:00+00:00",
+      "item_ids": [
+        "legacy-1415",
+        "legacy-1416"
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "closed_at": "2026-07-26T23:00:00+00:00",
+      "item_ids": [
+        "legacy-1427"
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "closed_at": "2026-07-28T23:00:00+00:00",
+      "item_ids": [
+        "legacy-1430",
+        "legacy-1432"
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "closed_at": "2026-07-29T23:00:00+00:00",
+      "item_ids": [
+        "legacy-1434"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "closed_at": "2026-08-03T23:00:00+00:00",
+      "item_ids": [
+        "legacy-1451",
+        "legacy-1455",
+        "legacy-1456",
+        "legacy-1457",
+        "legacy-1473",
+        "legacy-1534",
+        "legacy-1557"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "closed_at": "2026-08-04T23:00:00+00:00",
+      "item_ids": [
+        "legacy-1690",
+        "legacy-2046",
+        "legacy-2047",
+        "legacy-2073",
+        "legacy-2075"
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "closed_at": "2026-08-12T23:00:00+00:00",
+      "item_ids": [
+        "legacy-2133"
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "closed_at": "2026-08-16T23:00:00+00:00",
+      "item_ids": [
+        "legacy-2158"
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "closed_at": "2026-08-22T23:00:00+00:00",
+      "item_ids": [
+        "legacy-2191"
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "closed_at": "2026-08-25T23:00:00+00:00",
+      "item_ids": [
+        "legacy-2199"
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "closed_at": "2026-08-26T23:00:00+00:00",
+      "item_ids": [
+        "17cf848671f9d696efea",
+        "deb5ac1d5289408021ac",
+        "ddb9e655df1f0e61943b",
+        "0d9d601711cc9401f669",
+        "6fee7325a67bb6c4a7cc",
+        "dcc3b6ee9bcd6ae7aeed"
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "closed_at": "2026-08-27T23:00:00+00:00",
+      "item_ids": [
+        "063f62c4dbd92dd2b407",
+        "ee9be22d8a7ba17a981d",
+        "f98ed51fdcf22f3d25db",
+        "9fb00ffc476cb01f6412",
+        "48c606a42de40a1c8a15",
+        "2503cb777430a22f2fb6",
+        "38150d86609ee9248397",
+        "dad6b50fbd58a855eb69",
+        "ba6f9889016871a8cb27",
+        "d4b374691c9b24e4de95",
+        "8782a8af86989e4e16e7",
+        "44f8a1dea78a3fa40e77",
+        "89f5aebddc424f2c906f",
+        "7c28356c51743c103a06",
+        "76eb1dc1dc9ee3e09fd9",
+        "43e6b323726996e36618",
+        "d0da3331849fb84951e2",
+        "dc8ced472e16379c724c",
+        "b914898343b0f60ddd6a",
+        "be753b24ba36a75b7dc8",
+        "4fcb6e0c87c6cb93aa59",
+        "26c0788a9efbf4df1242",
+        "7384becfc10b462bf0fb"
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "closed_at": "2026-08-28T23:00:00+00:00",
+      "item_ids": [
+        "0f17225d39238961dc55",
+        "5eea8743e4f000bfe278",
+        "dcbe8eee5ffab9aead85",
+        "dc27c4324c9b24335079",
+        "a7954ac2b0cc473edc14",
+        "600789a5ece0cec50071",
+        "ad83e7242dd7ea0b275d",
+        "6b5722890dc235e15401",
+        "3160339176eb2aee2b79",
+        "d46864279815fa6ef36d",
+        "6cb259f1d3483fe5ac7a",
+        "e443135255d245ee6333"
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "closed_at": "2026-08-29T23:00:00+00:00",
+      "item_ids": [
+        "415945dbc281cfcc3f93",
+        "b627bd6cd9a7f8e77de2",
+        "a5e139ead653e7ac70cb"
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "closed_at": "2026-08-30T23:00:00+00:00",
+      "item_ids": [
+        "e86cf4f38a18b866dd60",
+        "e9d87251c6d6ec4bb637",
+        "4dbdba7f5205f05c35b7",
+        "8a2d23cc5ac88c071260"
+      ]
+    },
+    {
+      "date": "2026-08-31",
+      "closed_at": "2026-08-31T23:00:00+00:00",
+      "item_ids": [
+        "281b4f085df27cbef256",
+        "f2fbfef96ce142461e70",
+        "08b20f5f952818fc5cfd",
+        "2f621b81b068613ee299"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "closed_at": "2026-09-01T23:00:00+00:00",
+      "item_ids": [
+        "e2aa872710ce00978fd7",
+        "70bd08c9cfc5355c4971",
+        "ee06ab0897d739349c99",
+        "8554b543543a9285060b",
+        "d469e004de4cb1ae10ff",
+        "e5607dde78dcc95ec258",
+        "a816b5c0e751242f2185",
+        "0945746c5539f8e21f24",
+        "7bb3abb8c4f88fae1b02",
+        "73c271421c36f02981e9",
+        "d0746e4df4ba81213462",
+        "3b245ec0bf372e0275d9"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "closed_at": "2026-09-02T23:00:00+00:00",
+      "item_ids": [
+        "dea91c6af677ac6d0e5b",
+        "5089276a63115321c0c5",
+        "e3eed5b8b60128fac484"
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "closed_at": "2026-09-03T23:00:00+00:00",
+      "item_ids": [
+        "18308a7a95fd43d13d0b",
+        "3cad9139a764791925dd",
+        "af2c2b3b33f741c5982c",
+        "fbd4877e3c7e01b93176",
+        "b1abd05ed95257e28c73",
+        "4a751e9aafebffa1bf7e",
+        "713b6b151845276b4a40",
+        "f13d0d53110a18f3a71c"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "closed_at": "2026-09-04T23:00:00+00:00",
+      "item_ids": [
+        "0def9508b0c95c095486",
+        "a8936ad614f16ace7748",
+        "d404886e6dc544d24fd4",
+        "bfdb136f81295bb3a2cb",
+        "832247ed0ad9483f189f",
+        "8df6853a1909246dd27a",
+        "73d3268391729f68cdfd",
+        "1c4e83d707a9bb673e59"
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "closed_at": "2026-09-05T23:00:00+00:00",
+      "item_ids": [
+        "f9919652844cc891daf2",
+        "2879a4da02f03a4f4d54",
+        "7b60bcbbf59e10eb7cad"
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "closed_at": "2026-09-06T23:00:00+00:00",
+      "item_ids": [
+        "ceab5d756f4bc3895de7",
+        "c8b89b102ab55701291b",
+        "d10903bc5a3273e59dbd",
+        "c111423beda2664ac132"
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "closed_at": "2026-09-07T23:00:00+00:00",
+      "item_ids": [
+        "aabf8a1513abe1452e36",
+        "9dd7f54f45692db62ae5",
+        "b3de7d812fa7a4427016",
+        "728716d15c1e9e475c0b",
+        "d759527175ef2fe113d7",
+        "989495ffabe1d6e15d76"
+      ]
+    },
+    {
+      "date": "2026-09-08",
+      "closed_at": "2026-09-08T23:00:00+00:00",
+      "item_ids": [
+        "220db4bae8e83f280b4d",
+        "421561a01835d8fa0965",
+        "08176c560cd92474b6dc",
+        "fcaa81b2ec3873a53d85",
+        "5f106c1372db78104990",
+        "08120aaa6d3929adf2a9",
+        "b0ff5183203018d4078a",
+        "0d48d7a9a9043f44d685",
+        "499029744792545d4df6",
+        "9963df014a499dbe588d",
+        "4874abfb71e6b74e5b18"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "closed_at": "2026-09-09T23:00:00+00:00",
+      "item_ids": [
+        "de75c7f8368e570f2386",
+        "b6cde88b42d79e9d41a9",
+        "c92fcb4dffd0247d131c",
+        "69cd744f2828b8ec5880",
+        "7da620263e696d16efed",
+        "9ca02aebbae30bbf20f8",
+        "32be62cf40da54a2b35e",
+        "b0dc9dfb46b210b8687f",
+        "30c179a9809c25d25ca3",
+        "980b77da990374ae69fc"
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "closed_at": "2026-09-10T23:00:00+00:00",
+      "item_ids": [
+        "b5ec717c9c35279f3df7",
+        "529dd1e7e41582c71cc6",
+        "239095f3bcff1fe45ac7",
+        "40fa52203d6ffdc559e4",
+        "573d5b7822ae097b3b51",
+        "c3f386bd714661c371f1",
+        "48f58ef7e047e292ba85",
+        "39a9f54ac7a55f6e5a24",
+        "9345538ebeab6bd9d363"
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "closed_at": "2026-09-11T23:00:00+00:00",
+      "item_ids": [
+        "1f45f28f7bdea9eb3307",
+        "35d39de72a90e7ef20e7",
+        "37187daf74459e4aba66",
+        "24097012e5f13ebbf066",
+        "84e87fe8fd8c8eadb083"
+      ]
+    },
+    {
+      "date": "2026-09-12",
+      "closed_at": "2026-09-12T23:00:00+00:00",
+      "item_ids": [
+        "faf40f884251ef102b59",
+        "2f4e77528ec25133be3b"
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "closed_at": "2026-09-13T23:00:00+00:00",
+      "item_ids": [
+        "e33ab2c53b020df7ace0",
+        "1be71663bbb65a159ec7"
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "closed_at": "2026-09-14T23:00:00+00:00",
+      "item_ids": [
+        "8883c65654bed1cd280e",
+        "c40d6bd6d5bd6c13bbd5",
+        "30a5556c2aac98d14934",
+        "5d662c861b07773010ab",
+        "05887733fd024f88adf3",
+        "e5f264e10dc18b2ddaa9",
+        "068b48d9ddac916b5505",
+        "ca56827f4668a9a281de",
+        "a57a4a3bd5ea189a4f56",
+        "5c453be89b6a9c4b4efa",
+        "c83b9a0a831d92e30fc8"
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "closed_at": "2026-09-15T23:00:00+00:00",
+      "item_ids": [
+        "4edde7f53f957a3fb9e4",
+        "3c3159d48073043b82cb",
+        "117dfae80aae13db0e51",
+        "418c89ebde3bab244e49",
+        "0cf4272ad535831eab98",
+        "29f4140d5214aa7d5ebc",
+        "b3f3cd71b8fcd909273d"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "closed_at": "2026-09-16T23:00:00+00:00",
+      "item_ids": [
+        "9720bb15419c24acc146",
+        "5fe3377b789d25f6294c",
+        "e84b6f13f1bcbbafe33e",
+        "67df0bfe23c243cdc8e6",
+        "c971d769d630067772bf"
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "closed_at": "2026-09-17T23:00:00+00:00",
+      "item_ids": [
+        "60ba48e9c6441788f5d5",
+        "69d4dc70900e48c228cc",
+        "99607673751d867d78ac",
+        "dd4f63f1577b699e967b",
+        "1dc2f4398b6effe1a69b",
+        "0eabb75c21fb7f88e22d",
+        "7760167120e5f082f2c0",
+        "a34050db26eb5aa661eb",
+        "d2eacc9f9451c170038f",
+        "7e2bbb74ef6a8dcd4d8c"
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "closed_at": "2026-09-18T23:00:00+00:00",
+      "item_ids": [
+        "6c0001c179babbc77ff1",
+        "493abc8c49f18c5fdd1c",
+        "a321bf77d19b7ba40e30",
+        "3b0de3cdd96d43091511",
+        "c899a073ee85cc8b9e5a",
+        "279680dd37ac6149adea",
+        "7a2195796c05844e971d",
+        "b8375535305c6e20fa9b",
+        "8737658600e3c6e46776",
+        "5e0658cb58047b0de995"
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "closed_at": "2026-09-19T23:00:00+00:00",
+      "item_ids": [
+        "b5b5bd4e64736bf01cc9",
+        "732a54adc8b3eff596f0",
+        "0b683b01944b54802b5d",
+        "6c7664edf94fcca92852"
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "closed_at": "2026-09-21T23:00:00+00:00",
+      "item_ids": [
+        "dd3b69335d4ce06c723d",
+        "3a9c6769581fbe5ade18",
+        "06242cc35b437c0f44e6",
+        "16d501092d666af46297",
+        "adc1ae9753760d017fd9",
+        "76159559ee9ad591283d"
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "closed_at": "2026-09-22T23:00:00+00:00",
+      "item_ids": [
+        "1155487f41f255c9e480",
+        "821a38df4d8ccf2bc06d",
+        "e0fa75b57c65f77eaff2",
+        "a896215694d6019b5d24",
+        "7e2ebec521b0c8f47e18"
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "closed_at": "2026-09-23T23:00:00+00:00",
+      "item_ids": [
+        "12af1c910a3c83ed33c0",
+        "f8d0ee5354ed18ceb1fc",
+        "1392db74e8fb46972ce8",
+        "3f7f63ad0ec33b3ef3fc",
+        "274022d14ad77a41be97",
+        "c409492e3eebd2d0a0b0",
+        "93879a743b6611285a5d",
+        "245ccfc22a15422e7482"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "closed_at": "2026-09-24T23:00:00+00:00",
+      "item_ids": [
+        "bc5dfbcf40f4d8c6efc6",
+        "07b87edbebfbb3846e17",
+        "56250a71858e157984ea"
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "closed_at": "2026-09-25T23:00:00+00:00",
+      "item_ids": [
+        "43d0b0fef3e8af7e8fb0",
+        "067908a101a5bcf1d9f3",
+        "1fc7d552e99759c711cb",
+        "10960fdb69a1d07142fd"
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "closed_at": "2026-09-26T23:00:00+00:00",
+      "item_ids": [
+        "a444ecfe2ea66c1d36f4",
+        "9019e027eb613117797d",
+        "79fc947744c309c914e2",
+        "f5e36197fa9c0f6f71fa"
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "closed_at": "2026-09-28T23:00:00+00:00",
+      "item_ids": [
+        "84e533b256b624187785",
+        "d44b8dbdd6acdf4f5089",
+        "231c6425f96f15079afa",
+        "681d8a96dcb36e01e649",
+        "ff7ac88067af81601e53",
+        "de5c51ae66523de33d67",
+        "a16aa13dcd5fddf92a56",
+        "c32b87322c0575e31ba3"
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "closed_at": "2026-09-29T23:00:00+00:00",
+      "item_ids": [
+        "215c95eb8734c76cf483",
+        "25b87d9e8c36c20e3076",
+        "0c036806e690edef83af",
+        "bd1bb36498bbc0e362ec",
+        "cf4aa35889061436c641",
+        "b668b998f86171546858",
+        "d4e7e55090723a289cff",
+        "977417a56545b52f7845"
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "closed_at": "2026-09-30T23:00:00+00:00",
+      "item_ids": [
+        "e10a5b27356762c67f88",
+        "e5c1c6d98449718021fc",
+        "8ef69df1bb7f62cff7b1",
+        "fa98b5b6f694eede3f11"
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "closed_at": "2026-10-01T23:00:00+00:00",
+      "item_ids": [
+        "bc04ac59f340ec0de0c9",
+        "7469e907ecbfccbf8884",
+        "458f5e2eb106b7e49862",
+        "bbaf4cc51057c7d08fdc"
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "closed_at": "2026-10-02T23:00:00+00:00",
+      "item_ids": [
+        "998d5047182cc1038497",
+        "d3b2585b801461a97890",
+        "754c6d948e7da7c01ff8",
+        "38a890822034d9078d8b",
+        "6d02897de1f970fe4a21"
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "closed_at": "2026-10-03T23:00:00+00:00",
+      "item_ids": [
+        "7f6e137ea425e9d358e5",
+        "e2531ddbf724e951fd6a",
+        "6a39349a9703678f243c"
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "closed_at": "2026-10-04T23:00:00+00:00",
+      "item_ids": [
+        "a1ff52ad6cb8de4b6565"
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "closed_at": "2026-10-05T23:00:00+00:00",
+      "item_ids": [
+        "8a6234e8553b99e377ad",
+        "77e2d4d7c19ed0fa3749",
+        "28c4e5b32712c9e72cde"
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "closed_at": "2026-10-06T23:00:00+00:00",
+      "item_ids": [
+        "cdfa6ab3384e05aad823",
+        "f1572a4fc852bdf535e5",
+        "b6b0859a2cf96dd3f949",
+        "404a8aceeed50457841a"
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "closed_at": "2026-10-07T23:00:00+00:00",
+      "item_ids": [
+        "eb1656b05f2952e1e625",
+        "59a3c615caa5993ae0bf",
+        "e43932380470e834cdcb",
+        "3cfd90bc39e4478fbaef",
+        "e70730c38cef36b9a644",
+        "703ae0cd0612706912bd",
+        "5571502e29a81d66e827"
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "closed_at": "2026-10-08T23:00:00+00:00",
+      "item_ids": [
+        "28b1ab76a74bcc813ae3",
+        "c768eb887d3a33ef811d",
+        "dbc44f3891ec6e86ca15",
+        "6d028382d51a86f647ee",
+        "92a80ebd1367b54f0ac0",
+        "5c47e7535593043b8139"
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "closed_at": "2026-10-09T23:00:00+00:00",
+      "item_ids": [
+        "cbbbbcc3b0e98d78a32c",
+        "6a147ee20236b1f82e4f",
+        "0f195e5dfc58f1751493",
+        "153a2d1aa9f45ece569b",
+        "422eadca0e6620a75fbc",
+        "7f6d588dfcdf5dfe1a9a",
+        "cb21e11f58aded2370e1"
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "closed_at": "2026-10-10T23:00:00+00:00",
+      "item_ids": [
+        "e29a6ecb7a6f40279206",
+        "2746a3cec72fb73a3d2c",
+        "9125395c0f2a4169d8df",
+        "81168f5b821840437718"
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "closed_at": "2026-10-11T23:00:00+00:00",
+      "item_ids": [
+        "50b5c6b9441093602985",
+        "1c5ba8fad80df38cff5b",
+        "c3f2e188e8b4b8b25b60"
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "closed_at": "2026-10-12T23:00:00+00:00",
+      "item_ids": [
+        "034fbfb2bb621b3e663f",
+        "35e0e6279ad1443ba1a1"
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "closed_at": "2026-10-13T23:00:00+00:00",
+      "item_ids": [
+        "ee084b437eb7b7624e99",
+        "f35519e7ff1e0801fa4f",
+        "8816c4f01cab68d1a170",
+        "c3c4f604e2c45a1ac583",
+        "25afaa4286651305518e",
+        "56e61511dff652187568",
+        "59d5b527e510e3878d8d"
+      ]
+    }
+  ],
+  "editions_closed_through": "2026-10-13T23:00:00+00:00"
 }

@@ -1,18 +1,22 @@
 """Deterministic, text-only HTML and RSS rendering."""
 from __future__ import annotations
 
+import datetime as dt
 import email.utils
 import html
 import xml.etree.ElementTree as ET
 from typing import Any
+from zoneinfo import ZoneInfo
 
 from radar_common import (
     APPEARANCE_PRESENTATION, Settings, clean_text, escape_public_text,
-    ordered_appearances, parse_timestamp, public_http_url, require_public_http_url,
-    source_display_name,
+    edition_closes_at, edition_date, ordered_appearances, parse_timestamp,
+    parse_utc_timestamp, public_http_url, require_public_http_url, source_display_name,
 )
 
-GENERATED_FILES = ("index.html", "feeds.html", "feed.xml", "_headers")
+GENERATED_FILES = ("index.html", "archive.html", "feeds.html", "feed.xml", "_headers")
+ARCHIVE_PATH = "/archive.html"
+RECENT_EDITIONS = 7
 
 
 
@@ -22,10 +26,22 @@ def render_html(
     *,
     main_content: str | None = None,
     page_title: str | None = None,
-    section_label: str = "Latest radar",
-    secondary_label: str = "Feeds",
-    secondary_href: str = "/feeds.html",
+    section_label: str | None = "Latest radar",
+    secondary_links: tuple[tuple[str, str], ...] = (("Archive", ARCHIVE_PATH), ("Feeds", "/feeds.html")),
 ) -> str:
+    body = main_content or render_episode_list(items)
+    label = f'<p class="section-label">{html.escape(section_label)}</p>\n    ' if section_label else ""
+    document_title = page_title or settings.title
+    return _render_document(
+        settings,
+        document_title=document_title,
+        body=label + body,
+        secondary_links=secondary_links,
+    )
+
+
+
+def render_episode_list(items: list[dict[str, Any]], *, empty: str = "No items yet.") -> str:
     rows: list[str] = []
     for item in items:
         date = date_label(item.get("published_at"))
@@ -37,15 +53,141 @@ def render_html(
             '<p class="episode-meta">'
             f'<time datetime="{html.escape(str(item.get("published_at") or ""))}">{html.escape(date)}</time>'
             "</p>"
-            f'<h2>{html.escape(str(item["title"]))}</h2>'
+            f'<h3>{html.escape(str(item["title"]))}</h3>'
             f"{sources}"
             f'<p class="summary">{summary}</p>'
             "</article>"
             "</li>"
         )
-    episode_rows = "\n".join(rows) or '<li class="episode empty">No items yet.</li>'
-    body = main_content or f'<ul class="episode-list">\n{episode_rows}\n</ul>'
-    document_title = page_title or settings.title
+    if not rows:
+        return f'<p class="edition-empty">{html.escape(empty)}</p>'
+    episode_rows = "\n".join(rows)
+    return f'<ul class="episode-list">\n{episode_rows}\n</ul>'
+
+
+
+def hour_label(hour: int) -> str:
+    return f"{hour % 12 or 12} {'a.m.' if hour < 12 else 'p.m.'}"
+
+
+
+def edition_label(day: dt.date) -> str:
+    return f"{day:%A}, {day:%B} {day.day}, {day.year}"
+
+
+
+def render_index_html(
+    settings: Settings,
+    items: list[dict[str, Any]],
+    editions: list[dict[str, Any]],
+    closed_through: str | None,
+) -> str:
+    """Render today's open edition, then the most recent closed editions."""
+    delivered = {item_id for edition in editions for item_id in edition["item_ids"]}
+    today_items = [item for item in items if str(item["id"]) not in delivered]
+    since = parse_utc_timestamp(closed_through)
+    zone = ZoneInfo(settings.edition_timezone)
+    if since is not None:
+        local_since = since.astimezone(zone)
+        closes = edition_closes_at(edition_date(since, settings), settings).astimezone(zone)
+        today_title = (
+            f"Since {hour_label(local_since.hour)} {local_since:%Z} "
+            f"{edition_label(local_since.date())}"
+        )
+        today_note = (
+            f'<p class="edition-note">Today&rsquo;s edition goes out by RSS at '
+            f"{hour_label(closes.hour)} {closes:%Z}.</p>"
+        )
+    else:
+        today_title = "Today"
+        today_note = ""
+    sections = [
+        '<section class="edition edition-today" aria-labelledby="edition-today">'
+        '<p class="section-label">Today</p>'
+        f'<h2 class="edition-title" id="edition-today">{html.escape(today_title)}</h2>'
+        f"{today_note}"
+        f'{render_episode_list(today_items, empty="Nothing new yet today. Recent days are below.")}'
+        "</section>"
+    ]
+    recent = list(reversed(editions))[:RECENT_EDITIONS]
+    if recent:
+        sections.append(
+            '<section class="recent" aria-labelledby="recent-label">'
+            '<p class="section-label" id="recent-label">Recent</p>'
+            + "\n".join(render_edition_section(edition, items) for edition in recent)
+            + f'<p class="archive-link"><a href="{ARCHIVE_PATH}">All past days&nbsp;→</a></p>'
+            + "</section>"
+        )
+    return render_html(settings, [], main_content="\n".join(sections), section_label=None)
+
+
+
+def render_edition_section(edition: dict[str, Any], items: list[dict[str, Any]]) -> str:
+    day = dt.date.fromisoformat(edition["date"])
+    members = set(edition["item_ids"])
+    edition_items = [item for item in items if str(item["id"]) in members]
+    anchor = f"edition-{edition['date']}"
+    return (
+        f'<section class="edition" aria-labelledby="{anchor}">'
+        f'<h2 class="edition-title" id="{anchor}">{html.escape(edition_label(day))}</h2>'
+        f"{render_episode_list(edition_items)}"
+        "</section>"
+    )
+
+
+
+def render_archive_html(
+    settings: Settings,
+    items: list[dict[str, Any]],
+    editions: list[dict[str, Any]],
+) -> str:
+    """Render every closed edition, newest first, grouped by month."""
+    months: dict[str, list[dict[str, Any]]] = {}
+    for edition in reversed(editions):
+        months.setdefault(edition["date"][:7], []).append(edition)
+    month_links: list[str] = []
+    month_sections: list[str] = []
+    for month, month_editions in months.items():
+        first_day = dt.date.fromisoformat(month + "-01")
+        name = f"{first_day:%B} {first_day.year}"
+        month_links.append(f'<a href="#month-{month}">{html.escape(name)}</a>')
+        month_sections.append(
+            f'<section class="archive-month" aria-labelledby="month-{month}">'
+            f'<p class="section-label" id="month-{month}">{html.escape(name)}</p>'
+            + "\n".join(render_edition_section(edition, items) for edition in month_editions)
+            + "</section>"
+        )
+    intro = (
+        '<p class="section-label">Archive</p>'
+        '<p class="edition-note">Every past daily edition, newest first. Use your browser&rsquo;s '
+        "find to search headlines, sources, and summaries. Today&rsquo;s items are on the "
+        '<a href="/">front page</a>.</p>'
+    )
+    if month_links:
+        intro += '<nav class="archive-months" aria-label="Months">' + "".join(month_links) + "</nav>"
+    body = intro + ("\n".join(month_sections) or '<p class="edition-empty">No past editions yet.</p>')
+    return render_html(
+        settings,
+        [],
+        main_content=body,
+        page_title=f"Archive — {settings.title}",
+        section_label=None,
+        secondary_links=(("Radar", "/"), ("Feeds", "/feeds.html")),
+    )
+
+
+
+def _render_document(
+    settings: Settings,
+    *,
+    document_title: str,
+    body: str,
+    secondary_links: tuple[tuple[str, str], ...],
+) -> str:
+    secondary = "\n      ".join(
+        f'<a class="secondary-link" href="{html.escape(href, quote=True)}">{html.escape(label)}</a>'
+        for label, href in secondary_links
+    )
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -242,7 +384,7 @@ def render_html(
 
     .source-title a {{ color: #465b3c; }}
 
-    h2 {{
+    h2, h3 {{
       margin: 0;
       font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
       font-size: clamp(1.3rem, 3vw, 1.62rem);
@@ -265,6 +407,48 @@ def render_html(
     }}
 
     .feed-group + .feed-group {{ margin-top: 3rem; }}
+
+    .edition + .edition,
+    .edition-today + .recent {{ margin-top: 3.5rem; }}
+
+    .edition-title {{
+      margin: 0 0 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--forest);
+      font-size: 1.35rem;
+    }}
+
+    .edition-today .edition-title {{ margin-bottom: 0.5rem; }}
+
+    .edition-note {{
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }}
+
+    .archive-link {{
+      margin: 2.5rem 0 0;
+      font-weight: 650;
+    }}
+
+    .archive-months {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      margin: 0 0 3rem;
+      font-size: 0.9rem;
+      font-weight: 650;
+    }}
+
+    .archive-month + .archive-month {{ margin-top: 4rem; }}
+
+    .archive-month .section-label {{ scroll-margin-top: 1rem; }}
+
+    .edition-empty {{
+      margin: 0;
+      color: var(--muted);
+      font-style: italic;
+    }}
 
     .feed-group-title {{
       margin: 0 0 1rem;
@@ -327,16 +511,15 @@ def render_html(
 </head>
 <body>
   <header>
-    <p class="eyebrow">Podcasts, videos &amp; newsletters</p>
+    <p class="eyebrow">Podcasts &amp; newsletters</p>
     <h1>{html.escape(settings.title)}</h1>
     <p class="dek">{html.escape(settings.description)}</p>
     <nav class="header-links" aria-label="AI Radar links">
       <a class="rss-link" href="/feed.xml">Follow via RSS&nbsp; ↗</a>
-      <a class="secondary-link" href="{html.escape(secondary_href, quote=True)}">{html.escape(secondary_label)}</a>
+      {secondary}
     </nav>
   </header>
   <main>
-    <p class="section-label">{html.escape(section_label)}</p>
     {body}
   </main>
 </body>
@@ -371,6 +554,8 @@ def render_feeds_html(settings: Settings) -> str:
                 "</p>"
                 "</li>"
             )
+        if not rows:
+            continue
         groups.append(
             '<section class="feed-group">'
             f'<h2 class="feed-group-title">{html.escape(heading)}</h2>'
@@ -383,8 +568,7 @@ def render_feeds_html(settings: Settings) -> str:
         main_content="".join(groups),
         page_title=f"Feeds — {settings.title}",
         section_label="Monitored sources",
-        secondary_label="Radar",
-        secondary_href="/",
+        secondary_links=(("Radar", "/"), ("Archive", ARCHIVE_PATH)),
     )
 
 
@@ -442,59 +626,67 @@ def rss_source_details(item: dict[str, Any]) -> str:
         )
     if not rows:
         return ""
-    return "<br><br><strong>Sources</strong><br><br>" + "<br><br>".join(rows)
+    return "<p><strong>Sources</strong></p>" + "".join(f"<p>{row}</p>" for row in rows)
 
 
 
-def render_rss(settings: Settings, items: list[dict[str, Any]]) -> str:
+def primary_link(settings: Settings, item: dict[str, Any]) -> str:
+    links = item.get("links", {})
+    return (
+        public_http_url(links.get("podcast"))
+        or public_http_url(links.get("youtube"))
+        or public_http_url(links.get("newsletter"))
+        or settings.base_url + "/"
+    )
+
+
+
+def rss_item_section(settings: Settings, item: dict[str, Any]) -> str:
+    """One item inside a daily RSS edition: titled with its primary source, long summary, sources."""
+    appearances = ordered_appearances(item)
+    source_name = source_display_name(appearances[0]) if appearances else ""
+    title = str(item["title"])
+    if source_name:
+        title = f"{title} — {source_name}"
+    link = primary_link(settings, item)
+    return (
+        f'<h3><a href="{html.escape(link, quote=True)}">{html.escape(title)}</a></h3>'
+        f'<p>{html.escape(clean_text(str(item.get("long_summary") or "")))}</p>'
+        f"{rss_source_details(item)}"
+    )
+
+
+
+def render_rss(
+    settings: Settings,
+    items: list[dict[str, Any]],
+    editions: list[dict[str, Any]],
+) -> str:
+    """Render one RSS entry per closed daily edition, newest first."""
     rss = ET.Element("rss", {"version": "2.0"})
     channel = ET.SubElement(rss, "channel")
     ET.SubElement(channel, "title").text = settings.title
     ET.SubElement(channel, "link").text = settings.base_url + "/"
     ET.SubElement(channel, "description").text = settings.description
     ET.SubElement(channel, "language").text = "en-us"
-    for item in items:
+    for edition in reversed(editions):
+        members = set(edition["item_ids"])
+        edition_items = [item for item in items if str(item["id"]) in members]
+        day = dt.date.fromisoformat(edition["date"])
+        count = len(edition_items)
         node = ET.SubElement(channel, "item")
-        appearances = ordered_appearances(item)
-        primary_appearance = appearances[0] if appearances else None
-        source_name = source_display_name(primary_appearance) if primary_appearance else ""
-        item_title = str(item["title"])
-        if source_name:
-            item_title = f"{item_title} — {source_name}"
-        ET.SubElement(node, "title").text = item_title
-        links = item.get("links", {})
-        primary_link = (
-            public_http_url(links.get("podcast"))
-            or public_http_url(links.get("youtube"))
-            or public_http_url(links.get("newsletter"))
-            or settings.base_url + "/"
+        ET.SubElement(node, "title").text = (
+            f"{settings.title} — {edition_label(day)} ({count} item{'' if count == 1 else 's'})"
         )
-        ET.SubElement(node, "link").text = primary_link
+        ET.SubElement(node, "link").text = f"{settings.base_url}{ARCHIVE_PATH}#edition-{edition['date']}"
         guid = ET.SubElement(node, "guid", {"isPermaLink": "false"})
-        guid.text = "ai-radar:" + str(item["id"])
-        published_at = parse_timestamp(item.get("published_at"))
-        if published_at is not None:
-            ET.SubElement(node, "pubDate").text = email.utils.format_datetime(published_at)
-        if primary_appearance is not None:
-            configured_source = next(
-                (
-                    source
-                    for source in settings.sources
-                    if source.kind == primary_appearance.get("kind")
-                    and source.name == primary_appearance.get("source")
-                ),
-                None,
-            )
-            if configured_source is not None:
-                source_feed_url = public_http_url(configured_source.feed_url)
-                if source_feed_url:
-                    source_node = ET.SubElement(node, "source", {"url": source_feed_url})
-                    source_node.text = source_name
-        description_parts = [html.escape(clean_text(str(item.get("long_summary") or "")))]
-        source_html = rss_source_details(item)
-        if source_html:
-            description_parts.append(source_html)
-        ET.SubElement(node, "description").text = "".join(description_parts)
+        guid.text = "ai-radar:edition:" + str(edition["date"])
+        closed_at = parse_timestamp(edition["closed_at"])
+        if closed_at is not None:
+            ET.SubElement(node, "pubDate").text = email.utils.format_datetime(closed_at)
+        ET.SubElement(node, "description").text = "<hr>".join(
+            rss_item_section(settings, item) for item in edition_items
+        )
     ET.indent(rss, space="  ")
     return '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(rss, encoding="unicode") + "\n"
 

@@ -1,1 +1,2 @@
 sentry-sdk==2.68.1
+tzdata==2026.5

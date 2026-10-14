@@ -8,6 +8,7 @@ from unittest import mock
 
 import radar
 from tests.test_radar import (
+    NOW,
     VALID_LONG, VALID_SHORT, RecordingReporter, make_appearance, make_settings,
     make_source, published_item,
 )
@@ -61,6 +62,7 @@ class DeferredRegressionTests(unittest.TestCase):
                 item.update(status="deferred", short_summary="", long_summary="")
                 item["appearances"][0]["description"] = "Sparse notes."
                 archive = {"version": 1, "items": [item]}
+                radar.close_editions(settings, archive, NOW)
                 radar.save_archive(settings.archive_path, archive)
                 before = settings.archive_path.read_bytes()
                 candidate = make_appearance(kind=source.kind,
@@ -68,11 +70,11 @@ class DeferredRegressionTests(unittest.TestCase):
                 with mock.patch.object(radar, "fetch_bytes", return_value=b"fixture"), \
                      mock.patch.object(radar, "parse_feed", return_value=[candidate]):
                     with mock.patch.object(radar, "summarize_group", side_effect=radar.RadarError("provider down")):
-                        failed = radar.run_cycle(settings, lookback_days=7)
+                        failed = radar.run_cycle(settings, lookback_days=7, now=NOW)
                     self.assertEqual(failed["llm_errors"], 1)
                     self.assertEqual(settings.archive_path.read_bytes(), before)
                     with mock.patch.object(radar, "summarize_group", return_value=RESULT) as summarize:
-                        recovered = radar.run_cycle(settings, lookback_days=7)
+                        recovered = radar.run_cycle(settings, lookback_days=7, now=NOW)
                     summarize.assert_called_once()
                 self.assertEqual(recovered["reevaluated"], 1)
                 saved = radar.load_archive(settings.archive_path)["items"][0]
@@ -90,6 +92,44 @@ class DeferredRegressionTests(unittest.TestCase):
                     radar.run_cycle(settings, lookback_days=7)
                 summarize.assert_not_called()
 
+
+    def test_same_video_from_two_sources_in_one_run_has_one_owner(self) -> None:
+        # Production 2026-10-14: a channel feed and a show playlist both carried one new
+        # video. Only the playlist copy cleared the fuzzy threshold (its family matched the
+        # podcast), so the channel copy became a second owner of the same video and archive
+        # validation aborted every hourly cycle. Replays the production titles and families.
+        podcast_title = "Can Open Models Keep Up With the AI Frontier? | Nathan Lambert"
+        video_title = "Can Open Models Keep Up With OpenAI and Anthropic? | Nathan Lambert"
+        for channel_first in (True, False):
+            with self.subTest(channel_first=channel_first), tempfile.TemporaryDirectory() as directory:
+                channel = make_source(kind="youtube", name="Channel")
+                playlist = make_source(kind="youtube", name="Show — YouTube")
+                sources = (channel, playlist) if channel_first else (playlist, channel)
+                settings = make_settings(pathlib.Path(directory), sources=sources)
+                item = published_item()
+                item["appearances"] = [make_appearance(title=podcast_title)]
+                item["source_title"] = podcast_title
+                item["links"] = radar.source_links(item["appearances"], preferred_title=podcast_title)
+                radar.save_archive(settings.archive_path, {"version": 1, "items": [item]})
+                channel_copy = make_appearance(kind="youtube", source_name="Channel", guid="video111",
+                                               title=video_title, description="Short channel notes. " * 6)
+                channel_copy["family"] = "channel"
+                playlist_copy = make_appearance(kind="youtube", source_name="Show — YouTube", guid="video111",
+                                                title=video_title,
+                                                description="Much fuller playlist notes about the episode. " * 8)
+                self.assertLess(radar.matching_score(item["appearances"], channel_copy, title=podcast_title), 0.84)
+                self.assertGreater(radar.matching_score(item["appearances"], playlist_copy, title=podcast_title), 0.84)
+                copies = {channel.feed_url: [channel_copy], playlist.feed_url: [playlist_copy]}
+                with mock.patch.object(radar, "fetch_bytes", side_effect=lambda url, **_: url.encode()), \
+                     mock.patch.object(radar, "parse_feed", side_effect=lambda data, source: copies[data.decode()]), \
+                     mock.patch.object(radar, "summarize_group", return_value=RESULT) as summarize:
+                    stats = radar.run_cycle(settings, lookback_days=7)
+                summarize.assert_not_called()
+                items = radar.load_archive(settings.archive_path)["items"]
+                self.assertEqual(stats["new_items"], 0)
+                self.assertEqual(len(items), 1)
+                video = next(value for value in items[0]["appearances"] if value["kind"] == "youtube")
+                self.assertIn("fuller playlist notes", video["description"])
 
 class ReportingRegressionTests(unittest.TestCase):
     def test_other_failures_report_during_new_and_continuing_youtube_outages(self) -> None:

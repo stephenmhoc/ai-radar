@@ -1,7 +1,7 @@
 # AI Radar
 
 AI Radar is a deliberately small, database-free publisher. A Docker worker on
-the homelab reads podcast, YouTube, and newsletter feeds, asks an
+the homelab reads podcast and newsletter feeds, asks an
 OpenRouter-compatible model to select and summarize noteworthy items from
 publisher notes, and commits
 the resulting static archive, HTML pages, and RSS feed to GitHub. Cloudflare
@@ -13,18 +13,34 @@ editorial, responsive layout without adding runtime assets.
 
 Every published item keeps its AI Radar headline and summary while clearly
 identifying each original appearance by medium, source name, and publisher
-title. The title links directly to the episode, video, or newsletter issue. RSS
-also includes the primary source name in the item title, a standard source
-element, and the complete source list in the description.
+title. The title links directly to the episode, video, or newsletter issue.
+
+AI Radar is organized into daily editions that close at 7 p.m. Eastern
+(`[editions]` in `config.toml`). The site shows **Today**, the items published
+since the last close, followed by **Recent**, the last seven closed editions,
+so a quiet day still shows recent work. `/archive.html` lists every past
+edition, newest first with a month index, and is searchable with the browser's
+find; the site stays script-free. RSS carries one entry per closed
+edition, published at the close, listing each item's headline (naming its
+primary source), long summary, and complete source list.
+
+The scheduled run records each closed edition in `data/items.json` before it
+collects new items. An item joins the edition for the window in which AI Radar
+first saw it, but never one that has already closed: an item published later,
+such as a deferred item, joins the next edition rather than rewriting one RSS
+readers already received. Recorded editions are immutable, so rendering stays
+deterministic. `python3 radar.py close-editions` closes finished editions without
+fetching feeds or calling the model.
 
 ## Files
 
-- `config.toml`: podcast, YouTube, and newsletter feeds, editorial roster, and
-  LLM config
+- `config.toml`: podcast, newsletter, and optional YouTube feeds, the
+  followed-people roster, and LLM config
 - `data/items.json`: durable canonical publication and seen-item state
-- `public/index.html`: item archive using short summaries
-- `public/feeds.html`: monitored podcast, YouTube, and newsletter feeds
-- `public/feed.xml`: RSS feed using long summaries
+- `public/index.html`: Today and Recent daily editions using short summaries
+- `public/archive.html`: every past daily edition, newest first, with a month index
+- `public/feeds.html`: monitored feeds, grouped by medium
+- `public/feed.xml`: one RSS entry per daily edition using long summaries
 - `radar.py`: feed collection, matching, archive validation, and CLI orchestration
 - `editorial.py`: editorial prompt, model requests, and summary validation
 - `rendering.py`: deterministic HTML/RSS rendering and generated-file manifest
@@ -41,7 +57,8 @@ element, and the complete source list in the description.
 ## Local commands
 
 The publisher requires Python 3.11+. Publishing uses the standard library; the
-worker image also installs the Sentry SDK from `requirements.txt`.
+worker image also installs the Sentry SDK and `tzdata` (for the edition
+timezone) from `requirements.txt`.
 
 Local development uses [mise](https://mise.jdx.dev/) to activate Python 3.12
 and ShellCheck. Run `mise install` once after cloning, then create the ignored
@@ -67,14 +84,19 @@ export OPENROUTER_API_KEY="..."
 python3 radar.py run --lookback-days 7
 ```
 
-Lab interviews remain the highest-priority signal. The editorial policy also
-admits consequential work on frontier research, AI infrastructure, important AI
-products and companies, AI-native engineering, strategy, policy, and Physical
-AI. Newsletter issues must offer original reporting, research, interviews, or
-durable analysis; generic roundups and incidental AI mentions are excluded.
-YouTube Shorts are skipped locally without an LLM call. Other brief promotional,
-highlight, launch, quote, and social clips are editorially excluded; a notable
-name or model-company source is not enough to qualify them.
+AI Radar follows a short list of people, configured as `[[people]]` in
+`config.toml`: major lab CEOs, the Muse, Codex, and Claude Code leads, and a few
+industry-defining figures such as Ilya Sutskever and Andrej Karpathy. An item
+qualifies only when one of them is an actual guest, interviewee, central speaker,
+or author. Mentions, third-party analysis, and colleagues at the same companies
+do not qualify; newsletter issues qualify only as an interview with, or writing
+by, a followed person.
+
+No YouTube sources are currently configured. YouTube support remains in code so
+archived YouTube appearances keep rendering and channels can be re-added under
+`[[sources]]`. YouTube Shorts are skipped locally without an LLM call, and other
+brief promotional, highlight, launch, quote, and social clips are editorially
+excluded.
 
 When that policy changes, one previously excluded item can be safely refreshed
 from its configured feeds and rejudged without replaying the archive:
@@ -117,15 +139,16 @@ Dockge manages `/opt/ai-radar` and `/opt/scheduler` on the homelab. Ofelia runs
 transaction. Each run:
 
 1. Validates a clean checkout and publishes any previously stranded commit.
-2. Fetches sources with bounded responses, safe redirects, and retries. Failed
+2. Records every daily edition that closed since the last run.
+3. Fetches sources with bounded responses, safe redirects, and retries. Failed
    YouTube feeds get one shared delayed retry before they count as errors. A
    source fails on metadata only when no entry in its feed carries a valid date.
-3. Defers sparse metadata or obtains one locally validated structured OpenRouter
+4. Defers sparse metadata or obtains one locally validated structured OpenRouter
    decision, retrying correctable provider failures within the bounded attempt
    policy.
-4. Validates `data/items.json` and rebuilds all tracked static files.
-5. Runs the complete local verification suite.
-6. Commits generated changes, safely rebases a concurrent `main` update, and
+5. Validates `data/items.json` and rebuilds all tracked static files.
+6. Runs the complete local verification suite.
+7. Commits generated changes, safely rebases a concurrent `main` update, and
    pushes without force. The push triggers Cloudflare Pages.
 
 Set `AI_RADAR_SENTRY_DSN` only in the homelab `.env`. Pipeline, source, LLM,
@@ -147,7 +170,9 @@ cannot report its own loss.
 Matching uses one rule for new groups and archived items: exact media identity
 wins, fuzzy matching only crosses media, and every group preserves distinct
 same-medium items. Repeated copies of the same video enrich its existing
-appearance. Shorts remain isolated from fuzzy matching.
+appearance, including within one run: when a video arrives from several feeds and
+only one copy fuzzy-matches an item, the other copies join that appearance rather
+than creating a second owner. Shorts remain isolated from fuzzy matching.
 
 ## Continuous integration
 

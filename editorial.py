@@ -122,27 +122,17 @@ def summarize_group(settings: Settings, group: list[dict[str, Any]]) -> dict[str
     prompt = f"""
 Decide whether this item belongs in AI Radar and summarize it using only the publisher-provided notes.
 
-AI Radar's highest-priority signal is a substantial interview or conversation with current or recent
-technical members, founders, executives, or senior research/engineering/product/infrastructure leaders
-at the following frontier AI organizations, including explicitly listed people:
+AI Radar follows only these people:
 {roster}
 
-It also includes consequential, technically or strategically substantive work about:
-- frontier models, research, post-training, evaluations, safety, and the open-model ecosystem;
-- AI infrastructure across inference, training, chips, systems, datacenters, power, networking, and data;
-- important AI companies, products, agent systems, and AI-native software or engineering practice;
-- the economics, business strategy, and policy forces that materially shape AI development and adoption;
-- Physical AI: AI-enabled robots, machines, vehicles, drones, and industrial automation.
-
-An item outside the target roster can qualify when its central subject or speaker offers unusually strong
-firsthand expertise, original reporting, or durable analysis in one of those areas. This includes deeply
-technical founders and operators building consequential AI infrastructure, such as inference systems.
-For newsletters, favor original reporting, analysis, research, or interviews; reject generic link roundups,
-thin reactions, routine promotion, and articles where AI is only incidental. For interview shows, the
-qualifying person must be an actual guest or central speaker. Do not qualify an item merely because a
-target organization is mentioned. For YouTube, reject brief promotional or highlight clips, isolated quotes,
-launch teasers, and social snippets even when they feature a target person or come from a model company;
-favor complete interviews, talks, demonstrations, and explainers with durable substance. Be conservative.
+Include an item only when at least one followed person is an actual guest, interviewee, central speaker,
+or author, and the item carries a substantial share of their own words or ideas. The publisher notes must
+make that participation explicit. Exclude everything else, however notable or substantive: an item does not
+qualify because a followed person or their company is mentioned, discussed, analyzed, or reported on by
+others, and other executives, researchers, or colleagues at the same companies do not qualify on their own.
+For newsletters, include only an interview with, or writing by, a followed person.
+For YouTube, reject brief promotional or highlight clips, isolated quotes, launch teasers, and social
+snippets even when they feature a followed person. Be conservative.
 
 Appearances:
 {appearances_text}
