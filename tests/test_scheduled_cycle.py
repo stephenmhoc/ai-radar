@@ -48,6 +48,7 @@ class ScheduledCycleTests(unittest.TestCase):
         radar_module.GENERATED_FILES = radar.GENERATED_FILES
         radar_module.lookback_days_from_env.return_value = 7
         radar_module.run_cycle.return_value = GOOD_STATS
+        radar_module.close_and_save_editions.return_value = (0, False)
         with (
             mock.patch.object(scheduled_cycle, "write_heartbeat"),
             mock.patch.object(scheduled_cycle, "publication_lock", return_value=contextlib.nullcontext()),
@@ -85,6 +86,7 @@ class ScheduledCycleTests(unittest.TestCase):
         reporter = RecordingReporter()
         radar_module = mock.Mock()
         radar_module.run_cycle.return_value = GOOD_STATS
+        radar_module.close_and_save_editions.return_value = (0, False)
         with (
             mock.patch.object(scheduled_cycle, "ensure_clean_worktree"),
             mock.patch.object(scheduled_cycle, "publish_ahead_commits") as publish,
@@ -240,6 +242,49 @@ class GitTransactionTests(unittest.TestCase):
                 git(publisher, "rev-parse", "HEAD"),
                 git(remote, "rev-parse", "refs/heads/main"),
             )
+
+    def test_closed_edition_is_published_before_collection_can_fail(self) -> None:
+        reporter = RecordingReporter()
+        radar_module = mock.Mock()
+        radar_module.GENERATED_FILES = radar.GENERATED_FILES
+        radar_module.close_and_save_editions.return_value = (1, True)
+        radar_module.run_cycle.side_effect = radar.RadarError("archive validation failed")
+        calls: list[tuple[str, ...]] = []
+        with (
+            mock.patch.object(scheduled_cycle, "ensure_clean_worktree"),
+            mock.patch.object(scheduled_cycle, "publish_ahead_commits",
+                              side_effect=lambda: calls.append(("publish",))) as publish,
+            mock.patch.object(scheduled_cycle, "command_output", return_value="abc123"),
+            mock.patch.object(scheduled_cycle, "load_radar_module", return_value=radar_module),
+            mock.patch.object(scheduled_cycle, "command",
+                              side_effect=lambda *args: calls.append(args)),
+            mock.patch.object(scheduled_cycle.subprocess, "run",
+                              return_value=subprocess.CompletedProcess([], 1)),
+        ):
+            self.assertEqual(scheduled_cycle._run_locked_cycle(reporter), 1)
+        self.assertEqual(publish.call_count, 2)  # Initial sync, then the edition publication.
+        self.assertEqual(calls[1], (scheduled_cycle.sys.executable, "scripts/verify.py"))
+        self.assertEqual(calls[2][:2], ("git", "add"))
+        self.assertEqual(calls[3], ("git", "commit", "-m", "Publish AI Radar daily edition"))
+        self.assertEqual(calls[4], ("publish",))
+        self.assertEqual(len(calls), 5)  # Collection failed; nothing after the edition.
+        self.assertEqual(reporter.exceptions[0]["tags"]["phase"], "collect")
+
+    def test_unchanged_editions_add_no_extra_verification_or_commit(self) -> None:
+        reporter = RecordingReporter()
+        radar_module = mock.Mock()
+        radar_module.close_and_save_editions.return_value = (0, False)
+        radar_module.run_cycle.side_effect = radar.RadarError("collect failed")
+        with (
+            mock.patch.object(scheduled_cycle, "ensure_clean_worktree"),
+            mock.patch.object(scheduled_cycle, "publish_ahead_commits") as publish,
+            mock.patch.object(scheduled_cycle, "command_output", return_value="abc123"),
+            mock.patch.object(scheduled_cycle, "load_radar_module", return_value=radar_module),
+            mock.patch.object(scheduled_cycle, "command") as command,
+        ):
+            self.assertEqual(scheduled_cycle._run_locked_cycle(reporter), 1)
+        command.assert_not_called()
+        self.assertEqual(publish.call_count, 1)
 
 
 class RecordingReporter:

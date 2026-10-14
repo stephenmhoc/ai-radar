@@ -1397,6 +1397,30 @@ class DailyEditionTests(unittest.TestCase):
         self.assertIn("Nothing new yet today. Recent days are below.", quiet)
         self.assertEqual(quiet.count('<li class="episode">'), rendering.RECENT_EDITIONS)
 
+    def test_close_and_save_editions_writes_only_when_state_changes(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = make_settings(pathlib.Path(directory))
+            radar.save_archive(
+                settings.archive_path,
+                {"version": 1, "items": [item_seen_at("earlier", eastern(2026, 10, 14, 9))]},
+            )
+            self.assertEqual(
+                radar.close_and_save_editions(settings, eastern(2026, 10, 14, 19, 17)), (1, True)
+            )
+            saved = settings.archive_path.read_bytes()
+            self.assertTrue((settings.public_dir / "feed.xml").exists())
+            self.assertEqual(
+                radar.close_and_save_editions(settings, eastern(2026, 10, 14, 20, 17)), (0, False)
+            )
+            self.assertEqual(settings.archive_path.read_bytes(), saved)
+            self.assertEqual(
+                radar.close_and_save_editions(settings, eastern(2026, 10, 15, 19, 17)), (0, True)
+            )
+            self.assertEqual(
+                radar.load_archive(settings.archive_path)["editions_closed_through"],
+                "2026-10-15T23:00:00+00:00",
+            )
+
     def test_run_cycle_closes_editions_before_collecting(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             settings = make_settings(pathlib.Path(directory), sources=())

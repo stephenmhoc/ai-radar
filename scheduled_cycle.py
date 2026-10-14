@@ -194,6 +194,30 @@ def load_radar_module():
     return radar
 
 
+def stage_and_commit(radar, message: str) -> bool:
+    """Stage the archive and every generated file; commit only when something changed."""
+    # radar exposes the renderer's list of generated files so a new output cannot be
+    # rendered but left unstaged.
+    command(
+        "git",
+        "add",
+        "data/items.json",
+        *(f"public/{name}" for name in radar.GENERATED_FILES),
+    )
+    diff = subprocess.run(
+        ["git", "diff", "--cached", "--quiet"],
+        cwd=ROOT,
+        check=False,
+        text=True,
+    )
+    if diff.returncode == 1:
+        command("git", "commit", "-m", message)
+        return True
+    if diff.returncode == 0:
+        return False
+    raise subprocess.CalledProcessError(diff.returncode, diff.args)
+
+
 def _run_locked_cycle(reporter: ErrorReporter) -> int:
     phase = "git-sync"
     try:
@@ -202,9 +226,20 @@ def _run_locked_cycle(reporter: ErrorReporter) -> int:
         release = command_output("git", "rev-parse", "HEAD")
         reporter.set_tags({"worktree_release": release})
 
-        phase = "collect"
+        phase = "editions"
         radar = load_radar_module()
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
+        # Publish finished daily editions before collecting, so a feed or model failure
+        # later in this cycle cannot hold back the day's RSS entry.
+        closed, changed = radar.close_and_save_editions(settings, dt.datetime.now(dt.timezone.utc))
+        if changed:
+            print(f"editions_closed={closed}")
+            command(sys.executable, "scripts/verify.py")
+            message = "Publish AI Radar daily edition" if closed else "Advance AI Radar edition window"
+            stage_and_commit(radar, message)
+            publish_ahead_commits()
+
+        phase = "collect"
         lookback_days = radar.lookback_days_from_env()
         stats = radar.run_cycle(settings, lookback_days=lookback_days, reporter=reporter)
         radar.print_stats(stats)
@@ -219,28 +254,9 @@ def _run_locked_cycle(reporter: ErrorReporter) -> int:
         phase = "tests"
         command(sys.executable, "scripts/verify.py")
 
-        phase = "git-stage"
-        # radar exposes the renderer's list of generated files so a new output cannot be
-        # rendered but left unstaged.
-        command(
-            "git",
-            "add",
-            "data/items.json",
-            *(f"public/{name}" for name in radar.GENERATED_FILES),
-        )
-        diff = subprocess.run(
-            ["git", "diff", "--cached", "--quiet"],
-            cwd=ROOT,
-            check=False,
-            text=True,
-        )
-        if diff.returncode == 1:
-            phase = "git-commit"
-            command("git", "commit", "-m", "Update AI Radar static feed")
-        elif diff.returncode == 0:
+        phase = "git-commit"
+        if not stage_and_commit(radar, "Update AI Radar static feed"):
             print("AI Radar generated content is already current")
-        else:
-            raise subprocess.CalledProcessError(diff.returncode, diff.args)
 
         phase = "git-publish"
         publish_ahead_commits()

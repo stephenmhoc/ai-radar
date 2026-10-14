@@ -967,6 +967,24 @@ def close_editions(settings: Settings, archive: dict[str, Any], now: dt.datetime
     return len(pending)
 
 
+def close_and_save_editions(settings: Settings, now: dt.datetime) -> tuple[int, bool]:
+    """Close finished editions in the saved archive and rebuild the site if state changed.
+
+    Returns the number of editions recorded and whether the archive changed. The
+    scheduled cycle publishes this on its own, before collection, so a fetch or
+    model failure cannot hold back a daily RSS entry.
+    """
+    archive = load_archive(settings.archive_path)
+    before = json.dumps(archive, sort_keys=True)
+    closed = close_editions(settings, archive, now)
+    if json.dumps(archive, sort_keys=True) == before:
+        return closed, False
+    validate_archive(archive)
+    save_archive(settings.archive_path, archive)
+    build_site(settings, archive)
+    return closed, True
+
+
 def run_cycle(
     settings: Settings,
     *,
@@ -1322,11 +1340,8 @@ def main(argv: list[str] | None = None) -> int:
             print_stats(build_site(settings))
             return 0
         if args.command == "close-editions":
-            archive = load_archive(settings.archive_path)
-            closed = close_editions(settings, archive, dt.datetime.now(dt.timezone.utc))
-            validate_archive(archive)
-            save_archive(settings.archive_path, archive)
-            print_stats({"editions_closed": closed, **build_site(settings, archive)})
+            closed, changed = close_and_save_editions(settings, dt.datetime.now(dt.timezone.utc))
+            print_stats({"editions_closed": closed, "archive_changed": int(changed)})
             return 0
         if args.command == "run":
             if args.lookback_days <= 0:

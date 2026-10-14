@@ -318,7 +318,10 @@ cycle performs these phases in order:
    remote advanced, and push any commit stranded by an earlier transient push
    failure. Force pushes are never used.
 3. Tag Sentry with the freshly synchronized worktree SHA and load `radar.py`.
-   Record any daily edition that closed since the last run before collecting.
+   Record any daily edition that closed since the last run before collecting;
+   when that changes the archive, rebuild, verify, and commit and push it as a
+   separate "Publish AI Radar daily edition" commit so a collection failure
+   cannot delay the RSS entry.
 4. Fetch all configured sources using the lookback window, bounded response
    sizes (16 MiB per feed), public-only redirect destinations, and bounded
    retries for transient failures. YouTube failures, including 404 responses,

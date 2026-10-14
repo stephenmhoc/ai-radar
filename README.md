@@ -139,7 +139,9 @@ Dockge manages `/opt/ai-radar` and `/opt/scheduler` on the homelab. Ofelia runs
 transaction. Each run:
 
 1. Validates a clean checkout and publishes any previously stranded commit.
-2. Records every daily edition that closed since the last run.
+2. Records every daily edition that closed since the last run and, when that
+   changed the archive, verifies, commits, and pushes it on its own, so a later
+   collection failure cannot hold back the day's RSS entry.
 3. Fetches sources with bounded responses, safe redirects, and retries. Failed
    YouTube feeds get one shared delayed retry before they count as errors. A
    source fails on metadata only when no entry in its feed carries a valid date.

@@ -34,7 +34,8 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 - Publication is organized into daily editions closing at the `[editions]` hour
   (7 p.m. America/New_York). `close_editions` records closed editions in
   `data/items.json` (`editions`, `editions_closed_through`) at the start of each
-  run; an item joins the edition containing `max(first_seen_at,
+  run, and the scheduled cycle verifies, commits, and pushes that change before
+  collection so a fetch or model failure cannot hold back the RSS entry; an item joins the edition containing `max(first_seen_at,
   editions_closed_through)`, so late publications join the next edition. Closed
   editions are immutable and append-only. RSS has exactly one entry per closed
   edition; the homepage shows Today (unclosed items) and Recent (the last
