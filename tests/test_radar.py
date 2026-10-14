@@ -149,7 +149,7 @@ class StaticPublisherTests(unittest.TestCase):
         self.assertEqual(stats["published"], len(published))
         self.assertEqual(stats["editions"], len(editions))
         self.assertEqual(delivered | {item["id"] for item in published}, {item["id"] for item in published})
-        self.assertIn('<p class="section-label">Today</p>', html_text)
+        self.assertIn('<h2 class="edition-title" id="edition-today">Today</h2>', html_text)
         self.assertEqual(html_text.count('<li class="episode">'), len(shown))
         self.assertEqual(html_text.count('<ul class="source-list"'), len(shown))
         self.assertEqual(
@@ -1374,7 +1374,8 @@ class DailyEditionTests(unittest.TestCase):
         page = rendering.render_index_html(settings, items, editions, "2026-10-09T23:00:00+00:00")
         self.assertLess(page.index(">Today<"), page.index("Fresh headline for today"))
         self.assertLess(page.index("Fresh headline for today"), page.index(">Recent<"))
-        self.assertIn("Since 7 p.m. EDT Friday, October 9, 2026", page)
+        self.assertIn('<h2 class="edition-title" id="edition-today">Today</h2>', page)
+        self.assertNotIn("Since 7 p.m.", page)
         self.assertIn("goes out by RSS at 7 p.m. EDT", page)
         self.assertEqual(page.count('<section class="edition" '), rendering.RECENT_EDITIONS)
         self.assertIn('id="edition-2026-10-09">Friday, October 9, 2026</h2>', page)

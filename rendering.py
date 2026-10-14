@@ -87,24 +87,16 @@ def render_index_html(
     today_items = [item for item in items if str(item["id"]) not in delivered]
     since = parse_utc_timestamp(closed_through)
     zone = ZoneInfo(settings.edition_timezone)
+    today_note = ""
     if since is not None:
-        local_since = since.astimezone(zone)
         closes = edition_closes_at(edition_date(since, settings), settings).astimezone(zone)
-        today_title = (
-            f"Since {hour_label(local_since.hour)} {local_since:%Z} "
-            f"{edition_label(local_since.date())}"
-        )
         today_note = (
             f'<p class="edition-note">Today&rsquo;s edition goes out by RSS at '
             f"{hour_label(closes.hour)} {closes:%Z}.</p>"
         )
-    else:
-        today_title = "Today"
-        today_note = ""
     sections = [
         '<section class="edition edition-today" aria-labelledby="edition-today">'
-        '<p class="section-label">Today</p>'
-        f'<h2 class="edition-title" id="edition-today">{html.escape(today_title)}</h2>'
+        '<h2 class="edition-title" id="edition-today">Today</h2>'
         f"{today_note}"
         f'{render_episode_list(today_items, empty="Nothing new yet today. Recent days are below.")}'
         "</section>"
