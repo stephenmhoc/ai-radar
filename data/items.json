@@ -79916,6 +79916,37 @@
       "links": {
         "podcast": "https://share.transistor.fm/s/92078ce3"
       }
+    },
+    {
+      "id": "014619fb437b20cfb1a5",
+      "first_seen_at": "2026-10-15T14:17:23+00:00",
+      "status": "skipped",
+      "title": "Practical AI: Education is Failing our Students in this AI-Driven World",
+      "source_title": "Education is Failing our Students in this AI-Driven World",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "None of the tracked individuals are featured as guests, speakers, or authors in this episode; it features only hosts Daniel Whitenack and Chris Benson.",
+      "published_at": "2026-10-15T13:32:00+00:00",
+      "appearances": [
+        {
+          "id": "fa60176bbdce29cc9091",
+          "kind": "podcast",
+          "source": "Practical AI",
+          "family": "practical ai",
+          "guid": "509842f7-f592-432c-b01a-ad26a2ae1e31",
+          "title": "Education is Failing our Students in this AI-Driven World",
+          "description": "Schools and universities are failing to adapt to our modern world, in which AI is becoming increasingly pervasive in all aspects of life and work.  In fact, AI may be changing what should be considered foundational knowledge that all students must learn.\n\nIn this Fully Connected episode, Daniel and Chris explore the role of AI in education and the future of learning.  They note the bureaucratic inhibitors to educational reform, and the fact that classroom teachers don’t have the authority to innovate and personalize the learning process for their students, and discuss how AI tools can support personalized learning while preserving critical thinking, creativity, and problem-solving skills.\n\nFeaturing: \n\nDaniel Whitenack – \nWebsite\n, \nGitHub\n, \nX\n\nChris Benson – \nWebsite\n, \nLinkedIn\n, \nBluesky\n, \nGitHub\n, \nX\n\nSponsors:\n\nSerpAPI\n: A Web Search API that gives developers real-time, structured access to search engine results. Visit \nserpapi.com/practicalai\n to get started for free and get 250 searches every month. \n\nResources and Events:\n\nRegister for \nupcoming webinars here\n!\n\nPrior \nWebinars from our partner Prediction Guard\n\nMidwest AI Summit 2026\n\nChris’s new book \nThe Art of Swarming\n will be published soon, written to be the seminal foundational book for the fledgling swarming industry, defining the principles and architecture that enable autonomous agentic UxS swarms with emergent unified embodied intelligence.",
+          "url": "https://share.transistor.fm/s/4f81adfa",
+          "published_at": "2026-10-15T13:32:00+00:00",
+          "hosts": [
+            "Chris Benson",
+            "Daniel Whitenack"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/4f81adfa"
+      }
     }
   ],
   "editions": [
