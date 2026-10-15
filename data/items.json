@@ -80908,9 +80908,17 @@
         "c11202b71aaf4c7f14d6",
         "e398eb71f41e5eafe3bb"
       ]
+    },
+    {
+      "date": "2026-10-15",
+      "closed_at": "2026-10-15T23:00:00+00:00",
+      "item_ids": [
+        "9484f8ecc6385317fa03",
+        "f16e35324a28522b6d8a"
+      ]
     }
   ],
-  "editions_closed_through": "2026-10-14T23:00:00+00:00",
+  "editions_closed_through": "2026-10-15T23:00:00+00:00",
   "days": [
     {
       "date": "2026-06-24",
