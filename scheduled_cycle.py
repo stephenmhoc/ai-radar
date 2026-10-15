@@ -229,13 +229,19 @@ def _run_locked_cycle(reporter: ErrorReporter) -> int:
         phase = "editions"
         radar = load_radar_module()
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
-        # Publish finished daily editions before collecting, so a feed or model failure
-        # later in this cycle cannot hold back the day's RSS entry.
-        closed, changed = radar.close_and_save_editions(settings, dt.datetime.now(dt.timezone.utc))
+        # Publish finished RSS editions and site days before collecting, so a feed or model
+        # failure later in this cycle cannot hold back the day's RSS entry or day rollover.
+        editions, days, changed = radar.close_and_save_periods(settings, dt.datetime.now(dt.timezone.utc))
         if changed:
-            print(f"editions_closed={closed}")
+            print(f"editions_closed={editions}")
+            print(f"days_closed={days}")
             command(sys.executable, "scripts/verify.py")
-            message = "Publish AI Radar daily edition" if closed else "Advance AI Radar edition window"
+            if editions:
+                message = "Publish AI Radar daily edition"
+            elif days:
+                message = "Close AI Radar site day"
+            else:
+                message = "Advance AI Radar day windows"
             stage_and_commit(radar, message)
             publish_ahead_commits()
 

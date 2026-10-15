@@ -64,8 +64,8 @@ Important paths:
   currently configured.
 - `data/items.json` is the canonical database-free archive. It records seen,
   skipped, and published items and is committed to Git.
-- `public/index.html` is the generated Today and Recent daily-edition page.
-- `public/archive.html` is the generated list of every closed daily edition,
+- `public/index.html` is the generated Today and Recent calendar-day page.
+- `public/archive.html` is the generated list of every closed calendar day,
   newest first, with a month index; RSS entries link to its day anchors.
 - `public/feeds.html` is the generated list of all active feeds, grouped by
   medium (a medium with no active sources is omitted), and shares the site's
@@ -100,21 +100,28 @@ The generated site and RSS preserve the AI Radar editorial headline and summary
 while presenting every appearance with its medium, readable source name, and
 original publisher title linked to the source item.
 
-Both outputs are organized into daily editions that close at the `[editions]`
-hour, 7 p.m. America/New_York. At the start of each scheduled run,
-`close_editions` appends every newly closed edition to `data/items.json` as
-`{date, closed_at, item_ids}` and advances `editions_closed_through`. An item
-joins the edition containing the later of its `first_seen_at` and
-`editions_closed_through`, so a late publication joins the next edition instead
-of altering one already delivered; a missed day still closes as its own
-edition. The homepage shows Today (published items not yet in an edition) and
-Recent (the last seven editions). RSS has one entry per edition, with guid
-`ai-radar:edition:<date>` and `pubDate` at the close, containing each item's
-headline with its primary source, long summary, and sources. Editions are
+Two independent daily calendars use the `[editions]` timezone,
+America/New_York, and share one record shape, `{date, closed_at, item_ids}`:
+
+- RSS editions (`editions`, `editions_closed_through`) close at the edition
+  hour, 7 p.m. RSS has one entry per edition, with guid
+  `ai-radar:edition:<date>` and `pubDate` at the close, containing each item's
+  headline with its primary source, long summary, and sources. Each entry links
+  to its date's anchor on `/archive.html`.
+- Site days (`days`, `days_closed_through`) close at local midnight. The
+  homepage shows Today (published items not yet in a closed day) and Recent (the
+  last seven days); `/archive.html` lists every closed day. Today therefore does
+  not empty when the 7 p.m. edition goes out.
+
+At the start of each scheduled run, `close_editions` and `close_days` append
+every newly closed period and advance its `*_closed_through` marker. An item
+joins the period containing the later of its `first_seen_at` and that marker,
+so a late publication joins the open period instead of altering one already
+delivered; a missed day still closes as its own period. Both lists are
 validated with the archive and are immutable under the archive evolution check.
 `python3 radar.py close-editions` performs the same closing step without
-fetching feeds or calling the model; it was used once to backfill editions for
-the existing archive by first-seen time.
+fetching feeds or calling the model; it was used once to backfill editions and
+days for the existing archive by first-seen time.
 
 ### Summary contract
 

@@ -230,6 +230,19 @@ def edition_closes_at(day: dt.date, settings: Settings) -> dt.datetime:
 
 
 
+def site_day(moment: dt.datetime, settings: Settings) -> dt.date:
+    """Return the local calendar day (in the edition timezone) that contains this instant."""
+    return moment.astimezone(ZoneInfo(settings.edition_timezone)).date()
+
+
+
+def site_day_closes_at(day: dt.date, settings: Settings) -> dt.datetime:
+    """Return the UTC instant of local midnight at the end of this calendar day."""
+    local = dt.datetime.combine(day + dt.timedelta(days=1), dt.time(0), ZoneInfo(settings.edition_timezone))
+    return local.astimezone(dt.timezone.utc)
+
+
+
 def _read_bounded(response: Any, *, max_bytes: int, label: str) -> bytes:
     content_length = response.headers.get("Content-Length") if hasattr(response, "headers") else None
     if content_length:

@@ -64,6 +64,11 @@ if __name__ == "__main__":
         check_archive_evolution.validate_evolution(before, later)
         with self.assertRaisesRegex(radar.RadarError, "closed daily editions"):
             check_archive_evolution.validate_evolution(before, {**later, "editions": []})
+        with self.assertRaisesRegex(radar.RadarError, "closed site days"):
+            check_archive_evolution.validate_evolution(
+                {**before, "days": [edition], "days_closed_through": "2026-10-14T04:00:00+00:00"},
+                {**later, "days": [], "days_closed_through": "2026-10-14T04:00:00+00:00"},
+            )
         with self.assertRaisesRegex(radar.RadarError, "moved backward"):
             check_archive_evolution.validate_evolution(
                 before, {**before, "editions_closed_through": "2026-10-12T23:00:00+00:00"}

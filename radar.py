@@ -37,6 +37,8 @@ from radar_common import (
     edition_closes_at,
     edition_date,
     is_youtube_short,
+    site_day,
+    site_day_closes_at,
     media_identity,
     parse_timestamp,
     parse_utc_timestamp,
@@ -89,7 +91,12 @@ ITEM_FIELDS = frozenset(
         "links",
     }
 )
-ARCHIVE_FIELDS = frozenset({"version", "items", "editions", "editions_closed_through"})
+ARCHIVE_FIELDS = frozenset(
+    {"version", "items", "editions", "editions_closed_through", "days", "days_closed_through"}
+)
+# Two independent calendars share one record shape: RSS editions close at the edition
+# hour; site days (Today, Recent, archive) close at local midnight.
+PERIOD_KEYS = (("editions", "editions_closed_through"), ("days", "days_closed_through"))
 EDITION_FIELDS = frozenset({"date", "closed_at", "item_ids"})
 APPEARANCE_FIELDS = frozenset(
     {
@@ -303,6 +310,59 @@ def _valid_timestamp(value: object, *, optional: bool = False) -> bool:
     return parsed is not None and parsed.tzinfo is not None
 
 
+def _validate_periods(
+    archive: dict[str, Any],
+    period_key: str,
+    through_key: str,
+    published_ids: set[str],
+    errors: list[str],
+) -> None:
+    periods = archive.get(period_key, [])
+    if not isinstance(periods, list):
+        errors.append(f"{period_key} was not a list")
+        periods = []
+    delivered: set[str] = set()
+    previous_date = ""
+    last_closed_at: dt.datetime | None = None
+    for index, record in enumerate(periods):
+        prefix = f"{period_key}[{index}]"
+        if not isinstance(record, dict) or set(record) != EDITION_FIELDS:
+            errors.append(f"{prefix} had unexpected fields")
+            continue
+        date = record["date"]
+        try:
+            valid_date = isinstance(date, str) and dt.date.fromisoformat(date).isoformat() == date
+        except ValueError:
+            valid_date = False
+        if not valid_date:
+            errors.append(f"{prefix}.date was invalid")
+        elif date <= previous_date:
+            errors.append(f"{prefix}.date was duplicated or out of order")
+        else:
+            previous_date = date
+        if not _valid_timestamp(record["closed_at"]):
+            errors.append(f"{prefix}.closed_at was invalid")
+        else:
+            last_closed_at = parse_utc_timestamp(record["closed_at"])
+        record_items = record["item_ids"]
+        if not isinstance(record_items, list) or not record_items:
+            errors.append(f"{prefix}.item_ids was empty or invalid")
+            continue
+        for item_id in record_items:
+            if item_id not in published_ids:
+                errors.append(f"{prefix} referenced an unpublished or missing item: {item_id}")
+            elif item_id in delivered:
+                errors.append(f"{prefix} repeated an item from another {period_key} record: {item_id}")
+            delivered.add(str(item_id))
+    closed_through = archive.get(through_key)
+    if closed_through is not None and not _valid_timestamp(closed_through):
+        errors.append(f"{through_key} was invalid")
+    elif last_closed_at is not None and (
+        closed_through is None or parse_utc_timestamp(closed_through) < last_closed_at
+    ):
+        errors.append(f"{through_key} preceded the latest {period_key} record")
+
+
 def validate_archive(archive: object, *, label: str = "archive") -> dict[str, int]:
     errors: list[str] = []
     if not isinstance(archive, dict):
@@ -416,50 +476,8 @@ def validate_archive(archive: object, *, label: str = "archive") -> dict[str, in
         if status == "deferred" and (item.get("short_summary") or item.get("long_summary")):
             errors.append(f"{prefix} was deferred with a summary")
 
-    editions = archive.get("editions", [])
-    if not isinstance(editions, list):
-        errors.append("editions was not a list")
-        editions = []
-    delivered: set[str] = set()
-    previous_date = ""
-    last_closed_at: dt.datetime | None = None
-    for index, edition in enumerate(editions):
-        prefix = f"editions[{index}]"
-        if not isinstance(edition, dict) or set(edition) != EDITION_FIELDS:
-            errors.append(f"{prefix} had unexpected fields")
-            continue
-        date = edition["date"]
-        try:
-            valid_date = isinstance(date, str) and dt.date.fromisoformat(date).isoformat() == date
-        except ValueError:
-            valid_date = False
-        if not valid_date:
-            errors.append(f"{prefix}.date was invalid")
-        elif date <= previous_date:
-            errors.append(f"{prefix}.date was duplicated or out of order")
-        else:
-            previous_date = date
-        if not _valid_timestamp(edition["closed_at"]):
-            errors.append(f"{prefix}.closed_at was invalid")
-        else:
-            last_closed_at = parse_utc_timestamp(edition["closed_at"])
-        edition_items = edition["item_ids"]
-        if not isinstance(edition_items, list) or not edition_items:
-            errors.append(f"{prefix}.item_ids was empty or invalid")
-            continue
-        for item_id in edition_items:
-            if item_id not in published_ids:
-                errors.append(f"{prefix} referenced an unpublished or missing item: {item_id}")
-            elif item_id in delivered:
-                errors.append(f"{prefix} repeated an item from another edition: {item_id}")
-            delivered.add(str(item_id))
-    closed_through = archive.get("editions_closed_through")
-    if closed_through is not None and not _valid_timestamp(closed_through):
-        errors.append("editions_closed_through was invalid")
-    elif last_closed_at is not None and (
-        closed_through is None or parse_utc_timestamp(closed_through) < last_closed_at
-    ):
-        errors.append("editions_closed_through preceded the latest edition")
+    for period_key, through_key in PERIOD_KEYS:
+        _validate_periods(archive, period_key, through_key, published_ids, errors)
 
     if errors:
         shown = "; ".join(errors[:20])
@@ -468,7 +486,8 @@ def validate_archive(archive: object, *, label: str = "archive") -> dict[str, in
     return {
         "items": len(archive["items"]),
         "appearances": len(appearance_ids),
-        "editions": len(editions),
+        "editions": len(archive.get("editions", [])),
+        "days": len(archive.get("days", [])),
         **{status: status_counts[status] for status in sorted(status_counts)},
     }
 
@@ -927,19 +946,27 @@ def report_source_failures(
                 print(f"warning: YouTube outage alert latch could not be written: {exc}", file=sys.stderr)
 
 
-def close_editions(settings: Settings, archive: dict[str, Any], now: dt.datetime) -> int:
-    """Record every closed daily edition that has newly published items.
+def _close_periods(
+    archive: dict[str, Any],
+    now: dt.datetime,
+    *,
+    period_key: str,
+    through_key: str,
+    period_of: Any,
+    closes_at: Any,
+) -> int:
+    """Record every closed period (edition or site day) that has newly published items.
 
-    Each published item belongs to exactly one edition, chosen by when AI Radar
-    first saw it, but never earlier than the last edition window already closed:
-    an item published late (for example a deferred item) joins the next edition
-    instead of rewriting one that RSS readers already received. Recorded
-    editions are immutable, so rendering stays deterministic.
+    Each published item belongs to exactly one period of each calendar, chosen by
+    when AI Radar first saw it, but never earlier than the last period already
+    closed: an item published late (for example a deferred item) joins the open
+    period instead of rewriting one already delivered. Recorded periods are
+    immutable, so rendering stays deterministic.
     """
-    editions = archive.setdefault("editions", [])
-    delivered = {item_id for edition in editions for item_id in edition["item_ids"]}
-    closed_through = parse_utc_timestamp(archive.get("editions_closed_through"))
-    open_edition = edition_date(now, settings)
+    periods = archive.setdefault(period_key, [])
+    delivered = {item_id for record in periods for item_id in record["item_ids"]}
+    closed_through = parse_utc_timestamp(archive.get(through_key))
+    open_period = period_of(now)
     pending: dict[dt.date, list[str]] = {}
     for item in archive["items"]:
         if item["status"] != "published" or item["id"] in delivered:
@@ -947,42 +974,61 @@ def close_editions(settings: Settings, archive: dict[str, Any], now: dt.datetime
         seen_at = parse_utc_timestamp(item["first_seen_at"]) or now
         if closed_through is not None:
             seen_at = max(seen_at, closed_through)
-        day = edition_date(seen_at, settings)
-        if day < open_edition:
+        day = period_of(seen_at)
+        if day < open_period:
             pending.setdefault(day, []).append(str(item["id"]))
-    recorded = {edition["date"] for edition in editions}
+    recorded = {record["date"] for record in periods}
     for day in sorted(pending):
         if day.isoformat() in recorded:
-            raise RadarError(f"edition {day.isoformat()} is already closed")
-        editions.append(
+            raise RadarError(f"{period_key} record {day.isoformat()} is already closed")
+        periods.append(
             {
                 "date": day.isoformat(),
-                "closed_at": edition_closes_at(day, settings).isoformat(),
+                "closed_at": closes_at(day).isoformat(),
                 "item_ids": pending[day],
             }
         )
-    latest_close = edition_closes_at(open_edition - dt.timedelta(days=1), settings)
+    latest_close = closes_at(open_period - dt.timedelta(days=1))
     if closed_through is None or latest_close > closed_through:
-        archive["editions_closed_through"] = latest_close.isoformat()
+        archive[through_key] = latest_close.isoformat()
     return len(pending)
 
 
-def close_and_save_editions(settings: Settings, now: dt.datetime) -> tuple[int, bool]:
-    """Close finished editions in the saved archive and rebuild the site if state changed.
+def close_editions(settings: Settings, archive: dict[str, Any], now: dt.datetime) -> int:
+    """Record closed RSS editions (windows ending at the edition hour)."""
+    return _close_periods(
+        archive, now, period_key="editions", through_key="editions_closed_through",
+        period_of=lambda moment: edition_date(moment, settings),
+        closes_at=lambda day: edition_closes_at(day, settings),
+    )
 
-    Returns the number of editions recorded and whether the archive changed. The
+
+def close_days(settings: Settings, archive: dict[str, Any], now: dt.datetime) -> int:
+    """Record closed site days (local calendar days ending at midnight)."""
+    return _close_periods(
+        archive, now, period_key="days", through_key="days_closed_through",
+        period_of=lambda moment: site_day(moment, settings),
+        closes_at=lambda day: site_day_closes_at(day, settings),
+    )
+
+
+def close_and_save_periods(settings: Settings, now: dt.datetime) -> tuple[int, int, bool]:
+    """Close finished editions and site days in the saved archive; rebuild if state changed.
+
+    Returns the editions and days recorded and whether the archive changed. The
     scheduled cycle publishes this on its own, before collection, so a fetch or
-    model failure cannot hold back a daily RSS entry.
+    model failure cannot hold back a daily RSS entry or the site's day rollover.
     """
     archive = load_archive(settings.archive_path)
     before = json.dumps(archive, sort_keys=True)
-    closed = close_editions(settings, archive, now)
+    editions = close_editions(settings, archive, now)
+    days = close_days(settings, archive, now)
     if json.dumps(archive, sort_keys=True) == before:
-        return closed, False
+        return editions, days, False
     validate_archive(archive)
     save_archive(settings.archive_path, archive)
     build_site(settings, archive)
-    return closed, True
+    return editions, days, True
 
 
 def run_cycle(
@@ -994,8 +1040,10 @@ def run_cycle(
 ) -> dict[str, int]:
     reporter = reporter or ErrorReporter(None, status="disabled")
     archive = load_archive(settings.archive_path)
-    # Close finished editions before collecting, so items found by this run join the open one.
-    editions_closed = close_editions(settings, archive, now or dt.datetime.now(dt.timezone.utc))
+    # Close finished editions and days before collecting, so items found by this run join the open ones.
+    now = now or dt.datetime.now(dt.timezone.utc)
+    editions_closed = close_editions(settings, archive, now)
+    days_closed = close_days(settings, archive, now)
     # Refresh deferred records on copies so failed model calls preserve their retry trigger.
     working_archive = {
         "items": [copy.deepcopy(item) if item["status"] == "deferred" else item
@@ -1181,6 +1229,7 @@ def run_cycle(
         "reevaluated": reevaluated,
         "llm_errors": llm_errors,
         "editions_closed": editions_closed,
+        "days_closed": days_closed,
     }
     return stats
 
@@ -1264,11 +1313,10 @@ def build_site(settings: Settings, archive: dict[str, Any] | None = None) -> dic
         reverse=True,
     )
     editions = archive.get("editions", [])
+    days = archive.get("days", [])
     rendered = {
-        "index.html": render_index_html(
-            settings, items, editions, archive.get("editions_closed_through")
-        ),
-        "archive.html": render_archive_html(settings, items, editions),
+        "index.html": render_index_html(settings, items, days, archive.get("days_closed_through")),
+        "archive.html": render_archive_html(settings, items, days),
         "feeds.html": render_feeds_html(settings),
         "feed.xml": render_rss(settings, items, editions),
         "_headers": render_headers(),
@@ -1310,7 +1358,7 @@ def main(argv: list[str] | None = None) -> int:
     subparsers.add_parser("build-site", help="Regenerate static HTML and RSS from the archive.")
     subparsers.add_parser(
         "close-editions",
-        help="Record finished daily editions without fetching feeds, then rebuild the site.",
+        help="Record finished RSS editions and site days without fetching feeds, then rebuild the site.",
     )
     subparsers.add_parser("doctor", help="Validate configuration and tracked archive state.")
     args = parser.parse_args(argv)
@@ -1340,8 +1388,8 @@ def main(argv: list[str] | None = None) -> int:
             print_stats(build_site(settings))
             return 0
         if args.command == "close-editions":
-            closed, changed = close_and_save_editions(settings, dt.datetime.now(dt.timezone.utc))
-            print_stats({"editions_closed": closed, "archive_changed": int(changed)})
+            editions, days, changed = close_and_save_periods(settings, dt.datetime.now(dt.timezone.utc))
+            print_stats({"editions_closed": editions, "days_closed": days, "archive_changed": int(changed)})
             return 0
         if args.command == "run":
             if args.lookback_days <= 0:

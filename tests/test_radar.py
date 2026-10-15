@@ -140,16 +140,19 @@ class StaticPublisherTests(unittest.TestCase):
         rss = ET.parse(ROOT / "public/feed.xml")
 
         editions = archive.get("editions", [])
+        days = archive.get("days", [])
         delivered = {item_id for edition in editions for item_id in edition["item_ids"]}
-        shown_ids = {item["id"] for item in published if item["id"] not in delivered}
-        for edition in editions[-rendering.RECENT_EDITIONS:]:
-            shown_ids.update(edition["item_ids"])
+        day_items = {item_id for day in days for item_id in day["item_ids"]}
+        shown_ids = {item["id"] for item in published if item["id"] not in day_items}
+        for day in days[-rendering.RECENT_DAYS:]:
+            shown_ids.update(day["item_ids"])
         shown = [item for item in published if item["id"] in shown_ids]
 
         self.assertEqual(stats["published"], len(published))
         self.assertEqual(stats["editions"], len(editions))
+        self.assertEqual(stats["days"], len(days))
         self.assertEqual(delivered | {item["id"] for item in published}, {item["id"] for item in published})
-        self.assertIn('<h2 class="edition-title" id="edition-today">Today</h2>', html_text)
+        self.assertIn('<h2 class="edition-title" id="day-today">Today</h2>', html_text)
         self.assertEqual(html_text.count('<li class="episode">'), len(shown))
         self.assertEqual(html_text.count('<ul class="source-list"'), len(shown))
         self.assertEqual(
@@ -163,8 +166,8 @@ class StaticPublisherTests(unittest.TestCase):
         )
         self.assertFalse(rss.findall("./channel/item/source"))
         archive_text = (ROOT / "public/archive.html").read_text(encoding="utf-8")
-        self.assertEqual(archive_text.count('<li class="episode">'), len(delivered))
-        self.assertEqual(archive_text.count('<section class="edition" '), len(editions))
+        self.assertEqual(archive_text.count('<li class="episode">'), len(day_items))
+        self.assertEqual(archive_text.count('<section class="edition" '), len(days))
         self.assertIn('href="/archive.html"', html_text)
         self.assertIn('href="/archive.html"', feeds_text)
         for forbidden in ("<img", "<script", "stylesheet", "javascript:"):
@@ -1354,51 +1357,84 @@ class DailyEditionTests(unittest.TestCase):
             ["ai-radar:edition:2026-10-14", "ai-radar:edition:2026-10-13"],
         )
         self.assertEqual(entries[0].findtext("pubDate"), "Wed, 14 Oct 2026 23:00:00 +0000")
-        self.assertEqual(entries[0].findtext("link"), "https://ai-radar.merimerimeri.com/archive.html#edition-2026-10-14")
+        self.assertEqual(entries[0].findtext("link"), "https://ai-radar.merimerimeri.com/archive.html#day-2026-10-14")
         self.assertIn("Third item detail.", entries[0].findtext("description") or "")
         self.assertNotIn(VALID_SHORT, entries[0].findtext("description") or "")
         self.assertEqual((entries[1].findtext("description") or "").count("<h3>"), 2)
         self.assertEqual((entries[1].findtext("description") or "").count("<hr>"), 1)
 
-    def test_homepage_shows_today_then_recent_editions(self) -> None:
+    def test_site_days_close_at_local_midnight_independently_of_editions(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = self.settings(pathlib.Path(directory))
+        self.assertEqual(radar_common.site_day(eastern(2026, 10, 14, 23, 59), settings), dt.date(2026, 10, 14))
+        self.assertEqual(radar_common.site_day(eastern(2026, 10, 15, 0, 0), settings), dt.date(2026, 10, 15))
+        self.assertEqual(
+            radar_common.site_day_closes_at(dt.date(2026, 10, 14), settings).isoformat(),
+            "2026-10-15T04:00:00+00:00",
+        )
+        morning = item_seen_at("morning", eastern(2026, 10, 14, 6, 17))
+        evening = item_seen_at("evening", eastern(2026, 10, 14, 20, 17))
+        archive = {"version": 1, "items": [morning, evening]}
+        # 9:17 p.m.: the RSS edition has closed, but the calendar day has not.
+        radar.close_editions(settings, archive, eastern(2026, 10, 14, 21, 17))
+        radar.close_days(settings, archive, eastern(2026, 10, 14, 21, 17))
+        self.assertEqual([edition["item_ids"] for edition in archive["editions"]], [["morning"]])
+        self.assertEqual(archive["days"], [])
+        page = rendering.render_index_html(settings, [evening, morning], archive["days"], archive["days_closed_through"])
+        today = page[page.index('id="day-today"'):]
+        self.assertIn(morning["title"], today)
+        self.assertEqual(today.count('<li class="episode">'), 2)
+        # 12:17 a.m.: the day closes and moves to Recent, holding both items.
+        radar.close_days(settings, archive, eastern(2026, 10, 15, 0, 17))
+        radar.validate_archive(archive)
+        self.assertEqual(
+            archive["days"],
+            [{"date": "2026-10-14", "closed_at": "2026-10-15T04:00:00+00:00", "item_ids": ["morning", "evening"]}],
+        )
+        self.assertEqual(archive["days_closed_through"], "2026-10-15T04:00:00+00:00")
+        page = rendering.render_index_html(settings, [evening, morning], archive["days"], archive["days_closed_through"])
+        self.assertIn("Nothing new yet today.", page)
+        self.assertIn('id="day-2026-10-14">Wednesday, October 14, 2026</h2>', page)
+
+    def test_homepage_shows_today_then_recent_days(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             settings = self.settings(pathlib.Path(directory))
         old = [item_seen_at(f"day-{day}", eastern(2026, 10, day, 10)) for day in range(1, 10)]
-        today = item_seen_at("today", eastern(2026, 10, 9, 20))
+        today = item_seen_at("today", eastern(2026, 10, 10, 9))
         today["title"] = "Fresh headline for today"
-        editions = [
-            {"date": f"2026-10-{day:02d}", "closed_at": radar_common.edition_closes_at(dt.date(2026, 10, day), settings).isoformat(), "item_ids": [f"day-{day}"]}
+        days = [
+            {"date": f"2026-10-{day:02d}", "closed_at": radar_common.site_day_closes_at(dt.date(2026, 10, day), settings).isoformat(), "item_ids": [f"day-{day}"]}
             for day in range(1, 10)
         ]
         items = [today, *reversed(old)]
-        page = rendering.render_index_html(settings, items, editions, "2026-10-09T23:00:00+00:00")
+        page = rendering.render_index_html(settings, items, days, "2026-10-10T04:00:00+00:00")
         self.assertLess(page.index(">Today<"), page.index("Fresh headline for today"))
         self.assertLess(page.index("Fresh headline for today"), page.index(">Recent<"))
-        self.assertIn('<h2 class="edition-title" id="edition-today">Today</h2>', page)
+        self.assertIn('<h2 class="edition-title" id="day-today">Today</h2>', page)
         self.assertNotIn("Since 7 p.m.", page)
-        self.assertIn("goes out by RSS at 7 p.m. EDT", page)
-        self.assertEqual(page.count('<section class="edition" '), rendering.RECENT_EDITIONS)
-        self.assertIn('id="edition-2026-10-09">Friday, October 9, 2026</h2>', page)
-        self.assertIn('id="edition-2026-10-03"', page)
-        self.assertNotIn('id="edition-2026-10-02"', page)
-        self.assertEqual(page.count('<li class="episode">'), 1 + rendering.RECENT_EDITIONS)
+        self.assertIn("A daily RSS edition goes out at 7 p.m. EDT.", page)
+        self.assertEqual(page.count('<section class="edition" '), rendering.RECENT_DAYS)
+        self.assertIn('id="day-2026-10-09">Friday, October 9, 2026</h2>', page)
+        self.assertIn('id="day-2026-10-03"', page)
+        self.assertNotIn('id="day-2026-10-02"', page)
+        self.assertEqual(page.count('<li class="episode">'), 1 + rendering.RECENT_DAYS)
 
         self.assertIn('<a href="/archive.html">All past days', page)
 
-        archive_page = rendering.render_archive_html(settings, items, editions)
-        self.assertEqual(archive_page.count('<section class="edition" '), len(editions))
-        self.assertEqual(archive_page.count('<li class="episode">'), len(editions))
+        archive_page = rendering.render_archive_html(settings, items, days)
+        self.assertEqual(archive_page.count('<section class="edition" '), len(days))
+        self.assertEqual(archive_page.count('<li class="episode">'), len(days))
         self.assertNotIn("Fresh headline for today", archive_page)
         self.assertIn('<a href="#month-2026-10">October 2026</a>', archive_page)
-        self.assertLess(archive_page.index('id="edition-2026-10-09"'), archive_page.index('id="edition-2026-10-01"'))
+        self.assertLess(archive_page.index('id="day-2026-10-09"'), archive_page.index('id="day-2026-10-01"'))
         self.assertIn('href="/"', archive_page)
         self.assertNotIn("<script", archive_page)
 
-        quiet = rendering.render_index_html(settings, list(reversed(old)), editions, "2026-10-09T23:00:00+00:00")
+        quiet = rendering.render_index_html(settings, list(reversed(old)), days, "2026-10-10T04:00:00+00:00")
         self.assertIn("Nothing new yet today. Recent days are below.", quiet)
-        self.assertEqual(quiet.count('<li class="episode">'), rendering.RECENT_EDITIONS)
+        self.assertEqual(quiet.count('<li class="episode">'), rendering.RECENT_DAYS)
 
-    def test_close_and_save_editions_writes_only_when_state_changes(self) -> None:
+    def test_close_and_save_periods_writes_only_when_state_changes(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             settings = make_settings(pathlib.Path(directory))
             radar.save_archive(
@@ -1406,21 +1442,23 @@ class DailyEditionTests(unittest.TestCase):
                 {"version": 1, "items": [item_seen_at("earlier", eastern(2026, 10, 14, 9))]},
             )
             self.assertEqual(
-                radar.close_and_save_editions(settings, eastern(2026, 10, 14, 19, 17)), (1, True)
+                radar.close_and_save_periods(settings, eastern(2026, 10, 14, 19, 17)), (1, 0, True)
             )
             saved = settings.archive_path.read_bytes()
             self.assertTrue((settings.public_dir / "feed.xml").exists())
             self.assertEqual(
-                radar.close_and_save_editions(settings, eastern(2026, 10, 14, 20, 17)), (0, False)
+                radar.close_and_save_periods(settings, eastern(2026, 10, 14, 20, 17)), (0, 0, False)
             )
             self.assertEqual(settings.archive_path.read_bytes(), saved)
             self.assertEqual(
-                radar.close_and_save_editions(settings, eastern(2026, 10, 15, 19, 17)), (0, True)
+                radar.close_and_save_periods(settings, eastern(2026, 10, 15, 0, 17)), (0, 1, True)
             )
             self.assertEqual(
-                radar.load_archive(settings.archive_path)["editions_closed_through"],
-                "2026-10-15T23:00:00+00:00",
+                radar.close_and_save_periods(settings, eastern(2026, 10, 15, 19, 17)), (0, 0, True)
             )
+            saved_archive = radar.load_archive(settings.archive_path)
+            self.assertEqual(saved_archive["editions_closed_through"], "2026-10-15T23:00:00+00:00")
+            self.assertEqual(saved_archive["days_closed_through"], "2026-10-15T04:00:00+00:00")
 
     def test_run_cycle_closes_editions_before_collecting(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

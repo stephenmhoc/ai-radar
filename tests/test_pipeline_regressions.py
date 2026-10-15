@@ -63,6 +63,7 @@ class DeferredRegressionTests(unittest.TestCase):
                 item["appearances"][0]["description"] = "Sparse notes."
                 archive = {"version": 1, "items": [item]}
                 radar.close_editions(settings, archive, NOW)
+                radar.close_days(settings, archive, NOW)
                 radar.save_archive(settings.archive_path, archive)
                 before = settings.archive_path.read_bytes()
                 candidate = make_appearance(kind=source.kind,

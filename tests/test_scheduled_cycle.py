@@ -48,7 +48,7 @@ class ScheduledCycleTests(unittest.TestCase):
         radar_module.GENERATED_FILES = radar.GENERATED_FILES
         radar_module.lookback_days_from_env.return_value = 7
         radar_module.run_cycle.return_value = GOOD_STATS
-        radar_module.close_and_save_editions.return_value = (0, False)
+        radar_module.close_and_save_periods.return_value = (0, 0, False)
         with (
             mock.patch.object(scheduled_cycle, "write_heartbeat"),
             mock.patch.object(scheduled_cycle, "publication_lock", return_value=contextlib.nullcontext()),
@@ -86,7 +86,7 @@ class ScheduledCycleTests(unittest.TestCase):
         reporter = RecordingReporter()
         radar_module = mock.Mock()
         radar_module.run_cycle.return_value = GOOD_STATS
-        radar_module.close_and_save_editions.return_value = (0, False)
+        radar_module.close_and_save_periods.return_value = (0, 0, False)
         with (
             mock.patch.object(scheduled_cycle, "ensure_clean_worktree"),
             mock.patch.object(scheduled_cycle, "publish_ahead_commits") as publish,
@@ -247,7 +247,7 @@ class GitTransactionTests(unittest.TestCase):
         reporter = RecordingReporter()
         radar_module = mock.Mock()
         radar_module.GENERATED_FILES = radar.GENERATED_FILES
-        radar_module.close_and_save_editions.return_value = (1, True)
+        radar_module.close_and_save_periods.return_value = (1, 0, True)
         radar_module.run_cycle.side_effect = radar.RadarError("archive validation failed")
         calls: list[tuple[str, ...]] = []
         with (
@@ -273,7 +273,7 @@ class GitTransactionTests(unittest.TestCase):
     def test_unchanged_editions_add_no_extra_verification_or_commit(self) -> None:
         reporter = RecordingReporter()
         radar_module = mock.Mock()
-        radar_module.close_and_save_editions.return_value = (0, False)
+        radar_module.close_and_save_periods.return_value = (0, 0, False)
         radar_module.run_cycle.side_effect = radar.RadarError("collect failed")
         with (
             mock.patch.object(scheduled_cycle, "ensure_clean_worktree"),

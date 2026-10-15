@@ -38,10 +38,15 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   collection so a fetch or model failure cannot hold back the RSS entry; an item joins the edition containing `max(first_seen_at,
   editions_closed_through)`, so late publications join the next edition. Closed
   editions are immutable and append-only. RSS has exactly one entry per closed
-  edition; the homepage shows Today (unclosed items) and Recent (the last
-  `RECENT_EDITIONS` editions), never an endless stream. `public/archive.html`
-  lists every closed edition, newest first with a month index, so past days stay
-  findable without client-side script; RSS entries link to their archive anchor.
+  edition.
+- The site uses a separate calendar: site days (`days`, `days_closed_through`)
+  close at local midnight through `close_days`, with the same record shape,
+  assignment rule, immutability, and pre-collection publication as editions.
+  The homepage shows Today (items not in a closed day) and Recent (the last
+  `RECENT_DAYS` days), never an endless stream, and Today must not empty at the
+  7 p.m. edition close. `public/archive.html` lists every closed day, newest
+  first with a month index, so past days stay findable without client-side
+  script; RSS entries link to their date's archive anchor.
 - A short summary is one or two sentences. Ask for no more than 55 words, accept
   up to 82 words locally, and retry anything longer with explicit feedback to
   shorten it to the 55-word target before reporting exhausted attempts.

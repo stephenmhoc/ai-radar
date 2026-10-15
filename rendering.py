@@ -10,13 +10,13 @@ from zoneinfo import ZoneInfo
 
 from radar_common import (
     APPEARANCE_PRESENTATION, Settings, clean_text, escape_public_text,
-    edition_closes_at, edition_date, ordered_appearances, parse_timestamp,
-    parse_utc_timestamp, public_http_url, require_public_http_url, source_display_name,
+    edition_closes_at, ordered_appearances, parse_timestamp, parse_utc_timestamp,
+    public_http_url, require_public_http_url, site_day, source_display_name,
 )
 
 GENERATED_FILES = ("index.html", "archive.html", "feeds.html", "feed.xml", "_headers")
 ARCHIVE_PATH = "/archive.html"
-RECENT_EDITIONS = 7
+RECENT_DAYS = 7
 
 
 
@@ -79,34 +79,34 @@ def edition_label(day: dt.date) -> str:
 def render_index_html(
     settings: Settings,
     items: list[dict[str, Any]],
-    editions: list[dict[str, Any]],
-    closed_through: str | None,
+    days: list[dict[str, Any]],
+    days_closed_through: str | None,
 ) -> str:
-    """Render today's open edition, then the most recent closed editions."""
-    delivered = {item_id for edition in editions for item_id in edition["item_ids"]}
-    today_items = [item for item in items if str(item["id"]) not in delivered]
-    since = parse_utc_timestamp(closed_through)
-    zone = ZoneInfo(settings.edition_timezone)
+    """Render today's items (the open calendar day), then the most recent closed days."""
+    shown = {item_id for day in days for item_id in day["item_ids"]}
+    today_items = [item for item in items if str(item["id"]) not in shown]
     today_note = ""
+    since = parse_utc_timestamp(days_closed_through)
     if since is not None:
-        closes = edition_closes_at(edition_date(since, settings), settings).astimezone(zone)
+        edition_close = edition_closes_at(site_day(since, settings), settings)
+        local_close = edition_close.astimezone(ZoneInfo(settings.edition_timezone))
         today_note = (
-            f'<p class="edition-note">Today&rsquo;s edition goes out by RSS at '
-            f"{hour_label(closes.hour)} {closes:%Z}.</p>"
+            f'<p class="edition-note">A daily RSS edition goes out at '
+            f"{hour_label(local_close.hour)} {local_close:%Z}.</p>"
         )
     sections = [
-        '<section class="edition edition-today" aria-labelledby="edition-today">'
-        '<h2 class="edition-title" id="edition-today">Today</h2>'
+        '<section class="edition edition-today" aria-labelledby="day-today">'
+        '<h2 class="edition-title" id="day-today">Today</h2>'
         f"{today_note}"
         f'{render_episode_list(today_items, empty="Nothing new yet today. Recent days are below.")}'
         "</section>"
     ]
-    recent = list(reversed(editions))[:RECENT_EDITIONS]
+    recent = list(reversed(days))[:RECENT_DAYS]
     if recent:
         sections.append(
             '<section class="recent" aria-labelledby="recent-label">'
             '<p class="section-label" id="recent-label">Recent</p>'
-            + "\n".join(render_edition_section(edition, items) for edition in recent)
+            + "\n".join(render_day_section(day, items) for day in recent)
             + f'<p class="archive-link"><a href="{ARCHIVE_PATH}">All past days&nbsp;→</a></p>'
             + "</section>"
         )
@@ -114,15 +114,15 @@ def render_index_html(
 
 
 
-def render_edition_section(edition: dict[str, Any], items: list[dict[str, Any]]) -> str:
-    day = dt.date.fromisoformat(edition["date"])
-    members = set(edition["item_ids"])
-    edition_items = [item for item in items if str(item["id"]) in members]
-    anchor = f"edition-{edition['date']}"
+def render_day_section(record: dict[str, Any], items: list[dict[str, Any]]) -> str:
+    day = dt.date.fromisoformat(record["date"])
+    members = set(record["item_ids"])
+    day_items = [item for item in items if str(item["id"]) in members]
+    anchor = f"day-{record['date']}"
     return (
         f'<section class="edition" aria-labelledby="{anchor}">'
         f'<h2 class="edition-title" id="{anchor}">{html.escape(edition_label(day))}</h2>'
-        f"{render_episode_list(edition_items)}"
+        f"{render_episode_list(day_items)}"
         "</section>"
     )
 
@@ -131,33 +131,33 @@ def render_edition_section(edition: dict[str, Any], items: list[dict[str, Any]])
 def render_archive_html(
     settings: Settings,
     items: list[dict[str, Any]],
-    editions: list[dict[str, Any]],
+    days: list[dict[str, Any]],
 ) -> str:
-    """Render every closed edition, newest first, grouped by month."""
+    """Render every closed calendar day, newest first, grouped by month."""
     months: dict[str, list[dict[str, Any]]] = {}
-    for edition in reversed(editions):
-        months.setdefault(edition["date"][:7], []).append(edition)
+    for day in reversed(days):
+        months.setdefault(day["date"][:7], []).append(day)
     month_links: list[str] = []
     month_sections: list[str] = []
-    for month, month_editions in months.items():
+    for month, month_days in months.items():
         first_day = dt.date.fromisoformat(month + "-01")
         name = f"{first_day:%B} {first_day.year}"
         month_links.append(f'<a href="#month-{month}">{html.escape(name)}</a>')
         month_sections.append(
             f'<section class="archive-month" aria-labelledby="month-{month}">'
             f'<p class="section-label" id="month-{month}">{html.escape(name)}</p>'
-            + "\n".join(render_edition_section(edition, items) for edition in month_editions)
+            + "\n".join(render_day_section(day, items) for day in month_days)
             + "</section>"
         )
     intro = (
         '<p class="section-label">Archive</p>'
-        '<p class="edition-note">Every past daily edition, newest first. Use your browser&rsquo;s '
+        '<p class="edition-note">Every past day, newest first. Use your browser&rsquo;s '
         "find to search headlines, sources, and summaries. Today&rsquo;s items are on the "
         '<a href="/">front page</a>.</p>'
     )
     if month_links:
         intro += '<nav class="archive-months" aria-label="Months">' + "".join(month_links) + "</nav>"
-    body = intro + ("\n".join(month_sections) or '<p class="edition-empty">No past editions yet.</p>')
+    body = intro + ("\n".join(month_sections) or '<p class="edition-empty">No past days yet.</p>')
     return render_html(
         settings,
         [],
@@ -670,7 +670,7 @@ def render_rss(
         ET.SubElement(node, "title").text = (
             f"{settings.title} — {edition_label(day)} ({count} item{'' if count == 1 else 's'})"
         )
-        ET.SubElement(node, "link").text = f"{settings.base_url}{ARCHIVE_PATH}#edition-{edition['date']}"
+        ET.SubElement(node, "link").text = f"{settings.base_url}{ARCHIVE_PATH}#day-{edition['date']}"
         guid = ET.SubElement(node, "guid", {"isPermaLink": "false"})
         guid.text = "ai-radar:edition:" + str(edition["date"])
         closed_at = parse_timestamp(edition["closed_at"])

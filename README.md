@@ -15,30 +15,34 @@ Every published item keeps its AI Radar headline and summary while clearly
 identifying each original appearance by medium, source name, and publisher
 title. The title links directly to the episode, video, or newsletter issue.
 
-AI Radar is organized into daily editions that close at 7 p.m. Eastern
-(`[editions]` in `config.toml`). The site shows **Today**, the items published
-since the last close, followed by **Recent**, the last seven closed editions,
-so a quiet day still shows recent work. `/archive.html` lists every past
-edition, newest first with a month index, and is searchable with the browser's
-find; the site stays script-free. RSS carries one entry per closed
-edition, published at the close, listing each item's headline (naming its
-primary source), long summary, and complete source list.
+AI Radar keeps two daily calendars in the edition timezone, America/New_York
+(`[editions]` in `config.toml`):
 
-The scheduled run records each closed edition in `data/items.json` before it
-collects new items. An item joins the edition for the window in which AI Radar
-first saw it, but never one that has already closed: an item published later,
-such as a deferred item, joins the next edition rather than rewriting one RSS
-readers already received. Recorded editions are immutable, so rendering stays
-deterministic. `python3 radar.py close-editions` closes finished editions without
-fetching feeds or calling the model.
+- **RSS editions** close at 7 p.m. RSS carries one entry per closed edition,
+  published at the close, listing each item's headline (naming its primary
+  source), long summary, and complete source list.
+- **Site days** are calendar days closing at midnight. The site shows
+  **Today**, everything published since midnight, followed by **Recent**, the
+  last seven closed days, so a quiet day still shows recent work and Today does
+  not empty when the 7 p.m. edition goes out. `/archive.html` lists every past
+  day, newest first with a month index, and is searchable with the browser's
+  find; the site stays script-free.
+
+The scheduled run records each closed edition and day in `data/items.json`
+before it collects new items. An item joins the period in which AI Radar first
+saw it, but never one that has already closed: an item published later, such as
+a deferred item, joins the open edition and day rather than rewriting one
+already delivered. Recorded editions and days are immutable, so rendering stays
+deterministic. `python3 radar.py close-editions` closes finished editions and
+days without fetching feeds or calling the model.
 
 ## Files
 
 - `config.toml`: podcast, newsletter, and optional YouTube feeds, the
   followed-people roster, and LLM config
 - `data/items.json`: durable canonical publication and seen-item state
-- `public/index.html`: Today and Recent daily editions using short summaries
-- `public/archive.html`: every past daily edition, newest first, with a month index
+- `public/index.html`: Today and Recent calendar days using short summaries
+- `public/archive.html`: every past calendar day, newest first, with a month index
 - `public/feeds.html`: monitored feeds, grouped by medium
 - `public/feed.xml`: one RSS entry per daily edition using long summaries
 - `radar.py`: feed collection, matching, archive validation, and CLI orchestration
