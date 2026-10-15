@@ -79947,6 +79947,36 @@
       "links": {
         "podcast": "https://share.transistor.fm/s/4f81adfa"
       }
+    },
+    {
+      "id": "187b495912d30946ff5a",
+      "first_seen_at": "2026-10-15T17:17:18+00:00",
+      "status": "deferred",
+      "title": "The Pulse: OpenAI software engineer accused of spying",
+      "source_title": "The Pulse: OpenAI software engineer accused of spying",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-10-15T16:55:18+00:00",
+      "appearances": [
+        {
+          "id": "348755fe88b953ed59f3",
+          "kind": "newsletter",
+          "source": "The Pragmatic Engineer",
+          "family": "the pragmatic engineer",
+          "guid": "https://newsletter.pragmaticengineer.com/p/the-pulse-openai-software-engineer",
+          "title": "The Pulse: OpenAI software engineer accused of spying",
+          "description": "The Pulse is a series covering events, insights, and trends within Big Tech and startups.\n\nToday, we cover:\n\nOpenAI software engineer accused of spying. \nA software engineer working on OpenAI’s Agents SDK has been arrested after allegedly planting a secret audio recording device in a meeting room at the AI company. The FBI and US Department of Justice are in…\n\n Read more",
+          "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-openai-software-engineer",
+          "published_at": "2026-10-15T16:55:18+00:00",
+          "hosts": [
+            "Gergely Orosz"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-openai-software-engineer"
+      }
     }
   ],
   "editions": [
