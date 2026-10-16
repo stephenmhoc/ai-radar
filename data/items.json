@@ -80066,6 +80066,37 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/ai-can-write-the-code-can-it-run-the-system-grepr-ceo-jad-naous-p_ifxVi2"
       }
+    },
+    {
+      "id": "fd1c5c8bee1570a9bc30",
+      "first_seen_at": "2026-10-16T11:17:21+00:00",
+      "status": "skipped",
+      "title": "Why No One Can Look Away From Elizabeth Holmes",
+      "source_title": "Why No One Can Look Away From Elizabeth Holmes",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "None of the tracked AI leaders are featured as guests, interviewees, or speakers in this episode.",
+      "published_at": "2026-10-16T11:00:02+00:00",
+      "appearances": [
+        {
+          "id": "fb6cd59f8eec9905bb4e",
+          "kind": "podcast",
+          "source": "Hard Fork",
+          "family": "hard fork",
+          "guid": "https://www.nytimes.com/2026/10/16/podcasts/hardfork-elizabeth-holmes.html",
+          "title": "Why No One Can Look Away From Elizabeth Holmes",
+          "description": "“I felt like there were some moments in the film where she was just brazenly lying.”",
+          "url": "https://www.nytimes.com/2026/10/16/podcasts/hardfork-elizabeth-holmes.html",
+          "published_at": "2026-10-16T11:00:02+00:00",
+          "hosts": [
+            "Kevin Roose",
+            "Casey Newton"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.nytimes.com/2026/10/16/podcasts/hardfork-elizabeth-holmes.html"
+      }
     }
   ],
   "editions": [
