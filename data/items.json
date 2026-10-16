@@ -80038,6 +80038,34 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-agents-disprove-polysemanticity"
       }
+    },
+    {
+      "id": "489b4482c5bf0729d80e",
+      "first_seen_at": "2026-10-16T10:17:23+00:00",
+      "status": "skipped",
+      "title": "AI Can Write the Code. Can It Run the System? | Grepr CEO Jad Naous",
+      "source_title": "AI Can Write the Code. Can It Run the System? | Grepr CEO Jad Naous",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Jad Naous (Grepr CEO), not a followed person. The host Martin Casado is an a16z General Partner, not a followed person. No followed person appears as a guest, interviewee, or central speaker in this episode.",
+      "published_at": "2026-10-16T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "264741aa49bdb982c527",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "201bef7f-898a-4de8-af42-b31487e73dfa",
+          "title": "AI Can Write the Code. Can It Run the System? | Grepr CEO Jad Naous",
+          "description": "a16z General Partner Martin Casado sits down with Grepr CEO Jad Naous to ask what comes after AI learns to write code: can it also debug and operate the systems that code creates?\n\nJad shares how AI has transformed engineering inside his 10-person team, cutting some projects from six months to just 10 days. But operating production systems is a harder challenge, with unpredictable workloads, failures, and countless possible states.\n\nThey discuss whether AI can learn to diagnose problems, test hypotheses, and debug systems like a human engineer. They also explore AI SREs, security, query optimization, and why the best engineers may be gaining the most leverage from coding agents.\n\nResources:\n\nFollow Jad Naous on X: \nhttps://x.com/jadtnaous\n\nFollow Martin Casado on X:\nhttps://x.com/martin_casado\n\nLearn more about Grepr: \nhttps://www.grepr.ai/\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/ai-can-write-the-code-can-it-run-the-system-grepr-ceo-jad-naous-p_ifxVi2",
+          "published_at": "2026-10-16T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/ai-can-write-the-code-can-it-run-the-system-grepr-ceo-jad-naous-p_ifxVi2"
+      }
     }
   ],
   "editions": [
