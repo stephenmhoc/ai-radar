@@ -184,6 +184,15 @@ url = "https://www.aisnakeoil.com/"
 feed_url = "https://www.aisnakeoil.com/feed"
 authors = ["Arvind Narayanan", "Sayash Kapoor"]
 
+# Stripe Sessions talks, such as followed people's conference interviews, are
+# published only on Stripe's YouTube channel.
+[[sources]]
+kind = "youtube"
+name = "Stripe"
+url = "https://www.youtube.com/@stripe"
+external_id = "UCM1guA1E-RHLO2OyfQPOkEQ"
+feed_url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCM1guA1E-RHLO2OyfQPOkEQ"
+
 # The people AI Radar follows. An item qualifies only when one of them is an
 # actual guest, speaker, or author; mentions of them or their companies do not.
 [[people]]
@@ -248,3 +257,7 @@ role = "OpenAI co-founder and president"
 [[people]]
 name = "Jensen Huang"
 role = "NVIDIA CEO"
+
+[[people]]
+name = "Nat Friedman"
+role = "Meta Superintelligence Labs head of product, former GitHub CEO"

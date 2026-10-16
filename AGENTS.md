@@ -85,9 +85,10 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   interviewee, central speaker, or author; mentions, third-party analysis, and
   their colleagues do not qualify. Newsletter issues qualify only as an
   interview with, or writing by, a followed person.
-- No YouTube sources are configured. YouTube support (identity, Shorts, outage
+- The only configured YouTube source is Stripe's channel, which is where Stripe
+  Sessions talks are published. YouTube support (identity, Shorts, outage
   handling) stays in code so archived YouTube appearances keep rendering and
-  sources can be re-added; the YouTube contracts above and below still apply.
+  sources can be added; the YouTube contracts above and below still apply.
 - Keep source failures isolated and report them, but preserve the scheduled
   cycle's degraded/nonzero result when any source or LLM error occurred.
 - An undated feed entry can never clear the lookback cutoff, so a source counts

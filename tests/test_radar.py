@@ -213,7 +213,7 @@ class StaticPublisherTests(unittest.TestCase):
         value = rendering.render_feeds_html(settings)
         self.assertIn("Monitored sources", value)
         self.assertIn("Podcast feeds", value)
-        self.assertNotIn("YouTube feeds", value)
+        self.assertIn("YouTube feeds", value)
         self.assertIn("Newsletter feeds", value)
         self.assertIn("--forest: #1c2b23", value)
         for source in settings.sources:
@@ -231,9 +231,14 @@ class StaticPublisherTests(unittest.TestCase):
         self.assertEqual(podcasts_only.count('<section class="feed-group">'), 1)
         self.assertNotIn("Newsletter feeds", podcasts_only)
 
-    def test_config_has_no_youtube_sources_and_follows_cheeky_pint(self) -> None:
+    def test_config_follows_only_stripe_on_youtube_and_cheeky_pint(self) -> None:
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
-        self.assertFalse([source for source in settings.sources if source.kind == "youtube"])
+        youtube = [source for source in settings.sources if source.kind == "youtube"]
+        self.assertEqual([source.name for source in youtube], ["Stripe"])
+        self.assertEqual(
+            youtube[0].feed_url,
+            "https://www.youtube.com/feeds/videos.xml?channel_id=UCM1guA1E-RHLO2OyfQPOkEQ",
+        )
         cheeky_pint = next(source for source in settings.sources if source.name == "Cheeky Pint")
         self.assertEqual(cheeky_pint.kind, "podcast")
         self.assertEqual(cheeky_pint.feed_url, "https://feeds.transistor.fm/cheeky-pint-with-john-collison")
@@ -260,6 +265,7 @@ class StaticPublisherTests(unittest.TestCase):
                 "Demis Hassabis",
                 "Greg Brockman",
                 "Jensen Huang",
+                "Nat Friedman",
             ],
         )
         self.assertIn("Thibault Sottiaux (also known as Tibo) — OpenAI Codex lead", settings.roster)

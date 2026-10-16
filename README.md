@@ -96,9 +96,9 @@ or author. Mentions, third-party analysis, and colleagues at the same companies
 do not qualify; newsletter issues qualify only as an interview with, or writing
 by, a followed person.
 
-No YouTube sources are currently configured. YouTube support remains in code so
-archived YouTube appearances keep rendering and channels can be re-added under
-`[[sources]]`. YouTube Shorts are skipped locally without an LLM call, and other
+The only configured YouTube source is Stripe's channel, which publishes Stripe
+Sessions talks. YouTube support remains in code so archived YouTube appearances
+keep rendering and more channels can be added under `[[sources]]`. YouTube Shorts are skipped locally without an LLM call, and other
 brief promotional, highlight, launch, quote, and social clips are editorially
 excluded.
 

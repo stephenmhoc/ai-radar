@@ -60,8 +60,8 @@ production branch.
 Important paths:
 
 - `config.toml` defines podcast, newsletter, and optional YouTube sources, the
-  followed-people roster, public URLs, and LLM settings. No YouTube sources are
-  currently configured.
+  followed-people roster, public URLs, and LLM settings. The only configured
+  YouTube source is Stripe's channel, for Stripe Sessions talks.
 - `data/items.json` is the canonical database-free archive. It records seen,
   skipped, and published items and is committed to Git.
 - `public/index.html` is the generated Today and Recent calendar-day page.
