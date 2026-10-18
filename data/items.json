@@ -80304,6 +80304,36 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/why-real-world-ai-is-harder-than-the-benchmark-eliseais-mario-martone-SJLazqim"
       }
+    },
+    {
+      "id": "763b7131459288edb0b3",
+      "first_seen_at": "2026-10-18T13:17:21+00:00",
+      "status": "skipped",
+      "title": "Inside the black box of AI: How AI models actually think | Emmanuel Ameisen (Anthropic)",
+      "source_title": "Inside the black box of AI: How AI models actually think | Emmanuel Ameisen (Anthropic)",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Emmanuel Ameisen is an interpretability researcher at Anthropic, not a followed person. The podcast guest is not on the AI Radar list of followed executives and leaders. Anthropic as a company is mentioned, but this does not qualify for inclusion.",
+      "published_at": "2026-10-18T12:31:36+00:00",
+      "appearances": [
+        {
+          "id": "76ccf4eb2827c2f64ba6",
+          "kind": "podcast",
+          "source": "Lenny's Podcast",
+          "family": "lenny's podcast",
+          "guid": "substack:post:219139599",
+          "title": "Inside the black box of AI: How AI models actually think | Emmanuel Ameisen (Anthropic)",
+          "description": "Emmanuel Ameisen\n is an interpretability researcher at Anthropic, where he looks inside LLMs like Claude to understand how they think. Before joining Anthropic, he spent years in applied ML at Stripe and Insight, and is the author of \nBuilding Machine Learning Powered Applications\n. His research has produced some of the most striking findings in the field: that models form general representations of concepts, plan many tokens ahead without stating those plans explicitly, and may exhibit something structurally similar to the distinction between conscious and unconscious processing in humans.\n\nWe discuss:\n\n1. Why the “next-token predictor” framing undersells how models actually plan and think\n\n2. Why anthropomorphizing AI can actually be the right approach\n\n3. Why models are “grown,” not built\n\n4. What the “J space” reveals about model self-awareness\n\n5. The smooth scaling curve behind what look like sudden capability jumps\n\n6. How interpretability connects to AI alignment and safety\n\n—\n\nBrought to you by:\n\nWorkOS\n—Make your app enterprise-ready, with SSO, SCIM, RBAC, and more\n\nDX\n—Engineering intelligence for the AI era\n\n—\n\nEpisode transcript: \nhttps://www.lennysnewsletter.com/p/a-mind-expanding-conversation-on\n\n—\n\nArchive of all Lenny's Podcast transcripts: \nhttps://www.dropbox.com/scl/fo/yxi4s2w998p1gvtpu4193/AMdNPR8AOw0lMklwtnC0TrQ?rlkey=j06x0nipoti519e0xgm23zsn9&st=ahz0fj11&dl=0\n\n—\n\nHighlights:\nhttps://lennyspodcast.com/mostreplayedmoments\n\n—\n\nWhere to find Emmanuel Ameisen:\n\n• X: \nhttps://x.com/mlpowered\n\n• LinkedIn: \nhttps://www.linkedin.com/in/ameisen\n\n• Website: \nhttps://www.mlpowered.com\n\n—\n\nWhere to find Lenny:\n\n• Newsletter: \nhttps://www.lennysnewsletter.com\n\n• X: \nhttps://twitter.com/lennysan\n\n• LinkedIn: \nhttps://www.linkedin.com/in/lennyrachitsky/\n\n—\n\nIn this episode, we cover:\n\n(00:00) Introduction to Emmanuel Ameisen\n\n(01:30) Why AI models are grown, not built\n\n(05:57) Why next-token prediction is harder than it sounds\n\n(11:49) How models represent concepts and understand the world\n\n(17:06) How LLMs plan ahead\n\n(23:10) Could AI be conscious?\n\n(24:44) Scaling laws and the power of text\n\n(28:29) Why smooth progress creates sudden breakthroughs\n\n(32:59) Why watching AI isn’t enough to solve alignment\n\n(38:21) The Golden Gate Claude experiment\n\n(39:01) Why Anthropic takes AI safety seriously\n\n(42:06) When anthropomorphizing AI is useful\n\n(48:06) What AI can teach us about intelligence\n\n(51:44) Reasons for optimism about AI alignment\n\n(55:43) Are we living in a simulation?\n\n(59:00) Jev, decision models, and AI’s gut instincts\n\n(01:01:37) Two more surprising findings about how models think\n\n(01:03:33) How to get into interpretability research\n\n(01:04:55) Lightning round and final thoughts\n\n—\n\nReferences: \nhttps://www.lennysnewsletter.com/p/a-mind-expanding-conversation-on\n\n—\n\nProduction and marketing by \nhttps://penname.co/\n. For inquiries about sponsoring the podcast, email \npodcast@lennyrachitsky.com\n.\n\n—\n\nLenny may be an investor in the companies discussed.\n\nTo hear more, visit \nwww.lennysnewsletter.com",
+          "url": "https://www.lennysnewsletter.com/p/a-mind-expanding-conversation-on",
+          "published_at": "2026-10-18T12:31:36+00:00",
+          "hosts": [
+            "Lenny Rachitsky"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.lennysnewsletter.com/p/a-mind-expanding-conversation-on"
+      }
     }
   ],
   "editions": [
