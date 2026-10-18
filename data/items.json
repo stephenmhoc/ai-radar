@@ -80276,6 +80276,34 @@
       "links": {
         "podcast": "https://www.davidsenra.com/episode/kurt-macalpine"
       }
+    },
+    {
+      "id": "0ecd544db49f679269f1",
+      "first_seen_at": "2026-10-18T10:17:22+00:00",
+      "status": "skipped",
+      "title": "Why Real-World AI Is Harder Than the Benchmark | EliseAI’s Mario Martone",
+      "source_title": "Why Real-World AI Is Harder Than the Benchmark | EliseAI’s Mario Martone",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode features Mario Martone of EliseAI; none of the followed AI Radar individuals are guests, interviewees, central speakers, or authors.",
+      "published_at": "2026-10-18T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "1109c7402948a0e165cd",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "eef7a29a-1f29-4cd8-b32b-365e617a3f1b",
+          "title": "Why Real-World AI Is Harder Than the Benchmark | EliseAI’s Mario Martone",
+          "description": "What changes when an AI mistake doesn’t just hurt a benchmark score, but affects someone’s housing or healthcare? EliseAI Head of Applied Research Mario Martone argues that deploying AI in essential industries requires a very different standard of reliability.\n\nMario joins MTS to explain how EliseAI handles roughly 5 million phone calls a month, why LLMs aren’t the right solution for every problem, and how the team combines language models, traditional machine learning, neural networks, and internally built evaluations to decide what actually works in production. \n\nDrawing on 15 years studying theoretical physics, Mario also explains how the scientific method shapes EliseAI’s research culture, from testing new models against its own benchmarks to fine-tuning open-source models and automating increasingly complex workflows across housing and healthcare. And he makes the case that applying AI to the real world can produce problems every bit as intellectually difficult as the ones he encountered studying string theory.\n\nResources:\n\nLearn more about EliseAI:\nhttps://www.eliseai.com/\n\nFollow Mario Martone on LinkedIn: \nhttps://www.linkedin.com/in/mcmartone/\n\nFollow MTS: \nhttps://www.mts.now/\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/why-real-world-ai-is-harder-than-the-benchmark-eliseais-mario-martone-SJLazqim",
+          "published_at": "2026-10-18T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/why-real-world-ai-is-harder-than-the-benchmark-eliseais-mario-martone-SJLazqim"
+      }
     }
   ],
   "editions": [
