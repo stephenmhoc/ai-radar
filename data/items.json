@@ -80246,6 +80246,36 @@
       "links": {
         "newsletter": "https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open"
       }
+    },
+    {
+      "id": "45dc3e4659e708004eba",
+      "first_seen_at": "2026-10-18T08:17:22+00:00",
+      "status": "skipped",
+      "title": "Managing $525 Billion by Rethinking Wealth Management | Kurt MacAlpine, Corient",
+      "source_title": "Managing $525 Billion by Rethinking Wealth Management | Kurt MacAlpine, Corient",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode features Kurt MacAlpine and host David Senra, with none of the followed AI Radar individuals participating.",
+      "published_at": "2026-10-18T08:00:00+00:00",
+      "appearances": [
+        {
+          "id": "4e3d447ec8b0da265c05",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "1c170f54-ca79-11f1-9497-3784be4db4a3",
+          "title": "Managing $525 Billion by Rethinking Wealth Management | Kurt MacAlpine, Corient",
+          "description": "Kurt MacAlpine is a partner and the CEO of Corient, which manages approximately $525 billion in client assets. He became a first-time CEO at 39, believes wealth management was built on a flawed incentive structure, and applied a professional services partnership model to the industry. Kurt explains why Corient has one compensation plan and one P&L, how sharing the benefits of scale helps clients and partners, and why he kept building while the stock market questioned his strategy. He discusses buying back shares, taking CI Financial private with Mubadala Capital, integrating acquisitions, and building a business designed to last for generations.\n\nShow notes: https://www.davidsenra.com/episode/kurt-macalpine\n\nMade possible by\n\nRamp: https://ramp.com\n\nAppLovin: https://applovin.com/senra\n\nDeel: https://deel.com/senra\n\nChapters\n\n(00:00:00) Building Corient and managing $525 billion\n\n(00:05:32) Why wealth management’s incentives are broken\n\n(00:11:42) Bringing the partnership model to wealth management\n\n(00:22:15) Sharing the benefits of scale with clients\n\n(00:24:25) One compensation plan, one P&L, no exceptions\n\n(00:27:58) Why independent wealth managers join Corient\n\n(00:39:21) Staying the course when the stock market disagrees\n\n(00:48:25) Betting on the business through share buybacks\n\n(00:51:52) Taking CI Financial private with Mubadala Capital\n\n(00:59:08) Acquiring great partners and building one company\n\n(01:04:43) Giving employees a voice in building the brand\n\n(01:12:39) Building a business that lasts for generations\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/kurt-macalpine",
+          "published_at": "2026-10-18T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/kurt-macalpine"
+      }
     }
   ],
   "editions": [
