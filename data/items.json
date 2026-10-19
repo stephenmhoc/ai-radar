@@ -80334,6 +80334,37 @@
       "links": {
         "podcast": "https://www.lennysnewsletter.com/p/a-mind-expanding-conversation-on"
       }
+    },
+    {
+      "id": "01d3df858a6f0f535439",
+      "first_seen_at": "2026-10-19T04:20:41+00:00",
+      "status": "skipped",
+      "title": "Acquired: Seinfeld",
+      "source_title": "Seinfeld | Acquired",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode focuses on the business history of Seinfeld and does not feature any of the followed individuals as a guest, speaker, or author.",
+      "published_at": "2026-10-19T04:00:00+00:00",
+      "appearances": [
+        {
+          "id": "434843a8f8806abedfff",
+          "kind": "podcast",
+          "source": "Acquired",
+          "family": "acquired",
+          "guid": "https://www.acquired.fm/episodes/seinfeld",
+          "title": "Seinfeld | Acquired",
+          "description": "Jerry Seinfeld and Larry David’s sitcom became arguably the most valuable deal in TV history: owned outside NBC because of the FCC’s fin-syn rules, ended at its peak, and worth over $7 billion in syndication and streaming on about $250 million of cost.",
+          "url": "https://www.acquired.fm/episodes/seinfeld",
+          "published_at": "2026-10-19T04:00:00+00:00",
+          "hosts": [
+            "Ben Gilbert",
+            "David Rosenthal"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.acquired.fm/episodes/seinfeld"
+      }
     }
   ],
   "editions": [
