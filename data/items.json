@@ -80575,6 +80575,34 @@
       "links": {
         "podcast": "https://colossus.com/episode/becoming-a-category-winner/"
       }
+    },
+    {
+      "id": "baeaf0102366370e0780",
+      "first_seen_at": "2026-10-20T09:17:26+00:00",
+      "status": "skipped",
+      "title": "Inside the Robot Data Factory: Mecka's Josh Gao on Sensorizing Humans to Train Robots",
+      "source_title": "Inside the Robot Data Factory: Mecka's Josh Gao on Sensorizing Humans to Train Robots",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "None of the followed individuals are featured as guests, interviewees, or central speakers in this episode.",
+      "published_at": "2026-10-20T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "e4d9e89b6ac39ea2c1c0",
+          "kind": "podcast",
+          "source": "Training Data",
+          "family": "training data",
+          "guid": "6ee9a1f4-cbf7-11f1-bd53-0b2f603ad192",
+          "title": "Inside the Robot Data Factory: Mecka's Josh Gao on Sensorizing Humans to Train Robots",
+          "description": "Robotics never got the internet's gift of free training data, so someone has to manufacture it. Josh Gao, founder and CEO of Mecka AI, runs one of the largest robot data factories, and he explains what that actually involves: custom baseball caps and tactile gloves because nothing off the shelf captures force, 100-gigabit upload lines to move hundreds of petabytes, and custom quality gates. Josh lays out the training recipe the industry is converging on (roughly a million hours of egocentric human data, tens of thousands of hours of robot data, and a few hours of in-domain teleop ) and why tactile and simulation data still have to enter the \"data pot of soup.\" He argues the field is still orders of magnitude behind Tesla's FSD, which spent a decade on two degrees of freedom while a robot hand has dozens. His take: there won't be a single GPT-3 moment for robotics, but a steady unlock of commercial tasks, starting with constrained industrial work and ending, he hopes, with robots mining asteroids.\n\nHosted by Sonya Huang, Sequoia Capital\n\n0:00 – Introduction\n\n1:46 – What Mecka is: pixels, actions and logic\n\n2:45 – Is robot data economically feasible without the internet?\n\n4:15 – Teaching robots about carbon life\n\n5:27 – Cloud kitchens, stablecoins and the path to robotics\n\n7:03 – Entering robotics with a fresh lens\n\n8:45 – What egocentric data is and why Mecka bet on it\n\n10:09 – The first pilot: aunties and uncles with a mobile app\n\n10:42 – Force data and tactile gloves\n\n11:55 – Inside the operations of a data factory\n\n14:41 – Heat-mapping the taxonomy of human work\n\n15:42 – Quality gates, fraud and the McDonald’s POV videos\n\n17:44 – Earning a margin as a data intermediary\n\n19:33 – Millions of hours vs. Tesla’s decade\n\n20:55 – Why it isn’t binary: unlocking commercial tasks along the way\n\n22:02 – Home data is plentiful; home robots are the hardest\n\n23:24 – Useful robots can be deployed today\n\n24:35 – When robotics gets an FSD-style flywheel\n\n26:42 – Deployment diffusion and the modern systems integrator\n\n28:21 – Favorite vertical robot categories; mining an asteroid\n\n30:08 – The hardware slate: Waymo-fying people\n\n30:55 – EgoVerse\n\n32:04 – The data pot of soup: the converged training mix\n\n33:54 – Move 37 for robotics: AlphaGo and Federer\n\n36:02 – World models and the training mix\n\n36:58 – Will scaling the current mix get us to the promised land?\n\n39:05 – Will the AGI labs steamroll robotics?\n\n40:50 – Sci-fi roots and the Kawasaki Corleo\n\n42:44 – How many robots in a decade?",
+          "url": "https://feeds.megaphone.fm/trainingdata",
+          "published_at": "2026-10-20T09:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/trainingdata"
+      }
     }
   ],
   "editions": [
