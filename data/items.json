@@ -80661,6 +80661,36 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/muse-spark-open-meta-apple-thin-and-thick/"
       }
+    },
+    {
+      "id": "0fdb7d878cf499d959b6",
+      "first_seen_at": "2026-10-20T11:17:25+00:00",
+      "status": "skipped",
+      "title": "A World Model of Life: Biohub's Alex Rives on Virtual Cells, Measurement, & the $1.8B Data Push",
+      "source_title": "A World Model of Life: Biohub's Alex Rives on Virtual Cells, Measurement, & the $1.8B Data Push",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The podcast guest is Alex Rives; none of the followed AI Radar individuals are featured as guests, interviewees, central speakers, or authors.",
+      "published_at": "2026-10-20T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "9cb27ab2bd965f2732ad",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "8b0057dc-cc2b-11f1-b014-23bf94aeb9cb",
+          "title": "A World Model of Life: Biohub's Alex Rives on Virtual Cells, Measurement, & the $1.8B Data Push",
+          "description": "Alex Rives, Head of Science at Biohub and former lead of the ESM protein language model project, joins Nathan to discuss Biohub's mission to construct a predictive world model of life. Supported by an expanded $1.8 billion Virtual Biology Initiative alongside partners including the Department of Energy, NIH, Google DeepMind, and Meta, Rives outlines the massive push to map contextual cellular biology across hundreds of billions of cells. He breaks down why today's AI architectures fall short of simulating true virtual cells, emphasizing the need for breakthrough measurement technologies like the laser phase plate to observe biology at multi-scale resolution. The conversation examines the path toward achieving an information-level cell model within five years to ultimately transition medicine from traditional drugs to programmable interventions against cancer and degenerative disease.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/a-world-model-of-life-biohub-s-alex-rives-on-virtual-cells-measurement-the-1-8b-data-push/\nSponsors:\n\nParallel: Parallel provides enterprise-grade web search APIs for AI agents, offering the optimal balance of quality, speed, and cost. Get started for free at https://parallel.ai/tcr\n\nOutSystems: OutSystems is the leading agentic systems platform that enables enterprises to engineer, orchestrate, and govern AI applications on a single unified platform. Learn more and see how it works at https://outsystems.com/tcr\n\nTasklet: Tasklet empowers your business with AI agents that connect to your tools and automate recurring workflows with no code required. Visit https://tasklet.ai and use code cog rev for $50 in free credits\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(03:58) Biohub's grand mission\n\n(09:18) Limitations of virtual cells\n\n(13:37) World models of biology\n\n(19:35) The $1.8B data initiative (Part 1)\n\n(19:40) Sponsors: Parallel | OutSystems\n\n(22:58) The $1.8B data initiative (Part 2)\n\n(29:29) Bridging multiscale biological systems\n\n(35:44) Learning across model organisms (Part 1)\n\n(35:49) Sponsor: Tasklet\n\n(37:26) Learning across model organisms (Part 2)\n\n(42:24) Pretraining and empirical AI\n\n(52:04) Unifying biology and language\n\n(56:32) Continuous monitoring and health\n\n(59:30) Episode Outro\n\n(01:03:11) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\n\nWebsite: https://www.cognitiverevolution.ai\n\nTwitter (Podcast): https://x.com/cogrev_podcast\n\nTwitter (Nathan): https://x.com/labenz\n\nLinkedIn: https://linkedin.com/in/nathanlabenz/\n\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\n\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\n\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.cognitiverevolution.ai/a-world-model-of-life-biohub-s-alex-rives-on-virtual-cells-measurement-the-1-8b-data-push/",
+          "published_at": "2026-10-20T11:00:00+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/a-world-model-of-life-biohub-s-alex-rives-on-virtual-cells-measurement-the-1-8b-data-push/"
+      }
     }
   ],
   "editions": [
