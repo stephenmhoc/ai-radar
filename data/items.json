@@ -80691,6 +80691,36 @@
       "links": {
         "podcast": "https://www.cognitiverevolution.ai/a-world-model-of-life-biohub-s-alex-rives-on-virtual-cells-measurement-the-1-8b-data-push/"
       }
+    },
+    {
+      "id": "e19c295e225897a72a8f",
+      "first_seen_at": "2026-10-20T13:17:26+00:00",
+      "status": "skipped",
+      "title": "Cheeky Pint: How Toto Wolff built the most valuable team in F1",
+      "source_title": "How Toto Wolff built the most valuable team in F1",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode features Toto Wolff and host John Collison, neither of whom is a followed person.",
+      "published_at": "2026-10-20T13:05:00+00:00",
+      "appearances": [
+        {
+          "id": "1f11b1019fef5b139686",
+          "kind": "podcast",
+          "source": "Cheeky Pint",
+          "family": "cheeky pint",
+          "guid": "30124d99-d08a-4a0e-b1fe-7c448e0b50b6",
+          "title": "How Toto Wolff built the most valuable team in F1",
+          "description": "Toto Wolff, Team Principal and Co-Owner of the Mercedes-AMG PETRONAS F1 Team, joins John Collison for a pint to discuss the engineering, management, and economics behind modern Formula 1. Toto breaks down how Mercedes spots generational driver talent as early as age eight, why they enforce a strict \"No Dickheads\" hiring policy across 2,500 employees, and how the F1 cost cap transformed racing teams into $1B+ assets. He also shares his early career as a dot-com investor, the team’s \"Navy SEALs\" approach to car development, and why he believes live sports are immune to AI disruption.\n\nTimestamps\n\n(00:00:22) Spotting driver talent\n\n(00:06:24) Engineering and team selection\n\n(00:09:11) The F1 cost cap\n\n(00:25:21) Toto’s early investing career\n\n(00:38:15) Running Mercedes as an owner\n\n(00:46:47) Why F1 team values exploded\n\n(01:08:24) Succession planning",
+          "url": "https://share.transistor.fm/s/62d31fa0",
+          "published_at": "2026-10-20T13:05:00+00:00",
+          "hosts": [
+            "John Collison"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/62d31fa0"
+      }
     }
   ],
   "editions": [
