@@ -81143,6 +81143,36 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/presented-by-stripe/"
       }
+    },
+    {
+      "id": "b4d655077fbb7b9855ad",
+      "first_seen_at": "2026-10-21T19:17:25+00:00",
+      "status": "skipped",
+      "title": "How a Frontier Team Can Help Your Company Keep Up With AI",
+      "source_title": "How a Frontier Team Can Help Your Company Keep Up With AI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "None of the tracked AI leaders are featured as guests, interviewees, or authors in this episode.",
+      "published_at": "2026-10-21T18:31:26+00:00",
+      "appearances": [
+        {
+          "id": "b30e307745dc42801faf",
+          "kind": "podcast",
+          "source": "AI & I",
+          "family": "ai & i",
+          "guid": "flightcast:01M5FJNTDCZPD6VSAKD7W6S821",
+          "title": "How a Frontier Team Can Help Your Company Keep Up With AI",
+          "description": "Check out Gemini Audio: https://goo.gle/Every-Gemini-Audio\nEvery time a new AI model drops, companies face the same dilemma: Figure out what’s new and how to use it, or focus on getting work done.\nEvery solves this dilemma with a frontier team: a small group that tests new models and turns useful experiments into tools and workflows for the rest of the company.\nOn this week’s episode of The Every Podcast, Natalia Quintero sits down with all seven members of Every’s frontier team to ask what they’re building—from a tabless browser that helps protect your attention to a personal agent orchestrator called Minga—and what they want to try next.\nSubscribe to Every (free for 14 days): https://every.to/youtube-every-offer?utm_source=podcast&utm_medium=audio&utm_campaign=companyagentepisode\nLinks to resources mentioned in the episode:\nFollow Every: https://x.com/every\nCompound Writing plugin: https://every.to/guides/compound-writing\nEvery’s vibe checks: https://every.to/vibe-check\nFollow Dan Shipper: https://x.com/danshipper\nFollow Natalia Quintero: https://x.com/NataliaZarina\nFollow Mike Taylor: https://x.com/hammer_mt\nFollow Jack Cheng: https://x.com/jackcheng\nFollow Arielle Shipper: https://x.com/ArielleShipper\nFollow Katie Parrott: https://x.com/kplikethebird\nFollow Jannik Jung: https://x.com/JannikJung\n0:00 Introduction: Why every company needs a frontier team\n2:42 Why the best frontier teams have pirates and architects \n4:57 How Head of Evals Mike Taylor builds personal benchmarks \n6:46 How Opus edited an explainer video using Slack messages and meeting notes \n10:20 Working with AI means protecting other people’s attention \n12:26 Why a frontier team needs a “wrangler” like Arielle Shipper \n18:58 Why senior editor Jack Cheng built a tabless browser \n24:37 How resident writer Katie Parrott teaches her AI writing plugin who the reader is\n30:51 Inside engineer Jannik Jung’s personal AI orchestrator \n35:41 Compound engineer Kieran Klaassen uses AI to build power tools",
+          "url": "https://feeds.transistor.fm/how-do-you-use-chatgpt",
+          "published_at": "2026-10-21T18:31:26+00:00",
+          "hosts": [
+            "Dan Shipper"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.transistor.fm/how-do-you-use-chatgpt"
+      }
     }
   ],
   "editions": [
