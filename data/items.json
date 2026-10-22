@@ -81235,6 +81235,67 @@
       "links": {
         "podcast": "https://share.transistor.fm/s/9a42098b"
       }
+    },
+    {
+      "id": "4c23c7d8b17f2ab3e3e9",
+      "first_seen_at": "2026-10-22T10:17:25+00:00",
+      "status": "skipped",
+      "title": "The New Apex Predator: CrowdStrike CEO George Kurtz on Adversaries Armed With AI Agents",
+      "source_title": "The New Apex Predator: CrowdStrike CEO George Kurtz on Adversaries Armed With AI Agents",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode features CrowdStrike CEO George Kurtz and does not include any of the followed individuals as a guest, interviewee, or host.",
+      "published_at": "2026-10-22T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "bdf62712dabe19a9fb0c",
+          "kind": "podcast",
+          "source": "No Priors",
+          "family": "no priors",
+          "guid": "c69c028a-cdc7-11f1-a97a-77799e86d8ea",
+          "title": "The New Apex Predator: CrowdStrike CEO George Kurtz on Adversaries Armed With AI Agents",
+          "description": "Adversaries are already running AI agents, and the fastest attacks now play out in seconds. Sarah Guo and Elad Gil sit down with CrowdStrike president and CEO George Kurtz on what AI-equipped attackers mean for enterprise security. George explains how agents are flattening the adversary pyramid by putting advanced tradecraft in the hands of low-skill attackers, and why CrowdStrike and Nvidia are building a frontier-style lab of their own to train security models. They also get into how open-weight and closed models compare on security, where CrowdStrike is directing its platform investment, lessons from the recent Hugging Face incident, and why George sees AI, like every platform shift before it, as a net creator of opportunity.\n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @CrowdStrike | @George_Kurtz\n\nChapters:\n\n00:42 – Trailer\n\n00:59 – George Kurtz Introduction\n\n00:12 – Agentic Landscape\n\n01:34 – AI and Adversaries\n\n03:40 – Open Weight Models and Adversarial Attacks\n\n05:27 – Adversary Geography\n\n07:24 – Attacker Capability in Context\n\n10:14 – Hugging Face Takeaways\n\n12:49 – CrowdStrike Frontier Security Models\n\n15:22 – CrowdStrike Key Offerings\n\n18:41 – What Differentiates CrowdStrike’s Models \n\n22:47 – Near Term State of Security World\n\n24:37 – State of Model Distillation\n\n26:42 – Open Weight Model Importance and Cost\n\n28:49 – Assessing Real Agent Threat\n\n31:29 – Areas to Watch in AI\n\n33:52 – Case for Defense Dominance\n\n38:03 – Executive Advice\n\n42:05 – Shifts Create Opportunity\n\n44:14 – Conclusion",
+          "url": "https://feeds.megaphone.fm/nopriors",
+          "published_at": "2026-10-22T10:00:00+00:00",
+          "hosts": [
+            "Sarah Guo",
+            "Elad Gil"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/nopriors"
+      }
+    },
+    {
+      "id": "c97e28c6796581b6fc43",
+      "first_seen_at": "2026-10-22T10:17:25+00:00",
+      "status": "deferred",
+      "title": "An Interview with Craig Moffett About SpaceX and Bubbles",
+      "source_title": "An Interview with Craig Moffett About SpaceX and Bubbles",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-10-22T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "ec768661677b73b5416d",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20466",
+          "title": "An Interview with Craig Moffett About SpaceX and Bubbles",
+          "description": "An interview with Craig Moffett about SpaceX, from launch to broadband to mobile, plus how he is applying the lessons of the dot-com bubble to today.",
+          "url": "https://stratechery.com/2026/an-interview-with-craig-moffett-about-spacex-and-bubbles/",
+          "published_at": "2026-10-22T10:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/an-interview-with-craig-moffett-about-spacex-and-bubbles/"
+      }
     }
   ],
   "editions": [
