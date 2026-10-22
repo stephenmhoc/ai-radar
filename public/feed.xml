@@ -6,6 +6,13 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
+      <title>AI Radar — Thursday, October 22, 2026 (1 item)</title>
+      <link>https://ai-radar.merimerimeri.com/archive.html#day-2026-10-22</link>
+      <guid isPermaLink="false">ai-radar:edition:2026-10-22</guid>
+      <pubDate>Thu, 22 Oct 2026 23:00:00 +0000</pubDate>
+      <description>&lt;h3&gt;&lt;a href="https://www.latent.space/p/ainews-openais-patch-the-planet-program"&gt;OpenAI and the PHP2Shell Vulnerability Disclosure — Latent Space&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;OpenAI co-founder Greg Brockman confirmed that his organization led a two-month coordinated remediation effort regarding the PHP2Shell vulnerabilities. These critical security flaws in the PHP engine were identified by researchers using OpenAI&amp;#x27;s Daybreak cyber models under the &amp;quot;Patch the Planet&amp;quot; initiative. The disclosure process involved collaboration between researchers, the PHP Foundation, and government agencies to develop and distribute patches. OpenAI emphasized this as a successful example of the &amp;quot;Defender&amp;#x27;s Window,&amp;quot; where advanced models enable the discovery and mitigation of vulnerabilities before they are exploited by attackers. The effort also included the release of a Codex-based tool to assist operators in checking their systems for potential exposure.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-openais-patch-the-planet-program"&gt;[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coordinated response over 2 months&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>AI Radar — Saturday, October 17, 2026 (1 item)</title>
       <link>https://ai-radar.merimerimeri.com/archive.html#day-2026-10-17</link>
       <guid isPermaLink="false">ai-radar:edition:2026-10-17</guid>
