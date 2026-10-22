@@ -81204,6 +81204,37 @@
       "links": {
         "newsletter": "https://www.latent.space/p/ainews-openais-patch-the-planet-program"
       }
+    },
+    {
+      "id": "917576d6f15d9dae7648",
+      "first_seen_at": "2026-10-22T09:17:25+00:00",
+      "status": "skipped",
+      "title": "Exploit Development, Agentic Vulnerability Discovery, and Fake PoCs",
+      "source_title": "Exploit Development, Agentic Vulnerability Discovery, and Fake PoCs",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "None of the followed people are featured as guests, interviewees, or speakers in this episode.",
+      "published_at": "2026-10-22T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "631df52038e0bf21567c",
+          "kind": "podcast",
+          "source": "Practical AI",
+          "family": "practical ai",
+          "guid": "09810723-2d12-4151-b100-7944f5eaf813",
+          "title": "Exploit Development, Agentic Vulnerability Discovery, and Fake PoCs",
+          "description": "AI is changing cybersecurity, accelerating vulnerability research and exploit development while raising new questions about reliability, risk, and  guardrails. Daniel and Chris talk with Spencer McIntyre, Director of Exploit Development at VulnCheck, about how agents are being used to discover vulnerabilities, why many proof-of-concept exploits (POCs) fail to deliver, and how initial access intelligence helps security teams prioritize real threats. They also explore the limitations of AI-assisted exploitation, the challenges of AI guardrails for security researchers, and what these developments mean for the future of threat intelligence.\n\nFeaturing: \n\nSpencer McIntyre – \nLinkedIn\n\nDaniel Whitenack – \nWebsite\n, \nGitHub\n, \nX\n\nChris Benson – \nWebsite\n, \nLinkedIn\n, \nBluesky\n, \nGitHub\n, \nX\n\nLinks:\n\nVulnCheck\n\nGo Exploit framework\n\nInitial Access Intelligence\n\nSponsors:\n\nHostinger\n: Create your website today. Go to hostinger.com/practical and use practical for 10 percent off now.\n\nResources and Events:\n\nRegister for \nupcoming webinars here\n!\n\nPrior \nWebinars from our partner Prediction Guard\n\nMidwest AI Summit 2026\n\nChris’s new book \nThe Art of Swarming\n will be published soon, written to be the seminal foundational book for the fledgling swarming industry, defining the principles and architecture that enable autonomous agentic UxS swarms with emergent unified embodied intelligence.",
+          "url": "https://share.transistor.fm/s/9a42098b",
+          "published_at": "2026-10-22T09:00:00+00:00",
+          "hosts": [
+            "Chris Benson",
+            "Daniel Whitenack"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/9a42098b"
+      }
     }
   ],
   "editions": [
