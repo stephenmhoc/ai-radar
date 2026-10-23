@@ -82674,9 +82674,16 @@
       "item_ids": [
         "04d9ed66dc2c002e96df"
       ]
+    },
+    {
+      "date": "2026-10-23",
+      "closed_at": "2026-10-23T23:00:00+00:00",
+      "item_ids": [
+        "4a1f59324f42381ba774"
+      ]
     }
   ],
-  "editions_closed_through": "2026-10-22T23:00:00+00:00",
+  "editions_closed_through": "2026-10-23T23:00:00+00:00",
   "days": [
     {
       "date": "2026-06-24",
