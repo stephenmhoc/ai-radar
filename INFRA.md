@@ -11,7 +11,7 @@ repository is public.
 Podcast and newsletter feeds
           |
           v
-Homelab Docker worker -----> OpenRouter Auto Router
+Homelab Docker worker -----> OpenRouter (Claude Haiku 5.5)
           |                         |
           |                    one structured result
           |                 (short + long summaries)
@@ -40,7 +40,7 @@ existing site and RSS feed remain available from Cloudflare; only updates stop.
 | Component | Responsibility | Durable state |
 | --- | --- | --- |
 | Homelab worker | Fetch sources, classify items, request summaries, render static files, test, commit, and push | Git checkout mounted at `/app` |
-| OpenRouter | Select a compatible model through `openrouter/auto` and return one strict structured result per new candidate | None owned by AI Radar |
+| OpenRouter | Route each new candidate to `anthropic/claude-haiku-5.5` and return one strict structured result | None owned by AI Radar |
 | GitHub | Canonical repository, publication history, and handoff to hosting | `main`, especially `data/` and `public/` |
 | Cloudflare Pages | Serve the static item archive, source list, and RSS feed | Deployed copy of `public/` |
 | Ofelia | Run the worker on an explicit Docker-native schedule | Docker labels on the worker |
@@ -126,9 +126,9 @@ days for the existing archive by first-seen time.
 ### Summary contract
 
 New candidates use a strict OpenRouter chat-completions request with bounded
-retries. The configured model is `openrouter/auto`; the request uses a strict
-JSON schema and requires a provider that supports the requested parameters. The
-accepted result contains:
+retries. The configured model is `anthropic/claude-haiku-5.5`; the request uses a
+strict JSON schema, sends no temperature (its providers reject one), and requires
+a provider that supports the requested parameters. The accepted result contains:
 
 - `include`: editorial inclusion decision.
 - `title`: display title.
@@ -136,6 +136,8 @@ accepted result contains:
   by the site. Local validation tolerates up to 82 words (1.5x, rounded down).
 - `long_summary`: four to eight sentences, used by RSS.
 - `reason`: concise inclusion or exclusion rationale.
+- `followed_people`: the followed people the model relies on, checked locally
+  before an inclusion is accepted.
 
 The application validates the exact returned fields, types, sentence counts,
 and size limits locally. A short summary above 82 words is retried with the
@@ -181,9 +183,15 @@ one unpublished item after a policy change, so a narrow correction does not send
 the existing archive back through OpenRouter.
 
 The Cloudflare portion of this architecture remains free static Pages.
-OpenRouter is a separate service: `openrouter/auto` can route to paid models.
-`max_output_tokens` bounds response size and the logs expose routed-model usage,
-but neither setting makes Auto Router free.
+OpenRouter is a separate, paid service: Claude Haiku 5.5 costs about $0.10 per
+million input and $0.50 per million output tokens, roughly $0.0007 per editorial
+decision. `max_output_tokens` bounds response size and the logs expose each
+response's model and token usage. `temperature` is optional and is not
+sent when unset, since some models' providers reject it and required-parameter
+routing would then find no endpoint. Model and prompt changes are compared with
+`scripts/eval_editorial.py` (see `README.md`); it needs the OpenRouter key, so
+run it inside the worker from a scratch copy, never in `/app`, to keep the
+production checkout clean.
 
 The historical archive was migrated without sending old episodes back through
 OpenRouter: prior summaries became `long_summary`, and short versions were

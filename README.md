@@ -50,6 +50,8 @@ days without fetching feeds or calling the model.
 - `rendering.py`: deterministic HTML/RSS rendering and generated-file manifest
 - `radar_common.py`: shared types, text handling, and media identity
 - `scripts/verify.py`: shared offline verification for local work, CI, and the worker
+- `scripts/eval_editorial.py` and `evals/editorial_cases.json`: labeled editorial
+  evals for comparing models and prompt changes (real model requests)
 - `scheduled_cycle.py`: locked pull-to-push production transaction
 - `scheduler_watchdog.py`: Docker health check and missed-schedule Sentry alert
 - `error_reporter.py`: Sentry exception reporting
@@ -94,7 +96,10 @@ industry-defining figures such as Ilya Sutskever and Andrej Karpathy. An item
 qualifies only when one of them is an actual guest, interviewee, central speaker,
 or author. Mentions, third-party analysis, news roundups quoting them, and
 colleagues at the same companies do not qualify; newsletter issues qualify only
-as an interview with, or writing by, a followed person.
+as an interview with, or writing by, a followed person. Interview notes written in
+the third person under a guest-named title ("Sam Altman on ...") count as
+participation; a host narrating someone's life from books or other sources does
+not.
 
 The model must also list the followed people it is relying on, and an inclusion
 is checked locally before publication: at least one listed name must be a
@@ -136,9 +141,43 @@ the local length check accepts up to 82 words. A result above that 1.5x toleranc
 is retried with explicit feedback to shorten it to the 55-word target; the error
 reaches Sentry only if the bounded attempts are exhausted.
 
+`[llm] temperature` is optional. When it is omitted no temperature is sent,
+which some models require: requests demand providers that support every sent
+parameter, so a model whose providers reject `temperature` would otherwise find
+no endpoint.
+
 Cloudflare hosting remains free static Pages. OpenRouter billing is separate:
-`openrouter/auto` can select paid models, so the token cap limits output size but
-does not make model calls free.
+the configured `anthropic/claude-haiku-5.5` is paid (about $0.0007 per editorial
+decision), and the token cap limits output size but does not make calls free.
+Haiku 5.5 replaced `openrouter/auto`, which in practice routed to Gemini 3.1
+Flash Lite and relied on the local followed-people check to catch its
+inclusions of roundups and unfollowed guests; on the editorial evals Haiku 5.5
+judged every case correctly before that check.
+
+### Editorial evals
+
+`evals/editorial_cases.json` labels 48 archive items and 2 synthetic adversarial
+examples (a host-narrated biography and a commentary video, each titled after a
+followed person) for the followed-people rule in five categories: real guests or
+authors, brief clips, third-party analysis, news roundups, and guests who are not
+followed (including colleagues of followed people). `scripts/eval_editorial.py` replays each item's stored
+appearances through the real editorial path with only the model overridden,
+then reports final accuracy, the model's raw accuracy before the local
+followed-people check, people matching, retries, routed models, tokens, and
+latency, and lists every case where runs disagree. Cases decided without a
+model request, such as YouTube Shorts, are left out of the raw score.
+
+```bash
+OPENROUTER_API_KEY=... python3 scripts/eval_editorial.py --repeat 2 \
+  --model anthropic/claude-haiku-5.5 \
+  --model openrouter/auto
+```
+
+Each model run uses the configured temperature unless `--omit-temperature MODEL`
+is given; production configures none. Each pass makes about 43 real requests per
+model (a few cents) and writes nothing to the archive. Run it before changing the model, editorial prompt, or
+decision schema. The case labels are validated offline by the test suite; the
+model runs are not part of `scripts/verify.py`.
 
 ## Hosting and scheduling
 

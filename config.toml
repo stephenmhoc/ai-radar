@@ -5,8 +5,8 @@ user_agent = "ai-radar/0.1"
 [llm]
 base_url = "https://openrouter.ai/api/v1"
 api_key_env = "OPENROUTER_API_KEY"
-model = "openrouter/auto"
-temperature = 0.1
+# No Haiku 5.5 provider accepts temperature, so none is sent.
+model = "anthropic/claude-haiku-5.5"
 max_metadata_chars = 12000
 timeout_seconds = 120
 max_attempts = 4

@@ -61,8 +61,17 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   provider truncated at the output-token cap (`finish_reason` of `length`) is
   the exception: it fails immediately as `LLMTruncationError`, because every
   retry would buy the same truncation.
-- The configured model is `openrouter/auto`, and routing must require providers
-  that support the requested structured-output parameters.
+- The configured model is `anthropic/claude-haiku-5.5` through OpenRouter, chosen
+  over `openrouter/auto` on the editorial evals, and routing must require
+  providers that support the requested structured-output parameters.
+  `[llm] temperature` is optional and omitted from requests when unset; Haiku
+  5.5's providers reject it, so production sends none.
+- Before changing the model, editorial prompt, or decision schema, run
+  `scripts/eval_editorial.py` against the current and proposed configuration
+  and compare final and raw accuracy and the per-case disagreements. It makes
+  real OpenRouter requests over the labeled cases in `evals/editorial_cases.json`
+  (a deliberate, approved exception to replaying archive items) and never writes
+  the archive. Keep those labels honest: add a case for each new failure mode.
 - Validate model output locally even when the provider claims schema support.
 - Do not send the existing archive back through OpenRouter without explicit
   approval. For archive-wide transformations, preserve every prior long summary
@@ -87,7 +96,9 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   figures). An item qualifies only when a followed person is an actual guest,
   interviewee, central speaker, or author; mentions, third-party analysis, and
   their colleagues do not qualify. Newsletter issues qualify only as an
-  interview with, or writing by, a followed person. An inclusion must pass the
+  interview with, or writing by, a followed person. Third-person interview notes
+  under a guest-named title count; host-narrated biographies and commentary on
+  a followed person's remarks elsewhere do not. An inclusion must pass the
   local `followed_participation_rejection` check: the model's `followed_people`
   must name a configured person (by name or alias) who appears, as a whole
   name, in a newsletter's title or byline, or in another medium's title, hosts,

@@ -899,7 +899,10 @@ class SummaryContractTests(unittest.TestCase):
             value = editorial.llm_json(settings, system="system", user="user", schema=editorial.EDITORIAL_RESPONSE_SCHEMA)
         payload = json.loads(urlopen.call_args.args[0].data)
         self.assertEqual(value, structured_value)
-        self.assertEqual(payload["model"], "openrouter/auto")
+        self.assertEqual(payload["model"], "anthropic/claude-haiku-5.5")
+        # Haiku 5.5 providers reject temperature; with require_parameters it must not be sent.
+        self.assertIsNone(settings.temperature)
+        self.assertNotIn("temperature", payload)
         self.assertEqual(payload["max_tokens"], settings.max_output_tokens)
         self.assertEqual(payload["provider"], {"require_parameters": True})
         self.assertEqual(

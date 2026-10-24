@@ -1,0 +1,412 @@
+{
+  "description": "Labeled editorial decisions for the followed-people rule. An id names an item in data/items.json whose stored appearances are replayed through the editorial path; a case with inline appearances is a synthetic adversarial example.",
+  "cases": [
+    {
+      "id": "17cf848671f9d696efea",
+      "expect": "include",
+      "followed_people": [
+        "Sam Altman"
+      ],
+      "category": "guest",
+      "note": "David Senra interview with Sam Altman."
+    },
+    {
+      "id": "d404886e6dc544d24fd4",
+      "expect": "include",
+      "followed_people": [
+        "Greg Brockman"
+      ],
+      "category": "guest",
+      "note": "Stratechery newsletter interview with Greg Brockman."
+    },
+    {
+      "id": "9ca02aebbae30bbf20f8",
+      "expect": "include",
+      "followed_people": [
+        "Thibault Sottiaux"
+      ],
+      "category": "guest",
+      "note": "Pragmatic Engineer newsletter episode with Tibo."
+    },
+    {
+      "id": "c40d6bd6d5bd6c13bbd5",
+      "expect": "include",
+      "followed_people": [
+        "Greg Brockman"
+      ],
+      "category": "guest",
+      "note": "a16z podcast interview with Greg Brockman."
+    },
+    {
+      "id": "5d662c861b07773010ab",
+      "expect": "include",
+      "followed_people": [
+        "Greg Brockman"
+      ],
+      "category": "guest",
+      "note": "Full a16z YouTube interview with Greg Brockman."
+    },
+    {
+      "id": "07b87edbebfbb3846e17",
+      "expect": "include",
+      "followed_people": [
+        "Mark Zuckerberg"
+      ],
+      "category": "guest",
+      "note": "Joanna Stern sit-down with Mark Zuckerberg."
+    },
+    {
+      "id": "e5c1c6d98449718021fc",
+      "expect": "include",
+      "followed_people": [
+        "Sam Altman"
+      ],
+      "category": "guest",
+      "note": "Dan Shipper interviews Sam Altman; title names a product, notes name the guest."
+    },
+    {
+      "id": "e10a5b27356762c67f88",
+      "expect": "include",
+      "followed_people": [
+        "Sam Altman"
+      ],
+      "category": "guest",
+      "note": "YouTube full episode of the Dan Shipper interview with Sam Altman."
+    },
+    {
+      "id": "a1ff52ad6cb8de4b6565",
+      "expect": "include",
+      "followed_people": [
+        "Thibault Sottiaux"
+      ],
+      "category": "guest",
+      "note": "Lenny's Podcast interview with Tibo Sottiaux."
+    },
+    {
+      "id": "422eadca0e6620a75fbc",
+      "expect": "include",
+      "followed_people": [
+        "Ilya Sutskever"
+      ],
+      "category": "guest",
+      "note": "Eye on AI interview with Ilya Sutskever."
+    },
+    {
+      "id": "50b5c6b9441093602985",
+      "expect": "include",
+      "followed_people": [
+        "Alexandr Wang"
+      ],
+      "category": "guest",
+      "note": "David Senra interview with Alexandr Wang; Zuckerberg and Friedman are only mentioned."
+    },
+    {
+      "id": "9484f8ecc6385317fa03",
+      "expect": "include",
+      "followed_people": [
+        "Greg Brockman"
+      ],
+      "category": "guest",
+      "note": "No Priors interview with Greg Brockman."
+    },
+    {
+      "id": "f16e35324a28522b6d8a",
+      "expect": "include",
+      "followed_people": [
+        "Jensen Huang"
+      ],
+      "category": "guest",
+      "note": "BG2 interview with Jensen Huang."
+    },
+    {
+      "id": "e398eb71f41e5eafe3bb",
+      "expect": "include",
+      "followed_people": [
+        "Mark Zuckerberg",
+        "Alexandr Wang"
+      ],
+      "category": "guest",
+      "note": "Cheeky Pint with Zuckerberg and Wang."
+    },
+    {
+      "id": "deb5ac1d5289408021ac",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "clip",
+      "note": "Hashtag-laden Invest Like the Best clip of Sam Altman."
+    },
+    {
+      "id": "4fbdf4239a097cbc779b",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "clip",
+      "note": "Invest Like the Best clip of Sam Altman."
+    },
+    {
+      "id": "78d8e1a08e103a4f142d",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "clip",
+      "note": "Invest Like the Best clip of Sam Altman."
+    },
+    {
+      "id": "577cd23c93aae7b6dae9",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "clip",
+      "note": "Short a16z quote clip of Mark Zuckerberg."
+    },
+    {
+      "id": "6c7664edf94fcca92852",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "clip",
+      "note": "Weekly highlights reel that discusses Dario Amodei's call."
+    },
+    {
+      "id": "75b338ff7e3b04cce505",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "third_party",
+      "note": "Ben Thompson's argument about Zuckerberg's ad business."
+    },
+    {
+      "id": "5089276a63115321c0c5",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "third_party",
+      "note": "Neil Movva on Jensen Huang's strategy."
+    },
+    {
+      "id": "bd44c0b734f50b88684d",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "third_party",
+      "note": "Neil Movva on Jensen Huang's strategy."
+    },
+    {
+      "id": "8c97505cf6b76d24b292",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "third_party",
+      "note": "Gavin Baker on Elon Musk."
+    },
+    {
+      "id": "fcc5a5ab1a9faeb949f6",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "third_party",
+      "note": "Jeremy Stern on his reporting about Zuckerberg; title names Zuckerberg."
+    },
+    {
+      "id": "d341cc8ba17540220a7c",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "third_party",
+      "note": "Interconnects analysis of Zuckerberg and Wang (retracted 2026-10-24)."
+    },
+    {
+      "id": "dd3b69335d4ce06c723d",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "third_party",
+      "note": "Stratechery analysis mentioning Altman, Amodei, and Nadella."
+    },
+    {
+      "id": "5c47e7535593043b8139",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "third_party",
+      "note": "SemiAnalysis report mentioning Altman, Amodei, and Musk."
+    },
+    {
+      "id": "59a3c615caa5993ae0bf",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "third_party",
+      "note": "Pragmatic Engineer keynote write-up that mentions Boris Cherny."
+    },
+    {
+      "id": "f9e8b4716c778f73f1d8",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "third_party",
+      "note": "Bloomberg documentary on Chinese AI that mentions Altman and Amodei."
+    },
+    {
+      "id": "synthetic-narrated-biography",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "third_party",
+      "note": "Host narrates a biography of a followed person, titled after him, with third-person 'Musk says' phrasing.",
+      "appearances": [
+        {
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "https://example.com/senra-musk-biography",
+          "title": "Elon Musk on Building the Impossible",
+          "url": "https://example.com/senra-musk-biography",
+          "published_at": "2026-10-01T12:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ],
+          "description": "Elon Musk has spent his career attempting things experts called impossible. In this episode David reads and discusses Walter Isaacson's biography of Elon Musk. Musk says he learned to work through pain as a child in Pretoria, and he argues that the best part is no part. He explains his algorithm for manufacturing: question every requirement, delete parts, simplify, accelerate, and automate. Isaacson describes how Musk's demon mode shaped SpaceX, Tesla, and xAI, and how he recruits engineers by setting impossible deadlines. Chapters (00:00:00) Childhood in South Africa (00:14:20) The algorithm (00:31:05) Demon mode (00:52:40) Lessons from the book. This episode is based on Elon Musk by Walter Isaacson."
+        }
+      ]
+    },
+    {
+      "id": "synthetic-commentary-video",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "third_party",
+      "note": "Commentator video titled 'Sam Altman on ...' that reacts to his remarks elsewhere.",
+      "appearances": [
+        {
+          "kind": "youtube",
+          "source": "AI Explained Daily",
+          "family": "ai explained daily",
+          "guid": "https://www.youtube.com/watch?v=synthetic01",
+          "title": "Sam Altman on AGI: What He Gets Wrong",
+          "url": "https://www.youtube.com/watch?v=synthetic01",
+          "published_at": "2026-10-01T12:00:00+00:00",
+          "hosts": [],
+          "description": "Sam Altman says AGI will arrive sooner than most people expect and that society will adapt quickly. In this video I break down his recent blog post and conference remarks, explain where I think he is right about compute scaling, and argue he underestimates deployment friction. He claims costs will fall tenfold every year; I look at the actual pricing data from OpenAI, Anthropic, and Google. Chapters: 00:00 What Altman said 04:10 The compute argument 11:30 Where he is wrong 18:45 My predictions. Sources linked below. Subscribe for daily AI analysis."
+        }
+      ]
+    },
+    {
+      "id": "04d9ed66dc2c002e96df",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "roundup",
+      "note": "AINews roundup quoting Greg Brockman (retracted 2026-10-24)."
+    },
+    {
+      "id": "8816c4f01cab68d1a170",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "roundup",
+      "note": "AINews roundup on Muse Wonder mentioning Nat Friedman."
+    },
+    {
+      "id": "cdfa6ab3384e05aad823",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "roundup",
+      "note": "AINews roundup mentioning Altman and Tibo."
+    },
+    {
+      "id": "12af1c910a3c83ed33c0",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "roundup",
+      "note": "AINews roundup mentioning Sam Altman."
+    },
+    {
+      "id": "b6cde88b42d79e9d41a9",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "roundup",
+      "note": "AINews roundup mentioning Amodei, Zuckerberg, and Sutskever."
+    },
+    {
+      "id": "892f78be729d599b594a",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "roundup",
+      "note": "AINews DevDay roundup mentioning Altman and Tibo."
+    },
+    {
+      "id": "12d19fc7953f6e04cc36",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "roundup",
+      "note": "AINews Meta Connect roundup mentioning Zuckerberg and Wang."
+    },
+    {
+      "id": "4edde7f53f957a3fb9e4",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "roundup",
+      "note": "AINews roundup reporting lab statements."
+    },
+    {
+      "id": "5b637d9d4a22953bc8ec",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "unfollowed",
+      "note": "Michael Moritz on his memoir; Musk is only mentioned."
+    },
+    {
+      "id": "4a1f59324f42381ba774",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "unfollowed",
+      "note": "Quotes OpenAI mathematician Jacob Tsimerman (retracted 2026-10-24)."
+    },
+    {
+      "id": "bbb2cbed816016848609",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "unfollowed",
+      "note": "Interview with Modal CEO Erik Bernhardsson."
+    },
+    {
+      "id": "215c95eb8734c76cf483",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "unfollowed",
+      "note": "Interview with Anthropic's Thariq Shihipar, a colleague of Boris Cherny."
+    },
+    {
+      "id": "fa98b5b6f694eede3f11",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "unfollowed",
+      "note": "OpenAI's Ari Weinstein and Nikunj Handa, colleagues of followed people."
+    },
+    {
+      "id": "e5f264e10dc18b2ddaa9",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "unfollowed",
+      "note": "Richard Socher on recursive self-improvement."
+    },
+    {
+      "id": "43d0b0fef3e8af7e8fb0",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "unfollowed",
+      "note": "Runway leadership interview."
+    },
+    {
+      "id": "38a890822034d9078d8b",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "unfollowed",
+      "note": "Airbnb CTO Ahmad Al-Dahle, formerly of Meta."
+    },
+    {
+      "id": "458f5e2eb106b7e49862",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "unfollowed",
+      "note": "Google DeepMind's Pushmeet Kohli, a colleague of Demis Hassabis."
+    },
+    {
+      "id": "063f62c4dbd92dd2b407",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "unfollowed",
+      "note": "Z.ai CEO Jie Tang, a lab CEO who is not followed."
+    },
+    {
+      "id": "2741c81dd575bf2a1834",
+      "expect": "exclude",
+      "followed_people": [],
+      "category": "unfollowed",
+      "note": "Lenny's Podcast with Molly Graham; mentions Boris Cherny."
+    }
+  ]
+}

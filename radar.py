@@ -213,7 +213,7 @@ def load_settings(config_path: pathlib.Path, archive_path: pathlib.Path) -> Sett
             base_url=str(llm.get("base_url", "https://openrouter.ai/api/v1")),
             api_key_env=str(llm.get("api_key_env", "OPENROUTER_API_KEY")),
             model=str(llm.get("model", "openrouter/auto")),
-            temperature=float(llm.get("temperature", 0.1)),
+            temperature=float(llm["temperature"]) if "temperature" in llm else None,
             max_metadata_chars=int(llm.get("max_metadata_chars", 12000)),
             timeout_seconds=int(llm.get("timeout_seconds", 120)),
             max_attempts=int(llm.get("max_attempts", 4)),

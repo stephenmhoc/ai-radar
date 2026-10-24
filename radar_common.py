@@ -44,7 +44,8 @@ class LLMSettings:
     base_url: str
     api_key_env: str
     model: str
-    temperature: float
+    # None omits the parameter, for models whose providers reject it.
+    temperature: float | None
     max_metadata_chars: int
     timeout_seconds: int
     max_attempts: int
