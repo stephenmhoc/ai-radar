@@ -81782,6 +81782,34 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-kimi-31/"
       }
+    },
+    {
+      "id": "33e0c8065fc0712bf446",
+      "first_seen_at": "2026-10-24T10:17:21+00:00",
+      "status": "skipped",
+      "title": "What It Takes to Win as a Founder | Ben Horowitz",
+      "source_title": "What It Takes to Win as a Founder | Ben Horowitz",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "None of the followed people are featured as guests, interviewees, speakers, or authors in this episode.",
+      "published_at": "2026-10-24T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "2c712e3289e726d0492e",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "155547a3-6d30-4b48-a451-deded4179926",
+          "title": "What It Takes to Win as a Founder | Ben Horowitz",
+          "description": "What does it take to build a company when AI is changing the rules this quickly? Ben Horowitz argues that technology may make companies easier to start, but the hardest parts of entrepreneurship, making decisions under uncertainty, building momentum, and managing your own doubts, aren't going away.\n\nSpeedrun's Andrew Chen sits down with Ben to discuss why AI feels different from previous technology shifts, whether billion-dollar companies can be built with tiny teams, and why Ben thinks the application itself may eventually become less important as agents work directly against data.\n\nThey also get into defensibility in AI, what founders should look for in an investor, how venture capital is changing, and why the best entrepreneurs aren't defined by a lack of weaknesses, but by having a strength or insight that's genuinely exceptional. \n\nResources:\n\nFollow Ben Horowitz on X:\nhttps://x.com/bhorowitz\n\nFollow Andrew Chen on X:\nhttps://x.com/andrewchen\n\nLearn more about Speedrun: \nhttps://speedrun.a16z.com/apply\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/what-it-takes-to-win-as-a-founder-ben-horowitz-AjG_7MSY",
+          "published_at": "2026-10-24T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/what-it-takes-to-win-as-a-founder-ben-horowitz-AjG_7MSY"
+      }
     }
   ],
   "editions": [
