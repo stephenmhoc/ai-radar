@@ -31,6 +31,9 @@ VALID_LONG = (
 )
 
 
+GUEST_NOTES = "Sam Altman joins the show to discuss building useful AI agents. " * 3
+
+
 def short_summary_with_words(count: int) -> str:
     return " ".join(["word"] * (count - 1) + ["word."])
 
@@ -586,10 +589,99 @@ class SummaryContractTests(unittest.TestCase):
                 "short_summary": "Model should not retain this.",
                 "long_summary": "Model should not retain this either.",
                 "reason": "Not relevant.",
+                "followed_people": [],
             }
         )
         self.assertEqual(value["short_summary"], "")
         self.assertEqual(value["long_summary"], "")
+
+    def included_response(self, followed_people: list[str]) -> dict[str, object]:
+        return {
+            "include": True,
+            "title": "Title",
+            "short_summary": VALID_SHORT,
+            "long_summary": VALID_LONG,
+            "reason": "Relevant guest.",
+            "followed_people": followed_people,
+        }
+
+    def judge(self, group: list[dict[str, object]], response: dict[str, object]) -> dict[str, object]:
+        settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
+
+        def run_validator(*_args: object, **kwargs: object) -> dict[str, object]:
+            validator = kwargs["validator"]
+            assert callable(validator)
+            return validator(response)
+
+        with mock.patch.object(editorial, "llm_json", side_effect=run_validator):
+            return editorial.summarize_group(settings, group)
+
+    def test_settings_expose_followed_names_and_aliases(self) -> None:
+        settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
+        self.assertIn(("Thibault Sottiaux", "Tibo"), settings.people)
+        self.assertIn(("Sam Altman",), settings.people)
+        self.assertEqual(len(settings.people), len(settings.roster))
+
+    def test_schema_requires_followed_people(self) -> None:
+        self.assertIn("followed_people", editorial.EDITORIAL_RESPONSE_SCHEMA["required"])
+        with self.assertRaisesRegex(radar_common.RadarError, "unexpected fields"):
+            editorial.validate_editorial_response(
+                {key: value for key, value in self.included_response([]).items() if key != "followed_people"}
+            )
+        with self.assertRaisesRegex(radar_common.RadarError, "followed_people"):
+            editorial.validate_editorial_response({**self.included_response([]), "followed_people": "Sam Altman"})
+
+    def test_newsletter_roundup_quoting_a_followed_person_is_excluded(self) -> None:
+        group = [
+            make_appearance(
+                kind="newsletter",
+                title="[AINews] A vulnerability disclosure program finds a critical bug",
+                description="Greg Brockman confirmed the coordinated response in a post. " * 10,
+            )
+        ]
+        result = self.judge(group, self.included_response(["Greg Brockman"]))
+        self.assertEqual(result["status"], "skipped")
+        self.assertEqual((result["short_summary"], result["long_summary"]), ("", ""))
+        self.assertIn("Greg Brockman was not named in the newsletter title or byline", result["reason"])
+
+    def test_newsletter_interview_with_a_followed_person_in_the_title_is_published(self) -> None:
+        group = [
+            make_appearance(
+                kind="newsletter",
+                title="Codex's next era with Tibo",
+                description="An interview about agentic coding and the Codex roadmap. " * 10,
+            )
+        ]
+        result = self.judge(group, self.included_response(["Thibault Sottiaux"]))
+        self.assertEqual(result["status"], "published")
+
+    def test_unfollowed_person_named_by_the_model_is_excluded(self) -> None:
+        group = [
+            make_appearance(
+                kind="newsletter",
+                title="AI Is Getting Good at Math",
+                description="Jacob Tsimerman, an OpenAI mathematician, explains recent results. " * 10,
+            )
+        ]
+        result = self.judge(group, self.included_response(["Jacob Tsimerman"]))
+        self.assertEqual(result["status"], "skipped")
+        self.assertIn("named no followed person", result["reason"])
+
+    def test_inclusion_without_followed_people_is_excluded(self) -> None:
+        result = self.judge([make_appearance(description=GUEST_NOTES)], self.included_response([]))
+        self.assertEqual(result["status"], "skipped")
+        self.assertIn("it named nobody", result["reason"])
+
+    def test_followed_person_must_appear_as_a_whole_name(self) -> None:
+        notes = "The hosts discuss Altmanesque strategy and OpenAI's plans in depth. " * 5
+        result = self.judge([make_appearance(description=notes)], self.included_response(["Sam Altman"]))
+        self.assertEqual(result["status"], "skipped")
+        self.assertIn("publisher title or notes", result["reason"])
+
+    def test_excluded_by_local_check_skips_summary_validation(self) -> None:
+        response = {**self.included_response(["Jacob Tsimerman"]), "long_summary": "Too short."}
+        result = self.judge([make_appearance(description=GUEST_NOTES)], response)
+        self.assertEqual(result["status"], "skipped")
 
     def test_sparse_notes_are_deferred_without_an_llm_call(self) -> None:
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
@@ -625,6 +717,7 @@ class SummaryContractTests(unittest.TestCase):
             "short_summary": VALID_SHORT,
             "long_summary": "Only one sentence is returned despite being long enough for the old check. " * 3,
             "reason": "Relevant.",
+            "followed_people": ["Sam Altman"],
         }
         def run_validator(*_args: object, **kwargs: object) -> dict[str, object]:
             validator = kwargs["validator"]
@@ -633,7 +726,7 @@ class SummaryContractTests(unittest.TestCase):
 
         with mock.patch.object(editorial, "llm_json", side_effect=run_validator):
             with self.assertRaisesRegex(radar_common.RadarError, "local validation"):
-                editorial.summarize_group(settings, [make_appearance()])
+                editorial.summarize_group(settings, [make_appearance(description=GUEST_NOTES)])
 
     def test_locally_invalid_summary_is_retried(self) -> None:
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
@@ -648,6 +741,7 @@ class SummaryContractTests(unittest.TestCase):
             ),
             "long_summary": VALID_LONG,
             "reason": "Relevant guest.",
+            "followed_people": ["Sam Altman"],
         }
         valid_value = {**invalid_value, "short_summary": VALID_SHORT}
         responses = [
@@ -663,7 +757,7 @@ class SummaryContractTests(unittest.TestCase):
             mock.patch.object(editorial.urllib.request, "urlopen", side_effect=responses) as urlopen,
             mock.patch.object(radar.time, "sleep") as sleep,
         ):
-            result = editorial.summarize_group(settings, [make_appearance()])
+            result = editorial.summarize_group(settings, [make_appearance(description=GUEST_NOTES)])
         self.assertEqual(result["status"], "published")
         self.assertEqual(result["short_summary"], VALID_SHORT)
         self.assertEqual(urlopen.call_count, 2)
@@ -682,6 +776,7 @@ class SummaryContractTests(unittest.TestCase):
             ),
             "long_summary": VALID_LONG,
             "reason": "Relevant guest.",
+            "followed_people": ["Sam Altman"],
         }
         responses = [
             FakeHTTPResponse(
@@ -697,7 +792,7 @@ class SummaryContractTests(unittest.TestCase):
             mock.patch.object(radar.time, "sleep") as sleep,
         ):
             with self.assertRaisesRegex(radar_common.RadarError, "local validation"):
-                editorial.summarize_group(settings, [make_appearance()])
+                editorial.summarize_group(settings, [make_appearance(description=GUEST_NOTES)])
         self.assertEqual(urlopen.call_count, 2)
         sleep.assert_called_once_with(settings.llm.retry_backoff_seconds)
 
@@ -710,6 +805,7 @@ class SummaryContractTests(unittest.TestCase):
             "short_summary": short_summary_with_words(83),
             "long_summary": VALID_LONG,
             "reason": "Relevant guest.",
+            "followed_people": ["Sam Altman"],
         }
         valid_value = {**overlong_value, "short_summary": VALID_SHORT}
         responses = [
@@ -725,7 +821,7 @@ class SummaryContractTests(unittest.TestCase):
             mock.patch.object(editorial.urllib.request, "urlopen", side_effect=responses) as urlopen,
             mock.patch.object(radar.time, "sleep"),
         ):
-            result = editorial.summarize_group(settings, [make_appearance()])
+            result = editorial.summarize_group(settings, [make_appearance(description=GUEST_NOTES)])
         self.assertEqual(result["short_summary"], VALID_SHORT)
         retry_payload = json.loads(urlopen.call_args_list[1].args[0].data)
         self.assertEqual(retry_payload["messages"][-2]["role"], "assistant")
@@ -744,9 +840,10 @@ class SummaryContractTests(unittest.TestCase):
             "short_summary": VALID_SHORT,
             "long_summary": VALID_LONG,
             "reason": "Relevant guest.",
+            "followed_people": ["Sam Altman"],
         }
         group = [
-            make_appearance(description="Podcast-specific technical context. " * 5),
+            make_appearance(description="Podcast-specific technical context from Sam Altman. " * 5),
             make_appearance(
                 kind="youtube",
                 guid="video222",
@@ -772,6 +869,8 @@ class SummaryContractTests(unittest.TestCase):
         self.assertIn("actual guest, interviewee, central speaker", llm.call_args.kwargs["user"])
         self.assertIn("mentioned, discussed, analyzed, or reported on", llm.call_args.kwargs["user"])
         self.assertIn("interview with, or writing by, a followed person", llm.call_args.kwargs["user"])
+        self.assertIn("News roundups, digests, and link collections", llm.call_args.kwargs["user"])
+        self.assertIn("followed_people: exact list names", llm.call_args.kwargs["user"])
         self.assertNotIn("AI infrastructure", llm.call_args.kwargs["user"])
         self.assertNotIn("outside the target roster", llm.call_args.kwargs["user"])
         self.assertIn("untrusted data", llm.call_args.kwargs["system"])
@@ -784,6 +883,7 @@ class SummaryContractTests(unittest.TestCase):
             "short_summary": VALID_SHORT,
             "long_summary": VALID_LONG,
             "reason": "Relevant guest.",
+            "followed_people": ["Sam Altman"],
         }
         response = FakeHTTPResponse(
             {
@@ -820,6 +920,7 @@ class SummaryContractTests(unittest.TestCase):
             "short_summary": VALID_SHORT,
             "long_summary": VALID_LONG,
             "reason": "Relevant guest.",
+            "followed_people": ["Sam Altman"],
         }
         responses = [
             FakeHTTPResponse({"choices": [{"message": {"content": '{"include": true, "title": "'}}]}),

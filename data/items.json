@@ -80220,12 +80220,12 @@
     {
       "id": "d341cc8ba17540220a7c",
       "first_seen_at": "2026-10-17T14:17:30+00:00",
-      "status": "published",
+      "status": "skipped",
       "title": "Meta's AI Turnaround: Muse Spark Open and Frontier Model Competition",
       "source_title": "Meta shakes up the frontiers, open and closed",
-      "short_summary": "Nathan Lambert analyzes Meta's release of Muse Spark Open and closed models Muse Wonder, assessing Meta's position among frontier AI labs and discussing the competitive landscape with OpenAI, Anthropic, and others.",
-      "long_summary": "Nathan Lambert examines Meta's recent AI releases, including the open-weight Muse Spark Open model and closed frontier models Muse Wonder and Muse Wonder Full. He discusses how these releases represent Meta's turnaround following Mark Zuckerberg's Personal Superintelligence initiative and analyzes Meta's organizational structure under Alexandr Wang's leadership. Lambert compares Meta's frontier status against OpenAI, Anthropic, Google's Gemini, and xAI, noting Meta is the only American company with both frontier open and closed models. He explores the competitive dynamics, licensing challenges, and the narrowing field of labs capable of sustaining frontier model development amid escalating costs.",
-      "reason": "Includes substantial discussion of Mark Zuckerberg's strategic direction and Alexandr Wang's leadership approach, with explicit references to their vision and organizational decisions. The newsletter analyzes their companies' AI strategy and competitive positioning based on their stated directions and leadership philosophy.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Retracted 2026-10-24 under the followed-people rule. Local check: excluded because Mark Zuckerberg, Alexandr Wang were not named in the newsletter title or byline.",
       "published_at": "2026-10-17T14:06:54+00:00",
       "appearances": [
         {
@@ -81177,12 +81177,12 @@
     {
       "id": "04d9ed66dc2c002e96df",
       "first_seen_at": "2026-10-22T08:17:24+00:00",
-      "status": "published",
+      "status": "skipped",
       "title": "OpenAI and the PHP2Shell Vulnerability Disclosure",
       "source_title": "[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coordinated response over 2 months",
-      "short_summary": "OpenAI co-founder Greg Brockman confirmed a two-month coordinated effort to remediate the PHP2Shell vulnerabilities, which were discovered by researchers using OpenAI's models as part of the \"Patch the Planet\" program.",
-      "long_summary": "OpenAI co-founder Greg Brockman confirmed that his organization led a two-month coordinated remediation effort regarding the PHP2Shell vulnerabilities. These critical security flaws in the PHP engine were identified by researchers using OpenAI's Daybreak cyber models under the \"Patch the Planet\" initiative. The disclosure process involved collaboration between researchers, the PHP Foundation, and government agencies to develop and distribute patches. OpenAI emphasized this as a successful example of the \"Defender's Window,\" where advanced models enable the discovery and mitigation of vulnerabilities before they are exploited by attackers. The effort also included the release of a Codex-based tool to assist operators in checking their systems for potential exposure.",
-      "reason": "The item includes explicit confirmation and commentary from Greg Brockman, an OpenAI co-founder and followed person, regarding the coordinated response to the PHP2Shell vulnerability.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Retracted 2026-10-24 under the followed-people rule. Local check: excluded because Greg Brockman was not named in the newsletter title or byline.",
       "published_at": "2026-10-22T07:42:44+00:00",
       "appearances": [
         {
@@ -81664,12 +81664,12 @@
     {
       "id": "4a1f59324f42381ba774",
       "first_seen_at": "2026-10-23T16:17:21+00:00",
-      "status": "published",
+      "status": "skipped",
       "title": "Latent Space: AI Is Getting Good at Math",
       "source_title": "AI Is Getting Good at Math. Here’s Why.",
-      "short_summary": "OpenAI mathematician Jacob Tsimerman discusses how AI systems can solve complex mathematical problems by exploring paths that human researchers might abandon due to the lack of perceived progress.",
-      "long_summary": "This newsletter explores how AI models are increasingly solving long-standing mathematical problems, such as the unit distance conjecture and Navier-Stokes. The author examines the differences between human and AI problem-solving, noting that humans often abandon research paths that lack early signs of progress. In contrast, AI models can utilize automated verifiers and parallel test-time compute to explore these paths more extensively. OpenAI mathematician Jacob Tsimerman explains that AI has an advantage because it can persist in \"treacherous waters\" without the psychological or career-related costs that overwhelm human mathematicians. By treating failed attempts as negative hints, these systems can systematically navigate complex problem spaces that were previously considered intractable.",
-      "reason": "The item includes direct quotes and insights from Jacob Tsimerman, an OpenAI mathematician, regarding the capabilities of AI in solving complex mathematical problems.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Retracted 2026-10-24 under the followed-people rule. Local check: excluded because the model named no followed person as a guest, speaker, or author (it named Jacob Tsimerman).",
       "published_at": "2026-10-23T15:19:48+00:00",
       "appearances": [
         {
@@ -82749,27 +82749,6 @@
         "9484f8ecc6385317fa03",
         "f16e35324a28522b6d8a"
       ]
-    },
-    {
-      "date": "2026-10-17",
-      "closed_at": "2026-10-17T23:00:00+00:00",
-      "item_ids": [
-        "d341cc8ba17540220a7c"
-      ]
-    },
-    {
-      "date": "2026-10-22",
-      "closed_at": "2026-10-22T23:00:00+00:00",
-      "item_ids": [
-        "04d9ed66dc2c002e96df"
-      ]
-    },
-    {
-      "date": "2026-10-23",
-      "closed_at": "2026-10-23T23:00:00+00:00",
-      "item_ids": [
-        "4a1f59324f42381ba774"
-      ]
     }
   ],
   "editions_closed_through": "2026-10-23T23:00:00+00:00",
@@ -83691,27 +83670,6 @@
       "item_ids": [
         "9484f8ecc6385317fa03",
         "f16e35324a28522b6d8a"
-      ]
-    },
-    {
-      "date": "2026-10-17",
-      "closed_at": "2026-10-18T04:00:00+00:00",
-      "item_ids": [
-        "d341cc8ba17540220a7c"
-      ]
-    },
-    {
-      "date": "2026-10-22",
-      "closed_at": "2026-10-23T04:00:00+00:00",
-      "item_ids": [
-        "04d9ed66dc2c002e96df"
-      ]
-    },
-    {
-      "date": "2026-10-23",
-      "closed_at": "2026-10-24T04:00:00+00:00",
-      "item_ids": [
-        "4a1f59324f42381ba774"
       ]
     }
   ],

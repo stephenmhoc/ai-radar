@@ -164,9 +164,14 @@ create weak summaries or repeated validation failures.
 The editorial decision is gated on the `[[people]]` roster in `config.toml`. An
 item qualifies only when a followed person is an actual guest, interviewee,
 central speaker, or author whose own words or ideas are a substantial share of
-it. Mentions, third-party analysis, and colleagues at the same companies do not
-qualify, and newsletter issues qualify only as an interview with, or writing by,
-a followed person.
+it. Mentions, third-party analysis, news roundups quoting them, and colleagues
+at the same companies do not qualify, and newsletter issues qualify only as an
+interview with, or writing by, a followed person. The structured result names
+the qualifying `followed_people`, and `followed_participation_rejection` checks
+an inclusion locally: a listed name must be a configured person or alias, named
+as a whole word in a newsletter's title or byline, or in another medium's title,
+hosts, or notes. A failure becomes a deterministic skip rather than a retry, so
+it cannot cost repeated model calls or alert every cycle.
 YouTube Shorts are recognized from their canonical URL,
 isolated from cross-medium fuzzy matching, and stored as skipped without an LLM
 call. The editorial prompt also rejects brief promotional, highlight, launch,

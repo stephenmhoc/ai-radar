@@ -67,6 +67,8 @@ class Settings:
     llm: LLMSettings
     edition_timezone: str = "America/New_York"
     edition_hour: int = 19
+    # Each followed person's canonical name first, then aliases, for local grounding checks.
+    people: tuple[tuple[str, ...], ...] = ()
 
 
 

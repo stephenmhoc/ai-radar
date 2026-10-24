@@ -182,7 +182,9 @@ def load_settings(config_path: pathlib.Path, archive_path: pathlib.Path) -> Sett
         )
 
     roster: list[str] = []
+    people: list[tuple[str, ...]] = []
     for person in raw.get("people", []):
+        people.append((str(person["name"]), *(str(alias) for alias in person.get("aliases", []))))
         aliases = ", ".join(str(alias) for alias in person.get("aliases", []))
         known_as = f" (also known as {aliases})" if aliases else ""
         roster.append(f"{person['name']}{known_as} — {person['role']}")
@@ -206,6 +208,7 @@ def load_settings(config_path: pathlib.Path, archive_path: pathlib.Path) -> Sett
         ),
         sources=tuple(sources),
         roster=tuple(roster),
+        people=tuple(people),
         llm=LLMSettings(
             base_url=str(llm.get("base_url", "https://openrouter.ai/api/v1")),
             api_key_env=str(llm.get("api_key_env", "OPENROUTER_API_KEY")),

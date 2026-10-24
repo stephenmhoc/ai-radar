@@ -92,9 +92,16 @@ AI Radar follows a short list of people, configured as `[[people]]` in
 `config.toml`: major lab CEOs, the Muse, Codex, and Claude Code leads, and a few
 industry-defining figures such as Ilya Sutskever and Andrej Karpathy. An item
 qualifies only when one of them is an actual guest, interviewee, central speaker,
-or author. Mentions, third-party analysis, and colleagues at the same companies
-do not qualify; newsletter issues qualify only as an interview with, or writing
-by, a followed person.
+or author. Mentions, third-party analysis, news roundups quoting them, and
+colleagues at the same companies do not qualify; newsletter issues qualify only
+as an interview with, or writing by, a followed person.
+
+The model must also list the followed people it is relying on, and an inclusion
+is checked locally before publication: at least one listed name must be a
+configured person (or alias), named as a whole word in the issue title or byline
+for newsletters, or in the title, hosts, or publisher notes for other media.
+Otherwise the item is stored as skipped with a `Local check:` reason, without a
+retry.
 
 The only configured YouTube source is Stripe's channel, which publishes Stripe
 Sessions talks. YouTube support remains in code so archived YouTube appearances
@@ -121,7 +128,8 @@ Model, provider, and local-validation failures
 are not persisted at all, so a later run can retry them; a missing API key
 therefore fails every summary rather than deferring anything. New editorial decisions use
 one strict structured-output decision shape returning both the one-to-two-sentence
-site summary and four-to-eight-sentence RSS summary. The application validates
+site summary and four-to-eight-sentence RSS summary, plus the qualifying
+`followed_people`. The application validates
 the result locally, caps output tokens, and logs the actual routed model and
 token usage. The prompt still targets at most 55 words for `short_summary`, but
 the local length check accepts up to 82 words. A result above that 1.5x tolerance

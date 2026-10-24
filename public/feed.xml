@@ -6,27 +6,6 @@
     <description>Noteworthy AI conversations and writing, summarized from publisher notes.</description>
     <language>en-us</language>
     <item>
-      <title>AI Radar — Friday, October 23, 2026 (1 item)</title>
-      <link>https://ai-radar.merimerimeri.com/archive.html#day-2026-10-23</link>
-      <guid isPermaLink="false">ai-radar:edition:2026-10-23</guid>
-      <pubDate>Fri, 23 Oct 2026 23:00:00 +0000</pubDate>
-      <description>&lt;h3&gt;&lt;a href="https://latent.space/p/ai-is-getting-good-at-math/"&gt;Latent Space: AI Is Getting Good at Math — Latent Space&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This newsletter explores how AI models are increasingly solving long-standing mathematical problems, such as the unit distance conjecture and Navier-Stokes. The author examines the differences between human and AI problem-solving, noting that humans often abandon research paths that lack early signs of progress. In contrast, AI models can utilize automated verifiers and parallel test-time compute to explore these paths more extensively. OpenAI mathematician Jacob Tsimerman explains that AI has an advantage because it can persist in &amp;quot;treacherous waters&amp;quot; without the psychological or career-related costs that overwhelm human mathematicians. By treating failed attempts as negative hints, these systems can systematically navigate complex problem spaces that were previously considered intractable.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://latent.space/p/ai-is-getting-good-at-math/"&gt;AI Is Getting Good at Math. Here’s Why.&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AI Radar — Thursday, October 22, 2026 (1 item)</title>
-      <link>https://ai-radar.merimerimeri.com/archive.html#day-2026-10-22</link>
-      <guid isPermaLink="false">ai-radar:edition:2026-10-22</guid>
-      <pubDate>Thu, 22 Oct 2026 23:00:00 +0000</pubDate>
-      <description>&lt;h3&gt;&lt;a href="https://www.latent.space/p/ainews-openais-patch-the-planet-program"&gt;OpenAI and the PHP2Shell Vulnerability Disclosure — Latent Space&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;OpenAI co-founder Greg Brockman confirmed that his organization led a two-month coordinated remediation effort regarding the PHP2Shell vulnerabilities. These critical security flaws in the PHP engine were identified by researchers using OpenAI&amp;#x27;s Daybreak cyber models under the &amp;quot;Patch the Planet&amp;quot; initiative. The disclosure process involved collaboration between researchers, the PHP Foundation, and government agencies to develop and distribute patches. OpenAI emphasized this as a successful example of the &amp;quot;Defender&amp;#x27;s Window,&amp;quot; where advanced models enable the discovery and mitigation of vulnerabilities before they are exploited by attackers. The effort also included the release of a Codex-based tool to assist operators in checking their systems for potential exposure.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Newsletter · Latent Space&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.latent.space/p/ainews-openais-patch-the-planet-program"&gt;[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coordinated response over 2 months&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AI Radar — Saturday, October 17, 2026 (1 item)</title>
-      <link>https://ai-radar.merimerimeri.com/archive.html#day-2026-10-17</link>
-      <guid isPermaLink="false">ai-radar:edition:2026-10-17</guid>
-      <pubDate>Sat, 17 Oct 2026 23:00:00 +0000</pubDate>
-      <description>&lt;h3&gt;&lt;a href="https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open"&gt;Meta&amp;#x27;s AI Turnaround: Muse Spark Open and Frontier Model Competition — Interconnects&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Nathan Lambert examines Meta&amp;#x27;s recent AI releases, including the open-weight Muse Spark Open model and closed frontier models Muse Wonder and Muse Wonder Full. He discusses how these releases represent Meta&amp;#x27;s turnaround following Mark Zuckerberg&amp;#x27;s Personal Superintelligence initiative and analyzes Meta&amp;#x27;s organizational structure under Alexandr Wang&amp;#x27;s leadership. Lambert compares Meta&amp;#x27;s frontier status against OpenAI, Anthropic, Google&amp;#x27;s Gemini, and xAI, noting Meta is the only American company with both frontier open and closed models. He explores the competitive dynamics, licensing challenges, and the narrowing field of labs capable of sustaining frontier model development amid escalating costs.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Newsletter · Interconnects&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Issue:&lt;/strong&gt; &lt;a href="https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open"&gt;Meta shakes up the frontiers, open and closed&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>AI Radar — Thursday, October 15, 2026 (2 items)</title>
       <link>https://ai-radar.merimerimeri.com/archive.html#day-2026-10-15</link>
       <guid isPermaLink="false">ai-radar:edition:2026-10-15</guid>

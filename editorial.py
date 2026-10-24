@@ -57,6 +57,10 @@ MAX_LONG_SUMMARY_SENTENCES = 8
 
 
 
+MAX_FOLLOWED_PEOPLE = 10
+
+
+
 EDITORIAL_RESPONSE_SCHEMA: dict[str, Any] = {
     "type": "object",
     "properties": {
@@ -65,8 +69,13 @@ EDITORIAL_RESPONSE_SCHEMA: dict[str, Any] = {
         "short_summary": {"type": "string", "maxLength": MAX_SHORT_SUMMARY_CHARS},
         "long_summary": {"type": "string", "maxLength": MAX_LONG_SUMMARY_CHARS},
         "reason": {"type": "string", "maxLength": 500},
+        "followed_people": {
+            "type": "array",
+            "items": {"type": "string", "maxLength": 100},
+            "maxItems": MAX_FOLLOWED_PEOPLE,
+        },
     },
-    "required": ["include", "title", "short_summary", "long_summary", "reason"],
+    "required": ["include", "title", "short_summary", "long_summary", "reason", "followed_people"],
     "additionalProperties": False,
 }
 
@@ -134,6 +143,18 @@ For newsletters, include only an interview with, or writing by, a followed perso
 For YouTube, reject brief promotional or highlight clips, isolated quotes, launch teasers, and social
 snippets even when they feature a followed person. Be conservative.
 
+These do not qualify, even when a followed person's name appears in the notes:
+- News roundups, digests, and link collections that quote, excerpt, or report a followed person's
+  statements, posts, announcements, or confirmations.
+- A host's or writer's analysis of a followed person's strategy, leadership, company, or products.
+- Interviews with, or quotes from, anyone not on the list, including their colleagues, employees, and
+  co-founders.
+
+Decide in this order. First, name who actually speaks or writes in this item. Second, put in followed_people
+only those of them who appear on the list above, using the list's exact name (the text before any
+parenthesis). Third, set include=true only if followed_people is not empty. Anyone else, however senior or
+well known, must not appear in followed_people.
+
 Appearances:
 {appearances_text}
 
@@ -153,12 +174,18 @@ title: concise factual display title
 short_summary: 1-2 sentences and no more than 55 words, written for the item list
 long_summary: 4-8 sentences with useful detail, written for the RSS feed
 reason: concise inclusion or exclusion reason
+followed_people: exact list names of followed people who are an actual guest, interviewee, central speaker,
+or author of this item; an empty array when there are none
 
 Both summaries must be grounded only in the publisher notes. If include is false,
 return empty strings for both summaries.
 """.strip()
     def validate_response(response: dict[str, Any]) -> dict[str, Any]:
         result = validate_editorial_response(response)
+        if result["include"]:
+            rejection = followed_participation_rejection(settings, group, result["followed_people"])
+            if rejection:
+                result.update(include=False, short_summary="", long_summary="", reason=rejection)
         if result["include"]:
             validate_summary_contract(
                 title=result["title"] or best["title"],
@@ -406,15 +433,23 @@ def validate_editorial_response(value: dict[str, Any]) -> dict[str, Any]:
         raise RadarError("LLM structured response had unexpected fields")
     if not isinstance(value["include"], bool):
         raise RadarError("LLM structured response include was not boolean")
-    for key in expected - {"include"}:
+    for key in expected - {"include", "followed_people"}:
         if not isinstance(value[key], str):
             raise RadarError(f"LLM structured response {key} was not text")
+    followed = value["followed_people"]
+    if (
+        not isinstance(followed, list)
+        or len(followed) > MAX_FOLLOWED_PEOPLE
+        or not all(isinstance(name, str) for name in followed)
+    ):
+        raise RadarError("LLM structured response followed_people was not a short list of names")
     result = {
         "include": value["include"],
         "title": clean_text(value["title"]),
         "short_summary": clean_text(value["short_summary"]),
         "long_summary": clean_text(value["long_summary"]),
         "reason": clean_text(value["reason"]),
+        "followed_people": [clean_text(name) for name in followed if clean_text(name)],
     }
     if len(result["title"]) > 200 or len(result["reason"]) > 500:
         raise RadarError("LLM structured response exceeded local text limits")
@@ -422,6 +457,54 @@ def validate_editorial_response(value: dict[str, Any]) -> dict[str, Any]:
         result["short_summary"] = ""
         result["long_summary"] = ""
     return result
+
+
+
+def _names_in(names: tuple[str, ...], text: str) -> bool:
+    return any(
+        re.search(rf"(?<!\w){re.escape(name.casefold())}(?!\w)", text) for name in names
+    )
+
+
+
+def followed_participation_rejection(
+    settings: Settings,
+    group: list[dict[str, Any]],
+    claimed: list[str],
+) -> str:
+    """Return why an included result fails the followed-people check, or "" when it passes.
+
+    The model must name at least one followed person, by list name or alias, as the
+    item's guest, speaker, or author, and that person must be named where such
+    participation shows: the title or byline of a newsletter issue (an interview or
+    writing by them), or the titles, hosts, and notes of other media. A failure is a
+    deterministic exclusion rather than a retry: the model already judged the item,
+    and a person it cannot ground locally is exactly the error this guards against.
+    """
+    claimed_keys = {name.casefold() for name in claimed}
+    people = [names for names in settings.people if claimed_keys & {name.casefold() for name in names}]
+    if not people:
+        named = ", ".join(claimed) if claimed else "nobody"
+        return (
+            "Local check: excluded because the model named no followed person as a guest, "
+            f"speaker, or author (it named {named})."
+        )
+    newsletter_only = all(value.get("kind") == "newsletter" for value in group)
+    fields: list[str] = []
+    for value in group:
+        fields.append(str(value.get("title") or ""))
+        fields.extend(str(host) for host in value.get("hosts") or [])
+        if not newsletter_only:
+            fields.append(str(value.get("description") or ""))
+    evidence = clean_text(" ".join(fields)).casefold()
+    if any(_names_in(names, evidence) for names in people):
+        return ""
+    where = "newsletter title or byline" if newsletter_only else "publisher title or notes"
+    verb = "was" if len(people) == 1 else "were"
+    return (
+        f"Local check: excluded because {', '.join(names[0] for names in people)} "
+        f"{verb} not named in the {where}."
+    )
 
 
 

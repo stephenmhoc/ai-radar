@@ -37,7 +37,9 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   run, and the scheduled cycle verifies, commits, and pushes that change before
   collection so a fetch or model failure cannot hold back the RSS entry; an item joins the edition containing `max(first_seen_at,
   editions_closed_through)`, so late publications join the next edition. Closed
-  editions are immutable and append-only. RSS has exactly one entry per closed
+  editions are immutable and append-only; the only exception is a
+  user-approved retraction, which removes the item from its edition and day and
+  drops any record left empty. RSS has exactly one entry per closed
   edition.
 - The site uses a separate calendar: site days (`days`, `days_closed_through`)
   close at local midnight through `close_days`, with the same record shape,
@@ -51,7 +53,8 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   up to 82 words locally, and retry anything longer with explicit feedback to
   shorten it to the 55-word target before reporting exhausted attempts.
 - New editorial decisions use one locally validated OpenRouter structured result
-  for `include`, `title`, `short_summary`, `long_summary`, and `reason`.
+  for `include`, `title`, `short_summary`, `long_summary`, `reason`, and
+  `followed_people`.
 - A malformed structured response or locally invalid editorial result is retryable
   within the configured bounded LLM attempt policy; report it only if every
   attempt fails. A response the
@@ -84,7 +87,11 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   figures). An item qualifies only when a followed person is an actual guest,
   interviewee, central speaker, or author; mentions, third-party analysis, and
   their colleagues do not qualify. Newsletter issues qualify only as an
-  interview with, or writing by, a followed person.
+  interview with, or writing by, a followed person. An inclusion must pass the
+  local `followed_participation_rejection` check: the model's `followed_people`
+  must name a configured person (by name or alias) who appears, as a whole
+  name, in a newsletter's title or byline, or in another medium's title, hosts,
+  or notes. A failure is stored as a deterministic skip, not retried.
 - The only configured YouTube source is Stripe's channel, which is where Stripe
   Sessions talks are published. YouTube support (identity, Shorts, outage
   handling) stays in code so archived YouTube appearances keep rendering and
