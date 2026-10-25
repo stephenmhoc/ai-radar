@@ -81840,6 +81840,36 @@
       "links": {
         "podcast": "https://www.cognitiverevolution.ai/ai-am-highlights-clean-neurons-black-october-the-gpu-credit-crunch-and-buying-the-supply-chain/"
       }
+    },
+    {
+      "id": "fb23147a61d8458d8091",
+      "first_seen_at": "2026-10-25T08:17:18+00:00",
+      "status": "skipped",
+      "title": "David Senra interviews Nik Storonsky on Revolut",
+      "source_title": "Competition, Intensity & Building a $115 Billion Global Bank | Nik Storonsky, Revolut",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode's speaker is Nik Storonsky of Revolut, who is not on the followed list. The host is David Senra, also not on the list. No followed person appears as a guest, interviewee, or author.",
+      "published_at": "2026-10-25T08:00:00+00:00",
+      "appearances": [
+        {
+          "id": "58083df149ffe179c00b",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "83a212f4-d028-11f1-a6f0-1790ecd91cbc",
+          "title": "Competition, Intensity & Building a $115 Billion Global Bank | Nik Storonsky, Revolut",
+          "description": "Nik Storonsky is the co-founder and CEO of Revolut, a digital bank valued at $115 billion that is available in 38 countries. A former trader, he started Revolut with a card for spending abroad without bank fees and expanded it into a full-service bank with the goal of becoming number one in 100 countries. Nik explains why founders have an edge over professional CEOs, how he runs Revolut like a machine, and why he funds product bets algorithmically, doubling down on winners and cutting losers. He discusses hiring self-guided people over experienced executives, what Europe's regulatory constraints taught him, why he keeps VCs off his board, starting the Quantum Light fund, buying ads across Europe's airports, and how AI is changing the way Revolut is organized.\n\nShow notes: https://www.davidsenra.com/nik-storonsky\n\nMade possible by\n\nRamp: https://ramp.com\n\nDeel: https://deel.com/senra\n\nAppLovin: https://applovin.com/senra\n\nChapters\n\n(00:00:00) Coming for Jamie Dimon's dinner\n\n(00:02:04) Building the #1 bank in 100 countries\n\n(00:06:12) Why founders beat professional CEOs\n\n(00:08:45) Revolut's biggest mistake\n\n(00:12:47) Why legacy banks can't innovate\n\n(00:17:20) Running a company like a machine\n\n(00:20:28) Funding winners and cutting losers like a trader\n\n(00:23:31) How AI is changing Revolut's team structure\n\n(00:25:23) 50 direct reports and spreading innovation fast\n\n(00:29:59) Hiring self-guided missiles\n\n(00:33:31) Too much money makes founders weaker\n\n(00:37:38) What Europe's constraints taught Revolut\n\n(00:41:08) Why VCs are like football cheerleaders\n\n(00:49:28) Starting a fund to compete with VCs\n\n(00:54:28) From zero marketing to buying Europe's airports\n\n(01:00:21) Funding moonshots like a global tech company\n\n(01:03:58) Building an unstoppable machine\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/nik-storonsky",
+          "published_at": "2026-10-25T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/nik-storonsky"
+      }
     }
   ],
   "editions": [
