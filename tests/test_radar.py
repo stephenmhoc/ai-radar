@@ -155,8 +155,8 @@ class StaticPublisherTests(unittest.TestCase):
         self.assertEqual(stats["editions"], len(editions))
         self.assertEqual(stats["days"], len(days))
         self.assertEqual(delivered | {item["id"] for item in published}, {item["id"] for item in published})
-        self.assertIn('<h2 class="edition-title" id="day-today">Today</h2>', html_text)
-        self.assertEqual(html_text.count('<li class="episode">'), len(shown))
+        self.assertIn('<h2 class="day-label" id="day-today">Today</h2>', html_text)
+        self.assertEqual(html_text.count('<li class="episode story'), len(shown))
         self.assertEqual(html_text.count('<ul class="source-list"'), len(shown))
         self.assertEqual(
             html_text.count('<li class="source-item">'),
@@ -218,7 +218,7 @@ class StaticPublisherTests(unittest.TestCase):
         self.assertIn("Podcast feeds", value)
         self.assertIn("YouTube feeds", value)
         self.assertIn("Newsletter feeds", value)
-        self.assertIn("--forest: #1c2b23", value)
+        self.assertIn("--accent: #1d5bd6", value)
         for source in settings.sources:
             self.assertIn(html.escape(source.name), value)
             self.assertIn(source.feed_url.replace("&", "&amp;"), value)
@@ -1493,7 +1493,7 @@ class DailyEditionTests(unittest.TestCase):
         page = rendering.render_index_html(settings, [evening, morning], archive["days"], archive["days_closed_through"])
         today = page[page.index('id="day-today"'):]
         self.assertIn(morning["title"], today)
-        self.assertEqual(today.count('<li class="episode">'), 2)
+        self.assertEqual(today.count('<li class="episode story'), 2)
         # 12:17 a.m.: the day closes and moves to Recent, holding both items.
         radar.close_days(settings, archive, eastern(2026, 10, 15, 0, 17))
         radar.validate_archive(archive)
@@ -1504,7 +1504,7 @@ class DailyEditionTests(unittest.TestCase):
         self.assertEqual(archive["days_closed_through"], "2026-10-15T04:00:00+00:00")
         page = rendering.render_index_html(settings, [evening, morning], archive["days"], archive["days_closed_through"])
         self.assertIn("Nothing new yet today.", page)
-        self.assertIn('id="day-2026-10-14">Wednesday, October 14, 2026</h2>', page)
+        self.assertIn('id="day-2026-10-14"><time datetime="2026-10-14">Wed Oct 14</time>', page)
 
     def test_homepage_shows_today_then_recent_days(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -1520,14 +1520,17 @@ class DailyEditionTests(unittest.TestCase):
         page = rendering.render_index_html(settings, items, days, "2026-10-10T04:00:00+00:00")
         self.assertLess(page.index(">Today<"), page.index("Fresh headline for today"))
         self.assertLess(page.index("Fresh headline for today"), page.index(">Recent<"))
-        self.assertIn('<h2 class="edition-title" id="day-today">Today</h2>', page)
+        self.assertIn('<h2 class="day-label" id="day-today">Today</h2>', page)
         self.assertNotIn("Since 7 p.m.", page)
-        self.assertIn("A daily RSS edition goes out at 7 p.m. EDT.", page)
-        self.assertEqual(page.count('<section class="edition" '), rendering.RECENT_DAYS)
-        self.assertIn('id="day-2026-10-09">Friday, October 9, 2026</h2>', page)
+        self.assertIn("Daily RSS edition at 7 p.m. EDT", page)
+        self.assertEqual(page.count('aria-labelledby="day-2026-'), rendering.RECENT_DAYS)
+        self.assertIn('id="day-2026-10-09"><time datetime="2026-10-09">Fri Oct 9</time>', page)
         self.assertIn('id="day-2026-10-03"', page)
         self.assertNotIn('id="day-2026-10-02"', page)
-        self.assertEqual(page.count('<li class="episode">'), 1 + rendering.RECENT_DAYS)
+        self.assertEqual(page.count('<li class="episode story'), 1 + rendering.RECENT_DAYS)
+        # Today's items are the new ones, so closed days carry no new marker.
+        self.assertEqual(page.count('<li class="episode story is-new">'), 1)
+        self.assertNotIn("Latest:", page)
 
         self.assertIn('<a href="/archive.html">All past days', page)
 
@@ -1542,7 +1545,72 @@ class DailyEditionTests(unittest.TestCase):
 
         quiet = rendering.render_index_html(settings, list(reversed(old)), days, "2026-10-10T04:00:00+00:00")
         self.assertIn("Nothing new yet today. Recent days are below.", quiet)
-        self.assertEqual(quiet.count('<li class="episode">'), rendering.RECENT_DAYS)
+        self.assertEqual(quiet.count('<li class="episode story'), rendering.RECENT_DAYS)
+        # With Today empty, the latest closed day is what is new.
+        self.assertIn("Latest: <strong>Fri Oct 9</strong> (1 item)", quiet)
+        self.assertIn('<section class="day day-latest" aria-labelledby="day-2026-10-09">', quiet)
+        self.assertEqual(quiet.count('<li class="episode story is-new">'), 1)
+
+    def test_homepage_rows_open_in_place_and_roster_tracks_followed_people(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = self.settings(pathlib.Path(directory))
+        brockman = item_seen_at("brockman", eastern(2026, 10, 8, 10))
+        brockman["title"] = "Greg Brockman on AI-Driven Science"
+        brockman["appearances"].append(
+            make_appearance(kind="youtube", source_name="Test Show — YouTube", guid="vid12345")
+        )
+        cheeky = item_seen_at("cheeky", eastern(2026, 10, 9, 10))
+        cheeky["title"] = "Cheeky Pint: Zuckerberg and Wang on Muse"
+        cheeky["reason"] = "Mark Zuckerberg and Alexandr Wang are the guests."
+        mention = item_seen_at("mention", eastern(2026, 10, 9, 11))
+        mention["title"] = "Write Things Down"
+        mention["reason"] = "Discusses remarks by Jensen Huang."
+        old = item_seen_at("old", eastern(2026, 8, 1, 10))
+        old["title"] = "Sam Altman on agents"
+        days = [
+            {"date": date, "closed_at": radar_common.site_day_closes_at(dt.date.fromisoformat(date), settings).isoformat(), "item_ids": ids}
+            for date, ids in (("2026-08-01", ["old"]), ("2026-10-08", ["brockman"]), ("2026-10-09", ["cheeky", "mention"]))
+        ]
+        items = [mention, cheeky, brockman, old]
+        page = rendering.render_index_html(settings, items, days, "2026-10-10T04:00:00+00:00")
+
+        # One line per item: the headline opens the summary and sources in place,
+        # and each medium tag links straight to that appearance.
+        self.assertIn('<span class="headline"><strong>Greg Brockman</strong> on AI-Driven Science</span>', page)
+        self.assertIn("<details><summary>", page)
+        self.assertEqual(page.count(f'<p class="summary">{VALID_SHORT}</p>'), len(items))
+        self.assertIn('href="https://www.youtube.com/watch?v=vid12345"', page)
+        self.assertIn('title="YouTube · Test Show">VID<', page)
+        self.assertIn('title="Podcast · Test Show">POD<', page)
+        self.assertNotIn("<script", page)
+
+        roster = page[page.index('<aside class="people"'):page.index("</aside>")]
+        names = re.findall(r'<span class="person-name">([^<]+)</span>', roster)
+        # Surnames count only when the stored reason names the person in full;
+        # a reason that merely mentions someone does not.
+        self.assertEqual(names, ["Mark Zuckerberg", "Alexandr Wang", "Greg Brockman"])
+        self.assertEqual(roster.count('<li class="person is-new">'), 2)
+        self.assertIn('<span class="person-age">yesterday</span>', roster)
+        self.assertIn('<span class="person-age">2d ago</span>', roster)
+        self.assertIn('href="/archive.html#day-2026-10-09"', roster)
+        quiet = roster[roster.index('class="quiet"'):]
+        self.assertIn("Jensen Huang", quiet)
+        self.assertIn("Sam Altman", quiet)
+        self.assertEqual(
+            page, rendering.render_index_html(settings, items, days, "2026-10-10T04:00:00+00:00")
+        )
+
+        today = item_seen_at("today", eastern(2026, 10, 10, 9))
+        today["title"] = "Dario Amodei on safety"
+        page = rendering.render_index_html(settings, [today, *items], days, "2026-10-10T04:00:00+00:00")
+        roster = page[page.index('<aside class="people"'):page.index("</aside>")]
+        self.assertIn(
+            '<li class="person is-new"><span class="person-name">Dario Amodei</span>'
+            '<span class="person-age">today</span><a class="person-latest" href="#day-today">',
+            roster,
+        )
+        self.assertEqual(roster.count('<li class="person is-new">'), 1)
+        self.assertIn('<span class="now">1 new item today</span>', page)
 
     def test_close_and_save_periods_writes_only_when_state_changes(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

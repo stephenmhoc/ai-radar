@@ -46,7 +46,12 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   assignment rule, immutability, and pre-collection publication as editions.
   The homepage shows Today (items not in a closed day) and Recent (the last
   `RECENT_DAYS` days), never an endless stream, and Today must not empty at the
-  7 p.m. edition close. `public/archive.html` lists every closed day, newest
+  7 p.m. edition close. It is a one-screen index: one line per item, its short
+  summary and sources inside a native `<details>` disclosure, plus a People
+  roster of followed people heard from within `ROSTER_DAYS`. Roster ages count
+  from `days_closed_through`, never the clock. Roster membership comes from a
+  full name or alias in a headline or publisher title, or a surname there plus
+  the full name in the stored reason; a reason alone never counts. `public/archive.html` lists every closed day, newest
   first with a month index, so past days stay findable without client-side
   script; RSS entries link to their date's archive anchor.
 - A short summary is one or two sentences. Ask for no more than 55 words, accept

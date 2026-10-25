@@ -64,7 +64,8 @@ Important paths:
   YouTube source is Stripe's channel, for Stripe Sessions talks.
 - `data/items.json` is the canonical database-free archive. It records seen,
   skipped, and published items and is committed to Git.
-- `public/index.html` is the generated Today and Recent calendar-day page.
+- `public/index.html` is the generated Today and Recent calendar-day page, with
+  the People roster.
 - `public/archive.html` is the generated list of every closed calendar day,
   newest first, with a month index; RSS entries link to its day anchors.
 - `public/feeds.html` is the generated list of all active feeds, grouped by

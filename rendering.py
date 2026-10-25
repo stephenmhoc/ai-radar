@@ -4,6 +4,7 @@ from __future__ import annotations
 import datetime as dt
 import email.utils
 import html
+import re
 import xml.etree.ElementTree as ET
 from typing import Any
 from zoneinfo import ZoneInfo
@@ -17,6 +18,10 @@ from radar_common import (
 GENERATED_FILES = ("index.html", "archive.html", "feeds.html", "feed.xml", "_headers")
 ARCHIVE_PATH = "/archive.html"
 RECENT_DAYS = 7
+# The homepage roster lists followed people heard from within this many days;
+# everyone else collapses into a single "quiet" line.
+ROSTER_DAYS = 30
+MEDIUM_TAGS = {"podcast": "POD", "youtube": "VID", "newsletter": "TXT"}
 
 
 
@@ -28,6 +33,7 @@ def render_html(
     page_title: str | None = None,
     section_label: str | None = "Latest radar",
     secondary_links: tuple[tuple[str, str], ...] = (("Archive", ARCHIVE_PATH), ("Feeds", "/feeds.html")),
+    wide: bool = False,
 ) -> str:
     body = main_content or render_episode_list(items)
     label = f'<p class="section-label">{html.escape(section_label)}</p>\n    ' if section_label else ""
@@ -37,11 +43,13 @@ def render_html(
         document_title=document_title,
         body=label + body,
         secondary_links=secondary_links,
+        wide=wide,
     )
 
 
 
 def render_episode_list(items: list[dict[str, Any]], *, empty: str = "No items yet.") -> str:
+    """Full entries with visible summaries, for the archive, where browser find must reach them."""
     rows: list[str] = []
     for item in items:
         date = date_label(item.get("published_at"))
@@ -54,8 +62,8 @@ def render_episode_list(items: list[dict[str, Any]], *, empty: str = "No items y
             f'<time datetime="{html.escape(str(item.get("published_at") or ""))}">{html.escape(date)}</time>'
             "</p>"
             f'<h3>{html.escape(str(item["title"]))}</h3>'
-            f"{sources}"
             f'<p class="summary">{summary}</p>'
+            f"{sources}"
             "</article>"
             "</li>"
         )
@@ -76,41 +84,231 @@ def edition_label(day: dt.date) -> str:
 
 
 
+def short_day_label(day: dt.date) -> str:
+    return f"{day:%a} {day:%b} {day.day}"
+
+
+
+def _named(names: tuple[str, ...], text: str) -> bool:
+    folded = text.casefold()
+    return any(re.search(rf"(?<!\w){re.escape(name.casefold())}(?!\w)", folded) for name in names)
+
+
+
+def followed_names(settings: Settings, item: dict[str, Any]) -> list[str]:
+    """Followed people an item features, by canonical name, for the homepage roster.
+
+    A person counts when a headline or publisher title names them in full (or by an
+    alias), or names their surname while the stored editorial reason names them in
+    full. The reason alone is not enough: older reasons also mention people who were
+    only discussed.
+    """
+    titles = " ".join(
+        [str(item.get("title") or "")]
+        + [str(value.get("title") or "") for value in item.get("appearances", []) if isinstance(value, dict)]
+    )
+    reason = str(item.get("reason") or "")
+    return [
+        names[0]
+        for names in settings.people
+        if _named(names, titles) or (_named((names[0].split()[-1],), titles) and _named(names, reason))
+    ]
+
+
+
+def headline_html(settings: Settings, item: dict[str, Any]) -> str:
+    """Escaped headline with the first mention of each followed person in bold."""
+    text = html.escape(str(item["title"]))
+    for names in settings.people:
+        for name in names:
+            pattern = re.compile(rf"(?<![\w>]){re.escape(html.escape(name))}(?!\w)", re.IGNORECASE)
+            text, count = pattern.subn(lambda match: f"<strong>{match.group(0)}</strong>", text, count=1)
+            if count:
+                break
+    return text
+
+
+
+def render_story_rows(
+    settings: Settings,
+    items: list[dict[str, Any]],
+    *,
+    new: bool,
+    empty: str = "No items yet.",
+) -> str:
+    """One line per item on the homepage; the summary and sources open in place."""
+    rows: list[str] = []
+    for item in items:
+        appearances = ordered_appearances(item)
+        summary = escape_public_text(clean_text(str(item.get("short_summary") or "")))
+        tags: list[str] = []
+        for value in appearances:
+            kind = str(value.get("kind") or "")
+            url = public_http_url(value.get("url"))
+            if kind not in MEDIUM_TAGS or url is None:
+                continue
+            label = f"{APPEARANCE_PRESENTATION[kind][0]} · {source_display_name(value)}"
+            tags.append(
+                f'<a class="medium" href="{html.escape(url, quote=True)}" rel="noopener noreferrer" '
+                f'title="{escape_public_text(label)}">{MEDIUM_TAGS[kind]}'
+                f'<span class="visually-hidden"> {html.escape(APPEARANCE_PRESENTATION[kind][0])}</span></a>'
+            )
+        source = escape_public_text(source_display_name(appearances[0])) if appearances else ""
+        new_label = '<span class="visually-hidden">New: </span>' if new else ""
+        rows.append(
+            f'<li class="episode story{" is-new" if new else ""}">'
+            "<details><summary>"
+            '<span class="mark" aria-hidden="true"></span>'
+            f"{new_label}"
+            f'<span class="headline">{headline_html(settings, item)}</span>'
+            "</summary>"
+            f'<div class="story-body"><p class="summary">{summary}</p>{render_source_details(item)}</div>'
+            "</details>"
+            f'<p class="media"><span class="story-source">{source}</span>{"".join(tags)}</p>'
+            "</li>"
+        )
+    if not rows:
+        return f'<p class="day-empty">{html.escape(empty)}</p>'
+    return '<ul class="story-list">' + "".join(rows) + "</ul>"
+
+
+
+def render_index_day(
+    settings: Settings,
+    record: dict[str, Any],
+    items: list[dict[str, Any]],
+    *,
+    new: bool,
+) -> str:
+    day = dt.date.fromisoformat(record["date"])
+    members = set(record["item_ids"])
+    day_items = [item for item in items if str(item["id"]) in members]
+    count = len(day_items)
+    anchor = f"day-{record['date']}"
+    return (
+        f'<section class="day{" day-latest" if new else ""}" aria-labelledby="{anchor}">'
+        f'<h2 class="day-label" id="{anchor}"><time datetime="{record["date"]}">{short_day_label(day)}</time>'
+        f'<span class="day-count">{count} item{"" if count == 1 else "s"}</span></h2>'
+        f"{render_story_rows(settings, day_items, new=new)}"
+        "</section>"
+    )
+
+
+
+def age_label(days: int) -> str:
+    if days <= 0:
+        return "today"
+    if days == 1:
+        return "yesterday"
+    return f"{days}d ago"
+
+
+
+def render_roster(
+    settings: Settings,
+    items: list[dict[str, Any]],
+    days: list[dict[str, Any]],
+    today: dt.date,
+    new_date: dt.date | None,
+) -> str:
+    """Followed people by most recent appearance, measured from the archive's own calendar."""
+    day_of = {item_id: dt.date.fromisoformat(day["date"]) for day in days for item_id in day["item_ids"]}
+    latest: dict[str, tuple[dt.date, dict[str, Any]]] = {}
+    for item in items:
+        when = day_of.get(str(item["id"]), today)
+        for name in followed_names(settings, item):
+            if name not in latest or when > latest[name][0]:
+                latest[name] = (when, item)
+    order = {names[0]: index for index, names in enumerate(settings.people)}
+    heard = sorted(
+        (name for name, (when, _) in latest.items() if (today - when).days <= ROSTER_DAYS),
+        key=lambda name: (-latest[name][0].toordinal(), order[name]),
+    )
+    quiet = [names[0] for names in settings.people if names[0] not in heard]
+    rows: list[str] = []
+    for name in heard:
+        when, item = latest[name]
+        href = "#day-today" if str(item["id"]) not in day_of else f"{ARCHIVE_PATH}#day-{when.isoformat()}"
+        rows.append(
+            f'<li class="person{" is-new" if when == new_date else ""}">'
+            f'<span class="person-name">{html.escape(name)}</span>'
+            f'<span class="person-age">{age_label((today - when).days)}</span>'
+            f'<a class="person-latest" href="{href}">{html.escape(str(item["title"]))}</a>'
+            "</li>"
+        )
+    body = '<ul class="roster">' + "".join(rows) + "</ul>" if rows else ""
+    if quiet:
+        body += (
+            f'<p class="quiet"><strong>Quiet for {ROSTER_DAYS}+ days:</strong> '
+            + html.escape(", ".join(quiet))
+            + "</p>"
+        )
+    return (
+        '<aside class="people" aria-labelledby="people-label">'
+        '<h2 class="panel-label" id="people-label">People <span>last heard</span></h2>'
+        f"{body}</aside>"
+    )
+
+
+
 def render_index_html(
     settings: Settings,
     items: list[dict[str, Any]],
     days: list[dict[str, Any]],
     days_closed_through: str | None,
 ) -> str:
-    """Render today's items (the open calendar day), then the most recent closed days."""
+    """Render a one-screen front page: today's items, the most recent closed days, and the roster."""
     shown = {item_id for day in days for item_id in day["item_ids"]}
     today_items = [item for item in items if str(item["id"]) not in shown]
-    today_note = ""
+    recent = list(reversed(days))[:RECENT_DAYS]
     since = parse_utc_timestamp(days_closed_through)
-    if since is not None:
-        edition_close = edition_closes_at(site_day(since, settings), settings)
-        local_close = edition_close.astimezone(ZoneInfo(settings.edition_timezone))
-        today_note = (
-            f'<p class="edition-note">A daily RSS edition goes out at '
-            f"{hour_label(local_close.hour)} {local_close:%Z}.</p>"
+    # Ages count from the open site day, which only moves when a day closes, so
+    # rebuilding unchanged archive state renders identical output.
+    today = site_day(since, settings) if since is not None else None
+    latest = recent[0] if recent else None
+    new_date: dt.date | None = None
+    if today_items and today is not None:
+        new_date = today
+    elif latest is not None:
+        new_date = dt.date.fromisoformat(latest["date"])
+
+    status: list[str] = []
+    count = len(today_items)
+    if today_items:
+        status.append(f'<span class="now">{count} new item{"" if count == 1 else "s"} today</span>')
+    elif latest is not None:
+        latest_count = len(latest["item_ids"])
+        status.append(
+            f'<span>Latest: <strong>{short_day_label(dt.date.fromisoformat(latest["date"]))}</strong> '
+            f'({latest_count} item{"" if latest_count == 1 else "s"})</span>'
         )
+    if today is not None:
+        local_close = edition_closes_at(today, settings).astimezone(ZoneInfo(settings.edition_timezone))
+        status.append(f"<span>Daily RSS edition at {hour_label(local_close.hour)} {local_close:%Z}</span>")
+
     sections = [
-        '<section class="edition edition-today" aria-labelledby="day-today">'
-        '<h2 class="edition-title" id="day-today">Today</h2>'
-        f"{today_note}"
-        f'{render_episode_list(today_items, empty="Nothing new yet today. Recent days are below.")}'
+        '<section class="day day-today" aria-labelledby="day-today">'
+        '<h2 class="day-label" id="day-today">Today</h2>'
+        f'{render_story_rows(settings, today_items, new=True, empty="Nothing new yet today. Recent days are below.")}'
         "</section>"
     ]
-    recent = list(reversed(days))[:RECENT_DAYS]
     if recent:
         sections.append(
             '<section class="recent" aria-labelledby="recent-label">'
-            '<p class="section-label" id="recent-label">Recent</p>'
-            + "\n".join(render_day_section(day, items) for day in recent)
-            + f'<p class="archive-link"><a href="{ARCHIVE_PATH}">All past days&nbsp;→</a></p>'
+            '<h2 class="visually-hidden" id="recent-label">Recent</h2>'
+            + "".join(
+                render_index_day(settings, day, items, new=not today_items and day is latest)
+                for day in recent
+            )
             + "</section>"
         )
-    return render_html(settings, [], main_content="\n".join(sections), section_label=None)
+    sections.append(f'<p class="archive-link"><a href="{ARCHIVE_PATH}">All past days&nbsp;→</a></p>')
+    roster = render_roster(settings, items, days, today, new_date) if today is not None else ""
+    body = (
+        f'<p class="status">{"".join(status)}</p>'
+        f'<div class="front">{roster}<div class="stories">{"".join(sections)}</div></div>'
+    )
+    return render_html(settings, [], main_content=body, section_label=None, wide=True)
 
 
 
@@ -169,12 +367,539 @@ def render_archive_html(
 
 
 
+STYLE = """
+    :root {
+      color-scheme: light;
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --ink: #14171c;
+      --muted: #5d6672;
+      --rule: #dde1e7;
+      --accent: #1d5bd6;
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      --page: 52rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #0e1115;
+        --surface: #151a20;
+        --ink: #e6e9ee;
+        --muted: #949daa;
+        --rule: #262c35;
+        --accent: #7ea6ff;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: var(--bg);
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      line-height: 1.45;
+    }
+
+    body.wide { --page: 76rem; }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      border-radius: 2px;
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    .bar,
+    main {
+      padding-left: max(1rem, calc((100% - var(--page)) / 2));
+      padding-right: max(1rem, calc((100% - var(--page)) / 2));
+    }
+
+    .bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.25rem 1rem;
+      padding-top: 0.9rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--rule);
+      background: var(--surface);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 780;
+      letter-spacing: -0.01em;
+    }
+
+    h1 a { text-decoration: none; }
+
+    .dek {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .header-links {
+      display: flex;
+      gap: 1rem;
+      margin-left: auto;
+      font-size: 0.82rem;
+    }
+
+    .rss-link {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .secondary-link { color: var(--muted); }
+
+    .secondary-link:hover { color: var(--ink); }
+
+    main {
+      padding-top: 0.25rem;
+      padding-bottom: 4rem;
+    }
+
+    .status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 1.25rem;
+      margin: 0 0 0.25rem;
+      padding: 0.55rem 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .status strong { color: var(--ink); }
+
+    .status .now {
+      color: var(--accent);
+      font-weight: 650;
+    }
+
+    .front {
+      display: grid;
+      gap: 1rem;
+      font-size: 0.875rem;
+    }
+
+    .day {
+      display: grid;
+      grid-template-columns: 6.5rem minmax(0, 1fr);
+      gap: 0 0.75rem;
+      padding: 0.4rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .day-label {
+      margin: 0;
+      padding-top: 0.15rem;
+      color: var(--muted);
+      font: 600 0.75rem/1.4 var(--mono);
+    }
+
+    .day-today .day-label,
+    .day-latest .day-label { color: var(--accent); }
+
+    .day-count {
+      display: block;
+      font-weight: 400;
+    }
+
+    .day-empty {
+      margin: 0;
+      padding: 0.1rem 0;
+      color: var(--muted);
+    }
+
+    .story-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.75rem;
+      align-items: start;
+    }
+
+    .story summary {
+      display: flex;
+      gap: 0.45rem;
+      align-items: baseline;
+      padding: 0.12rem 0;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .story summary::-webkit-details-marker { display: none; }
+
+    .story summary:hover .headline {
+      text-decoration: underline;
+      text-decoration-color: var(--muted);
+    }
+
+    .mark {
+      flex: none;
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 50%;
+      transform: translateY(-0.1rem);
+    }
+
+    .is-new .mark { background: var(--accent); }
+
+    .headline {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    details[open] .headline { white-space: normal; }
+
+    .story-body {
+      max-width: 46rem;
+      padding: 0.1rem 0 0.75rem 0.85rem;
+    }
+
+    .media {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin: 0;
+      padding-top: 0.2rem;
+    }
+
+    .story-source {
+      max-width: 12rem;
+      margin-right: 0.2rem;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .medium {
+      padding: 0.2rem 0.28rem;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      background: var(--surface);
+      color: var(--muted);
+      font: 600 0.62rem/1 var(--mono);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .medium:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .archive-link {
+      margin: 0;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--rule);
+      font-weight: 650;
+    }
+
+    .archive-link a,
+    .edition-note a,
+    .source-title a { color: var(--accent); }
+
+    .panel-label,
+    .section-label {
+      margin: 0 0 0.4rem;
+      color: var(--muted);
+      font-size: 0.7rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .panel-label span {
+      margin-left: 0.4rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .roster {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+      gap: 0 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .person {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0 0.5rem;
+      padding: 0.3rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .person-name {
+      overflow: hidden;
+      font-weight: 650;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .person-age {
+      padding-top: 0.1rem;
+      color: var(--muted);
+      font: 0.72rem var(--mono);
+    }
+
+    .is-new .person-age {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .person-latest {
+      display: none;
+      grid-column: 1 / -1;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .person-latest:hover { text-decoration: underline; }
+
+    .quiet {
+      margin: 0;
+      padding-top: 0.4rem;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    .quiet strong { color: var(--ink); }
+
+    @media (min-width: 64rem) {
+      .front {
+        grid-template-columns: minmax(0, 1fr) 16rem;
+        gap: 2.5rem;
+        align-items: start;
+      }
+      .stories { grid-row: 1; grid-column: 1; }
+      .people { grid-row: 1; grid-column: 2; }
+      .roster { display: block; }
+      .person-latest { display: block; }
+    }
+
+    .summary {
+      max-width: 68ch;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 0.15rem;
+      margin: 0.4rem 0 0;
+      padding: 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+      list-style: none;
+    }
+
+    .source-item {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 0.4rem;
+    }
+
+    .source-name,
+    .source-title { margin: 0; }
+
+    .source-name {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    .source-kind {
+      color: var(--muted);
+      font: 600 0.66rem var(--mono);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .source-title-label {
+      margin-right: 0.3rem;
+      font-weight: 650;
+    }
+
+    .episode-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .episode-list .episode {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .episode-list .episode:last-child { border-bottom: 0; }
+
+    .episode-list .summary { font-size: 0.92rem; }
+
+    .episode-meta {
+      margin: 0 0 0.2rem;
+      color: var(--muted);
+      font: 0.72rem var(--mono);
+    }
+
+    h2, h3 { text-wrap: balance; }
+
+    h3 {
+      margin: 0 0 0.3rem;
+      font-size: 1.02rem;
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .edition-title {
+      margin: 2rem 0 0;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid var(--ink);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .edition-note {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .edition-empty {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    main > .section-label:first-child { margin-top: 1.5rem; }
+
+    .archive-months {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1rem;
+      margin: 0 0 1rem;
+      font-size: 0.85rem;
+      font-weight: 650;
+    }
+
+    .archive-month { margin-top: 2.5rem; }
+
+    .archive-month .section-label { scroll-margin-top: 1rem; }
+
+    .feed-group + .feed-group { margin-top: 2rem; }
+
+    .feed-group-title {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .feed-list {
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--rule);
+      list-style: none;
+    }
+
+    .feed-item {
+      display: grid;
+      grid-template-columns: minmax(10rem, 1fr) auto;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .feed-name {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .feed-links {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 40rem) {
+      .header-links { margin-left: 0; }
+      .day { grid-template-columns: minmax(0, 1fr); }
+      .day-label { padding: 0 0 0.15rem; }
+      .day-count {
+        display: inline;
+        margin-left: 0.4rem;
+      }
+      .story-source { display: none; }
+      .media { padding-top: 0.25rem; }
+      .headline {
+        display: -webkit-box;
+        white-space: normal;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      details[open] .headline { display: block; }
+      .feed-item {
+        display: block;
+        padding-block: 0.8rem;
+      }
+      .feed-links { margin-top: 0.3rem; }
+    }
+"""
+
+
+
 def _render_document(
     settings: Settings,
     *,
     document_title: str,
     body: str,
     secondary_links: tuple[tuple[str, str], ...],
+    wide: bool = False,
 ) -> str:
     secondary = "\n      ".join(
         f'<a class="secondary-link" href="{html.escape(href, quote=True)}">{html.escape(label)}</a>'
@@ -188,326 +913,14 @@ def _render_document(
   <title>{html.escape(document_title)}</title>
   <meta name="description" content="{html.escape(settings.description, quote=True)}">
   <link rel="alternate" type="application/rss+xml" title="{html.escape(settings.title, quote=True)}" href="/feed.xml">
-  <style>
-    :root {{
-      color-scheme: light;
-      --paper: #f4f1e8;
-      --ink: #20231f;
-      --muted: #6b7068;
-      --forest: #1c2b23;
-      --sage: #cdd9c4;
-      --rule: #d5d1c6;
-    }}
-
-    * {{ box-sizing: border-box; }}
-
-    html {{
-      background: var(--paper);
-      font-size: 16px;
-      text-rendering: optimizeLegibility;
-    }}
-
-    body {{
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.5;
-    }}
-
-    a {{
-      color: inherit;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 0.2em;
-    }}
-
-    a:hover {{ text-decoration-thickness: 2px; }}
-
-    a:focus-visible {{
-      border-radius: 0.15rem;
-      outline: 3px solid #9caf88;
-      outline-offset: 4px;
-    }}
-
-    header {{
-      background: var(--forest);
-      color: #f6f3e9;
-      padding: clamp(3.5rem, 9vw, 7rem) max(1.5rem, calc((100vw - 52rem) / 2));
-    }}
-
-    .eyebrow {{
-      margin: 0 0 1rem;
-      color: var(--sage);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }}
-
-    h1 {{
-      max-width: 12ch;
-      margin: 0;
-      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
-      font-size: clamp(3.25rem, 9vw, 6.75rem);
-      font-weight: 500;
-      letter-spacing: -0.055em;
-      line-height: 0.88;
-    }}
-
-    .dek {{
-      max-width: 38rem;
-      margin: 1.75rem 0 0;
-      color: #d9ddd5;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      line-height: 1.65;
-    }}
-
-    .rss-link {{
-      display: inline-block;
-      border: 1px solid #637267;
-      border-radius: 999px;
-      padding: 0.65rem 1rem;
-      color: #f6f3e9;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.035em;
-      text-decoration: none;
-    }}
-
-    .rss-link:hover {{
-      border-color: var(--sage);
-      background: #26392e;
-    }}
-
-    .header-links {{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 1.75rem;
-    }}
-
-    .secondary-link {{
-      color: #b8c0b8;
-      font-size: 0.78rem;
-      font-weight: 650;
-      letter-spacing: 0.035em;
-      text-decoration-color: #637267;
-    }}
-
-    .secondary-link:hover {{ color: #f6f3e9; }}
-
-    main {{
-      width: min(52rem, calc(100% - 3rem));
-      margin: 0 auto;
-      padding: 3.75rem 0 6rem;
-    }}
-
-    .section-label {{
-      margin: 0 0 1.5rem;
-      color: var(--muted);
-      font-size: 0.72rem;
-      font-weight: 750;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }}
-
-    .episode-list {{
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }}
-
-    .episode {{
-      padding: 0 0 2.25rem;
-      border-bottom: 1px solid var(--rule);
-      margin-bottom: 2.25rem;
-    }}
-
-    .episode-content {{ max-width: 46rem; }}
-
-    .episode-meta {{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.4rem 0.65rem;
-      margin: 0 0 0.6rem;
-      color: var(--muted);
-      font-size: 0.75rem;
-      font-weight: 650;
-      letter-spacing: 0.035em;
-      text-transform: uppercase;
-    }}
-
-    .source-list {{
-      display: grid;
-      gap: 0.8rem;
-      margin: 1rem 0 0;
-      padding: 0 0 0 1rem;
-      border-left: 3px solid var(--sage);
-      list-style: none;
-    }}
-
-    .source-name {{
-      margin: 0;
-      color: #363c35;
-      font-size: 0.82rem;
-      font-weight: 750;
-    }}
-
-    .source-kind {{
-      color: #52644a;
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }}
-
-    .source-title {{
-      margin: 0.15rem 0 0;
-      color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.45;
-    }}
-
-    .source-title-label {{
-      margin-right: 0.35rem;
-      font-weight: 700;
-    }}
-
-    .source-title a {{ color: #465b3c; }}
-
-    h2, h3 {{
-      margin: 0;
-      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
-      font-size: clamp(1.3rem, 3vw, 1.62rem);
-      font-weight: 600;
-      letter-spacing: -0.018em;
-      line-height: 1.22;
-    }}
-
-    .summary {{
-      max-width: 68ch;
-      margin: 0.8rem 0 0;
-      color: #444941;
-      font-size: 0.98rem;
-      line-height: 1.72;
-    }}
-
-    .episode:last-child {{
-      margin-bottom: 0;
-      border-bottom: 0;
-    }}
-
-    .feed-group + .feed-group {{ margin-top: 3rem; }}
-
-    .edition + .edition,
-    .edition-today + .recent {{ margin-top: 3.5rem; }}
-
-    .edition-title {{
-      margin: 0 0 1.5rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 2px solid var(--forest);
-      font-size: 1.35rem;
-    }}
-
-    .edition-today .edition-title {{ margin-bottom: 0.5rem; }}
-
-    .edition-note {{
-      margin: 0 0 1.5rem;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }}
-
-    .archive-link {{
-      margin: 2.5rem 0 0;
-      font-weight: 650;
-    }}
-
-    .archive-months {{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 1.25rem;
-      margin: 0 0 3rem;
-      font-size: 0.9rem;
-      font-weight: 650;
-    }}
-
-    .archive-month + .archive-month {{ margin-top: 4rem; }}
-
-    .archive-month .section-label {{ scroll-margin-top: 1rem; }}
-
-    .edition-empty {{
-      margin: 0;
-      color: var(--muted);
-      font-style: italic;
-    }}
-
-    .feed-group-title {{
-      margin: 0 0 1rem;
-      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
-      font-size: 1.35rem;
-      letter-spacing: -0.015em;
-    }}
-
-    .feed-list {{
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      border-top: 1px solid var(--rule);
-    }}
-
-    .feed-item {{
-      display: grid;
-      grid-template-columns: minmax(10rem, 1fr) auto;
-      gap: 1rem;
-      align-items: baseline;
-      padding: 0.9rem 0;
-      border-bottom: 1px solid var(--rule);
-    }}
-
-    .feed-name {{
-      margin: 0;
-      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
-      font-size: 1.02rem;
-      font-weight: 600;
-    }}
-
-    .feed-links {{
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }}
-
-    @media (max-width: 36rem) {{
-      header {{ padding-block: 3.5rem 4rem; }}
-      h1 {{ font-size: clamp(3.4rem, 18vw, 5rem); }}
-      main {{
-        width: min(100% - 2.25rem, 52rem);
-        padding-top: 2.75rem;
-      }}
-      .episode {{
-        margin-bottom: 1.8rem;
-        padding-bottom: 1.8rem;
-      }}
-      .summary {{ font-size: 0.95rem; }}
-      .feed-item {{
-        display: block;
-        padding-block: 1rem;
-      }}
-      .feed-links {{ margin-top: 0.35rem; }}
-    }}
-  </style>
+  <style>{STYLE}  </style>
 </head>
-<body>
-  <header>
-    <p class="eyebrow">Podcasts &amp; newsletters</p>
-    <h1>{html.escape(settings.title)}</h1>
+<body{' class="wide"' if wide else ""}>
+  <header class="bar">
+    <h1><a href="/">{html.escape(settings.title)}</a></h1>
     <p class="dek">{html.escape(settings.description)}</p>
     <nav class="header-links" aria-label="AI Radar links">
-      <a class="rss-link" href="/feed.xml">Follow via RSS&nbsp; ↗</a>
+      <a class="rss-link" href="/feed.xml">RSS</a>
       {secondary}
     </nav>
   </header>
