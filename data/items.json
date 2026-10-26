@@ -82124,6 +82124,36 @@
         "podcast": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/supabase_s_plan_for_a_billion_ai-built_apps",
         "newsletter": "https://latent.space/p/supabase_s_plan_for_a_billion_ai-built_apps/"
       }
+    },
+    {
+      "id": "06c982a46054a6fd5f02",
+      "first_seen_at": "2026-10-26T23:17:34+00:00",
+      "status": "skipped",
+      "title": "Lex Fridman Podcast #503: AI Crisis in Math",
+      "source_title": "#503 – AI Crisis in Math: Navier-Stokes, Riemann Hypothesis & Complexity Theory",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes name three guest mathematicians (Ankur Moitra, Steven Brunton, Alex Kontorovich) and none of them is on the followed list. The notes do not show any followed person speaking or writing in this episode, so it does not qualify.",
+      "published_at": "2026-10-26T22:52:28+00:00",
+      "appearances": [
+        {
+          "id": "67732ce76d04fcf9e1a3",
+          "kind": "podcast",
+          "source": "Lex Fridman Podcast",
+          "family": "lex fridman podcast",
+          "guid": "https://lexfridman.com/?p=7807",
+          "title": "#503 – AI Crisis in Math: Navier-Stokes, Riemann Hypothesis & Complexity Theory",
+          "description": "Ankur Moitra, Steven Brunton and Alex Kontorovich are three mathematicians who can speak to this incredible moment in the history of mathematics, when AI solved some of its hardest problems: Navier-Stokes, the quasi-Riemann hypothesis, the unique games conjecture and hundreds of other problems. Ankur Moitra is a mathematician at MIT (visiting the Institute for Advanced Study in Princeton) working in theoretical computer science, who can speak to the unique games conjecture, complexity theory and the mathematics of how AI learns. Steven Brunton is a mathematician and fluid dynamics expert at UW, who can speak to Navier-Stokes, turbulence and machine learning for fluid dynamics. Alex Kontorovich is a mathematician at Rutgers specializing in number theory, who can speak to the Riemann hypothesis, Lean and machine-checked proofs.\n\nThank you for listening ❤ Check out our sponsors: \nhttps://lexfridman.com/sponsors/ep503-sc\n\nSee below for timestamps, transcript, and to give feedback, submit questions, contact Lex, etc.\n\nTranscript:\n\nhttps://lexfridman.com/math-ai-crisis-transcript\n\nCONTACT LEX:\n\nFeedback\n – give feedback to Lex: \nhttps://lexfridman.com/survey\n\nAMA\n – submit questions, videos or call-in: \nhttps://lexfridman.com/ama\n\nHiring\n – join our team: \nhttps://lexfridman.com/hiring\n\nOther\n – other ways to get in touch: \nhttps://lexfridman.com/contact\n\nEPISODE LINKS:\n\nAnkur’s Website: \nhttps://people.csail.mit.edu/moitra/\n\nAlex’s X: \nhttps://x.com/AlexKontorovich\n\nAlex’s Website: \nhttps://sites.math.rutgers.edu/~alexk/\n\nSteven’s X: \nhttps://x.com/eigensteve\n\nSteven’s YouTube: \nhttps://youtube.com/@Eigensteve\n\nSteven’s Website: \nhttps://eigensteve.com\n\nLean: \nhttps://lean-lang.org/\n\nSPONSORS:\n\nTo support this podcast, check out our sponsors & get discounts:\n\nWispr Flow:\n AI-powered voice dictation app.\n\nGo to \nhttps://wisprflow.ai/lex\n\nFin:\n AI agent for customer service.\n\nGo to \nhttps://fin.ai/lex\n\nLMNT:\n Zero-sugar electrolyte drink mix.\n\nGo to \nhttps://drinkLMNT.com/lex\n\nBlitzy:\n AI agent for large enterprise codebases.\n\nGo to \nhttps://blitzy.com/lex\n\nShopify:\n Sell stuff online.\n\nGo to \nhttps://shopify.com/lex\n\nNetSuite:\n Business management software.\n\nGo to \nhttps://netsuite.ai/lex\n\nPerplexity:\n AI-powered answer engine.\n\nGo to \nhttps://perplexity.ai/\n\nOUTLINE:\n\n(00:00) – Introduction\n\n(01:58) – Sponsors, Comments, and Reflections\n\n(09:53) – Crisis moment in mathematics\n\n(18:10) – Will AI “solve” mathematics?\n\n(34:21) – Can AI create new math?\n\n(1:13:53) – Riemann hypothesis\n\n(1:37:45) – Navier-Stokes\n\n(2:03:42) – How nature computes\n\n(2:12:35) – Unique Games Conjecture and complexity theory\n\n(2:27:28) – How mathematicians think\n\n(2:41:05) – Is math invented or discovered?\n\n(2:47:13) – Can AI solve P vs NP?\n\n(2:57:28) – Why LLMs work so well\n\n(3:11:54) – Problems AI can’t solve yet\n\n(3:16:23) – Grigori Perelman\n\n(3:25:41) – Advice for young people",
+          "url": "https://lexfridman.com/math-ai-crisis/?utm_source=rss&utm_medium=rss&utm_campaign=math-ai-crisis",
+          "published_at": "2026-10-26T22:52:28+00:00",
+          "hosts": [
+            "Lex Fridman"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://lexfridman.com/math-ai-crisis/?utm_source=rss&utm_medium=rss&utm_campaign=math-ai-crisis"
+      }
     }
   ],
   "editions": [
