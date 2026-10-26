@@ -82046,6 +82046,37 @@
       "links": {
         "newsletter": "https://importai.substack.com/p/import-ai-478-math-for-alignment"
       }
+    },
+    {
+      "id": "2bed62f56f382d7fba50",
+      "first_seen_at": "2026-10-26T16:17:19+00:00",
+      "status": "deferred",
+      "title": "⚡ An Eval for AI Scientists That Knows the Answer Key - Ian Quigley, Leash Bio",
+      "source_title": "⚡ An Eval for AI Scientists That Knows the Answer Key - Ian Quigley, Leash Bio",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-10-26T15:00:07+00:00",
+      "appearances": [
+        {
+          "id": "08463ef274ec51e51184",
+          "kind": "podcast",
+          "source": "Latent Space",
+          "family": "latent space",
+          "guid": "youtube:vhPCo-8K78U",
+          "title": "⚡ An Eval for AI Scientists That Knows the Answer Key - Ian Quigley, Leash Bio",
+          "description": "Watch the full show on YouTube: https://www.youtube.com/watch?v=vhPCo-8K78U",
+          "url": "https://www.youtube.com/watch?v=vhPCo-8K78U",
+          "published_at": "2026-10-26T15:00:07+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.youtube.com/watch?v=vhPCo-8K78U"
+      }
     }
   ],
   "editions": [
