@@ -82077,6 +82077,53 @@
       "links": {
         "podcast": "https://www.youtube.com/watch?v=vhPCo-8K78U"
       }
+    },
+    {
+      "id": "af8bce0a7aa17a8d821d",
+      "first_seen_at": "2026-10-26T18:17:26+00:00",
+      "status": "skipped",
+      "title": "Supabase's Plan for a Billion AI-Built Apps",
+      "source_title": "Supabase’s Plan for a Billion AI-Built Apps",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are Supabase co-founders Paul Copplestone and Ant Wilson, who are not on the followed list. Host swyx is a regular host, not a followed person, so no followed person is a guest or author.",
+      "published_at": "2026-10-26T17:53:59+00:00",
+      "appearances": [
+        {
+          "id": "f9834755099af0235099",
+          "kind": "newsletter",
+          "source": "Latent Space — Newsletter",
+          "family": "latent space",
+          "guid": "urn:latent-space:post:pod_ep_01a1794a-94ec-7f36-ab76-412cdc9ed579",
+          "title": "Supabase’s Plan for a Billion AI-Built Apps",
+          "description": "AI agents are creating more software—and that changes what a backend needs to do. Supabase co-founders Paul Copplestone and Ant Wilson join swyx to discuss running long-lived workloads alongside the database, making schemas easier for agents to understand, and designing infrastructure for a world with many more applications.\n\nThe conversation also covers Postgres reliability and scaling, Turso, open source, community-led distribution, and how Supabase uses AI internally. Recorded ahead of Supabase Select 2026.\n\nShow notes\n\nSupabase Compute\n — run workloads alongside the database.\n\nMultigres\n — highly available Postgres infrastructure, in private alpha.\n\nSupabase acquires Turso\n — the scale-out opportunity.\n\nSupabase Select\n — the event discussed in the interview.\n\nChapters\n\n00:00 Six years in the making\n\n00:51 Supabase Compute\n\n02:01 OrioleDB and the Postgres storage engine\n\n03:27 Multigres and Postgres reliability\n\n07:06 Scaling out and Turso\n\n23:10 From prototype to petabyte\n\n25:10 AI and Supabase’s growth\n\n27:40 Agent-driven activation\n\n30:00 Community and crowdfunding\n\n36:00 Open source and enterprise sales\n\n40:50 Will the application builder or database be stickier?\n\n48:10 Durable workflows\n\n50:52 Company priorities\n\n53:24 Code-first infrastructure and declarative schemas\n\n56:30 Will AI-generated software converge?\n\n1:06:01 How Supabase teams use AI\n\n1:09:45 Hiring for a remote-first company",
+          "url": "https://latent.space/p/supabase_s_plan_for_a_billion_ai-built_apps/",
+          "published_at": "2026-10-26T17:53:59+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        },
+        {
+          "id": "0580f1694c33a9001261",
+          "kind": "podcast",
+          "source": "Latent Space",
+          "family": "latent space",
+          "guid": "01a1794a-94ec-7106-9f74-d300c3d89af2",
+          "title": "Supabase’s Plan for a Billion AI-Built Apps",
+          "description": "AI agents are creating more software—and that changes what a backend needs to do. Supabase co-founders Paul Copplestone and Ant Wilson join swyx to discuss running long-lived workloads alongside the database, making schemas easier for agents to underst...",
+          "url": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/supabase_s_plan_for_a_billion_ai-built_apps",
+          "published_at": "2026-10-26T17:53:59+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/supabase_s_plan_for_a_billion_ai-built_apps",
+        "newsletter": "https://latent.space/p/supabase_s_plan_for_a_billion_ai-built_apps/"
+      }
     }
   ],
   "editions": [
