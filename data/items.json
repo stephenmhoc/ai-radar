@@ -82273,6 +82273,36 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/anthropic-s-1-the-cost-of-compute-who-is-paying/"
       }
+    },
+    {
+      "id": "592d444a0fd158d5c80b",
+      "first_seen_at": "2026-10-27T12:17:21+00:00",
+      "status": "skipped",
+      "title": "Cheeky Pint: Scott Kirby on United Airlines, Starlink, and airline economics",
+      "source_title": "The airline CEO putting Starlink on every plane",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Scott Kirby, United Airlines CEO, who is not on the followed list. Hosts John Collison and Ben Thompson are also not followed. Starlink and SpaceX are mentioned as topics, but no followed person speaks or writes in this episode.",
+      "published_at": "2026-10-27T11:45:00+00:00",
+      "appearances": [
+        {
+          "id": "645f01298c653e6179a9",
+          "kind": "podcast",
+          "source": "Cheeky Pint",
+          "family": "cheeky pint",
+          "guid": "1ae28f50-2f1c-4711-abff-4e65c6ec2229",
+          "title": "The airline CEO putting Starlink on every plane",
+          "description": "Scott Kirby, CEO of United Airlines, joins John and Ben Thompson to break down the airline business and United’s contrarian bets shaping commercial aviation. \n\nScott details United’s massive COVID fleet expansion while competitors shrank, why customer surveys are useless for predicting the future, and rolling out SpaceX’s Starlink across the entire fleet. They also cover in-housing seatback software, why low-cost carriers fail, air traffic control bottlenecks, and Scott’s weekend vibe coding projects.\n\nTimestamps\n\n(00:00:00) Introduction\n\n(00:00:26) Buying planes while the world shrank\n\n(00:06:35) Owning the airline tech stack\n\n(00:22:02) Aviation’s biggest bottleneck\n\n(00:26:21) Stripe Economics\n\n(00:26:59) Hidden economics of airline networks\n\n(00:30:19) Starlink\n\n(00:38:28) What Wall Street gets wrong about aviation\n\n(00:43:43) It’s the routes \n\n(00:55:44) Why Spirit failed but Ryanair works\n\n(01:15:38) Kirby’s unusual time management hacks\n\nScott’s reading list: \n\nUnreasonable Hospitality\n – Will Guidara\n\nThe Impossible Factory\n – Josh Dean\n\nFreedom’s Forge\n – Arthur Herman\n\nThe Sleepless Ape\n – David R. Samson\n\nSea of Tranquility\n – Emily St. John Mandel\n\nThe End of Eternity\n – Isaac Asimov\n\nTolkien and the Great War\n – John Garth",
+          "url": "https://share.transistor.fm/s/3391409f",
+          "published_at": "2026-10-27T11:45:00+00:00",
+          "hosts": [
+            "John Collison"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/3391409f"
+      }
     }
   ],
   "editions": [
