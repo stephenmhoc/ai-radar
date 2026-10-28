@@ -82649,6 +82649,67 @@
       "links": {
         "podcast": "https://www.cognitiverevolution.ai/freedom-of-action-america-s-asi-strategy-w-rand-s-joel-predd-ben-boudreaux-matt-chessen/"
       }
+    },
+    {
+      "id": "2d4964c85e3b2472e2cf",
+      "first_seen_at": "2026-10-28T20:17:21+00:00",
+      "status": "skipped",
+      "title": "Relentless: SpaceX has no competition, with Saurav Shroff of Starpath",
+      "source_title": "SpaceX has no competition — Saurav Shroff, Starpath",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes identify Saurav Shroff, founder and CEO of Starpath, as the guest, and none of the followed people are named as speakers or authors. The notes do not support any followed person's participation, so the item is excluded.",
+      "published_at": "2026-10-28T19:06:49+00:00",
+      "appearances": [
+        {
+          "id": "d2ec7bf1c7f480d54e51",
+          "kind": "podcast",
+          "source": "Relentless",
+          "family": "relentless",
+          "guid": "618ede6c-06f0-43bd-bdb0-cddda1aa1a1c",
+          "title": "SpaceX has no competition — Saurav Shroff, Starpath",
+          "description": "Saurav is the Founder and CEO of Starpath — a space solar and AI data satellite startup based in LA.",
+          "url": "https://podcasters.spotify.com/pod/show/ti-morse/episodes/SpaceX-has-no-competition--Saurav-Shroff--Starpath-e3r9jg9",
+          "published_at": "2026-10-28T19:06:49+00:00",
+          "hosts": [
+            "Ti Morse"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://podcasters.spotify.com/pod/show/ti-morse/episodes/SpaceX-has-no-competition--Saurav-Shroff--Starpath-e3r9jg9"
+      }
+    },
+    {
+      "id": "4aece9aaf9d4944983bc",
+      "first_seen_at": "2026-10-28T20:17:23+00:00",
+      "status": "skipped",
+      "title": "Why Agents Love Supabase",
+      "source_title": "Why Agents Love Supabase",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode's guests are Supabase founders Paul Copplestone and Ant Wilson, and the newsletter is written by Latent Space hosts. None of them are on the followed list, so the item does not qualify.",
+      "published_at": "2026-10-28T19:48:05+00:00",
+      "appearances": [
+        {
+          "id": "7e477ae183f9a86babe0",
+          "kind": "newsletter",
+          "source": "Latent Space — Newsletter",
+          "family": "latent space",
+          "guid": "urn:latent-space:post:post_dc42ae8a-0f60-40f4-a056-f11b7f8c3289",
+          "title": "Why Agents Love Supabase",
+          "description": "I first met Paul Copplestone and Ant Wilson in Singapore, shortly after they finished YC as \nthe hottest startup of YC S20\n. Six years later, we finally got them on the podcast! This is their first podcast together, after taking an open-source, fully remote company from zero to a $10 billion valuation. \n\n The title is a question I wanted to understand for myself: \nwhy do agents love Supabase?\n There are plenty of managed databases. Postgres hosting is competitive. Being familiar to a model is useful distribution, but it doesn't explain all the work needed to turn a generated application into something that runs. But when I ran \nmy frontier AEO tracker\n, it was an almost complete sweep of \nfirst choice for app backends\n (and in\n contention for managed db\n) for every frontier model from Astra to Fable to Muse. \n\n At Select, Supabase grouped its announcements into Build, Operate and Scale. \n\n The things that stood out to me were surprisingly practical: start a local backend without Docker, keep the desired database schema in Git, and run compute beside the database. Each removes a piece of work that developers have been doing for years. Agents make that friction harder to ignore. \n\nWatch the full conversation, including my opening commentary →\n\nGive the agent a backend it can read\n\n My favorite developer-tool announcements make me think: of course I want this today. The new alpha runtime for running Supabase locally without Docker is one of those. I use Colima rather than Docker Desktop, and even then, removing another dependency from the path to a working database is welcome. Local setup is a small part of a human developer's week; an agent that repeatedly creates and tests environments encounters it over and over. \n\nDeclarative schemas\n are the bigger idea. The familiar SQL workflow accumulates a history: create the schema, then migrate, migrate, migrate. A declarative representation gives the agent a description of the state you want, in files it can inspect and edit alongside the application. \n\n In the commentary, I compare this to a Terraform moment for the database. Put the desired state in Git and the agent can read it, change it, fork it and work against it as part of the repository. Humans get the same advantage: the backend becomes easier to understand without reconstructing its entire history. \n\n That is the part I like most about the agent-friendly direction. These are improvements I wanted as a developer already. Making them useful to agents gives the team another reason to finish the job. \n\nCompute deserves more than a bullet point\n\n I think \nSupabase Compute\n, now in private alpha, may be undersold. An application needs somewhere to do its work as well as somewhere to store the result. Once you have a database, you still need a place to run the processes that chunk documents, generate embeddings or do other longer-running work. \n\n Paul and Ant discuss running containers close to the database. That closes a gap between getting an application started and operating it: fewer separate services to configure, connect and explain to the agent. Edge functions remain useful, but they don't cover every workload. \n\n The operating side matters too. Logs, checks, connections and context help an agent understand what it is changing. A model that can issue SQL still needs to know what the database contains, how the application uses it, and what happened when something failed. Supabase's \nOperate announcements\n are worth reading alongside the new ways to build. \n\nFrom prototype to petabyte\n\n The founders say Supabase is launching about five million databases a month. They are thinking about what happens if agents push that toward billions of applications. At the same time, existing customers are growing into much larger workloads. Serving more small databases and supporting a customer's increasingly large database are different engineering problems. \n\n That helps explain the breadth of the \nScale announcements\n: OrioleDB, Multigres and the \nTurso acquisition\n. The conversation gets into the work behind the new “prototype to petabyte” positioning, including Postgres reliability and the choices involved in scaling up and scaling out. \n\n One observation from Paul and Ant is particularly interesting for anyone building developer tools: as AI-driven usage grew, they say activation and conversion improved. Their explanation is that an agent can carry a user from signup to a working setup in one flow. The person doesn't have to figure out every configuration step before seeing the application work. \n\n We also talk about the memes and community that helped Supabase grow, open-source adoption and enterprise sales, and whether agents will converge on the same application patterns. But I wanted this episode to capture the founders' chemistry as well. It is a chance to hear Paul and Ant think through the product together—and to see how much work sits behind a backend that an agent can make look easy. \n\nShow notes\n\nSupabase Compute\n — run workloads alongside the database. \n\nMultigres\n — the team’s approach to highly available Postgres, currently in private alpha. \n\nSupabase acquires Turso\n — the database architecture behind its scale-out ambitions. \n\nSupabase Select\n — the event discussed in this conversation. \n\nChapters\n\n0:00\n Welcome and why agents love Supabase\n\n5:23\n Paul Copplestone and Ant Wilson\n\n6:39\n Compute beside the database\n\n8:05\n OrioleDB and Multigres\n\n12:50\n Scaling up, scaling out, and Turso\n\n17:53\n Developer marketing and memes\n\n23:15\n The launch and the migration\n\n31:03\n Vectors, growth, and AI recommendations\n\n41:43\n Product-led sales and enterprise growth\n\n49:38\n Live migrations and analytics\n\n58:43\n Agent-ready local development\n\n1:06:43\n Community and company workflows",
+          "url": "https://latent.space/p/supabase/",
+          "published_at": "2026-10-28T19:48:05+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://latent.space/p/supabase/"
+      }
     }
   ],
   "editions": [
