@@ -82710,6 +82710,36 @@
       "links": {
         "newsletter": "https://latent.space/p/supabase/"
       }
+    },
+    {
+      "id": "9ca9f11018007e828304",
+      "first_seen_at": "2026-10-28T21:17:22+00:00",
+      "status": "skipped",
+      "title": "AI & I: Can You Use AI To Make Good Art? With Fred Graver",
+      "source_title": "Can You Use AI To Make Good Art? — With Fred Graver",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are Fred Graver (not a followed person) and host Natalia Quintero; Dan Shipper is a regular host but not a guest here, and no followed person appears as a guest, speaker, or author.",
+      "published_at": "2026-10-28T20:23:44+00:00",
+      "appearances": [
+        {
+          "id": "07f49655d3ab52c6f365",
+          "kind": "podcast",
+          "source": "AI & I",
+          "family": "ai & i",
+          "guid": "flightcast:01M5ZMA6CQA7GRSPWFZ1E7JB59",
+          "title": "Can You Use AI To Make Good Art? — With Fred Graver",
+          "description": "Subscribe to Every (free for 14 days): https://every.to/youtube-every-offer\nCan AI create good art? \nFred Graver thinks the answer depends on you. The Emmy Award–winning writer, producer, and founder of AI Writer’s Studio says AI can help with many parts of the creative process—but it can’t give you something to say. Without your own point of view, AI will only make your work more average.\nOn this week’s episode of The Every Podcast, Natalia Quintero sits down with Graver. They discuss why every writer should have a ‘who I am as a writer’ document, the cast of AI collaborators he’s built into his own writers’ room, and the human quirks that make characters endearing—the part he insists AI can’t supply.\nGet Fred’s Skill: https://every.to/context-window/every-model-has-a-six-month-shelf-life-now\nLinks to resources mentioned in the episode: \n• Follow Every: https://x.com/every \n• Follow Natalia Quintero: https://x.com/NataliaZarina \n• Follow Fred Graver: https://x.com/fredgraver\n• AI Writers Studio: https://aiwritersstudio.substack.com/\n• Compound Writing plugin: https://every.to/guides/compound-writing \n• Compound Engineering plugin: https://every.to/guides/compound-engineering\n• Thesis conference: https://every.to/thesis-2027\n• Follow Katie Parrott: https://x.com/kplikethebird \n• Follow Kieran Klaassen: https://x.com/kieranklaassen\n• Follow Dan Shipper: https://x.com/danshipper\nTimestamps:\n0:00 Introduction \n1:37 Fred's path from National Lampoon and Letterman to Twitter and Microsoft \n9:39 The \"I want in\" instinct behind every career pivot \n15:11 How Best Week Ever and Metallica taught Fred to build with the audience \n18:53 Using AI as a virtual writers' room, not a ghostwriter \n24:07 Codifying industry expertise and studio culture into an AI core \n28:36 The three phases of making entertainment with AI \n33:37 Why you should brain-dump your idea before opening AI\n46:47 Fred's thesis: Success is knowing what the audience wants before it does \n52:12 Fred's day-to-day workflow across Claude, ChatGPT, and NotebookLM",
+          "url": "https://feeds.transistor.fm/how-do-you-use-chatgpt",
+          "published_at": "2026-10-28T20:23:44+00:00",
+          "hosts": [
+            "Dan Shipper"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.transistor.fm/how-do-you-use-chatgpt"
+      }
     }
   ],
   "editions": [
