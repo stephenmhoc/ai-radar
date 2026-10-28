@@ -82619,6 +82619,36 @@
       "links": {
         "newsletter": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers"
       }
+    },
+    {
+      "id": "64ce1282f317b8c09039",
+      "first_seen_at": "2026-10-28T19:17:23+00:00",
+      "status": "skipped",
+      "title": "Freedom of Action: America's ASI Strategy, with RAND's Joel Predd, Ben Boudreaux & Matt Chessen",
+      "source_title": "Freedom of Action: America's ASI Strategy, w/ RAND's Joel Predd, Ben Boudreaux & Matt Chessen",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guests are RAND researchers Joel Predd, Ben Boudreaux, and Matt Chessen, none of whom are on the followed list. The host, Nathan Labenz, is not on the list either, so no followed person speaks or writes in this episode.",
+      "published_at": "2026-10-28T18:57:47+00:00",
+      "appearances": [
+        {
+          "id": "d8418e31f813afe2d6a0",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "0bc5f5de-d2fd-11f1-bb59-1b33e9832d12",
+          "title": "Freedom of Action: America's ASI Strategy, w/ RAND's Joel Predd, Ben Boudreaux & Matt Chessen",
+          "description": "Joel Predd, Ben Boudreaux, and Matt Chessen of RAND's Center for the Geopolitics of AGI join Nathan to discuss their framework for maintaining freedom of action on the path to superintelligence. Analyzing seven strategic archetypes—including dominance, deterrence, co-development, and moratoriums—they argue that deep technological and geopolitical uncertainty makes defaulting to any single strategy dangerous. To avoid foreclosing critical options, their proposed approach calls for investing in long-lead capabilities like model verification, containment, agency evaluations, and an adaptable security architecture. At stake are decisive economic and military advantage, stable competition with rivals like China, and humanity's survival with agency.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/freedom-of-action-america-s-asi-strategy-w-rand-s-joel-predd-ben-boudreaux-matt-chessen/\n\nSponsors:\n\nLovable: Lovable is the software creation platform that brings your ideas to life with enterprise-grade infrastructure and flexible AI coding agents. Start building your next project today at https://lovable.comVisit fruitopia.ai to explore more than 400 fruits, and more than 8000 varieties, from all around the world. \n\nClaude: Claude is the AI collaborator built for problem solvers, extending your thinking across coding, modeling, and strategic workflows. Get started and discover Claude Pro at https://claude.ai/tcr\n\nOutSystems: OutSystems is the leading agentic systems platform that enables enterprises to engineer, orchestrate, and govern AI applications on a single unified platform. Learn more and see how it works at https://outsystems.com/tcr\n\nAthena: Athena matches you with a dedicated, top 1% executive assistant to handle your inbox, calendar, and daily workflows so you can save an average of 15 hours a week. Get matched with your EA today at https://athena.com/cognitive\n\nParallel: Parallel provides enterprise-grade web search APIs for AI agents, offering the optimal balance of quality, speed, and cost. Get started for free at https://parallel.ai/tcr\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(05:21) Sponsor: Lovable\n\n(07:05) Taking superintelligence seriously\n\n(12:54) Seven strategy archetypes (Part 1)\n\n(19:18) Sponsors: Claude | OutSystems\n\n(22:34) Seven strategy archetypes (Part 2)\n\n(31:37) Decisive strategic advantage (Part 1)\n\n(38:13) Sponsors: Athena | Parallel\n\n(41:05) Decisive strategic advantage (Part 2)\n\n(46:57) Lessons from nuclear history\n\n(01:00:50) Building the security architecture\n\n(01:09:33) Costs and decision criteria\n\n(01:18:42) Deterrence and international signaling\n\n(01:28:00) Preserving human agency\n\n(01:34:22) Setting AI red lines\n\n(01:41:04) Key indicators to track\n\n(01:46:35) Episode Outro\n\n(01:48:52) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing",
+          "url": "https://www.cognitiverevolution.ai/freedom-of-action-america-s-asi-strategy-w-rand-s-joel-predd-ben-boudreaux-matt-chessen/",
+          "published_at": "2026-10-28T18:57:47+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/freedom-of-action-america-s-asi-strategy-w-rand-s-joel-predd-ben-boudreaux-matt-chessen/"
+      }
     }
   ],
   "editions": [
