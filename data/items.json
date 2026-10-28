@@ -82589,6 +82589,36 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/meta-earnings-muse-and-the-frontier-musebook/"
       }
+    },
+    {
+      "id": "c3a2db1adb02655004ae",
+      "first_seen_at": "2026-10-28T13:17:19+00:00",
+      "status": "deferred",
+      "title": "Artificial Analysis v5 and the benchmarker's dilemma",
+      "source_title": "Artificial Analysis v5 and the benchmarker's dilemma",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-10-28T12:58:39+00:00",
+      "appearances": [
+        {
+          "id": "488e9a767c0c8dbba0e5",
+          "kind": "newsletter",
+          "source": "Interconnects",
+          "family": "interconnects",
+          "guid": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
+          "title": "Artificial Analysis v5 and the benchmarker's dilemma",
+          "description": "Housekeeping: I’m on the road so the voiceover will be late.\n\nHill-climbing is easy, knowing what to hill-climb is hard. Making scores go up is \nexpensive\n, but we have a much clearer playbook for it than we do for creating meaningful benchmarks at the true frontier of AI today.\n\nIndependent evaluation of language models is under-appreciated in how hard of a …\n\n Read more",
+          "url": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
+          "published_at": "2026-10-28T12:58:39+00:00",
+          "hosts": [
+            "Nathan Lambert"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers"
+      }
     }
   ],
   "editions": [
