@@ -82982,6 +82982,36 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/the-startups-rebuilding-american-industry-the-ad50-ZBbH0YCR"
       }
+    },
+    {
+      "id": "eccb1cd063351cfd480f",
+      "first_seen_at": "2026-10-29T17:17:21+00:00",
+      "status": "skipped",
+      "title": "What I learned about power from LBJ and Robert Moses",
+      "source_title": "What I learned about power from LBJ and Robert Moses",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a video essay by host Dwarkesh Patel, with Max Farrens. Its notes mention an interview with Robert Caro, who is not on the followed list. No followed person speaks or writes in this item.",
+      "published_at": "2026-10-29T16:48:39+00:00",
+      "appearances": [
+        {
+          "id": "26c0da742fd4905243bd",
+          "kind": "podcast",
+          "source": "Dwarkesh Podcast",
+          "family": "dwarkesh podcast",
+          "guid": "substack:post:222663001",
+          "title": "What I learned about power from LBJ and Robert Moses",
+          "description": "I recently got to interview Robert Caro, who is my favorite author of all time. \n\nThis gave me the excuse to reread his biographies of Lyndon Johnson and Robert Moses, and to compile my prep notes into this video essay.\n\nThese guys pulled off some truly incredible schemes.\n\nThanks to Max Farrens, who paired with me in writing the script for this video essay.\n\nIf you just want to read the essay: \nhttps://www.dwarkesh.com/p/lessons-in-power\n\nThis is a public episode. If you would like to discuss this with other subscribers or get access to bonus episodes, visit \nwww.dwarkesh.com",
+          "url": "https://www.dwarkesh.com/p/lessons-in-power",
+          "published_at": "2026-10-29T16:48:39+00:00",
+          "hosts": [
+            "Dwarkesh Patel"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.dwarkesh.com/p/lessons-in-power"
+      }
     }
   ],
   "editions": [
