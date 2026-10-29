@@ -82802,6 +82802,37 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-gemini-4-carbon/"
       }
+    },
+    {
+      "id": "7a6d2ef9985cc9597a8a",
+      "first_seen_at": "2026-10-29T09:17:20+00:00",
+      "status": "skipped",
+      "title": "Practical AI: Abundant Intelligence at the Midwest AI Summit",
+      "source_title": "Abundant Intelligence at the Midwest AI Summit",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Speakers are Heidi Porter, Kevin Solorio, Chris Shinkle, and Andrew Dunlap, plus host Daniel Whitenack; none are on the followed list.",
+      "published_at": "2026-10-29T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "148b6ab3e2dfc6a20b6f",
+          "kind": "podcast",
+          "source": "Practical AI",
+          "family": "practical ai",
+          "guid": "3fe2ac26-f639-47fe-b6a5-235cd8c644cd",
+          "title": "Abundant Intelligence at the Midwest AI Summit",
+          "description": "In this special episode, we bring you highlights from three talks at the Midwest AI Summit. Heidi Porter explores how to build reliable AI-augmented workflows using the right tools, evaluations, and guardrails. Kevin Solorio shares why building AI \nwith\n frontline workers, not just for them, is key to earning trust and driving adoption, emphasizing collaboration and continuous feedback. And Chris Shinkle and Andrew Dunlap of SEP discuss how software teams can find the right level of AI autonomy based on their goals, constraints, and verification needs, sharing lessons from teams using AI to build software more effectively.\n\nFeaturing: \n\nHeidi Porter – \nLinkedIn\n\nKevin Solorio – \nLinkedIn\n\nChris Shinkle – \nLinkedIn\n\nAndrew Dunlap – \nLinkedIn\n\nDaniel Whitenack – \nWebsite\n, \nGitHub\n, \nX\n\nLinks:\n\nMoyer Group AI\n\nSEP\n\nFocused\n\nSponsors:\n\nHostinger\n: Create your website today. Go to hostinger.com/practical and use practical for 10 percent off now.\n\nResources and Events:\n\nRegister for \nupcoming webinars here\n!\n\nPrior \nWebinars from our partner Prediction Guard\n\nMidwest AI Summit 2026\n\nChris’s new book \nThe Art of Swarming\n will be published soon, written to be the seminal foundational book for the fledgling swarming industry, defining the principles and architecture that enable autonomous agentic UxS swarms with emergent unified embodied intelligence.",
+          "url": "https://share.transistor.fm/s/37a0c3e9",
+          "published_at": "2026-10-29T09:00:00+00:00",
+          "hosts": [
+            "Chris Benson",
+            "Daniel Whitenack"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/37a0c3e9"
+      }
     }
   ],
   "editions": [
