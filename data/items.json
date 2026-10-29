@@ -82894,6 +82894,36 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/an-interview-with-palantir-cto-shyam-sankar-about-the-ai-religious-war/"
       }
+    },
+    {
+      "id": "b49943a9431cc1604549",
+      "first_seen_at": "2026-10-29T12:17:23+00:00",
+      "status": "published",
+      "title": "Cheeky Pint: Sam Altman on Model Vulnerabilities, Agent Swarms, and Compute",
+      "source_title": "Why Sam Altman is against a single superintelligence",
+      "short_summary": "OpenAI CEO Sam Altman joins John Collison on Cheeky Pint to discuss AI-discovered PHP vulnerabilities, test-time compute and agent swarms, and sandboxing superhuman models. The conversation also covers robotics, gigawatt data centers, and personal agents.",
+      "long_summary": "In this Cheeky Pint episode, OpenAI CEO Sam Altman joins host John Collison for a wide-ranging conversation. The publisher notes say they discuss how models uncovered critical PHP vulnerabilities. Altman also shares his view that sandboxing superhuman models is an unsolved safety dilemma. The episode covers how test-time compute enables large agent swarms and how OpenAI's internal experiments tackled complex math problems such as Navier-Stokes. According to the notes, Altman addresses how robotics could scale future gigawatt data centers. He also argues that businesses must adapt as personal agents replace traditional web forms and mobile apps. Chapter topics include revenue per gigawatt and token pricing.",
+      "reason": "Sam Altman is the guest, and the notes state he joins the host and shares his views throughout the episode, so his own words and ideas make up a substantial share of the item.",
+      "published_at": "2026-10-29T11:45:00+00:00",
+      "appearances": [
+        {
+          "id": "36fcc38198be409181b4",
+          "kind": "podcast",
+          "source": "Cheeky Pint",
+          "family": "cheeky pint",
+          "guid": "5718424a-1e68-416e-8698-dfe691bd98ac",
+          "title": "Why Sam Altman is against a single superintelligence",
+          "description": "Sam Altman, CEO of OpenAI, joins John to break down how models uncovered critical PHP vulnerabilities, why test-time compute unlocks massive agent swarms, and OpenAI's internal experiments proving complex math problems like Navier-Stokes. He also shares why sandboxing superhuman models is an unsolved safety dilemma, how robotics will scale future gigawatt data centers, and why businesses must adapt as personal agents replace traditional web forms and mobile apps.\n\nTimestamps\n\n(00:00:00) Introduction\n\n(00:00:12) PHP week\n\n(00:02:37) Internet early days\n\n(00:07:33) Cyber Blue\n\n(00:08:54) Sandboxing\n\n(00:15:47) Math\n\n(00:23:12) Agent swarms\n\n(00:24:48) Stripe Atlas\n\n(00:25:17) Compute\n\n(00:37:53) Revenue per gigawatt\n\n(00:49:27) Token pricing is fake",
+          "url": "https://share.transistor.fm/s/92f18066",
+          "published_at": "2026-10-29T11:45:00+00:00",
+          "hosts": [
+            "John Collison"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/92f18066"
+      }
     }
   ],
   "editions": [
