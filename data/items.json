@@ -83132,6 +83132,96 @@
       "links": {
         "podcast": "https://www.nytimes.com/2026/10/30/podcasts/hardfork-anthropic-ipo.html"
       }
+    },
+    {
+      "id": "39ea49268148d8bd15b3",
+      "first_seen_at": "2026-10-30T17:17:20+00:00",
+      "status": "skipped",
+      "title": "Anthropic drops coding interview; Pragmatic Engineer Pulse roundup",
+      "source_title": "The Pulse: Anthropic kills the coding interview",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a newsletter digest by Gergely Orosz covering multiple stories. The Anthropic item is a report on a blog post by Felix Rieseberg, who is not on the followed list, and no followed person is an interviewee or author. Reporting on Anthropic's hiring practices does not qualify.",
+      "published_at": "2026-10-30T16:37:51+00:00",
+      "appearances": [
+        {
+          "id": "a4496b595e06404e3f87",
+          "kind": "newsletter",
+          "source": "The Pragmatic Engineer",
+          "family": "the pragmatic engineer",
+          "guid": "https://newsletter.pragmaticengineer.com/p/the-pulse-anthropic-kills-the-coding",
+          "title": "The Pulse: Anthropic kills the coding interview",
+          "description": "The Pulse is a series covering events, insights, and trends within Big Tech and startups.\n\nToday, we cover:\n\nAnthropic kills its coding interview. \nA team at the leading frontier AI company gets zero signal from DSA interviews and so has removed it from the engineering recruitment process. The rest of the company, and other AI-native startups, could follow.\n\nDetails on incident.io’s AI spend and ROI.\n The resiliency startup has slashed the amount it spends on AI; down from $4,500 per dev, per month, in August, to $1,600 now.\n\nAmazon formally incorporates AI usage into SDE and SDM expectations. \nAI has been placed at the heart of software engineering after the company found a correlation between AI usage and productivity. Also, software development engineers (SDEs) and managers (SDMs) must be close to customers.\n\nMicrosoft issues new exit offers to engineers. \nThe tech giant has offered 60,000 employees the opportunity to quit by the end of the year. But the exit package is not particularly tempting, and so the number of people who take it will surely be in the thousands, not tens of thousands.\n\nSecurity incidents continue. \nSince last week, incidents have continued to be reported, and that may not change for the foreseeable future.\n\n1. Anthropic kills its coding interview\n\nA hiring manager at Anthropic who has led Claude Cowork and Claude Desktop, revealed that they have stopped asking coding questions to candidates for software engineering jobs. From Felix Rieseberg’s \nblog\n post (emphasis mine):\n\n Read more",
+          "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-anthropic-kills-the-coding",
+          "published_at": "2026-10-30T16:37:51+00:00",
+          "hosts": [
+            "Gergely Orosz"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-anthropic-kills-the-coding"
+      }
+    },
+    {
+      "id": "f006751722f4d307c566",
+      "first_seen_at": "2026-10-30T17:17:21+00:00",
+      "status": "skipped",
+      "title": "Robert Caro – The master biographer reflects at 91",
+      "source_title": "Robert Caro – The master biographer reflects at 91",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Excluded: the Dwarkesh Podcast episode features Robert Caro as the interviewee, and none of the followed people speak or write in this item. The host is Dwarkesh Patel, who is not on the followed list.",
+      "published_at": "2026-10-30T16:56:02+00:00",
+      "appearances": [
+        {
+          "id": "253ecc20ca96e4350935",
+          "kind": "podcast",
+          "source": "Dwarkesh Podcast",
+          "family": "dwarkesh podcast",
+          "guid": "substack:post:222791845",
+          "title": "Robert Caro – The master biographer reflects at 91",
+          "description": "The Robert Caro interview.\n\nWatch on \nYouTube\n; read the \ntranscript\n.\n\nSponsors\n\n* \nAntithesis\n lets you run thorough simulation tests on every PR your coding agents ship. That’s because Antithesis is FAST. On a recent project, it packed fifteen hours of simulation into each fifteen-minute run: every change could be tested in thousands of hostile worlds before being merged. Every minute your software spends in Antithesis is one of the unluckiest hours it will ever experience. Learn more at \nantithesis.com/dwarkesh\n\n* \nWorkOS\n’s Airlock is a judgment layer that sits between your agents and your most important tools. When an agent makes a request, Airlock evaluates it against your company’s policies and decides whether to allow it, block it, or escalate it to a human. If it allows it, Airlock takes action on behalf of the agent, which means your agents never see your API keys or other credentials. Airlock is in early access. If you’re interested, go to \nworkos.com/airlock\n\n* \nJane Street\n’s mystery ASIC puzzle is over, and they’ve published a blog post that reveals the chip’s purpose. You can read it here:\n blog.janestreet.com/asic-puzzle-results/\n. More importantly, there’s another challenge live now! For this one, you have to design a protocol-emulator ASIC that can be used to test chips outside of a live system. Jane Street will pay to fabricate their favorite submissions. The competition is open until January 18th. Get started at \njanestreet.com/dwarkesh\n\nTimestamps\n\n(00:00:00) – How Caro gets people to talk\n\n(00:05:03) – Does America need a little more Moses today?\n\n(00:12:42) – Moses the young idealist\n\n(00:17:57) – Watching Moses lose power\n\n(00:24:01) – Did Moses realize he was changing?\n\n(00:27:53) – Building during the Great Depression\n\n(00:32:51) – The threats and promises of Lyndon Johnson\n\n(00:36:08) – Could Kennedy have passed Johnson’s laws?\n\n(00:41:00) – Getting a book down to one sentence\n\n(00:46:21) – All the material that never made it into the books\n\n(00:52:59) – Loneliness\n\nThis is a public episode. If you would like to discuss this with other subscribers or get access to bonus episodes, visit \nwww.dwarkesh.com",
+          "url": "https://www.dwarkesh.com/p/robert-caro",
+          "published_at": "2026-10-30T16:56:02+00:00",
+          "hosts": [
+            "Dwarkesh Patel"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.dwarkesh.com/p/robert-caro"
+      }
+    },
+    {
+      "id": "5ef87bf103f7d4278100",
+      "first_seen_at": "2026-10-30T17:17:23+00:00",
+      "status": "skipped",
+      "title": "Stratechery 2026.44: At Long Last…",
+      "source_title": "2026.44: At Long Last…",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a weekly Stratechery overview newsletter of links and editorial notes by Ben Thompson, Andrew Sharp, and others. It mentions Anthropic, Meta, Zuckerberg, and Musk only as subjects of analysis or linked content, and contains no interview with or writing by a followed person.",
+      "published_at": "2026-10-30T17:00:00+00:00",
+      "appearances": [
+        {
+          "id": "1147724ea4bf5acb3c78",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20650",
+          "title": "2026.44: At Long Last…",
+          "description": "(Photo by Carmen Mandato/Getty Images)\n\nWelcome back to This Week in Stratechery!\n\nAs a reminder, each week, every Friday, we’re sending out this overview of content in the Stratechery bundle; \nhighlighted links are free for everyone\n. Additionally, you have complete control over what we send to you. If you don’t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in \nyour delivery settings\n.\n\nOn that note, here were a few of our favorites this week.\n\nFinally, Some Anthropic Numbers.\n Monday morning brought us Anthropic’s S-1, and not a moment too soon. After four years of arguments about the economics at frontier labs, we now have some real numbers to sink our teeth into, and \nBen did just that with his Update on Tuesday\n. Come for that analysis, and then head over to \nthis week’s Sharp Tech\n where we talked in depth about what Anthropic is telling investors, questions that remain unanswered, plus why the SEC forced Anthropic to help us understand \nMeta’s Muse bet\n.\n—\nAndrew Sharp\n\nThe End of the Internet as We Know It (and I Feel Fine)\n. Arriving on the heels of a handful of ominous cybersecurity incidents and with continued upheaval guaranteed, \nMonday’s Article made two distinct predictions\n. First, the pressure applied by AI will eventually (or imminently?) rupture the global internet that we’ve come to know for the past 25 years. But second, as society moves to more localized solutions and products, that may in fact be a welcome development for all of us who have come to accept degraded experiences throughout our technological lives. As an avid group chatter who’s more or less abandoned public social media, I can certainly get behind the second take! \n—\nAS\n\nAutocracies Then and Now.\n On Sharp China this week, we began with \nan extended look at the climate of fear across the Chinese bureaucracy\n as Xi Jinping continues an anti-corruption crackdown that was absolutely necessary but may be going further than Xi’s earlier proponents ever expected. Then, we turn to a glorious mess surrounding Mao Zedong and international soccer star Kylian Mbappé. On both that episode and \nin this week’s Sharp Text\n, I make the point that connipitions like this one, anchored in a bizarre debate over Mao’s governing history, are evidence that rumors of a Chinese century have been greatly exaggerated. \n—\nAS\n\nPresented by\n\nWhen I write about tech companies, I am often writing about businesses that depend on \nStripe\n, because Stripe provides the foundation for Internet-native companies — including Stratechery.\n\nConsider Substack: building Stratechery was complicated and involved gluing together disparate pieces; Substack made it easy by delivering an integrated offering. One piece that was the same, however, was Stripe: Substack creators are also Stripe customers, as are creators on many other platforms.\n\nZoom out and the pattern repeats. Fintechs can build entire business models around \ncard\n programs without ever having to build the issuing and processing infrastructure underneath it.\n\nAI companies can \ncharge\n for what customers actually use, which is particularly important when usage also drives costs, without having to build the systems to track and bill for it themselves.\n\nNo business succeeds because of Stripe. Stripe doesn’t answer the hard questions about what to build or whether anyone will actually use it. But it does make more things practical to try.\n\nStratechery Articles and Updates\n\nThe End of the Internet\n— The old Internet, where anyone could host a server is over, but it’s just the final blow in an ending that has been coming for years. The future, though, is brighter than it appears.\n\nAnthropic S-1, The Cost of Compute, Who Is Paying?\n— Anthropic’s IPO is finally here; the core business is very profitable, but competition may eat all of the profits, even as investors are set up for endless dilution.\n\nMeta Earnings, Muse and the Frontier, Musebook\n— Meta’s earnings come in the context of Zuckerberg delivering on his promise; if investors believe in Muse they must support Meta’s spending on compute.\n\nAn Interview with Palantir CTO Shyam Sankar About the AI Religious War\n— An interview with Palantir CTO Shyam Sankar about AI diffusion and safety, forward-deployed engineer, and what the battle in tech is actually about.\n\nSharp Text by Andrew Sharp\n\nKylian Mbappés Little Red Card\n — \nSurveying the biggest scandal in China this week, and another reminder that the CCP cannot get out its own way.\n\nDithering with Ben Thompson and Daring Fireball’s John Gruber\n\nThe End of the Internet\n\nTouchscreen MacBook Pros\n\nAsianometry with Jon Yu\n\nHow Linux (and Windows) Ate UNIX\n\nSilicon Valley Walks the Jagged Edge\n\nSharp China with Andrew Sharp and Sinocism’s Bill Bishop\n\nFive Questions on the Fifth Plenum; Mbappé Hysteria and a Chinese Own Goal; The STAR 50 AI Bubble Has Burst\n\nGreatest of All Talk\n\nThe Opening Week in Review, Nuggets Darkness and Eastern Conference Angst, A True Catastrophe for OKC\n\nSharp Tech with Andrew Sharp and Ben Thompson\n\nAnthropic Opens the Kimono, Bubble Questions and Frontier Costs, Q&A on Meta, Starlink, Brewers\n\nThis week’s Stratechery video is on \nDo You Trust Apple?\n.",
+          "url": "https://stratechery.com/2026/at-long-last/",
+          "published_at": "2026-10-30T17:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/at-long-last/"
+      }
     }
   ],
   "editions": [
