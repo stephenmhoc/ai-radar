@@ -83373,6 +83373,37 @@
       "links": {
         "newsletter": "https://latent.space/p/arca/"
       }
+    },
+    {
+      "id": "28a79f116eea5c9884ce",
+      "first_seen_at": "2026-10-31T18:17:19+00:00",
+      "status": "skipped",
+      "title": "Latent Space: Using Agents for Long-Horizon Financial Work with Aman Singh of Arca",
+      "source_title": "Using Agents for Long-Horizon Financial Work — Aman Singh, Arca",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are Aman Singh of Arca and host Richard MacManus; neither is on the followed list, and the notes mention no followed person as a guest or speaker.",
+      "published_at": "2026-10-31T16:00:00+00:00",
+      "appearances": [
+        {
+          "id": "4a0391e0d655658715e7",
+          "kind": "podcast",
+          "source": "Latent Space",
+          "family": "latent space",
+          "guid": "01a18ea6-94fa-7850-937b-c5c57b469b6a",
+          "title": "Using Agents for Long-Horizon Financial Work — Aman Singh, Arca",
+          "description": "Arca head of AI Aman Singh joins Latent Space head of editorial Richard MacManus at AI Engineer New York, to discuss how Arca is building an AI-native wealth management firm. Singh explains Arca's architecture, which includes a custom harness and persi...",
+          "url": "https://latent.space/p/arca",
+          "published_at": "2026-10-31T16:00:00+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://latent.space/p/arca"
+      }
     }
   ],
   "editions": [
