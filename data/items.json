@@ -83342,6 +83342,37 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/can-ai-fix-professional-networking-inside-cosign-Qm0xoOue"
       }
+    },
+    {
+      "id": "317ae4fd4eed755f1f30",
+      "first_seen_at": "2026-10-31T16:17:19+00:00",
+      "status": "skipped",
+      "title": "Latent Space: Agents Prompt People — Using Agents for Long-Horizon Financial Work",
+      "source_title": "Agents Prompt People: Using Agents for Long-Horizon Financial Work",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The interview guest is Aman Singh, lead AI Engineer at Arca, who is not on the followed list. Hosts Alessio Fanelli and Swyx are not followed people either. No followed person speaks or writes in this item, and mentions of model providers Anthropic and OpenAI do not qualify.",
+      "published_at": "2026-10-31T16:05:00+00:00",
+      "appearances": [
+        {
+          "id": "3ca092b3b73fb5c9bf20",
+          "kind": "newsletter",
+          "source": "Latent Space — Newsletter",
+          "family": "latent space",
+          "guid": "urn:latent-space:post:post_5b764e38-11dc-428b-b25b-2b9b740ebb8b",
+          "title": "Agents Prompt People: Using Agents for Long-Horizon Financial Work",
+          "description": "At \nAI Engineer New York\n this month, we sat down with \nAman Singh\n, the lead AI Engineer at \nArca\n, an “AI-native” company providing wealth management services. \n\n We discovered that while \nagents do most of the background work\n in the firm, there are \nguardrails\n in place to ensure that human advisors are making the final decisions. The goal is for AI to guide the process; or as Singh nicely put it, \n“agents prompt people more than people prompt agents.”\n\n Arca recently raised $48.5 Million in a round led by General Catalyst, with participation from Index Ventures and Venrock. \n\n One of the features of using AI in financial services, explained Singh, is that it’s typically \nlong-horizon work\n — although not long-running. In his AIE presentation, Singh noted that \nagent tasks at Arca can take up to ten days.\n “It's very stop-start, there's many actors in between, many decision points, many handoffs,” he said. \n\n For this reason, Arca has developed an \ninternal memory system\n. \n\n “So we have this \npersistence for every client\n,” Singh said in our podcast discussion. “What has happened so far? What are we tracking for next? What needs to happen immediately in the next couple of days [and] what are we tracking for the long term? Which individual is responsible for which action? \nAll of this is being tracked by our memory systems\n that our agents contribute to.” \n\n Arca uses models from frontier labs like Anthropic and OpenAI, with Claude its primary model provider. The company has \nbuilt its own harness\n, which automatically selects the best model to use for a particular task, based on the company’s internal benchmarks. \n\n Owning the harness, rather than using a managed agent harness, also means that \nArca has the flexibility to change model providers if it needs to.\n\n Safety is obviously key for financial services. Singh noted that although agents do much of the work, \nan agent’s role is limited to analysis and proposing solutions.\n Trading and any other money movement is handled by a human advisor. \n\n“All of our safety restrictions are fully deterministic,”\n he said. “And they take the decision making off the agent's hands.” \n\n In other words, there are certain tools and tasks the agent can execute by itself — but \nnot ones that involve risk to the client.\n Arca also runs verification checks on known AI security issues, such as prompt injections. \n\n Arca’s agent isn’t itself sandboxed, but \nit does use sandboxes for computation.\n Singh explained they’ve gone even further, with extra security measures for handling sensitive data. \n\n “We've built systems to make it safe for code inside of that sandbox to access our data,” he said. “So we have this thing which translates the code it [the agent] wrote into a strict format that we expect, throw away the code, and \nyou install guardrails on that format before it reaches your back end.\n So we allow the agents to use code to query our data, which means that they can aggregate it, they can munge it, they can work with it as they see fit to produce [things] like a financial plan.” \n\n Another interesting process Arca has implemented is using feedback from human advisors, along with traces from the agents, to improve the harness. A \n“meta-agent”\n is used to analyze all this data and suggest changes to the harness. \n\nPodcast timestamps\n\n00:00\n — Introducing Arca’s AI-native wealth management firm \n\n01:40\n — How AI supports human financial advisors \n\n02:40\n — Choosing models with internal benchmarks \n\n04:01\n — Building a custom harness and routing tasks \n\n05:25\n — Handling a $100,000 tax bill: Agents and human approvals \n\n07:20\n — Agent memory across long-running tasks \n\n09:22\n — Safety guardrails and prompt injection defenses \n\n11:02\n — Compliance and auditability by default \n\n12:14\n — “Agents prompt people more than people prompt agents” \n\n13:46\n — Why Arca owns its agent infrastructure \n\n15:05\n — AI-native firms versus firms using AI tools \n\n16:09\n — Sandboxes and financial plan verification \n\n18:40\n — Decision models and checking financial facts \n\n19:51\n — Why trade execution stays with human experts \n\n20:32\n — Turning staff feedback into evals and improvements \n\n22:22\n — Turning operational knowledge into agent context \n\n23:41\n — Client examples: Hidden fees and proactive service \n\nWatch Aman’s AIE presentation",
+          "url": "https://latent.space/p/arca/",
+          "published_at": "2026-10-31T16:05:00+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://latent.space/p/arca/"
+      }
     }
   ],
   "editions": [
