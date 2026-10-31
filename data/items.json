@@ -83283,6 +83283,65 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-google-admits-ai-mode-hurts-search-revenue-15-500b-drop-worst-since-2004-ipo-ai-bear-market-c/"
       }
+    },
+    {
+      "id": "14f768e70b91b12de6b6",
+      "first_seen_at": "2026-10-31T10:17:18+00:00",
+      "status": "deferred",
+      "title": "⚡ Building ChatGPT for Finance — Joseph Kim, OpenAI's Head of Financial Services",
+      "source_title": "⚡ Building ChatGPT for Finance — Joseph Kim, OpenAI's Head of Financial Services",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-10-31T03:41:20+00:00",
+      "appearances": [
+        {
+          "id": "157b3817c872e8eec1e4",
+          "kind": "podcast",
+          "source": "Latent Space",
+          "family": "latent space",
+          "guid": "youtube:v-d1WTqIULs",
+          "title": "⚡ Building ChatGPT for Finance — Joseph Kim, OpenAI's Head of Financial Services",
+          "description": "Watch the full show on YouTube: https://www.youtube.com/watch?v=v-d1WTqIULs",
+          "url": "https://www.youtube.com/watch?v=v-d1WTqIULs",
+          "published_at": "2026-10-31T03:41:20+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.youtube.com/watch?v=v-d1WTqIULs"
+      }
+    },
+    {
+      "id": "9873b1f37b08e8f4f1dc",
+      "first_seen_at": "2026-10-31T10:17:19+00:00",
+      "status": "skipped",
+      "title": "Can AI Fix Professional Networking? | Inside Cosign",
+      "source_title": "Can AI Fix Professional Networking? | Inside Cosign",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are David Booth and Dhruv Gupta of a16z New Media, and neither is on the followed list. No followed person is named as a guest or speaker in the publisher notes.",
+      "published_at": "2026-10-31T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "126b4c3cb35372e5f6fc",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "6eecb254-c487-4eef-ae74-eda97c36cbef",
+          "title": "Can AI Fix Professional Networking? | Inside Cosign",
+          "description": "What if finding your next job, co-founder, or collaborator depended less on a resume and more on who is willing to vouch for you? Cosign is building a professional network around those signals, with the longer-term goal of giving AI agents access to the relationship and reputation data that traditional networks keep locked away.\n\na16z New Media’s David Booth and Dhruv Gupta join MTS to introduce the Cosign Awards, which recognize standout operators, companies, and products based on nominations from the people who know their work. They also unpack the bigger idea behind Cosign: mapping the people and relationships that rarely show up in public data, then making that graph accessible to both humans and agents.\n\nLooking ahead, they imagine professional networking where your personal agent can talk directly to a company’s agent, determine whether there’s a potential fit, and only bring the opportunity to you when there’s a genuine “coincidence of intent.”\n\nResources:\n\nFollow David Booth on X: \nhttps://x.com/david__booth\n\nFollow Dhruv Gupta on X: \nhttps://x.com/droovg\n\nCosign:\nhttps://cosign.co\n\nCosign Awards:\nhttps://cosign.co/awards\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/can-ai-fix-professional-networking-inside-cosign-Qm0xoOue",
+          "published_at": "2026-10-31T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/can-ai-fix-professional-networking-inside-cosign-Qm0xoOue"
+      }
     }
   ],
   "editions": [
