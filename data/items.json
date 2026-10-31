@@ -83404,6 +83404,36 @@
       "links": {
         "podcast": "https://latent.space/p/arca"
       }
+    },
+    {
+      "id": "ec2d2dc29a7de32b0139",
+      "first_seen_at": "2026-10-31T22:17:20+00:00",
+      "status": "skipped",
+      "title": "The Cognitive Revolution: AI:AM on model evaluation, ferroelectric memory, and the agent-run economy",
+      "source_title": "AI:AM: Carbon in the Arena, Mistral's Le Chonk, the Agent-Run Economy, Ferroelectric RAM + New Hacks",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Excluded because the episode's speakers are hosts Nathan Labenz and Prakash Narayanan and guests Anastasios Angelopoulos, Debo Olaosebikan, Samvit Ramadurgam, Michael Freeman, and Sagar Vaze, none of whom are on the followed list. No followed person is a guest, interviewee, or central speaker.",
+      "published_at": "2026-10-31T21:45:59+00:00",
+      "appearances": [
+        {
+          "id": "dc7b89ba800eb710073c",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "d6c5efae-d524-11f1-a8ef-e7db8dfa447b",
+          "title": "AI:AM: Carbon in the Arena, Mistral's Le Chonk, the Agent-Run Economy, Ferroelectric RAM + New Hacks",
+          "description": "Nathan Labenz and Prakash Narayanan examine whether prevailing AI assumptions survive real-world data across conversations with Anastasios Angelopoulos of Arena, Debo Olaosebikan of Kepler Computing, Samvit Ramadurgam of Union, Michael Freeman of ServiceNow, and Sagar Vaze of Mistral. The discussions evaluate production traces uncovering widespread model deception during extended tasks, ferroelectric memory engineered for older chip fabs, businesses run on tokens, and telemetry capturing AI-directed cyberattacks in Southeast Asia. These findings challenge conventional views on benchmark reliability, frontier compute efficiency, and the economic shift toward autonomous agents. In doing so, the episode directly tackles the critical stakes of whether dangerous capabilities can be contained once frontier models enter deployment.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/ai-am-carbon-in-the-arena-mistral-s-le-chonk-the-agent-run-economy-ferroelectric-ram-new-hacks/\nSponsors:\n\nLovable: Lovable is the software creation platform that brings your ideas to life with enterprise-grade infrastructure and flexible AI coding agents. Start building your next project today at https://lovable.comVisit https://fruitopia.ai to explore more than 400 fruits, and more than 8000 varieties, from all around the world. \n\nClaude: Claude is the AI collaborator built for problem solvers, extending your thinking across coding, modeling, and strategic workflows. Get started and discover Claude Pro at https://claude.ai/tcr\n\nOutSystems: OutSystems is the leading agentic systems platform, empowering enterprises to build, coordinate, and govern AI agents and mission-critical applications securely. Learn more and start building your agentic future at https://outsystems.com/tcr\n\nTasklet: Tasklet empowers your business with AI agents that connect to your tools and automate recurring workflows with no code required. Visit https://tasklet.ai and use code cog rev for $50 in free credits\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(06:34) Sponsor: Lovable\n\n(08:17) Refuting exponential time\n\n(10:35) Evaluating models in production (Part 1)\n\n(21:50) Sponsors: Claude | OutSystems\n\n(24:26) Evaluating models in production (Part 2)\n\n(24:27) Kepler ferroelectric memory\n\n(30:42) Coordinating the world economy\n\n(41:34) Displacing white collar labor (Part 1)\n\n(41:39) Sponsor: Tasklet\n\n(43:16) Displacing white collar labor (Part 2)\n\n(50:58) Autonomous cyber attacks\n\n(59:33) Mistral Large Le Chonk\n\n(01:05:40) Restricting open model knowledge\n\n(01:14:21) Future of open weights\n\n(01:22:49) Episode Outro\n\n(01:25:55) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing",
+          "url": "https://www.cognitiverevolution.ai/ai-am-carbon-in-the-arena-mistral-s-le-chonk-the-agent-run-economy-ferroelectric-ram-new-hacks/",
+          "published_at": "2026-10-31T21:45:59+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/ai-am-carbon-in-the-arena-mistral-s-le-chonk-the-agent-run-economy-ferroelectric-ram-new-hacks/"
+      }
     }
   ],
   "editions": [
