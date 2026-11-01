@@ -371,7 +371,8 @@ cycle performs these phases in order:
 
 Individual source and LLM failures are isolated so other sources can finish.
 Remaining source failures are aggregated into one Sentry event per cycle after
-retries, while each deferred LLM failure retains its item context. A YouTube
+retries, grouped by the set of failing source names so a newly broken source
+opens a new issue and alerts instead of joining a chronic one, while each deferred LLM failure retains its item context. A YouTube
 failure that recovers on the delayed pass does not reach Sentry or degrade the
 cycle. If at least three and at least half of the configured YouTube sources
 still fail fetches, Sentry uses a dedicated `youtube-rss-outage` fingerprint
@@ -390,7 +391,19 @@ AI Radar sends error events to its Sentry project when
 `AI_RADAR_SENTRY_DSN` is present. Events include deployment environment, Git
 release, freshly synchronized worktree SHA, application, host, failing phase,
 and source/model tags where applicable. Stable fingerprints group repeated
-source-cycle, summary, pipeline-phase, and stale-heartbeat failures.
+source-cycle (per failing source set), summary (per model and error type),
+pipeline-phase, and stale-heartbeat failures. Failed verification events carry
+the tail of the failing check's output in `output_tail`.
+
+Events are sent with `include_local_variables=False` and
+`send_default_pii=False`. Stack-frame locals hold the OpenRouter `Authorization`
+header, and the SDK's name-based scrubber does not reliably remove it, so do not
+re-enable them; attach context through `extra`. The scheduled cycle logs
+`sentry=<status>` at startup, so a missing DSN is visible in the Ofelia logs.
+
+The project's `Send a notification for high priority issues` rule emails on new
+and escalating high-priority issues. It does not repeat for an ongoing issue,
+which is why source fingerprints name the failing sources.
 
 AI Radar does not use a Sentry cron monitor. The free-plan cron-monitor slot is
 reserved for another homelab application; the Docker health check provides

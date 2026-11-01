@@ -154,7 +154,7 @@ class ReportingRegressionTests(unittest.TestCase):
                     stats = radar.run_cycle(settings, lookback_days=7, reporter=reporter)
                 self.assertEqual(stats["source_errors"], 5)
                 ordinary = [event for event in reporter.exceptions
-                            if event["fingerprint"] == ["ai-radar", "source", "cycle"]]
+                            if event["fingerprint"][:3] == ["ai-radar", "source", "cycle"]]
                 self.assertEqual(len(ordinary), 1)
                 self.assertEqual({value["source"] for value in ordinary[0]["extra"]["failures"]},
                                  {podcast.name, metadata_source.name})

@@ -215,7 +215,9 @@ transaction. Each run:
 
 Set `AI_RADAR_SENTRY_DSN` only in the homelab `.env`. Pipeline, source, LLM,
 validation, Git, test, lock, heartbeat, and unexpected failures report to
-Sentry. Docker invokes `scheduler_watchdog.py` independently of Ofelia; a
+Sentry. Events never include stack-frame local variables, because those hold
+the OpenRouter credential; attach context explicitly through `extra`. Docker
+invokes `scheduler_watchdog.py` independently of Ofelia; a
 missing or stale heartbeat marks the worker unhealthy and emits one grouped
 Sentry event per outage. Widespread YouTube failures use a separate RSS-outage
 fingerprint after the delayed retry and report only once until a recovered cycle

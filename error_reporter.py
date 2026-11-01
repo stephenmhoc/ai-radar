@@ -36,6 +36,10 @@ class ErrorReporter:
                 environment=os.environ.get(SENTRY_ENVIRONMENT_ENV, "production").strip() or "production",
                 release=sentry_release(root),
                 send_default_pii=False,
+                # Frame locals hold the OpenRouter Authorization header and, in chained
+                # http.client frames, the raw request bytes. The SDK's name-based scrubber
+                # misses both, so locals are never sent; add context through `extra`.
+                include_local_variables=False,
                 traces_sample_rate=0.0,
             )
             sentry_sdk.set_tags({"app": "ai-radar", "host": socket.gethostname()})
@@ -55,7 +59,7 @@ class ErrorReporter:
         if self._sdk is None:
             return None
         try:
-            with self._sdk.push_scope() as scope:
+            with self._sdk.new_scope() as scope:
                 for key, value in (tags or {}).items():
                     scope.set_tag(key, value)
                 for key, value in (extra or {}).items():

@@ -1071,7 +1071,8 @@ class CycleTests(unittest.TestCase):
         self.assertEqual(fetch.call_count, 2)
         self.assertEqual(len(reporter.exceptions), 1)
         self.assertEqual(reporter.exceptions[0]["tags"]["source_error_count"], 2)
-        self.assertEqual(reporter.exceptions[0]["fingerprint"], ["ai-radar", "source", "cycle"])
+        self.assertEqual(reporter.exceptions[0]["fingerprint"],
+                         ["ai-radar", "source", "cycle", "Broken One", "Broken Two"])
 
     def test_youtube_failure_recovers_before_sentry_reporting(self) -> None:
         self.assertEqual(radar.YOUTUBE_RETRY_DELAY_SECONDS, 60)

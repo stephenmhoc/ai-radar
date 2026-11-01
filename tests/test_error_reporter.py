@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import pathlib
+import sys
+import types
 import unittest
 from unittest import mock
 
@@ -13,6 +15,17 @@ class ErrorReporterTests(unittest.TestCase):
             reporter = error_reporter.ErrorReporter.build_from_env(root=pathlib.Path.cwd())
         self.assertFalse(reporter.enabled)
         self.assertIn(error_reporter.SENTRY_DSN_ENV, reporter.status)
+
+    def test_events_never_carry_frame_locals_or_default_pii(self) -> None:
+        sdk = types.SimpleNamespace(init=mock.Mock(), set_tags=mock.Mock())
+        with mock.patch.dict("os.environ", {error_reporter.SENTRY_DSN_ENV: "https://k@example.invalid/1"}), \
+             mock.patch.dict(sys.modules, {"sentry_sdk": sdk}):
+            reporter = error_reporter.ErrorReporter.build_from_env(root=pathlib.Path.cwd())
+        self.assertTrue(reporter.enabled)
+        options = sdk.init.call_args.kwargs
+        self.assertIs(options["include_local_variables"], False)
+        self.assertIs(options["send_default_pii"], False)
+        self.assertEqual(options["traces_sample_rate"], 0.0)
 
     def test_capture_tags_and_flush_use_sdk_without_masking_work(self) -> None:
         sdk = FakeSDK()
@@ -67,7 +80,7 @@ class FakeSDK:
     def set_tag(self, key: str, value: object) -> None:
         self.tags[key] = value
 
-    def push_scope(self) -> FakeContext:
+    def new_scope(self) -> FakeContext:
         return FakeContext(self.scope)
 
     def capture_exception(self, _exception: BaseException) -> str:

@@ -940,7 +940,10 @@ def report_source_failures(
                 "youtube_retry": {"attempted": retry_attempts, "recovered": retry_recoveries,
                                   "delay_seconds": YOUTUBE_RETRY_DELAY_SECONDS},
             },
-            fingerprint=["ai-radar", "source", "youtube-rss-outage" if is_outage else "cycle"],
+            # Each distinct failing set is its own issue: alerts fire on new issues, so one
+            # chronic source sharing a group would silently absorb a newly broken one.
+            fingerprint=(["ai-radar", "source", "youtube-rss-outage"] if is_outage else
+                         ["ai-radar", "source", "cycle", *sorted({f.source.name for f in batch})]),
         )
         if is_outage and event_id:
             try:
@@ -1192,7 +1195,7 @@ def run_cycle(
                 exc,
                 tags={"phase": "summary", "model": settings.llm.model},
                 extra={"source": group[0]["source"], "title": group[0]["title"]},
-                fingerprint=["ai-radar", "summary", settings.llm.model],
+                fingerprint=["ai-radar", "summary", settings.llm.model, type(exc).__name__],
             )
             continue
         item = existing if existing is not None else {

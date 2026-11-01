@@ -327,6 +327,7 @@ def run_scheduled_cycle(reporter: ErrorReporter) -> int:
 
 def main() -> int:
     reporter = ErrorReporter.build_from_env(root=ROOT)
+    print(f"sentry={reporter.status}")
     return run_scheduled_cycle(reporter)
 
 

@@ -15,6 +15,8 @@ sys.path.insert(0, str(ROOT))
 import radar  # noqa: E402
 from error_reporter import ErrorReporter  # noqa: E402
 
+MAX_REPORTED_OUTPUT_CHARS = 4000
+
 
 def verify_generated(settings: radar.Settings) -> None:
     """Compare two isolated builds with every existing production artifact."""
@@ -29,15 +31,28 @@ def verify_generated(settings: radar.Settings) -> None:
                     raise radar.RadarError(f"generated {name} is stale or nondeterministic; run build-site")
 
 
+def run_recording_output(args: list[str], environment: dict[str, str]) -> None:
+    """Run a check, keeping its output on the failure so the report names what broke."""
+    result = subprocess.run(args, cwd=ROOT, env=environment, check=False, text=True,
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    sys.stdout.write(result.stdout)
+    if result.returncode:
+        raise subprocess.CalledProcessError(result.returncode, args, output=result.stdout)
+
+
+def failure_context(exc: Exception) -> dict[str, object]:
+    output = getattr(exc, "output", None)
+    return {"output_tail": output[-MAX_REPORTED_OUTPUT_CHARS:]} if isinstance(output, str) else {}
+
+
 def verify() -> None:
     # Test fixtures must never inherit production reporting or model credentials.
     environment = {key: value for key, value in os.environ.items()
                    if key not in {"AI_RADAR_SENTRY_DSN", "OPENROUTER_API_KEY"}}
-    subprocess.run([sys.executable, "radar.py", "doctor"], cwd=ROOT, env=environment, check=True)
+    run_recording_output([sys.executable, "radar.py", "doctor"], environment)
     settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
     verify_generated(settings)
-    subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"],
-                   cwd=ROOT, env=environment, check=True)
+    run_recording_output([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"], environment)
     for directory in (ROOT, ROOT / "scripts", ROOT / "tests"):
         for path in sorted(directory.glob("*.py")):
             py_compile.compile(str(path), doraise=True)
@@ -50,7 +65,7 @@ def main() -> int:
     try:
         verify()
     except Exception as exc:  # noqa: BLE001 - standalone verification failures must reach Sentry
-        reporter.capture_exception(exc, tags={"phase": "verification"},
+        reporter.capture_exception(exc, tags={"phase": "verification"}, extra=failure_context(exc),
                                    fingerprint=["ai-radar", "verification", type(exc).__name__])
         print(f"error: verification failed: {exc}", file=sys.stderr)
         return 1
