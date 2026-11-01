@@ -196,13 +196,14 @@ def load_radar_module():
 
 def stage_and_commit(radar, message: str) -> bool:
     """Stage the archive and every generated file; commit only when something changed."""
-    # radar exposes the renderer's list of generated files so a new output cannot be
-    # rendered but left unstaged.
+    # radar exposes the renderer's generated files and directories so a new output
+    # cannot be rendered but left unstaged; staging a directory also records deletions.
     command(
         "git",
         "add",
         "data/items.json",
         *(f"public/{name}" for name in radar.GENERATED_FILES),
+        *(f"public/{name}" for name in radar.GENERATED_DIRS if (ROOT / "public" / name).is_dir()),
     )
     diff = subprocess.run(
         ["git", "diff", "--cached", "--quiet"],

@@ -66,8 +66,15 @@ Important paths:
   skipped, and published items and is committed to Git.
 - `public/index.html` is the generated Today and Recent calendar-day page, with
   the People roster.
-- `public/archive.html` is the generated list of every closed calendar day,
-  newest first, with a month index; RSS entries link to its day anchors.
+- `public/archive.html` is the generated list of every closed calendar day and
+  its linked headlines, newest first, with a month index.
+- `public/days/`, `public/items/`, and `public/people/` hold one generated page
+  per closed day, published item, and qualifying followed person. `public/people.html`
+  and `public/about.html` are the people index and methodology page. RSS entries
+  link to their day page.
+- `public/404.html`, `public/robots.txt`, `public/sitemap.xml`, and
+  `public/llms.txt` serve crawlers. Without `404.html`, Cloudflare Pages returns
+  the homepage with HTTP 200 for every unknown path.
 - `public/feeds.html` is the generated list of all active feeds, grouped by
   medium (a medium with no active sources is omitted), and shares the site's
   inline visual system.
@@ -108,10 +115,10 @@ America/New_York, and share one record shape, `{date, closed_at, item_ids}`:
   hour, 7 p.m. RSS has one entry per edition, with guid
   `ai-radar:edition:<date>` and `pubDate` at the close, containing each item's
   headline with its primary source, long summary, and sources. Each entry links
-  to its date's anchor on `/archive.html`.
+  to its date's `/days/<date>` page, or `/archive` until that site day closes.
 - Site days (`days`, `days_closed_through`) close at local midnight. The
   homepage shows Today (published items not yet in a closed day) and Recent (the
-  last seven days); `/archive.html` lists every closed day. Today therefore does
+  last seven days); `/archive` lists every closed day. Today therefore does
   not empty when the 7 p.m. edition goes out.
 
 At the start of each scheduled run, `close_editions` and `close_days` append
@@ -211,7 +218,8 @@ Current Git integration:
 - Build output directory: `public`
 - Custom domain: `ai-radar.merimerimeri.com`
 - Public site: `https://ai-radar.merimerimeri.com/`
-- Public source list: `https://ai-radar.merimerimeri.com/feeds.html`
+- Public source list: `https://ai-radar.merimerimeri.com/feeds`
+- Sitemap: `https://ai-radar.merimerimeri.com/sitemap.xml`
 - Public RSS: `https://ai-radar.merimerimeri.com/feed.xml`
 
 A push to `main` triggers Pages automatically. The Cloudflare Pages check on the
@@ -357,9 +365,9 @@ cycle performs these phases in order:
    responses and locally invalid results retry within the configured bounded LLM
    attempt policy; validation retries include corrective feedback before they
    count as errors.
-7. Validate and atomically save `data/items.json`; rebuild `public/index.html`,
-   `public/archive.html`, `public/feeds.html`, `public/feed.xml`, and
-   `public/_headers`.
+7. Validate and atomically save `data/items.json`; rebuild every file in
+   `GENERATED_FILES` and `GENERATED_DIRS`, pruning pages the archive no longer
+   produces.
 8. Run `scripts/verify.py`: doctor, two isolated output builds, all Python tests,
    compilation, and patch checks. Test subprocesses do not inherit production
    Sentry or OpenRouter credentials.
@@ -472,7 +480,9 @@ After pushing:
 1. Confirm local `HEAD` equals GitHub `main` with `git ls-remote`.
 2. Confirm all `CI` jobs and the `Cloudflare Pages` check completed successfully
    for that commit.
-3. Request `/`, `/archive.html`, `/feeds.html`, and `/feed.xml` and require HTTP 200.
+3. Request `/`, `/archive`, `/feeds`, `/people`, `/about`, `/sitemap.xml`,
+   `/robots.txt`, and `/feed.xml` and require HTTP 200, and require HTTP 404 for an
+   unknown path.
 4. Confirm the site's Today or Recent section contains the expected short
    summary, the feeds page contains all configured sources, and the RSS edition
    entry contains the expected long summary.

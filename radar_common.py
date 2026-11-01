@@ -70,6 +70,8 @@ class Settings:
     edition_hour: int = 19
     # Each followed person's canonical name first, then aliases, for local grounding checks.
     people: tuple[tuple[str, ...], ...] = ()
+    # (canonical name, role) pairs from [[people]], for public people pages.
+    person_roles: tuple[tuple[str, str], ...] = ()
 
 
 

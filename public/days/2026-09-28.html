@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI interviews and writing, Monday, September 28, 2026 — AI Radar</title>
+  <meta name="description" content="Monday, September 28, 2026: Claude Code’s Next Era with Thariq Shihipar (Anthropic); SemiAnalysis on Sparse Attention, Memory Hierarchies, and GLM-5.3…">
+  <link rel="canonical" href="https://ai-radar.merimerimeri.com/days/2026-09-28">
+  <meta property="og:site_name" content="AI Radar">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI interviews and writing, Monday, September 28, 2026 — AI Radar">
+  <meta property="og:description" content="Monday, September 28, 2026: Claude Code’s Next Era with Thariq Shihipar (Anthropic); SemiAnalysis on Sparse Attention, Memory Hierarchies, and GLM-5.3…">
+  <meta property="og:url" content="https://ai-radar.merimerimeri.com/days/2026-09-28">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","datePublished":"2026-09-28","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","name":"Claude Code’s Next Era with Thariq Shihipar (Anthropic)","position":1,"url":"https://ai-radar.merimerimeri.com/items/claude-codes-next-era-with-thariq-shihipar-anthropic-215c95eb"},{"@type":"ListItem","name":"SemiAnalysis on Sparse Attention, Memory Hierarchies, and GLM-5.3 Serving Economics","position":2,"url":"https://ai-radar.merimerimeri.com/items/semianalysis-on-sparse-attention-memory-hierarchies-and-glm-5-3-c32b8732"},{"@type":"ListItem","name":"OpenAI Developer Experience Team: Building Projects with Astra","position":3,"url":"https://ai-radar.merimerimeri.com/items/openai-developer-experience-team-building-projects-with-astra-a16aa13d"},{"@type":"ListItem","name":"Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop","position":4,"url":"https://ai-radar.merimerimeri.com/items/import-ai-474-platonic-mindspace-tpus-in-space-zhipu-starts-an-outer-de5c51ae"},{"@type":"ListItem","name":"Noah Shinn - Building Instinct: The Personal Agent","position":5,"url":"https://ai-radar.merimerimeri.com/items/noah-shinn-building-instinct-the-personal-agent-681d8a96"},{"@type":"ListItem","name":"Invest Like the Best: Inside the Personal AI Assistant Growing 10% a Day | Instinct Founder","position":6,"url":"https://ai-radar.merimerimeri.com/items/invest-like-the-best-inside-the-personal-ai-assistant-growing-10-a-ff7ac880"},{"@type":"ListItem","name":"AI existential risk probabilities are (still) too unreliable to inform policy","position":7,"url":"https://ai-radar.merimerimeri.com/items/ai-existential-risk-probabilities-are-still-too-unreliable-to-inform-231c6425"},{"@type":"ListItem","name":"Apps, Agents, and Aggregation","position":8,"url":"https://ai-radar.merimerimeri.com/items/apps-agents-and-aggregation-d44b8dbd"},{"@type":"ListItem","name":"AI Can Write Code. Why Isn’t Software Better?","position":9,"url":"https://ai-radar.merimerimeri.com/items/ai-can-write-code-why-isnt-software-better-84e533b2"}],"numberOfItems":9},"name":"AI interviews and writing from Monday, September 28, 2026","publisher":{"@type":"Organization","name":"AI Radar","url":"https://ai-radar.merimerimeri.com/"},"url":"https://ai-radar.merimerimeri.com/days/2026-09-28"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://ai-radar.merimerimeri.com/","name":"Radar","position":1},{"@type":"ListItem","item":"https://ai-radar.merimerimeri.com/archive","name":"Archive","position":2},{"@type":"ListItem","item":"https://ai-radar.merimerimeri.com/days/2026-09-28","name":"Monday, September 28, 2026","position":3}]}</script>
+  <link rel="alternate" type="application/rss+xml" title="AI Radar" href="/feed.xml">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --ink: #14171c;
+      --muted: #5d6672;
+      --rule: #dde1e7;
+      --accent: #1d5bd6;
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      --page: 52rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #0e1115;
+        --surface: #151a20;
+        --ink: #e6e9ee;
+        --muted: #949daa;
+        --rule: #262c35;
+        --accent: #7ea6ff;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: var(--bg);
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+
+    body.wide { --page: 70rem; }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      border-radius: 2px;
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    .bar,
+    main {
+      padding-left: max(1rem, calc((100% - var(--page)) / 2));
+      padding-right: max(1rem, calc((100% - var(--page)) / 2));
+    }
+
+    .bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.25rem 1rem;
+      padding-top: 1.1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+      background: var(--surface);
+    }
+
+    .brand {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 780;
+      letter-spacing: -0.01em;
+    }
+
+    .brand a { text-decoration: none; }
+
+    .page-title {
+      margin: 1.5rem 0 0.5rem;
+      font-size: 1.6rem;
+      font-weight: 720;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+      text-wrap: balance;
+    }
+
+    .crumbs {
+      margin-top: 1.25rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .crumbs + .page-title,
+    .crumbs + .item .page-title { margin-top: 0.5rem; }
+
+    .item-meta {
+      margin: 0 0 1.25rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    .lede {
+      margin-bottom: 2rem;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+    }
+
+    .edition-note.item-note { margin-top: 1.5rem; }
+
+    .item-link {
+      margin: 0.6rem 0 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .item-link a,
+    .crumbs a,
+    .pager a,
+    .prose a,
+    .person-name a { color: var(--accent); }
+
+    .person-name a { text-decoration: none; }
+
+    .person-role {
+      display: block;
+      color: var(--muted);
+      font-size: 0.875rem;
+      font-weight: 400;
+    }
+
+    .pager {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .prose { max-width: 68ch; line-height: 1.65; }
+
+    .prose h2 {
+      margin: 1.75rem 0 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    .prose p { margin: 0 0 0.9rem; }
+
+    .archive-list {
+      margin: 0;
+      padding: 0.5rem 0 0;
+      list-style: none;
+    }
+
+    .archive-list li { padding: 0.3rem 0; }
+
+    .archive-list a { text-decoration-color: var(--rule); }
+
+    .archive-source {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    h3 a { text-decoration: none; }
+
+    h3 a:hover { text-decoration: underline; }
+
+    .dek {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    body:not(.wide) .dek { display: none; }
+
+    .header-links {
+      display: flex;
+      gap: 1rem;
+      margin-left: auto;
+      font-size: 0.9rem;
+    }
+
+    .rss-link {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .secondary-link { color: var(--muted); }
+
+    .secondary-link:hover { color: var(--ink); }
+
+    main {
+      padding-top: 0.25rem;
+      padding-bottom: 4rem;
+    }
+
+    .status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 1.25rem;
+      margin: 0 0 0.5rem;
+      padding: 0.9rem 0 0.4rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    .status strong { color: var(--ink); }
+
+    .status .now {
+      color: var(--accent);
+      font-weight: 650;
+    }
+
+    .front {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    .day { padding: 0 0 1.75rem; }
+
+    .day-label {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      margin: 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--ink);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .day-today .day-label { color: var(--accent); }
+
+    .day-today .day-label { border-bottom-color: var(--accent); }
+
+    .day-count {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+
+    .day-empty {
+      margin: 0;
+      padding: 0.7rem 0 0;
+      color: var(--muted);
+    }
+
+    .story-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .story {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .story:last-child { border-bottom: 0; }
+
+    .story summary {
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .story summary::-webkit-details-marker { display: none; }
+
+    .story summary:hover .headline {
+      text-decoration: underline;
+      text-decoration-color: var(--muted);
+    }
+
+    .mark { display: none; }
+
+    .is-new .mark {
+      display: block;
+      flex: none;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translateY(-0.1rem);
+    }
+
+    .headline {
+      min-width: 0;
+      font-size: 1.0625rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .headline strong { font-weight: 700; }
+
+    .story-body { padding: 0.5rem 0 0.25rem; }
+
+    .media {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem;
+      margin: 0;
+      padding-top: 0.3rem;
+    }
+
+    details[open] + .media { display: none; }
+
+    .story-source {
+      margin-right: 0.25rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    .medium {
+      padding: 0.22rem 0.32rem;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      background: var(--surface);
+      color: var(--muted);
+      font: 600 0.68rem/1 var(--mono);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .medium:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .archive-link {
+      margin: 0;
+      font-weight: 650;
+    }
+
+    .archive-link a,
+    .edition-note a,
+    .source-title a { color: var(--accent); }
+
+    .panel-label,
+    .section-label {
+      margin: 0 0 0.5rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .panel-label span {
+      margin-left: 0.4rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .roster {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+      gap: 0 1.25rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .person {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.1rem 0.5rem;
+      padding: 0.55rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .person-name {
+      overflow: hidden;
+      font-weight: 650;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .person-age {
+      padding-top: 0.1rem;
+      color: var(--muted);
+      font: 0.75rem var(--mono);
+    }
+
+    .is-new .person-age {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .person-latest {
+      display: none;
+      grid-column: 1 / -1;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .person-latest:hover { text-decoration: underline; }
+
+    .quiet {
+      margin: 0;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .quiet strong { color: var(--ink); }
+
+    @media (min-width: 64rem) {
+      .front {
+        grid-template-columns: minmax(0, 1fr) 17rem;
+        gap: 3.5rem;
+        align-items: start;
+      }
+      .roster { display: block; }
+      .person-latest { display: block; }
+    }
+
+    .summary {
+      max-width: 68ch;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 0.25rem;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      color: var(--muted);
+      font-size: 0.875rem;
+      list-style: none;
+    }
+
+    .source-item {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 0.4rem;
+    }
+
+    .source-name,
+    .source-title { margin: 0; }
+
+    .source-name {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    .source-kind {
+      color: var(--muted);
+      font: 600 0.7rem var(--mono);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .source-title-label {
+      margin-right: 0.3rem;
+      font-weight: 650;
+    }
+
+    .episode-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .episode-list .episode {
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .episode-list .episode:last-child { border-bottom: 0; }
+
+    .episode-meta {
+      margin: 0 0 0.2rem;
+      color: var(--muted);
+      font: 0.75rem var(--mono);
+    }
+
+    h2, h3 { text-wrap: balance; }
+
+    h3 {
+      margin: 0 0 0.3rem;
+      font-size: 1.1rem;
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .edition-title {
+      margin: 2.25rem 0 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--ink);
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .edition-note {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .edition-empty {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    main > .section-label:first-child { margin-top: 1.5rem; }
+
+    .item .section-label { margin-top: 1.5rem; }
+
+    .edition-title a { text-decoration: none; }
+
+    .archive-months {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1rem;
+      margin: 0 0 1rem;
+      font-size: 0.85rem;
+      font-weight: 650;
+    }
+
+    .archive-month { margin-top: 2.5rem; }
+
+    .archive-month .section-label { scroll-margin-top: 1rem; }
+
+    .feed-group + .feed-group { margin-top: 2rem; }
+
+    .feed-group-title {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .feed-list {
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--rule);
+      list-style: none;
+    }
+
+    .feed-item {
+      display: grid;
+      grid-template-columns: minmax(10rem, 1fr) auto;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .feed-name {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .feed-links {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 40rem) {
+      .header-links { margin-left: 0; }
+      .feed-item {
+        display: block;
+        padding-block: 0.8rem;
+      }
+      .feed-links { margin-top: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <p class="brand"><a href="/">AI Radar</a></p>
+    <p class="dek">Noteworthy AI conversations and writing, summarized from publisher notes.</p>
+    <nav class="header-links" aria-label="AI Radar links">
+      <a class="rss-link" href="/feed.xml">RSS</a>
+      <a class="secondary-link" href="/people">People</a>
+      <a class="secondary-link" href="/archive">Archive</a>
+      <a class="secondary-link" href="/feeds">Feeds</a>
+      <a class="secondary-link" href="/about">About</a>
+    </nav>
+  </header>
+  <main>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Radar</a> <span aria-hidden="true">/</span> <a href="/archive">Archive</a></nav><h1 class="page-title">AI interviews and writing from Monday, September 28, 2026</h1><p class="edition-note">9 items published that day.</p><ul class="episode-list">
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-29T01:48:18+00:00">Sep 29, 2026</time></p><h3><a href="/items/claude-codes-next-era-with-thariq-shihipar-anthropic-215c95eb">Claude Code’s Next Era with Thariq Shihipar (Anthropic)</a></h3><p class="summary">Anthropic&#x27;s Thariq Shihipar discusses the evolution of Claude Code, focusing on new features like Claude Mods and Projects. The conversation also covers agent security, the &quot;Pacing the Frontier&quot; argument, and how agents are changing software development and security assumptions.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Podcast</span> <span aria-hidden="true">·</span> Latent Space</p><p class="source-title"><span class="source-title-label">Episode:</span><a href="https://www.latent.space/p/thariq" rel="noopener">Claude Code’s Next Era — Thariq Shihipar, Anthropic&nbsp;↗</a></p></li><li class="source-item"><p class="source-name"><span class="source-kind">Newsletter</span> <span aria-hidden="true">·</span> Latent Space</p><p class="source-title"><span class="source-title-label">Issue:</span><a href="https://www.latent.space/p/thariq" rel="noopener">Claude Code’s Next Era — Thariq Shihipar, Anthropic&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-28T19:26:41+00:00">Sep 28, 2026</time></p><h3><a href="/items/semianalysis-on-sparse-attention-memory-hierarchies-and-glm-5-3-c32b8732">SemiAnalysis on Sparse Attention, Memory Hierarchies, and GLM-5.3 Serving Economics</a></h3><p class="summary">SemiAnalysis analyzes how sparse attention impacts memory capacity, examining hierarchical systems like HiSparse, inference benchmarks across GB200, GB300, and MI355X, and the architectural design of GLM-5&#x27;s sparse attention.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Newsletter</span> <span aria-hidden="true">·</span> SemiAnalysis</p><p class="source-title"><span class="source-title-label">Issue:</span><a href="https://newsletter.semianalysis.com/p/sparse-savings-persistent-demand-inside-glm53" rel="noopener">How GLM5.3 Sparse Attention Affects HBM Memory Usage&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-28T18:05:42+00:00">Sep 28, 2026</time></p><h3><a href="/items/openai-developer-experience-team-building-projects-with-astra-a16aa13d">OpenAI Developer Experience Team: Building Projects with Astra</a></h3><p class="summary">Members of OpenAI&#x27;s Developer Experience team demonstrate how they use Astra to transform loosely defined concepts into working software and hardware projects.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">YouTube</span> <span aria-hidden="true">·</span> OpenAI</p><p class="source-title"><span class="source-title-label">Video:</span><a href="https://www.youtube.com/watch?v=6wNqpZdHE_s" rel="noopener">GPT-6 Astra in practice: Turning ideas into projects&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-28T12:32:03+00:00">Sep 28, 2026</time></p><h3><a href="/items/import-ai-474-platonic-mindspace-tpus-in-space-zhipu-starts-an-outer-de5c51ae">Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop</a></h3><p class="summary">This issue of Import AI discusses Michael Levin&#x27;s paper on non-physicalist models of mind, the need for a universal post-training algorithm in robotics, Google&#x27;s Project Suncatcher to put TPUs in space, and Zhipu AI&#x27;s use of GLM-5.3 to automate its infrastructure work.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Newsletter</span> <span aria-hidden="true">·</span> Import AI</p><p class="source-title"><span class="source-title-label">Issue:</span><a href="https://importai.substack.com/p/import-ai-474-platonic-mindspace" rel="noopener">Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-28T12:05:00+00:00">Sep 28, 2026</time></p><h3><a href="/items/noah-shinn-building-instinct-the-personal-agent-681d8a96">Noah Shinn - Building Instinct: The Personal Agent</a></h3><p class="summary">Noah Shinn, founder of Instinct, discusses his personal agent that handles online tasks. He covers user trust, the take rate model, and the future impact of agents on various industries, including the need for compute.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Podcast</span> <span aria-hidden="true">·</span> Invest Like the Best</p><p class="source-title"><span class="source-title-label">Episode:</span><a href="https://colossus.com/episode/instinct-the-personal-agent/" rel="noopener">Noah Shinn - Building Instinct: The Personal Agent - [Invest Like the Best, EP.493]&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-28T12:00:10+00:00">Sep 28, 2026</time></p><h3><a href="/items/invest-like-the-best-inside-the-personal-ai-assistant-growing-10-a-ff7ac880">Invest Like the Best: Inside the Personal AI Assistant Growing 10% a Day | Instinct Founder</a></h3><p class="summary">Noah Shinn, CEO of Instinct, discusses his viral AI personal assistant, its rapid growth, and the challenges of proactive AI. He shares his vision for autonomous agents rewriting the internet&#x27;s business model.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">YouTube</span> <span aria-hidden="true">·</span> Invest Like the Best</p><p class="source-title"><span class="source-title-label">Video:</span><a href="https://www.youtube.com/watch?v=Am7IWP8IpEc" rel="noopener">Inside the Personal AI Assistant Growing 10% a Day | Instinct Founder&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-28T11:13:47+00:00">Sep 28, 2026</time></p><h3><a href="/items/ai-existential-risk-probabilities-are-still-too-unreliable-to-inform-231c6425">AI existential risk probabilities are (still) too unreliable to inform policy</a></h3><p class="summary">This essay argues that current probability estimates of AI existential risk are too unreliable to inform policy, lacking rigorous inductive or deductive bases. It suggests these estimates are often subjective guesses, which can be misleading for policymakers.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Newsletter</span> <span aria-hidden="true">·</span> AI Snake Oil</p><p class="source-title"><span class="source-title-label">Issue:</span><a href="https://www.normaltech.ai/p/p-doom" rel="noopener">AI existential risk probabilities are (still) too unreliable to inform policy&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-28T10:25:37+00:00">Sep 28, 2026</time></p><h3><a href="/items/apps-agents-and-aggregation-d44b8dbd">Apps, Agents, and Aggregation</a></h3><p class="summary">This article discusses how AI agents, particularly those with access to a computer, are transforming user interaction with technology. It highlights the shift from app-centric usage to AI-driven task completion and the emergence of customized, generative UI.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Newsletter</span> <span aria-hidden="true">·</span> Stratechery</p><p class="source-title"><span class="source-title-label">Issue:</span><a href="https://stratechery.com/2026/apps-agents-and-aggregation/" rel="noopener">Apps, Agents, and Aggregation&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-28T10:00:00+00:00">Sep 28, 2026</time></p><h3><a href="/items/ai-can-write-code-why-isnt-software-better-84e533b2">AI Can Write Code. Why Isn’t Software Better?</a></h3><p class="summary">Diogo Almeida, founder of TypeSafe AI, discusses with a16z&#x27;s Ben Horowitz and Martin Casado how AI can improve software. He argues for putting intelligence inside software itself to enable programs to reason about intent and make probabilistic decisions, rather than just generating text.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Podcast</span> <span aria-hidden="true">·</span> The a16z Show</p><p class="source-title"><span class="source-title-label">Episode:</span><a href="https://a16z.simplecast.com/episodes/ai-can-write-code-why-isnt-software-better-je38wEkC" rel="noopener">AI Can Write Code. Why Isn’t Software Better?&nbsp;↗</a></p></li></ul></article></li>
+</ul><nav class="pager" aria-label="Adjacent days"><a href="/days/2026-09-26">←&nbsp;Saturday, September 26, 2026</a><a href="/days/2026-09-29">Tuesday, September 29, 2026&nbsp;→</a></nav>
+  </main>
+</body>
+</html>

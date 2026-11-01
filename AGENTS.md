@@ -17,17 +17,26 @@ and `INFRA.md` before changing code, data, deployment, or production state.
 - Stay within free Cloudflare products unless the user explicitly approves a
   different architecture and cost.
 - Do not add transcription, media downloads, images, JavaScript, an application
-  server, or a runtime database unless explicitly requested.
+  server, or a runtime database unless explicitly requested. Non-executing
+  `application/ld+json` blocks are the one approved `<script>` use.
 
 ## Treat these contracts as intentional
 
 - `data/items.json` is canonical state and belongs in Git.
-- `public/index.html`, `public/archive.html`, `public/feeds.html`,
-  `public/feed.xml`, and `public/_headers` are generated, tracked production artifacts. `rendering.py`'s
-  `GENERATED_FILES` (also exposed through `radar.py`) is the single list of them;
-  the scheduled cycle stages exactly that list, so a new artifact cannot be
-  rendered but left uncommitted.
-- The site uses `short_summary`; RSS uses `long_summary`.
+- Everything in `public/` is a generated, tracked production artifact.
+  `rendering.py`'s `GENERATED_FILES` and `GENERATED_DIRS` (also exposed through
+  `radar.py`) are the single list of them, `render_site` produces them, and the
+  scheduled cycle stages exactly that list, so a new artifact cannot be rendered
+  but left uncommitted. Builds prune pages the archive no longer produces, and
+  `scripts/verify.py` rejects stray or missing pages.
+- The site uses `short_summary`; RSS and individual `/items/` pages use
+  `long_summary`. An item page must say the summary came from publisher notes.
+- Every published item, closed day, and followed person with at least
+  `PERSON_PAGE_MIN_ITEMS` items has a page. Internal links, canonical URLs, and the
+  sitemap use clean paths, not `.html`. Indexable pages have a unique title and
+  description, and sitemap `lastmod` comes from archive dates, never the clock.
+  `public/404.html` must stay, or Cloudflare Pages serves the homepage with HTTP
+  200 for every unknown URL. JSON-LD must match visible text.
 - The site and RSS identify each appearance by medium, source name, and original
   publisher title. Inside an RSS edition, each item headline names its primary
   source.
@@ -52,9 +61,10 @@ and `INFRA.md` before changing code, data, deployment, or production state.
   roster of followed people heard from within `ROSTER_DAYS`. Roster ages count
   from `days_closed_through`, never the clock. Roster membership comes from a
   full name or alias in a headline or publisher title, or a surname there plus
-  the full name in the stored reason; a reason alone never counts. `public/archive.html` lists every closed day, newest
+  the full name in the stored reason; a reason alone never counts. `public/archive.html` lists every closed day and its linked headlines, newest
   first with a month index, so past days stay findable without client-side
-  script; RSS entries link to their date's archive anchor.
+  script; RSS entries link to their date's `/days/` page, or `/archive` until
+  that site day closes.
 - A short summary is one or two sentences. Ask for no more than 55 words, accept
   up to 82 words locally, and retry anything longer with explicit feedback to
   shorten it to the 55-word target before reporting exhausted attempts.
@@ -237,8 +247,9 @@ for a review, diagnosis, or plan. When the user authorizes release:
 4. Confirm local `HEAD` and GitHub `main` are the same SHA using `git ls-remote`.
 5. Require a successful GitHub check named `Cloudflare Pages`.
 6. Verify HTTP 200 from the site and RSS URLs and check the changed content in
-   each output, not only headers. Also verify `/archive.html` and `/feeds.html` when sources or
-   rendering changed.
+   each output, not only headers. Also verify `/archive`, `/feeds`, `/people`,
+   `/sitemap.xml`, and a sample item page, and HTTP 404 for an unknown path, when
+   sources or rendering changed.
 7. Sync and verify `/opt/ai-radar/repo` through the existing private homelab
    access when production worker behavior changed.
 8. Confirm the homelab checkout is clean and on the released SHA.

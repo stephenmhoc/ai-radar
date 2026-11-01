@@ -21,11 +21,16 @@ MAX_REPORTED_OUTPUT_CHARS = 4000
 def verify_generated(settings: radar.Settings) -> None:
     """Compare two isolated builds with every existing production artifact."""
     archive = radar.load_archive(settings.archive_path)
-    expected = {name: (settings.public_dir / name).read_bytes() for name in radar.GENERATED_FILES}
+    existing = radar.generated_paths(settings.public_dir)
+    expected = {name: (settings.public_dir / name).read_bytes() for name in existing}
     with tempfile.TemporaryDirectory() as directory:
         temporary = replace(settings, public_dir=pathlib.Path(directory))
         for _ in range(2):
             radar.build_site(temporary, archive)
+            built = radar.generated_paths(temporary.public_dir)
+            if built != existing:
+                changed = sorted(built ^ existing)
+                raise radar.RadarError(f"generated {changed[0]} is stale or nondeterministic; run build-site")
             for name, value in expected.items():
                 if (temporary.public_dir / name).read_bytes() != value:
                     raise radar.RadarError(f"generated {name} is stale or nondeterministic; run build-site")

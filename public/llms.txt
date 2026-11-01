@@ -1,0 +1,24 @@
+# AI Radar
+
+> Noteworthy AI conversations and writing, summarized from publisher notes.
+
+Summaries are written by AI from publisher notes, not transcripts. Cite the linked original.
+
+## Site
+
+- [About and methodology](https://ai-radar.merimerimeri.com/about)
+- [Followed people](https://ai-radar.merimerimeri.com/people)
+- [Archive of every day](https://ai-radar.merimerimeri.com/archive)
+- [Monitored sources](https://ai-radar.merimerimeri.com/feeds)
+- [Daily RSS feed](https://ai-radar.merimerimeri.com/feed.xml)
+- [Sitemap](https://ai-radar.merimerimeri.com/sitemap.xml)
+
+## People
+
+- [Sam Altman](https://ai-radar.merimerimeri.com/people/sam-altman)
+- [Mark Zuckerberg](https://ai-radar.merimerimeri.com/people/mark-zuckerberg)
+- [Boris Cherny](https://ai-radar.merimerimeri.com/people/boris-cherny)
+- [Andrej Karpathy](https://ai-radar.merimerimeri.com/people/andrej-karpathy)
+- [Demis Hassabis](https://ai-radar.merimerimeri.com/people/demis-hassabis)
+- [Greg Brockman](https://ai-radar.merimerimeri.com/people/greg-brockman)
+- [Jensen Huang](https://ai-radar.merimerimeri.com/people/jensen-huang)

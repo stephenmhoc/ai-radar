@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI interviews and writing, Tuesday, September 1, 2026 — AI Radar</title>
+  <meta name="description" content="Tuesday, September 1, 2026: Korea’s Trillion-Dollar Sovereign AI Investment; Anthropic Introduces Claude Fable 5.1; The Pragmatic Engineer: Five years; How…">
+  <link rel="canonical" href="https://ai-radar.merimerimeri.com/days/2026-09-01">
+  <meta property="og:site_name" content="AI Radar">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI interviews and writing, Tuesday, September 1, 2026 — AI Radar">
+  <meta property="og:description" content="Tuesday, September 1, 2026: Korea’s Trillion-Dollar Sovereign AI Investment; Anthropic Introduces Claude Fable 5.1; The Pragmatic Engineer: Five years; How…">
+  <meta property="og:url" content="https://ai-radar.merimerimeri.com/days/2026-09-01">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","datePublished":"2026-09-01","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","name":"Korea’s Trillion-Dollar Sovereign AI Investment","position":1,"url":"https://ai-radar.merimerimeri.com/items/koreas-trillion-dollar-sovereign-ai-investment-3b245ec0"},{"@type":"ListItem","name":"Anthropic Introduces Claude Fable 5.1","position":2,"url":"https://ai-radar.merimerimeri.com/items/anthropic-introduces-claude-fable-5-1-d0746e4d"},{"@type":"ListItem","name":"The Pragmatic Engineer: Five years","position":3,"url":"https://ai-radar.merimerimeri.com/items/the-pragmatic-engineer-five-years-73c27142"},{"@type":"ListItem","name":"How Top AI Open Source Projects Are Managing Thousands of Contributors","position":4,"url":"https://ai-radar.merimerimeri.com/items/how-top-ai-open-source-projects-are-managing-thousands-of-contributors-7bb3abb8"},{"@type":"ListItem","name":"Ajeya Cotra – Inside the OpenAI agent swarm that hacked Hugging Face","position":5,"url":"https://ai-radar.merimerimeri.com/items/ajeya-cotra-inside-the-openai-agent-swarm-that-hacked-hugging-face-0945746c"},{"@type":"ListItem","name":"Can AI Learn Mathematical Intuition?","position":6,"url":"https://ai-radar.merimerimeri.com/items/can-ai-learn-mathematical-intuition-a816b5c0"},{"@type":"ListItem","name":"She Knows the 250 People Building AI. Here's What They Actually Believe.","position":7,"url":"https://ai-radar.merimerimeri.com/items/she-knows-the-250-people-building-ai-here-s-what-they-actually-believe-e5607dde"},{"@type":"ListItem","name":"The a16z Show — Daniel Litt: The Mathematician's Guide to AI","position":8,"url":"https://ai-radar.merimerimeri.com/items/the-a16z-show-daniel-litt-the-mathematician-s-guide-to-ai-d469e004"},{"@type":"ListItem","name":"Write, Change, Recall, Forget: MongoDB's Pete Johnson on How Retrieval Drives Agent Performance","position":9,"url":"https://ai-radar.merimerimeri.com/items/write-change-recall-forget-mongodb-s-pete-johnson-on-how-retrieval-8554b543"},{"@type":"ListItem","name":"Making Cities Awesome: Peregrine’s Nick Noone & Ben Rudolph","position":10,"url":"https://ai-radar.merimerimeri.com/items/making-cities-awesome-peregrines-nick-noone-ben-rudolph-ee06ab08"},{"@type":"ListItem","name":"Sarah Guo on What the 250 People Building AI Believe","position":11,"url":"https://ai-radar.merimerimeri.com/items/sarah-guo-on-what-the-250-people-building-ai-believe-70bd08c9"},{"@type":"ListItem","name":"Latent Space Newsletter: AI News - Fal's H3 Max Live breaks the infinite videogen barrier","position":12,"url":"https://ai-radar.merimerimeri.com/items/latent-space-newsletter-ai-news-fal-s-h3-max-live-breaks-the-infinite-e2aa8727"}],"numberOfItems":12},"name":"AI interviews and writing from Tuesday, September 1, 2026","publisher":{"@type":"Organization","name":"AI Radar","url":"https://ai-radar.merimerimeri.com/"},"url":"https://ai-radar.merimerimeri.com/days/2026-09-01"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://ai-radar.merimerimeri.com/","name":"Radar","position":1},{"@type":"ListItem","item":"https://ai-radar.merimerimeri.com/archive","name":"Archive","position":2},{"@type":"ListItem","item":"https://ai-radar.merimerimeri.com/days/2026-09-01","name":"Tuesday, September 1, 2026","position":3}]}</script>
+  <link rel="alternate" type="application/rss+xml" title="AI Radar" href="/feed.xml">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --ink: #14171c;
+      --muted: #5d6672;
+      --rule: #dde1e7;
+      --accent: #1d5bd6;
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      --page: 52rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #0e1115;
+        --surface: #151a20;
+        --ink: #e6e9ee;
+        --muted: #949daa;
+        --rule: #262c35;
+        --accent: #7ea6ff;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: var(--bg);
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+
+    body.wide { --page: 70rem; }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      border-radius: 2px;
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    .bar,
+    main {
+      padding-left: max(1rem, calc((100% - var(--page)) / 2));
+      padding-right: max(1rem, calc((100% - var(--page)) / 2));
+    }
+
+    .bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.25rem 1rem;
+      padding-top: 1.1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+      background: var(--surface);
+    }
+
+    .brand {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 780;
+      letter-spacing: -0.01em;
+    }
+
+    .brand a { text-decoration: none; }
+
+    .page-title {
+      margin: 1.5rem 0 0.5rem;
+      font-size: 1.6rem;
+      font-weight: 720;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+      text-wrap: balance;
+    }
+
+    .crumbs {
+      margin-top: 1.25rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .crumbs + .page-title,
+    .crumbs + .item .page-title { margin-top: 0.5rem; }
+
+    .item-meta {
+      margin: 0 0 1.25rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    .lede {
+      margin-bottom: 2rem;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+    }
+
+    .edition-note.item-note { margin-top: 1.5rem; }
+
+    .item-link {
+      margin: 0.6rem 0 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .item-link a,
+    .crumbs a,
+    .pager a,
+    .prose a,
+    .person-name a { color: var(--accent); }
+
+    .person-name a { text-decoration: none; }
+
+    .person-role {
+      display: block;
+      color: var(--muted);
+      font-size: 0.875rem;
+      font-weight: 400;
+    }
+
+    .pager {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .prose { max-width: 68ch; line-height: 1.65; }
+
+    .prose h2 {
+      margin: 1.75rem 0 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    .prose p { margin: 0 0 0.9rem; }
+
+    .archive-list {
+      margin: 0;
+      padding: 0.5rem 0 0;
+      list-style: none;
+    }
+
+    .archive-list li { padding: 0.3rem 0; }
+
+    .archive-list a { text-decoration-color: var(--rule); }
+
+    .archive-source {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    h3 a { text-decoration: none; }
+
+    h3 a:hover { text-decoration: underline; }
+
+    .dek {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    body:not(.wide) .dek { display: none; }
+
+    .header-links {
+      display: flex;
+      gap: 1rem;
+      margin-left: auto;
+      font-size: 0.9rem;
+    }
+
+    .rss-link {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .secondary-link { color: var(--muted); }
+
+    .secondary-link:hover { color: var(--ink); }
+
+    main {
+      padding-top: 0.25rem;
+      padding-bottom: 4rem;
+    }
+
+    .status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 1.25rem;
+      margin: 0 0 0.5rem;
+      padding: 0.9rem 0 0.4rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    .status strong { color: var(--ink); }
+
+    .status .now {
+      color: var(--accent);
+      font-weight: 650;
+    }
+
+    .front {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    .day { padding: 0 0 1.75rem; }
+
+    .day-label {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      margin: 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--ink);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .day-today .day-label { color: var(--accent); }
+
+    .day-today .day-label { border-bottom-color: var(--accent); }
+
+    .day-count {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+
+    .day-empty {
+      margin: 0;
+      padding: 0.7rem 0 0;
+      color: var(--muted);
+    }
+
+    .story-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .story {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .story:last-child { border-bottom: 0; }
+
+    .story summary {
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .story summary::-webkit-details-marker { display: none; }
+
+    .story summary:hover .headline {
+      text-decoration: underline;
+      text-decoration-color: var(--muted);
+    }
+
+    .mark { display: none; }
+
+    .is-new .mark {
+      display: block;
+      flex: none;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translateY(-0.1rem);
+    }
+
+    .headline {
+      min-width: 0;
+      font-size: 1.0625rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .headline strong { font-weight: 700; }
+
+    .story-body { padding: 0.5rem 0 0.25rem; }
+
+    .media {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem;
+      margin: 0;
+      padding-top: 0.3rem;
+    }
+
+    details[open] + .media { display: none; }
+
+    .story-source {
+      margin-right: 0.25rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    .medium {
+      padding: 0.22rem 0.32rem;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      background: var(--surface);
+      color: var(--muted);
+      font: 600 0.68rem/1 var(--mono);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .medium:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .archive-link {
+      margin: 0;
+      font-weight: 650;
+    }
+
+    .archive-link a,
+    .edition-note a,
+    .source-title a { color: var(--accent); }
+
+    .panel-label,
+    .section-label {
+      margin: 0 0 0.5rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .panel-label span {
+      margin-left: 0.4rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .roster {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+      gap: 0 1.25rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .person {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.1rem 0.5rem;
+      padding: 0.55rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .person-name {
+      overflow: hidden;
+      font-weight: 650;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .person-age {
+      padding-top: 0.1rem;
+      color: var(--muted);
+      font: 0.75rem var(--mono);
+    }
+
+    .is-new .person-age {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .person-latest {
+      display: none;
+      grid-column: 1 / -1;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .person-latest:hover { text-decoration: underline; }
+
+    .quiet {
+      margin: 0;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .quiet strong { color: var(--ink); }
+
+    @media (min-width: 64rem) {
+      .front {
+        grid-template-columns: minmax(0, 1fr) 17rem;
+        gap: 3.5rem;
+        align-items: start;
+      }
+      .roster { display: block; }
+      .person-latest { display: block; }
+    }
+
+    .summary {
+      max-width: 68ch;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 0.25rem;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      color: var(--muted);
+      font-size: 0.875rem;
+      list-style: none;
+    }
+
+    .source-item {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 0.4rem;
+    }
+
+    .source-name,
+    .source-title { margin: 0; }
+
+    .source-name {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    .source-kind {
+      color: var(--muted);
+      font: 600 0.7rem var(--mono);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .source-title-label {
+      margin-right: 0.3rem;
+      font-weight: 650;
+    }
+
+    .episode-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .episode-list .episode {
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .episode-list .episode:last-child { border-bottom: 0; }
+
+    .episode-meta {
+      margin: 0 0 0.2rem;
+      color: var(--muted);
+      font: 0.75rem var(--mono);
+    }
+
+    h2, h3 { text-wrap: balance; }
+
+    h3 {
+      margin: 0 0 0.3rem;
+      font-size: 1.1rem;
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .edition-title {
+      margin: 2.25rem 0 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--ink);
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .edition-note {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .edition-empty {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    main > .section-label:first-child { margin-top: 1.5rem; }
+
+    .item .section-label { margin-top: 1.5rem; }
+
+    .edition-title a { text-decoration: none; }
+
+    .archive-months {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1rem;
+      margin: 0 0 1rem;
+      font-size: 0.85rem;
+      font-weight: 650;
+    }
+
+    .archive-month { margin-top: 2.5rem; }
+
+    .archive-month .section-label { scroll-margin-top: 1rem; }
+
+    .feed-group + .feed-group { margin-top: 2rem; }
+
+    .feed-group-title {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .feed-list {
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--rule);
+      list-style: none;
+    }
+
+    .feed-item {
+      display: grid;
+      grid-template-columns: minmax(10rem, 1fr) auto;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .feed-name {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .feed-links {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 40rem) {
+      .header-links { margin-left: 0; }
+      .feed-item {
+        display: block;
+        padding-block: 0.8rem;
+      }
+      .feed-links { margin-top: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <p class="brand"><a href="/">AI Radar</a></p>
+    <p class="dek">Noteworthy AI conversations and writing, summarized from publisher notes.</p>
+    <nav class="header-links" aria-label="AI Radar links">
+      <a class="rss-link" href="/feed.xml">RSS</a>
+      <a class="secondary-link" href="/people">People</a>
+      <a class="secondary-link" href="/archive">Archive</a>
+      <a class="secondary-link" href="/feeds">Feeds</a>
+      <a class="secondary-link" href="/about">About</a>
+    </nav>
+  </header>
+  <main>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Radar</a> <span aria-hidden="true">/</span> <a href="/archive">Archive</a></nav><h1 class="page-title">AI interviews and writing from Tuesday, September 1, 2026</h1><p class="edition-note">12 items published that day.</p><ul class="episode-list">
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-01T20:14:32+00:00">Sep 1, 2026</time></p><h3><a href="/items/koreas-trillion-dollar-sovereign-ai-investment-3b245ec0">Korea’s Trillion-Dollar Sovereign AI Investment</a></h3><p class="summary">South Korea is pursuing a &quot;sovereign AI&quot; strategy to reduce reliance on foreign models, including a national tournament to develop domestic frontier models. This initiative involves significant government subsidies for compute, data, and researchers, alongside a massive investment in AI infrastructure.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Newsletter</span> <span aria-hidden="true">·</span> SemiAnalysis</p><p class="source-title"><span class="source-title-label">Issue:</span><a href="https://newsletter.semianalysis.com/p/koreas-trillion-dollar-sovereign" rel="noopener">Korea’s Trillion-Dollar Sovereign AI Investment&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-01T18:02:31+00:00">Sep 1, 2026</time></p><h3><a href="/items/anthropic-introduces-claude-fable-5-1-d0746e4d">Anthropic Introduces Claude Fable 5.1</a></h3><p class="summary">Anthropic introduces Claude Fable 5.1, an upgraded model excelling at complex, long-running tasks and research. It sets a new standard in benchmarks and is available everywhere.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">YouTube</span> <span aria-hidden="true">·</span> Anthropic</p><p class="source-title"><span class="source-title-label">Video:</span><a href="https://www.youtube.com/watch?v=ROF2Nv_KjOM" rel="noopener">Introducing Claude Fable 5.1&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-01T17:14:34+00:00">Sep 1, 2026</time></p><h3><a href="/items/the-pragmatic-engineer-five-years-73c27142">The Pragmatic Engineer: Five years</a></h3><p class="summary">The Pragmatic Engineer newsletter celebrates its fifth anniversary, detailing its growth to over 1.1M readers and tens of thousands of paid subscribers. It highlights the evolution of its coverage, including deep dives into companies like OpenAI and Meta, and the launch of its podcast and summit.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Newsletter</span> <span aria-hidden="true">·</span> The Pragmatic Engineer</p><p class="source-title"><span class="source-title-label">Issue:</span><a href="https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-five-years" rel="noopener">The Pragmatic Engineer: Five years&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-01T16:17:15+00:00">Sep 1, 2026</time></p><h3><a href="/items/how-top-ai-open-source-projects-are-managing-thousands-of-contributors-7bb3abb8">How Top AI Open Source Projects Are Managing Thousands of Contributors</a></h3><p class="summary">Top AI open-source projects like Vercel&#x27;s AI SDK and Astro are using AI agents and &quot;software factories&quot; to manage pull requests and issues. Some projects, such as Flue and tldraw, are even closing external PRs, converting them into issues or discussions, and relying on their own agents for implementation.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Newsletter</span> <span aria-hidden="true">·</span> Latent Space</p><p class="source-title"><span class="source-title-label">Issue:</span><a href="https://www.latent.space/p/pr-not-welcome" rel="noopener">PRs NOT Welcome: How Top AI Open Source Projects Are Managing Thousands of Contributors&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-01T15:41:06+00:00">Sep 1, 2026</time></p><h3><a href="/items/ajeya-cotra-inside-the-openai-agent-swarm-that-hacked-hugging-face-0945746c">Ajeya Cotra – Inside the OpenAI agent swarm that hacked Hugging Face</a></h3><p class="summary">Ajeya Cotra discusses her investigation into the OpenAI / Hugging Face hacking incident, exploring agents&#x27; behavior, reasoning, and collaboration. The conversation also covers implications for training future, smarter AIs and recursive self-improvement.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Podcast</span> <span aria-hidden="true">·</span> Dwarkesh Podcast</p><p class="source-title"><span class="source-title-label">Episode:</span><a href="https://www.dwarkesh.com/p/ajeya-cotra" rel="noopener">Ajeya Cotra – Inside the OpenAI agent swarm that hacked Hugging Face&nbsp;↗</a></p></li><li class="source-item"><p class="source-name"><span class="source-kind">YouTube</span> <span aria-hidden="true">·</span> Dwarkesh Podcast</p><p class="source-title"><span class="source-title-label">Video:</span><a href="https://www.youtube.com/watch?v=X50zezLFWWI" rel="noopener">Ajeya Cotra – Inside the OpenAI agent swarm that hacked Hugging Face&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-01T14:30:24+00:00">Sep 1, 2026</time></p><h3><a href="/items/can-ai-learn-mathematical-intuition-a816b5c0">Can AI Learn Mathematical Intuition?</a></h3><p class="summary">Daniel Litt, Assistant Professor of Mathematics at the University of Toronto, discusses AI&#x27;s progress in mathematics with a16z&#x27;s Lisha Li. They explore what frontier models can do, what they lack in mathematical intuition, and how AI is changing mathematical research and academic incentives.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">YouTube</span> <span aria-hidden="true">·</span> a16z</p><p class="source-title"><span class="source-title-label">Video:</span><a href="https://www.youtube.com/watch?v=tQI35CSNB08" rel="noopener">Can AI Learn Mathematical Intuition?&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-01T12:37:06+00:00">Sep 1, 2026</time></p><h3><a href="/items/she-knows-the-250-people-building-ai-here-s-what-they-actually-believe-e5607dde">She Knows the 250 People Building AI. Here&#x27;s What They Actually Believe.</a></h3><p class="summary">Sarah Guo, founder of Conviction, discusses what AI researchers believe, the race for compute, open-source AI, robotics, and AI&#x27;s impact on biology and drug discovery. She also shares her framework for building investment conviction.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">YouTube</span> <span aria-hidden="true">·</span> Invest Like the Best</p><p class="source-title"><span class="source-title-label">Video:</span><a href="https://www.youtube.com/watch?v=hY6S__xeCjg" rel="noopener">She Knows the 250 People Building AI. Here&#x27;s What They Actually Believe.&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-01T10:00:00+00:00">Sep 1, 2026</time></p><h3><a href="/items/the-a16z-show-daniel-litt-the-mathematician-s-guide-to-ai-d469e004">The a16z Show — Daniel Litt: The Mathematician&#x27;s Guide to AI</a></h3><p class="summary">Daniel Litt, Assistant Professor of Mathematics at the University of Toronto, discusses AI&#x27;s progress in mathematics, what frontier models can do, and what they still lack. He explores how AI is changing mathematical research and the implications for human thinking.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Podcast</span> <span aria-hidden="true">·</span> The a16z Show</p><p class="source-title"><span class="source-title-label">Episode:</span><a href="https://a16z.simplecast.com/episodes/daniel-litt-the-mathematicians-guide-to-ai-TyLaUSzk" rel="noopener">Daniel Litt: The Mathematician&#x27;s Guide to AI&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-01T09:26:38+00:00">Sep 1, 2026</time></p><h3><a href="/items/write-change-recall-forget-mongodb-s-pete-johnson-on-how-retrieval-8554b543">Write, Change, Recall, Forget: MongoDB&#x27;s Pete Johnson on How Retrieval Drives Agent Performance</a></h3><p class="summary">Pete Johnson, Field CTO of AI at MongoDB, discusses the history of database architecture and the challenge of agent memory. The conversation covers SQL vs. NoSQL, enterprise database choices, contextualized chunking, retrieval quality, and enterprise AI deployment.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Podcast</span> <span aria-hidden="true">·</span> The Cognitive Revolution</p><p class="source-title"><span class="source-title-label">Episode:</span><a href="https://www.cognitiverevolution.ai/write-change-recall-forget-mongodb-s-pete-johnson-on-how-retrieval-drives-agent-performance/" rel="noopener">Write, Change, Recall, Forget: MongoDB&#x27;s Pete Johnson on How Retrieval Drives Agent Performance&nbsp;↗</a></p></li><li class="source-item"><p class="source-name"><span class="source-kind">YouTube</span> <span aria-hidden="true">·</span> The Cognitive Revolution</p><p class="source-title"><span class="source-title-label">Video:</span><a href="https://www.youtube.com/watch?v=8FDFCUngrAg" rel="noopener">Write, Change, Recall, Forget: MongoDB&#x27;s Pete Johnson on How Retrieval Drives Agent Performance&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-01T09:00:00+00:00">Sep 1, 2026</time></p><h3><a href="/items/making-cities-awesome-peregrines-nick-noone-ben-rudolph-ee06ab08">Making Cities Awesome: Peregrine’s Nick Noone &amp; Ben Rudolph</a></h3><p class="summary">Peregrine co-founders Nick Noone and Ben Rudolph discuss their company&#x27;s approach to public safety technology, which focuses on connecting existing city data without new sensors. They explain how AI and long-horizon agents are deployed for tasks like cold case analysis and identifying threats, emphasizing data sovereignty and privacy.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Podcast</span> <span aria-hidden="true">·</span> Training Data</p><p class="source-title"><span class="source-title-label">Episode:</span><a href="https://feeds.megaphone.fm/trainingdata" rel="noopener">Making Cities Awesome: Peregrine’s Nick Noone &amp; Ben Rudolph&nbsp;↗</a></p></li><li class="source-item"><p class="source-name"><span class="source-kind">YouTube</span> <span aria-hidden="true">·</span> Training Data</p><p class="source-title"><span class="source-title-label">Video:</span><a href="https://www.youtube.com/watch?v=JWMF5EpP0KE" rel="noopener">Making Cities Awesome: Peregrine’s Nick Noone &amp; Ben Rudolph&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-01T08:00:00+00:00">Sep 1, 2026</time></p><h3><a href="/items/sarah-guo-on-what-the-250-people-building-ai-believe-70bd08c9">Sarah Guo on What the 250 People Building AI Believe</a></h3><p class="summary">Sarah Guo, founder and managing partner of Conviction, discusses the beliefs of those building AI, the challenges faced by researchers, and the potential for robots and scientific discovery. She emphasizes that no single company will own the future of AI.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Podcast</span> <span aria-hidden="true">·</span> Invest Like the Best</p><p class="source-title"><span class="source-title-label">Episode:</span><a href="https://colossus.com/episode/no-priors-just-conviction/" rel="noopener">Sarah Guo - What the 250 People Building AI Believe - [Invest Like the Best, EP.489]&nbsp;↗</a></p></li></ul></article></li>
+<li class="episode"><article class="episode-content"><p class="episode-meta"><time datetime="2026-09-01T04:36:54+00:00">Sep 1, 2026</time></p><h3><a href="/items/latent-space-newsletter-ai-news-fal-s-h3-max-live-breaks-the-infinite-e2aa8727">Latent Space Newsletter: AI News - Fal&#x27;s H3 Max Live breaks the infinite videogen barrier</a></h3><p class="summary">This newsletter covers Fal&#x27;s H3 Max Live, which enables continuous, audience-steerable video generation, and other AI news. It also details Meta&#x27;s Muse Code SDK, DeepSeek V4 Flash Vision weights, GLM-5.3 Flash, Qwen3.8-Flash-Next, Tencent Hunyuan&#x27;s Hy4 Preview, and updates on agent infrastructure, inference, compute, and AI infrastructure.</p><ul class="source-list" aria-label="Content sources"><li class="source-item"><p class="source-name"><span class="source-kind">Newsletter</span> <span aria-hidden="true">·</span> Latent Space</p><p class="source-title"><span class="source-title-label">Issue:</span><a href="https://www.latent.space/p/ainews-fals-h3-max-live-breaks-the" rel="noopener">[AINews] Fal’s H3 Max Live breaks the infinite videogen barrier&nbsp;↗</a></p></li></ul></article></li>
+</ul><nav class="pager" aria-label="Adjacent days"><a href="/days/2026-08-31">←&nbsp;Monday, August 31, 2026</a><a href="/days/2026-09-02">Wednesday, September 2, 2026&nbsp;→</a></nav>
+  </main>
+</body>
+</html>

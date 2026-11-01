@@ -55,12 +55,9 @@ from editorial import (
 )
 
 from rendering import (
+    GENERATED_DIRS,
     GENERATED_FILES,
-    render_archive_html,
-    render_feeds_html,
-    render_headers,
-    render_index_html,
-    render_rss,
+    render_site,
 )
 
 
@@ -183,8 +180,10 @@ def load_settings(config_path: pathlib.Path, archive_path: pathlib.Path) -> Sett
 
     roster: list[str] = []
     people: list[tuple[str, ...]] = []
+    person_roles: list[tuple[str, str]] = []
     for person in raw.get("people", []):
         people.append((str(person["name"]), *(str(alias) for alias in person.get("aliases", []))))
+        person_roles.append((str(person["name"]), str(person.get("role", ""))))
         aliases = ", ".join(str(alias) for alias in person.get("aliases", []))
         known_as = f" (also known as {aliases})" if aliases else ""
         roster.append(f"{person['name']}{known_as} — {person['role']}")
@@ -209,6 +208,7 @@ def load_settings(config_path: pathlib.Path, archive_path: pathlib.Path) -> Sett
         sources=tuple(sources),
         roster=tuple(roster),
         people=tuple(people),
+        person_roles=tuple(person_roles),
         llm=LLMSettings(
             base_url=str(llm.get("base_url", "https://openrouter.ai/api/v1")),
             api_key_env=str(llm.get("api_key_env", "OPENROUTER_API_KEY")),
@@ -1310,6 +1310,18 @@ def is_recent(value: str | None, cutoff: dt.datetime) -> bool:
     return parsed is not None and parsed >= cutoff
 
 
+def generated_paths(public_dir: pathlib.Path) -> set[str]:
+    """Generated files present under a public directory, as relative paths."""
+    paths = {name for name in GENERATED_FILES if (public_dir / name).is_file()}
+    for directory in GENERATED_DIRS:
+        paths.update(
+            path.relative_to(public_dir).as_posix()
+            for path in (public_dir / directory).rglob("*")
+            if path.is_file()
+        )
+    return paths
+
+
 def build_site(settings: Settings, archive: dict[str, Any] | None = None) -> dict[str, int]:
     archive = archive or load_archive(settings.archive_path)
     validate_archive(archive)
@@ -1320,16 +1332,16 @@ def build_site(settings: Settings, archive: dict[str, Any] | None = None) -> dic
     )
     editions = archive.get("editions", [])
     days = archive.get("days", [])
-    rendered = {
-        "index.html": render_index_html(settings, items, days, archive.get("days_closed_through")),
-        "archive.html": render_archive_html(settings, items, days),
-        "feeds.html": render_feeds_html(settings),
-        "feed.xml": render_rss(settings, items, editions),
-        "_headers": render_headers(),
-    }
+    rendered = render_site(settings, items, days, editions, archive.get("days_closed_through"))
     settings.public_dir.mkdir(parents=True, exist_ok=True)
-    for name in GENERATED_FILES:
-        write_text_atomic(settings.public_dir / name, rendered[name])
+    for directory in GENERATED_DIRS:
+        (settings.public_dir / directory).mkdir(exist_ok=True)
+    for name, value in rendered.items():
+        path = settings.public_dir / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        write_text_atomic(path, value)
+    for name in generated_paths(settings.public_dir) - rendered.keys():
+        (settings.public_dir / name).unlink()
     return {"items": len(items), "rss_items": len(editions), "feeds": len(settings.sources)}
 
 

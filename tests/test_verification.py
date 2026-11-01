@@ -30,6 +30,21 @@ class VerificationTests(unittest.TestCase):
                     self.assertEqual(path.read_bytes(), b"stale output")
                     path.write_bytes(original)
 
+    def test_verification_rejects_a_stray_or_missing_generated_page(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = make_settings(pathlib.Path(directory))
+            radar.save_archive(settings.archive_path, {"version": 1, "items": [published_item()]})
+            radar.build_site(settings)
+            stray = settings.public_dir / "items/left-behind.html"
+            stray.write_text("stale", encoding="utf-8")
+            with self.assertRaisesRegex(radar.RadarError, "stale or nondeterministic"):
+                verify_generated(settings)
+            stray.unlink()
+            page = next((settings.public_dir / "items").iterdir())
+            page.unlink()
+            with self.assertRaisesRegex(radar.RadarError, "stale or nondeterministic"):
+                verify_generated(settings)
+
     def test_failed_check_reports_the_tail_of_its_output(self) -> None:
         script = "import sys; print('x' * 9000); print('FAIL: test_named_failure'); sys.exit(1)"
         with self.assertRaises(subprocess.CalledProcessError) as caught, \

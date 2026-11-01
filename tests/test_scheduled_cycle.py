@@ -42,10 +42,27 @@ def configure_repo(root: pathlib.Path) -> None:
 
 
 class ScheduledCycleTests(unittest.TestCase):
+    def test_staging_covers_generated_directories_so_deletions_are_recorded(self) -> None:
+        radar_module = mock.Mock(GENERATED_FILES=radar.GENERATED_FILES, GENERATED_DIRS=radar.GENERATED_DIRS)
+        with tempfile.TemporaryDirectory() as directory:
+            root = pathlib.Path(directory)
+            (root / "public/items").mkdir(parents=True)
+            with (
+                mock.patch.object(scheduled_cycle, "ROOT", root),
+                mock.patch.object(scheduled_cycle, "command") as command,
+                mock.patch.object(scheduled_cycle.subprocess, "run", return_value=mock.Mock(returncode=0)),
+            ):
+                scheduled_cycle.stage_and_commit(radar_module, "message")
+        staged = command.call_args_list[0].args
+        self.assertIn("public/items", staged)
+        self.assertIn("public/index.html", staged)
+        self.assertNotIn("public/days", staged)
+
     def test_success_flushes_reporter_and_updates_release_tag(self) -> None:
         reporter = RecordingReporter()
         radar_module = mock.Mock()
         radar_module.GENERATED_FILES = radar.GENERATED_FILES
+        radar_module.GENERATED_DIRS = radar.GENERATED_DIRS
         radar_module.lookback_days_from_env.return_value = 7
         radar_module.run_cycle.return_value = GOOD_STATS
         radar_module.close_and_save_periods.return_value = (0, 0, False)
@@ -247,6 +264,7 @@ class GitTransactionTests(unittest.TestCase):
         reporter = RecordingReporter()
         radar_module = mock.Mock()
         radar_module.GENERATED_FILES = radar.GENERATED_FILES
+        radar_module.GENERATED_DIRS = radar.GENERATED_DIRS
         radar_module.close_and_save_periods.return_value = (1, 0, True)
         radar_module.run_cycle.side_effect = radar.RadarError("archive validation failed")
         calls: list[tuple[str, ...]] = []

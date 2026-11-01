@@ -132,6 +132,164 @@ def rss_feed(*, description: str, date: str | None = None, link: str = "https://
     </item></channel></rss>""".encode()
 
 
+def without_json_ld(page: str) -> str:
+    return re.sub(r'<script type="application/ld\+json">.*?</script>', "", page, flags=re.S)
+
+
+def json_ld(page: str) -> list[dict]:
+    return [json.loads(block) for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', page)]
+
+
+class SearchPagesTests(unittest.TestCase):
+    def build(self, directory: str, items: list[dict], days: list[dict] | None = None) -> radar.Settings:
+        settings = replace(
+            make_settings(pathlib.Path(directory)),
+            people=(("Sam Altman", "Sama"), ("Dario Amodei",)),
+            person_roles=(("Sam Altman", "OpenAI CEO"),),
+        )
+        archive = {"version": 1, "items": items}
+        if days:
+            archive.update(days=days, days_closed_through=days[-1]["closed_at"])
+        radar.save_archive(settings.archive_path, archive)
+        radar.build_site(settings)
+        return settings
+
+    def altman_items(self) -> list[dict]:
+        items = [
+            item_seen_at(f"altman{index:02d}", eastern(2026, 10, index + 1, 10))
+            for index in range(rendering.PERSON_PAGE_MIN_ITEMS)
+        ]
+        for index, item in enumerate(items):
+            item["title"] = f"Sam Altman on topic {index}"
+        return items
+
+    def test_every_item_gets_a_page_with_long_summary_sources_and_metadata(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            item = published_item()
+            item["title"] = "Sam Altman on </script> & Agents"
+            item["long_summary"] = VALID_LONG + " A distinct closing sentence for the item page."
+            settings = self.build(directory, [item])
+            path = rendering.item_path(item)
+            page = (settings.public_dir / (path.lstrip("/") + ".html")).read_text(encoding="utf-8")
+            home = (settings.public_dir / "index.html").read_text(encoding="utf-8")
+        self.assertRegex(path, r"^/items/[a-z0-9-]+$")
+        self.assertIn("A distinct closing sentence", page)
+        self.assertNotIn("A distinct closing sentence", home)
+        self.assertIn(f'<a href="{path}">Full summary', home)
+        self.assertIn(f'<link rel="canonical" href="{settings.base_url}{path}">', page)
+        self.assertIn('<meta property="og:type" content="article">', page)
+        self.assertIn('<h1 class="page-title">', page)
+        self.assertEqual(page.count("<h1"), 1)
+        self.assertIn('class="source-list"', page)
+        self.assertIn("not from a transcript", page)
+        article, breadcrumbs = json_ld(page)
+        self.assertEqual(article["@type"], "Article")
+        self.assertEqual(article["about"], [{"@type": "Person", "name": "Sam Altman"}])
+        self.assertEqual(article["isBasedOn"][0]["@type"], "PodcastEpisode")
+        self.assertEqual(breadcrumbs["@type"], "BreadcrumbList")
+        # Feed text cannot close the data block.
+        self.assertEqual(len(re.findall("</script>", page)), 2)
+
+    def test_slugs_are_readable_and_unique_for_repeated_headlines(self) -> None:
+        first, second = published_item(), published_item()
+        first["id"], second["id"] = "aaaaaaaa1111", "bbbbbbbb2222"
+        first["title"] = second["title"] = "Émile's AI — Part 2!"
+        self.assertEqual(rendering.item_path(first), "/items/emile-s-ai-part-2-aaaaaaaa")
+        self.assertNotEqual(rendering.item_path(first), rendering.item_path(second))
+        first["title"] = "Ωμέγα"
+        self.assertEqual(rendering.item_path(first), "/items/item-aaaaaaaa")
+
+    def test_person_pages_need_enough_items_and_link_from_roster_and_index(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            items = self.altman_items()
+            one = item_seen_at("dario", eastern(2026, 10, 5, 10))
+            one["title"] = "Dario Amodei on safety"
+            days = [{"date": "2026-10-03", "closed_at": "2026-10-04T04:00:00+00:00",
+                     "item_ids": [item["id"] for item in items]}]
+            settings = self.build(directory, [*items, one], days)
+            public = settings.public_dir
+            people = (public / "people.html").read_text(encoding="utf-8")
+            page = (public / "people/sam-altman.html").read_text(encoding="utf-8")
+            sitemap = (public / "sitemap.xml").read_text(encoding="utf-8")
+            llms = (public / "llms.txt").read_text(encoding="utf-8")
+            self.assertFalse((public / "people/dario-amodei.html").exists())
+        self.assertIn('<a href="/people/sam-altman">Sam Altman</a>', people)
+        self.assertIn("Dario Amodei", people)
+        self.assertNotIn("/people/dario-amodei", people + sitemap + llms)
+        self.assertIn("Sam Altman, OpenAI CEO,", page)
+        self.assertIn("Sam Altman on topic 0", page)
+        self.assertIn(f"{settings.base_url}/people/sam-altman", sitemap)
+        self.assertIn(f"{settings.base_url}/people/sam-altman", llms)
+        collection = json_ld(page)[0]
+        self.assertEqual(collection["about"]["jobTitle"], "OpenAI CEO")
+        self.assertEqual(collection["mainEntity"]["numberOfItems"], len(items))
+
+    def test_day_pages_link_neighbors_and_archive_stays_light(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            items = self.altman_items()
+            days = [
+                {"date": f"2026-10-0{index + 1}", "closed_at": f"2026-10-0{index + 2}T04:00:00+00:00",
+                 "item_ids": [item["id"]]}
+                for index, item in enumerate(items)
+            ]
+            settings = self.build(directory, items, days)
+            middle = (settings.public_dir / "days/2026-10-02.html").read_text(encoding="utf-8")
+            archive = (settings.public_dir / "archive.html").read_text(encoding="utf-8")
+        self.assertIn('href="/days/2026-10-01"', middle)
+        self.assertIn('href="/days/2026-10-03"', middle)
+        self.assertIn('<p class="summary">', middle)
+        self.assertNotIn('<p class="summary">', archive)
+        self.assertIn('id="day-2026-10-02"', archive)
+        self.assertIn('<a href="/days/2026-10-02">', archive)
+
+    def test_crawler_files_and_not_found_page(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            item = published_item()
+            settings = self.build(directory, [item])
+            public = settings.public_dir
+            sitemap = ET.parse(public / "sitemap.xml").getroot()
+            robots = (public / "robots.txt").read_text(encoding="utf-8")
+            missing = (public / "404.html").read_text(encoding="utf-8")
+            headers = (public / "_headers").read_text(encoding="utf-8")
+            about = (public / "about.html").read_text(encoding="utf-8")
+        namespace = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+        urls = [node.findtext(f"{namespace}loc") for node in sitemap]
+        self.assertIn(settings.base_url + rendering.item_path(item), urls)
+        self.assertIn(settings.base_url + "/about", urls)
+        self.assertEqual(len(urls), len(set(urls)))
+        self.assertFalse(any(url.endswith(".html") for url in urls))
+        self.assertIn(f"Sitemap: {settings.base_url}/sitemap.xml", robots)
+        self.assertIn('<meta name="robots" content="noindex">', missing)
+        self.assertNotIn('rel="canonical"', missing)
+        self.assertIn("Referrer-Policy: strict-origin-when-cross-origin", headers)
+        self.assertIn("publisher notes", about)
+
+    def test_retracted_item_page_is_pruned(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            kept = item_seen_at("kept", eastern(2026, 10, 1, 10))
+            retracted = item_seen_at("gone", eastern(2026, 10, 2, 10))
+            retracted["title"] = "A retracted item"
+            settings = self.build(directory, [kept, retracted])
+            page = settings.public_dir / (rendering.item_path(retracted).lstrip("/") + ".html")
+            self.assertTrue(page.exists())
+            radar.build_site(settings, {"version": 1, "items": [kept]})
+            self.assertFalse(page.exists())
+            self.assertTrue((settings.public_dir / (rendering.item_path(kept).lstrip("/") + ".html")).exists())
+
+    def test_rss_declares_itself_and_falls_back_when_an_edition_has_no_day(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            settings = make_settings(pathlib.Path(directory))
+        item = published_item()
+        edition = {"date": "2026-07-23", "closed_at": "2026-07-23T23:00:00+00:00", "item_ids": [item["id"]]}
+        value = rendering.render_rss(settings, [item], [edition], [])
+        root = ET.fromstring(value)
+        self.assertEqual(root.findtext("./channel/item/link"), settings.base_url + "/archive")
+        self.assertIsNotNone(root.findtext("./channel/lastBuildDate"))
+        link = root.find("./channel/{http://www.w3.org/2005/Atom}link")
+        self.assertEqual(link.get("href"), settings.base_url + "/feed.xml")
+        self.assertEqual(link.get("rel"), "self")
+
+
 class StaticPublisherTests(unittest.TestCase):
     def test_production_archive_and_all_outputs_match(self) -> None:
         settings = radar.load_settings(ROOT / "config.toml", ROOT / "data/items.json")
@@ -169,12 +327,15 @@ class StaticPublisherTests(unittest.TestCase):
         )
         self.assertFalse(rss.findall("./channel/item/source"))
         archive_text = (ROOT / "public/archive.html").read_text(encoding="utf-8")
-        self.assertEqual(archive_text.count('<li class="episode">'), len(day_items))
+        self.assertEqual(
+            archive_text.count("<li>"),
+            len(day_items),
+        )
         self.assertEqual(archive_text.count('<section class="edition" '), len(days))
-        self.assertIn('href="/archive.html"', html_text)
-        self.assertIn('href="/archive.html"', feeds_text)
+        self.assertIn('href="/archive"', html_text)
+        self.assertIn('href="/archive"', feeds_text)
         for forbidden in ("<img", "<script", "stylesheet", "javascript:"):
-            self.assertNotIn(forbidden, archive_text)
+            self.assertNotIn(forbidden, without_json_ld(archive_text))
         self.assertTrue(
             all(
                 "<strong>Sources</strong>" in (node.findtext("description") or "")
@@ -182,13 +343,13 @@ class StaticPublisherTests(unittest.TestCase):
             )
         )
         self.assertEqual(feeds_text.count('<li class="feed-item">'), len(settings.sources))
-        self.assertIn('href="/feeds.html"', html_text)
+        self.assertIn('href="/feeds"', html_text)
         self.assertIn('href="/"', feeds_text)
         self.assertNotIn("javascript:", html_text.casefold())
         self.assertNotIn("javascript:", feeds_text.casefold())
         for forbidden in ("<img", "<script", "stylesheet", "episode-card"):
-            self.assertNotIn(forbidden, html_text)
-            self.assertNotIn(forbidden, feeds_text)
+            self.assertNotIn(forbidden, without_json_ld(html_text))
+            self.assertNotIn(forbidden, without_json_ld(feeds_text))
         self.assertIsNone(re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", html_text))
 
     def test_build_site_is_deterministic_for_every_artifact(self) -> None:
@@ -205,7 +366,9 @@ class StaticPublisherTests(unittest.TestCase):
                     "feeds": len(settings.sources),
                 },
             )
-            for name in rendering.GENERATED_FILES:
+            built = radar.generated_paths(pathlib.Path(directory))
+            self.assertEqual(built, radar.generated_paths(ROOT / "public"))
+            for name in built:
                 self.assertEqual(
                     (pathlib.Path(directory) / name).read_bytes(),
                     (ROOT / "public" / name).read_bytes(),
@@ -1291,8 +1454,15 @@ class CycleTests(unittest.TestCase):
                 encoding="utf-8",
             )
             radar.build_site(settings)
-            written = sorted(path.name for path in settings.public_dir.iterdir())
-        self.assertEqual(written, sorted(rendering.GENERATED_FILES))
+            written = {path.name for path in settings.public_dir.iterdir()}
+            on_disk = radar.generated_paths(settings.public_dir)
+            every_file = {
+                path.relative_to(settings.public_dir).as_posix()
+                for path in settings.public_dir.rglob("*")
+                if path.is_file()
+            }
+        self.assertEqual(written, {*rendering.GENERATED_FILES, *rendering.GENERATED_DIRS})
+        self.assertEqual(on_disk, every_file)
 
     def test_entry_without_valid_date_is_reported_and_skipped_without_llm(self) -> None:
         reporter = RecordingReporter()
@@ -1454,7 +1624,7 @@ class DailyEditionTests(unittest.TestCase):
             {"date": "2026-10-13", "closed_at": "2026-10-13T23:00:00+00:00", "item_ids": ["first", "second"]},
             {"date": "2026-10-14", "closed_at": "2026-10-14T23:00:00+00:00", "item_ids": ["third"]},
         ]
-        rss = ET.fromstring(rendering.render_rss(settings, [third, second, first], editions))
+        rss = ET.fromstring(rendering.render_rss(settings, [third, second, first], editions, [{"date": "2026-10-14"}]))
         entries = rss.findall("./channel/item")
         self.assertEqual(
             [entry.findtext("title") for entry in entries],
@@ -1468,7 +1638,7 @@ class DailyEditionTests(unittest.TestCase):
             ["ai-radar:edition:2026-10-14", "ai-radar:edition:2026-10-13"],
         )
         self.assertEqual(entries[0].findtext("pubDate"), "Wed, 14 Oct 2026 23:00:00 +0000")
-        self.assertEqual(entries[0].findtext("link"), "https://ai-radar.merimerimeri.com/archive.html#day-2026-10-14")
+        self.assertEqual(entries[0].findtext("link"), "https://ai-radar.merimerimeri.com/days/2026-10-14")
         self.assertIn("Third item detail.", entries[0].findtext("description") or "")
         self.assertNotIn(VALID_SHORT, entries[0].findtext("description") or "")
         self.assertEqual((entries[1].findtext("description") or "").count("<h3>"), 2)
@@ -1533,16 +1703,16 @@ class DailyEditionTests(unittest.TestCase):
         self.assertEqual(page.count('<li class="episode story is-new">'), 1)
         self.assertNotIn("Latest:", page)
 
-        self.assertIn('<a href="/archive.html">All past days', page)
+        self.assertIn('<a href="/archive">All past days', page)
 
         archive_page = rendering.render_archive_html(settings, items, days)
         self.assertEqual(archive_page.count('<section class="edition" '), len(days))
-        self.assertEqual(archive_page.count('<li class="episode">'), len(days))
+        self.assertEqual(archive_page.count('<ul class="archive-list"><li>'), len(days))
         self.assertNotIn("Fresh headline for today", archive_page)
         self.assertIn('<a href="#month-2026-10">October 2026</a>', archive_page)
         self.assertLess(archive_page.index('id="day-2026-10-09"'), archive_page.index('id="day-2026-10-01"'))
         self.assertIn('href="/"', archive_page)
-        self.assertNotIn("<script", archive_page)
+        self.assertNotIn("<script", without_json_ld(archive_page))
 
         quiet = rendering.render_index_html(settings, list(reversed(old)), days, "2026-10-10T04:00:00+00:00")
         self.assertIn("Nothing new yet today. Recent days are below.", quiet)
@@ -1585,7 +1755,7 @@ class DailyEditionTests(unittest.TestCase):
         self.assertIn('href="https://www.youtube.com/watch?v=vid12345"', page)
         self.assertIn('title="YouTube · Test Show">VID<', page)
         self.assertIn('title="Podcast · Test Show">POD<', page)
-        self.assertNotIn("<script", page)
+        self.assertNotIn("<script", without_json_ld(page))
 
         # Stories lead the document, so phones and crawlers reach them before the roster.
         self.assertLess(page.index('<div class="stories">'), page.index('<aside class="people"'))
@@ -1597,7 +1767,7 @@ class DailyEditionTests(unittest.TestCase):
         self.assertNotIn("is-new", roster)
         self.assertIn('<span class="person-age">yesterday</span>', roster)
         self.assertIn('<span class="person-age">2d ago</span>', roster)
-        self.assertIn('href="/archive.html#day-2026-10-09"', roster)
+        self.assertIn(f'href="{rendering.item_path(cheeky)}"', roster)
         quiet = roster[roster.index('class="quiet"'):]
         self.assertIn("Jensen Huang", quiet)
         self.assertIn("Sam Altman", quiet)
@@ -1611,7 +1781,7 @@ class DailyEditionTests(unittest.TestCase):
         roster = page[page.index('<aside class="people"'):page.index("</aside>")]
         self.assertIn(
             '<li class="person is-new"><span class="person-name">Dario Amodei</span>'
-            '<span class="person-age">today</span><a class="person-latest" href="#day-today">',
+            '<span class="person-age">today</span><a class="person-latest" href="{}">'.format(rendering.item_path(today)),
             roster,
         )
         self.assertEqual(roster.count('<li class="person is-new">'), 1)
