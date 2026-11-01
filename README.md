@@ -25,10 +25,11 @@ AI Radar keeps two daily calendars in the edition timezone, America/New_York
   **Today**, everything published since midnight, followed by **Recent**, the
   last seven closed days, so a quiet day still shows recent work and Today does
   not empty when the 7 p.m. edition goes out. The homepage is built to be read
-  at a glance: one line per item, grouped by day, with the followed person in
-  bold and medium tags (POD, VID, TXT) that link to each appearance; clicking a
-  headline opens its short summary and sources in place. The newest items (Today,
-  or the latest closed day when Today is empty) carry a marker. A **People**
+  at a glance: one row per item, grouped under dated headings, with the full
+  headline, the followed person in bold, and the source below it with medium
+  tags (POD, VID, TXT) that link to each appearance; clicking a
+  headline opens its short summary and sources in place. Only items from today
+  carry a blue marker; closed days never do, even when Today is empty. A **People**
   roster lists followed people heard from in the last 30 days, newest first,
   with how long ago and their latest headline, and collapses everyone else into
   one quiet line. Ages count from the archive's own day close, never the build
@@ -50,7 +51,7 @@ days without fetching feeds or calling the model.
   followed-people roster, and LLM config
 - `data/items.json`: durable canonical publication and seen-item state
 - `public/index.html`: Today, Recent calendar days, and the People roster, one
-  line per item with short summaries that open in place
+  row per item with short summaries that open in place
 - `public/archive.html`: every past calendar day, newest first, with a month index
 - `public/feeds.html`: monitored feeds, grouped by medium
 - `public/feed.xml`: one RSS entry per daily edition using long summaries

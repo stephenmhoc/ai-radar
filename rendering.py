@@ -136,7 +136,7 @@ def render_story_rows(
     new: bool,
     empty: str = "No items yet.",
 ) -> str:
-    """One line per item on the homepage; the summary and sources open in place."""
+    """One row per item on the homepage; the summary and sources open in place."""
     rows: list[str] = []
     for item in items:
         appearances = ordered_appearances(item)
@@ -177,8 +177,6 @@ def render_index_day(
     settings: Settings,
     record: dict[str, Any],
     items: list[dict[str, Any]],
-    *,
-    new: bool,
 ) -> str:
     day = dt.date.fromisoformat(record["date"])
     members = set(record["item_ids"])
@@ -186,10 +184,10 @@ def render_index_day(
     count = len(day_items)
     anchor = f"day-{record['date']}"
     return (
-        f'<section class="day{" day-latest" if new else ""}" aria-labelledby="{anchor}">'
+        f'<section class="day" aria-labelledby="{anchor}">'
         f'<h2 class="day-label" id="{anchor}"><time datetime="{record["date"]}">{short_day_label(day)}</time>'
         f'<span class="day-count">{count} item{"" if count == 1 else "s"}</span></h2>'
-        f"{render_story_rows(settings, day_items, new=new)}"
+        f"{render_story_rows(settings, day_items, new=False)}"
         "</section>"
     )
 
@@ -209,7 +207,6 @@ def render_roster(
     items: list[dict[str, Any]],
     days: list[dict[str, Any]],
     today: dt.date,
-    new_date: dt.date | None,
 ) -> str:
     """Followed people by most recent appearance, measured from the archive's own calendar."""
     day_of = {item_id: dt.date.fromisoformat(day["date"]) for day in days for item_id in day["item_ids"]}
@@ -230,7 +227,7 @@ def render_roster(
         when, item = latest[name]
         href = "#day-today" if str(item["id"]) not in day_of else f"{ARCHIVE_PATH}#day-{when.isoformat()}"
         rows.append(
-            f'<li class="person{" is-new" if when == new_date else ""}">'
+            f'<li class="person{" is-new" if when == today else ""}">'
             f'<span class="person-name">{html.escape(name)}</span>'
             f'<span class="person-age">{age_label((today - when).days)}</span>'
             f'<a class="person-latest" href="{href}">{html.escape(str(item["title"]))}</a>'
@@ -257,7 +254,7 @@ def render_index_html(
     days: list[dict[str, Any]],
     days_closed_through: str | None,
 ) -> str:
-    """Render a one-screen front page: today's items, the most recent closed days, and the roster."""
+    """Render the front page: today's items, the most recent closed days, and the roster."""
     shown = {item_id for day in days for item_id in day["item_ids"]}
     today_items = [item for item in items if str(item["id"]) not in shown]
     recent = list(reversed(days))[:RECENT_DAYS]
@@ -266,11 +263,6 @@ def render_index_html(
     # rebuilding unchanged archive state renders identical output.
     today = site_day(since, settings) if since is not None else None
     latest = recent[0] if recent else None
-    new_date: dt.date | None = None
-    if today_items and today is not None:
-        new_date = today
-    elif latest is not None:
-        new_date = dt.date.fromisoformat(latest["date"])
 
     status: list[str] = []
     count = len(today_items)
@@ -296,17 +288,14 @@ def render_index_html(
         sections.append(
             '<section class="recent" aria-labelledby="recent-label">'
             '<h2 class="visually-hidden" id="recent-label">Recent</h2>'
-            + "".join(
-                render_index_day(settings, day, items, new=not today_items and day is latest)
-                for day in recent
-            )
+            + "".join(render_index_day(settings, day, items) for day in recent)
             + "</section>"
         )
     sections.append(f'<p class="archive-link"><a href="{ARCHIVE_PATH}">All past days&nbsp;→</a></p>')
-    roster = render_roster(settings, items, days, today, new_date) if today is not None else ""
+    roster = render_roster(settings, items, days, today) if today is not None else ""
     body = (
         f'<p class="status">{"".join(status)}</p>'
-        f'<div class="front">{roster}<div class="stories">{"".join(sections)}</div></div>'
+        f'<div class="front"><div class="stories">{"".join(sections)}</div>{roster}</div>'
     )
     return render_html(settings, [], main_content=body, section_label=None, wide=True)
 
@@ -405,10 +394,10 @@ STYLE = """
       background: var(--bg);
       color: var(--ink);
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
-    body.wide { --page: 76rem; }
+    body.wide { --page: 70rem; }
 
     a {
       color: inherit;
@@ -443,15 +432,15 @@ STYLE = """
       flex-wrap: wrap;
       align-items: baseline;
       gap: 0.25rem 1rem;
-      padding-top: 0.9rem;
-      padding-bottom: 0.8rem;
+      padding-top: 1.1rem;
+      padding-bottom: 1rem;
       border-bottom: 1px solid var(--rule);
       background: var(--surface);
     }
 
     h1 {
       margin: 0;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 780;
       letter-spacing: -0.01em;
     }
@@ -461,14 +450,14 @@ STYLE = """
     .dek {
       margin: 0;
       color: var(--muted);
-      font-size: 0.82rem;
+      font-size: 0.9rem;
     }
 
     .header-links {
       display: flex;
       gap: 1rem;
       margin-left: auto;
-      font-size: 0.82rem;
+      font-size: 0.9rem;
     }
 
     .rss-link {
@@ -489,10 +478,10 @@ STYLE = """
       display: flex;
       flex-wrap: wrap;
       gap: 0.2rem 1.25rem;
-      margin: 0 0 0.25rem;
-      padding: 0.55rem 0;
+      margin: 0 0 0.5rem;
+      padding: 0.9rem 0 0.4rem;
       color: var(--muted);
-      font-size: 0.8rem;
+      font-size: 0.875rem;
     }
 
     .status strong { color: var(--ink); }
@@ -504,36 +493,35 @@ STYLE = """
 
     .front {
       display: grid;
-      gap: 1rem;
-      font-size: 0.875rem;
+      gap: 2.5rem;
     }
 
-    .day {
-      display: grid;
-      grid-template-columns: 6.5rem minmax(0, 1fr);
-      gap: 0 0.75rem;
-      padding: 0.4rem 0;
-      border-top: 1px solid var(--rule);
-    }
+    .day { padding: 0 0 1.75rem; }
 
     .day-label {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
       margin: 0;
-      padding-top: 0.15rem;
-      color: var(--muted);
-      font: 600 0.75rem/1.4 var(--mono);
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--ink);
+      font-size: 1rem;
+      font-weight: 700;
     }
 
-    .day-today .day-label,
-    .day-latest .day-label { color: var(--accent); }
+    .day-today .day-label { color: var(--accent); }
+
+    .day-today .day-label { border-bottom-color: var(--accent); }
 
     .day-count {
-      display: block;
+      color: var(--muted);
+      font-size: 0.85rem;
       font-weight: 400;
     }
 
     .day-empty {
       margin: 0;
-      padding: 0.1rem 0;
+      padding: 0.7rem 0 0;
       color: var(--muted);
     }
 
@@ -544,17 +532,16 @@ STYLE = """
     }
 
     .story {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 0.75rem;
-      align-items: start;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--rule);
     }
+
+    .story:last-child { border-bottom: 0; }
 
     .story summary {
       display: flex;
-      gap: 0.45rem;
+      gap: 0.5rem;
       align-items: baseline;
-      padding: 0.12rem 0;
       cursor: pointer;
       list-style: none;
     }
@@ -566,55 +553,53 @@ STYLE = """
       text-decoration-color: var(--muted);
     }
 
-    .mark {
+    .mark { display: none; }
+
+    .is-new .mark {
+      display: block;
       flex: none;
-      width: 0.4rem;
-      height: 0.4rem;
+      width: 0.5rem;
+      height: 0.5rem;
       border-radius: 50%;
+      background: var(--accent);
       transform: translateY(-0.1rem);
     }
 
-    .is-new .mark { background: var(--accent); }
-
     .headline {
       min-width: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      font-size: 1.0625rem;
+      font-weight: 500;
+      line-height: 1.4;
     }
 
-    details[open] .headline { white-space: normal; }
+    .headline strong { font-weight: 700; }
 
-    .story-body {
-      max-width: 46rem;
-      padding: 0.1rem 0 0.75rem 0.85rem;
-    }
+    .story-body { padding: 0.5rem 0 0.25rem; }
 
     .media {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 0.3rem;
+      gap: 0.35rem;
       margin: 0;
-      padding-top: 0.2rem;
+      padding-top: 0.3rem;
     }
 
+    details[open] + .media { display: none; }
+
     .story-source {
-      max-width: 12rem;
-      margin-right: 0.2rem;
-      overflow: hidden;
+      margin-right: 0.25rem;
       color: var(--muted);
-      font-size: 0.78rem;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      font-size: 0.875rem;
     }
 
     .medium {
-      padding: 0.2rem 0.28rem;
+      padding: 0.22rem 0.32rem;
       border: 1px solid var(--rule);
       border-radius: 3px;
       background: var(--surface);
       color: var(--muted);
-      font: 600 0.62rem/1 var(--mono);
+      font: 600 0.68rem/1 var(--mono);
       letter-spacing: 0.04em;
       text-decoration: none;
     }
@@ -626,8 +611,6 @@ STYLE = """
 
     .archive-link {
       margin: 0;
-      padding-top: 0.75rem;
-      border-top: 1px solid var(--rule);
       font-weight: 650;
     }
 
@@ -637,9 +620,9 @@ STYLE = """
 
     .panel-label,
     .section-label {
-      margin: 0 0 0.4rem;
+      margin: 0 0 0.5rem;
       color: var(--muted);
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       font-weight: 750;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -654,8 +637,8 @@ STYLE = """
 
     .roster {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
-      gap: 0 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+      gap: 0 1.25rem;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -664,8 +647,8 @@ STYLE = """
     .person {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      gap: 0 0.5rem;
-      padding: 0.3rem 0;
+      gap: 0.1rem 0.5rem;
+      padding: 0.55rem 0;
       border-top: 1px solid var(--rule);
     }
 
@@ -679,7 +662,7 @@ STYLE = """
     .person-age {
       padding-top: 0.1rem;
       color: var(--muted);
-      font: 0.72rem var(--mono);
+      font: 0.75rem var(--mono);
     }
 
     .is-new .person-age {
@@ -692,7 +675,7 @@ STYLE = """
       grid-column: 1 / -1;
       overflow: hidden;
       color: var(--muted);
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       text-decoration: none;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -702,22 +685,21 @@ STYLE = """
 
     .quiet {
       margin: 0;
-      padding-top: 0.4rem;
+      padding-top: 0.6rem;
       border-top: 1px solid var(--rule);
       color: var(--muted);
-      font-size: 0.76rem;
+      font-size: 0.82rem;
+      line-height: 1.55;
     }
 
     .quiet strong { color: var(--ink); }
 
     @media (min-width: 64rem) {
       .front {
-        grid-template-columns: minmax(0, 1fr) 16rem;
-        gap: 2.5rem;
+        grid-template-columns: minmax(0, 1fr) 17rem;
+        gap: 3.5rem;
         align-items: start;
       }
-      .stories { grid-row: 1; grid-column: 1; }
-      .people { grid-row: 1; grid-column: 2; }
       .roster { display: block; }
       .person-latest { display: block; }
     }
@@ -725,16 +707,16 @@ STYLE = """
     .summary {
       max-width: 68ch;
       margin: 0;
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     .source-list {
       display: grid;
-      gap: 0.15rem;
-      margin: 0.4rem 0 0;
+      gap: 0.25rem;
+      margin: 0.5rem 0 0;
       padding: 0;
       color: var(--muted);
-      font-size: 0.8rem;
+      font-size: 0.875rem;
       list-style: none;
     }
 
@@ -754,7 +736,7 @@ STYLE = """
 
     .source-kind {
       color: var(--muted);
-      font: 600 0.66rem var(--mono);
+      font: 600 0.7rem var(--mono);
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
@@ -771,41 +753,39 @@ STYLE = """
     }
 
     .episode-list .episode {
-      padding: 0.9rem 0;
+      padding: 1.1rem 0;
       border-bottom: 1px solid var(--rule);
     }
 
     .episode-list .episode:last-child { border-bottom: 0; }
 
-    .episode-list .summary { font-size: 0.92rem; }
-
     .episode-meta {
       margin: 0 0 0.2rem;
       color: var(--muted);
-      font: 0.72rem var(--mono);
+      font: 0.75rem var(--mono);
     }
 
     h2, h3 { text-wrap: balance; }
 
     h3 {
       margin: 0 0 0.3rem;
-      font-size: 1.02rem;
+      font-size: 1.1rem;
       font-weight: 650;
       line-height: 1.35;
     }
 
     .edition-title {
-      margin: 2rem 0 0;
-      padding-bottom: 0.35rem;
+      margin: 2.25rem 0 0;
+      padding-bottom: 0.4rem;
       border-bottom: 2px solid var(--ink);
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       font-weight: 700;
     }
 
     .edition-note {
       margin: 0 0 1rem;
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
 
     .edition-empty {
@@ -848,7 +828,7 @@ STYLE = """
       grid-template-columns: minmax(10rem, 1fr) auto;
       gap: 1rem;
       align-items: baseline;
-      padding: 0.6rem 0;
+      padding: 0.75rem 0;
       border-bottom: 1px solid var(--rule);
     }
 
@@ -868,21 +848,6 @@ STYLE = """
 
     @media (max-width: 40rem) {
       .header-links { margin-left: 0; }
-      .day { grid-template-columns: minmax(0, 1fr); }
-      .day-label { padding: 0 0 0.15rem; }
-      .day-count {
-        display: inline;
-        margin-left: 0.4rem;
-      }
-      .story-source { display: none; }
-      .media { padding-top: 0.25rem; }
-      .headline {
-        display: -webkit-box;
-        white-space: normal;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-      }
-      details[open] .headline { display: block; }
       .feed-item {
         display: block;
         padding-block: 0.8rem;

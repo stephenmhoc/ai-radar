@@ -1547,10 +1547,12 @@ class DailyEditionTests(unittest.TestCase):
         quiet = rendering.render_index_html(settings, list(reversed(old)), days, "2026-10-10T04:00:00+00:00")
         self.assertIn("Nothing new yet today. Recent days are below.", quiet)
         self.assertEqual(quiet.count('<li class="episode story'), rendering.RECENT_DAYS)
-        # With Today empty, the latest closed day is what is new.
+        # With Today empty the status names the latest day, but nothing is
+        # marked: the marker means today, not most recent.
         self.assertIn("Latest: <strong>Fri Oct 9</strong> (1 item)", quiet)
-        self.assertIn('<section class="day day-latest" aria-labelledby="day-2026-10-09">', quiet)
-        self.assertEqual(quiet.count('<li class="episode story is-new">'), 1)
+        self.assertIn('<section class="day" aria-labelledby="day-2026-10-09">', quiet)
+        self.assertNotIn('class="episode story is-new"', quiet)
+        self.assertNotIn('class="person is-new"', quiet)
 
     def test_homepage_rows_open_in_place_and_roster_tracks_followed_people(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -1585,12 +1587,14 @@ class DailyEditionTests(unittest.TestCase):
         self.assertIn('title="Podcast · Test Show">POD<', page)
         self.assertNotIn("<script", page)
 
+        # Stories lead the document, so phones and crawlers reach them before the roster.
+        self.assertLess(page.index('<div class="stories">'), page.index('<aside class="people"'))
         roster = page[page.index('<aside class="people"'):page.index("</aside>")]
         names = re.findall(r'<span class="person-name">([^<]+)</span>', roster)
         # Surnames count only when the stored reason names the person in full;
         # a reason that merely mentions someone does not.
         self.assertEqual(names, ["Mark Zuckerberg", "Alexandr Wang", "Greg Brockman"])
-        self.assertEqual(roster.count('<li class="person is-new">'), 2)
+        self.assertNotIn("is-new", roster)
         self.assertIn('<span class="person-age">yesterday</span>', roster)
         self.assertIn('<span class="person-age">2d ago</span>', roster)
         self.assertIn('href="/archive.html#day-2026-10-09"', roster)
