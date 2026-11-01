@@ -83434,6 +83434,36 @@
       "links": {
         "podcast": "https://www.cognitiverevolution.ai/ai-am-carbon-in-the-arena-mistral-s-le-chonk-the-agent-run-economy-ferroelectric-ram-new-hacks/"
       }
+    },
+    {
+      "id": "d1c1c3bc51ffffc3d540",
+      "first_seen_at": "2026-11-01T08:17:19+00:00",
+      "status": "skipped",
+      "title": "High School Dropout to Multi-Billionaire: The Relentless Drive of Rafael Vivas",
+      "source_title": "High School Dropout to Multi-Billionaire: The Relentless Drive of Rafael Vivas",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Rafael Vivas, who is not on the followed list; AppLovin and Adam Foroughi are mentioned but no followed person speaks in this episode.",
+      "published_at": "2026-11-01T08:00:00+00:00",
+      "appearances": [
+        {
+          "id": "8bb666941924fce7a671",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "31f58a26-d55f-11f1-b465-63ec9eca8bc7",
+          "title": "High School Dropout to Multi-Billionaire: The Relentless Drive of Rafael Vivas",
+          "description": "Rafael “Raf” Vivas is a founding team member of AppLovin, the digital advertising and marketing company led by Adam Foroughi, where he has worked since 2011 in roles spanning business development, eCommerce and growth marketing, and co-founded the game publisher Lion Studios. He started in performance marketing at 14 working for his older brother, dropped out of high school, and at 17 built his own mobile ad platform, where Adam was one of his customers. When Adam decided to build a competing ad network, he recruited Raf as his first business hire in 2011, and Raf's one condition was that he live in the office. Raf explains how a small, unfunded team beat VC-backed rivals by going all in on technology, why he started Lion Studios to beat one of AppLovin's own partners and grew it to over $250 million in revenue in two years, and why he walked away at 28 and came back after the IPO as the stock collapsed. He also shares why AppLovin is against delegation and keeps its team small, how his mentor Mark Rosner taught him that every detail matters, and the best advice he ever received.\n\nShow notes: https://www.davidsenra.com/episode/rafael-vivas\n\nMade possible by\n\nRamp: https://ramp.com\n\nDeel: https://deel.com/senra\n\nAppLovin: https://applovin.com/senra\n\nChapters\n\n(00:00:00) Kicked out of his house at 16\n\n(00:06:42) Starting his own ad platform at 17\n\n(00:09:58) “Don't be mad, but I'm going to compete with you”\n\n(00:11:06) His one condition: living in the office\n\n(00:15:40) Turned down by VCs while already profitable\n\n(00:21:00) Why he's against delegation\n\n(00:24:15) Two years of persistence to land one customer\n\n(00:30:42) Lion Studios: built to kill a Cheetah\n\n(00:38:41) Walking away from AppLovin at 28\n\n(00:44:13) The IPO that brought him back\n\n(00:45:44) The stock buyback that made $50 billion\n\n(01:01:01) The mentor who redlined the NDA\n\n(01:03:54) “Do you want to be Michael Jordan or Tiger Woods?”\n\n(01:05:46) The best advice he ever received: stay in the game\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/rafael-vivas",
+          "published_at": "2026-11-01T08:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/rafael-vivas"
+      }
     }
   ],
   "editions": [
