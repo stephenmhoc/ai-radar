@@ -83464,6 +83464,34 @@
       "links": {
         "podcast": "https://www.davidsenra.com/episode/rafael-vivas"
       }
+    },
+    {
+      "id": "1192862a4fbcc85943a3",
+      "first_seen_at": "2026-11-01T11:17:19+00:00",
+      "status": "skipped",
+      "title": "How Bending Spoons Built a $20 Billion Compounder | Luca Ferrari",
+      "source_title": "How Bending Spoons Built a $20 Billion Compounder | Luca Ferrari",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are Bending Spoons CEO Luca Ferrari and a16z General Partner Anish Acharya; neither is on the followed list, so no followed person speaks or writes in this episode.",
+      "published_at": "2026-11-01T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "66b82221deb4eb4b9f79",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "07d45a62-6c5d-4484-ac20-4547effdeb15",
+          "title": "How Bending Spoons Built a $20 Billion Compounder | Luca Ferrari",
+          "description": "Can relentless optimization create as much value as breakthrough invention? Bending Spoons CEO Luca Ferrari argues that radical innovation can produce extraordinary outcomes, but systematic improvement can be more dependable, especially when paired with a model designed to compound over decades.\n\nSpeaking with a16z General Partner Anish Acharya at Wave by Vento, Luca explains how Bending Spoons acquires technology companies, integrates them onto a shared platform, improves their economics, and reinvests the resulting cash into new acquisitions. They discuss the tradeoffs between growth and profitability, how to use debt without putting the company at risk, and why long-term thinking can create an advantage.\n\nThey also debate whether AI really threatens SaaS, why moats like brand, proprietary data, network effects, and switching costs still matter, and how Bending Spoons is already using AI across coding, customer support, and data analysis.\n\nResources:\n\nRecorded at Wave by Vento.\n\nLuca Ferrari on LinkedIn:\nhttps://it.linkedin.com/in/luca-ferrari-12418318\n\nFollow Anish Acharya on X:\nhttps://x.com/illscience\n\nLearn more about Bending Spoons:\nhttps://bendingspoons.com/\n\nWave by Vento:\nhttps://wavebyvento.com/\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/how-bending-spoons-built-a-20-billion-compounder-luca-ferrari-etgfvfs0",
+          "published_at": "2026-11-01T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/how-bending-spoons-built-a-20-billion-compounder-luca-ferrari-etgfvfs0"
+      }
     }
   ],
   "editions": [
