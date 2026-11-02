@@ -73,6 +73,8 @@ YOUTUBE_RETRY_DELAY_SECONDS = 60
 YOUTUBE_RETRY_ATTEMPTS = 3
 YOUTUBE_RETRY_BACKOFF_FACTOR = 2.0
 YOUTUBE_OUTAGE_MIN_SOURCES = 3
+SOURCE_FAILURE_TITLE_NAMES = 5
+SENTRY_TAG_VALUE_MAX_CHARS = 200
 ITEM_FIELDS = frozenset(
     {
         "id",
@@ -898,6 +900,18 @@ def is_youtube_rss_outage(failures: list[SourceFailure], *, youtube_source_count
     )
 
 
+def failed_source_labels(failures: list[SourceFailure]) -> list[str]:
+    return sorted({f"{failure.source.name} ({failure.source.kind})" for failure in failures})
+
+
+def source_failure_title(failures: list[SourceFailure]) -> str:
+    labels = failed_source_labels(failures)
+    named = ", ".join(labels[:SOURCE_FAILURE_TITLE_NAMES])
+    hidden = len(labels) - SOURCE_FAILURE_TITLE_NAMES
+    suffix = f" and {hidden} more" if hidden > 0 else ""
+    return f"{len(failures)} source(s) failed during collection: {named}{suffix}"
+
+
 def report_source_failures(
     settings: Settings,
     failures: list[SourceFailure],
@@ -926,11 +940,12 @@ def report_source_failures(
                   file=sys.stderr)
             continue
         message = (f"YouTube RSS outage: {len(batch)} of {youtube_count} source(s) failed after delayed retry"
-                   if is_outage else f"{len(batch)} source(s) failed during collection")
+                   if is_outage else source_failure_title(batch))
         event_id = reporter.capture_exception(
             RadarError(message),
             tags={
                 "phase": "source", "source_error_count": len(batch),
+                "sources": ", ".join(failed_source_labels(batch))[:SENTRY_TAG_VALUE_MAX_CHARS],
                 "youtube_source_error_count": sum(f.source.kind == "youtube" and f.stage == "fetch" for f in batch),
                 "youtube_rss_outage": str(is_outage).lower(),
             },

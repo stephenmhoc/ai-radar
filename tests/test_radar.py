@@ -1334,6 +1334,37 @@ class CycleTests(unittest.TestCase):
                 radar.run_cycle(settings, lookback_days=7, reporter=reporter)
             self.assertEqual(len(reporter.exceptions), 2)
 
+    def test_source_failure_event_names_the_failed_feed(self) -> None:
+        reporter = RecordingReporter()
+        with tempfile.TemporaryDirectory() as directory:
+            settings = make_settings(
+                pathlib.Path(directory), sources=(make_source(kind="youtube", name="Stripe"),)
+            )
+            failure = radar.SourceFailure(
+                settings.sources[0], radar_common.RadarError("feed HTTP 404"), "fetch"
+            )
+            radar.report_source_failures(
+                settings, [failure], reporter, retry_attempts=1, retry_recoveries=0
+            )
+        event = reporter.exceptions[0]
+        self.assertEqual(
+            str(event["exception"]), "1 source(s) failed during collection: Stripe (youtube)"
+        )
+        self.assertEqual(event["tags"]["sources"], "Stripe (youtube)")
+
+    def test_source_failure_title_stays_bounded_with_many_feeds(self) -> None:
+        failures = [
+            radar.SourceFailure(
+                make_source(name=f"Source {index}"), radar_common.RadarError("down"), "fetch"
+            )
+            for index in range(7)
+        ]
+        title = radar.source_failure_title(failures)
+        self.assertTrue(title.startswith("7 source(s) failed during collection: Source 0 ("))
+        self.assertIn("Source 4 (", title)
+        self.assertNotIn("Source 5 (", title)
+        self.assertTrue(title.endswith(" and 2 more"))
+
     def test_youtube_outage_requires_widespread_fetch_failures(self) -> None:
         source = make_source(kind="youtube", name="YouTube")
         fetch_failures = [

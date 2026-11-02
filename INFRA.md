@@ -400,7 +400,8 @@ AI Radar sends error events to its Sentry project when
 release, freshly synchronized worktree SHA, application, host, failing phase,
 and source/model tags where applicable. Stable fingerprints group repeated
 source-cycle (per failing source set), summary (per model and error type),
-pipeline-phase, and stale-heartbeat failures. Failed verification events carry
+pipeline-phase, and stale-heartbeat failures. Source-cycle event titles and the
+`sources` tag name each failed feed and its medium. Failed verification events carry
 the tail of the failing check's output in `output_tail`.
 
 Events are sent with `include_local_variables=False` and
