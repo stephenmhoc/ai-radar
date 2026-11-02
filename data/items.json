@@ -83582,6 +83582,36 @@
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities"
       }
+    },
+    {
+      "id": "92cfd2e01ce6793b8cd5",
+      "first_seen_at": "2026-11-02T11:17:19+00:00",
+      "status": "deferred",
+      "title": "Google Earnings, Facebook Déjà Vu, The Agent Play",
+      "source_title": "Google Earnings, Facebook Déjà Vu, The Agent Play",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-02T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "b681dcb0d4c19fa3e241",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20740",
+          "title": "Google Earnings, Facebook Déjà Vu, The Agent Play",
+          "description": "Google's earnings miss looks a lot like Facebook's, and that's a credit to Google. The company is being more aggressive than they get credit for.",
+          "url": "https://stratechery.com/2026/google-earnings-facebook-deja-vu-the-agent-play/",
+          "published_at": "2026-11-02T11:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/google-earnings-facebook-deja-vu-the-agent-play/"
+      }
     }
   ],
   "editions": [
