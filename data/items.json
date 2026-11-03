@@ -83927,6 +83927,37 @@
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/elon-is-doing-it-again-spacex-will"
       }
+    },
+    {
+      "id": "6d704277bae6665f41a2",
+      "first_seen_at": "2026-11-03T22:17:18+00:00",
+      "status": "deferred",
+      "title": "⚡️ The 2026 Software Factory Standard — Zach Lloyd, Warp.dev",
+      "source_title": "⚡️ The 2026 Software Factory Standard — Zach Lloyd, Warp.dev",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-03T20:16:25+00:00",
+      "appearances": [
+        {
+          "id": "fba589c5583f9c2cd212",
+          "kind": "podcast",
+          "source": "Latent Space",
+          "family": "latent space",
+          "guid": "youtube:LL0YmIyBKSU",
+          "title": "⚡️ The 2026 Software Factory Standard — Zach Lloyd, Warp.dev",
+          "description": "Watch the full show on YouTube: https://www.youtube.com/watch?v=LL0YmIyBKSU",
+          "url": "https://www.youtube.com/watch?v=LL0YmIyBKSU",
+          "published_at": "2026-11-03T20:16:25+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.youtube.com/watch?v=LL0YmIyBKSU"
+      }
     }
   ],
   "editions": [
