@@ -83779,6 +83779,64 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/"
       }
+    },
+    {
+      "id": "555f1febdb35b83f5d50",
+      "first_seen_at": "2026-11-03T11:17:20+00:00",
+      "status": "skipped",
+      "title": "Andrew Huberman's Three Rules for Better Health and Focus",
+      "source_title": "Andrew Huberman’s Three Rules for Better Health and Focus",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode's guest is Andrew Huberman, who is not on the AI Radar followed list. Host Daisy Wolf and host Erik Torenberg are not followed people, so no followed person is a guest, interviewee, or central speaker.",
+      "published_at": "2026-11-03T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "10d6d525cb49bb5a0f63",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "2db85bd5-7b1f-4154-b3ad-b2d2a0d6857e",
+          "title": "Andrew Huberman’s Three Rules for Better Health and Focus",
+          "description": "If you could do only three things for your health, what should they be? Andrew Huberman’s answer is surprisingly straightforward: get bright light shortly after waking, resistance train, and make the sleep you can get as high-quality as possible.\n\nAndrew joins a16z General Partner Daisy Wolf to walk through the protocols he actually follows, from exercise and nutrition to meditation, supplements, and locking his social media phone in a box. He also explains why optimizing every health protocol can be counterproductive if it gets in the way of the rest of your life.\n\nAnd for founders, Andrew makes a different case: identify the hours when your brain does its best work and protect them. They discuss cognitive performance, meditation, sustainable workloads, and emerging neurotechnology that could help us control transitions between sleep, focus, and recovery. \n\nResources:\n\nHuberman Lab :\nhttps://www.hubermanlab.com/\n\nFollow Andrew Huberman: \nhttps://www.youtube.com/@hubermanlab\n\nFollow Daisy Wolf: \nhttps://x.com/daisydwolf\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/andrew-hubermans-three-rules-for-better-health-and-focus-3LRT9Uzz",
+          "published_at": "2026-11-03T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/andrew-hubermans-three-rules-for-better-health-and-focus-3LRT9Uzz"
+      }
+    },
+    {
+      "id": "a09ffe9f62952df46bb1",
+      "first_seen_at": "2026-11-03T11:17:20+00:00",
+      "status": "deferred",
+      "title": "Apple Earnings, Memory Problems, The Hardware Company Regression",
+      "source_title": "Apple Earnings, Memory Problems, The Hardware Company Regression",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-03T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "55992a2b6f2946ecf3cc",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=20761",
+          "title": "Apple Earnings, Memory Problems, The Hardware Company Regression",
+          "description": "Apple's earnings suggest that the company's hardware business is doing better than ever, even in the face of memory challenges. Does the software story help or hurt?",
+          "url": "https://stratechery.com/2026/apple-earnings-memory-problems-the-hardware-company-regression/",
+          "published_at": "2026-11-03T11:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/apple-earnings-memory-problems-the-hardware-company-regression/"
+      }
     }
   ],
   "editions": [
