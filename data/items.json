@@ -83837,6 +83837,36 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/apple-earnings-memory-problems-the-hardware-company-regression/"
       }
+    },
+    {
+      "id": "c9996aa0eb76a899ae74",
+      "first_seen_at": "2026-11-03T13:17:21+00:00",
+      "status": "skipped",
+      "title": "Cheeky Pint: The company building America's uranium supply from scratch",
+      "source_title": "The company building America’s uranium supply from scratch",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Scott Nolan, co-founder and CEO of General Matter, who is not on the followed list. John Collison is the host and is not a followed person. No followed person appears as a guest or speaker.",
+      "published_at": "2026-11-03T12:45:00+00:00",
+      "appearances": [
+        {
+          "id": "18d48deba0e4b56919ce",
+          "kind": "podcast",
+          "source": "Cheeky Pint",
+          "family": "cheeky pint",
+          "guid": "bad0405d-1802-42a2-aa95-4d813cce07d2",
+          "title": "The company building America’s uranium supply from scratch",
+          "description": "Scott Nolan, Co-Founder and CEO of General Matter, joins John for a pint to discuss the engineering, economics, and geopolitics behind uranium enrichment. Scott breaks down why advanced reactors can't scale without High-Assay Low-Enriched Uranium (HALEU), why the US outsourced its fuel supply following the Cold War, and how General Matter is building a domestic facility in Paducah, Kentucky, to replace Russian imports. He also shares lessons as an early employee at SpaceX, and why 1970s interest rates stalled nuclear.\n\nTimestamps\n\n(00:00:00) Introduction\n\n(00:00:41) America’s missing nuclear fuel\n\n(00:05:27) Why small reactors need stronger fuel\n\n(00:11:42) Can nuclear power the AI buildout?\n\n(00:15:25) Why nuclear became so expensive\n\n(00:22:24) The startups reinventing nuclear\n\n(00:25:31) General Matter’s race to 2030\n\n(00:29:44) Stripe Press’ new books\n\n(00:30:22) The SpaceX playbook applied to nuclear\n\n(00:35:18) Uranium enrichment, explained\n\n(00:45:53) How small startups beat stagnant incumbents",
+          "url": "https://share.transistor.fm/s/69a09d0c",
+          "published_at": "2026-11-03T12:45:00+00:00",
+          "hosts": [
+            "John Collison"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/69a09d0c"
+      }
     }
   ],
   "editions": [
