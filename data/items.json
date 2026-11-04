@@ -84076,6 +84076,66 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/ai-on-the-ballot/"
       }
+    },
+    {
+      "id": "67a99af12783aa6b3ce0",
+      "first_seen_at": "2026-11-04T17:18:30+00:00",
+      "status": "skipped",
+      "title": "How well can we measure open model inference share?",
+      "source_title": "How well can we measure open model inference share?",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a newsletter by Nathan Lambert, who is not on the followed list. The notes mention no followed person as a guest, interviewee, or author, so it does not qualify.",
+      "published_at": "2026-11-04T16:35:44+00:00",
+      "appearances": [
+        {
+          "id": "46234fcbddff83897901",
+          "kind": "newsletter",
+          "source": "Interconnects",
+          "family": "interconnects",
+          "guid": "https://www.interconnects.ai/p/how-well-can-we-measure-open-model",
+          "title": "How well can we measure open model inference share?",
+          "description": "My longest running agent testbed has been building the \nInterconnects Dashboard\n — an aggregator of all of the best data on open model adoption and performance from across the web. This dashboard is freely available and becoming quite useful. Still, all the measurements we have on open model adoption are incredibly imprecise. We have noisy platform metrics, marketing-related metrics from startups, and imperfect public evaluations. It takes an informed eye to figure out where things are going. These research notes are my current best approximations of where we stand.\n\nAs with most things on Interconnects, our goal is to build well more value than we capture, so the data on the dashboard will remain free for the foreseeable future. These notes will be more raw than many of my articles, a place for sharing what I’m mulling over but don’t have complete evidence for (yet). They will be primarily paid, enabling me to speak more freely. If you work in AI policy or policy-facing research, please reach out to us and we can likely get discounted or free access.\n\nThe primary question I wanted to address today is: What is the market for open model inference? Is it growing? Is it a rounding error relative to OpenAI/Anthropic?\n\nShare\n\nI’ve been building the best measurements I can here, primarily using the open model inference startups Baseten, Fireworks, and Together AI as the bellwethers here (along with the open model share of OpenRouter’s token volume, which they thankfully report in their API). The hyperscalers also likely have a major footprint here, e.g. Amazon Bedrock and Azure’s model garden, but I haven’t seen them break down usage by model category. The startups’ fates are much more directly correlated with the success of open model inference as a category.\n\nFor the latest data, we can start with a slide from my \ntalk on the open model economy\n (recording \nhere\n). These are the public disclosures from the open model startups on their token volume, over time, log-scale. \n\nThis shows near-exponential growth, before the uptick that would follow \nGLM 5.2’s step change in open agents\n. For example, Fireworks announced at their first company conference this week that they’re \nserving more than 40T tokens per day\n to customers’ customized models. This is just one slice of their inference, a vertical that they said grew over 2x from this summer, so I would expect their total number this fall to be well above 100T tokens when we get the next update.\n\nMy first instinct with these numbers has been to ground them versus any closed model or hyperscale company we can, at least in terms of token volume. Thankfully, Google releases token volumes for the entire platform and API usage in their earnings reports. We can overlay those two numbers on top of the open model inference platforms, with the resulting plot below:\n\n Read more",
+          "url": "https://www.interconnects.ai/p/how-well-can-we-measure-open-model",
+          "published_at": "2026-11-04T16:35:44+00:00",
+          "hosts": [
+            "Nathan Lambert"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://www.interconnects.ai/p/how-well-can-we-measure-open-model"
+      }
+    },
+    {
+      "id": "21c42268e6030a18a98f",
+      "first_seen_at": "2026-11-04T17:18:36+00:00",
+      "status": "skipped",
+      "title": "Kevin Roose on writing The AGI Chronicles",
+      "source_title": "The Inside Story of the 50 Who Built Modern AI With Kevin Roose",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode features Natalia Quintero interviewing Kevin Roose, who is not on the followed list. Dario Amodei is only discussed through his 'Big Blob of Compute' memo, so no followed person is a guest, speaker, or author.",
+      "published_at": "2026-11-04T17:02:33+00:00",
+      "appearances": [
+        {
+          "id": "ae08a94e586f0531afff",
+          "kind": "podcast",
+          "source": "AI & I",
+          "family": "ai & i",
+          "guid": "flightcast:01M6KJSKA8EAFY499K1BVMN3KK",
+          "title": "The Inside Story of the 50 Who Built Modern AI With Kevin Roose",
+          "description": "How did the race to build AGI really unfold, and who made the decisions that shaped it?\nTech journalist Kevin Roose interviewed 150 people at the center of the AI industry to find out. The result is The AGI Chronicles, a riveting account of  how modern AI was built and the choices that will determine what comes next. \nOn this week’s episode of The Every Podcast, Natalia Quintero sits down with Roose to talk about how he got a secretive industry to open up, how he did (and didn’t) use AI in his book writing process, and why he sees his job as explaining the “very confusing and insular” world of Silicon Valley to everyone else.\nLinks to resources mentioned in the episode:\nFollow Kevin Roose: https://x.com/kevinroose\nGet Kevin Roose’s book, The AGI Chronicles: https://theagichronicles.com/\nMachine Gods: https://www.npr.org/podcasts/g-s1-143588/machine-gods \n“The Big Blob of Compute Hypothesis” excerpt on Kevin’s Substack: https://kevinroose.substack.com/p/the-essay-that-started-the-ai-race \nProfiles of the Future by Arthur C. Clarke: https://www.amazon.com/Profiles-Future-Inquiry-Limits-Possible/dp/0575402776 \nThe Making of the Atomic Bomb by Richard Rhodes: https://www.amazon.com/Making-Atomic-Bomb-Richard-Rhodes/dp/1451677618 \nNotebookLM: https://notebook.google/\nTimestamps:\n0:00 Introduction \n2:23 Are we doomed? Roose on AI risk and the case for mandatory safety testing\n7:13 Why Roose raced to write the history of AGI before the records disappeared \n10:45 How Roose got 150 sources in a secretive industry to open up \n13:49 Dario Amodei’s “Big Blob of Compute” memo \n19:12 How Roose’s mother’s book on the survivors of the atomic bomb influenced his work\n21:40 The moment Roose first “felt the AGI” \n23:24 How a “council of Claudes” fact-checked Roose’s book \n31:59 Launching Machine Gods and reinventing video journalism \n41:41 Weightlifting versus forklifting: How Roose decides what to hand off to AI",
+          "url": "https://feeds.transistor.fm/how-do-you-use-chatgpt",
+          "published_at": "2026-11-04T17:02:33+00:00",
+          "hosts": [
+            "Dan Shipper"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.transistor.fm/how-do-you-use-chatgpt"
+      }
     }
   ],
   "editions": [
