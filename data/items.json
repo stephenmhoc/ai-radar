@@ -83958,6 +83958,66 @@
       "links": {
         "podcast": "https://www.youtube.com/watch?v=LL0YmIyBKSU"
       }
+    },
+    {
+      "id": "f4dd92edc45c0eda3fc8",
+      "first_seen_at": "2026-11-04T09:17:19+00:00",
+      "status": "skipped",
+      "title": "Martin Casado on Frontier Model Economics, AI's Slowdown, and the Cursor Deal",
+      "source_title": "Martin Casado on Frontier Model Economics, AI's Slowdown, and the Cursor Deal - [Invest Like the Best, EP.498]",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Martin Casado of Andreessen Horowitz, who is not on the followed list. The notes name no followed person as a guest, interviewee, or speaker, so the item does not qualify.",
+      "published_at": "2026-11-04T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "191c3eeb687aac14af76",
+          "kind": "podcast",
+          "source": "Invest Like the Best",
+          "family": "invest like the best",
+          "guid": "49530156-d7dc-11f1-b21c-fbd5cb900e1d",
+          "title": "Martin Casado on Frontier Model Economics, AI's Slowdown, and the Cursor Deal - [Invest Like the Best, EP.498]",
+          "description": "My guest today is Martin Casado, General Partner at Andreessen Horowitz. \n\nMartin has spent three decades building and investing in technology infrastructure. We discuss why traditional approaches to investing often fail to capture disruptive technologies, how AI is reshaping the economics of software, and why the ability to turn capital directly into technological progress may be the most important change of all. Martin also shares lessons from some of his biggest investments and acquisitions. \n\nPlease enjoy this conversation with Martin Casado.\n\nFor the full show notes, transcript, and links to mentioned content, check out the episode page here.\n\n-----\n\nBecome a Colossus member to get our quarterly print magazine and private audio experience, including exclusive profiles and early access to select episodes. Subscribe at ⁠colossus.com/subscribe⁠.\n\n-----\n\n⁠Ramp’s⁠ mission is to help companies manage their spend in a way that reduces expenses and frees up time for teams to work on more valuable projects. Go to ⁠⁠ramp.com/invest⁠⁠ to sign up for free and get a $250 welcome bonus.\n\n-----\n\nTrusted by thousands of businesses, ⁠Vanta⁠ continuously monitors your security posture and streamlines audits so you can win enterprise deals and build customer trust without the traditional overhead. Invest Like the Best listeners get a special offer of $1,000 off Vanta when you go to ⁠vanta.com/invest⁠.\n\n-----\n\nWorkOS⁠ is the infrastructure B2B and AI-native companies use to sell to enterprise. It covers everything enterprise security requires: SSO, SCIM, RBAC, Audit Logs, AI governance, and more. Trusted by 2,000+ fast-growing companies, including OpenAI, Anthropic, Cursor, and Vercel.\n\n-----\n\nRogo is the AI platform for finance. They're building agents for Wall Street that are trained to understand how bankers and investors actually do work: from diligence and modeling, to turning analysis into deliverables. To learn more, visit rogo.ai/invest.\n\n-----\n\n⁠Ridgeline⁠ has built a complete, real-time, modern operating system for investment managers. It handles trading, portfolio management, compliance, customer reporting, and much more through an all-in-one real-time cloud platform. Visit ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠ridgeline.ai⁠.\n\n-----\n\nEditing and post-production work for this episode was provided by The Podcast Consultant.\n\nTimestamps:\n\n(00:00:00) The Four Types of Investors\n\n(00:04:58) Why Moats Rarely Matter\n\n(00:14:45) The State of AI Infrastructure\n\n(00:19:21) Frontier Model Economics\n\n(00:24:12) What AI Makes Possible Now\n\n(00:29:14) AI and Cybersecurity\n\n(00:30:52) Why Money Can Finally Scale Engineering\n\n(00:37:21) Neo Clouds, Neo Labs, and Data Centers in Space\n\n(00:40:52) Why Private Markets Are Efficient\n\n(00:47:23) Lessons From Strategic M&A\n\n(00:54:17) How the Role of the Investor Is Changing\n\n(00:58:49) Why This Is an Industrial Revolution",
+          "url": "https://colossus.com/episode/the-productive-investor/",
+          "published_at": "2026-11-04T09:00:00+00:00",
+          "hosts": [
+            "Patrick O'Shaughnessy"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://colossus.com/episode/the-productive-investor/"
+      }
+    },
+    {
+      "id": "35d425167c46a84faddc",
+      "first_seen_at": "2026-11-04T09:17:21+00:00",
+      "status": "skipped",
+      "title": "Scott Kupor on a16z's History, Venture Capital, and Government HR",
+      "source_title": "a16z's First Employee on the History of a16z, Venture Capital & Fixing the Government | Scott Kupor",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode's guest is Scott Kupor, and the host is David Senra. Neither appears on the AI Radar followed list, so no followed person is a guest, interviewee, or central speaker.",
+      "published_at": "2026-11-04T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "b07f0abc7a68302932a5",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "3aaec952-d7a3-11f1-a3ab-23ebacb5d144",
+          "title": "a16z's First Employee on the History of a16z, Venture Capital & Fixing the Government | Scott Kupor",
+          "description": "Scott Kupor is the director of the U.S. Office of Personnel Management (OPM), which serves as the HR and talent agency for the federal government's roughly two million civilian employees. He worked with Marc Andreessen and Ben Horowitz at Loudcloud and Opsware, which sold to Hewlett-Packard in 2007. In 2009 he became the first employee of Andreessen Horowitz, where he spent 16 and a half years as managing partner, building the firm's operations and later investing in later-stage healthcare companies. Scott explains how a16z adapted Michael Ovitz's CAA model to venture capital, how the Skype deal and a willingness to market in an industry that considered it taboo accelerated the firm, and why he had to set his ego aside as the firm grew. He also shares why he left for government, why its incentive structure is \"completely screwed up,\" how OPM is changing performance ratings and promotion rules, and how programs like Tech Force aim to bring young talent into government. He also tells the story of the underground mine in Boyers, Pennsylvania, where federal retirement paperwork was processed by hand for decades.\n\nShow notes: https://www.davidsenra.com/episode/scott-kupor\n\nMade possible by\n\nRamp: https://ramp.com\n\nDeel: https://deel.com/senra\n\nAppLovin: https://applovin.com/senra\n\nChapters\n\n(00:00:00) Quitting HP mid-financial crisis to join a16z\n\n(00:01:37) His first day\n\n(00:04:00) How a16z copied Michael Ovitz's CAA playbook\n\n(00:10:18) After-hours bourbon in Marc Andreessen's office\n\n(00:13:31) The Skype deal that returned half the first fund\n\n(00:18:37) Why VCs thought marketing was beneath them\n\n(00:21:48) Swallowing his ego as a16z grew\n\n(00:27:12) Why he left a16z to run the government's HR\n\n(00:30:37) Why government is afraid to take any risk\n\n(00:33:24) Why 99.7% of federal employees get a passing grade\n\n(00:36:13) Recruiting 1,000 engineers into government\n\n(00:38:37) Only 7% of the federal workforce is under 30\n\n(00:40:31) Why \"a job for life\" is the wrong pitch\n\n(00:43:09) Why the government would never have hired Big Balls\n\n(00:46:39) Why DOGE had to be a big bang\n\n(00:48:56) The underground mine with 400 million pages of paper\n\n(00:55:28) Why government has to accept some failure\n\n(00:57:14) How young people can join\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/scott-kupor",
+          "published_at": "2026-11-04T09:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/scott-kupor"
+      }
     }
   ],
   "editions": [
