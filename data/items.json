@@ -84229,6 +84229,65 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-it-s-swapping-season/"
       }
+    },
+    {
+      "id": "a25504eac5a8db64e1d4",
+      "first_seen_at": "2026-11-05T10:17:19+00:00",
+      "status": "skipped",
+      "title": "Training Data: Bringing Continual Learning to Every Company, with Trajectory's Ronak Malde",
+      "source_title": "Bringing Continual Learning to Every Company: Trajectory’s Ronak Malde",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode's guest is Ronak Malde, co-founder of Trajectory, who is not on the followed list. The notes mention Harvey and Sequoia hosts Pat Grady and Lauren Reeder, but none of them are followed people, and no followed person is a guest, speaker, or author.",
+      "published_at": "2026-11-05T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "f2ea3f40855329f21da8",
+          "kind": "podcast",
+          "source": "Training Data",
+          "family": "training data",
+          "guid": "eed8f8c6-d88e-11f1-8b73-637e085f73d5",
+          "title": "Bringing Continual Learning to Every Company: Trajectory’s Ronak Malde",
+          "description": "Today’s agents are stuck in what Ronak Malde calls “pseudo continual learning”: intelligent, but updated in offline batches, like a paper road map you can’t reroute mid-trip. Ronak, co-founder of Trajectory, explains why closing that loop is the next learning paradigm, and why training your own model, which used to take a dedicated research team, months of work and hundreds of millions in compute, is now something a company can do in a few clicks. He details two research bets: a Group Size-1 variant of GRPO that removes the need for a simulated environment by learning from single real-world rollouts instead of 16 replays of the same task, and a meta-grader that can propagate 100 representative traces across 10,000. Ronak explains how Harvey trained a model six times cheaper than frontier, taking an open-source baseline from 4% to 18% on its own legal benchmark. He defines the difference between continual learning and recursive self-improvement (the former keeps humans in the loop) and predicts product builders will become gardeners, setting trellises for products that grow on their own.\n\nHosted by Pat Grady and Lauren Reeder, Sequoia Capital",
+          "url": "https://feeds.megaphone.fm/trainingdata",
+          "published_at": "2026-11-05T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/trainingdata"
+      }
+    },
+    {
+      "id": "18f92ec9a35cc318d364",
+      "first_seen_at": "2026-11-05T10:17:21+00:00",
+      "status": "skipped",
+      "title": "Practical AI: Abundant Intelligence at the Midwest AI Summit Part 2",
+      "source_title": "Abundant Intelligence at the Midwest AI Summit Part 2",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode features Don Barger, Mark Lay, and Darren Taillie as speakers, and the hosts Chris Benson and Daniel Whitenack are not on the followed list. None of the speakers appear on the AI Radar list, so the item does not qualify.",
+      "published_at": "2026-11-05T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "051b3952686a6135e8e4",
+          "kind": "podcast",
+          "source": "Practical AI",
+          "family": "practical ai",
+          "guid": "61100a8a-1794-45d2-9fc9-8cde63686074",
+          "title": "Abundant Intelligence at the Midwest AI Summit Part 2",
+          "description": "How do organizations decide what AI should do, where to set boundaries, and when to keep humans in control? In this episode, Don Barger of the International Mission Board shares how establishing an AI charter helped define what the organization would and wouldn't use AI for. Mark Lay of Noblis explores four key decisions for managing AI across an organization, from delegation and accountability to technical debt. And Darren Taillie of Aerocore Technologies walks through how his team uses AI agents, text-to-SQL, and vision models to improve data access and automate work order verification.\n\nFeaturing: \n\nDon Barger – \nLinkedIn\n\nMark Lay – \nLinkedIn\n\nDarren Taillie – \nLinkedIn\n\nDaniel Whitenack – \nWebsite\n, \nGitHub\n, \nX\n\nLinks:\n\nNoblis\n\nInternational Mission Board\n\nAeroCore Technologies\n\nSponsors:\n\nSerpAPI\n: A Web Search API that gives developers real-time, structured access to search engine results. Visit \nserpapi.com/practicalai\n to get started for free and get 250 searches every month. \n\nResources and Events:\n\nRegister for \nupcoming webinars here\n!\n\nPrior \nWebinars from our partner Prediction Guard\n\nMidwest AI Summit 2026\n\nChris’s new book \nThe Art of Swarming\n will be published soon, written to be the seminal foundational book for the fledgling swarming industry, defining the principles and architecture that enable autonomous agentic UxS swarms with emergent distributed embodied intelligence.",
+          "url": "https://share.transistor.fm/s/1b301bdc",
+          "published_at": "2026-11-05T10:00:00+00:00",
+          "hosts": [
+            "Chris Benson",
+            "Daniel Whitenack"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/1b301bdc"
+      }
     }
   ],
   "editions": [
