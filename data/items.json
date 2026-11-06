@@ -84664,6 +84664,36 @@
         "podcast": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/controlling_biology_-_fabian_theis_helmholtz_munich_1",
         "newsletter": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/"
       }
+    },
+    {
+      "id": "44dc47cc98885da797bd",
+      "first_seen_at": "2026-11-06T18:17:19+00:00",
+      "status": "skipped",
+      "title": "Stratechery 2026.45: Falling Leaves (and Stocks) weekly roundup",
+      "source_title": "2026.45: Falling Leaves (and Stocks)",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a weekly Stratechery roundup of links and short takes by Andrew Sharp, Ben Thompson, and others. Jensen Huang is mentioned only in passing, and no followed person is an interviewee or author of this item's content, so it does not qualify.",
+      "published_at": "2026-11-06T18:14:42+00:00",
+      "appearances": [
+        {
+          "id": "2febc0e05fb3946cbbb7",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=21053",
+          "title": "2026.45: Falling Leaves (and Stocks)",
+          "description": "(Photo by Jon Cherry/Getty Images)\n\nWelcome back to This Week in Stratechery!\n\nAs a reminder, each week, every Friday, we’re sending out this overview of content in the Stratechery bundle; \nhighlighted links are free for everyone\n. Additionally, you have complete control over what we send to you. If you don’t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in \nyour delivery settings\n.\n\nOn that note, here were a few of our favorites this week.\n\nAI on the Ballot. \nThis week’s elections delivered Democrats the largest Congressional majority either party has enjoyed in 36 years, and coupled with a variety of similar results at the state level (particularly in Texas), not to mention plenty of data center opposition among Republicans, the future of the AI buildout is now fraught with more regulatory uncertainty than ever. I wrote about X, 2024 symmetry, and the more political aspects of the election \nfor Sharp Text\n, while \nBen’s Article on Wednesday\n built on \nhis data center warnings from April\n and provided 10 takes on the post-midterms landscape for tech companies. \n—\nAndrew Sharp\n\nA Google State of the Union. \nLast week Google reported earnings and saw growth in search revenue slow for the first time in five quarters. Given the appearance of mortality in what might be the greatest business in the history of digital commerce, investors were predictably spooked. However, \nI think the company deserves time \nto see if AI Mode ends up like Stories and Reels did for Facebook: if anyone can monetize AI with ads, it’s going to be Google. \nOn Sharp Tech\n, we also got into why Google’s AI bet is about more than AI Mode, and why I find myself impressed by Google’s fortitude, even if the rest of the Internet is a casualty. — \nBen Thompson\n\nAnd What About China?\n Elections have consequences, as they say, so what might a Democratic Congressional majority mean for the next two years of U.S.-China relations? We tried to answer that question \non Sharp China this week\n, including predicting factional foreign policy fights between the left and center-left, highlighting the profound unknowns concerning President Trump’s posture after this week’s defeat, and offering one safe bet in the new environment: life is about to get a lot more complicated for Jensen Huang in Washington. \n—\nAS\n\nPresented by\n\nI spend a lot of time trying to figure out what is happening to businesses on the internet. What I often find I’m missing is a view across the economy itself. With more than 1.7% of global GDP running on Stripe, working with them means I can bring some of what they’re seeing to Stratechery. They are, in a sense, a barometer of the economy.\n\nTake the “SaaSpocalypse”. Earlier this year, nearly a trillion dollars in enterprise software value disappeared amid fears of AI eating its lunch. Stock prices only tell us what investors \nthink\n will happen, and not necessarily what is happening. In this case, Stripe recently \nbuilt a SaaS Index\n using payments data from 72,000 non-AI SaaS businesses. Looking at their actual performance, we can see that while SaaS stocks were selling off, revenue growth was actually accelerating.\n\nYear-over-year growth is now over 30%, with some of the fastest growth coming from the youngest SaaS companies. I suspect there are a lot more interesting things hiding in Stripe’s data, and I’m excited about having an excuse to go look for them.\n\nStratechery Articles and Updates\n\nGoogle Earnings, Facebook Déjà Vu, The Agent Play\n— Google’s earnings miss looks a lot like Facebook’s, and that’s a credit to Google. The company is being more aggressive than they get credit for.\n\nApple Earnings, Memory Problems, The Hardware Company Regression\n— Apple’s earnings suggest that the company’s hardware business is doing better than ever, even in the face of memory challenges. Does the software story help or hurt?\n\nAI on the Ballot\n— Data Centers were on the ballot, and they lost in a major way; what does it mean if American opposition to building is permanent?\n\nAn Interview With Intuit CEO Sasan Goodarzi About Accounting and AI\n— An interview with Intuit CEO Sasan Goodarzi about the working for one of tech’s oldest software companies, and how Intuit is leaning into the AI paradigm shift.\n\nSharp Text by Andrew Sharp\n\nX Marks the Rot\n — \nRepublicans colonized Twitter and then cannibalized their support with two years of memes, corruption and excess.\n\nDithering with Ben Thompson and Daring Fireball’s John Gruber\n\nDoorDash and Google\n\nThe MacBook Pro (with touch)\n\nAsianometry with Jon Yu\n\nThe Rise of GLM and China’s Zhipu AI\n\nSharp China with Andrew Sharp and Sinocism’s Bill Bishop\n\nParsing the Fifth Plenum; US-China After the Midterms; New Scrutiny for Nvidia?; Cybersecurity and Espionage\n\nGreatest of All Talk\n\nThe Rapture and the Wild West, Luka Doncic on Praise Probation, AJ Dybantsa Saves the Wizards\n\nSharp Tech with Andrew Sharp and Ben Thompson\n\nSubscriber Mail: Apple Past and Present, Omarchy, Instacart, and Baseball\n\nAmerica Votes Against Data Centers, Implications for Big Tech and Beyond, Were Google Bears Right All Along?\n\nThis week’s Stratechery video is on \nThe End of the Internet\n.",
+          "url": "https://stratechery.com/2026/falling-leaves-and-stocks/",
+          "published_at": "2026-11-06T18:14:42+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/falling-leaves-and-stocks/"
+      }
     }
   ],
   "editions": [
