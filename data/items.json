@@ -84617,6 +84617,37 @@
       "links": {
         "podcast": "https://www.nytimes.com/2026/11/06/podcasts/hardfork-midterms-tech-right.html"
       }
+    },
+    {
+      "id": "0b70855ef3a5a01a3c2b",
+      "first_seen_at": "2026-11-06T15:17:22+00:00",
+      "status": "skipped",
+      "title": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+      "source_title": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The item is a Latent Space interview with Fabian Theis, who is not on the followed list. Followed-list names appear only as mentions of companies (Google, Meta) in the context of the Biohub announcement, not as guests, speakers, or authors.",
+      "published_at": "2026-11-06T15:10:53+00:00",
+      "appearances": [
+        {
+          "id": "a43d9c5188ff4c8d386f",
+          "kind": "newsletter",
+          "source": "Latent Space — Newsletter",
+          "family": "latent space",
+          "guid": "urn:latent-space:post:post_e4eae676-23c0-4ee3-bf61-919e4d3b3909",
+          "title": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+          "description": "Fabian Theis has been one of the key players in the various iterations of the Virtual Cell concept and initiatives. It is not hyperbole at all to say that his lab has been pushing the frontier of algorithms to understand multi-scale, multi-modal (”multiomics”), time-varying biological data. \n\n Indeed, he has shaped the large scale vision and data collection through his leadership at Helmholtz, various startups and probably at Biohub itself. \n\nWatch the full episode on YouTube…\n\n Much of the recent attention in AI x Bio has been on protein and molecular design. AlphaFold, \nESM\n and \nBioHub\n, \nChai\n, \nLeash\n, Isomporphic, \nBoltz\n, \nGenesis\n, Octant, Baker Lab, and many many more. After a lot of initial excitement, Virtual Cell projects have received less attention, due in no small part to questions about the effectiveness of large-scale models in solving even basic Virtual Cell problems. \n\nA $1.8B bet\n\n The Biohub announcement a few weeks ago got a lot of press for the (really) big numbers: $1.8B of commitments\n[1]\n from Biohub, NIH, DOE, Google and Meta. The discussion cites new imaging and measurement capabilities, generating large data sets and making the data available for training AI. \n\nView post on X ↗\n\n But why are these organizations doubling down on these big bets now? They have been in the works for years now, what is going on that makes now the moment to push? \n\n New measurement capabilities and scale infrastructure, are now coming online that make Biohub’s push likely lead to big impact on science. DOE and NIH are developing lab-in-the-loop automation capabilities at scale. Google is scaling and broadening its connectomics capabilities ( episode coming soon!). Biohub itself has worked with various labs to develop and improve imaging platforms like laser phase plate microscopy, light sheet microscopy and advanced post-processing for regular microscopes that reveal deep phenotypic data. These technologies are quickly maturing, and will likely play a big part in the Biohub initiative. \n\nVirtual cells struggle\n\n This kind of multi-scale, multi-modal data looks a lot like the data Fabian has made a career out modeling. On the other hand Virtual Cell modeling has run into problems that have dampened excitement about systems biology. \n\n The 2025 Arc Virtual Cell Challenge shined a light on the problem: a slew of papers pointed out that constant baselines (not even linear!) often beat sophisticated models for “Perturbation Prediction”. If you change the inputs or programming of a cell (via gene editing, drugs or other environmental factors), how will the cell change it’s “state”. The disappointing finding is that many models fail to beat even the most basic basic baselines 🤦‍♂️. \n\n The situation is not actually so bad: \n\n This excellent paper show that many existing evaluation metrics are poorly calibrated: they can reward an uninformative mean prediction because most genes barely change. With better-calibrated metrics, deep learning models can outperform the mean baseline. \n\nThe problem is the problem\n\n Nonetheless, Fabian Theis believes that perturbation prediction under the existing data sets just isn’t a hard enough problem to warrant complex algorithms. Instead we should be focused on exactly the problems that Biohub just announce an $1.8B data collection effort around: using large, high precision, multi-scale, co-registered biological data to predict the evolution of molecules → cells → niches → tissues → organs → organisms, and how all these scales effect one another. \n\n This is a happy situation: at this very moment, AI is enabling us to tackle dramatically larger problems, and this problem is very, very big. We lack understanding of the “scale interfaces” between these different different “domains of applicability,” and we lack the data. The Biohub initiative aims to solve the data problem. Fabian Theis has been working on the algorithms to model these larger problems for years. \n\n How do the other cells near me change my state? What happens to a distribution of cells from a perturbation? How do I perturb a cell to get it into the state I want? \n\n These are increasingly complex questions that are building towards a lab-in-the-loop and large scale experimentation, and (actually) require increasingly complex models. \n\nModels drive precision medicine\n\n Fabian’s labs and initiatives have been also investing heavily: the Computational Health Center at Helmholtz combines AI, molecular data, medical imaging, genomics, and clinical data to develop predictive and mechanistic models for precision medicine. The Institute of Computational Biology develops statistical and dynamical models integrating biological information from single-cell time series through population-scale omics data.\n\nGiven his drivers seat at the frontier, we were so excited for the opportunity to get an hour of his time to understand how Fabian Theis is thinking about Virtual Cells when the concept of what is difficult is changing so quickly. \n\n We also discussed: \n\n The business of Virtual Cells \n\n The Bitter Lesson in biology - our perennial topic \n\n Training the next generation of Computation Biologists \n\n Closing the lab-in-the-loop \n\nControlling Biology - Fabian Theis, Helmholtz Munich\n\nFabian Theis has been one of the key players in the various iterations of the Virtual Cell concept and initiatives. It is not hyperbole at all to say that his lab has been pushing the frontier of algorithms to understand multi-scale, multi-modal (”mult...\n\nLatent Space\n\n[1]\n NIH money is prior investments",
+          "url": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/",
+          "published_at": "2026-11-06T15:10:53+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/"
+      }
     }
   ],
   "editions": [
