@@ -84643,9 +84643,25 @@
             "Alessio Fanelli",
             "Swyx"
           ]
+        },
+        {
+          "id": "dcbc79dfdd27a5f7ed61",
+          "kind": "podcast",
+          "source": "Latent Space",
+          "family": "latent space",
+          "guid": "01a1a3f4-4773-7ef4-9673-59b03a12c34b",
+          "title": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+          "description": "Fabian Theis has been one of the key players in the various iterations of the Virtual Cell concept and initiatives. It is not hyperbole at all to say that his lab has been pushing the frontier of algorithms to understand multi-scale, multi-modal (”mult...",
+          "url": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/controlling_biology_-_fabian_theis_helmholtz_munich_1",
+          "published_at": "2026-11-06T14:48:24+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
         }
       ],
       "links": {
+        "podcast": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/controlling_biology_-_fabian_theis_helmholtz_munich_1",
         "newsletter": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/"
       }
     }
