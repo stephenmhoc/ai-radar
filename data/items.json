@@ -84276,7 +84276,7 @@
           "family": "practical ai",
           "guid": "61100a8a-1794-45d2-9fc9-8cde63686074",
           "title": "Abundant Intelligence at the Midwest AI Summit Part 2",
-          "description": "How do organizations decide what AI should do, where to set boundaries, and when to keep humans in control? In this episode, Don Barger of the International Mission Board shares how establishing an AI charter helped define what the organization would and wouldn't use AI for. Mark Lay of Noblis explores four key decisions for managing AI across an organization, from delegation and accountability to technical debt. And Darren Taillie of Aerocore Technologies walks through how his team uses AI agents, text-to-SQL, and vision models to improve data access and automate work order verification.\n\nFeaturing: \n\nDon Barger – \nLinkedIn\n\nMark Lay – \nLinkedIn\n\nDarren Taillie – \nLinkedIn\n\nDaniel Whitenack – \nWebsite\n, \nGitHub\n, \nX\n\nLinks:\n\nNoblis\n\nInternational Mission Board\n\nAeroCore Technologies\n\nSponsors:\n\nSerpAPI\n: A Web Search API that gives developers real-time, structured access to search engine results. Visit \nserpapi.com/practicalai\n to get started for free and get 250 searches every month. \n\nResources and Events:\n\nRegister for \nupcoming webinars here\n!\n\nPrior \nWebinars from our partner Prediction Guard\n\nMidwest AI Summit 2026\n\nChris’s new book \nThe Art of Swarming\n will be published soon, written to be the seminal foundational book for the fledgling swarming industry, defining the principles and architecture that enable autonomous agentic UxS swarms with emergent distributed embodied intelligence.",
+          "description": "How do organizations decide what AI should do, where to set boundaries, and when to keep humans in control? In this special episode, we bring you three more talks from the Midwest AI Summit, exploring how organizations are putting AI into practice. Don Barger of the International Mission Board shares how establishing an AI charter helped define what the organization would and wouldn't use AI for. Mark Lay of Noblis explores four key decisions for managing AI across an organization, from delegation and accountability to technical debt. And Darren Taillie of Aerocore Technologies walks through how his team uses AI agents, text-to-SQL, and vision models to improve data access and automate work order verification.\n\nFeaturing: \n\nDon Barger – \nLinkedIn\n\nMark Lay – \nLinkedIn\n\nDarren Taillie – \nLinkedIn\n\nDaniel Whitenack – \nWebsite\n, \nGitHub\n, \nX\n\nLinks:\n\nNoblis\n\nInternational Mission Board\n\nAeroCore Technologies\n\nSponsors:\n\nSerpAPI\n: A Web Search API that gives developers real-time, structured access to search engine results. Visit \nserpapi.com/practicalai\n to get started for free and get 250 searches every month. \n\nResources and Events:\n\nRegister for \nupcoming webinars here\n!\n\nPrior \nWebinars from our partner Prediction Guard\n\nMidwest AI Summit 2026\n\nChris’s new book \nThe Art of Swarming\n will be published soon, written to be the seminal foundational book for the fledgling swarming industry, defining the principles and architecture that enable autonomous agentic UxS swarms with emergent distributed embodied intelligence.",
           "url": "https://share.transistor.fm/s/1b301bdc",
           "published_at": "2026-11-05T10:00:00+00:00",
           "hosts": [
@@ -84693,6 +84693,36 @@
       ],
       "links": {
         "newsletter": "https://stratechery.com/2026/falling-leaves-and-stocks/"
+      }
+    },
+    {
+      "id": "28872cb99d490c95af56",
+      "first_seen_at": "2026-11-06T20:17:18+00:00",
+      "status": "deferred",
+      "title": "The Pragmatic Summit 2027",
+      "source_title": "The Pragmatic Summit 2027",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-06T19:39:15+00:00",
+      "appearances": [
+        {
+          "id": "3ad48a20c7b96011a614",
+          "kind": "newsletter",
+          "source": "The Pragmatic Engineer",
+          "family": "the pragmatic engineer",
+          "guid": "https://newsletter.pragmaticengineer.com/p/the-pragmatic-summit-2027",
+          "title": "The Pragmatic Summit 2027",
+          "description": "As a paid subscriber, I wanted to share some exciting news: \nThe Pragmatic Summit\n is returning. It’s a one-day event that I’ll be hosting on 10 February in San Francisco, almost exactly one year after the first Summit. The first few speakers are confirmed, and faces will be familiar to all of you keeping up with the newsletter and the podcast:\n\nThe first f…\n\n Read more",
+          "url": "https://newsletter.pragmaticengineer.com/p/the-pragmatic-summit-2027",
+          "published_at": "2026-11-06T19:39:15+00:00",
+          "hosts": [
+            "Gergely Orosz"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pragmatic-summit-2027"
       }
     }
   ],
