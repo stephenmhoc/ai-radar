@@ -84786,6 +84786,34 @@
       "links": {
         "podcast": "https://www.youtube.com/watch?v=P735f1xlpL0"
       }
+    },
+    {
+      "id": "05f397e87381a25630c6",
+      "first_seen_at": "2026-11-07T11:17:21+00:00",
+      "status": "skipped",
+      "title": "Mark Hyman's Guide to Living Longer and Staying Strong",
+      "source_title": "Mark Hyman’s Guide to Living Longer and Staying Strong",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Speakers are Dr. Mark Hyman (guest) and a16z Partner Daisy Wolf (host). Neither is on the followed list, so no followed person participates.",
+      "published_at": "2026-11-07T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "52710d07ac9fb9257f28",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "040938be-3d99-4f5b-ba74-f4dcd62c3570",
+          "title": "Mark Hyman’s Guide to Living Longer and Staying Strong",
+          "description": "What actually matters if you want to stay healthy as you age? Dr. Mark Hyman argues it isn’t the most extreme longevity intervention. It’s the small investments you make every day in strength, nutrition, sleep, and stress.\n\nMark joins a16z Partner Daisy Wolf to walk through what he actually does, from meditation and strength training to protein, supplements, sleep, sauna, cold plunges, and the occasional ice cream. He explains why preserving muscle becomes increasingly important with age and how he uses testing to understand what’s happening inside his body.\n\nThey also discuss the idea behind Function Health: combining blood tests, imaging, wearables, medical records, and eventually AI to move healthcare from treating disease toward understanding and preventing it earlier. \n\nResources:\n\nFollow Mark Hyman: \nhttps://x.com/drmarkhyman\n\nLearn more about Function Health: \nhttps://www.functionhealth.com\n\nFollow Daisy Wolf on X:\nhttps://x.com/daisydwolf\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/mark-hymans-guide-to-living-longer-and-staying-strong-csBJXQYG",
+          "published_at": "2026-11-07T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/mark-hymans-guide-to-living-longer-and-staying-strong-csBJXQYG"
+      }
     }
   ],
   "editions": [
