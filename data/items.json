@@ -84932,6 +84932,36 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/the-health-interventions-actually-worth-your-time-justin-mares-7c97fzV_"
       }
+    },
+    {
+      "id": "b16f2d21ffdad80b4d86",
+      "first_seen_at": "2026-11-08T14:17:19+00:00",
+      "status": "skipped",
+      "title": "Lenny's Podcast: Building frontier models with Tulsee Doshi",
+      "source_title": "What it actually takes to build frontier models | Tulsee Doshi (Head of Product for Gemini)",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Tulsee Doshi, head of product for Google's frontier AI models, who is not on the followed list. The host, Lenny Rachitsky, is also not on the list, and no followed person is named as a guest or speaker.",
+      "published_at": "2026-11-08T13:31:32+00:00",
+      "appearances": [
+        {
+          "id": "ecd82f80a816d18285f7",
+          "kind": "podcast",
+          "source": "Lenny's Podcast",
+          "family": "lenny's podcast",
+          "guid": "substack:post:219474705",
+          "title": "What it actually takes to build frontier models | Tulsee Doshi (Head of Product for Gemini)",
+          "description": "Tulsee Doshi\n is head of product for Google’s frontier AI models, including Gemini and other multimodal models, such as Nano Banana, Genie, Veo, and Lyria.\n\nWe discuss:\n\n1. Why model development is not just engineering, but also like Snape’s potions class\n\n2. Google’s full-stack frontier AI strategy\n\n3. What PMs do inside a frontier AI lab\n\n4. Tulsee’s 60-20-20 framework for balancing what works now and what’s almost working\n\n5. How to write your first eval\n\n6. The rising value of great PMs\n\n—\n\nBrought to you by:\n\nWorkOS\n—Make your app enterprise-ready, with SSO, SCIM, RBAC, and more\n\nDX\n—Engineering intelligence for the AI era\n\n—\n\nEpisode transcript:\nhttps://www.lennysnewsletter.com/p/what-it-actually-takes-to-build-frontier\n\n—\n\nArchive of all Lenny's Podcast transcripts: \nhttps://www.dropbox.com/scl/fo/yxi4s2w998p1gvtpu4193/AMdNPR8AOw0lMklwtnC0TrQ?rlkey=j06x0nipoti519e0xgm23zsn9&st=ahz0fj11&dl=0\n\n—\n\nHighlights:\nhttps://lennyspodcast.com/mostreplayedmoments\n\n—\n\nWhere to find Tulsee Doshi:\n\n• X: \nhttps://x.com/tulseedoshi\n\n• LinkedIn: \nlinkedin.com/in/tulsee-doshi\n\n—\n\nWhere to find Lenny:\n\n• Newsletter: \nhttps://www.lennysnewsletter.com\n\n• X: \nhttps://twitter.com/lennysan\n\n• LinkedIn: \nhttps://www.linkedin.com/in/lennyrachitsky/\n\n—\n\nIn this episode, we cover:\n\n(00:00) Teaser\n\n(01:08) What people misunderstand about how models are built\n\n(06:28) Google’s strategy in the AI race\n\n(09:57) AI safety, monitoring, and strengthening cyberdefenses\n\n(14:10) Balancing fast launches with great user experiences\n\n(17:02) Why the model itself has a UX\n\n(19:21) Why product managers are becoming more valuable\n\n(21:24) The skills that matter for research PMs\n\n(23:04) How to build your first eval\n\n(24:37) Getting better at judging a model’s vibes\n\n(26:15) Improving skin tone representation with better evals\n\n(28:25) Evaluating the full experience, not just the model\n\n(30:38) From crowdsourced flash teams to agent swarms\n\n(33:13) The 60-20-20 rule for building ahead of model capabilities\n\n(35:46) Keeping your product adaptable as models improve\n\n(36:42) What an AI harness actually is\n\n(37:30) Upskilling PMs through shared skills and workshops\n\n(41:18) Building the habit of asking, “Can AI do this for me?”\n\n(42:38) Google’s opportunity to build a personal AI assistant\n\n(44:10) Burnout, meaningful work, and the pressure to do more\n\n(47:44) Avoiding AI slop\n\n(49:30) How AI is changing the PM role\n\n(51:02) Lightning round and final thoughts\n\n—\n\nReferences: \nhttps://www.lennysnewsletter.com/p/what-it-actually-takes-to-build-frontier\n\n—\n\nProduction and marketing by \nhttps://penname.co/\n. For inquiries about sponsoring the podcast, email \npodcast@lennyrachitsky.com\n.\n\n—\n\nLenny may be an investor in the companies discussed.\n\nTo hear more, visit \nwww.lennysnewsletter.com",
+          "url": "https://www.lennysnewsletter.com/p/what-it-actually-takes-to-build-frontier",
+          "published_at": "2026-11-08T13:31:32+00:00",
+          "hosts": [
+            "Lenny Rachitsky"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.lennysnewsletter.com/p/what-it-actually-takes-to-build-frontier"
+      }
     }
   ],
   "editions": [
