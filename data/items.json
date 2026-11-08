@@ -84904,6 +84904,34 @@
       "links": {
         "podcast": "https://www.davidsenra.com/episode/nikesh-arora"
       }
+    },
+    {
+      "id": "66017930aac14d92f125",
+      "first_seen_at": "2026-11-08T11:17:20+00:00",
+      "status": "skipped",
+      "title": "The Health Interventions Actually Worth Your Time | Justin Mares",
+      "source_title": "The Health Interventions Actually Worth Your Time | Justin Mares",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Speakers are Justin Mares (Truemed CEO) and host Daisy Wolf; neither is on the followed list, so no followed person participates.",
+      "published_at": "2026-11-08T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "854fb350cb19df1c20e1",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "8fbb4c83-2b9f-4d06-8d9f-239461f4fe3e",
+          "title": "The Health Interventions Actually Worth Your Time | Justin Mares",
+          "description": "Health advice has become an endless stream of supplements, diets, wearables, and biohacks. Which interventions are actually worth your time? Truemed CEO Justin Mares argues that most people should ignore the extremes and focus on a few fundamentals: better food, movement, sleep, and reducing harmful exposures.\n\nJustin joins a16z General Partner Daisy Wolf to walk through his own approach to health, from what he eats and how he exercises to supplements, blood tests, sauna, sleep, and the changes he’s made to his home.\n\nThey also discuss the larger problem behind Truemed: while chronic disease drives the vast majority of U.S. healthcare spending, relatively little goes toward prevention. Justin explains how Truemed is trying to change that by making it easier for eligible consumers to use tax-free HSA and FSA dollars on qualified lifestyle interventions. \n\nResources:\n\nFollow Justin Mares on X: \nhttps://x.com/jwmares\n\nFollow Daisy Wolf on X: \nhttps://x.com/daisydwolf\n\nLearn more about TrueMed: \nhttps://www.truemed.com/\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/the-health-interventions-actually-worth-your-time-justin-mares-7c97fzV_",
+          "published_at": "2026-11-08T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/the-health-interventions-actually-worth-your-time-justin-mares-7c97fzV_"
+      }
     }
   ],
   "editions": [
