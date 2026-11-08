@@ -84874,6 +84874,36 @@
       "links": {
         "podcast": "https://www.cognitiverevolution.ai/ai-am-is-this-the-ai-we-want-alarming-acceleration-ai-election-bets-gpu-trading-ai-native-vc/"
       }
+    },
+    {
+      "id": "5152ff8be9bacb6f7eed",
+      "first_seen_at": "2026-11-08T09:17:19+00:00",
+      "status": "skipped",
+      "title": "Nikesh Arora on Building a $250B Cybersecurity Giant",
+      "source_title": "Building a $250B Cybersecurity Giant | Nikesh Arora, Palo Alto Networks",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speaker is Nikesh Arora, Palo Alto Networks CEO, who is not on the followed list. Egon Durban and other figures are mentioned only as people discussed in his story, and no followed person is a guest or speaker.",
+      "published_at": "2026-11-08T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "204b2271641e93d0ce02",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "587662e2-db31-11f1-8cd6-3facc639c1fa",
+          "title": "Building a $250B Cybersecurity Giant | Nikesh Arora, Palo Alto Networks",
+          "description": "Nikesh Arora is the chairman and CEO of Palo Alto Networks, one of the world's largest cybersecurity companies. He spent 10 years at Google, where he ran Google Europe and later became chief business officer, as the company grew from about 2,000 to 60,000 employees and from $2 billion to $62 billion in revenue. After two years as president of SoftBank, he joined Palo Alto Networks in 2018, when it was an $18 billion firewall company. Since then it has made about 35 acquisitions and expanded to more than 70 products. Nikesh explains the enterprise economics behind that strategy, why he only buys the number one or number two company in a category, and why he negotiates directly with founders and requires a joint product roadmap before signing a deal. He also tells the story of how he and Egon Durban nearly invested in Oculus before it sold to Facebook, how Egon talked him through a 29-round auction for the London Spirit cricket team, and what it was like selling Google ads when he couldn't tell customers the price or the volume. He also shares the Hindu fatalism that keeps him from worrying about what he can't control, how he approaches parenting, why AI makes cybersecurity more valuable, and why he started posting on X.\n\nShow notes: https://www.davidsenra.com/episode/nikesh-arora\n\nMade possible by\n\nRamp: https://ramp.com\n\nDeel: https://deel.com/senra\n\nWorkOS: https://workos.com\n\nAppLovin: https://applovin.com/senra\n\nChapters\n\n(00:00:00) The Oculus deal he almost did with Egon Durban\n\n(00:08:45) \"I thought cybersecurity was two words\"\n\n(00:11:44) Why he buys instead of builds\n\n(00:14:33) Why the acquired founder becomes the boss\n\n(00:16:21) Why he only buys number one or number two\n\n(00:19:30) The 30-day test before every acquisition\n\n(00:33:38) Egon Durban and the 29-round cricket auction\n\n(00:42:32) Why nothing at work stresses him out\n\n(00:44:28) Selling Google ads without knowing the price\n\n(00:49:42) Coming to America with $200\n\n(00:51:58) Raising kids who didn't grow up poor\n\n(00:54:46) Why AI hacking has been good for Palo Alto\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/nikesh-arora",
+          "published_at": "2026-11-08T09:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/nikesh-arora"
+      }
     }
   ],
   "editions": [
