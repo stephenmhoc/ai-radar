@@ -85158,6 +85158,37 @@
       "links": {
         "newsletter": "https://importai.substack.com/p/import-ai-480-self-sustaining-space"
       }
+    },
+    {
+      "id": "6d513d711cd6d9c27798",
+      "first_seen_at": "2026-11-09T17:17:20+00:00",
+      "status": "skipped",
+      "title": "What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord & Team",
+      "source_title": "What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord & Team",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes name speakers from Handshake AI (Garrett Lord, Sahil Bhaiwala, Nishant Ranka, Nick Magazine, Jonas Mueller, Collin Schweiker, Steve Kelling), but none of them are on the followed list, and no followed person is named as a guest or speaker.",
+      "published_at": "2026-11-09T17:15:53+00:00",
+      "appearances": [
+        {
+          "id": "c647b3febc492b7e3ee1",
+          "kind": "newsletter",
+          "source": "Latent Space — Newsletter",
+          "family": "latent space",
+          "guid": "urn:latent-space:post:post_7c4df2dc-89b9-4ffa-a212-174cf579b0ee",
+          "title": "What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord & Team",
+          "description": "This is our first Latent Space deep dive with an AI data company\n. In roughly a year, Handshake’s AI training business went from launch to \n $1 billion in gross annualized revenue\n. What are frontier labs buying at that scale? What evals are models still nowhere close to human level on? Garrett Lord brought the people who build these reinforcement learning environments to show us. For the first time, we are walking through them live! \n\n To cover the scope of Handshake, we had to produce a very special joint podcast across our Science/Engineering/Research/Finance podcast hosts, because Handshake’s business runs across all these and more. \n\n Watch for three segments after the general intro: \n\nFinance.\n In the finance demo, the agent has to find its assignment in a bank’s email, work out which files govern the deal, and deliver a workbook. Watch what happens to one line in the client’s email about existing goodwill. The agent carries the number into Python and subtracts it. Collin points out that the model can explain the tax treatment when you ask it directly. The mistake comes when it has to recognize that this particular line of code is where the rule applies. \n\nBio.\n Nick Magazine and Jonas Mueller show us VIALS, Handshake’s benchmark for interpreting the images scientists use at work. Nick puts nine slides of brain-tumor tissue on screen and asks which two show the most advanced vessel necrosis. Give yourself a moment before his answer. Nick picks H and I. The model picks those two and adds G. Watching Nick point to what’s \nmissing\n from the tissue is more instructive than seeing the score. \n\nCoding.\n In a simulated file-access task, the team can inspect which files an agent read, whether it checked the copies, and what it did to the shell history afterward. A transcript of the agent’s final reply would miss most of what Steve Kelling and Nishant Ranka are evaluating. \n\nWho’s in the room\n\n 🟣 \nAI data business\n — Garrett Lord, Sahil Bhaiwala and Nishant Ranka open and close the episode on the market for expert data. \n\n 🌸 \nLife sciences\n — Nick Magazine and Jonas Mueller put the gel and brain-tissue tasks on screen. \n\n 🟢 \nFinance\n — Collin Schweiker and Sahil Bhaiwala take us through Project Falcon and its Excel grader. \n\n 🟠 \nAlignment\n — Steve Kelling and Nishant Ranka follow the agent’s tool calls through the safety simulations. \n\nShow notes\n\nATLAS-Finance\n — Explore the benchmark for agents working across a simulated bank’s inboxes, documents, and financial models. \n\nInside a bank\n — Handshake traces a separate published deal, Project Osprey, from the client’s email to a grading decision. The deal on screen in our interview is Project Falcon. \n\nVIALS sample tasks\n — Try the scientific image questions, including the gel and brain-tissue tasks from the episode. \n\nHow Handshake trained a model to read scientific figures\n — The team describes using intermediate image descriptions to train and evaluate a vision-language model. \n\nTimestamps\n\n0:00\n Inside Handshake AI\n\n0:39\n Garrett, Sahil and Nishant on frontier training data\n\n5:15\n How to build a banking environment for an agent\n\n13:07\n How frontier labs buy data\n\n15:51\n How a lab evaluates a new dataset\n\n20:01\n Testing training data on open models\n\n27:38\n Where rubrics fall short of expert judgment\n\n31:30\n Nick and Jonas introduce the VIALS benchmark\n\n35:52\n Reading molecular structures and plasmid maps\n\n43:48\n Training vision models to interpret scientific images\n\n47:17\n Task one: reading the bands on a gel\n\n50:59\n Task two: finding necrosis in brain tissue\n\n55:49\n Can Python tools help the model see?\n\n1:02:52\n Can biology models improve on their own?\n\n1:06:19\n What a biology lab can buy from Handshake\n\n1:12:33\n Atlas Finance with Collin and Sahil\n\n1:18:56\n Inside a simulated investment bank\n\n1:25:45\n Where the agent’s financial model went wrong\n\n1:31:18\n How a banker grades the spreadsheet\n\n1:41:12\n Penalty traps, dependency gates and partial credit\n\n1:46:41\n How an agent gamed the Excel grader\n\n1:48:52\n What would make an AI banker useful?\n\n1:54:48\n Safety and alignment with Steve and Nishant\n\n1:58:25\n CAREBench and the limits of a refusal\n\n2:04:42\n How safety feedback reaches model training\n\n2:07:21\n When an agent sends the wrong files\n\n2:11:14\n A loan application tests fair lending\n\n2:16:09\n Designing private benchmarks for enterprises\n\n2:25:37\n The leadership team on Handshake’s mission\n\n2:28:36\n When enterprises need their own models\n\n2:33:03\n The market for compute and expert data\n\n2:39:12\n Why labs hold out evaluation tasks\n\n2:43:01\n Hiring at Handshake AI",
+          "url": "https://latent.space/p/what-frontier-labs-buy-a-data-deep-dive-with-handshake-ai-garrett-lord-team/",
+          "published_at": "2026-11-09T17:15:53+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://latent.space/p/what-frontier-labs-buy-a-data-deep-dive-with-handshake-ai-garrett-lord-team/"
+      }
     }
   ],
   "editions": [
