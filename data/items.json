@@ -85070,6 +85070,64 @@
       "links": {
         "newsletter": "https://latent.space/p/cs146s/"
       }
+    },
+    {
+      "id": "c32eece9e8a6bb5e08f1",
+      "first_seen_at": "2026-11-09T11:17:19+00:00",
+      "status": "skipped",
+      "title": "Scott Kupor on Building a16z and Rebuilding the Federal Workforce",
+      "source_title": "Scott Kupor on Building a16z and Rebuilding the Federal Workforce",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are Scott Kupor (guest) and David Senra (host), and neither is on the followed list. No followed person is a guest, interviewee, or speaker in this episode.",
+      "published_at": "2026-11-09T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "a4a826c9ad0c1258ce8a",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "dad00261-f3d1-4d2a-bf39-ce0cc14b7957",
+          "title": "Scott Kupor on Building a16z and Rebuilding the Federal Workforce",
+          "description": "Scott Kupor helped build a16z from three people into a firm with hundreds of employees. Now, as Director of the U.S. Office of Personnel Management, he’s applying some of the same lessons about talent, incentives, and organizational design to a workforce of roughly two million federal employees.\n\nScott joins \nFounders\n host David Senra to tell the story of a16z’s earliest days, from joining Marc Andreessen and Ben Horowitz during the 2008 financial crisis to borrowing Michael Ovitz’s CAA model to build a venture firm around specialized networks and services for founders. He explains why a16z chose to market itself when venture firms traditionally didn’t, how early wins like Skype accelerated the firm’s growth, and why it eventually reorganized around specialized investing teams.\n\nThen they turn to Scott’s move into government. He lays out his effort to build a more merit-based federal workforce, attract younger technical talent, and create what he calls “permissioned risk” so government employees can actually try new things. That includes everything from changing how performance and promotions work to replacing a retirement process that still relied on hundreds of millions of pieces of paper stored in an underground Pennsylvania mine.\n\nResources:\n\nU.S. Office of Personnel Management:\nhttps://www.opm.gov/\n\nFederal early-career opportunities:\nhttps://earlycareers.gov/\n\nFollow Scott Kupor on X:\nhttps://x.com/skupor\n\nFollow David Senra on X: \nhttps://x.com/davidsenra\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/scott-kupor-on-building-a16z-and-rebuilding-the-federal-workforce-EU8R_X0j",
+          "published_at": "2026-11-09T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/scott-kupor-on-building-a16z-and-rebuilding-the-federal-workforce-EU8R_X0j"
+      }
+    },
+    {
+      "id": "abd062e57c9dc818913d",
+      "first_seen_at": "2026-11-09T11:17:19+00:00",
+      "status": "deferred",
+      "title": "Jensen Huang’s Affair, The Culper Report, Huang’s Righteousness",
+      "source_title": "Jensen Huang’s Affair, The Culper Report, Huang’s Righteousness",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-09T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "98596a03bbc47237323d",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=21104",
+          "title": "Jensen Huang’s Affair, The Culper Report, Huang’s Righteousness",
+          "description": "Nvidia CEO Jensen Huang admitted to an affair with a Chinese spy, and that might not be the end of his troubles. I hope he survives, but his influence will never be the same.",
+          "url": "https://stratechery.com/2026/jensen-huangs-affair-the-culper-report-huangs-righteousness/",
+          "published_at": "2026-11-09T11:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/jensen-huangs-affair-the-culper-report-huangs-righteousness/"
+      }
     }
   ],
   "editions": [
