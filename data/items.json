@@ -85184,9 +85184,25 @@
             "Alessio Fanelli",
             "Swyx"
           ]
+        },
+        {
+          "id": "7be89a71034bbe602c27",
+          "kind": "podcast",
+          "source": "Latent Space",
+          "family": "latent space",
+          "guid": "01a1c0f3-0e12-72e9-b44b-8ca8a4fe611d",
+          "title": "What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord & Team",
+          "description": "Our first deep dive with an AI data company. In roughly a year, Handshake built an AI training business doing nearly $1 billion in gross annualized revenue. What are frontier labs buying? Garrett Lord joins us with the people building reinforcement lea...",
+          "url": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/what_frontier_labs_buy_a_data_deep_dive_with_handshake_ai_garrett_lord_team",
+          "published_at": "2026-11-09T16:41:48+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
         }
       ],
       "links": {
+        "podcast": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/what_frontier_labs_buy_a_data_deep_dive_with_handshake_ai_garrett_lord_team",
         "newsletter": "https://latent.space/p/what-frontier-labs-buy-a-data-deep-dive-with-handshake-ai-garrett-lord-team/"
       }
     }
