@@ -85563,6 +85563,37 @@
       "links": {
         "podcast": "https://www.cognitiverevolution.ai/the-neuron-basis-goodfire-s-curt-tigges-on-agentic-interp-monosemanticity-reverse-engineering/"
       }
+    },
+    {
+      "id": "22539bde6b0be0e3e4d1",
+      "first_seen_at": "2026-11-10T20:17:21+00:00",
+      "status": "skipped",
+      "title": "Latent Space: Designing for Agents with Zeno Rocha of Resend",
+      "source_title": "Designing for Agents — Zeno Rocha, Resend",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Zeno Rocha, Resend co-founder and CEO, who is not on the AI Radar follow list. The hosts, Alessio Fanelli and Swyx, are also not on the list, so no followed person speaks or writes in this item.",
+      "published_at": "2026-11-10T20:05:17+00:00",
+      "appearances": [
+        {
+          "id": "62134989fa159f7c862a",
+          "kind": "newsletter",
+          "source": "Latent Space — Newsletter",
+          "family": "latent space",
+          "guid": "urn:latent-space:post:post_f42d43bf-dd23-4475-b625-93262d8e7d3a",
+          "title": "Designing for Agents — Zeno Rocha, Resend",
+          "description": "Today’s podcast comes from a real life mystery: We are big fans of Cloudflare’s developer platform, and Cloudflare Email is a convenient tool especially when all your domains are already on Cloudflare. \n\n So why do agents keep suggesting we use Resend despite having an existing “home bias” and much larger incumbent player? \n\n Well, we got the guy who “does AEO for resend” - the CEO of AEO, Zeno Rocha, who has been writing about \nAEO since 2024\n and \nAgent Experience since Feb 2025\n, on the pod today: \n\n In a recent AEO study, Claude Code picked Resend first in 64 of the 102 email recommendations the researchers could extract. SendGrid came first seven times, yet showed up 55 times as an alternative. If the developer asks an agent to implement email and accepts the patch, how often does anyone get around to trying the second choice? \nThe study breaks down the results by model and app.\n Our more recent \ncomprehensive AEO study\n was a bit more competitive, with Postmark coming up top for most models. \n\n Zeno Rocha, Resend’s co-founder and CEO, joined us to walk through what happens on both sides of that pull request. He says Resend had 4.3 million users and 120,000 paying customers when we recorded. He discovered one of them, Warner Bros. Discovery, by sorting through short .com domains in the customer database on a Saturday. \n\nThe developer gets there before the model\n\n Resend’s first useful bit of distribution was an email template. While Zeno and his team were building the sending API, developers kept telling them how painful it was to get the email itself to look right. So they released React Email. You could build a template with it and send it through SendGrid. They even documented how. By the time a developer needed a different provider, some of Resend’s code was already in the repo. \nReact Email\n\n Now try the same journey as an agent comparing providers. Resend’s pricing page has a slider. A person can drag it to the right volume and read off the price. Add \n.md\n to the URL and the agent gets a table it can read in one request. That’s the kind of change I liked in our \nSupabase interview\n too. You can ask whether a model has heard of your product. You can also open your own \npricing table\n and see whether it can answer a customer’s question. \n\n80 tools, or two?\n\n When we recorded, Resend’s MCP server had grown from roughly 20 tools or fewer at launch to more than 80. Zeno wants someone working in a chat client to be able to do what they can do in the dashboard. Sending an email gets the demo working. Inviting a teammate, checking usage and managing billing account for some of the long tail. The design looks especially interesting alongside \nCloudflare’s Code Mode server\n, which exposes its API through two tools, \nsearch()\n and \nexecute()\n. \n\n Zeno describes opening the collapsed tool calls in his own sessions to see what the agent actually did. In one, the result was too large to fit in context. Reducing the tool count wouldn’t by itself make that response any smaller. For someone designing an MCP server, that’s a cheap experiment worth borrowing: expand the result of a call you make every day and see how much of it the model actually needs. \n\nWhat happens after “send”?\n\n Getting an agent to pick the SDK still leaves the entire business of delivering the mail. Take click tracking. A provider can rewrite links through a shared tracking domain so it can count clicks. If one customer uses that domain for phishing and it gets blocklisted, links in another customer’s perfectly legitimate emails can suffer too. Zeno explains why Resend introduced custom tracking domains and why he wants to keep the free tier even though spammers can sign up for it. \nCustom tracking domains\n · \nResend’s $3M safety commitment\n\n Watch the domain setup and pricing walkthroughs if you build developer tools. Stay for the last stretch if you know Zeno from Dracula. We get into what it’s like to build a company with a family and how much of a founder’s job comes down to finding a name that other people actually use. \n\nShow notes\n\nZeno’s original Dracula announcement\n — the editor theme he launched in 2013. \n\nZeno on what Claude Code chooses\n — his reading of the recommendation study and the differences between model versions. \n\nResend’s MCP server\n — the integration behind the tool-count discussion. \n\nAnthropic on writing tools for agents\n — concrete approaches to returning less data when a tool result fills the context window. \n\nResend’s anti-abuse handbook\n — what happens when a new sender signs up and where the team intervenes. \n\nChapters\n\n0:00\n Cold open\n\n0:59\n From Dracula to email\n\n5:02\n When agents pick the API\n\n6:54\n Getting into the inbox\n\n13:28\n What tracking measures\n\n17:05\n Paying for trust\n\n19:44\n The DNS hurdle\n\n23:55\n React Email’s wedge\n\n27:01\n Measuring adoption\n\n31:58\n Owning the mail stack\n\n37:55\n Designing the MCP\n\n46:29\n CLI, SDKs and craft\n\n52:41\n Mail for agents\n\n58:28\n Writing for machines\n\n1:06:00\n Winning recommendations\n\n1:12:14\n Enterprise and pricing\n\n1:16:51\n Building with a family\n\n1:23:26\n Naming a category \n\nResend - Zeno Rocha - Transcript.txt\n94.65 KB • PLAIN File",
+          "url": "https://latent.space/p/resend/",
+          "published_at": "2026-11-10T20:05:17+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://latent.space/p/resend/"
+      }
     }
   ],
   "editions": [
