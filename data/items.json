@@ -85266,6 +85266,67 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-fable-5-2-retakes-world-1-llm-spot-as-ant-ipo-roadshow-begins/"
       }
+    },
+    {
+      "id": "d5cc96286d84b1449501",
+      "first_seen_at": "2026-11-10T11:17:17+00:00",
+      "status": "deferred",
+      "title": "The Jensen Huang Story Gets Worse, Washington vs. New York, Silicon Valley",
+      "source_title": "The Jensen Huang Story Gets Worse, Washington vs. New York, Silicon Valley",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-10T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "47b27049d3910b799ab7",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=21132",
+          "title": "The Jensen Huang Story Gets Worse, Washington vs. New York, Silicon Valley",
+          "description": "The Jensen Huang story got worse for him on Monday; the real risk for Huang is governance, even more than national security. Who benefits?",
+          "url": "https://stratechery.com/2026/the-jensen-huang-story-gets-worse-washington-vs-new-york-silicon-valley/",
+          "published_at": "2026-11-10T11:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/the-jensen-huang-story-gets-worse-washington-vs-new-york-silicon-valley/"
+      }
+    },
+    {
+      "id": "930784d778f3ce47ec59",
+      "first_seen_at": "2026-11-10T11:17:20+00:00",
+      "status": "skipped",
+      "title": "The Jensen Huang Affair",
+      "source_title": "The Jensen Huang Affair",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes describe a Hard Fork episode about a report that Nvidia CEO Jensen Huang had an affair with a suspected Chinese spy. The notes do not show Huang as a guest, interviewee, or speaker, and the episode is host analysis of his conduct, which does not qualify.",
+      "published_at": "2026-11-10T11:00:17+00:00",
+      "appearances": [
+        {
+          "id": "6d3d4a73cbae47185b25",
+          "kind": "podcast",
+          "source": "Hard Fork",
+          "family": "hard fork",
+          "guid": "https://www.nytimes.com/2026/11/10/podcasts/hardfork-jensen-huang-spy-affair.html",
+          "title": "The Jensen Huang Affair",
+          "description": "Nvidia’s C.E.O., Jensen Huang, admitted to having an affair with a suspected Chinese corporate spy. Everything that means for him and the A.I. industry, and what happens next.",
+          "url": "https://www.nytimes.com/2026/11/10/podcasts/hardfork-jensen-huang-spy-affair.html",
+          "published_at": "2026-11-10T11:00:17+00:00",
+          "hosts": [
+            "Kevin Roose",
+            "Casey Newton"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.nytimes.com/2026/11/10/podcasts/hardfork-jensen-huang-spy-affair.html"
+      }
     }
   ],
   "editions": [
