@@ -85327,6 +85327,36 @@
       "links": {
         "podcast": "https://www.nytimes.com/2026/11/10/podcasts/hardfork-jensen-huang-spy-affair.html"
       }
+    },
+    {
+      "id": "bf987f21d4f7dd0d6fb1",
+      "first_seen_at": "2026-11-10T13:17:19+00:00",
+      "status": "skipped",
+      "title": "Cheeky Pint: Nik Storonsky on Revolut's growth and strategy",
+      "source_title": "Nik Storonsky: The most uncompromising banking CEO",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode's guest is Nik Storonsky, Revolut's founder and CEO, and the host is John Collison; neither is on the AI Radar followed list. No followed person is a guest, interviewee, or central speaker.",
+      "published_at": "2026-11-10T12:45:00+00:00",
+      "appearances": [
+        {
+          "id": "7095d7a1505f923738e0",
+          "kind": "podcast",
+          "source": "Cheeky Pint",
+          "family": "cheeky pint",
+          "guid": "74e6094e-87a3-43f2-80d7-a4d65d5b38f1",
+          "title": "Nik Storonsky: The most uncompromising banking CEO",
+          "description": "Nik Storonsky, Founder and CEO of Revolut, joins John to break down how Revolut scales across 50 million customers worldwide, their strategy to challenge Amex and Chase in the US, and why products live or die by strict retention curves in their \"new bets\" process. They also discuss building a profitable fintech around subscriptions rather than lending, how they are cutting 210-day compliance approval cycles with AI, and why CEOs should skip conferences in favor of product development.\n\nTimestamps\n\n(00:00:00) Introduction\n\n(00:00:21) Revolut growth\n\n(00:04:03) New bets framework\n\n(00:12:35) Why bank lending is like selling options\n\n(00:20:12) Automated cross-sell machine\n\n(00:27:39) Stripe Radar\n\n(00:28:10) Lightweight users to primary accounts\n\n(00:33:16) Building the AI-pilled bank\n\n(00:39:04) Taking on Amex and Chase\n\n(00:42:36) Products over conferences",
+          "url": "https://share.transistor.fm/s/dd3ec675",
+          "published_at": "2026-11-10T12:45:00+00:00",
+          "hosts": [
+            "John Collison"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/dd3ec675"
+      }
     }
   ],
   "editions": [
