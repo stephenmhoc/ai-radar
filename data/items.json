@@ -85762,6 +85762,64 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/"
       }
+    },
+    {
+      "id": "77447159b3268dadeeb0",
+      "first_seen_at": "2026-11-11T11:17:21+00:00",
+      "status": "skipped",
+      "title": "What the Internet Boom Teaches Us About the AI Buildout (with Mike Volpi)",
+      "source_title": "What the Internet Boom Teaches Us About the AI Buildout | Mike Volpi",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Excluded: the speakers are Mike Volpi, Raghu Raghuram, and Guido Appenzeller, none of whom are on the followed list. NVIDIA is discussed, but Jensen Huang is not a speaker or guest.",
+      "published_at": "2026-11-11T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "52cd2441e6d28ba1b9d8",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "1d628599-d453-4bf2-a3ab-a6391a67ea9f",
+          "title": "What the Internet Boom Teaches Us About the AI Buildout | Mike Volpi",
+          "description": "The internet boom built bandwidth. The AI boom is building intelligence. Mike Volpi, who helped shape Cisco’s strategy during the internet buildout, asks what that era can teach us about this one.\n\nMike joins a16z’s Raghu Raghuram and Guido Appenzeller to compare today’s investment in GPUs, data centers, and power with the fiber boom of the late 1990s, and explain why the infrastructure could prove valuable even if the market corrects.\n\nThey also discuss NVIDIA, custom silicon, networking, and the changing economics of GPUs, plus lessons from Cisco’s acquisition machine. And Mike explains why he thinks this technology cycle could be even more consequential than the last.\n\nResources:\n\nFollow Mike Volpi on X:\nhttps://x.com/mavolpi\n\nFollow Raghu Raghuram on X:\nhttps://x.com/RaghuRaghuram\n\nFollow Guido Appenzeller on X:\nhttps://x.com/appenz\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/what-the-internet-boom-teaches-us-about-the-ai-buildout-mike-volpi-C_gHjXbG",
+          "published_at": "2026-11-11T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/what-the-internet-boom-teaches-us-about-the-ai-buildout-mike-volpi-C_gHjXbG"
+      }
+    },
+    {
+      "id": "565554310c1f82f9e209",
+      "first_seen_at": "2026-11-11T11:17:21+00:00",
+      "status": "deferred",
+      "title": "Intel Earnings, AMD Earnings, Intel and AMD’s Divergence",
+      "source_title": "Intel Earnings, AMD Earnings, Intel and AMD’s Divergence",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-11T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "3826cce3880e8a54293e",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=21146",
+          "title": "Intel Earnings, AMD Earnings, Intel and AMD’s Divergence",
+          "description": "Intel and AMD's diverging earnings point to fundamental historical differences, and make me wonder if Intel needs to find a new (old) path.",
+          "url": "https://stratechery.com/2026/intel-earnings-amd-earnings-intel-and-amds-divergence/",
+          "published_at": "2026-11-11T11:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/intel-earnings-amd-earnings-intel-and-amds-divergence/"
+      }
     }
   ],
   "editions": [
