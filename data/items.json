@@ -85820,6 +85820,36 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/intel-earnings-amd-earnings-intel-and-amds-divergence/"
       }
+    },
+    {
+      "id": "db88d781f3418a71ab35",
+      "first_seen_at": "2026-11-11T12:17:20+00:00",
+      "status": "skipped",
+      "title": "Agents That Think Together: Cisco's Vijoy Pandey on Semantic Alignment, Scope, Accord and Concord",
+      "source_title": "Agents That Think Together: Cisco's Vijoy Pandey on Semantic Alignment, Scope, Accord & Concord",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Vijoy Pandey of Cisco, who is not on the followed list. Nathan Labenz is the host, and no followed person appears as a guest, speaker, or author.",
+      "published_at": "2026-11-11T11:59:15+00:00",
+      "appearances": [
+        {
+          "id": "a72b9bd4eedd0df4aabe",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "8e5615bc-ddb9-11f1-a866-a31f48301512",
+          "title": "Agents That Think Together: Cisco's Vijoy Pandey on Semantic Alignment, Scope, Accord & Concord",
+          "description": "Vijoy Pandey, SVP and GM of Outshift by Cisco, discusses the challenges of multi-agent systems and Cisco's new open-source protocols designed to help AI agents collaborate effectively. He explains how tools like Scope, Accord, and Concord address semantic misalignments, intent negotiation, and cognitive failures across complex workflows. The conversation also dives into personal agent setups, avoiding model lock-in, and the rise of latent space communication. Finally, Pandey shares why proper guardrails will ensure humanity benefits as autonomous systems grow in complexity.\n\nSponsors:\n\nLovable: Lovable is the software creation platform that brings your ideas to life with enterprise-grade infrastructure and flexible AI coding agents. Start building your next project today at https://lovable.comVisit https://fruitopia.ai to explore more than 400 fruits, and more than 8000 varieties, from all around the world. \n\nClaude: Claude is the AI collaborator built for problem solvers, extending your thinking across coding, modeling, and strategic workflows. Get started and discover Claude Pro at https://claude.ai/tcr\n\nOutSystems: OutSystems is the leading agentic systems platform, empowering enterprises to build, coordinate, and govern AI agents and mission-critical applications securely. Learn more and start building your agentic future at https://outsystems.com/tcr\n\nTasklet: Tasklet empowers your business with AI agents that connect to your tools and automate recurring workflows with no code required. Visit https://tasklet.ai and use code cog rev for $50 in free credits\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(03:26) Sponsor: Lovable\n\n(05:09) Rise of connected agents\n\n(10:09) Enterprise multi-agent case studies (Part 1)\n\n(20:50) Sponsors: Claude | OutSystems\n\n(23:27) Enterprise multi-agent case studies (Part 2)\n\n(25:51) The Internet of Cognition\n\n(33:12) Detecting cognitive drift (Part 1)\n\n(40:30) Sponsor: Tasklet\n\n(42:08) Detecting cognitive drift (Part 2)\n\n(43:53) Accord and Concord protocols\n\n(56:19) Judgment and cognition engines\n\n(01:02:24) Personal autonomous agent workflows\n\n(01:16:31) High dimensional agent communication\n\n(01:26:25) Episode Outro\n\n(01:29:38) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\n\nWebsite: https://www.cognitiverevolution.ai\n\nTwitter (Podcast): https://x.com/cogrev_podcast\n\nTwitter (Nathan): https://x.com/labenz\n\nLinkedIn: https://linkedin.com/in/nathanlabenz/\n\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\n\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\n\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.cognitiverevolution.ai/agents-that-think-together-cisco-s-vijoy-pandey-on-semantic-alignment-scope-accord-concord/",
+          "published_at": "2026-11-11T11:59:15+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/agents-that-think-together-cisco-s-vijoy-pandey-on-semantic-alignment-scope-accord-concord/"
+      }
     }
   ],
   "editions": [
