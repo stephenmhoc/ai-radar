@@ -85850,6 +85850,36 @@
       "links": {
         "podcast": "https://www.cognitiverevolution.ai/agents-that-think-together-cisco-s-vijoy-pandey-on-semantic-alignment-scope-accord-concord/"
       }
+    },
+    {
+      "id": "d53e3aea67028dba60b4",
+      "first_seen_at": "2026-11-11T16:17:18+00:00",
+      "status": "skipped",
+      "title": "A New Vision for Human Work After Automation",
+      "source_title": "A New Vision for Human Work After Automation",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speaker is Dan Shipper, a host/author of this source who is not on the followed list. The notes mention OpenAI's GDPval benchmark only as a resource link, and no followed person is shown speaking or writing in this item.",
+      "published_at": "2026-11-11T15:30:00+00:00",
+      "appearances": [
+        {
+          "id": "ce059c64c7c4b4dc3ece",
+          "kind": "podcast",
+          "source": "AI & I",
+          "family": "ai & i",
+          "guid": "flightcast:01M717KBM0K828PAMMP3ZPWV8P",
+          "title": "A New Vision for Human Work After Automation",
+          "description": "Thesis: 2027 is made possible by our founding partners, Lovable and Notion.\nLovable is the fastest way to turn ideas into software people love: https://link.lovable.dev/every\nNotion is the collaborative AI workspace where teams and agents work side by side: https://www.notion.com/?utm_source=youtube&utm_campaign=thesis-2027&utm_content=every-261111-video\nWhat does great human work look like after automation?\nIt’s a question we try to answer every day at Every, and the one we built our conference, Thesis, around. In his closing keynote, Dan Shipper argues that as AI makes intelligence cheap and widely available, what matters most is human perspective. It’s your “non-consensus” point of view, plus your responsibility for a particular corner of the world, that helps you spot the insight no one else would.\nOn this week’s episode of The Every Podcast, we’re sharing Dan’s full talk at Thesis: 2027. Dan explains why benchmark charts make the future of work look bleaker than it is, why picking the right idea still takes a human, and how we should really measure AI models.\nSubscribe to Every (free for 14 days): https://every.to/youtube-every-offer?utm_source=podcast&utm_medium=audio&utm_campaign= (https://every.to/youtube-every-offer?utm_source=podcast&utm_medium=audio&utm_campaign=companyagentepisode)thesistalkepisode\nLinks to resources mentioned in the episode:\nThesis: https://every.to/thesis-2027\nDan Shipper: https://x.com/danshipper\nOpenAI’s GDPval benchmark: https://openai.com/index/gdpval/\nTimestamps:\n0:00 Introduction\n1:51 Work after automation\n5:00 1 person vs 5 jobs\n10:18 Why perspective matters\n17:55 Better AI, more valuable humans",
+          "url": "https://feeds.transistor.fm/how-do-you-use-chatgpt",
+          "published_at": "2026-11-11T15:30:00+00:00",
+          "hosts": [
+            "Dan Shipper"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.transistor.fm/how-do-you-use-chatgpt"
+      }
     }
   ],
   "editions": [
