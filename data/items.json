@@ -85880,6 +85880,34 @@
       "links": {
         "podcast": "https://feeds.transistor.fm/how-do-you-use-chatgpt"
       }
+    },
+    {
+      "id": "c4ccb29f48ea70f68164",
+      "first_seen_at": "2026-11-11T20:17:21+00:00",
+      "status": "skipped",
+      "title": "AlphaGenome 2: Teaching AI to read the entire human genome",
+      "source_title": "AlphaGenome 2: Teaching AI to read the entire human genome",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes identify no guest, interviewee, or speaker, and no followed person is named as participating. The notes contain only a blog link, a review request, and advertising boilerplate, so the item cannot be shown to include substantial words or ideas from a followed person.",
+      "published_at": "2026-11-11T20:03:03+00:00",
+      "appearances": [
+        {
+          "id": "b94df9fdebc88a30184e",
+          "kind": "podcast",
+          "source": "Google DeepMind: The Podcast",
+          "family": "google deepmind: the podcast",
+          "guid": "0b043df9-5966-446f-a728-40e22f4ace51",
+          "title": "AlphaGenome 2: Teaching AI to read the entire human genome",
+          "description": "Learn more about AlphaGenome 2: https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/\n\nPlease leave us a review on Spotify or Apple Podcasts if you enjoyed this episode. We always want to hear from our audience whether that's in the form of feedback, new idea or a guest recommendation! \n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://deepmind.com/podcast",
+          "published_at": "2026-11-11T20:03:03+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://deepmind.com/podcast"
+      }
     }
   ],
   "editions": [
