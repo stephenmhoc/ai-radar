@@ -85671,6 +85671,66 @@
       "links": {
         "newsletter": "https://latent.space/p/codex-work/"
       }
+    },
+    {
+      "id": "7efdad70b0ef581708da",
+      "first_seen_at": "2026-11-11T09:17:20+00:00",
+      "status": "skipped",
+      "title": "Invest Like the Best: Zach Reitano on Building Ro and Why Healthcare Should Be 50% of GDP",
+      "source_title": "Zach Reitano - Building Ro and Why Healthcare Should Be 50% of GDP - [Invest Like the Best, EP.500]",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Zach Reitano, Ro co-founder and CEO, and the host is Patrick O'Shaughnessy; neither is on the followed list, so the item does not qualify.",
+      "published_at": "2026-11-11T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "e5fff6a387af192f8b5c",
+          "kind": "podcast",
+          "source": "Invest Like the Best",
+          "family": "invest like the best",
+          "guid": "f2c43732-dd18-11f1-bff2-0bf5984a7473",
+          "title": "Zach Reitano - Building Ro and Why Healthcare Should Be 50% of GDP - [Invest Like the Best, EP.500]",
+          "description": "My guest today is Zach Reitano, the co-founder and CEO of Ro, the country’s leading provider of GLP-1s. In four years, Ro has grown from a $250 million run rate to over $3 billion, with fewer people than it had in 2021.\n\nThe heart of our conversation is what he sees as the central flaw in American healthcare, which is that the patient is not the customer. He points to GLP-1s and LASIK as examples of what’s possible when patients pay directly, and he thinks AI could bring healthcare down to the price of a Netflix subscription.\n\nBut to capture that opportunity, Zach first had to rebuild Ro's culture around high performance and a big heart. It shows in the stories Ro shares from people like Serena Williams, which help patients get past the stigma of seeking treatment. The inspiration behind it all is his father, a doctor whose care Zach wants to recreate in software.\n\nPlease enjoy my conversation with Zach Reitano.\n\nFor the full show notes, transcript, and links to mentioned content, check out the episode page ⁠here⁠.\n\n-----\n\nBecome a Colossus member to get our quarterly print magazine and private audio experience, including exclusive profiles and early access to select episodes. Subscribe at ⁠⁠colossus.com/subscribe⁠⁠.\n\n-----\n\n⁠⁠Ramp’s⁠⁠ mission is to help companies manage their spend in a way that reduces expenses and frees up time for teams to work on more valuable projects. Go to ⁠⁠⁠ramp.com/invest⁠⁠⁠ to sign up for free and get a $250 welcome bonus.\n\n-----\n\nTrusted by thousands of businesses, ⁠⁠Vanta⁠⁠ continuously monitors your security posture and streamlines audits so you can win enterprise deals and build customer trust without the traditional overhead. Invest Like the Best listeners get a special offer of $1,000 off Vanta when you go to ⁠⁠vanta.com/invest⁠⁠.\n\n-----\n\n⁠WorkOS⁠⁠ is the infrastructure B2B and AI-native companies use to sell to enterprise. It covers everything enterprise security requires: SSO, SCIM, RBAC, Audit Logs, AI governance, and more. Trusted by 2,000+ fast-growing companies, including OpenAI, Anthropic, Cursor, and Vercel.\n\n-----\n\n⁠Rogo⁠ is the AI platform for finance. They're building agents for Wall Street that are trained to understand how bankers and investors actually do work: from diligence and modeling, to turning analysis into deliverables. To learn more, visit ⁠rogo.ai/invest⁠.\n\n-----\n\n⁠⁠Ridgeline⁠⁠ has built a complete, real-time, modern operating system for investment managers. It handles trading, portfolio management, compliance, customer reporting, and much more through an all-in-one real-time cloud platform. Visit ⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠ridgeline.ai⁠⁠.\n\n-----\n\nEditing and post-production work for this episode was provided by ⁠The Podcast Consultant⁠.\n\nTimestamps:\n\n(00:01:35) Why Healthcare Spending Should Rise\n\n(00:05:39) Putting Patients in Control\n\n(00:10:37) Inside Ro's GLP-1 Business\n\n(00:16:29) How GLP-1s Could Reshape Society\n\n(00:23:15) The Hidden Cost of Protecting Jobs\n\n(00:28:35) Rebuilding a Zombie Company\n\n(00:36:33) What Drove Ro's 10x Growth\n\n(00:43:49) Where Healthcare Goes Next\n\n(00:46:27) Zach's Personal Health Stack\n\n(00:54:07) Finding the Work You Were Born For\n\n(01:00:15) Ro's Consumer Playbook\n\n(01:04:39) Breaking Medical Taboos\n\n(01:12:54) The Kindest Thing",
+          "url": "https://colossus.com/episode/the-patient-revolution/",
+          "published_at": "2026-11-11T09:00:00+00:00",
+          "hosts": [
+            "Patrick O'Shaughnessy"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://colossus.com/episode/the-patient-revolution/"
+      }
+    },
+    {
+      "id": "c2c77570d6e63503bcea",
+      "first_seen_at": "2026-11-11T09:17:22+00:00",
+      "status": "skipped",
+      "title": "Building Robinhood, Surviving GameStop & A $500 Million Phone Call | Vlad Tenev",
+      "source_title": "Building Robinhood, Surviving GameStop & A $500 Million Phone Call | Vlad Tenev",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode's guest is Vlad Tenev, who is not on the AI Radar followed list. The other names in the notes (Micky Malka, Terence Tao, Baiju Bhatt) are also not followed people, so no followed person is a guest or speaker.",
+      "published_at": "2026-11-11T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "4c1900cbc6e83304ed51",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "22711b00-dd94-11f1-bccf-db7c7dee24c1",
+          "title": "Building Robinhood, Surviving GameStop & A $500 Million Phone Call | Vlad Tenev",
+          "description": "Vlad Tenev is the co-founder and CEO of Robinhood. He was born in Bulgaria in 1987 and moved to the US at age five, a few years before hyperinflation wiped out his grandparents' savings. His parents kept the family afloat on a grad student's budget, and Vlad grew up as a latchkey kid teaching himself computers and tracking stocks on Yahoo Finance. When he scored 1,370 on the SAT at 12, his dad gave him that many dollars to invest. He went on to Stanford and then a math PhD at UCLA under Terence Tao, before his friend Baiju Bhatt convinced him to start a company during the 2008 financial crisis. Vlad tells the story of the near-collapse of Robinhood during the GameStop frenzy in January 2021: how a deposit requirement jumped from under $100 million to $3 billion overnight, why he called Micky Malka of Ribbit Capital first, and how a term sheet they had drafted after the outage in March 2020 made the rescue possible. He also explains why Micky passed on Robinhood's seed round but later became the only investor promoted to its public board, what his first startup taught him, and the legacy test that led him from selling trading software to hedge funds to building Robinhood.\n\nMade possible by\n\nRamp: https://router.com\n\nAppLovin: https://applovin.com/senra\n\nWorkOS: https://workos.com\n\nDeel: https://deel.com/senra\n\nChapters\n\n(00:00:00) Why Ribbit passed on Robinhood's seed round\n\n(00:02:19) \"You're going to want me on your board\"\n\n(00:05:35) The day-long trading outage of March 2020\n\n(00:09:22) A term sheet for a crisis that hadn't happened yet\n\n(00:15:00) Crypto goes from zero to a top revenue stream\n\n(00:16:27) The $3 billion deposit requirement\n\n(00:18:35) \"Vlad, you have to call work right away\"\n\n(00:21:34) The first call: Micky Malka\n\n(00:24:31) \"Time kills all deals\"\n\n(00:25:33) Number one app in the App Store, ahead of Instagram and TikTok\n\n(00:27:01) $10 billion of demand\n\n(00:29:33) Hyperinflation and copper cookware in Bulgaria\n\n(00:35:34) \"Manhattan just seemed like science fiction\"\n\n(00:47:15) His SAT score in dollars to invest\n\n(00:50:53) Studying under Terence Tao\n\n(01:00:22) \"You want to be businessman, huh?\"\n\n(01:03:48) The best parts of math without the bullshit\n\n(01:05:56) Would I be proud of this in 50 years?\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/vlad-tenev",
+          "published_at": "2026-11-11T09:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/vlad-tenev"
+      }
     }
   ],
   "editions": [
