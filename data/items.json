@@ -85610,6 +85610,36 @@
         "podcast": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/designing_for_agents_zeno_rocha_resend",
         "newsletter": "https://latent.space/p/resend/"
       }
+    },
+    {
+      "id": "31794e7c32e6c9005047",
+      "first_seen_at": "2026-11-11T00:18:31+00:00",
+      "status": "skipped",
+      "title": "Lex Fridman Podcast #504: Russia-Ukraine War with Preston Stewart and Michael Kofman",
+      "source_title": "#504 – Russia-Ukraine War: Putin, Zelenskyy, Drones and the Future of Warfare",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Excluded because the speakers are Preston Stewart and Michael Kofman, neither of whom is on the AI Radar follow list, and the host Lex Fridman is not on the list either.",
+      "published_at": "2026-11-10T23:52:44+00:00",
+      "appearances": [
+        {
+          "id": "5b45d44cc687f784b2c4",
+          "kind": "podcast",
+          "source": "Lex Fridman Podcast",
+          "family": "lex fridman podcast",
+          "guid": "https://lexfridman.com/?p=7818",
+          "title": "#504 – Russia-Ukraine War: Putin, Zelenskyy, Drones and the Future of Warfare",
+          "description": "Preston Stewart is a West Point graduate and Afghanistan veteran who covers the Ukraine war extensively on his YouTube channel, his podcast called War and Conflict, and his newsletter called Defense Tech News. Michael Kofman is a world-class military analyst specializing in the Russian and Ukrainian militaries. He is a senior fellow at the Carnegie Endowment and he hosts The Russia Contingency podcast on the War on the Rocks platform.\n\nThank you for listening ❤ Check out our sponsors: \nhttps://lexfridman.com/sponsors/ep504-sc\n\nSee below for timestamps, transcript, and to give feedback, submit questions, contact Lex, etc.\n\nTranscript:\n\nhttps://lexfridman.com/preston-stewart-michael-kofman-transcript\n\nCONTACT LEX:\n\nFeedback\n – give feedback to Lex: \nhttps://lexfridman.com/survey\n\nAMA\n – submit questions, videos or call-in: \nhttps://lexfridman.com/ama\n\nHiring\n – join our team: \nhttps://lexfridman.com/hiring\n\nOther\n – other ways to get in touch: \nhttps://lexfridman.com/contact\n\nEPISODE LINKS:\n\nMichael’s X: \nhttps://x.com/KofmanMichael\n\nMichael’s Podcast: \nhttps://warontherocks.com/premium/therussiacontingency/\n\nPreston’s YouTube: \nhttps://youtube.com/@prestonstewart\n\nPreston’s X: \nhttps://x.com/prestonstew_\n\nSPONSORS:\n\nTo support this podcast, check out our sponsors & get discounts:\n\nGiveDirectly:\n Direct donations to people living in extreme poverty.\n\nGo to \nhttps://givedirectly.org/lex\n\nFin:\n AI agent for customer service.\n\nGo to \nhttps://fin.ai/lex\n\nLMNT:\n Zero-sugar electrolyte drink mix.\n\nGo to \nhttps://drinkLMNT.com/lex\n\nWispr Flow:\n AI-powered voice dictation app.\n\nGo to \nhttps://wisprflow.ai/lex\n\nShop:\n Turns any AI agent into your personal shopper.\n\nGo to \nhttps://shop.md/lex\n\nPerplexity:\n AI-powered answer engine.\n\nGo to \nhttps://perplexity.ai/\n\nOUTLINE:\n\n(00:00) – Introduction\n\n(00:43) – Sponsors, Comments, and Reflections\n\n(08:20) – State of the war in Ukraine\n\n(21:59) – Drone warfare and the kill zone\n\n(59:09) – Who is winning the war?\n\n(1:10:46) – Military analysis of Russia’s 2022 invasion\n\n(1:26:34) – Battle of Bakhmut\n\n(1:42:17) – War optimism and bad information\n\n(2:02:26) – Prigozhin’s mutiny\n\n(2:16:40) – Putin vs Zelenskyy\n\n(2:34:38) – Trump\n\n(2:43:33) – Paths to peace in Ukraine\n\n(2:54:13) – Nature of war\n\nPODCAST LINKS:\n\n– Podcast Website: \nhttps://lexfridman.com/podcast\n\n– Apple Podcasts: \nhttps://apple.co/2lwqZIr\n\n– Spotify: \nhttps://open.spotify.com/show/2MAi0BvDc6GTFvKFPXnkCL\n\n– RSS: \nhttps://lexfridman.com/feed/podcast/\n\n– Podcast Playlist: \nhttps://www.youtube.com/playlist?list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4\n\n– Clips Channel: \nhttps://www.youtube.com/lexclips",
+          "url": "https://lexfridman.com/ukraine-war-preston-stewart-michael-kofman/?utm_source=rss&utm_medium=rss&utm_campaign=ukraine-war-preston-stewart-michael-kofman",
+          "published_at": "2026-11-10T23:52:44+00:00",
+          "hosts": [
+            "Lex Fridman"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://lexfridman.com/ukraine-war-preston-stewart-michael-kofman/?utm_source=rss&utm_medium=rss&utm_campaign=ukraine-war-preston-stewart-michael-kofman"
+      }
     }
   ],
   "editions": [
