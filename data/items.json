@@ -85908,6 +85908,37 @@
       "links": {
         "podcast": "https://deepmind.com/podcast"
       }
+    },
+    {
+      "id": "2d2c6fd3d3ac19e14bc1",
+      "first_seen_at": "2026-11-12T05:17:39+00:00",
+      "status": "skipped",
+      "title": "The Jev Revolution: What Engineers Are Already Building with System One Models",
+      "source_title": "The Jev Revolution: What Engineers Are Already Building with System One Models",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers and interviewees are Diogo Almeida, Chinmay Goyal, Chibi Vikram, Kevin Bernstein, and Scott Roberts, plus host swyx. None is on the followed list, and followed people are not quoted or featured.",
+      "published_at": "2026-11-12T05:08:20+00:00",
+      "appearances": [
+        {
+          "id": "add8908647033efcbab2",
+          "kind": "newsletter",
+          "source": "Latent Space — Newsletter",
+          "family": "latent space",
+          "guid": "urn:latent-space:post:post_b31597d9-ad6f-469e-a051-d723be8fd562",
+          "title": "The Jev Revolution: What Engineers Are Already Building with System One Models",
+          "description": "Today at the \nAI Engineer Code Summit\n, the main theme was \nsystem one models\n — non-generative models that return structured choices, scores, or probabilities. They’re also typically much faster and cheaper than reasoning LLMs (a.k.a. system two models).  \n\n And who better to give an inspirational rallying cry for system one models than \nDiogo Almeida\n, co-founder and CEO of \nTypeSafe AI\n. Almeida was lead creator of \nJev\n, the product that kicked off this trend less than two months ago. \n\n Jev was an instant revelation for AI engineers when it was released in September. In \na podcast with Latent Space on launch\n (which quickly became our most popular episode of the year), Almeida explained the core problem with making LLMs the heart of software: \nreliability\n.  \n\n In his keynote at AIE Code today, he took it a step further by claiming that Jev is \n“reliable intelligence”\n that should be used for \n“just automating everything.” \n\nIntegrating system one models into code\n\n Of particular interest to AI engineers is Almeida’s point that system one models should become integrated with code. As he put it in his keynote, \n“code is the language of automation\n, therefore you need to integrate with code.” \n\n Latent Space founder swyx interprets this as a call to \n“liberally sprinkle ‘System One’ model calls everywhere INSIDE application code\n to make smarter software instead of increasingly convoluted forms of ‘concat strings together and hope for the best\" AI engineering.’” \n\n The term \n“smart software”\n was used throughout Almeida’s presentation. It sounds like the kind of term used by companies like Microsoft or IBM during Web 2.0, but in the AI era it does actually signify \na harsh reality about LLM-driven software: that sometimes it’s just not very smart.\n As Almeida quipped during his presentation, “you get Einstein 95% of the time, but Mr. Bean 5% of the time.” \n\n “And if you can't tell which is which, how the fuck are you going to automate anything,” he added. \n\n Almeida ended with an impassioned plea to \n“automate everything.”\n Like an AI-era, pink-haired Steve Jobs, he called out to “the dreamers and the people who don't want to be limited by everything that has happened so far,” promising that TypeSafe AI wants to “really fight for you, and we want this to be \nas reliable as a fourth logic gate.\n” \n\nHow Glean uses Jev\n\n With the unenviable task of immediately following Almeida on stage, \nChinmay Goyal\n from \nGlean\n presented a more prosaic version of Jev usage. He explained that system one models are used at Glean alongside LLMs and other types of classifiers, and that Jev is especially suited for \n“zero-shot flexibility.”\n\n “As the taxonomy of the decision space changes, we don't have to fine-tune these models again and again,” he said. \n\n In a short interview after his presentation, Goyal told Latent Space that their customers don’t actually need to know which type of model they’re using. \n\n“Jev powers a significant number of flows\n [but] the user just needs to have a product that works; that is always our aim with building anything. So we want to hide away all the complexity of whether we are using Jev or we are using a full-blown LLM.” \n\n In the conclusion of his presentation, Goyal offered some rules on when to use Jev: \n\nJev patterns and prototypes\n\n Next up at AIE Code were \nChibi Vikram\n and \nKevin Bernstein\n from \nUiPath\n, a business orchestration and automation platform. One of their examples showed \na test of Jev ranking document chunks\n. They held a “tournament” where Jev picked the most relevant chunks from small groups, then the winners advanced to another round, and so on. This whole process \ntook under a second\n, even with thousands of Jev calls. \n\n “We realized that \nJev is a building block that we can adjust\n,” said Vikram about this and other experiments, “and we have to find these new strategies where we will be able to apply this building block. It might look less intelligent on its own, but \nwith these strategies and patterns, we can get more intelligent\n — with even the current Jev model that we have.” \n\nScott Roberts\n, a Principal Engineer at \nWorkday\n, finished the ‘system one’ session at AIE Code with some prototypes his team has run with Jev. \n\n In one, an interface starts to fill in a time-off card while the user is still typing. It was an interesting showcase of Almeida’s idea that \na fast model call can change what the software itself does.\n Roberts described it as going “from predicting what you want to say to predicting what you want to do.” \n\nLike the early internet\n\n The biggest learning I took from the System One presentations today is that a model like Jev can \nopen up surprising new ways to build software\n. I was sitting next to a conference attendee who heads up AI at his company. He told me that in his spare time, he used Jev to create a website that sorts and ranks news about fantasy football. \n\n But the final word has to go to Almeida, who likened the new opportunities opened up by system one models \nto the experimentation of the early internet.\n\n “I think that there's going to be an explosion of what software can do, and we will want people to be exploring those boundaries of software. Not necessarily because it's valuable, but \nbecause they can, because we have new frontiers to explore\n, and this is what the early internet was like.”",
+          "url": "https://latent.space/p/jev-revolution/",
+          "published_at": "2026-11-12T05:08:20+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://latent.space/p/jev-revolution/"
+      }
     }
   ],
   "editions": [
