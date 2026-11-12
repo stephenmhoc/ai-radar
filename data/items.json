@@ -86119,6 +86119,37 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-what-can-we-learn-from-114"
       }
+    },
+    {
+      "id": "3ad5372538cb8f1ce5f2",
+      "first_seen_at": "2026-11-12T23:17:20+00:00",
+      "status": "skipped",
+      "title": "Hard Fork: Jensen Huang Is Out at Nvidia",
+      "source_title": "Jensen Huang Is Out at Nvidia",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes describe a news-style discussion of Nvidia's co-founder resigning amid scandals, with no indication that Jensen Huang speaks or writes in this episode; hosts Kevin Roose and Casey Newton are not followed people, so the item is excluded.",
+      "published_at": "2026-11-12T23:07:17+00:00",
+      "appearances": [
+        {
+          "id": "f477fd6a8f73c00fc0c3",
+          "kind": "podcast",
+          "source": "Hard Fork",
+          "family": "hard fork",
+          "guid": "https://www.nytimes.com/2026/11/12/podcasts/hardfork-jensen-huang-resigns.html",
+          "title": "Jensen Huang Is Out at Nvidia",
+          "description": "In a shocking turn of events, Nvidia’s co-founder resigns amid multiple scandals.",
+          "url": "https://www.nytimes.com/2026/11/12/podcasts/hardfork-jensen-huang-resigns.html",
+          "published_at": "2026-11-12T23:07:17+00:00",
+          "hosts": [
+            "Kevin Roose",
+            "Casey Newton"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.nytimes.com/2026/11/12/podcasts/hardfork-jensen-huang-resigns.html"
+      }
     }
   ],
   "editions": [
