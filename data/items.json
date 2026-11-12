@@ -86089,6 +86089,36 @@
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen"
       }
+    },
+    {
+      "id": "12cc18f80951d26b675a",
+      "first_seen_at": "2026-11-12T19:17:19+00:00",
+      "status": "deferred",
+      "title": "The Pulse: What can we learn from the Railway hack?",
+      "source_title": "The Pulse: What can we learn from the Railway hack?",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-12T18:53:19+00:00",
+      "appearances": [
+        {
+          "id": "ab4855483b1b8be2517e",
+          "kind": "newsletter",
+          "source": "The Pragmatic Engineer",
+          "family": "the pragmatic engineer",
+          "guid": "https://newsletter.pragmaticengineer.com/p/the-pulse-what-can-we-learn-from-114",
+          "title": "The Pulse: What can we learn from the Railway hack?",
+          "description": "The Pulse is a series covering events, insights, and trends within Big Tech and startups.\n\nToday, we cover:\n\nWhat can we learn from the Railway hack? \nCloud platform\nRailway has published an extremely detailed postmortem about their recent hack in which the attacker likely used ‘abliterated’ AI models (those with no safeguards). Railway has hardened its syst…\n\n Read more",
+          "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-what-can-we-learn-from-114",
+          "published_at": "2026-11-12T18:53:19+00:00",
+          "hosts": [
+            "Gergely Orosz"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-what-can-we-learn-from-114"
+      }
     }
   ],
   "editions": [
