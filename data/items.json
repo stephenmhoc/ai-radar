@@ -86150,6 +86150,36 @@
       "links": {
         "podcast": "https://www.nytimes.com/2026/11/12/podcasts/hardfork-jensen-huang-resigns.html"
       }
+    },
+    {
+      "id": "cf69863518626becb1f3",
+      "first_seen_at": "2026-11-13T04:20:17+00:00",
+      "status": "deferred",
+      "title": "Sharp Tech on Video: Nvidia After Jensen Huang, Ominous News for American AI, D.C. Gets Its Revenge",
+      "source_title": "Sharp Tech on Video: Nvidia After Jensen Huang, Ominous News for American AI, D.C. Gets Its Revenge",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-13T03:47:52+00:00",
+      "appearances": [
+        {
+          "id": "1601b83ad9432dad4f8c",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=21196",
+          "title": "Sharp Tech on Video: Nvidia After Jensen Huang, Ominous News for American AI, D.C. Gets Its Revenge",
+          "description": "Sharp Tech is, for the first time, available on video. You have three ways to consume it: YouTube, Spotify, and here on Stratechery",
+          "url": "https://stratechery.com/2026/sharp-tech-on-video-nvidia-after-jensen-huang-ominous-news-for-american-ai-d-c-gets-its-revenge/",
+          "published_at": "2026-11-13T03:47:52+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/sharp-tech-on-video-nvidia-after-jensen-huang-ominous-news-for-american-ai-d-c-gets-its-revenge/"
+      }
     }
   ],
   "editions": [
