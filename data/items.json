@@ -86242,6 +86242,34 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/"
       }
+    },
+    {
+      "id": "4f2a72cc13b845537784",
+      "first_seen_at": "2026-11-13T11:17:21+00:00",
+      "status": "skipped",
+      "title": "Ami Luttwak on AI-accelerated cyberattacks and defense",
+      "source_title": "Every Day Is Zero Day | Wiz CTO Ami Luttwak",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Wiz CTO Ami Luttwak, and the hosts are a16z General Partners Zane Lackey and Sarah Wang. None of them is on the followed list, so no followed person speaks in this episode.",
+      "published_at": "2026-11-13T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "f78cc74daa11bafb3f74",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "96b0ce71-b5ea-4c1a-9a05-f08cf4ff2546",
+          "title": "Every Day Is Zero Day | Wiz CTO Ami Luttwak",
+          "description": "AI isn’t just helping defenders find vulnerabilities. It’s giving attackers the speed and expertise to exploit them faster than many companies can respond. Wiz co-founder and CTO Ami Luttwak joins a16z General Partners Zane Lackey and Sarah Wang to unpack what he calls “Black October,” a wave of vulnerabilities and agentic attacks that he believes marks a turning point for cybersecurity.\n\nThey break down PHP2Shell, why AI is collapsing the time between vulnerability discovery and exploitation, and what happens when open-source models put increasingly sophisticated offensive capabilities in more hands. Ami explains why startups are becoming attractive targets, particularly when they hold valuable AI credentials, and why yesterday’s secure architecture may no longer be secure as models improve.\n\nThe conversation then turns to defense. Ami argues that companies need to continuously attack their own systems, automate investigation and patching wherever possible, design infrastructure assuming sophisticated attackers will get in, and rethink security stacks built for a slower era. His warning is simple: if attackers can move in minutes, defenders can no longer operate on human timelines.\n\nResources:\n\nFollow Ami Luttwak on X: \nhttps://x.com/amiluttwak\n\nFollow Sarah Wang on X:\nhttps://x.com/sarahdingwang\n\nFollow Zane Lackey on X: \nhttps://x.com/zanelackey\n\nLearn more about Wiz:\nhttps://www.wiz.io/\n\nRead ‘The Rise of Agentic Attacks: What They Look Like, and Where They're Headed’: \nhttps://www.wiz.io/blog/the-rise-of-agentic-attacks\n\nRead more from Wiz’s blogs: \nhttps://www.wiz.io/blog\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/every-day-is-zero-day-wiz-cto-ami-luttwak-s6KylyoZ",
+          "published_at": "2026-11-13T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/every-day-is-zero-day-wiz-cto-ami-luttwak-s6KylyoZ"
+      }
     }
   ],
   "editions": [
