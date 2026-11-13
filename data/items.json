@@ -86270,6 +86270,67 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/every-day-is-zero-day-wiz-cto-ami-luttwak-s6KylyoZ"
       }
+    },
+    {
+      "id": "6fe2873ffc76e856ac3a",
+      "first_seen_at": "2026-11-13T18:17:19+00:00",
+      "status": "skipped",
+      "title": "Practical AI: Implementing Federated Learning to enhance Agentic AI",
+      "source_title": "Implementing Federated Learning to enhance Agentic AI",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Lorenzo Sani of Flower Labs and Cambridge, who is not on the followed list. The hosts Chris Benson and Daniel Whitenack are also not followed people. No followed person speaks or writes in this episode, so it does not qualify.",
+      "published_at": "2026-11-13T17:59:46+00:00",
+      "appearances": [
+        {
+          "id": "a44b269541d5d1a17778",
+          "kind": "podcast",
+          "source": "Practical AI",
+          "family": "practical ai",
+          "guid": "831710d1-ed18-46f7-b479-539ba9a751d3",
+          "title": "Implementing Federated Learning to enhance Agentic AI",
+          "description": "How can AI models learn from private data without compromising privacy? Chris is joined by Lorenzo Sani, Research Scientist at Flower Labs and PhD researcher at Cambridge, to explore federated learning and privacy-preserving AI. They discuss how collaborative learning can expand access to private data for LLM training, how model trajectories can help improve agentic AI systems, and the benefits of open-weight models. The conversation also explores real-world applications of locally hosted AI agents, from healthcare and robotics to everyday automation (for a Halloween party).\n\nFeaturing: \n\nLorenzo Sani – \nLinkedIn\n\nChris Benson – \nWebsite\n, \nLinkedIn\n, \nBluesky\n, \nGitHub\n, \nX\n\nLinks:\n\nEndeavor model page\n\nIntroducing Endeavor 1.1\n\nSponsors:\n\nHostinger\n: Create your website today. Go to hostinger.com/practical and use practical for 10 percent off now.\n\nPerplexity AI\n: \n\"\nStart your free trial of Perplexity Computer today at \npplx.ai/practical\n and experience the next phase of AI.\n\nResources and Events:\n\nRegister for \nupcoming webinars here\n!\n\nPrior \nWebinars from our partner Prediction Guard\n\nMidwest AI Summit 2026\n\nChris’s new book \nThe Art of Swarming\n will be published soon, written to be the seminal foundational book for the fledgling swarming industry, defining the principles and architecture that enable autonomous agentic UxS swarms with emergent distributed embodied intelligence.  You can find out more at his \nwebsite\n:  \nhttps://chrisbenson.com",
+          "url": "https://share.transistor.fm/s/58a69653",
+          "published_at": "2026-11-13T17:59:46+00:00",
+          "hosts": [
+            "Chris Benson",
+            "Daniel Whitenack"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/58a69653"
+      }
+    },
+    {
+      "id": "feaefe589d504e95637c",
+      "first_seen_at": "2026-11-13T18:17:20+00:00",
+      "status": "skipped",
+      "title": "Stratechery Weekly Overview: The End of Jensen",
+      "source_title": "2026.46: The End of Jensen",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a Stratechery weekly newsletter overview of links and podcasts written by Ben Thompson and other Stratechery writers. It covers commentary and analysis about Jensen Huang's departure from Nvidia rather than writing or an interview by Jensen Huang, so no followed person is an author or interviewee.",
+      "published_at": "2026-11-13T18:00:00+00:00",
+      "appearances": [
+        {
+          "id": "0fed2066b7d2424ff91c",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=21174",
+          "title": "2026.46: The End of Jensen",
+          "description": "(Photo by Benjamin Fanjoy/Getty Images)\n\nWelcome back to This Week in Stratechery!\n\nAs a reminder, each week, every Friday, we’re sending out this overview of content in the Stratechery bundle; \nhighlighted links are free for everyone\n. Additionally, you have complete control over what we send to you. If you don’t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in \nyour delivery settings\n.\n\nOn that note, here were a few of our favorites this week.\n\nThe Shocking Demise of Jensen Huang. \nThis week’s coverage was dominated, unsurprisingly, by the shocking and sudden end of Jensen Huang’s 32 year tenure as CEO of Nvidia. The end came on Thursday morning, and just a few hours later, we recorded a Sharp Tech episode recounting Huang’s legendary history, figuring out what happened, and looked forward to what this might mean for Nvidia, the tech industry, and America going forward. Also see Andrew’s view from DC, \nJensen Huang Was Always Going to Lose\n, and listen to \nWednesday’s episode of Sharp China\n about the geopolitical angle, and \nThursday’s Dithering\n about both the parallels and differences between Steve Jobs and Apple. — \nBen Thompson\n\nEnterprise, Consumer and Intel.\n The more things change, the more they stay the same: Intel remains on the back foot in the AI era, and the foundry dreams continue to flounder. On the heels of disappointing earnings and 2027 guidance that promises yet more letdowns, \nBen’s Update on Wednesday\n examined the state of America’s would-be national champion by drawing comparisons to AMD, an Intel peer that’s red-hot right now. To understand why one company is capitalizing on skyrocketing enterprise demand while the other confronts flatlining consumer sales, the answer starts with \nchips\n chiplets and leads to more profound questions about culture, Intel’s nature, and its bifurcated strategy for the long-term (and, for subscribers, look forward to more on this topic in Sunday’s Sharp Tech mailbag episode). \n—\nAndrew Sharp\n\nAnd Then There’s Professional Basketball.\n As a palate cleanser after a week of Jensen drama, \nthis week’s Greatest of All Talk\n was a look at the top and bottom of the NBA after the first three weeks. On the euphoric side of the ledger we have Warriors fans (pre-Steph injury), Lakers fans, Spurs fans, and on the other end spectrum there is \nnothing\n positive to say in Brooklyn, a familiar malaise in Cleveland, and precisely one silver lining in Salt Lake City. All of it was a great time; we also hit Adam’s experience with the NBA in Mexico City last weekend, the hardest working players in NBA history, and an anxiety-inducing conversation about the number one pick, AJ Dybantsa. \n—\nAS\n\nPresented by\n\nAgentic commerce purchases with Link, Stripe’s digital wallet that works surprisingly well for agents, \ngrew 38x\n in September. The catalyst was consumer agents like Muse and Instinct.\n\nFilling out a web form is not a value-add activity for anyone. No one chooses to fill out web forms in their spare time. That’s why these agents have been particularly useful. \n\nI’ve \nwritten\n about how these platforms are giving ordinary people an AI agent with a computer, enabling agents to do genuinely useful things on our behalf.  When one of those things is spending money, it needs a wallet that knows what it is, and isn’t, allowed to do.\n\nStripe has learned that’s really about deciding how much freedom to give it. You might approve one purchase, or give it $500 for flights this week, and let it figure out the rest. The wallet’s job is to keep it within those lines while handling everything between “go buy this” and the purchase actually happening.\n\nThat’s what Stripe is building with Link: You approve what it spends, it can come back to you if the final price changes, and eligible purchases can even come with protection if the agent makes a mistake.\n\nYou can \nuse Link\n on Muse, Instinct, as well as many other of the agents you might use already.\n\nStratechery Articles and Updates\n\nJensen Huang’s Affair, The Culper Report, Huang’s Righteousness\n— Nvidia CEO Jensen Huang admitted to an affair with a Chinese spy, and that might not be the end of his troubles. I hope he survives, but his influence will never be the same.\n\nThe Jensen Huang Story Gets Worse, Washington vs. New York, Silicon Valley\n— The Jensen Huang story got worse for him on Monday; the real risk for Huang is governance, even more than national security. Who benefits?\n\nIntel Earnings, AMD Earnings, Intel and AMD’s Divergence\n— Intel and AMD’s diverging earnings point to fundamental historical differences, and make me wonder if Intel needs to find a new (old) path.\n\nAn Interview With Roblox CEO David Baszucki About Aggregating Play\n— An interview with Roblox CEO David Baszucki about how AI is transforming game creation, and why that opens up huge opportunities to both enable developers and make Roblox both an Aggregator and a platform.\n\nSharp Text by Andrew Sharp\n\nJensen Huang Was Always Going to Lose\n — \nJensen Huang spent four years substituting his own judgment for that of the U.S. government. His downfall was inevitable, and probably isn’t over.\n\nDithering with Ben Thompson and Daring Fireball’s John Gruber\n\nThe Jensen Huang Affair\n\nJensen Fired\n\nAsianometry with Jon Yu\n\nHow Cisco Got Bullwhipped\n\nIndonesia’s Mega Rice Failure\n\nSharp China with Andrew Sharp and Sinocism’s Bill Bishop\n\nJensen Huang Likely Out at Nvidia; The Megaspeed Maelstrom in D.C.; APEC in Seven Days; Legislation That May Come Next\n\nGreatest of All Talk\n\nAgony and Ecstasy After Three Weeks, The “Earn Their Ice” All-Stars, Difficult Conversations About AJ and Season Ticket Holder Decorum\n\nSharp Tech with Andrew Sharp and Ben Thompson\n\nSubscriber Mail: Twitter, Microsoft, Bending Spoons, Movie Reviews\n\nNvidia After Jensen Huang, What Huang Meant to the AI Ecosystem, Washington Gets Its Revenge\n\nThis week’s Stratechery video is on \nAI on the Ballot\n.",
+          "url": "https://stratechery.com/2026/the-end-of-jensen/",
+          "published_at": "2026-11-13T18:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/the-end-of-jensen/"
+      }
     }
   ],
   "editions": [
