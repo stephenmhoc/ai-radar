@@ -86331,6 +86331,36 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/the-end-of-jensen/"
       }
+    },
+    {
+      "id": "05aec2c56a44f434269e",
+      "first_seen_at": "2026-11-13T19:17:20+00:00",
+      "status": "skipped",
+      "title": "The avalanche that hit math is coming for AI development",
+      "source_title": "The avalanche that hit math is coming for AI development",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes are written in the first person by the regular host, Dwarkesh Patel, who describes changes in his own views on superintelligence timelines. No followed person is identified as a guest, interviewee, or author, so the item does not qualify.",
+      "published_at": "2026-11-13T18:37:51+00:00",
+      "appearances": [
+        {
+          "id": "c52ea83404525e51da1e",
+          "kind": "podcast",
+          "source": "Dwarkesh Podcast",
+          "family": "dwarkesh podcast",
+          "guid": "substack:post:224624765",
+          "title": "The avalanche that hit math is coming for AI development",
+          "description": "If you asked me earlier this year how far away we are from superintelligence, I’d probably have said at least the better part of a decade.\n\nBut over the last three months, from debating people on and off the podcast, I’ve updated my views a ton.\n\nLet me walk you through how my thinking has changed.\n\nIf you want to read the written version (with footnotes and links) you can check it out here: \nhttps://www.dwarkesh.com/p/rsi\n\nThis is a public episode. If you would like to discuss this with other subscribers or get access to bonus episodes, visit \nwww.dwarkesh.com",
+          "url": "https://www.dwarkesh.com/p/rsi",
+          "published_at": "2026-11-13T18:37:51+00:00",
+          "hosts": [
+            "Dwarkesh Patel"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.dwarkesh.com/p/rsi"
+      }
     }
   ],
   "editions": [
