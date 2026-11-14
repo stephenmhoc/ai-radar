@@ -86452,6 +86452,34 @@
       "links": {
         "newsletter": "https://www.interconnects.ai/p/open-source-ai-without-jensen"
       }
+    },
+    {
+      "id": "e0dce729a9eeaa228862",
+      "first_seen_at": "2026-11-14T14:17:21+00:00",
+      "status": "skipped",
+      "title": "James Gleick on the history of the telephone",
+      "source_title": "From the Telephone to Modern Computing | James Gleick",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is James Gleick, who is not on the followed list. The hosts are Sonal Chokshi and Robert Hackett, also not followed. No followed person is a guest, speaker, or author of this episode.",
+      "published_at": "2026-11-14T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "42895ac520d992b146d3",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "3e52fa64-4b71-4444-b74f-7042c7ba8deb",
+          "title": "From the Telephone to Modern Computing | James Gleick",
+          "description": "James Gleick — acclaimed science writer and bestselling author of Chaos: Making a New Science as well as biographies on polymaths Isaac Newton and Richard Feynman — joins Sonal Chokshi and Robert Hackett to discuss his new book, The Telephone: A New History. It is a story of a device — who really invented it, how? — of a network, of a lab, and of how innovation happens.\n\nThe telephone was dismissed as a toy or a frivolity — at best, something people could use to listen to concerts or sermons from home. Even with a working invention, everyone was still trying to figure out what a telephone was for, using the framework of what they already knew. Then its users started finding their own answers. Farmers built their own decentralized networks using barbed-wire fences — the “devil’s rope” — and, over time, research at a company built around phone calls helped lay the foundations of modern computing.\n\nThis conversation explores the nuances of building at the frontier: competing inventors, the experiments, the “scenius of genius.” Why did established businesses underestimate it? Did the telephone network have to become a monopoly? What made Bell Labs so productive? \n\nAnd how a single invention could set off a technology revolution?\n\nResources:\n\nOriginally published by the a16z Frontier Show.\n\nRead The Telephone: A New History:\n https://us.macmillan.com/books/978037...\n\nSubscribe on YouTube:\n  @a16zfrontier  \n\nSubscribe to our Substack:\n https://a16zfrontier.substack.com/\n\nVisit our website:\n https://a16zfrontier.com/\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/from-the-telephone-to-modern-computing-james-gleick-oBlUL96w",
+          "published_at": "2026-11-14T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/from-the-telephone-to-modern-computing-james-gleick-oBlUL96w"
+      }
     }
   ],
   "editions": [
