@@ -86510,6 +86510,34 @@
       "links": {
         "podcast": "https://www.davidsenra.com/episode/michael-rubin"
       }
+    },
+    {
+      "id": "c3418b93d2f6d97d6d2e",
+      "first_seen_at": "2026-11-15T11:17:20+00:00",
+      "status": "skipped",
+      "title": "What Breaks When You Scale 10x? Zipline's Keller Cliffton",
+      "source_title": "What Breaks When You Scale 10x? | Zipline’s Keller Cliffton",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Speakers are Keller Cliffton (Zipline) and host Sophia Dew; neither is on the followed list, so no followed person is a guest or speaker.",
+      "published_at": "2026-11-15T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "96b8ffbca693ed4d4727",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "f8630efe-32c7-4d53-90af-02d1b1170ce0",
+          "title": "What Breaks When You Scale 10x? | Zipline’s Keller Cliffton",
+          "description": "It was illegal to fly autonomously in U.S. airspace when Keller Cliffton started Zipline, so the company went somewhere that would let it prove the technology worked: Rwanda. A decade later, Zipline has made more than 3 million deliveries and is bringing its autonomous delivery network to the U.S.\n\nKeller joins Sophia Dew on \nThe Method\n to explain why Zipline started by delivering blood to hospitals, how operating in the real world shaped the company, and why almost everything has to be reinvented every time the business grows 10x.\n\nThey also discuss Zipline’s expansion into U.S. home delivery, how the company organizes teams more like special forces than a traditional hierarchy, and why Keller believes demand could eventually reach 50 billion instant deliveries a year in the U.S.\n\nResources:\n\nOriginally published by \nThe Method\n.\n\nWatch the original episode:\nhttps://www.youtube.com/watch?v=EQSsqVGJpWA\n\nFollow Keller Cliffton: \nhttps://x.com/Keller\n\nFollow Sophia Dew: \nhttps://x.com/sophiadew\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/what-breaks-when-you-scale-10x-ziplines-keller-cliffton-xr3f9vCW",
+          "published_at": "2026-11-15T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/what-breaks-when-you-scale-10x-ziplines-keller-cliffton-xr3f9vCW"
+      }
     }
   ],
   "editions": [
