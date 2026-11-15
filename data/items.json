@@ -86538,6 +86538,36 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/what-breaks-when-you-scale-10x-ziplines-keller-cliffton-xr3f9vCW"
       }
+    },
+    {
+      "id": "08bc9d110a6c6bf7d542",
+      "first_seen_at": "2026-11-15T14:17:22+00:00",
+      "status": "skipped",
+      "title": "Meta's Muse: How we launched the most successful consumer product this year | Mona Sarantakos",
+      "source_title": "Meta’s Muse: How we launched the most successful consumer product this year | Mona Sarantakos",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest and speaker is Mona Sarantakos, who is not on the followed list. Nat Friedman, Alex Wang, and Mark Zuckerberg are discussed as shaping Muse, but they do not speak or write in this episode. The host, Lenny Rachitsky, is also not followed.",
+      "published_at": "2026-11-15T13:31:28+00:00",
+      "appearances": [
+        {
+          "id": "c2483e6f4729664a21b8",
+          "kind": "podcast",
+          "source": "Lenny's Podcast",
+          "family": "lenny's podcast",
+          "guid": "substack:post:224231309",
+          "title": "Meta’s Muse: How we launched the most successful consumer product this year | Mona Sarantakos",
+          "description": "Muse is the #1 app in the App Store and arguably the fastest-growing AI consumer product of all time. \nMona Sarantakos\n has led product on it since day one. She’s VP of Product at Meta Superintelligence Labs and a 10-year Meta veteran with over 20 years of experience as a PM. This is her first podcast interview.\n\nWe discuss:\n\n1. How a weekend with OpenClaw on a Raspberry Pi turned into Muse\n\n2. Why Muse waited seven months to launch, despite getting started before most of its competitors\n\n3. How Nat Friedman, Alex Wang, and Mark Zuckerberg each left their imprint on the product\n\n4. How the team uses “agent swarms” to surface user insights at scale\n\n5. The use case nobody on the team predicted\n\n6. How Jolly, a placeholder avatar, became an icon\n\n7. The two levers that actually move activation for an AI agent\n\n8. The #1 thing Mona looks for in PMs today\n\n—\n\nBrought to you by:\n\nWorkOS\n—Make your app enterprise-ready, with SSO, SCIM, RBAC, and more\n\nDX\n—Engineering intelligence for the AI era\n\n—\n\nEpisode transcript:\nhttps://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most\n\n—\n\nArchive of all Lenny's Podcast transcripts:\nhttps://www.dropbox.com/scl/fo/yxi4s2w998p1gvtpu4193/AMdNPR8AOw0lMklwtnC0TrQ?rlkey=j06x0nipoti519e0xgm23zsn9&st=ahz0fj11&dl=0\n\n—\n\nHighlights:\nhttps://lennyspodcast.com/mostreplayedmoments\n\n—\n\nWhere to find Mona Sarantakos:\n\n• LinkedIn: \nhttps://www.linkedin.com/in/mona-sarantakos-a85873\n\n• Threads: \nhttps://www.threads.com/@monachaudhuri\n\n—\n\nWhere to find Lenny:\n\n• Newsletter: \nhttps://www.lennysnewsletter.com\n\n• X: \nhttps://twitter.com/lennysan\n\n• LinkedIn: \nhttps://www.linkedin.com/in/lennyrachitsky/\n\n—\n\nIn this episode, we cover:\n\n(00:00) Teaser\n\n(01:24) Introduction and Mona’s background\n\n(02:14) A weekend with an early agentic AI\n\n(09:08) The seven-month launch timeline\n\n(14:07) \"The claw is the law\"\n\n(15:53) Nat, Alex Wang, Zuckerberg, and how leadership shaped Muse\n\n(23:37) The Jolly origin story\n\n(29:53) Priority use cases and the shopping surprise\n\n(35:03) Agentic commerce and how shopping works\n\n(38:03) Agent swarms and synthetic data\n\n(42:48) Evals: structure, hierarchy, and who writes them\n\n(46:37) Activation and word of mouth\n\n(51:09) The design bets that defined Muse\n\n(57:04) Prototyping culture and the two Muses that fought\n\n(01:01:54) How the PM role has changed\n\n(01:09:05) Muse's first prototype\n\n(01:10:37) The board meeting prototype that almost didn’t work\n\n(01:12:00) Team size, closeness, and culture\n\n(01:20:55) What comes next: ambient agents and financial betterment\n\n—\n\nReferenced:\n\n• Muse: \nhttps://muse.ai\n\n• Introducing Muse Spark: MSL’s First Model, Purpose-Built to Prioritize People: \nhttps://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs\n\n• Nat Friedman’s website: \nhttps://nat.org\n\n• OpenClaw: \nhttps://openclaw.ai\n\n• From skeptic to true believer: How OpenClaw changed my life | Claire Vo: \nhttps://www.lennysnewsletter.com/p/how-openclaw-changed-my-life-claire-vo\n\n• Personal Superintelligence: \nhttps://www.meta.com/superintelligence\n\n• The Future is for Everyone: \nhttps://www.meta.com/thefutureisforeveryone\n\n• Grok Bot: \nhttps://x.ai/bot\n\n• How we built Grok Bot in a month | Roman Ugarte (SpaceXAI): \nhttps://www.lennysnewsletter.com/p/how-we-built-grok-bot-in-a-month\n\n• Claude Duet: \nhttps://claude.com/product/claude-duet\n\n• Dots: \nhttps://openai.com/index/introducing-dots\n\n• Alex Wang on X: \nhttps://x.com/alexandr_wang\n\n• Alex Cornell’s website: \nhttps://www.alexcornell.com\n\n• How I AI: How Meta designed Muse with Alex Cornell: \nhttps://www.lennysnewsletter.com/p/how-i-ai-how-meta-designed-muse-with\n\n• Christine Awad on X: \nhttps://x.com/christinesed\n\n• Linear’s secret to building beloved B2B products | Nan Yu: \nhttps://www.lennysnewsletter.com/p/linears-secret-to-building-beloved-b2b-products-nan-yu\n\n—\n\nProduction and marketing by \nhttps://penname.co/\n. For inquiries about sponsoring the podcast, email \npodcast@lennyrachitsky.com\n.\n\n—\n\nLenny may be an investor in the companies discussed.\n\nTo hear more, visit \nwww.lennysnewsletter.com",
+          "url": "https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most",
+          "published_at": "2026-11-15T13:31:28+00:00",
+          "hosts": [
+            "Lenny Rachitsky"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most"
+      }
     }
   ],
   "editions": [
