@@ -86716,6 +86716,68 @@
       "links": {
         "podcast": "https://www.dwarkesh.com/p/paul-christiano-2"
       }
+    },
+    {
+      "id": "bc2a626d609211794d84",
+      "first_seen_at": "2026-11-16T22:17:21+00:00",
+      "status": "skipped",
+      "title": "Why FLUX 3 Trains on Images, Video and Sound",
+      "source_title": "Why FLUX 3 Trains on Images, Video and Sound — Andreas Blattmann & Dustin Podell, Black Forest Labs",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guests are Andreas Blattmann and Dustin Podell of Black Forest Labs, and the hosts are Alessio Fanelli and Swyx. None of them is on the AI Radar followed list, so the item does not qualify.",
+      "published_at": "2026-11-16T21:27:06+00:00",
+      "appearances": [
+        {
+          "id": "4fe2ba960ebc9ea880b9",
+          "kind": "podcast",
+          "source": "Latent Space",
+          "family": "latent space",
+          "guid": "01a1e632-c02d-713d-a840-cae7f745d45e",
+          "title": "Why FLUX 3 Trains on Images, Video and Sound — Andreas Blattmann & Dustin Podell, Black Forest Labs",
+          "description": "What can a model learn about the world by watching video and listening to it? Black Forest Labs trained FLUX 3 on images, video and audio together. Andreas Blattmann and Dustin Podell join swyx to explain why. A moving camera reveals the far side of an...",
+          "url": "https://latent.space/p/bfl",
+          "published_at": "2026-11-16T21:27:06+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://latent.space/p/bfl"
+      }
+    },
+    {
+      "id": "98553dc6161f0ca9d0e8",
+      "first_seen_at": "2026-11-16T22:17:24+00:00",
+      "status": "skipped",
+      "title": "Latent Space: Building Visual Intelligence with Black Forest Labs",
+      "source_title": "Building Visual Intelligence — Andreas Blattmann & Dustin Podell, Black Forest Labs",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guests are Andreas Blattmann and Dustin Podell of Black Forest Labs, and neither is on the followed list. Mark Zuckerberg is only mentioned in passing, so the item does not qualify.",
+      "published_at": "2026-11-16T21:28:46+00:00",
+      "appearances": [
+        {
+          "id": "7d02e4a9b639b881ae7c",
+          "kind": "newsletter",
+          "source": "Latent Space — Newsletter",
+          "family": "latent space",
+          "guid": "urn:latent-space:post:post_9a62b374-5b2e-4562-bb1a-eb8b13748c26",
+          "title": "Building Visual Intelligence — Andreas Blattmann & Dustin Podell, Black Forest Labs",
+          "description": "This episode is sponsored by Deepgram. \nTry Deepgram for voice agents\n that truly understand your context! \n#contextiseverything\n\n Not many people know that Stable Diffusion is why I went fulltime into AI (I aptly titled \nMultiverse, not Metaverse\n to call out Zuck’s mistaken investment). It turns out that \nDustin Podell\n also had the same aha moment - quitting his day job when the model came out. But we took very different paths… I stuck to what I knew in human content creation, and Dustin immersed deep into AI content creation with \nAndreas Blattmann\n, co-inventor of Latent Diffusion and the rest of the world-leading imagegen crew at Stability AI. Stability fell apart, but \nAnj Midha\n helped the core group spin out to BFL, which immediately built an incredible new imagegen model in the Flux series. \nBut why are they now going into video and world models?\n\n Andreas gives an example you can try with one hand. If somebody tosses you a ball, your hand starts moving before the ball reaches you. You can do that without being able to write down the trajectory. When he talks about building \nvisual intelligence\n, that’s the kind of knowledge he means. A still can show you where the ball is. A video shows you how it got there. The sound of impact can tell you when it hit something, even if the camera missed the contact. That’s BFL’s argument for training FLUX 3 on the three signals together. \nBFL’s FLUX 3 release\n\nThe horse in motion is one of the FLUX 3 examples we show in the intro. The audio examples are worth playing with the sound on.\nFLUX 3 Video\n\nWhat a moving camera teaches you\n\n Suppose the camera starts in front of a person and pans around them. At some point the model owes you the back of their head. Andreas thinks ordinary two-dimensional video contains a great deal of evidence about what objects look like from other angles. That doesn’t settle whether a model “understands physics,” a point we go back and forth on. It does give you a much better test than asking whether one frame looks convincing. \n\n There’s a good engineering example late in the episode. Sharpen each frame of a clip independently and each frame might look terrific. Hit play and the extra detail can shimmer, because the upscaler made a slightly different decision every time. BFL derives its video upscaler from the same FLUX 3 backbone. Temporal consistency matters even when all the user asked for was a higher-resolution file. \n\nWhat’s worth spending training compute on?\n\n One of the questions I had for them was whether autoregression was taking over image generation. Andreas gives the other side its due. An autoregressive model can learn from all the tokens in a training example at once. On the diffusion side, the team can distill a long sampling process down to a handful of steps. Which advantage matters depends on whether you’re paying to train the model or waiting for an image to finish. \n\n Dustin’s early Kontext experiment is a nice example of how they decide where to invest. He suspected an image model that could \ndraw\n a dog wearing a hat already knew something about where hats go. He and a colleague collected a small set of photos labeled with relationships. A training run of a few hours got the model to put a logo on a shirt. It was rough, but it was enough to take to the next offsite. The team then spent months on the data and the model. \nFLUX Kontext examples\n\n My favorite user story comes near the end. People were feeding FLUX old, degraded family photos, restoring them, then showing the pictures to their families. Dustin says he hadn’t predicted that use. After talking about preserving somebody’s identity across edits and across frames, it’s a lovely example of who actually notices if you get it right. \n\nShow notes\n\n BFL explains what a still image, a moving camera and a soundtrack each contribute during training. \nFLUX 3 launch and research overview\n\n Watch and listen to the results of generating video and sound together. \nFLUX 3 Video demos\n\n See how the lab teaches a model to make a requested change while preserving the rest of an image. \nFLUX Kontext examples\n\nAndreas Blattmann\n co-created Stable Diffusion and co-invented the latent diffusion method behind it. \nGuest bio\n · \nOriginal research\n\nDustin Podell\n led FLUX Kontext and was the lead author of SDXL. \nDustin’s project credits\n · \nFLUX Kontext\n · \nSDXL\n\n The first Latent Space essay grew out of the Stable Diffusion release. \nMultiverse, not Metaverse\n\nChapters\n\n0:00\n Host introduction\n\n3:39\n Cold open\n\n4:23\n Black Forest roots\n\n9:23\n Dustin’s path\n\n17:04\n Visual intelligence\n\n27:38\n Inside SDXL\n\n33:59\n Learning motion\n\n39:57\n Flow matching\n\n46:57\n Starting BFL\n\n50:36\n Deepgram sponsor break\n\n51:43\n Early use cases for FLUX\n\n54:58\n Editing with Kontext\n\n1:03:15\n Training data\n\n1:07:32\n Testing an edit\n\n1:13:12\n Autoregression\n\n1:20:50\n World action models\n\n1:30:08\n Robotics in 2027\n\n1:32:16\n Who uses FLUX?",
+          "url": "https://latent.space/p/bfl/",
+          "published_at": "2026-11-16T21:28:46+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://latent.space/p/bfl/"
+      }
     }
   ],
   "editions": [
