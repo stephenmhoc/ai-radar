@@ -86686,6 +86686,36 @@
       "links": {
         "newsletter": "https://importai.substack.com/p/import-ai-481-ai-sub-contractors"
       }
+    },
+    {
+      "id": "c70715aab8b438d8d18f",
+      "first_seen_at": "2026-11-16T18:17:20+00:00",
+      "status": "skipped",
+      "title": "Paul Christiano on AI takeover risk and superintelligence (Dwarkesh Podcast)",
+      "source_title": "Paul Christiano – We could be 12 months away from AIs that can overthrow the government",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Paul Christiano and the host is Dwarkesh Patel, neither of whom is on the AI Radar follow list. No followed person is a guest, interviewee, or central speaker in this episode.",
+      "published_at": "2026-11-16T17:46:28+00:00",
+      "appearances": [
+        {
+          "id": "908346c4c632199c4cd4",
+          "kind": "podcast",
+          "source": "Dwarkesh Podcast",
+          "family": "dwarkesh podcast",
+          "guid": "substack:post:225196123",
+          "title": "Paul Christiano – We could be 12 months away from AIs that can overthrow the government",
+          "description": "Paul Christiano\n is head of the Alignment Research Center. Previously, he was head of AI safety at the US AI Safety Institute. Before that, he led alignment at OpenAI, where he invented RLHF. He’s recently joined OpenAI’s board (though here he is speaking as a private citizen).\n\nPaul thinks that on the current trajectory (absent any slowing down), there is a 1 in 3 chance that we could have superintelligence powerful enough to overthrow the government within a year. (He articulates a concrete scenario).\n\nHe argues that the labs should pause further algorithmic progress until they can secure their weights and research secrets. Otherwise China could simply steal the superintelligence in the middle of the intelligence explosion, and the labs would no longer be able to slow down even if they saw their models going off the rails.\n\nHe also explains how AIs will be trained during the intelligence explosion, and why even a system trained entirely inside a data center could still have the capabilities profile such that humans would have very little chance of competing with it or controlling it.\n\nAnd he discusses the plan for alignment - basically, making a superintelligence that actually does what we ask the way we mean it. Fixing reward hacks and building better graders will help up till the next few model generations, but he thinks that no single current approach has better than even odds of letting us control superintelligence. The hope is that the AIs figure out the solution to this problem during the intelligence explosion.\n\nWatch on \nYouTube\n; read the \ntranscript\n.\n\nSponsors\n\n* \nJane Street\n has finally come around on formal methods. Ron Minsky, who co-heads Jane Street’s technology group, told me that up until recently, formal methods just weren’t worth the cost. But coding agents have made them easier to apply AND increased the importance of code verification. So now Jane Street is hiring Formal Methods Engineers in both their London and New York offices. If you’re interested, or if you want to watch my full conversation with Ron, go to \njanestreet.com/dwarkesh\n\n* \nAntithesis\n is NOT another LLM-based code-review tool. It doesn’t try to reason abstractly about how a PR might break your system. Instead, it just runs your code. You start by defining the rules that your system must never break. Then, whenever an agent proposes a change, Antithesis runs your code through thousands of adversarial worlds, testing whether or not it still adheres to your rules. If you want to try it, go to \nantithesis.com/dwarkesh\n and use code DWARKESH for 50% off your first month.\n\n* \nWorkOS\n lets you give agents their own sign-up flow. This matters because agents tend to pick tools they can use right away, rather than ones that require humans to register. Fortunately, providing this kind of dedicated path is easy: if you already use WorkOS for login, you just toggle on “Agent Registration” in the WorkOS dashboard. Once it’s enabled, you can decide what agents are allowed to do on their own, and what needs to wait until the person they’re working for gets involved, all with the permissions you’ve already set up. Learn more at \nworkos.com/authkit\n\nTimestamps\n\n(00:00:00) – We could be 12 months away from AIs that can overthrow the government\n\n(00:11:44) – Why an AI might want to takeover\n\n(00:20:49) – How an AI takeover could happen\n\n(00:35:35) – If labs keep racing without security, China will just steal the weights of superintelligence\n\n(00:53:15) – The case for pausing now instead of later\n\n(00:59:31) – Superintelligence will be good at learning from real-world experience\n\n(01:11:32) – Crossing the sim-to-real gap\n\n(01:22:23) – METR says AI progress doubled, so why is revenue growth slowing?\n\n(01:27:57) – The best plan we have is to build the plane as we fly it\n\nThis is a public episode. If you would like to discuss this with other subscribers or get access to bonus episodes, visit \nwww.dwarkesh.com",
+          "url": "https://www.dwarkesh.com/p/paul-christiano-2",
+          "published_at": "2026-11-16T17:46:28+00:00",
+          "hosts": [
+            "Dwarkesh Patel"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.dwarkesh.com/p/paul-christiano-2"
+      }
     }
   ],
   "editions": [
