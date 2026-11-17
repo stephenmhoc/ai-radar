@@ -86980,7 +86980,7 @@
           "family": "the a16z show",
           "guid": "7ffcabac-4109-49f0-b288-14b13284a3a6",
           "title": "Can AI Learn to Improve Itself? | Recursive Self-Improvement",
-          "description": "For decades, the idea of AI improving itself was just a thought experiment. Today, AI is already helping researchers at frontier labs run experiments, write code and test ideas faster. Mark Chen says OpenAI has built “AI research interns.” So how far are we from AI that can do the research on its own?\n\nIn our first episode of Working Theory, a16z general partner Sarah Wang explores recursive self-improvement with two leading AI researchers: Mark Chen, Chief Research Officer at OpenAI, and John Schulman, co-founder and Chief Scientist of Thinking Machines Lab, and co-founder of OpenAI.\n\nThey cover what RSI actually means, why research taste is so hard to teach, and why AI may be one of our best tools for solving alignment.\n\nResources:\n\nFollow Mark Chen: \nhttps://x.com/markchen90\n\nFollow John Schulman: \nhttps://x.com/johnschulman2\n\nFollow Sarah Wang on X:\nhttps://x.com/sarahdingwang\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "description": "For decades, the idea of AI improving itself was just a thought experiment. Today, AI is already helping researchers at frontier labs run experiments, write code and test ideas faster. Mark Chen says OpenAI has built “AI research interns.” So how far are we from AI that can do the research on its own?\n\nIn our first episode of Working Theory, a16z general partner Sarah Wang explores recursive self-improvement with two leading AI researchers: Mark Chen, Chief Research Officer at OpenAI, and John Schulman, co-founder and Chief Scientist of Thinking Machines Lab, and co-founder of OpenAI.\n\nThey cover what RSI actually means, why research taste is so hard to teach, and why AI may be one of our best tools for solving alignment.\n\nResources:\n\nFollow Mark Chen: \nhttps://x.com/markchen90\n\nFollow John Schulman: \nhttps://x.com/johnschulman2\n\nFollow Sarah Wang on X:\nhttps://x.com/sarahdingwang\n\nChart Sources\n\nhttps://situational-awareness.ai/from-agi-to-superintelligence/\n\nhttps://openai.com/index/research-acceleration-view-inside-openai/\n\nhttps://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/\n\nhttps://x.com/sebkrier/status/2119213426589278648\n\nhttps://assets.claude.com/7b1c44894e980876479947dcdd40716278aeeffd.pdf\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
           "url": "https://a16z.simplecast.com/episodes/can-ai-learn-to-improve-itself-recursive-self-improvement-MhAlOhBQ",
           "published_at": "2026-11-17T17:44:53+00:00",
           "hosts": []
@@ -86988,6 +86988,36 @@
       ],
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/can-ai-learn-to-improve-itself-recursive-self-improvement-MhAlOhBQ"
+      }
+    },
+    {
+      "id": "77b95b2c9c148fab2a20",
+      "first_seen_at": "2026-11-17T19:17:21+00:00",
+      "status": "skipped",
+      "title": "Relentless: The Psychology of Startup Founders, featuring Josh Wolfe of Lux Capital",
+      "source_title": "The Psychology of Startup Founders | Josh Wolfe, Lux Capital",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes describe Josh Wolfe, a Lux Capital co-founder, and list companies Lux has backed, but they do not show that any followed AI Radar person is a guest, speaker, or author. Josh Wolfe is not on the followed list, and the notes contain no followed person's words or ideas.",
+      "published_at": "2026-11-17T18:09:13+00:00",
+      "appearances": [
+        {
+          "id": "aba8b9fa9566307bee5e",
+          "kind": "podcast",
+          "source": "Relentless",
+          "family": "relentless",
+          "guid": "b7140057-eed5-458a-8f29-f1224825cd91",
+          "title": "The Psychology of Startup Founders | Josh Wolfe, Lux Capital",
+          "description": "Josh Wolfe is a Co-Founder and Partner at Lux Capital. Lux has backed many great startups including: Anduril, Impulse Space, Physical Intelligence, Cognition, Applied Intuition, Databricks, Runway, Ramp, and Erebor.",
+          "url": "https://podcasters.spotify.com/pod/show/ti-morse/episodes/The-Psychology-of-Startup-Founders--Josh-Wolfe--Lux-Capital-e3sfcej",
+          "published_at": "2026-11-17T18:09:13+00:00",
+          "hosts": [
+            "Ti Morse"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://podcasters.spotify.com/pod/show/ti-morse/episodes/The-Psychology-of-Startup-Founders--Josh-Wolfe--Lux-Capital-e3sfcej"
       }
     }
   ],
