@@ -86840,6 +86840,36 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026/"
       }
+    },
+    {
+      "id": "bd7788a3a1785a672f89",
+      "first_seen_at": "2026-11-17T11:17:17+00:00",
+      "status": "deferred",
+      "title": "Apple Permissions Update, The New App Paradigm, My iPhone Duo Review",
+      "source_title": "Apple Permissions Update, The New App Paradigm, My iPhone Duo Review",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-17T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "0c3a61993f9959e7583e",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=21256",
+          "title": "Apple Permissions Update, The New App Paradigm, My iPhone Duo Review",
+          "description": "Apple doesn't ruin the Mac, but they don't fix the agent problem, raising questions if they can think outside the app paradigm. Then, my iPhone Duo review.",
+          "url": "https://stratechery.com/2026/apple-permissions-update-the-new-app-paradigm-my-iphone-duo-review/",
+          "published_at": "2026-11-17T11:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/apple-permissions-update-the-new-app-paradigm-my-iphone-duo-review/"
+      }
     }
   ],
   "editions": [
