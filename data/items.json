@@ -87725,9 +87725,16 @@
       "item_ids": [
         "b49943a9431cc1604549"
       ]
+    },
+    {
+      "date": "2026-11-16",
+      "closed_at": "2026-11-17T00:00:00+00:00",
+      "item_ids": [
+        "bceeff9f14c88c4dbab6"
+      ]
     }
   ],
-  "editions_closed_through": "2026-11-16T00:00:00+00:00",
+  "editions_closed_through": "2026-11-17T00:00:00+00:00",
   "days": [
     {
       "date": "2026-06-24",
