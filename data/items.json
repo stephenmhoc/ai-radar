@@ -87196,6 +87196,36 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/software-factories-and-code-reviews"
       }
+    },
+    {
+      "id": "3326da63e8b8addaab1c",
+      "first_seen_at": "2026-11-18T19:17:21+00:00",
+      "status": "skipped",
+      "title": "Notion’s Founder on the One Thing Your AI Is Missing",
+      "source_title": "Notion’s Founder on the One Thing Your AI Is Missing",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are Notion cofounder and CEO Ivan Zhao (guest) and host Dan Shipper, and neither is on the followed list. The notes mention Claude Code, ChatGPT, and Andrew Ambrosino, who is not the followed Tibo, but no followed person is a guest, speaker, or author.",
+      "published_at": "2026-11-18T18:19:30+00:00",
+      "appearances": [
+        {
+          "id": "c58a30a940674b5cee23",
+          "kind": "podcast",
+          "source": "AI & I",
+          "family": "ai & i",
+          "guid": "flightcast:01M7N6THM33K8YFWM1YCX4ZFKV",
+          "title": "Notion’s Founder on the One Thing Your AI Is Missing",
+          "description": "Lovable is the fastest way to turn ideas into software people love: https://lovable.dev/grow?utm_source=every&utm_medium=podcast&utm_campaign=2026-11-flagship-sponsorship&utm_content=primary\nNow that AI enables anyone to build their own software, should you build everything yourself? At Thesis, Notion cofounder and CEO Ivan Zhao joins Every’s Dan Shipper to discuss which tools should and should not be vibe coded—and why you should understand how your systems work, even as agents do the building.\nSubscribe to Every (free for 14 days): https://every.to/youtube-every-offer?utm_source=youtube&utm_campaign=thesis2027&utm_content=thesistalktoolsforthought\nLinks to resources mentioned in the episode:\nIvan Zhao: https://x.com/ivanhzhao\nIvan’s post on his 13th year at Notion, “The Next Era of Notion”: https://www.notion.com/blog/the-next-era-of-notion\nNotion Calendar: https://www.notion.com/product/calendar\nThe IBM System/360, the room-sized computer Ivan references: https://www.ibm.com/history/system-360\nClaude Code: https://claude.com/product/claude-code\nClaude: https://claude.ai\nChatGPT: https://chatgpt.com\nAndrew Ambrosino, who leads the Codex app at OpenAI: https://ambrosino.io\nTimestamps:\n0:00 Introduction \n1:18 Why vibe coding revives the 1960s vision of software\n4:40 When people should build their own tools—and when they shouldn't \n7:47 Why data and context outlast UI and procedural logic \n9:46 The history game Ivan is vibe coding with his wife \n12:23 Bringing a 13-year-old company from pre-AI to post-AI \n16:00 The TikTokification of AI and its second-order effects \n19:46 Don't surrender your understanding to agents \n22:01 Why builders need Lego-like blocks to vibe code\n28:04 Why the next billion knowledge workers will be agents",
+          "url": "https://feeds.transistor.fm/how-do-you-use-chatgpt",
+          "published_at": "2026-11-18T18:19:30+00:00",
+          "hosts": [
+            "Dan Shipper"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.transistor.fm/how-do-you-use-chatgpt"
+      }
     }
   ],
   "editions": [
