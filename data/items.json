@@ -87049,6 +87049,123 @@
       "links": {
         "podcast": "https://www.davidsenra.com/episode/brian-armstrong-2"
       }
+    },
+    {
+      "id": "d887067bd7cdb088920c",
+      "first_seen_at": "2026-11-18T11:17:21+00:00",
+      "status": "skipped",
+      "title": "[AINews] GPT-6.2 Astra, the #2 Frontier Model is better and 20%-600% cheaper, but has mixed reviews; 6.2 Sol likely main workhorse",
+      "source_title": "[AINews] GPT-6.2 Astra, the #2 Frontier Model is better and 20%-600% cheaper, but has mixed reviews; 6.2 Sol likely main workhorse",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a multi-topic AI news roundup that reports and quotes statements about GPT-6.2 Astra, Microsoft, Google, NVIDIA and others. No followed person is an author, interviewee, or central speaker; the notes only mention or report on Sam Altman's OpenAI, Sundar Pichai's Google, and Jensen Huang's NVIDIA indirectly, and the newsletter writers are not on the followed list.",
+      "published_at": "2026-11-18T10:19:04+00:00",
+      "appearances": [
+        {
+          "id": "4ca07e1c2ed6ac14aa55",
+          "kind": "newsletter",
+          "source": "Latent Space — Newsletter",
+          "family": "latent space",
+          "guid": "urn:latent-space:post:post_8e49a725-4572-4981-9894-4fbf63aed272",
+          "title": "[AINews] GPT-6.2 Astra, the #2 Frontier Model is better and 20%-600% cheaper, but has mixed reviews; 6.2 Sol likely main workhorse",
+          "description": "OpenAI shipped GPT-6.2 Astra and Sol\n today, two days before \nAnthropic’s expected first trading day\n. In \nArtificial Analysis\n’ tests, \nSol ties September’s Astra at about 15% of the cost per task\n. New Astra scores 62 on the Intelligence Index, just behind Fable 5.2 at 65. Net net, Anthropic still owns the world’s best model, but OpenAI owns the world’s most efficient models in terms of intelligence per $. \n\n What’s more unusual about this launch is the STRONGLY negative influencer feedback… \n\n which prompted a \ndefensive response\n… \n\nView post on X ↗\n\n We think that some of this is overreacting and normal influencer tendency to either have everything be 🤯🤯🤯 or the literal WORST.MODEL.EVER, BUT also that some of the criticisms are valid, and the RL artefacts are noticeable and \ndownright bizarre\n (don’t even get us started about \nthe terrible launch video\n). However, we still use it to automate our work and that’s all that matters in the end. \n\n Great ship, but Anthropic’s IPO is unaffected and that will be probably the headline of the week/year/decade (until OpenAI IPO’s….) \n\nToday’s AI News is brought to you by SerpApi!\n\nRetrieve public web pages by URL\n as LLM-ready Markdown or structured JSON. Map sites and run bounded crawls with one API. Pair with 100+ SerpApi search APIs for search-to-content workflows.\n\n Check them out to support LS, and contact \nbusiness@latent.space\n for feedback! \n\nAI Twitter Recap\n\nGPT-6.2 Astra and Sol\n\nAvailability.\n Today’s models are rolling out to ChatGPT Work and Codex for Plus, Pro, Enterprise and Edu, and to developers through the API as \ngpt-6.2-astra\n and \ngpt-6.2-sol\n. \nOpenAI\n\nAPI prices per million tokens.\n Astra is $8 input, $0.40 cached input and $40 output. Sol keeps its predecessor’s pricing at $2, $0.10 and $10. Both have 1M context and a 128K output limit. \nVals\n · \nUltrafast pricing and rollout\n\nAstra for Law.\n The Enterprise configuration adds a legal search index. Artificial Analysis measured 20.8% on Harvey LAB-AA, versus 15.0% for base Astra. \nArtificial Analysis\n\nPreparedness.\n OpenAI rated Astra High for AI Self-Improvement, a first for one of its externally released models. On a separate measure, Vals’ RSI-Index rose from 27.07% to 29.01%, with 50% denoting its human reference. \nSystem card\n · \nVals\n\nFrontierMath Erdős.\n Epoch verified seven solutions in Lean out of 68 problems. The previous best was three. \nEpoch\n\nWhat the benchmarks measure\n\nAgents’ Last Exam 1.1.\n OpenAI reports Astra at xhigh gained 5.2 points over GPT-6 Astra at max, using less than a third of the cost per task. It reports a 5.5-point lead over Fable 5.2 at about 5% of the cost on that test. On GDPval v2, it says Astra used 22% fewer output tokens than its predecessor. \nOpenAI’s results\n\nLong engineering runs.\n Mercor’s OpenWorldEngineer puts Astra at 67.2%, Fable 5.2 at 54.6%, and GPT-6 Astra at 44.2%. On Vals’ multi-turn Vibe Code Bench, Astra was first and Sol was third. \nMercor\n · \nVals\n\n3D and robotics.\n Astra led AA-3D with 1,318, ahead of Fable at 1,271 and Sol at 1,259. On Artificial Analysis’s robotics preview, Astra scored 79 and Sol 78, ahead of Fable at 75. \nArtificial Analysis\n\nResearch agents.\n On Perplexity’s WANDR, Astra scored 0.783 at about $12.54 per task. Sol reached 0.746 at about $2.65. \nPerplexity\n\nEarly testers disagreed\n\nMatt Shumer\n called the models “essentially unusable” after weeks of testing and said his Opus and Fable agents rejected much of Astra’s subagent work. \nReview\n · \nWorkflow details\n\nPietro Schirano\n attributed many of his early issues to the harness. Arena’s Peter Gostev tested Astra against Fable on visual coding and singled out Astra’s SVG peacock. \nSchirano\n · \nGostev\n\nThe demos.\n Gabriel Chua built a walkable Singapore using more than 100 Codex threads. Simon Willison ran the same three.js mech prompt through several models, including Astra, Sol, Carbon and Fable. \nSingapore build\n · \nSame-prompt comparison\n\nMicrosoft Ignite and Gemini\n\nMicrosoft ships its own coding models.\n MAI Code 2 is for multi-step coding, and Code 2 Flash is for quicker edits. Both are available in GitHub Copilot’s model picker, Copilot Fusion and Foundry. Microsoft also announced a multimodal upgrade to its Decision model. \nMicrosoft\n\nCopilot Fusion.\n Microsoft reports 71.2% on Terminal-Bench 4.1 with its multi-model harness, at 88% lower cost than Claude Fable 5.2 in that comparison. \nJay Parikh\n\nImage editing.\n Artificial Analysis ranks MAI Image 2.7 first on its editing benchmark, at $34.82 per 1,000 images. \nArtificial Analysis\n\nGemini Tasks.\n Hydrogen now powers free Tasks in six countries, including tasks that need a phone call or a text. Google also showed a new Antigravity robotics plugin with MuJoCo simulation. \nSundar Pichai\n · \nGoogle DeepMind\n\nAgent harnesses and inference\n\nHugging Face’s Pi adapter.\n A small adapter trained inside \npi\n lifted Qwen3.8-27B from 15 to 32 solves on the 51 hardest SWE-bench Pro tasks. Across that subset it made 55% fewer tool calls per task. \nModel card and paired results\n\nHarness costs vary sharply.\n Baseten measured up to a 4.4× spread in cost per passing task across its benchmark of 22 harnesses and five open models. \nBaseten\n\nThe harness may specialize to its model.\n Google’s SIM keeps the rationale and outcome of prior harness edits. A harness it evolved on Opus scored 68.41 on Gemini, versus 73.89 for the starting harness. \nResearch summary\n\nMore multi-agent products.\n Cognition launched persistent Devin Bots. Perplexity reported that its mixed-model teams beat four instances of the lead model on Terminal-Bench and WANDR. Replit reported diminishing returns from 16 to 32 agents on NumPy tasks. \nCognition\n · \nPerplexity\n · \nReplit\n\nCoordination dominated a 1,000-agent run.\n Hugging Face says only 40–60 agents were calling the model at any moment. They read roughly 130 tokens for every token they wrote, with merges and tests contributing to the bottleneck. \nThomas Wolf\n\nA small fraction of cache misses can dominate the bill.\n SemiAnalysis reports that 1.8% of uncached requests accounted for roughly 15% of spend in its sample. \nSemiAnalysis\n\nMarin and K2 Horizon opened up their training runs.\n Marin released 57 intermediate Mochi checkpoints from its 535B-A23B run. The K2 report compares four model sizes trained on the same 22T tokens and describes a decoding adapter that the team says reaches 2.2× speedup. \nMarin\n · \nK2 Horizon\n\nZyphra’s long-context attention.\n The team reports 9–60× speedups at 10M tokens after converting several models to its subquadratic attention, with Qwen losing under two points on RULER at 1M. \nZyphra\n\nSpeculative decoding.\n vLLM reports up to 30% higher acceptance length from a sliding-window draft for Kimi K3.1 Pro. NVIDIA also has a 4B draft for Qwen3.8-27B. \nvLLM\n · \nDraft-model research\n\nIndustry and policy\n\nNVIDIA’s first earnings after the CEO transition.\n Under interim CEO Colette Kress, NVIDIA posted $115.8B in quarterly revenue, up 103% year over year, and said Vera Rubin NVL72 had shipped. The board said it did not intend to reinstate Jensen Huang. \nNVIDIA\n · \nAP\n\nIsomorphic Labs raises $5B.\n Greenoaks and Sequoia co-led the Series C. The company says it will scale its drug-design platform and develop its therapeutic pipeline. \nIsomorphic Labs\n\nGenesis AI raises $500M.\n The Series A values the robotics company at $3.5B post-money. It plans to use the funding to deploy its Eno robot and expand training and data collection. \nZhou Xian\n\nAI Reddit Recap\n\nLocal models and hardware\n\nA 9B model with layers that run twice.\n SenseNova-Loop-9B runs 24 of its 32 layers a second time. The model’s authors report GAIA rising from 37.86 in the preview to 69.90 in the release. Local users asked how much memory remains for the KV cache at long context. \nWeights\n · \nDiscussion\n\nMaxwell V1 Flash.\n The 35B/3B-active MoE claims a 6.7× attention speedup over dense GQA at 256K. Its sparse attention still retains the full-history KV cache, which is what local users want measured before they commit hardware. \nModel card\n · \nDiscussion\n\nOlala mini 7A1B.\n OVHcloud previewed a small MoE with 1B active parameters and a 32K context window. The thread is waiting for weights and reproducible benchmarks. \nOVHcloud\n · \nDiscussion\n\nIntel’s Crescent Island numbers.\n The early brief’s eye-catching throughput comparison uses FP64-heavy workloads. Intel’s separate LLM comparison claims 1.12× throughput and 29% lower latency versus RTX PRO 6000 Blackwell Server Edition. \nHardware discussion\n\nGemma on a printer.\n A builder reports running Gemma 3 270M via a PostScript print job. \nDemo\n\nAgents in use\n\nA video-game agent built for real-time input.\n miHoYo’s Gamer samples the screen at 5 Hz and emits keyboard and mouse activity at 30 Hz. Its RL version solved about half of the held-out Honkai puzzle tasks in the authors’ evaluation. \nProject\n · \nDiscussion\n\nA fictional league runs a nightly broadcast.\n The builder says Fock Ball simulates the games in a physics engine and uses Claude for surrounding work such as commentary and the newsroom. \nBuilder’s post\n\nICLR reviews and AI detectors.\n Reviewers report that the program chairs flagged likely AI-generated reviews. The thread asks how a detector can distinguish editing help from whole-review generation. \nPeer review discussion",
+          "url": "https://latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol/",
+          "published_at": "2026-11-18T10:19:04+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol/"
+      }
+    },
+    {
+      "id": "fd264eaf64e2603e0cb8",
+      "first_seen_at": "2026-11-18T11:17:23+00:00",
+      "status": "skipped",
+      "title": "Can Open Source Make AI Agents Safer?",
+      "source_title": "Can Open Source Make AI Agents Safer?",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are Thomas Wolf of Hugging Face and Amanda Grady of ServiceNow; neither is on the followed list, so no followed person is a guest or speaker.",
+      "published_at": "2026-11-18T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "5e8a55f9f87cf3f5474d",
+          "kind": "podcast",
+          "source": "NVIDIA AI Podcast",
+          "family": "nvidia ai podcast",
+          "guid": "6f2942f8-e2d3-11f1-b80d-67415040d29c",
+          "title": "Can Open Source Make AI Agents Safer?",
+          "description": "Hugging Face co-founder Thomas Wolf and ServiceNow’s Amanda Grady, SVP of AI Platform Security, join the NVIDIA AI Podcast to explain how to keep AI agents safe when telling a model “please don’t” is no longer enough.\n\nThey cover why firm boundaries beat persuadable models, what happened when Hugging Face was attacked by a swarm of AI agents, and why security is what lets companies put agents to real work. This is the 15-minute best-moments edit. The full-length episode is on your favorite podcast platform! \n\nIn this episode:\n0:16 Why guardrails inside the model aren’t enough\n2:00 The attack on Hugging Face, and why open models mattered\n3:28 Agent identity and the AI Passport\n6:03 Security as an unlocker for AI\n8:33 Why open source is more secure, not less\n10:59 Physical AI and the micro-duck\n13:12 Fine-tuning for everyone\n14:11 Who gets to build AI\n\nGuests\nThomas Wolf, Co-founder, Hugging Face\nAmanda Grady, SVP, AI Platform Security, ServiceNow\n\nFollow on Spotify: https://open.spotify.com/show/4TB4pnynaiZ6YHoKmyVN0L?si=f6b8c3889c754e96 \nFollow on Apple Podcasts: https://podcasts.apple.com/us/podcast/nvidia-ai-podcast/id1186480811 \nLearn more: https://blogs.nvidia.com/blog/ai-security-agent-stack/",
+          "url": "https://feeds.megaphone.fm/nvidiaaipodcast",
+          "published_at": "2026-11-18T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/nvidiaaipodcast"
+      }
+    },
+    {
+      "id": "19fb5ff17933a2eaae55",
+      "first_seen_at": "2026-11-18T11:17:24+00:00",
+      "status": "skipped",
+      "title": "The a16z Show: The Missing Layer for Personal AI with First Person Labs' Ken Liu",
+      "source_title": "The Missing Layer for Personal AI | First Person Labs’ Ken Liu",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are Ken Liu (First Person Labs co-founder), who is not on the followed list, and hosts Martin Casado and Joel de la Garza. No followed person is a guest or speaker.",
+      "published_at": "2026-11-18T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "550eee7e759d81aa2199",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "b4bb80f6-965a-4e39-b7d1-5fa11e78ba4f",
+          "title": "The Missing Layer for Personal AI | First Person Labs’ Ken Liu",
+          "description": "AI agents are getting smarter, but every new agent still has to learn who you are. What if your preferences, priorities, relationships, and digital context could move with you instead?\n\nFirst Person Labs co-founder Ken Liu joins a16z’s Martin Casado and Joel de la Garza to introduce Second, a personal context layer designed to understand what you’re doing across your digital life and make that context available to the agents you choose.\n\nThey discuss how Second can proactively connect information across conversations and applications, why protecting such personal data requires a different security architecture, and the longer-term vision of AI that doesn’t just respond to prompts, but understands enough context to know when and how to help. \n\nResources:\n\nTry Second:\nhttps://2.computer\n\nLearn more about First Person Labs: \nhttps://fpl.company/\n\nFollow Ken Liu: ​​​​\nhttps://www.linkedin.com/in/kenziyuliu/\n\nFollow Martin Casado on X: \nhttps://x.com/martin_casado\na16z.com\n\nFollow Joel de la Garza: \nhttps://x.com/YODELAGARZA\na16z.com\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/the-missing-layer-for-personal-ai-first-person-labs-ken-liu-wu4i8Q00",
+          "published_at": "2026-11-18T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/the-missing-layer-for-personal-ai-first-person-labs-ken-liu-wu4i8Q00"
+      }
+    },
+    {
+      "id": "4748912369f9e7c59f8a",
+      "first_seen_at": "2026-11-18T11:17:24+00:00",
+      "status": "deferred",
+      "title": "Nvidia Earnings; Office Convergence; OS Wars, AI Edition",
+      "source_title": "Nvidia Earnings; Office Convergence; OS Wars, AI Edition",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-18T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "292a4b973ef33255df47",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=21272",
+          "title": "Nvidia Earnings; Office Convergence; OS Wars, AI Edition",
+          "description": "Nvidia's earnings were boring, and also a statement as to why Jensen Huang probably isn't coming back; then, Microsoft and Anthropic ship dueling operating system updates.",
+          "url": "https://stratechery.com/2026/nvidia-earnings-office-convergence-os-wars-ai-edition/",
+          "published_at": "2026-11-18T11:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/nvidia-earnings-office-convergence-os-wars-ai-edition/"
+      }
     }
   ],
   "editions": [
