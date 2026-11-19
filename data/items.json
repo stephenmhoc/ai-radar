@@ -87437,6 +87437,34 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-is-amazons-writing-culture"
       }
+    },
+    {
+      "id": "e4cd79fc6c44281bc660",
+      "first_seen_at": "2026-11-19T20:17:21+00:00",
+      "status": "skipped",
+      "title": "Google DeepMind: The Podcast, Gemini and the path to AGI with Koray Kavukcuoglu",
+      "source_title": "Gemini and the path to AGI with Koray Kavukcuoglu",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode's guest is Koray Kavukcuoglu, who is not on the followed list, and the host is Hannah Fry. No followed person is an actual guest, interviewee, or central speaker in this item.",
+      "published_at": "2026-11-19T19:46:40+00:00",
+      "appearances": [
+        {
+          "id": "66cea7370df8e0d38ab8",
+          "kind": "podcast",
+          "source": "Google DeepMind: The Podcast",
+          "family": "google deepmind: the podcast",
+          "guid": "373a06ea-f8c5-4e17-bb27-c0f37d531f96",
+          "title": "Gemini and the path to AGI with Koray Kavukcuoglu",
+          "description": "Seven years after their last conversation at Google DeepMind’s London office, Professor Hannah Fry reunites with Koray Kavukcuoglu, SVP of Google DeepMind and Chief AI Architect at Google. Back then, DeepMind was focused on specialized breakthroughs like AlphaGo and AlphaFold; today, Koray is leading the charge toward general-purpose intelligence with Gemini. In this episode, they discuss why real-world products are essential to building AGI, how Gemini’s architecture continuously evolves, and the topic on everyone's mind: recursive self-improvement. Please leave us a review on Spotify or Apple Podcasts if you enjoyed\nthis episode. We always want to hear from our audience whether that's in\nthe form of feedback, new idea or a guest recommendation!\n\nHosted by Simplecast, an AdsWizz company. See https://pcm.adswizz.com\nfor information about our collection and use of personal data for\nadvertising.",
+          "url": "https://deepmind.com/podcast",
+          "published_at": "2026-11-19T19:46:40+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://deepmind.com/podcast"
+      }
     }
   ],
   "editions": [
