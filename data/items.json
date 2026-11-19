@@ -87348,6 +87348,37 @@
       "links": {
         "newsletter": "https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/"
       }
+    },
+    {
+      "id": "aab1c0f274354898cefa",
+      "first_seen_at": "2026-11-19T12:17:19+00:00",
+      "status": "skipped",
+      "title": "No Priors: Superintelligence Needs the Physical World with Bob McGrew",
+      "source_title": "Superintelligence Needs the Physical World with CEO and Co-Founder of Arda Bob McGrew",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Bob McGrew, Arda CEO and former OpenAI Chief Research Officer, who is not on the AI Radar followed list. The hosts, Sarah Guo and Elad Gil, are also not on the list, so no followed person speaks or writes in this episode.",
+      "published_at": "2026-11-19T11:44:00+00:00",
+      "appearances": [
+        {
+          "id": "013ec63629eb35103532",
+          "kind": "podcast",
+          "source": "No Priors",
+          "family": "no priors",
+          "guid": "8fd14988-e40e-11f1-99ee-ebfb28833f04",
+          "title": "Superintelligence Needs the Physical World with CEO and Co-Founder of Arda Bob McGrew",
+          "description": "Is the AI singularity actually coming? Bob McGrew, former Chief Research Officer at OpenAI, argues that superintelligence won’t arrive without changes in the physical world, and that the “hard takeoff” argument is wrong.\n\nSarah Guo and Elad Gil sit down with Bob, an early key executive at Palantir who later led research at OpenAI. He is now CEO and co-founder of Arda, which is leveraging AI to make American manufacturing competitive. Bob explains why automating AI researchers is a one-time boost rather than a runaway loop, and why GPUs, compute, wet labs, and factories are the real bottlenecks. \n\nThey cover Arda’s work with Anduril on everything from actuators to missiles to the Fury combat aircraft, why Arda is building “Cursor for manufacturing engineers”, and how the forward deployed engineering model really works. Plus, the big-picture future view: machines that make machines, self-replicating factories, and Bob’s answer to the Fermi paradox.\n\nSign up for new podcasts every week. Email feedback to show@no-priors.com\n\nFollow us on Twitter: @NoPriorsPod | @Saranormous | @EladGil | @bobmcgrewai | @Arda_Industries\n\nChapters:\n\n00:00 – Trailer\n\n00:05 – Bob McGrew Introduction\n\n01:05 – Why work on the physical world during the AI revolution?\n\n02:27 – Why the hard takeoff argument is wrong\n\n05:48 – Labs or startups – who will win in robotics and biology?\n\n13:00 – Why America designs products but doesn’t build them\n\n16:33 – Who needs flexible automation: defense, consumer electronics, data centers\n\n18:19 – Humanoid robots vs. robotic work cells\n\n21:07 – Open-world vs. closed-world robotics\n\n25:20 – Building with Anduril: from days to 90 minutes\n\n28:59 – Palantir’s problem-first approach vs. OpenAI’s technology-first approach\n\n33:15 – From dropping out of Stanford to joining OpenAI\n\n37:13 – Why general robotics models suddenly work\n\n40:28 – Implications for the robotics ecosystem\n\n42:46 – On-device models, speed, and safety\n\n44:18 – How forward deployed engineering really works\n\n50:57 – Superintelligence out of the data center\n\n53:41 – Self-replicating factories and Von Neumann probes\n\n56:46 – Bob’s answer to the Fermi paradox\n\n59:33 – Conclusion",
+          "url": "https://feeds.megaphone.fm/nopriors",
+          "published_at": "2026-11-19T11:44:00+00:00",
+          "hosts": [
+            "Sarah Guo",
+            "Elad Gil"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/nopriors"
+      }
     }
   ],
   "editions": [
