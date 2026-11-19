@@ -87379,6 +87379,34 @@
       "links": {
         "podcast": "https://feeds.megaphone.fm/nopriors"
       }
+    },
+    {
+      "id": "d4c42c97278a53de29bf",
+      "first_seen_at": "2026-11-19T16:17:21+00:00",
+      "status": "skipped",
+      "title": "How Fast Should We Build Superintelligence? Nick Bostrom on The a16z Show",
+      "source_title": "How Fast Should We Build Superintelligence? | Nick Bostrom",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are a16z's Eddy Lazzarin and Elena Burger, who host, and guest Nick Bostrom. None of them is on the AI Radar followed list, so the item does not qualify.",
+      "published_at": "2026-11-19T15:29:34+00:00",
+      "appearances": [
+        {
+          "id": "d36192bf2b5000846a88",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "1454bf4f-d708-4e4b-b627-8e139743b851",
+          "title": "How Fast Should We Build Superintelligence? | Nick Bostrom",
+          "description": "The question isn’t simply whether humanity should race toward superintelligence or stop. Nick Bostrom argues the harder challenge is preserving the ability to slow down when safety falls behind, without turning a temporary pause into permanent technological stagnation.\n\na16z’s Eddy Lazzarin and Elena Burger sit down with Bostrom to revisit the ideas he helped bring into the mainstream, now that increasingly capable AI systems actually exist. They discuss why alignment may become harder as models grow more situationally aware, which capability improvements may carry more risk than others, and why Bostrom favors “pacing the frontier” rather than committing to a broad or indefinite pause.\n\nThey also examine the cost of waiting. Bostrom argues that safely developed superintelligence could radically extend human lifespans and address problems from disease to poverty, meaning delay carries risks of its own. From there, the conversation turns to \nDeep Utopia\n, governance, the possibility of post-human forms of life, the simulation argument, and whether AI could eventually surpass humans at philosophy itself.\n\nResources:\n\nFollow Eddy Lazzarin on X:\nhttps://x.com/eddylazzarin\n\nFollow Elena Burger on X:\nhttps://x.com/VirtualElena\n\nFollow Nick Bostrom / Macrostrategy Research Initiative:\nhttps://nickbostrom.com/\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/how-fast-should-we-build-superintelligence-nick-bostrom-21xI3Oxg",
+          "published_at": "2026-11-19T15:29:34+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/how-fast-should-we-build-superintelligence-nick-bostrom-21xI3Oxg"
+      }
     }
   ],
   "editions": [
