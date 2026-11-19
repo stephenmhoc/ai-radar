@@ -87318,6 +87318,36 @@
       "links": {
         "podcast": "https://share.transistor.fm/s/bb4dad17"
       }
+    },
+    {
+      "id": "97771115283a2d34d2f2",
+      "first_seen_at": "2026-11-19T11:17:19+00:00",
+      "status": "deferred",
+      "title": "An Interview With Eric Seufert About Agentic Commerce",
+      "source_title": "An Interview With Eric Seufert About Agentic Commerce",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-19T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "672c7715a92888a0107c",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=21285",
+          "title": "An Interview With Eric Seufert About Agentic Commerce",
+          "description": "An interview with Eric Seufert about agentic commerce, including why he thinks ads will be the answer, and why I want retailers who cater to agents.",
+          "url": "https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/",
+          "published_at": "2026-11-19T11:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/"
+      }
     }
   ],
   "editions": [
