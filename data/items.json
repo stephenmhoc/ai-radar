@@ -87407,6 +87407,36 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/how-fast-should-we-build-superintelligence-nick-bostrom-21xI3Oxg"
       }
+    },
+    {
+      "id": "04052452906e4640d6bf",
+      "first_seen_at": "2026-11-19T17:17:19+00:00",
+      "status": "deferred",
+      "title": "The Pulse: Is Amazon’s writing culture collapsing because of AI?",
+      "source_title": "The Pulse: Is Amazon’s writing culture collapsing because of AI?",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-19T17:08:59+00:00",
+      "appearances": [
+        {
+          "id": "a126a254c293712f8bff",
+          "kind": "newsletter",
+          "source": "The Pragmatic Engineer",
+          "family": "the pragmatic engineer",
+          "guid": "https://newsletter.pragmaticengineer.com/p/the-pulse-is-amazons-writing-culture",
+          "title": "The Pulse: Is Amazon’s writing culture collapsing because of AI?",
+          "description": "The Pulse is a series covering events, insights, and trends within Big Tech and startups.\n\nToday’s a busy day: Anthropic has gone public in the largest-ever IPO, and the GTA VI video game is out.\n\nImage by ex-Anthropic engineer, \nThariq Shihipar\n\nI’ll make things a bit more concise than usual:\n\nAnthropic: the largest-ever IPO. \nThe leading AI frontier lab raised …\n\n Read more",
+          "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-is-amazons-writing-culture",
+          "published_at": "2026-11-19T17:08:59+00:00",
+          "hosts": [
+            "Gergely Orosz"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pulse-is-amazons-writing-culture"
+      }
     }
   ],
   "editions": [
