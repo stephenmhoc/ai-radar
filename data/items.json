@@ -87543,6 +87543,37 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/"
       }
+    },
+    {
+      "id": "3cde383c1bd391934489",
+      "first_seen_at": "2026-11-20T10:17:17+00:00",
+      "status": "deferred",
+      "title": "⚡️Anthropic: Know Before You IPO — Tanay Jaipuria, Wing VC",
+      "source_title": "⚡️Anthropic: Know Before You IPO — Tanay Jaipuria, Wing VC",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-18T20:00:20+00:00",
+      "appearances": [
+        {
+          "id": "357a193771b2ad6241ee",
+          "kind": "podcast",
+          "source": "Latent Space",
+          "family": "latent space",
+          "guid": "youtube:wX8nDtGIfYA",
+          "title": "⚡️Anthropic: Know Before You IPO — Tanay Jaipuria, Wing VC",
+          "description": "Watch the full show on YouTube: https://www.youtube.com/watch?v=wX8nDtGIfYA",
+          "url": "https://www.youtube.com/watch?v=wX8nDtGIfYA",
+          "published_at": "2026-11-18T20:00:20+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.youtube.com/watch?v=wX8nDtGIfYA"
+      }
     }
   ],
   "editions": [
