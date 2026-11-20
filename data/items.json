@@ -87574,6 +87574,67 @@
       "links": {
         "podcast": "https://www.youtube.com/watch?v=wX8nDtGIfYA"
       }
+    },
+    {
+      "id": "f4711d178f713a21d8fc",
+      "first_seen_at": "2026-11-20T11:17:19+00:00",
+      "status": "deferred",
+      "title": "Sharp Tech on Video: Jensen’s Not Coming Back, AI Shopping, The iPhone Duo",
+      "source_title": "Sharp Tech on Video: Jensen’s Not Coming Back, AI Shopping, The iPhone Duo",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-20T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "18368dcf630ba01f112b",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=21304",
+          "title": "Sharp Tech on Video: Jensen’s Not Coming Back, AI Shopping, The iPhone Duo",
+          "description": "Sharp Tech is, for the first time, available on video. You have three ways to consume it: YouTube, Spotify, and here on Stratechery",
+          "url": "https://stratechery.com/2026/sharp-tech-on-video-jensens-not-coming-back-ai-shopping-the-iphone-duo/",
+          "published_at": "2026-11-20T11:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/sharp-tech-on-video-jensens-not-coming-back-ai-shopping-the-iphone-duo/"
+      }
+    },
+    {
+      "id": "21655243c39e6833eb72",
+      "first_seen_at": "2026-11-20T11:17:22+00:00",
+      "status": "skipped",
+      "title": "G.T.A. VI Is a Monumental Human Achievement",
+      "source_title": "G.T.A. VI Is a Monumental Human Achievement",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Hard Fork is hosted by Kevin Roose and Casey Newton. The publisher notes mention Jensen Huang and Anthropic only as news topics, with no indication that a followed person is a guest, interviewee, or speaker. Mentions by hosts do not qualify.",
+      "published_at": "2026-11-20T11:00:17+00:00",
+      "appearances": [
+        {
+          "id": "554b692e319ee648ebd5",
+          "kind": "podcast",
+          "source": "Hard Fork",
+          "family": "hard fork",
+          "guid": "https://www.nytimes.com/2026/11/20/podcasts/hardfork-gta6-nvidia-anthropic.html",
+          "title": "G.T.A. VI Is a Monumental Human Achievement",
+          "description": "Anthropic goes public, Jensen Huang wants back in at Nvidia, and software patches seem to be breaking everything. But first, let’s talk about G.T.A.",
+          "url": "https://www.nytimes.com/2026/11/20/podcasts/hardfork-gta6-nvidia-anthropic.html",
+          "published_at": "2026-11-20T11:00:17+00:00",
+          "hosts": [
+            "Kevin Roose",
+            "Casey Newton"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.nytimes.com/2026/11/20/podcasts/hardfork-gta6-nvidia-anthropic.html"
+      }
     }
   ],
   "editions": [
