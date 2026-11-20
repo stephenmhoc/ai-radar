@@ -87663,6 +87663,36 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/why-the-agent-era-needs-a-new-operating-system-dhh-aj7iuAnL"
       }
+    },
+    {
+      "id": "1aff4e85cee8536c1f5a",
+      "first_seen_at": "2026-11-20T19:17:21+00:00",
+      "status": "skipped",
+      "title": "Stratechery: 2026.47 Down in DC",
+      "source_title": "2026.47: Down in DC",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "This is a weekly digest of Stratechery links and excerpts written by Andrew Sharp and Ben Thompson, neither of whom is on the followed list. Jensen Huang is only discussed and reported on, and Eric Seufert, the interview guest, is not followed. No followed person is a guest, interviewee, or author here.",
+      "published_at": "2026-11-20T19:09:57+00:00",
+      "appearances": [
+        {
+          "id": "47cc09219257488eb056",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=21301",
+          "title": "2026.47: Down in DC",
+          "description": "Andrew made the fatal mistake of getting his hopes up for the Wizards; \non Sharp Text\n he wonders how it all went wrong. (Photo by Todd Olszewski/Getty Images)\n\nWelcome back to This Week in Stratechery!\n\nAs a reminder, each week, every Friday, we’re sending out this overview of content in the Stratechery bundle; \nhighlighted links are free for everyone\n. Additionally, you have complete control over what we send to you. If you don’t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in \nyour delivery settings\n.\n\nOn that note, here were a few of our favorites this week.\n\nObituaries and Exceptionalism.\n After several days to mull the shocking departure of Jensen Huang, \nBen’s article on Monday\n delivered an omnibus obituary for a variety of American eras that may now be ending. Tracing the decisions that made Huang great, the strategies that made him a target, the implications of his demise for the rest of the tech ecosystem, and a shift in the U.S. government’s perspective on tech companies \n— \nand specifically AI companies \n—\n to which Huang never quite adapted, Monday’s piece was both comprehensive and poignant. \n—\nAndrew Sharp\n\nArguments About Agents.\nRecurring Stratechery guest and advertising expert Eric Seufert is often aligned with Ben in his view of the digital advertising landscape, which is why \nthis week’s Stratechery Interview \nwas fun: Ben is a big believer in the potential upside in agentic commerce, while Eric has been (correctly) calling BS on a variety of hyped agentic commerce stories and trends over the past year. Both of them made their case Thursday, and it was sandwiched between thoughts on how Muse plans to monetize, why the market have misread Google’s recent earnings report, and ChatGPT’s progress building an ads business. — \nAS\n\nBen Gets a Duo.\n In the middle of a heavy week of Nvidia takes and ominous infrastructure failures, I was delighted to find out that Ben not only purchased an iPhone Duo, but \nloved it\n. Come for his review \nat the end of Tuesday’s Update\n, and then stay for his discussion with John Gruber \non Tuesday’s Dithering\n. We doubled back (Duo’d back?) to discuss all of it at the end of \nthis week’s Sharp Tech\n, including some hands-on testing, comparisons to the iPhone Air, and a variety of shots fired at the iPhone Pro. \n—\nAS\n\nPresented by\n\nAs AI models improve, you might expect the market will consolidate around a handful of providers. But user data tells a different story.\n\nAmong OpenRouter customers spending at least $100 a month, the median number of AI model families in use has \ndoubled over the past year\n, from three to six.\n\nEven as AI models become more capable, businesses are using more models, not fewer. This makes sense when you consider that intelligence isn’t one-dimensional. A model that’s exceptional at writing code may not be the fastest at answering customer questions, or the most economical at processing millions of documents.\n\nThe question is shifting from “which AI model should we build on?” to “which model should handle each task?” The answer, increasingly, is ‘it depends.’ Which is great for flexibility, less great for simplicity.\n\nOpenRouter, which recently joined \nStripe\n, allows businesses to access and govern hundreds of models with the flexibility to optimize for cost, performance, and reliability as the market evolves.\n\nLearn more at \nopenrouter.ai\n.\n\nStratechery Articles and Updates\n\nObituaries\n— The demise of Jensen Huang was the end of a great many things, including Nvidia’s long-term prospects, the AI bubble, and the exceptional way in which the U.S. viewed itself in the world.\n\nApple Permissions Update, The New App Paradigm, My iPhone Duo Review\n— Apple doesn’t ruin the Mac, but they don’t fix the agent problem, raising questions if they can think outside the app paradigm. Then, my iPhone Duo review.\n\nNvidia Earnings; Office Convergence; OS Wars, AI Edition\n— Nvidia’s earnings were boring, and also a statement as to why Jensen Huang probably isn’t coming back; then, Microsoft and Anthropic ship dueling operating system updates.\n\nAn Interview With Eric Seufert About Agentic Commerce\n— An interview with Eric Seufert about agentic commerce, including why he thinks ads will be the answer, and why I want retailers who cater to agents.\n\nSharp Text by Andrew Sharp\n\nWizards Groundhog Day\n — \nFour more years of winter for basketball fans in Washington.\n\nDithering with Ben Thompson and Daring Fireball’s John Gruber\n\nBen Gets a Duo\n\nGTA and Windows Apps\n\nAsianometry with Jon Yu\n\nThe Rise and Fall of the Soviet Union’s Workhorse Computer\n\nTSMC Making 3D DRAM?\n\nGreatest of All Talk\n\nThe West Reigns Supreme (Again), The Micah Nori Sweepstakes, Trading Dejounte and Ice Earning Omissions\n\nSharp Tech with Andrew Sharp and Ben Thompson\n\nSubscriber Mail: Intel, Anthropic’s IPO, Machiavellian Hyperscalers, and Push Notification Tyranny\n\nJensen’s Not Coming Back, Adventures in Agentic Commerce, Q&A on United, GTA VI, iPhone Duo\n\nThis week’s Sharp Tech is on \nJensen’s Not Coming Back, Adventures in Agentic Commerce, Q&A on United, GTA VI, iPhone Duo\n.",
+          "url": "https://stratechery.com/2026/down-in-dc/",
+          "published_at": "2026-11-20T19:09:57+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/down-in-dc/"
+      }
     }
   ],
   "editions": [
