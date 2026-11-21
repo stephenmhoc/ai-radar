@@ -87755,6 +87755,36 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/"
       }
+    },
+    {
+      "id": "df42a508151470b7b32b",
+      "first_seen_at": "2026-11-21T08:17:19+00:00",
+      "status": "skipped",
+      "title": "Spend the Lead on Safety: Biden AI Advisors Ben Buchanan & Tantum Collins on the Fate of the World",
+      "source_title": "Spend the Lead on Safety: Biden AI Advisors Ben Buchanan & Tantum Collins on the Fate of the World",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guests are Ben Buchanan and Tantum Collins, who are not on the followed list. The notes contain no followed person as guest, speaker, or author, so the item does not qualify.",
+      "published_at": "2026-11-21T08:00:45+00:00",
+      "appearances": [
+        {
+          "id": "1825c1e390db7ab853e9",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "e71d7d82-e57c-11f1-9d5f-b78cef15135a",
+          "title": "Spend the Lead on Safety: Biden AI Advisors Ben Buchanan & Tantum Collins on the Fate of the World",
+          "description": "Former Biden administration AI advisors Ben Buchanan and Tantum Collins join Nathan to discuss their book, The Bitter Struggle, and their experience shaping U.S. policy on compute supply chains and export controls. Drawing on their backgrounds in government and DeepMind, they unpack the geopolitical strategy of building an allied compute lead over China in order to spend that advantage on safety. The conversation probes the clash between frontier lab idealism and national security, bilateral talks over AI risks in nuclear command, and persistent technical hurdles like reward hacking.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/spend-the-lead-on-safety-biden-ai-advisors-ben-buchanan-tantum-collins-on-the-fate-of-the-world/\nSponsors:\n\nClaude: Claude is the AI collaborator built for problem solvers, extending your thinking across coding, modeling, and strategic workflows. Get started and discover Claude Pro at https://claude.ai/tcr\n\nOutSystems: OutSystems is the leading agentic systems platform, empowering enterprises to build, coordinate, and govern AI agents and mission-critical applications securely. Learn more and start building your agentic future at https://outsystems.com/tcr\n\nTasklet: Tasklet empowers your business with AI agents that connect to your tools and automate recurring workflows with no code required. Visit https://tasklet.ai and use code cog rev for $50 in free credits\n\nGranola: Granola is an AI-powered notepad that captures your meetings and turns them into clean, searchable notes with clear decisions and action items. Try it completely free on your next call at https://granola.ai/tcr\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(05:04) Conviction in scaling laws\n\n(11:22) Inevitability versus human choice (Part 1)\n\n(15:30) Sponsors: Claude | OutSystems\n\n(18:07) Inevitability versus human choice (Part 2)\n\n(19:50) Private labs and ideology\n\n(26:22) Spending the lead wisely (Part 1)\n\n(30:52) Sponsors: Tasklet | Granola\n\n(33:25) Spending the lead wisely (Part 2)\n\n(41:52) US and China diplomacy\n\n(54:05) Pacing frontier AI development\n\n(01:09:03) Regulating the frontier labs\n\n(01:18:39) Data centers and energy\n\n(01:24:19) Resisting the bitter temptation\n\n(01:32:50) Managing catastrophic emergency scenarios\n\n(01:38:45) Policy lightning round\n\n(01:44:16) Episode Outro\n\n(01:47:42) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing",
+          "url": "https://www.cognitiverevolution.ai/spend-the-lead-on-safety-biden-ai-advisors-ben-buchanan-tantum-collins-on-the-fate-of-the-world/",
+          "published_at": "2026-11-21T08:00:45+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/spend-the-lead-on-safety-biden-ai-advisors-ben-buchanan-tantum-collins-on-the-fate-of-the-world/"
+      }
     }
   ],
   "editions": [
