@@ -87785,6 +87785,34 @@
       "links": {
         "podcast": "https://www.cognitiverevolution.ai/spend-the-lead-on-safety-biden-ai-advisors-ben-buchanan-tantum-collins-on-the-fate-of-the-world/"
       }
+    },
+    {
+      "id": "b7f60243245a811d0d88",
+      "first_seen_at": "2026-11-21T11:17:20+00:00",
+      "status": "skipped",
+      "title": "The a16z Show: Cosign and the professional network built for you and your AI agent",
+      "source_title": "The Professional Network Built for You and Your AI Agent",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are David Booth of a16z, Bella Nazzari of Cosign, and host Sophia Dew. None of them appear on the followed list, so no followed person is a guest or speaker.",
+      "published_at": "2026-11-21T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "309271db64e07a0aca67",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "5d4b3bbc-38c9-4f04-adf4-0a5fa249fb73",
+          "title": "The Professional Network Built for You and Your AI Agent",
+          "description": "What if your AI agent could find the people you should know before you even start looking? Cosign is building a professional network around reputation and trusted recommendations, and now agents can use that network too.\n\nMTS host Sophia Dew sits down with a16z’s David Booth and Cosign’s Bella Nazzari to discuss what they’ve learned since launching Cosign, why traditional profiles often miss the operators doing the most important work, and how the Cosign Awards are surfacing talent through the people willing to vouch for them.\n\nThey also explore an emerging behavior: people connecting their agents to Cosign to continuously find relevant people, lists, and opportunities, and what professional networking could look like when both humans and their agents participate. \n\nResources:\n\nFollow David Booth: \nhttps://x.com/davidbooth\n\nFollow Bella Nazzari: \nhttps://x.com/nazzari\n\nFollow Sophia Dew: \nhttps://x.com/sophiadew\n\nLearn more about Cosign:\nhttps://cosign.co/\n\nConnect your agent to Cosign:\nhttps://cosign.co/agents\n\nFollow MTS on X:\nhttps://x.com/MTSLive\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/the-professional-network-built-for-you-and-your-ai-agent-Gt_BkCoL",
+          "published_at": "2026-11-21T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/the-professional-network-built-for-you-and-your-ai-agent-Gt_BkCoL"
+      }
     }
   ],
   "editions": [
