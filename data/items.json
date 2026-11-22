@@ -87813,6 +87813,36 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/the-professional-network-built-for-you-and-your-ai-agent-Gt_BkCoL"
       }
+    },
+    {
+      "id": "c81c3f91d44dc758724f",
+      "first_seen_at": "2026-11-22T09:17:19+00:00",
+      "status": "skipped",
+      "title": "There Is No Such Thing as Founder Succession | Tobi Lütke, Shopify",
+      "source_title": "There Is No Such Thing as Founder Succession | Tobi Lütke, Shopify",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Tobi Lütke, who is not on the followed list. Jensen Huang is only mentioned by the speaker, so no followed person actually speaks or writes in this episode.",
+      "published_at": "2026-11-22T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "db25cbe37c0428bc2b02",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "141e67c6-e643-11f1-bbe7-536993c97162",
+          "title": "There Is No Such Thing as Founder Succession | Tobi Lütke, Shopify",
+          "description": "Tobi Lütke is the founder and CEO of Shopify. As a teenager, he donated blood at three German hospitals to buy a Riva TNT graphics card. He argues that founders like Jensen Huang are irreplaceable, and that \"there is no such thing as a succession for a founder.\" He recounts a conversation with Jeff Bezos about measuring the wealth entrepreneurs create for others, not just what they own. He thinks AI is ending the Web 2.0 programmer job and is best thought of as an instrument. Software, he expects, will become nearly bug-free. As an evangelist for entrepreneurship, he closes: new business formation is at an all-time high, and all you need to do is use technology to build tools or products that make other people's lives better.\n\nShow notes: https://www.davidsenra.com/episode/tobi-lutke-2\n\nMade possible by\n\nRamp: https://router.com\n\nAppLovin: https://applovin.com/senra\n\nOpenAI: https://chatgpt.com/get-dot\n\nDeel: https://deel.com/senra\n\nChapters\n\n(00:00:00) Why founders like Jensen are irreplaceable\n\n(00:01:22) Donating blood 3 times to buy a Riva TNT\n\n(00:07:15) Tim Cook was still extending Steve's runway\n\n(00:10:47) Only founders can reinvent their companies\n\n(00:13:14) The 95% of Shopify he doesn't own\n\n(00:15:16) Rising violence will make founders opt out\n\n(00:16:07) Bezos wants a different rich list than the Forbes 400\n\n(00:24:33) Markets are the original superintelligence\n\n(00:26:58) Jensen reserved chips for the little guys\n\n(00:30:16) The computer programmer job is over\n\n(00:35:59) Insufficiently ambitious prompting\n\n(00:45:45) Software is about to become nearly bug-free\n\n(00:48:58) AI as an instrument\n\n(00:54:51) A weekend rewrite that used to take years\n\n(01:02:23) Why computers shouldn't make you feel bad\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/tobi-lutke-2",
+          "published_at": "2026-11-22T09:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/tobi-lutke-2"
+      }
     }
   ],
   "editions": [
