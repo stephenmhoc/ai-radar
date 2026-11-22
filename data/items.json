@@ -87843,6 +87843,34 @@
       "links": {
         "podcast": "https://www.davidsenra.com/episode/tobi-lutke-2"
       }
+    },
+    {
+      "id": "312da8129a11ea00db15",
+      "first_seen_at": "2026-11-22T11:17:21+00:00",
+      "status": "skipped",
+      "title": "Replay: How the Internet Happened | Chris Dixon & Brian McCullough (2018)",
+      "source_title": "Replay: How the Internet Happened | Chris Dixon & Brian McCullough (2018)",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode features hosts Brian McCullough and Chris Dixon discussing internet history; neither is on the followed list, and the notes mention no followed person speaking or writing in this item.",
+      "published_at": "2026-11-22T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "6aead60b55563e69e3f1",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "1a149f0e-47b5-4382-9be3-533a47758c3d",
+          "title": "Replay: How the Internet Happened | Chris Dixon & Brian McCullough (2018)",
+          "description": "Why do technologies that look like bad ideas in one era become enormous companies in the next? Originally recorded in 2018, Brian McCullough and Chris Dixon trace the companies, failures, and accidents that built the modern internet.\n\nThey revisit the battle between the open web and more centralized visions of the “information superhighway,” why eBay helped establish trust between strangers online, what Napster understood about digital media, and how Google found a business model for search.\n\nThey also look at the dot-com crash and the ideas that arrived before the technology was ready, from cloud storage to grocery delivery, asking what those cycles can teach founders about spotting the next wave.\n\nResources:\n\nFollow Brian McCullough on X:\nhttps://x.com/brianmcc\n\nFollow Chris Dixon on X:\nhttps://x.com/cdixon\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/replay-how-the-internet-happened-chris-dixon-brian-mccullough-2018-k0AHBjvt",
+          "published_at": "2026-11-22T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/replay-how-the-internet-happened-chris-dixon-brian-mccullough-2018-k0AHBjvt"
+      }
     }
   ],
   "editions": [
