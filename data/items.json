@@ -87901,6 +87901,64 @@
       "links": {
         "podcast": "https://www.lennysnewsletter.com/p/first-principles-what-it-takes-to"
       }
+    },
+    {
+      "id": "2c5fba467c7ee597852b",
+      "first_seen_at": "2026-11-23T11:17:20+00:00",
+      "status": "skipped",
+      "title": "The One-Person Biotech | OpenAI Life Sciences",
+      "source_title": "The One-Person Biotech | OpenAI Life Sciences",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Guests are Joy Jiao and Ashoka Rajendra, and hosts are Jay Rughani and Jorge Conde; none are on the followed list. OpenAI is discussed as a company, which does not qualify.",
+      "published_at": "2026-11-23T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "1b2d44653ab8acd03fd6",
+          "kind": "podcast",
+          "source": "The a16z Show",
+          "family": "the a16z show",
+          "guid": "59b03949-d611-4a90-952e-93929d5a6e07",
+          "title": "The One-Person Biotech | OpenAI Life Sciences",
+          "description": "What happens when scientists are no longer limited by human attention? OpenAI’s Joy Jiao and Ashoka Rajendra join a16z’s Jay Rughani and Jorge Conde to discuss how AI and thousands of parallel agents could reshape drug discovery and development.\n\nThey trace OpenAI’s life sciences work from scientific reasoning to the acquisition of Orchestra Bio, and how agents could search biological data, manage clinical trials, and navigate regulatory and manufacturing workflows.\n\nThey also discuss AI’s role in solving difficult diagnoses and a future where a single person could potentially launch and advance multiple biotech programs.\n\nResources:\n\nJoy Jiao on LinkedIn:\nhttps://www.linkedin.com/in/yunxin-jiao/\n\nFollow Ashoka Rajendra on X: \nhttps://x.com/ashokaraj_\n\nOpenAI on Orchestra Bio and Rosalind:\nhttps://openai.com/index/openai-to-acquire-orchestra-bio/\n\nFollow Jay Rughani on X:\nhttps://x.com/JayRughani\n\nFollow Jorge Conde on X:\nhttps://x.com/JorgeCondeBio\n\nStay Updated:\n\nFind a16z on YouTube: \nYouTube\n\nFind a16z on \nX\n\nFind a16z on\n LinkedIn\n\nListen to the a16z Show on \nSpotify\n\nListen to the a16z Show on \nApple Podcasts\n\nFollow our host: \nhttps://twitter.com/eriktorenberg\n\nPlease note that the content here is for informational purposes only; should NOT be taken as legal, business, tax, or investment advice or be used to evaluate any investment or security; and is not directed at any investors or potential investors in any a16z fund. a16z and its affiliates may maintain investments in the companies discussed. For more details please see a16z.com/disclosures.\n\nHosted by Simplecast, an AdsWizz company. See \npcm.adswizz.com\n for information about our collection and use of personal data for advertising.",
+          "url": "https://a16z.simplecast.com/episodes/the-one-person-biotech-openai-life-sciences-TrZddFUB",
+          "published_at": "2026-11-23T11:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://a16z.simplecast.com/episodes/the-one-person-biotech-openai-life-sciences-TrZddFUB"
+      }
+    },
+    {
+      "id": "8321a6bb826aaba89260",
+      "first_seen_at": "2026-11-23T11:17:20+00:00",
+      "status": "deferred",
+      "title": "Amazon Earnings, The Chip Question, About Agents",
+      "source_title": "Amazon Earnings, The Chip Question, About Agents",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Publisher notes were too sparse to summarize reliably.",
+      "published_at": "2026-11-23T11:00:00+00:00",
+      "appearances": [
+        {
+          "id": "f037f707ba642116a927",
+          "kind": "newsletter",
+          "source": "Stratechery",
+          "family": "stratechery",
+          "guid": "https://stratechery.com/?p=21351",
+          "title": "Amazon Earnings, The Chip Question, About Agents",
+          "description": "Amazon makes the case they are not like other compute providers, even as they signal the willingness to give up margin to serve the frontier.",
+          "url": "https://stratechery.com/2026/amazon-earnings-the-chip-question-about-agents/",
+          "published_at": "2026-11-23T11:00:00+00:00",
+          "hosts": [
+            "Ben Thompson"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://stratechery.com/2026/amazon-earnings-the-chip-question-about-agents/"
+      }
     }
   ],
   "editions": [
