@@ -88198,6 +88198,34 @@
       "links": {
         "podcast": "https://feeds.megaphone.fm/CLS2859450455"
       }
+    },
+    {
+      "id": "e9ac4c4ff6823f3daa46",
+      "first_seen_at": "2026-11-24T17:17:21+00:00",
+      "status": "skipped",
+      "title": "Why Transparency Matters for AI Security with Chris Wright",
+      "source_title": "Why Transparency Matters for AI Security | NVIDIA AI Podcast Ep. 304",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The sole guest is Chris Wright, Red Hat CTO, who is not on the followed list. No followed person is a guest, interviewee, or central speaker.",
+      "published_at": "2026-11-24T16:46:00+00:00",
+      "appearances": [
+        {
+          "id": "2db722d0928fa545148a",
+          "kind": "podcast",
+          "source": "NVIDIA AI Podcast",
+          "family": "nvidia ai podcast",
+          "guid": "8b36bcac-e826-11f1-a2f5-8f647df061c9",
+          "title": "Why Transparency Matters for AI Security | NVIDIA AI Podcast Ep. 304",
+          "description": "Red Hat CTO Chris Wright joins the NVIDIA AI Podcast at GTC Berlin to explain why open source is the foundation for secure AI agents. From Linux in the 1990s to agent security today, he shares what has changed, what hasn’t, and why “governance is what made us go faster.”\n\nGuest: Chris Wright, CTO, Red Hat \n\nCHAPTERS\n00:00 Chris Wright and Linux's enterprise journey\n02:19 Why open source still needs evangelizing\n03:14 Open source in AI vs. Linux: what's the same, what's new\n04:48 Defense in depth for AI agents\n08:38 OpenShell and the open collaboration coalition\n11:38 Why open standards beat silos\n13:21 AI security as an engineering problem\n15:52 From OpenClaw to OpenClaw Enterprise\n19:23 How governance helps teams move faster\n21:42 Why transparency matters for security\n23:36 Using AI to find vulnerabilities\n26:32 Giving agents clear limits\n\nFollow on Apple Podcasts: https://podcasts.apple.com/us/podcast/nvidia-ai-podcast/id1186480811\n\nLearn more: https://blogs.nvidia.com/blog/ai-security-agent-stack/?ncid=so-yout-497446",
+          "url": "https://feeds.megaphone.fm/nvidiaaipodcast",
+          "published_at": "2026-11-24T16:46:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/nvidiaaipodcast"
+      }
     }
   ],
   "editions": [
