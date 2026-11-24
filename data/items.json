@@ -88082,6 +88082,34 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/"
       }
+    },
+    {
+      "id": "1b9946124c93d4b4e94e",
+      "first_seen_at": "2026-11-24T10:17:20+00:00",
+      "status": "skipped",
+      "title": "Training Data: Noam Brown on Game Theory, Poker AI, and Reasoning Models",
+      "source_title": "OpenAI’s Noam Brown: Why Game Theory Didn’t Lead to General Intelligence (Live at No Limit Finals)",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The sole guest is Noam Brown, an OpenAI researcher, and the host is Alfred Lin of Sequoia Capital. Neither appears on the AI Radar follow list, and no followed person is named as a participant in this episode.",
+      "published_at": "2026-11-24T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "fd2206f10e7798269dd3",
+          "kind": "podcast",
+          "source": "Training Data",
+          "family": "training data",
+          "guid": "fa4bc7f0-e514-11f1-8a20-23a2aece5414",
+          "title": "OpenAI’s Noam Brown: Why Game Theory Didn’t Lead to General Intelligence (Live at No Limit Finals)",
+          "description": "Noam Brown built the first AIs to beat top poker professionals, then concluded that game theory, the field his career was built on, was not the path to general intelligence. Recorded live at the Finals of No Limit, Sequoia’s pokerbot tournament, the OpenAI researcher describes his “crisis of faith”: game theory assumes everyone is rational, and the Diplomacy bots that won were the ones trained on human data to model how people actually behave in the messy real world. That sent him to OpenAI and the work that became o1, at a time when much of the field believed a bigger pre-trained model would solve everything. Noam explains why he asks every new model to build a pokerbot, where GPT-6 Astra still falls short, and why this is the “centaur period” of human plus AI. He argues that human progress has always been one giant recursive self-improvement loop, and shares his most controversial take: promising students should drop out and join the labs now.\n\nHosted by Alfred Lin, Sequoia CapitalChapters:\n\n0:00 – Introduction\n\n0:09 – Why poker: a perfect strategy nobody knew\n\n2:12 – How Noam would build a pokerbot in 60 minutes\n\n4:37 – From poker to Diplomacy: where game theory breaks on irrational humans\n\n9:39 – A crisis of faith and the bet on reasoning over bigger pre-training\n\n13:01 – The unlock: models that think before acting\n\n14:59 – The centaur period, and what gamers and AI researchers share\n\n18:13 – Audience Q&A: why models still can't build a great pokerbot alone\n\n22:02 – Is chain of thought the right way to scale test-time compute?\n\n23:42 – RSI and the case for dropping out to join the labs\n\n27:54 – Lightning round: unsolved games and AI at the World Series of Poker",
+          "url": "https://feeds.megaphone.fm/trainingdata",
+          "published_at": "2026-11-24T10:00:00+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://feeds.megaphone.fm/trainingdata"
+      }
     }
   ],
   "editions": [
