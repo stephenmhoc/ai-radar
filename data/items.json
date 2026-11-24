@@ -88020,6 +88020,37 @@
       "links": {
         "newsletter": "https://www.normaltech.ai/p/management-consulting-is-not-a-thin"
       }
+    },
+    {
+      "id": "f7977148f634dba3a5dd",
+      "first_seen_at": "2026-11-24T02:17:20+00:00",
+      "status": "skipped",
+      "title": "Why Trump Put Jensen Huang Back in Charge at Nvidia",
+      "source_title": "Why Trump Put Jensen Huang Back in Charge at Nvidia",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Excluded: the publisher notes describe hosts unpacking how Nvidia reinstated its chief executive, with Jensen Huang only discussed by the hosts. No guest or speaker who is a followed person's own words or ideas is indicated, so the item does not qualify.",
+      "published_at": "2026-11-24T01:33:12+00:00",
+      "appearances": [
+        {
+          "id": "80d42dee3322a6b37cb5",
+          "kind": "podcast",
+          "source": "Hard Fork",
+          "family": "hard fork",
+          "guid": "https://www.nytimes.com/2026/11/23/podcasts/why-trump-put-jensen-huang-back-in-charge-at-nvidia.html",
+          "title": "Why Trump Put Jensen Huang Back in Charge at Nvidia",
+          "description": "In a shocking turn, the chip-making giant reinstated its chief executive. We unpack how it happened — and what it means.",
+          "url": "https://www.nytimes.com/2026/11/23/podcasts/why-trump-put-jensen-huang-back-in-charge-at-nvidia.html",
+          "published_at": "2026-11-24T01:33:12+00:00",
+          "hosts": [
+            "Kevin Roose",
+            "Casey Newton"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.nytimes.com/2026/11/23/podcasts/why-trump-put-jensen-huang-back-in-charge-at-nvidia.html"
+      }
     }
   ],
   "editions": [
