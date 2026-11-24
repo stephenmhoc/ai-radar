@@ -88226,6 +88226,34 @@
       "links": {
         "podcast": "https://feeds.megaphone.fm/nvidiaaipodcast"
       }
+    },
+    {
+      "id": "6b0da21feeec30a050ad",
+      "first_seen_at": "2026-11-24T19:17:20+00:00",
+      "status": "skipped",
+      "title": "The brain helped us build AI. Now AI is explaining the brain.",
+      "source_title": "The brain helped us build AI. Now AI is explaining the brain.",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The publisher notes name host Hannah Fry and neuroscience researchers Maria Eckstein and Kim Stachenfeld as the speakers. None of them is on the followed list, so no followed person is a guest, speaker, or author.",
+      "published_at": "2026-11-24T18:17:32+00:00",
+      "appearances": [
+        {
+          "id": "8e6276d0d1a968f8cc23",
+          "kind": "podcast",
+          "source": "Google DeepMind: The Podcast",
+          "family": "google deepmind: the podcast",
+          "guid": "828b39a1-03f0-42f7-bb2f-928eae197fcf",
+          "title": "The brain helped us build AI. Now AI is explaining the brain.",
+          "description": "The human brain remains one of the greatest unsolved mysteries in science. We have roughly 86 billion neurons firing in a way that somehow produces intelligence, and yet the brain is still largely a black box. In the early days of AI, researchers looked to the brain for clues about how to build smarter machines. But today, that relationship has been flipped on its head. Join Professor Hannah Fry and neuroscience researchers Maria Eckstein and Kim Stachenfeld to see how scientists are using AI to better understand the human mind. Please leave us a review on Spotify or Apple Podcasts if you enjoyed\nthis episode. We always want to hear from our audience whether that's in\nthe form of feedback, new idea or a guest recommendation!\n\nHosted by Simplecast, an AdsWizz company. See https://pcm.adswizz.com\nfor information about our collection and use of personal data for\nadvertising.",
+          "url": "https://deepmind.com/podcast",
+          "published_at": "2026-11-24T18:17:32+00:00",
+          "hosts": []
+        }
+      ],
+      "links": {
+        "podcast": "https://deepmind.com/podcast"
+      }
     }
   ],
   "editions": [
