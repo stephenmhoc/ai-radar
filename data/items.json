@@ -88284,6 +88284,36 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-essay-challenge"
       }
+    },
+    {
+      "id": "8cd1e90ae5e3096e6ecd",
+      "first_seen_at": "2026-11-24T22:17:20+00:00",
+      "status": "skipped",
+      "title": "Dwarkesh Podcast: Responding to objections to recursive self-improvement",
+      "source_title": "Responding to objections to recursive self-improvement",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The host, Dwarkesh Patel, responds to objections from listeners and commenters, and none of the named participants are followed people. Paul Christiano and METR are only mentioned, so the item does not qualify.",
+      "published_at": "2026-11-24T21:45:30+00:00",
+      "appearances": [
+        {
+          "id": "12c1be81b7229ce560f9",
+          "kind": "podcast",
+          "source": "Dwarkesh Podcast",
+          "family": "dwarkesh podcast",
+          "guid": "substack:post:226413128",
+          "title": "Responding to objections to recursive self-improvement",
+          "description": "I responded to the strongest objections that people had about the RSI essay.\n\nWatch on \nYouTube\n; read the \ntranscript\n.\n\nTimestamps\n\n(00:00:00) – “Do you have a real job?”\n\n(00:02:41) – Cindy Wu: Is AI research a verifiable domain?\n\n(00:11:10) – corsaren: The overarching objection\n\n(00:12:20) – corsaren: Are the essay’s examples sloppy intuition pumps?\n\n(00:13:51) – corsaren: Is online learning AI’s Millennium Prize problem?\n\n(00:17:39) – corsaren: Is human evolution evidence for transfer?\n\n(00:22:20) – corsaren: Can scaling RL let AIs ramp quickly in new contexts?\n\n(00:25:31) – Why take Paul Christiano’s predictions seriously?\n\n(00:26:26) – Intuitions for what superintelligence could be like\n\n(00:29:26) – Paul’s 2018 prediction and the Hugging Face incident\n\n(00:32:44) – How would superhuman AIs actually take over?\n\n(00:35:12) – What should we do about AI motivations?\n\n(00:40:54) – Séb Krier: Won’t many different models constrain each other?\n\n(00:44:09) – Henry Zhang: Is METR’s finding just one data point?\n\n(00:49:13) – Agustin Lebron: Is it still recursive if humans are in the loop?\n\n(00:53:07) – Peli: Does AI’s success in math transfer to AI research?\n\n(00:56:20) – Henry Dowling: Will AI research be bottlenecked on compute?\n\n(01:00:21) – Takeaways, and the next couple of years\n\n(01:03:30) – Would we even know?\n\n(01:03:57) – Closing thoughts\n\nThis is a public episode. If you would like to discuss this with other subscribers or get access to bonus episodes, visit \nwww.dwarkesh.com",
+          "url": "https://www.dwarkesh.com/p/rsiobjections",
+          "published_at": "2026-11-24T21:45:30+00:00",
+          "hosts": [
+            "Dwarkesh Patel"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.dwarkesh.com/p/rsiobjections"
+      }
     }
   ],
   "editions": [
