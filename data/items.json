@@ -88345,6 +88345,36 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab/"
       }
+    },
+    {
+      "id": "a7860428f4cb649ddac4",
+      "first_seen_at": "2026-11-25T09:17:21+00:00",
+      "status": "skipped",
+      "title": "David Senra Podcast: Jacob Hirshman on Erebor's Bank",
+      "source_title": "A Deep Dive Into Palmer Luckey’s Bank | Jacob Hirshman, Erebor",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode's guest is Jacob Hirshman, Erebor co-founder, who is not on the followed list. Palmer Luckey, Sam Zell, Jamie Dimon, and Joe Lonsdale are only mentioned in the notes and are not followed people. No followed person is a guest, speaker, or author.",
+      "published_at": "2026-11-25T09:00:00+00:00",
+      "appearances": [
+        {
+          "id": "6df967abae63410ad81c",
+          "kind": "podcast",
+          "source": "David Senra",
+          "family": "david senra",
+          "guid": "ce1d0c9e-e88d-11f1-a9af-97eebdfbe80f",
+          "title": "A Deep Dive Into Palmer Luckey’s Bank | Jacob Hirshman, Erebor",
+          "description": "Jacob Hirshman is the co-founder of Erebor, a national bank he started with Palmer Luckey in May 2025. A lawyer who has spent his career in financial services regulation, Jacob saw that the new administration was likely to start approving new bank charters again after more than a decade with almost none. Erebor applied for its charter in June 2025 and opened in February 2026. Jacob explains how the collapse of Silicon Valley Bank shaped the idea, why Erebor holds itself to a 50% loan-to-deposit ratio when the average bank runs at 70%, and why it built its own bank core and underwriting software instead of buying them. He describes why he wants to build \"the farmer's bank for tech,\" and why 40% of his employees are former founders. He also shares what Sam Zell's habit of paying lenders more than they asked taught him about relationships, why Jamie Dimon's decision to open 1,000 new branches may pay off in the age of AI fraud, and how Erebor gives people around the world access to US dollar deposits. He also tells the story of his chaotic trip into Venezuela, the Tolkien character he wanted to name the company after, and the law school friend who told him he would never build a billion-dollar company.\n\nShow notes: https://www.davidsenra.com/episode/jacob-hirshman\n\nMade possible by\n\nRamp: https://router.com\n\nDeel: https://deel.com/senra\n\nAppLovin: https://applovin.com/senra\n\nWorkOS: https://workos.com\n\nChapters\n\n(00:00:00) The fastest-growing bank in American history\n\n(00:00:39) Why almost no new banks opened after the financial crisis\n\n(00:01:52) How the collapse of SVB led to Erebor\n\n(00:10:40) The Pentagon's $205 billion credit book\n\n(00:11:45) Rebuilding America's AI supply chain\n\n(00:15:19) Building \"the farmer's bank for tech\"\n\n(00:17:59) Palmer Luckey wanted to call it The Real Bank\n\n(00:20:08) \"Always think bigger\"\n\n(00:22:49) Why Sam Zell paid 7.75% when he could pay 7.25%\n\n(00:29:20) Why 40% of the team are former founders\n\n(00:34:08) Joe Lonsdale's plan for a Gringotts headquarters\n\n(00:36:16) Why Jamie Dimon opened 1,000 new branches\n\n(00:39:33) Selling the dollar to the rest of the world\n\n(00:44:41) \"You're not getting on this fucking plane\"\n\n(00:48:11) \"Welcome to Venezuela, sir\"\n\n(00:50:26) Why it's named after the Lonely Mountain\n\n(00:53:02) What J.P. Morgan did for the industrialists\n\n(00:57:28) \"You're never going to have a billion-dollar company\"\nLearn more about your ad choices. Visit megaphone.fm/adchoices",
+          "url": "https://www.davidsenra.com/episode/jacob-hirshman",
+          "published_at": "2026-11-25T09:00:00+00:00",
+          "hosts": [
+            "David Senra"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.davidsenra.com/episode/jacob-hirshman"
+      }
     }
   ],
   "editions": [
