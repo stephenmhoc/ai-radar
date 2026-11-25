@@ -88433,6 +88433,36 @@
       "links": {
         "newsletter": "https://newsletter.pragmaticengineer.com/p/how-anthropic-builds-software-in"
       }
+    },
+    {
+      "id": "15e80967029d06a6ce84",
+      "first_seen_at": "2026-11-25T20:17:19+00:00",
+      "status": "skipped",
+      "title": "Relentless — How SpaceX Started, with Tom Mueller",
+      "source_title": "How SpaceX Started — Tom Mueller",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Tom Mueller, who is not on the followed list. The publisher notes describe his SpaceX tenure and current role at Impulse Space but do not mention any followed person speaking or writing in this episode, so no followed person qualifies.",
+      "published_at": "2026-11-25T18:26:34+00:00",
+      "appearances": [
+        {
+          "id": "c2a3821252b58958bc2b",
+          "kind": "podcast",
+          "source": "Relentless",
+          "family": "relentless",
+          "guid": "688c0886-e277-4167-a788-94e8c068e07b",
+          "title": "How SpaceX Started — Tom Mueller",
+          "description": "Tom was employee #1 at SpaceX and worked there from 2002 to 2020. Now he's the Founder, CEO, and CTO of Impulse Space which is working on in-space maneuverability.",
+          "url": "https://podcasters.spotify.com/pod/show/ti-morse/episodes/How-SpaceX-Started--Tom-Mueller-e3svsfp",
+          "published_at": "2026-11-25T18:26:34+00:00",
+          "hosts": [
+            "Ti Morse"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://podcasters.spotify.com/pod/show/ti-morse/episodes/How-SpaceX-Started--Tom-Mueller-e3svsfp"
+      }
     }
   ],
   "editions": [
