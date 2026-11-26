@@ -88661,6 +88661,36 @@
       "links": {
         "podcast": "https://a16z.simplecast.com/episodes/replay-on-food-as-medicine-2020-6pgEsA1X"
       }
+    },
+    {
+      "id": "f380bacafff19a6085d5",
+      "first_seen_at": "2026-11-26T13:17:22+00:00",
+      "status": "skipped",
+      "title": "AI:AM: Number Must Go Up? Christiano's Warning, Jensen's Return, GiveDirectly's Pitch for the Poor",
+      "source_title": "AI:AM: Number Must Go Up? Christiano's Warning, Jensen's Return, GiveDirectly's Pitch for the Poor",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "Guests are Nick Allardice, Tom Davidson, and Mackenzie Arnold, none of whom are on the followed list. Jensen Huang and Paul Christiano are discussed by the hosts but do not speak or write in the episode, so the item does not qualify.",
+      "published_at": "2026-11-26T12:37:35+00:00",
+      "appearances": [
+        {
+          "id": "6b170e8f6c367e27ad2b",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "7aa222ba-e992-11f1-8ca5-335a8e3450a7",
+          "title": "AI:AM: Number Must Go Up? Christiano's Warning, Jensen's Return, GiveDirectly's Pitch for the Poor",
+          "description": "In this episode, Nathan Labenz and Prakash Narayanan explore who is truly in control of artificial intelligence and what risk thresholds could justify proceeding toward superintelligence. Guests Nick Allardice of GiveDirectly, Tom Davidson of Forethought, and Mackenzie Arnold of the Institute for Law and AI examine unconditional cash transfers, the plausibility of an intelligence explosion, and the emerging legal frameworks for unpredictable agents. Analyzing Paul Christiano's takeover scenario alongside Jensen Huang's return to NVIDIA, the conversation confronts whether market pressures to maintain economic momentum make keeping frontier AI under control impossible.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/ai-am-number-must-go-up-christiano-s-warning-jensen-s-return-givedirectly-s-pitch-for-the-poor/\nSponsors:\n\nClaude: Claude is the AI collaborator built for problem solvers, extending your thinking across coding, modeling, and strategic workflows. Get started and discover Claude Pro at https://claude.ai/tcr\n\nOutSystems: OutSystems is the leading agentic systems platform, helping enterprises build, modernize, and operate mission-critical applications at the speed of AI. Learn more and start owning your agentic future at https://outsystems.com/tcr\n\nTasklet: Tasklet empowers your business with AI agents that connect to your tools and automate recurring workflows with no code required. Visit https://tasklet.ai and use code cog rev for $50 in free credits\n\nDeepgram: Deepgram understands words and context across STT, TTS, and voice agents to deliver better conversations at production scale. Learn more at https://deepgram.com/contextiseverything\n\nCHAPTERS:\n\n(00:00) Episode preview\n\n(07:40) GiveDirectly and unconditional cash (Part 1)\n\n(17:50) Sponsors: Claude | OutSystems\n\n(21:01) GiveDirectly and unconditional cash (Part 2)\n\n(27:01) The takeover scenario (Part 1)\n\n(29:47) Sponsors: Tasklet | Deepgram\n\n(31:57) The takeover scenario (Part 2)\n\n(43:40) Falsifiable safety hurdles\n\n(59:14) Hardening the world\n\n(01:09:39) Intelligence explosion plausibility\n\n(01:25:28) Jensen Huang and NVIDIA\n\n(01:36:54) Taiwan and chip geopolitics\n\n(01:45:33) Writing AI regulations\n\n(01:51:40) AI comprehension audits\n\n(02:02:04) Future society and alignment\n\n(02:07:02) Episode Outro\n\n(02:10:04) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing",
+          "url": "https://www.cognitiverevolution.ai/ai-am-number-must-go-up-christiano-s-warning-jensen-s-return-givedirectly-s-pitch-for-the-poor/",
+          "published_at": "2026-11-26T12:37:35+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/ai-am-number-must-go-up-christiano-s-warning-jensen-s-return-givedirectly-s-pitch-for-the-poor/"
+      }
     }
   ],
   "editions": [
