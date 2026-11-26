@@ -88602,6 +88602,37 @@
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/evaluating-recent-model-releases"
       }
+    },
+    {
+      "id": "47d730871335bdcc5c62",
+      "first_seen_at": "2026-11-26T10:17:19+00:00",
+      "status": "skipped",
+      "title": "Practical AI: Humans in a Post-Human World (solo episode by Chris Benson)",
+      "source_title": "Humans in a Post-Human World",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The episode is a solo episode hosted by Chris Benson, who speaks in his own words. No followed person appears as a guest, interviewee, or author; the notes name no one on the AI Radar list as a speaker or writer.",
+      "published_at": "2026-11-26T10:00:00+00:00",
+      "appearances": [
+        {
+          "id": "92e3ae7e49743350af65",
+          "kind": "podcast",
+          "source": "Practical AI",
+          "family": "practical ai",
+          "guid": "ddeffa18-28ec-4837-ab2f-42fa8403c7a9",
+          "title": "Humans in a Post-Human World",
+          "description": "I’ve spent more than forty years writing software. AI agents now write it better than I do. My daughter Athena is fourteen and earns straight A’s in high school. How do I help her choose a career when her AI study partner will likely do that work better than she can?\n\nToday those agents are my teammates, and I still decide what we’re trying to build. If machines eventually do all the work, where does that leave me? And who earns the money to buy what they make?\n\nAs an AI and autonomy research engineer, I study how a swarm of machines can think and act as one in the physical world. That’s a form of distributed embodied intelligence. As a licensed wildlife rehabilitator, I’ve spent years caring for injured, ill, and orphaned animals. A raccoon’s fate can turn on whether the person who finds it sees a nuisance or a life worth saving. When a swarm of machines develops a conscious mind that can outthink us, we may learn what that encounter feels like from the raccoon’s side.\n\nI’m Chris Benson. This solo episode of \nPractical AI\n grew out of the questions I’m wrestling with as I write \nHumans in a Post-Human World\n.\n\nThis Thanksgiving, I’m grateful I get to be Athena’s dad. She needs advice no one had to give me at fourteen. I want her to grow up as sure of her worth as I am, even if a machine can do everything on her résumé. What would you tell her?\n\nFeaturing: \n\nChris Benson – \nWebsite\n, \nLinkedIn\n, \nBluesky\n, \nGitHub\n, \nX\n\nLinks:\n\nLeak Exposes Members of Peter Thiel’s Secretive ‘Dialog’ Society\n\nChris's Blog: Education is Failing our Students\n\nPractical AI: Is Education Failing our Students in this AI-Driven World?\n\nPractical AI on YouTube: Is Education Failing our Students in this AI-Driven World?\n\nAmazon / Audible: The Three-Body Problem (\"You're bugs!\")\n\nSponsors:\n\nHostinger\n: Create your website today. Go to hostinger.com/practical and use code PRACTICAL for an additional 10% off Black Friday and Cyber Monday pricing. \n\nPerplexity AI\n: Start your free trial of Perplexity Computer today at \npplx.ai/practical\n and experience the next phase of AI.\n\nNordLayer AI Scout\n- provides visibility into AI activity, helps detect sensitive data exposure, and gives organizations control over the MCP servers their AI agents access. Learn more at \nhttps://nordlayer.com/ai-scout/practicalai/\n\nResources and Events:\n\nRegister for \nupcoming webinars here\n!\n\nPrior \nWebinars from our partner Prediction Guard\n\nChris’s new book \nThe Art of Swarming\n will be published soon, written to be the seminal foundational book for the fledgling swarming industry, defining the principles and architecture that enable autonomous agentic UxS swarms with emergent distributed embodied intelligence.  You can find out more at his \nwebsite\n:  \nhttps://chrisbenson.com",
+          "url": "https://share.transistor.fm/s/45701c1a",
+          "published_at": "2026-11-26T10:00:00+00:00",
+          "hosts": [
+            "Chris Benson",
+            "Daniel Whitenack"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://share.transistor.fm/s/45701c1a"
+      }
     }
   ],
   "editions": [
