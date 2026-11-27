@@ -88857,6 +88857,37 @@
       "links": {
         "podcast": "https://www.dwarkesh.com/p/daniel-kokotajlo-ege-erdil"
       }
+    },
+    {
+      "id": "2b5799273bde3dd512e1",
+      "first_seen_at": "2026-11-27T23:17:19+00:00",
+      "status": "skipped",
+      "title": "Inside the AI Training Data Market with Gabe Greenberg of G2i",
+      "source_title": "Inside the AI Training Data Market — Gabe Greenberg, G2i",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are Gabe Greenberg (G2i founder, guest) and the Latent Space hosts Alessio Fanelli and Swyx. None of them is on the AI Radar followed list, so the item does not qualify.",
+      "published_at": "2026-11-27T22:19:18+00:00",
+      "appearances": [
+        {
+          "id": "9663c8b0dc48ca7be116",
+          "kind": "newsletter",
+          "source": "Latent Space — Newsletter",
+          "family": "latent space",
+          "guid": "urn:latent-space:post:pod_ep_01a21efa-24c7-769b-afbe-cd7e135e4e85",
+          "title": "Inside the AI Training Data Market — Gabe Greenberg, G2i",
+          "description": "A frontier lab can pay more for training data it gets to keep exclusive, or take a discount on data another lab can buy too. At AI Engineer CODE, G2i founder Gabe Greenberg tells swyx how labs make that decision, how small pilot orders turn into bigger engagements, and when it makes sense to build a data operation in-house.\n\nWe also get into what the labs are buying. A good training task should sit just ahead of what a model can do today. Gabe explains how senior engineers design the task, choose the starting data, and build a verifier that can score the result.\n\nThanks to G2i for co-organizing AI Engineer CODE 2026 and sponsoring this episode. Join us April 26–27 at \nAI Engineer Miami 2027\n.\n\nShow notes\n\nG2i\n builds AI training data and reinforcement learning environments with senior engineers.\n\nORC\n is the multi-agent coding platform Gabe’s team uses internally.\n\nRecorded at \nAI Engineer CODE\n in San Francisco.\n\nChapters\n\n0:00 How hard should training tasks be?\n\n0:15 What G2i sells to frontier labs\n\n2:42 From human labels to expert engineering\n\n5:19 From recruiting engineers to building training data\n\n6:46 Tasks, seed data, and verifiers\n\n8:04 How G2i screens engineers for agentic work\n\n12:24 How frontier labs buy training data\n\n16:24 How big is the market?\n\n18:45 Shared data, exclusivity, and in-house teams\n\n22:16 How labs budget and price training data\n\n24:54 The market for raw company data\n\n27:44 Where demand goes next\n\n30:30 G2i and ORC",
+          "url": "https://latent.space/p/inside_the_ai_training_data_market_gabe_greenberg_g2i/",
+          "published_at": "2026-11-27T22:19:18+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
+        }
+      ],
+      "links": {
+        "newsletter": "https://latent.space/p/inside_the_ai_training_data_market_gabe_greenberg_g2i/"
+      }
     }
   ],
   "editions": [
