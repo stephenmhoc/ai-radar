@@ -88827,6 +88827,36 @@
       "links": {
         "newsletter": "https://newsletter.semianalysis.com/p/trainium3-inferencex"
       }
+    },
+    {
+      "id": "04763b9ead23482552e0",
+      "first_seen_at": "2026-11-27T18:17:19+00:00",
+      "status": "skipped",
+      "title": "Daniel Kokotajlo and Ege Erdil on AI research debates",
+      "source_title": "AI researchers debate what we should do next – Daniel Kokotajlo and Ege Erdil",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The speakers are Daniel Kokotajlo and Ege Erdil, neither of whom is on the followed list, and the host Dwarkesh Patel is not a followed person. The publisher notes name no followed person as a guest or speaker, so the item does not qualify.",
+      "published_at": "2026-11-27T18:01:14+00:00",
+      "appearances": [
+        {
+          "id": "7f6690a84d835984e9f8",
+          "kind": "podcast",
+          "source": "Dwarkesh Podcast",
+          "family": "dwarkesh podcast",
+          "guid": "substack:post:226789196",
+          "title": "AI researchers debate what we should do next – Daniel Kokotajlo and Ege Erdil",
+          "description": "Watch on \nYouTube\n; listen on Apple Podcasts or Spotify.\n\nSponsors\n\n* \nWorkOS\n is building features to ensure that agents can use your product safely. For example, their Agent Auth feature dynamically permissions agent-users by considering the permissions of the associated human-user, as well as any general agent permission limits you’ve already set. This is just one of WorkOS’s recent agent-focused features, all of which they’ve built atop infrastructure that’s already trusted by thousands of companies, including OpenAI and Anthropic. Learn more at \nworkos.com/authkit\n\n* \nJane Street\n and NVIDIA are co-hosting an event at NeurIPS on the evening of December 9th. There will be food, drinks, music, games and a live demo from NVIDIA walking through how to build a full quantitative trading system with their Nemotron family of open-source models. And, in true Jane Street fashion, there’ll be a puzzle: anyone who solves it will have a chance to win an NVIDIA-sponsored prize. Spots are limited, so if you’d like to attend, register your interest by December 4th at \njanestreet.com/dwarkesh\n\n* \nAntithesis\n helps you discover the unintended consequences of a change before they reach production. Antithesis runs your code, including any proposed changes, inside a simulated computer where it wreaks havoc on your full system, stress-testing it with the sort of bad luck that typically only surfaces in production. That way, if something is going to break, it breaks in a simulation, not in the real world. Learn more at \nantithesis.com/dwarkesh\n\nTimestamps\n\n0:00:00 – Will we have superintelligence by 2029?\n\n0:04:31 – Why Ege thinks it’s too early to pause\n\n0:13:46 – The adversarial stance on China is dangerous\n\n0:19:30 – There is no plan, because people are in denial\n\n0:29:37 – Misalignment itself will slow down RSI\n\n0:40:52 – Will superintelligence be like descendants or invaders?\n\n0:48:47 – Will AIs care about humans by default?\n\n0:52:39 – Will AIs become less nice as they get more powerful?\n\n1:01:08 – People are in denial about how good AI already is\n\n1:09:01 – Predictions for 2027\n\n1:23:38 – Is AI research actually verifiable?\n\nThis is a public episode. If you would like to discuss this with other subscribers or get access to bonus episodes, visit \nwww.dwarkesh.com",
+          "url": "https://www.dwarkesh.com/p/daniel-kokotajlo-ege-erdil",
+          "published_at": "2026-11-27T18:01:14+00:00",
+          "hosts": [
+            "Dwarkesh Patel"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.dwarkesh.com/p/daniel-kokotajlo-ege-erdil"
+      }
     }
   ],
   "editions": [
