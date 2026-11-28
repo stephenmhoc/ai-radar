@@ -88935,6 +88935,36 @@
       "links": {
         "newsletter": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
       }
+    },
+    {
+      "id": "5d19f319fc1837e60e8c",
+      "first_seen_at": "2026-11-28T12:17:21+00:00",
+      "status": "skipped",
+      "title": "Lovable CTO Fabian Hedin on Scaling AI App Building to $600M ARR",
+      "source_title": "1M+ Projects a Week, $600M ARR: Lovable CTO Fabian Hedin on Empowering Everyone to Shape the World",
+      "short_summary": "",
+      "long_summary": "",
+      "reason": "The guest is Lovable co-founder and CTO Fabian Hedin, who is not on the followed list. Nathan Labenz is the regular host and is also not a followed person, so no followed person is an actual guest or speaker.",
+      "published_at": "2026-11-28T11:32:25+00:00",
+      "appearances": [
+        {
+          "id": "f2a95106ea81d9490530",
+          "kind": "podcast",
+          "source": "The Cognitive Revolution",
+          "family": "the cognitive revolution",
+          "guid": "48292040-eb1d-11f1-b1f7-a7f0e3a8ca5e",
+          "title": "1M+ Projects a Week, $600M ARR: Lovable CTO Fabian Hedin on Empowering Everyone to Shape the World",
+          "description": "Lovable co-founder and CTO Fabian Hedin joins Nathan to discuss the company's growth to $600 million ARR and how slashing development costs by a hundredfold enables non-technical creators and Fortune 500 teams to build niche applications. He details the systems required to support these applications responsibly at scale, including enterprise permission controls, automated vulnerability patching, and formal verification of database security rules. Hedin also examines Lovable's approach to background model routing, full-lifecycle business tooling, and the broader shifts facing SaaS as autonomous agents increasingly generate the majority of web traffic.\n\nFor full show notes, links, and references, read the episode page:https://www.cognitiverevolution.ai/1m-projects-a-week-600m-arr-lovable-cto-fabian-hedin-on-empowering-everyone-to-shape-the-world/\nSponsors:\n\nClaude: Claude is the AI collaborator built for problem solvers, extending your thinking across coding, modeling, and strategic workflows. Get started and discover Claude Pro at https://claude.ai/tcr\n\nOutSystems: OutSystems is the leading agentic systems platform that enables enterprises to engineer, orchestrate, and govern AI applications on a single unified platform. Learn more and see how it works at https://outsystems.com/tcr\n\nTasklet: Tasklet empowers your business with AI agents that connect to your tools and automate recurring workflows with no code required. Visit https://tasklet.ai and use code cog rev for $50 in free credits\n\nCHAPTERS:\n\n(00:00) About the Episode\n\n(04:06) Lovable's scale and growth\n\n(09:45) Emerging software development patterns\n\n(16:53) Enterprise governance and deployment (Part 1)\n\n(21:41) Sponsors: Claude | OutSystems\n\n(24:58) Enterprise governance and deployment (Part 2)\n\n(26:10) Automated security and verification (Part 1)\n\n(39:22) Sponsor: Tasklet\n\n(41:00) Automated security and verification (Part 2)\n\n(44:37) Autonomous business execution agents\n\n(57:02) Architecture and model routing\n\n(01:10:36) Competition and lab relationships\n\n(01:24:10) AI safety and empowerment\n\n(01:27:04) Episode Outro\n\n(01:30:02) Outro\n\nPRODUCED BY:\n\nhttps://aipodcast.ing\n\nSOCIAL LINKS:\n\nWebsite: https://www.cognitiverevolution.ai\n\nTwitter (Podcast): https://x.com/cogrev_podcast\n\nTwitter (Nathan): https://x.com/labenz\n\nLinkedIn: https://linkedin.com/in/nathanlabenz/\n\nYoutube: https://youtube.com/@CognitiveRevolutionPodcast\n\nApple: https://podcasts.apple.com/de/podcast/the-cognitive-revolution-ai-builders-researchers-and/id1669813431\n\nSpotify: https://open.spotify.com/show/6yHyok3M3BjqzR0VB5MSyk",
+          "url": "https://www.cognitiverevolution.ai/1m-projects-a-week-600m-arr-lovable-cto-fabian-hedin-on-empowering-everyone-to-shape-the-world/",
+          "published_at": "2026-11-28T11:32:25+00:00",
+          "hosts": [
+            "Nathan Labenz"
+          ]
+        }
+      ],
+      "links": {
+        "podcast": "https://www.cognitiverevolution.ai/1m-projects-a-week-600m-arr-lovable-cto-fabian-hedin-on-empowering-everyone-to-shape-the-world/"
+      }
     }
   ],
   "editions": [
