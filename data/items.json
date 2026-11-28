@@ -88883,9 +88883,25 @@
             "Alessio Fanelli",
             "Swyx"
           ]
+        },
+        {
+          "id": "8f26a53a2f43c937387d",
+          "kind": "podcast",
+          "source": "Latent Space",
+          "family": "latent space",
+          "guid": "01a21efa-24c7-73e6-9c0f-67c191aeb8ff",
+          "title": "Inside the AI Training Data Market — Gabe Greenberg, G2i",
+          "description": "A frontier lab can pay more for training data it gets to keep exclusive, or take a discount on data another lab can buy too. At AI Engineer CODE, G2i founder Gabe Greenberg tells swyx how labs make that decision, how small pilot orders turn into bigger...",
+          "url": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/inside_the_ai_training_data_market_gabe_greenberg_g2i",
+          "published_at": "2026-11-27T22:19:18+00:00",
+          "hosts": [
+            "Alessio Fanelli",
+            "Swyx"
+          ]
         }
       ],
       "links": {
+        "podcast": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/inside_the_ai_training_data_market_gabe_greenberg_g2i",
         "newsletter": "https://latent.space/p/inside_the_ai_training_data_market_gabe_greenberg_g2i/"
       }
     }
